@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <shortcut
+        android:shortcutId="rulebookBasics"
+        android:enabled="true"
+        android:icon="@drawable/ic_launch_basics"
+        android:roundIcon="@drawable/ic_launch_basics_round"
+        android:label="@string/app_launch_basics"
+        android:shortcutShortLabel="@string/app_launch_basics"
+        android:shortcutLongLabel="@string/app_launch_basics_extended"
+        android:shortcutDisabledMessage="@string/compose_disabled_message">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.verNANDo57.rulebook_educational"
+            android:targetClass="com.verNANDo57.rulebook_educational.AppMainRulesActivity" />
+        <categories android:name="android.shortcut.conversation" />
+    </shortcut>
+
+
+    <!-- Other 3 shortcuts below -->
+    <shortcut
+        android:shortcutId="rulebookInSchemesAndTables"
+        android:enabled="true"
+        android:icon="@drawable/ic_launch_analyze_methods"
+        android:roundIcon="@drawable/ic_launch_analyze_methods_round"
+        android:label="@string/app_launch_schemes_and_tables"
+        android:shortcutShortLabel="@string/app_launch_schemes_and_tables"
+        android:shortcutLongLabel="@string/app_launch_schemes_and_tables_extended"
+        android:shortcutDisabledMessage="@string/compose_disabled_message">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.verNANDo57.rulebook_educational"
+            android:targetClass="com.verNANDo57.rulebook_educational.rules.AppRulesInSchemesAndTablesActivity" />
+        <categories android:name="android.shortcut.conversation" />
+    </shortcut>
+
+    <shortcut
+        android:shortcutId="rulebookSearchBasics"
+        android:enabled="true"
+        android:icon="@drawable/ic_launch_search_rules"
+        android:roundIcon="@drawable/ic_launch_search_rules_round"
+        android:label="@string/app_launch_debug"
+        android:shortcutShortLabel="@string/app_launch_ic_launch_search_rules"
+        android:shortcutLongLabel="@string/app_launch_ic_launch_search_rules_extended"
+        android:shortcutDisabledMessage="@string/compose_disabled_message">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.verNANDo57.rulebook_educational"
+            android:targetClass="com.verNANDo57.rulebook_educational.searchview.AppSearchLessonsInterface" />
+        <categories android:name="android.shortcut.conversation" />
+    </shortcut>
+
+    <shortcut
+        android:shortcutId="rulebookAnalyzeMethods"
+        android:enabled="true"
+        android:icon="@drawable/ic_launch_analyze_methods"
+        android:roundIcon="@drawable/ic_launch_analyze_methods_round"
+        android:label="@string/analyze_methods"
+        android:shortcutShortLabel="@string/analyze_methods"
+        android:shortcutLongLabel="@string/analyze_methods"
+        android:shortcutDisabledMessage="@string/compose_disabled_message">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.verNANDo57.rulebook_educational"
+            android:targetClass="com.verNANDo57.rulebook_educational.rules.analyze_methods.AppAnalyzeMethods" />
+        <categories android:name="android.shortcut.conversation" />
+    </shortcut>
+    <!-- end -->
+</shortcuts>

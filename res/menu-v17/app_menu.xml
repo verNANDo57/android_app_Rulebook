@@ -1,0 +1,19 @@
+<menu
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layoutDirection="rtl"
+    android:layout_gravity="start">
+        <item
+            android:id="@+id/preferences_screen"
+            android:icon="@drawable/ic_settings_black"
+            android:title="@string/settings_actionbar"
+            app:showAsAction="ifRoom">
+        </item>
+
+        <item
+            android:id="@+id/exit_actionbar_extended"
+            android:icon="@drawable/ic_close_black"
+            android:title="@string/exit_actionbar"
+            app:showAsAction="ifRoom">
+        </item>
+</menu>

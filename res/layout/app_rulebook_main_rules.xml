@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	xmlns:tools="http://schemas.android.com/tools"
+	tools:context="com.verNANDo57.rulebook_educational.rules.mainrules.AppMainRulesActivity"
+	android:orientation="vertical">
+
+	<androidx.appcompat.widget.Toolbar
+		android:id="@+id/toolbar_in_mainrules_layout"
+		android:layout_width="match_parent"
+		android:layout_height="@dimen/app_toolbar_height"
+		android:background="@drawable/app_toolbar"
+		android:layout_margin="@dimen/app_toolbar_margin"
+		app:navigationIcon="@drawable/ic_view_list_black"
+		app:title="@string/main_rules" />
+
+	<com.google.android.material.tabs.TabLayout
+		android:id="@+id/tablayout"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content">
+		<com.google.android.material.tabs.TabItem
+			android:icon="@drawable/app_pen_icon"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/ortho" />
+		<com.google.android.material.tabs.TabItem
+			android:icon="@drawable/app_pencil_icon"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/punct" />
+	</com.google.android.material.tabs.TabLayout>
+
+	<androidx.viewpager.widget.ViewPager
+		android:id="@+id/viewpager"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content" />
+
+</LinearLayout>

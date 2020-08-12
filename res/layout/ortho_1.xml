@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ortho_1"
+            android:id="@+id/orthographyButton1"
+            style="@style/RulebookButtonEveryThemeTop"/>
+
+        <LinearLayout
+            android:id="@+id/orthographyButton1_sub_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/activity_space_height"/>
+
+            <Button
+                android:id="@+id/ortho1mainButton1"
+                style="@style/RulebookButtonEveryThemeTop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ortho_1_1" />
+
+            <Button
+                android:id="@+id/ortho1mainButton2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ortho_1_2" />
+
+            <Button
+                android:id="@+id/ortho1mainButton3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ortho_1_3" />
+
+            <Button
+                android:id="@+id/ortho1mainButton4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ortho_1_4" />
+
+            <Button
+                android:id="@+id/ortho1mainButton5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ortho_1_5" />
+
+            <Button
+                android:id="@+id/ortho1mainButton6"
+                style="@style/RulebookButtonEveryThemeBottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ortho_1_6" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/activity_space_height"/>
+
+        </LinearLayout>
+</LinearLayout>

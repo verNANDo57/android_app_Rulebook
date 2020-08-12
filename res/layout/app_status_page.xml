@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/appstatus_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="12dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/status_headline"
+        style="@style/ActionTitleTextStyle"
+        android:gravity="center"
+        android:minHeight="?actionBarSize"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_status_page_headline"
+        android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title" />
+
+    <ScrollView
+        android:id="@+id/status_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/app_status_voicesearch_boolean_state"
+                            style="@style/TextRegularEveryTheme"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/app_status_voicesearch_boolean_state" />
+
+                        <TextView
+                            android:id="@+id/app_status_voicesearch_boolean_state_value"
+                            style="@style/ActionTitleTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/app_status_value_null" />
+
+                        <Space
+                            android:id="@+id/status_space1"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/activity_space_height_big" />
+
+                        <TextView
+                            android:id="@+id/app_status_anim_boolean_state"
+                            style="@style/TextRegularEveryTheme"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/app_status_anim_boolean_state" />
+
+                        <TextView
+                            android:id="@+id/app_status_anim_boolean_state_value"
+                            style="@style/ActionTitleTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/app_status_value_null" />
+
+                        <Space
+                            android:id="@+id/status_space2"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/activity_space_height_big" />
+
+                        <TextView
+                            android:id="@+id/app_status_page_boolean_state"
+                            style="@style/TextRegularEveryTheme"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/app_status_page_boolean_state" />
+
+                        <TextView
+                            android:id="@+id/app_status_page_boolean_state_value"
+                            style="@style/ActionTitleTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/app_status_value_null" />
+
+                        <Space
+                            android:id="@+id/status_space3"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/activity_space_height_big" />
+
+                        <TextView
+                            android:id="@+id/app_statusbar_boolean_state"
+                            style="@style/TextRegularEveryTheme"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/app_statusbar_boolean_state" />
+
+                        <TextView
+                            android:id="@+id/app_statusbar_boolean_state_value"
+                            style="@style/ActionTitleTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/app_status_value_null" />
+
+                        <Space
+                            android:id="@+id/status_space4"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/activity_space_height_big" />
+
+                        <TextView
+                            android:id="@+id/app_autohidebottomappbar_boolean_state"
+                            style="@style/TextRegularEveryTheme"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/app_autohidebottomappbar_boolean_state" />
+
+                        <TextView
+                            android:id="@+id/app_autohidebottomappbar_boolean_state_value"
+                            style="@style/ActionTitleTextStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/app_status_value_null" />
+
+                        <Space
+                            android:id="@+id/status_space5"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/activity_space_height_big" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

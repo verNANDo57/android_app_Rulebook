@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/punctuationButton11_container"
+    android:orientation="vertical">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/punct_12"
+        android:id="@+id/punctuationButton12"/>
+
+    <LinearLayout
+        android:id="@+id/punctuationButton12_sub_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/activity_space_height"/>
+
+        <Button
+            android:id="@+id/punct12mainButton1"
+            style="@style/RulebookButtonEveryThemeTop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/punct_12_43" />
+
+        <Button
+            android:id="@+id/punct12mainButton2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/punct_12_44" />
+
+        <Button
+            android:id="@+id/punct12mainButton3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/punct_12_45" />
+
+        <Button
+            android:id="@+id/punct12mainButton4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/punct_12_46"
+            style="@style/RulebookButtonEveryThemeBottom"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/activity_space_height"/>
+
+    </LinearLayout>
+</LinearLayout>

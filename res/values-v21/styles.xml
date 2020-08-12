@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppBarBottomSheetDialogLight" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="enforceTextAppearance">true</item>
+        <item name="enforceMaterialTheme">false</item>
+        <item name="itemIconSize">@dimen/app_bottom_navigation_icon_size</item>
+        <item name="bottomSheetStyle">@style/AppBarBottomSheetStyleLight</item>
+    </style>
+
+    <style name="AppBarBottomSheetDialogDark" parent="Theme.Design.BottomSheetDialog">
+        <item name="enforceTextAppearance">true</item>
+        <item name="enforceMaterialTheme">false</item>
+        <item name="itemIconSize">@dimen/app_bottom_navigation_icon_size</item>
+        <item name="bottomSheetStyle">@style/AppBarBottomSheetStyleDark</item>
+    </style>
+</resources>

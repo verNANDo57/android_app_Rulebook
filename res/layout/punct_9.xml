@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/punctuationButton8_container"
+    android:orientation="vertical">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/punct_9"
+        android:id="@+id/punctuationButton9"/>
+
+    <LinearLayout
+        android:id="@+id/punctuationButton9_sub_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/activity_space_height"/>
+
+        <Button
+            android:id="@+id/punct9mainButton1"
+            style="@style/RulebookButtonEveryThemeTop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/punct_9_30" />
+
+        <Button
+            android:id="@+id/punct9mainButton2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/punct_9_31" />
+
+        <Button
+            android:id="@+id/punct9mainButton3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/punct_9_32"
+            style="@style/RulebookButtonEveryThemeBottom"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/activity_space_height"/>
+
+    </LinearLayout>
+</LinearLayout>

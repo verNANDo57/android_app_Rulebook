@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<dimen name="action_title_textsize">20dp</dimen>
+	<dimen name="action_subtitle_textsize">10dp</dimen>
+
+	<dimen name="appbar_title_textsize_small">12.5dp</dimen>
+	<dimen name="appbar_title_textsize_large">20dp</dimen>
+
+	<dimen name="action_headlines_textsize">20dp</dimen>
+	<dimen name="action_listview_textsize">13dp</dimen>
+	<dimen name="action_smallbutton_textsize">13dp</dimen>
+
+	<dimen name="activity_vertical_margin">10dp</dimen>
+	<dimen name="activity_horizontal_margin">10dp</dimen>
+
+	<dimen name="activity_space_height">10dp</dimen>
+	<dimen name="activity_space_height_big">20dp</dimen>
+
+	<dimen name="bottomappbar_fabOffsetEndMode">60dp</dimen>
+	<dimen name="bottomappbar_fab_bottom_margin">16dp</dimen>
+	<dimen name="bottomappbar_fab_cradle_margin">5dp</dimen>
+	<dimen name="bottomappbar_fab_cradle_rounded_corner_radius">8dp</dimen>
+	<dimen name="bottomappbar_fab_cradle_vertical_offset">0dp</dimen>
+	<dimen name="bottomappbar_height">56dp</dimen>
+	<dimen name="bottomappbar_elevation">8dp</dimen>
+
+	<dimen name="app_collapsing_toolbar_height">240dp</dimen>
+	<dimen name="app_collapsing_toolbar_userspace_height">120dp</dimen>
+
+	<dimen name="app_toolbar_height">90dp</dimen>
+	<dimen name="app_toolbar_height_in_scrollableactivity">60dp</dimen>
+	<dimen name="app_toolbar_margin">10dp</dimen>
+
+	<dimen name="app_bottom_navigation_icon_size">24dp</dimen>
+	<dimen name="app_bottom_navigation_elevation">8dp</dimen>
+
+	<dimen name="app_bottomsheetdialog_healine_size">30dp</dimen>
+	<dimen name="app_bottomsheetdialog_marginEndOrRight">5dp</dimen>
+	<dimen name="app_bottomsheetdialog_marginStartOrLeft">5dp</dimen>
+	<dimen name="app_bottomsheetdialog_marginBottom">0dp</dimen>
+	<dimen name="app_bottomsheetdialog_marginTop">0dp</dimen>
+	<dimen name="app_bottomsheetdialog_headline_marginTop">10dp</dimen>
+	<dimen name="app_bottomsheetdialog_constraintHorizontal_bias">0.0</dimen>
+
+	<dimen name="app_everycardview_margintop">8dp</dimen>
+
+	<dimen name="app_design_snackbar_min_width">-1px</dimen>
+	<dimen name="app_design_snackbar_max_width">-1px</dimen>
+	<dimen name="app_design_snackbar_elevation">6dp</dimen>
+	<dimen name="app_design_snackbar_background_corner_radius">0dp</dimen>
+	<dimen name="app_design_snackbar_padding_horizontal">12dp</dimen>
+	<dimen name="app_design_snackbar_extra_spacing_horizontal">0dp</dimen>
+	<dimen name="app_design_snackbar_action_inline_max_width">128dp</dimen>
+	<dimen name="app_design_snackbar_text_size">14sp</dimen>
+	<dimen name="app_design_snackbar_padding_vertical">14dp</dimen>
+	<dimen name="app_design_snackbar_padding_vertical_2lines">24dp</dimen>
+	<item name="app_design_snackbar_action_text_color_alpha" format="float" type="dimen">1.0</item>
+	<dimen name="app_mtrl_snackbar_background_corner_radius">4dp</dimen>
+	<dimen name="app_mtrl_snackbar_margin">8dp</dimen>
+	<item name="app_snackbar_background_overlay_color_alpha" format="float" type="dimen">0.8</item>
+	<item name="app_snackbar_action_text_color_alpha" format="float" type="dimen">0.5</item>
+
+	<dimen name="app_choose_your_destiny_menu_button_width_in_layout">290dp</dimen>
+	<dimen name="app_choose_your_destiny_menu_button_height_in_layout">100dp</dimen>
+	<dimen name="app_choose_your_destiny_menu_button_text_size_in_layout">30dp</dimen>
+
+	<dimen name="app_rating_smile_height_layout">400dp</dimen>
+	<dimen name="app_rating_smile_width_layout">370dp</dimen>
+	<dimen name="app_rating_bar_marginTop">70dp</dimen>
+	<dimen name="app_rating_page_review_box_marginTop">24dp</dimen>
+	<dimen name="app_rating_page_review_box_marginEnd">24dp</dimen>
+	<dimen name="app_rating_page_review_box_marginRight">24dp</dimen>
+	<dimen name="app_rating_page_review_box_marginBottom">24dp</dimen>
+	<dimen name="app_rating_page_review_box_marginStart">24dp</dimen>
+	<dimen name="app_rating_page_review_box_marginLeft">24dp</dimen>
+	<dimen name="app_rating_page_textview_marginTop">40dp</dimen>
+	<dimen name="app_rating_page_textview_textsize">16sp</dimen>
+	<dimen name="app_rating_page_edittext_padding">12dp</dimen>
+
+	<dimen name="app_searchword_edittext_padding">12dp</dimen>
+	<dimen name="app_searchword_edittext_margin">16dp</dimen>
+
+	<dimen name="app_default_button_elevation">4dp</dimen>
+	<dimen name="app_default_button_margin">12dp</dimen>
+	<dimen name="app_buttonshape_default_topLeftRadius_value">25dp</dimen>
+	<dimen name="app_buttonshape_default_topRightRadius_value">25dp</dimen>
+	<dimen name="app_buttonshape_default_bottomLeftRadius_value">25dp</dimen>
+	<dimen name="app_buttonshape_default_bottomRightRadius_value">25dp</dimen>
+	<dimen name="app_buttonshape_default_stroke_value">2dp</dimen>
+	<dimen name="app_destinybuttonshape_default_stroke_value">5dp</dimen>
+
+	<dimen name="app_menu_shape_default_stroke_value">6dp</dimen>
+
+	<dimen name="app_examplesshape_default_height_value">80dp</dimen>
+	<dimen name="app_examplesshape_default_topLeftRadius_value">10dp</dimen>
+	<dimen name="app_examplesshape_default_topRightRadius_value">10dp</dimen>
+	<dimen name="app_examplesshape_default_bottomLeftRadius_value">10dp</dimen>
+	<dimen name="app_examplesshape_default_bottomRightRadius_value">10dp</dimen>
+	<dimen name="app_examplesshape_default_stroke_value">2dp</dimen>
+
+	<dimen name="app_bottomsheetdialogshape_default_topLeftRadius_value">16dp</dimen>
+	<dimen name="app_bottomsheetdialogshape_default_topRightRadius_value">16dp</dimen>
+	<dimen name="app_bottomsheetdialogshape_default_bottomLeftRadius_value">0dp</dimen>
+	<dimen name="app_bottomsheetdialogshape_default_bottomRightRadius_value">0dp</dimen>
+	<dimen name="app_bottomsheetdialogshape_default_paddingLeft_value">0dp</dimen>
+	<dimen name="app_bottomsheetdialogshape_default_paddingRight_value">0dp</dimen>
+	<dimen name="app_bottomsheetdialogshape_default_paddingTop_value">0dp</dimen>
+	<dimen name="app_bottomsheetdialogshape_default_paddingBottom_value">0dp</dimen>
+
+	<dimen name="customthemeengine_theme_item_width">140dp</dimen>
+
+	<dimen name="cpv_required_padding">6dp</dimen>
+	<dimen name="cpv_dialog_preview_width">66dp</dimen>
+	<dimen name="cpv_dialog_preview_height">34dp</dimen>
+	<dimen name="cpv_column_width">58dp</dimen>
+	<dimen name="cpv_item_size">50dp</dimen>
+	<dimen name="cpv_item_horizontal_padding">8dp</dimen>
+	<dimen name="cpv_color_preference_normal">28dp</dimen>
+	<dimen name="cpv_color_preference_large">40dp</dimen>
+
+	<dimen name="app_pagertabstrip_height">40dp</dimen>
+
+	<dimen name="app_logo_in_main_height_in_layout">110dp</dimen>
+	<dimen name="app_logo_in_main_width_in_layout">200dp</dimen>
+
+	<dimen name="default_text_size">16sp</dimen>
+	<dimen name="default_corner_radius">30dp</dimen>
+	<dimen name="default_stroke_width">3dp</dimen>
+
+	<!--These two are only used when an icon is applied to the StyleableToast. previous 22 -->
+	<dimen name="toast_horizontal_padding_icon_side">20dp</dimen>
+	<dimen name="toast_horizontal_padding_empty_side">25dp</dimen>
+
+	<dimen name="toast_horizontal_padding">25dp</dimen>
+	<dimen name="toast_vertical_padding">11.2dp</dimen>
+
+	<dimen name="drawable_padding">8dp</dimen>
+	<dimen name="icon_size">19dp</dimen>
+
+	<dimen name="fab_margin">16dp</dimen>
+	<dimen name="previous_fab_marginRightOrEnd">5dp</dimen>
+	<dimen name="text_margin">16dp</dimen>
+
+	<dimen name="app_actionbar_shape_stroke_width">5dp</dimen>
+	<dimen name="app_bottomsheetdialog_shape_stroke_width">5dp</dimen>
+	<dimen name="app_bar_icon_width_height">60dp</dimen>
+
+	<dimen name="title_text_size">20dp</dimen>
+</resources>

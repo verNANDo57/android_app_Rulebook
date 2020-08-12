@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/app_scrollableactivity_everywhere_toolbarlayout_search_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:visibility="gone">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/app_wordsearch_edittext"
+        android:hint="@string/searchword_view_hint"
+        android:background="@drawable/app_write_review_edittext_shape"
+        android:inputType="textLongMessage"
+        android:layout_marginStart="@dimen/app_searchword_edittext_margin"
+        android:layout_marginEnd="@dimen/app_searchword_edittext_margin"
+        android:layout_marginBottom="@dimen/app_searchword_edittext_margin"
+        android:padding="@dimen/app_searchword_edittext_padding"
+        android:singleLine="true"/>
+
+    <Button
+        android:id="@+id/searchword_button"
+        android:layout_below="@id/app_wordsearch_edittext"
+        android:text="@string/search_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/app_searchword_edittext_margin"
+        android:layout_marginEnd="@dimen/app_searchword_edittext_margin"/>
+</RelativeLayout>

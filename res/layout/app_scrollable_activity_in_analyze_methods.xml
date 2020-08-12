@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.verNANDo57.rulebook_educational.rules.mainrules.AppMainRulesScrollableActivityInMainRules">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar_in_analyzemethods"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_collapsing_toolbar_height"
+        android:fitsSystemWindows="true"
+        android:background="@drawable/app_collapsing_toolbar"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/toolbar_layout_in_analyzemethods"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:toolbarId="@+id/toolbar_in_analyzemethods">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/app_toolbar_height_in_scrollableactivity"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_marginEnd="@dimen/app_actionbar_shape_stroke_width"
+                android:layout_marginStart="@dimen/app_actionbar_shape_stroke_width"
+                android:layout_marginBottom="@dimen/app_actionbar_shape_stroke_width">
+
+                <RelativeLayout
+                    android:id="@+id/app_scrollableactivity_in_analyzemethods_toolbarlayout_container"
+                    android:layout_gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/app_actionbar_shape_stroke_width"
+                    android:layout_marginStart="@dimen/app_actionbar_shape_stroke_width">
+
+                    <ImageView
+                        android:id="@+id/app_scrollableactivity_in_analyzemethods_icon"
+                        android:layout_width="@dimen/app_bar_icon_width_height"
+                        android:layout_height="@dimen/app_bar_icon_width_height"
+                        android:layout_centerHorizontal="true"
+                        android:contentDescription="@string/app_name_mainrules"
+                        android:background="@drawable/ic_search_black"
+                        android:backgroundTint="@color/coloraccent" />
+
+                    <LinearLayout
+                        android:id="@+id/app_scrollableactivity_in_analyzemethods_titleandsubtitle_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/app_scrollableactivity_in_analyzemethods_icon"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/app_scrollableactivity_in_analyzemethods_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/app_loading"
+                            style="@style/HeadlinesEveryTheme"
+                            android:textColor="@color/text_normal"
+                            android:gravity="center" />
+
+                        <TextView
+                            android:id="@+id/app_scrollableactivity_in_analyzemethods_subtitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/app_loading"
+                            android:gravity="center"
+                            android:textColor="@color/text_normal"
+                            style="@style/TextImportantEveryTheme"/>
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <include layout="@layout/app_searchword_in_scrollable_activity_layout" />
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar_in_analyzemethods"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/app_toolbar_height_in_scrollableactivity"
+                android:background="@drawable/app_toolbar_in_scrollableactivity"
+                app:navigationIcon="@drawable/ic_view_list_black"
+                app:layout_collapseMode="pin" />
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <include layout="@layout/app_scrollable_activity_content_everywhere"/>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

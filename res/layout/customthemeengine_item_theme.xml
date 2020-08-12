@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    android:padding="5.0dip"
+    android:clipChildren="false"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="0.0dip"
+    app:cardElevation="6.0dip"
+    app:cardPreventCornerOverlap="true"
+    app:cardUseCompatPadding="false"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+  <RelativeLayout
+      android:descendantFocusability="blocksDescendants"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content">
+    <FrameLayout
+        android:enabled="false"
+        android:id="@+id/preview"
+        android:layout_width="fill_parent"
+        android:layout_height="200.0dip">
+      <androidx.coordinatorlayout.widget.CoordinatorLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:fitsSystemWindows="true">
+        <TextView
+            android:textStyle="bold"
+            android:gravity="center"
+            android:id="@+id/text_title"
+            android:focusable="false"
+            android:clickable="false"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="?actionBarSize"
+            android:text="@string/app_themepickerpreviewtitle"
+            android:textAllCaps="true"
+            style="@style/ActionTitleTextStyle" />
+
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:layout_gravity="bottom"
+            android:id="@+id/bar_in_theme_preview"
+            android:focusable="false"
+            android:clickable="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:fabAlignmentMode="center"
+            android:fitsSystemWindows="true"/>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_in_theme_preview"
+            android:focusable="false"
+            android:clickable="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/ic_home_black"
+            app:layout_anchor="@id/bar_in_theme_preview" />
+      </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </FrameLayout>
+    <TextView
+        android:textAppearance="@style/TextAppearance.AppCompat.Small"
+        android:textColor="@android:color/white"
+        android:gravity="center_vertical"
+        android:id="@id/title"
+        android:background="@color/customthemeengine_theme_title_bg_color"
+        android:paddingLeft="16.0dip"
+        android:paddingRight="16.0dip"
+        android:layout_width="fill_parent"
+        android:layout_height="36.0dip"
+        android:layout_below="@id/preview" />
+  </RelativeLayout>
+</androidx.cardview.widget.CardView>

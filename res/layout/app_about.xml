@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/about_scrollview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <TextView
+            android:id="@+id/app_about_title"
+            style="@style/ActionTitleTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:minHeight="?actionBarSize"
+            android:text="@string/about_actionbar"
+            android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title" />
+
+        <RelativeLayout
+            android:id="@+id/appaboutRelativeLayout1"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:layout_below="@id/app_about_title"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/about_preview"
+                android:layout_width="200dp"
+                android:layout_height="110dp"
+                android:background="@drawable/app_book_colored" />
+
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/appaboutView2"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/activity_space_height"
+            android:layout_below="@id/appaboutRelativeLayout1" />
+
+        <RelativeLayout
+            android:id="@+id/appaboutRelativeLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_below="@id/appaboutView2"
+            android:gravity="center">
+
+            <ImageButton
+                android:id="@+id/buttongit"
+                style="@style/AppImageButtonStyleEveryTheme"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:background="@drawable/github_share_icon" />
+
+            <View
+                android:id="@+id/appaboutView1"
+                android:layout_width="10dp"
+                android:layout_height="60dp"
+                android:layout_toEndOf="@id/buttongit" />
+
+            <ImageButton
+                android:id="@+id/buttonvk"
+                style="@style/AppImageButtonStyleEveryTheme"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_toEndOf="@id/appaboutView1"
+                android:background="@drawable/vk_share_icon" />
+
+            <View
+                android:id="@+id/appaboutView4"
+                android:layout_width="10dp"
+                android:layout_height="60dp"
+                android:layout_toEndOf="@id/buttonvk" />
+
+            <ImageButton
+                android:id="@+id/buttontg"
+                style="@style/AppImageButtonStyleEveryTheme"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_toEndOf="@id/appaboutView4"
+                android:background="@drawable/telegram_share_icon" />
+
+            <View
+                android:id="@+id/appaboutView5"
+                android:layout_width="10dp"
+                android:layout_height="60dp"
+                android:layout_toEndOf="@id/buttontg" />
+
+            <ImageButton
+                android:id="@+id/buttonqiwi"
+                style="@style/AppImageButtonStyleEveryTheme"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_toEndOf="@id/appaboutView5"
+                android:background="@drawable/qiwi_share_icon" />
+
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/appaboutView3"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/activity_space_height"
+            android:layout_below="@id/appaboutRelativeLayout2" />
+
+        <TextView
+            android:id="@+id/appaboutTextView1"
+            style="@style/HeadlinesEveryTheme"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/appaboutView3"
+            android:gravity="center"
+            android:text="@string/app_about_name" />
+
+        <TextView
+            android:id="@+id/appaboutTextView2"
+            style="@style/TextImportantEveryTheme"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/appaboutTextView1"
+            android:gravity="center"
+            android:text="@string/app_about_extended" />
+
+        <Button
+            android:id="@+id/review_page"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/appaboutTextView2"
+            android:layout_margin="@dimen/app_default_button_margin"
+            android:text="@string/rate_us" />
+
+        <Button
+            android:id="@+id/app_status_page"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/review_page"
+            android:layout_marginStart="@dimen/app_default_button_margin"
+            android:layout_marginEnd="@dimen/app_default_button_margin"
+            android:text="@string/app_status_page" />
+
+    </RelativeLayout>
+
+</ScrollView>

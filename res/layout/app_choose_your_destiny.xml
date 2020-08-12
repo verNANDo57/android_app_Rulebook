@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.verNANDo57.rulebook_educational.AppChooseYourDestiny"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_in_chooseyourdestiny_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_toolbar_height"
+        android:background="@drawable/app_toolbar"
+        android:layout_margin="@dimen/app_toolbar_margin"
+        app:navigationIcon="@drawable/ic_view_list_black"
+        app:title="@string/rules" />
+
+    <ScrollView
+        android:id="@+id/choose_destiny_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:gravity="start"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:id="@+id/main_rules"
+                        style="@style/RulebookChooseDestinyButtonLeftToRight"
+                        android:text="@string/main_rules"
+                        android:layout_width="@dimen/app_choose_your_destiny_menu_button_width_in_layout"
+                        android:layout_height="@dimen/app_choose_your_destiny_menu_button_height_in_layout"
+                        android:paddingBottom="5dp" />
+
+                </RelativeLayout>
+
+                <Space
+                    android:id="@+id/destiny_space1"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/activity_space_height"/>
+
+                <RelativeLayout
+                    android:gravity="end"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                        <Button
+                            android:id="@+id/lexicon_rules"
+                            style="@style/RulebookChooseDestinyButtonRightToLeft"
+                            android:text="@string/lexicon_rules"
+                            android:layout_width="@dimen/app_choose_your_destiny_menu_button_width_in_layout"
+                            android:layout_height="@dimen/app_choose_your_destiny_menu_button_height_in_layout"
+                            android:paddingTop="5dp"
+                            android:paddingBottom="5dp" />
+
+                </RelativeLayout>
+
+                <Space
+                    android:id="@+id/destiny_space2"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/activity_space_height"/>
+
+                <RelativeLayout
+                    android:gravity="start"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                        <Button
+                            android:id="@+id/schemes_and_tables"
+                            style="@style/RulebookChooseDestinyButtonLeftToRight"
+                            android:text="@string/tables_and_schemes_rules"
+                            android:layout_width="@dimen/app_choose_your_destiny_menu_button_width_in_layout"
+                            android:layout_height="@dimen/app_choose_your_destiny_menu_button_height_in_layout"
+                            android:paddingTop="5dp"
+                            android:paddingBottom="5dp" />
+
+                </RelativeLayout>
+
+                <Space
+                    android:id="@+id/destiny_space3"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/activity_space_height"/>
+
+                <RelativeLayout
+                    android:gravity="end"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:id="@+id/analyze_methods"
+                        style="@style/RulebookChooseDestinyButtonRightToLeft"
+                        android:text="@string/analyze_methods"
+                        android:layout_width="@dimen/app_choose_your_destiny_menu_button_width_in_layout"
+                        android:layout_height="@dimen/app_choose_your_destiny_menu_button_height_in_layout"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp" />
+
+                </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group>
+        <item
+            android:id="@+id/bottomsheetdialog_betweenlessons_first"
+            android:icon="@drawable/ic_view_list_black"
+            android:title="@string/bottomsheetdialog_betweenlessons_first" />
+
+        <item
+            android:id="@+id/bottomsheetdialog_betweenlessons_second"
+            android:icon="@drawable/ic_view_list_black"
+            android:title="@string/bottomsheetdialog_betweenlessons_second" />
+
+        <item
+            android:id="@+id/bottomsheetdialog_betweenlessons_third"
+            android:icon="@drawable/ic_view_list_black"
+            android:title="@string/bottomsheetdialog_betweenlessons_third" />
+
+        <item
+            android:id="@+id/bottomsheetdialog_betweenlessons_fourth"
+            android:icon="@drawable/ic_view_list_black"
+            android:title="@string/bottomsheetdialog_betweenlessons_fourth" />
+    </group>
+</menu>

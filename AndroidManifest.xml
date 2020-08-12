@@ -1,0 +1,112 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+	package="com.verNANDo57.rulebook_educational.for_pills">
+
+	<!-- <uses-permission android:name="android.permission.INTERNET" /> -->
+	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:name="com.verNANDo57.rulebook_educational.AppRulebookClass"
+        android:theme="@style/AppThemeRulebookLight"
+		android:icon="@drawable/ic_launcher" 
+		android:roundIcon="@drawable/ic_launcher_round"
+		android:fullBackupContent="true"
+		android:supportsRtl="true">
+		<activity
+            android:name="com.verNANDo57.rulebook_educational.StrangeScreenActivity"
+            android:label="@string/app_name"
+	        android:configChanges="keyboard|keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout|navigation">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+			<meta-data
+				android:name="android.app.shortcuts"
+				android:resource="@xml/shortcuts" />
+		</activity>
+	<!-- Main  -->
+    <activity
+            android:name="com.verNANDo57.rulebook_educational.MainActivity"
+            android:label="@string/app_name_mainactivity"
+	     	android:configChanges="keyboard|keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout|navigation" />
+
+		<activity
+			android:name="com.verNANDo57.rulebook_educational.AppChooseYourDestiny"
+			android:label="@string/app_name_chooseyourdestiny"
+			android:configChanges="keyboard|keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout|navigation"/>
+
+		<activity
+			android:name="com.verNANDo57.rulebook_educational.rules.mainrules.AppMainRulesActivity"
+			android:label="@string/app_name_mainrules"
+			android:configChanges="keyboard|keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout|navigation" />
+
+		<activity
+			android:name="com.verNANDo57.rulebook_educational.rules.AppRulesInSchemesAndTablesActivity"
+			android:label="@string/app_name_schemesandtables"
+			android:configChanges="keyboard|keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout|navigation" />
+
+		<activity
+			android:name="com.verNANDo57.rulebook_educational.rules.AppLexiconActivity"
+			android:label="@string/app_name_lexicon"
+			android:configChanges="keyboard|keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout|navigation" />
+
+		<activity
+			android:name="com.verNANDo57.rulebook_educational.rules.analyze_methods.AppAnalyzeMethods"
+			android:label="@string/app_name_analyze_methods"
+			android:configChanges="keyboard|keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout|navigation" />
+		
+		<activity
+			android:name="com.verNANDo57.rulebook_educational.AppAboutApplicationActivity"
+			android:label="@string/app_name_credits"
+			android:configChanges="keyboard|keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout|navigation"/>
+
+		<activity
+			android:name="com.verNANDo57.rulebook_educational.rules.mainrules.AppMainRulesScrollableActivityInMainRules"
+			android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize" />
+
+        <activity
+			android:name="com.verNANDo57.rulebook_educational.rules.analyze_methods.AppAnalyzeMethodsScrollableActivity"
+			android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize" />
+		<!-- EndOfMain  -->
+	
+	<!--logging-->
+		<activity
+			android:name="com.verNANDo57.rulebook_educational.AppRulebookLiveLoggingActivity"
+			android:label="@string/app_name_logging"
+			android:windowActionBar="true"
+			android:windowNoTitle="false"
+			android:configChanges="keyboard|keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout|navigation"/>
+	<!--logging-->
+	
+<!-- SearchInterface -->
+
+		<activity
+			android:name="com.verNANDo57.rulebook_educational.AppRatingAgressiveActivity"
+			android:label="@string/app_name_rating"
+			android:configChanges="keyboard|keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout|navigation" />
+
+		<activity
+			android:name="com.verNANDo57.rulebook_educational.AppStatusActivity"
+			android:label="@string/app_name_status"
+			android:configChanges="keyboard|keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout|navigation">
+		</activity>
+
+		<activity
+			android:name="com.verNANDo57.rulebook_educational.preferences.AppSettingsActivity"
+			android:label="@string/app_name_settings"
+			android:configChanges="keyboard|keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout|navigation" />
+
+		<activity
+			android:name="com.verNANDo57.rulebook_educational.customthemeengine.prefs.CustomThemeEngineThemePickerActivity"
+			android:label="@string/label_theme_picker"
+			android:configChanges="keyboard|keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout|navigation"/>
+
+		<activity
+			android:name="com.verNANDo57.rulebook_educational.customthemeengine.prefs.CustomThemeEngineSettingsActivity"
+			android:label="@string/label_theme_picker"
+			android:configChanges="keyboard|keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout|navigation"/>
+
+	</application>
+</manifest>

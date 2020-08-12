@@ -1,0 +1,19 @@
+<menu
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layoutDirection="rtl"
+    android:layout_gravity="start">
+    <item
+        android:id="@+id/debugging_mode"
+        android:icon="@drawable/ic_debug_black"
+        android:title="@string/app_launch_debug"
+        app:showAsAction="ifRoom">
+    </item>
+
+    <item
+        android:id="@+id/status_details"
+        android:icon="@drawable/ic_about_outline_black"
+        android:title="@string/app_status_details_headline"
+        app:showAsAction="ifRoom">
+    </item>
+</menu>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<dimen name="app_choose_your_destiny_menu_button_width_in_layout">500dp</dimen>
+	<dimen name="app_choose_your_destiny_menu_button_height_in_layout">160dp</dimen>
+	<dimen name="app_choose_your_destiny_menu_button_text_size_in_layout">40dp</dimen>
+
+	<dimen name="app_rating_smile_height_layout">600dp</dimen>
+	<dimen name="app_rating_smile_width_layout">500dp</dimen>
+</resources>

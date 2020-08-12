@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+  <androidx.preference.PreferenceCategory
+      android:key="customthemeengine_preference_category"
+      android:title="@string/pref_category_appearance">
+
+    <androidx.preference.Preference
+        android:icon="@drawable/app_themeengine_icon"
+        android:key="pref_theme_picker"
+        android:summary="@string/pref_theme_summary"
+        android:title="@string/pref_theme_title" />
+
+    <com.verNANDo57.rulebook_educational.colorpicker.ColorPreferenceCompat
+        android:defaultValue="@color/app_rulebook_theme"
+        android:icon="@drawable/app_colorpicker_icon"
+        android:key="pref_color_primary"
+        android:summary="@string/pref_primary_color_summary"
+        android:title="@string/pref_primary_color_title"
+        app:cpv_dialogTitle="@string/pref_primary_color_title" />
+
+    <com.verNANDo57.rulebook_educational.colorpicker.ColorPreferenceCompat
+        android:defaultValue="@color/coloraccent_reference"
+        android:icon="@drawable/app_colorpicker_icon"
+        android:key="pref_color_accent"
+        android:summary="@string/pref_accent_color_summary"
+        android:title="@string/pref_accent_color_title"
+        app:cpv_dialogTitle="@string/pref_accent_color_title" />
+
+    <com.verNANDo57.rulebook_educational.colorpicker.ColorPreferenceCompat
+        android:defaultValue="@color/custom_background_light"
+        android:icon="@drawable/app_colorpicker_icon"
+        android:key="pref_color_background"
+        android:summary="@string/pref_background_color_summary"
+        android:title="@string/pref_background_color_title"
+        app:cpv_colorPresets="@array/customthemeengine_background_color_presets"
+        app:cpv_dialogTitle="@string/pref_background_color_title"
+        app:cpv_showColorShades="false"
+        tools:ignore="PrivateResource" />
+
+    </androidx.preference.PreferenceCategory>
+
+    <androidx.preference.PreferenceCategory
+        android:title="@string/pref_category_appearance_bottomappbar">
+
+      <com.verNANDo57.rulebook_educational.colorpicker.ColorPreferenceCompat
+          android:defaultValue="@color/custom_bottomappbar_item_color_black"
+          android:icon="@drawable/app_colorpicker_icon"
+          android:key="pref_bottomappbar_item_color"
+          android:summary="@string/pref_bottomappbar_item_color_summary"
+          android:title="@string/pref_bottomappbar_item_color_title"
+          app:cpv_colorPresets="@array/customthemeengine_bottomappbar_item_color_presets"
+          app:cpv_dialogTitle="@string/pref_bottomappbar_item_color_title"
+          app:cpv_showColorShades="false"
+          tools:ignore="PrivateResource" />
+
+    </androidx.preference.PreferenceCategory>
+
+  <androidx.preference.PreferenceCategory
+      android:title="@string/pref_category_appearance_toast">
+
+    <com.verNANDo57.rulebook_educational.colorpicker.ColorPreferenceCompat
+        android:defaultValue="@color/custom_toast_background_color_white"
+        android:icon="@drawable/app_colorpicker_icon"
+        android:key="pref_toast_background_color"
+        android:summary="@string/pref_toast_background_color_summary"
+        android:title="@string/pref_toast_background_color_title"
+        app:cpv_colorPresets="@array/customthemeengine_toast_background_color_presets"
+        app:cpv_dialogTitle="@string/pref_toast_background_color_title"
+        app:cpv_showColorShades="false"
+        tools:ignore="PrivateResource" />
+
+    <com.verNANDo57.rulebook_educational.colorpicker.ColorPreferenceCompat
+        android:defaultValue="@color/coloraccent_reference"
+        android:icon="@drawable/app_colorpicker_icon"
+        android:key="pref_toast_accent_color"
+        android:summary="@string/pref_toast_accent_color_summary"
+        android:title="@string/pref_toast_accent_color_title"
+        app:cpv_dialogTitle="@string/pref_toast_accent_color_title" />
+
+  </androidx.preference.PreferenceCategory>
+
+  <androidx.preference.PreferenceCategory
+      android:title="@string/pref_category_appearance_button">
+
+    <com.verNANDo57.rulebook_educational.colorpicker.ColorPreferenceCompat
+        android:defaultValue="@color/coloraccent_reference"
+        android:icon="@drawable/app_colorpicker_icon"
+        android:key="pref_button_stroke_color"
+        android:summary="@string/pref_button_stroke_color_summary"
+        android:title="@string/pref_button_stroke_color_title"
+        app:cpv_dialogTitle="@string/pref_button_stroke_color_title" />
+
+  </androidx.preference.PreferenceCategory>
+
+  <androidx.preference.PreferenceCategory
+      android:title="@string/pref_category_appearance_bottomsheetdialog">
+
+    <com.verNANDo57.rulebook_educational.colorpicker.ColorPreferenceCompat
+        android:defaultValue="@color/coloraccent_reference"
+        android:icon="@drawable/app_colorpicker_icon"
+        android:key="pref_bottomsheetdialog_accent"
+        android:summary="@string/pref_bottomsheetdialog_accent_summary"
+        android:title="@string/pref_bottomsheetdialog_accent_title"
+        app:cpv_dialogTitle="@string/pref_bottomsheetdialog_accent_title" />
+
+    <com.verNANDo57.rulebook_educational.colorpicker.ColorPreferenceCompat
+        android:defaultValue="@color/app_rulebook_theme"
+        android:icon="@drawable/app_colorpicker_icon"
+        android:key="pref_bottomsheetdialog_primary"
+        android:summary="@string/pref_bottomsheetdialog_primary_summary"
+        android:title="@string/pref_bottomsheetdialog_primary_title"
+        app:cpv_dialogTitle="@string/pref_bottomsheetdialog_primary_title" />
+
+    <com.verNANDo57.rulebook_educational.colorpicker.ColorPreferenceCompat
+        android:defaultValue="@color/custom_bottomsheetdialog_background_color_white"
+        android:icon="@drawable/app_colorpicker_icon"
+        android:key="pref_bottomsheetdialog_background"
+        android:title="@string/pref_bottomsheetdialog_background_title"
+        app:cpv_colorPresets="@array/customthemeengine_bottomsheetdialog_background_color_presets"
+        app:cpv_dialogTitle="@string/pref_bottomsheetdialog_background_title"
+        app:cpv_showColorShades="false"
+        tools:ignore="PrivateResource" />
+
+  </androidx.preference.PreferenceCategory>
+
+</androidx.preference.PreferenceScreen>

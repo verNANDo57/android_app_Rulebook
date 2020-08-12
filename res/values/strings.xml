@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Rulebook</string>
+    <string name="app_name_mainactivity">Rulebook: Меню</string>
+    <string name="app_name_credits">Rulebook: О Приложении</string>
+    <string name="app_name_chooseyourdestiny">Rulebook: Правила</string>
+    <string name="app_name_mainrules">Rulebook: Основы</string>
+    <string name="app_name_schemesandtables">Rulebook: В схемах и таблицах</string>
+    <string name="app_name_lexicon">Rulebook: Лексика</string>
+    <string name="app_name_rating">Rulebook: Отзыв</string>
+    <string name="app_name_logging">Rulebook: Логгирование</string>
+    <string name="app_name_search">Rulebook: Поиск</string>
+    <string name="app_name_settings">Rulebook: Настройки</string>
+    <string name="app_name_status">Rulebook: Страница состояния</string>
+    <string name="app_name_analyze_methods">Rulebook: Виды разборов</string>
+
+<!-- PLS do not translate strings below -->
+    <string name="app_dev_email" translatable="false">silvenation@gmail.com</string>
+    <string name="app_dev_part1" translatable="false">Оценка пользователя--</string>
+    <string name="app_dev_part2" translatable="false">/5.0 звёзд</string>
+
+    <string name="app_pixels" translatable="false">pixels</string>
+    <string name="app_inches" translatable="false">inches</string>
+    <string name="app_dpi" translatable="false">dpi</string>
+
+    <string-array name="locales">
+        <item>Русский</item>
+        <item>English</item>
+    </string-array>
+    <string-array name="locale_values">
+        <item>Ru</item>
+        <item>En</item>
+    </string-array>
+<!-- PLS do not translate strings above -->
+
+    <string name="review_device_name">Устройство:</string>
+    <string name="review_device_manufacter">Изготовитель:</string>
+    <string name="review_device_model">Модель:</string>
+    <string name="review_oc_name">Наименование версии ОС:</string>
+    <string name="review_device_sdk_version">Версия SDK вашего устройства:</string>
+    <string name="review_device_hardware">Железо:</string>
+    <string name="review_device_current_dpi_value">DPI:</string>
+    <string name="review_device_brand">Бренд:</string>
+    <string name="review_device_fingerprint">Биометрия:</string>
+    <string name="review_device_serial">Серийный номер:</string>
+    <string name="review_device_android_version">Версия Андроида:</string>
+    <string name="review_device_screen_resolution">Разрешение экрана:</string>
+
+    <string name="app_status_details_headline">Дополнительная информация</string>
+    <string name="app_status_value_null">пусто</string>
+    <string name="app_status_reset_all">Сбросить</string>
+    <string name="app_status_voicesearch_boolean_state">Голосовой ввод:</string>
+    <string name="app_status_anim_boolean_state">Анимации:</string>
+    <string name="app_status_page_boolean_state">Страница состояния:</string>
+    <string name="app_statusbar_boolean_state">Строка состояния:</string>
+    <string name="app_autohidebottomappbar_boolean_state">Контроль всплывающей панели навигации:</string>
+
+    <string name="app_status_boolean_state_yes">ДА</string>
+    <string name="app_status_boolean_state_no">НЕT</string>
+
+    <string name="app_choose_email_client">Выберите почтовый клиент</string>
+
+    <string name="app_status_page">Страница состояния</string>
+    <string name="app_status_page_headline">Статус</string>
+
+    <string name="app_launch_basics">Основы</string>
+    <string name="app_launch_basics_extended">Орфография и Пунктуация</string>
+    <string name="app_launch_lexicon">Лексика</string>
+    <string name="app_launch_lexicon_extended">Правила лексики</string>
+    <string name="app_launch_debug">Логи</string>
+    <string name="app_launch_debug_extended">Логгирование</string>
+    <string name="app_launch_schemes_and_tables_extended">В схемах и таблицах</string>
+    <string name="app_launch_schemes_and_tables">В таблицах</string>
+    <string name="app_launch_analyze">Разборы</string>
+    <string name="app_launch_analyze_extended">Виды разборов</string>
+    <string name="app_launch_ic_launch_search_rules">Поиск</string>
+    <string name="app_launch_ic_launch_search_rules_extended">Быстрый доступ</string>
+
+    <string name="hello_trigger">Нету смысла пересобирать это apk-файл. Исходный код открыт для любого пользователя.</string>
+
+    <string name="app_themepickerpreviewtitle">Текст</string>
+
+    <string name="voicesearch">Голосовой Ввод</string>
+    <string name="disable_voicesearch">Отключить голосовой ввод</string>
+    <string name="app_themes_extended">Выберите одну из тем или создайте свою</string>
+    <string name="app_themes">Визуальное оформление</string>
+    <string name="app_disable_some_animations">Анимации</string>
+    <string name="app_disable_some_animations_extended">Отключить некоторые анимации (Повышает скорость работы приложения)</string>
+    <string name="app_enable_statusbar">Строка состояния</string>
+    <string name="app_enable_statusbar_extended">Не скрывать строку состояния</string>
+    <string name="app_autohide_bottomappbar">Всплывающая панель навигации</string>
+    <string name="app_autohide_bottomappbar_extended">Автоматически скрывать всплывающую панель навигации (При скроллинге вверх и вниз, соответственно)</string>
+    <string name="app_prefs_warning_extended">После введённых изменений, для корректного отображения интерфейса может потребоваться перезагрузка. Для этого достаточно нажать сюда.</string>
+    <string name="app_prefs_warning">Перезагрузка</string>
+    <string name="app_locale_select">Язык</string>
+    <string name="app_locale_select_extended">Выберите язык</string>
+
+    <string name="app_edittext_is_empty">Напишите что-нибудь</string>
+
+    <string name="rules">Правила</string>
+    <string name="settings">Настройки</string>
+    <string name="about_app">О приложении</string>
+    <string name="app_exit">Выход</string>
+    <string name="app_theme_choose">Тема</string>
+    <string name="app_about_extended">Стабильная версия. Статус: release. Версия: 1.0.0. Сборка: 100.</string>
+    <string name="app_about_name">Словарь - Русский Язык</string>
+    <string name="search_main">Поиск</string>
+    <string name="intent_to_main">Главная</string>
+    <string name="search_actionbar">Поиск</string>
+    <string name="exit_actionbar">Выход</string>
+
+    <string name="rate_us_headline">Отзыв</string>
+    <string name="rate_us">Оцените приложение</string>
+    <string name="write_a_review">Напишите отзыв</string>
+    <string name="send_review_to_developer">Отправить отзыв</string>
+
+    <string name="app_loading">Загрузка…</string>
+    <string name="settings_actionbar">Настройки</string>
+    <string name="about_actionbar">О Приложении</string>
+    <string name="rulebook_main">Словарь</string>
+    <string name="are_you_sure">Уверены?</string>
+    <string name="tap_again_to_exit">Нажмите ещё раз чтобы выйти</string>
+    <string name="tap_three_times">Нажмите ещё три раза</string>
+    <string name="tap_two_times">Нажмите ещё два раза</string>
+    <string name="tap_again">Нажмите ещё один раз</string>
+    <string name="yes_and_reset">Сбросить настройки</string>
+    <string name="accept">Принять</string>
+    <string name="cancel">Отменить</string>
+    <string name="main_page">Главная</string>
+    <string name="need_to_install_google_voice">Необходимо установить Голосовой Поиск Google</string>
+    <string name="we_are_listening_you">Слушаю</string>
+    <string name="accept_and_install">Установить</string>
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
+    <string name="have_read">Прочитал</string>
+    <string name="error_while_reading_a_file">Возникла ошибка при попытке чтения файла</string>
+    <string name="category_pref_interface">Интерфейс</string>
+    <string name="category_pref_functions">Функции</string>
+    <string name="category_pref_others">Другое</string>
+    <string name="search_viewhint">Поисковая строка</string>
+    <string name="searchword_view_hint">Слово</string>
+    <string name="app_next">Далее</string>
+    <string name="choosemode">Выберите режим</string>
+
+    <string name="app_error_while_saving_file">Ошибка при попытке сохранения файла</string>
+
+    <string name="app_save">Сохранить</string>
+    <string name="app_save_in_process">Сохранение…</string>
+    <string name="app_saved">Сохранено</string>
+    <string name="app_saved_already">Файл был сохранён ранее</string>
+
+    <string name="compose_disabled_message">Ярлык недоступен по неизвестной причине.</string>
+    <string name="error_while_reading_theme">Ошибка при попытке чтения темы</string>
+
+    <string name="bottomsheetdialog_betweenactivities_headline">Меню быстрого доступа</string>
+    <string name="bottomsheetdialog_betweenlessons_first">Правила орфографии и пунктуации</string>
+    <string name="bottomsheetdialog_betweenlessons_second">Лексика</string>
+    <string name="bottomsheetdialog_betweenlessons_third">Схемы и таблицы</string>
+    <string name="bottomsheetdialog_betweenlessons_fourth">Виды разборов</string>
+    <string name="bottomsheetdialog_betweenlessons_fifth">Поисковик</string>
+
+    <string name="main_rules">Основные</string>
+    <string name="lexicon_rules">Лексика</string>
+    <string name="tables_and_schemes_rules">Схемы и таблицы</string>
+    <string name="analyze_methods">Виды разборов</string>
+
+    <string name="label_theme_picker">Выберите тему</string>
+
+    <string name="pref_theme_title">Темы</string>
+    <string name="pref_theme_summary">Выберите одну из предустановленных тем</string>
+    <string name="pref_primary_color_title">Основной цвет</string>
+    <string name="pref_primary_color_summary">Покрывает меньшую часть приложения</string>
+    <string name="pref_accent_color_title">Цвет акцента</string>
+    <string name="pref_accent_color_summary">Цвет акцента покрывает основную часть приложения</string>
+    <string name="pref_background_color_title">Фоновой цвет</string>
+    <string name="pref_background_color_summary">Фоновой цвет</string>
+    <string name="pref_bottomappbar_item_color_title">Цвет элементов всплывающей панели навигации</string>
+    <string name="pref_bottomappbar_item_color_summary">Цвет кнопок панели навигации</string>
+    <string name="pref_toast_background_color_title">Фоновой цвет Toast сообщений</string>
+    <string name="pref_toast_background_color_summary">Задаёт цвет фона для Toast сообщений</string>
+    <string name="pref_toast_accent_color_title">Цвет акцента Toast сообщений</string>
+    <string name="pref_toast_accent_color_summary">Цвет акцента покрывает основную часть Toast сообщения</string>
+    <string name="pref_button_stroke_color_title">Цвет кнопок</string>
+    <string name="pref_button_stroke_color_summary">Кнопки покрываются основным цветом</string>
+    <string name="pref_bottomsheetdialog_accent_title">Цвет акцента в меню быстрого доступа</string>
+    <string name="pref_bottomsheetdialog_accent_summary">Цвет акцента покрывает основную часть меню быстрого доступа</string>
+    <string name="pref_bottomsheetdialog_primary_title">Основной цвет в меню быстрого доступа</string>
+    <string name="pref_bottomsheetdialog_primary_summary">Основной цвет покрывает меньшую часть меню быстрого доступа</string>
+    <string name="pref_bottomsheetdialog_background_title">Цвет фона в меню быстрого доступа</string>
+
+    <string name="pref_category_appearance">Внешний вид</string>
+    <string name="pref_category_appearance_bottomappbar">Всплывающая панель навигации</string>
+    <string name="pref_category_appearance_toast">Toast сообщения</string>
+    <string name="pref_category_appearance_button">Кнопки</string>
+    <string name="pref_category_appearance_bottomsheetdialog">Меню быстрого доступа</string>
+
+    <string name="colorpicker_default_title">Выберите цвет</string>
+    <string name="colorpicker_presets">Предустановленные</string>
+    <string name="colorpicker_custom">Кастомные</string>
+    <string name="colorpicker_select">Выбрать</string>
+    <string name="colorpicker_transparency">Прозрачность</string>
+
+    <string name="ortho">Орфография</string>
+    <string name="punct">Пунктуация</string>
+    <string name="catego">Разделы</string>
+    <string name="ortho_1">Правописание гласных в корне слова</string>
+    <string name="ortho_2">Правописание согласных в корне слова</string>
+    <string name="ortho_3">Употребление прописных букв</string>
+    <string name="ortho_4">Разделительные Ъ и Ь</string>
+    <string name="ortho_5">Правописание приставок</string>
+    <string name="ortho_6">Гласные после шипящих и Ц в суффиксах и окончаниях</string>
+    <string name="ortho_7">Правописание имён существительных</string>
+    <string name="ortho_8">Правописание имён прилагательных</string>
+    <string name="ortho_9">Правописание сложных слов</string>
+    <string name="ortho_10">Правописание имён числительных</string>
+    <string name="ortho_11">Правописание местоимений</string>
+    <string name="ortho_12">Правописание глаголов</string>
+    <string name="ortho_13">Правописание причастий</string>
+    <string name="ortho_14">Правописание наречий</string>
+    <string name="ortho_16">Правописание союзов</string>
+    <string name="ortho_17">Правописание частиц</string>
+    <string name="ortho_18">Правописание междометий и звукоподрожательных слов</string>
+    <string name="ortho_19">Правописание некоторых иностранных слов</string>
+    <string name="ortho_15">Знаки препинания при цитатах</string>
+    <string name="punct_1">Знаки препинания в конце предложения и при перерыве речи</string>
+    <string name="punct_2">Тире между членами предложения</string>
+    <string name="punct_3">Знаки препинания в предложениях с однородными членами</string>
+    <string name="punct_4">Знаки препинания при повторяющихся словах</string>
+    <string name="punct_5">Знаки препинания в предложениях с обособленными членами</string>
+    <string name="punct_6">Знаки препинания в предложениях с уточняющими, пояснительными и присоединительными членами</string>
+    <string name="punct_7">Знаки препинания при словах, грамматически не связанных с членами предложения</string>
+    <string name="punct_8">Знаки препинания при междометиях, частицах, утвердительных, отрицательных и вопросительно-восклицательных словах</string>
+    <string name="punct_9">Знаки препинания в сложносочиненном предложении</string>
+    <string name="punct_10">Знаки препинания в сложноподчиненном предложении</string>
+    <string name="punct_11">Знаки препинания при оборотах, не являющихся придаточной частью сложноподчиненного предложения</string>
+    <string name="punct_12">Знаки препинания в бессоюзном сложном предложении</string>
+    <string name="punct_13">Знаки препинания в периоде</string>
+    <string name="punct_14">Знаки препинания при прямой речи</string>
+    <string name="punct_15">Знаки препинания при цитатах</string>
+    <string name="punct_16">Знаки препинания в газетных и журнальных заголовках</string>
+    <string name="punct_17">Употребление кавычек</string>
+    <string name="punct_18">Сочетания знаков препинания</string>
+    <string name="punct_19">Факультативные знаки препинания</string>
+    <string name="punct_20">Авторская пунктуация</string>
+    <string name="punct_21">Знаки препинания в текстах разговорной речи</string>
+    <string name="ortho_1_6">Буквы э, е, й в корне</string>
+    <string name="ortho_1_2">Непроверяемые безударные гласные в корне</string>
+    <string name="ortho_1_3">Чередующиеся гласные в корне</string>
+    <string name="ortho_1_4">Гласные после шипящих в корне</string>
+    <string name="ortho_1_5">Гласные после ц в корне</string>
+    <string name="ortho_1_1">Проверяемые безударные гласные в корне</string>
+    <string name="ortho_2_7">Звонкие и глухие согласные в корне</string>
+    <string name="ortho_2_8">Двойные согласные в корне и на стыке приставки и корня</string>
+    <string name="ortho_2_9">Непроизносимые согласные в корне</string>
+    <string name="ortho_3_10">Прописная буква в начале текста</string>
+    <string name="ortho_3_11">Собственные имена лиц и клички животных</string>
+    <string name="ortho_3_12">Прилагательные и наречия, образованные от индивидуальных названий</string>
+    <string name="ortho_3_13">Географические названия</string>
+    <string name="ortho_3_14">Названия государств, административно-территориальных единиц, станций и т. д.</string>
+    <string name="ortho_3_15">Астрономические названия</string>
+    <string name="ortho_3_16">Названия организаций, органов власти, политических партий, учреждений, предприятий, фирм</string>
+    <string name="ortho_3_17">Названия исторических эпох, событий, съездов, геологических периодов</string>
+    <string name="ortho_3_18">Названия документов, памятников старины, произведений искусства, органов печати, информационных агентств и др.</string>
+    <string name="ortho_3_19">Наименования должностей, званий, титулов</string>
+    <string name="ortho_3_20">Названия орденов, медалей, знаков отличия, премий</string>
+    <string name="ortho_3_21">Названия, связанные с религией</string>
+    <string name="ortho_3_22">Названия пород животных, видов и сортов растений</string>
+    <string name="ortho_3_23">Названия вин, минеральных вод, кондитерских изделий и т. д.</string>
+    <string name="ortho_3_24">Названия марок машин и механизмов</string>
+    <string name="ortho_3_25">Сложносокращенные слова и аббревиатуры</string>
+    <string name="ortho_3_26">Условные имена собственные</string>
+    <string name="ortho_5_27">Приставки на -з и приставка с-</string>
+    <string name="ortho_5_28">Приставки пре- и при-</string>
+    <string name="ortho_5_29">Буквы ы и и после приставок</string>
+    <string name="ortho_6_30">Буквы о и е после шипящих</string>
+    <string name="ortho_6_31">Гласные после ц</string>
+    <string name="ortho_7_32">Окончания существительных</string>
+    <string name="ortho_7_33">Суффиксы существительных</string>
+    <string name="ortho_8_34">Окончания прилагательных</string>
+    <string name="ortho_8_35">Суффиксы прилагательных</string>
+    <string name="ortho_9_36">Сложные слова с соединительными гласными</string>
+    <string name="ortho_9_37">Сложные слова без соединительной гласной</string>
+    <string name="ortho_9_38">Сложные существительные</string>
+    <string name="ortho_9_39">Сложные прилагательные</string>
+    <string name="ortho_10_40">Числительные количественные, порядковые, дробные</string>
+    <string name="ortho_10_41">Числительное пол-</string>
+    <string name="ortho_11_42">Отрицательные местоимения</string>
+    <string name="ortho_11_43">Местоименные сочетания</string>
+    <string name="ortho_12_44">Личные окончания глаголов</string>
+    <string name="ortho_12_45">Употребление буквы ь в глагольных формах</string>
+    <string name="ortho_12_46">Суффиксы глаголов</string>
+    <string name="ortho_13_47">Гласные в суффиксах причастий</string>
+    <string name="ortho_13_48">Буквы нн и н причастиях и отглагольных</string>
+    <string name="ortho_14_49">Гласные на конце наречий</string>
+    <string name="ortho_14_50">Буква ь на конце наречий</string>
+    <string name="ortho_14_51">Буквы н и нн в наречиях</string>
+    <string name="ortho_14_52">Отрицательные наречия</string>
+    <string name="ortho_14_53">Слитное или полуслитное (дефисное) написание наречий</string>
+    <string name="ortho_14_54">Раздельное написание наречных выражений</string>
+    <string name="ortho_17_55">Правописание неотрицательных частиц</string>
+    <string name="ortho_17_56">Частица не с существительными</string>
+    <string name="ortho_17_57">Частица не с прилагательными</string>
+    <string name="ortho_17_58">Частица не с числительными и местоимениями</string>
+    <string name="ortho_17_59">Частица не с глаголами</string>
+    <string name="ortho_17_60">Частица не с причастиями</string>
+    <string name="ortho_17_61">Частица не с наречиями</string>
+    <string name="ortho_17_62">Правописание частицы ни</string>
+
+    <string name="punct_1_1">Точка</string>
+    <string name="punct_1_2">Вопросительный знак</string>
+    <string name="punct_1_3">Восклицательный знак</string>
+    <string name="punct_1_4">Многоточие</string>
+    <string name="punct_2_5">Тире между подлежащим и сказуемым</string>
+    <string name="punct_2_6">Тире в неполном предложении</string>
+    <string name="punct_2_7">Интонационное тире</string>
+    <string name="punct_2_8">Соединительное тире</string>
+    <string name="punct_3_9">Однородные члены предложения, не соединенные союзами</string>
+    <string name="punct_3_10">Однородные и неоднородные определения</string>
+    <string name="punct_3_11">Однородные и неоднородные приложения</string>
+    <string name="punct_3_12">Однородные члены предложения, соединенные неповторяющимися союзами</string>
+    <string name="punct_3_13">Однородные члены предложения, соединенные повторяющимися союзами</string>
+    <string name="punct_3_14">Однородные члены предложения, соединенные двойными или парными союзами</string>
+    <string name="punct_3_15">Обобщающие слова при однородных членах предложения</string>
+    <string name="punct_4_16">Запятая при повторяющихся словах</string>
+    <string name="punct_4_17">Дефисное написание повторяющихся слов</string>
+    <string name="punct_5_18">Обособленные определения</string>
+    <string name="punct_5_19">Обособленные приложения</string>
+    <string name="punct_5_20">Обособленные обстоятельства</string>
+    <string name="punct_5_21">Обособленные дополнения</string>
+    <string name="punct_6_22">Уточняющие члены предложения</string>
+    <string name="punct_6_23">Пояснительные конструкции</string>
+    <string name="punct_6_24">Присоединительные конструкции</string>
+    <string name="punct_7_25">Вводные слова и словосочетания</string>
+    <string name="punct_7_26">Вводные и вставные конструкции</string>
+    <string name="punct_7_27">Обращения</string>
+    <string name="punct_8_28">Междометия и частицы</string>
+    <string name="punct_8_29">Утвердительные, отрицательные и вопросительно-восклицательные слова</string>
+    <string name="punct_9_30">Запятая в сложносочиненном предложении</string>
+    <string name="punct_9_31">Точка с запятой в сложносочиненном предложении</string>
+    <string name="punct_9_32">Тире в сложносочиненном предложении</string>
+    <string name="punct_10_33">Запятая между главной и придаточной частями сложноподчиненного предложения</string>
+    <string name="punct_10_34">Запятая при сложных подчинительных союзах</string>
+    <string name="punct_10_35">Знаки препинания в сложноподчиненном предложении с несколькими придаточными</string>
+    <string name="punct_10_36">Запятая на стыке двух союзов</string>
+    <string name="punct_10_37">Точка с запятой в сложноподчиненном предложении</string>
+    <string name="punct_10_38">Тире в сложноподчиненном предложении</string>
+    <string name="punct_10_39">Двоеточие в сложноподчиненном предложении</string>
+    <string name="punct_10_40">Запятая и тире в сложноподчиненном предложении</string>
+    <string name="punct_11_41">Цельные по смыслу выражения</string>
+    <string name="punct_11_42">Сравнительный оборот</string>
+    <string name="punct_12_43">Запятая и точка с запятой в бессоюзном сложном предложении</string>
+    <string name="punct_12_44">Двоеточие в бессоюзном сложном предложении</string>
+    <string name="punct_12_45">Тире в бессоюзном сложном предложении</string>
+    <string name="punct_12_46">Запятая и тире в бессоюзном сложном предложении</string>
+    <string name="punct_14_47">Оформление прямой речи</string>
+    <string name="punct_14_48">Прямая речь после слов автора</string>
+    <string name="punct_14_49">Прямая речь перед словами автора</string>
+    <string name="punct_14_50">Слова автора внутри прямой речи</string>
+    <string name="punct_14_51">Прямая речь внутри слов автора</string>
+    <string name="punct_14_52">Знаки препинания при диалоге</string>
+    <string name="punct_14_53">Абзацы при прямой речи</string>
+    <string name="punct_14_54">Пунктуационное и графическое оформление текста в пьесах</string>
+    <string name="punct_15_55">Кавычки при цитатах</string>
+    <string name="punct_15_56">Многоточие при цитатах</string>
+    <string name="punct_15_57">Знаки препинания при ссылке на автора или на источник цитаты</string>
+    <string name="punct_15_58">Прописные и строчные буквы в цитатах</string>
+    <string name="punct_17_59">Слова, употребляемые в необычном, условном, ироническом значении</string>
+    <string name="punct_17_60">Названия литературных произведений, органов печати, предприятий и т.д.</string>
+    <string name="punct_17_61">Названия орденов и медалей</string>
+    <string name="punct_17_62">Названия марок машин, производственных изделий и т. д.</string>
+    <string name="punct_17_63">Названия сортов растений и пород животных</string>
+    <string name="punct_18_64">Запятая и тире</string>
+    <string name="punct_18_65">Вопросительный и восклицательный знаки</string>
+    <string name="punct_18_66">Кавычки и другие знаки</string>
+    <string name="punct_18_67">Скобки и другие знаки</string>
+    <string name="punct_18_68">Многоточие и другие знаки</string>
+    <string name="punct_18_69">Расположение знаков препинания при сноске</string>
+    <string name="punct_19_70">Собственно факультативные знаки препинания</string>
+    <string name="punct_19_71">Альтернативные знаки препинания</string>
+    <string name="punct_19_72">Вариативные знаки препинания</string>
+
+    <string name="phonetic_analyze_method">Фонетический разбор</string>
+    <string name="morphemic_analyze_method">Разбор слова по составу (морфемный анализ)</string>
+    <string name="morphological_analyze_method_for_noun">Морфологический разбор имени существительного</string>
+    <string name="morphological_analyze_method_for_verb">Морфологический разбор глагола</string>
+    <string name="morphological_analyze_method_for_adjective">Морфологический разбор имени прилагательного</string>
+    <string name="morphological_analyze_method_for_numeral">Морфологический разбор имени числительного</string>
+    <string name="morphological_analyze_method_for_adverb">Морфологический разбор наречия</string>
+    <string name="morphological_analyze_method_for_participle">Морфологический разбор причастия</string>
+    <string name="morphological_analyze_method_for_participle2">Морфологический разбор деепричастия</string>
+    <string name="morphological_analyze_method_for_pretext">Морфологический разбор предлога</string>
+    <string name="morphological_analyze_method_for_union">Морфологический разбор союза</string>
+    <string name="morphological_analyze_method_for_particle">Морфологический разбор частицы</string>
+    <string name="syntactic_analyze_method_for_simple_sentence">Cинтаксический разбор простого предложения</string>
+    <string name="syntactic_analyze_method_for_difficult_sentence">Синтаксический разбор сложного предложения</string>
+    <string name="lexical_analyze_method_for_everyword">Лексический разбор слова</string>
+    <string name="orthographic_analyze_method_for_everyword">Орфографический разбор</string>
+
+</resources>

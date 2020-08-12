@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_below="@id/orthographyButton11_container"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ortho_12"
+        android:id="@+id/orthographyButton12" />
+
+    <LinearLayout
+        android:id="@+id/orthographyButton12_sub_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/activity_space_height"/>
+
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="@string/ortho_12_44"
+            android:id="@+id/ortho12mainButton1"
+            style="@style/RulebookButtonEveryThemeTop"/>
+
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="@string/ortho_12_45"
+            android:id="@+id/ortho12mainButton2" />
+
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="@string/ortho_12_46"
+            android:id="@+id/ortho12mainButton3"
+            style="@style/RulebookButtonEveryThemeBottom"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/activity_space_height"/>
+
+    </LinearLayout>
+</LinearLayout>

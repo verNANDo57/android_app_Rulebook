@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/main_layout_scrollview"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+		
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center">
+
+		<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="110dp"
+			android:gravity="center"
+			android:id="@+id/appmainimage">
+
+			<ImageView
+				android:layout_width="@dimen/app_logo_in_main_width_in_layout"
+				android:layout_height="@dimen/app_logo_in_main_height_in_layout"
+				android:id="@+id/imageview_in_main"
+				android:background="@drawable/app_book_colored" />
+
+		</RelativeLayout>
+
+	<View
+		android:layout_below="@id/appmainimage"
+		android:layout_width="match_parent"
+		android:layout_height="10dp"
+		android:id="@+id/mainView1"/>
+
+	<TextView
+		android:id="@+id/mainTextView1"
+		style="@style/HeadlinesEveryTheme"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/mainView1"
+		android:text="@string/app_about_name" />
+
+	<View
+		android:layout_width="match_parent"
+		android:layout_height="10dp"
+		android:layout_below="@id/mainTextView1"
+		android:id="@+id/mainView2"/>
+
+	<Button
+		android:id="@+id/mainButton1"
+		style="@style/RulebookButtonEveryThemeTop"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/mainView2"
+		android:onClick="app_rules"
+		android:text="@string/rules" />
+
+	<Button
+		android:id="@+id/mainButton3"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/mainButton1"
+		android:onClick="app_about"
+		android:text="@string/about_app" />
+
+	<Button
+		android:id="@+id/mainButton4"
+		style="@style/RulebookButtonEveryThemeBottom"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_below="@id/mainButton3"
+		android:onClick="app_exit"
+		android:text="@string/app_exit" />
+
+	</RelativeLayout>
+		
+</ScrollView>
+

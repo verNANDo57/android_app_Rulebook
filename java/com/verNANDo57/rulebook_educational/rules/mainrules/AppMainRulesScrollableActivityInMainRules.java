@@ -783,8 +783,8 @@ public class AppMainRulesScrollableActivityInMainRules extends CustomThemeEngine
             InputStream in = null;
             OutputStream out = null;
                 try {
-		    String outPreDir = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Rulebook/";
-                    String outDir = null;
+		        String outPreDir = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Rulebook/";
+		        String outDir = null;
                     if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("ortho_")) {
                         in = assetManager.open("mainrules/orthography/" + booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean() + ".txt");
 
@@ -795,8 +795,8 @@ public class AppMainRulesScrollableActivityInMainRules extends CustomThemeEngine
                         outDir = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Rulebook/" + getString(R.string.punct) + "/";
                     }
 
-		    File preDirectory = new File(outPreDir);
-		    if (! preDirectory.exists()){
+		            File preDirectory = new File(outPreDir);
+		            if (! preDirectory.exists()){
                         preDirectory.mkdir();
                         // If you require it to make the entire directory path including parents,
                         // use directory.mkdirs(); here instead.

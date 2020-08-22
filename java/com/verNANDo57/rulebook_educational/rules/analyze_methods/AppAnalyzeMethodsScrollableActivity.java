@@ -278,9 +278,9 @@ public class AppAnalyzeMethodsScrollableActivity extends CustomThemeEngineAppCom
         InputStream in = null;
         OutputStream out = null;
         try {
+            String outPreDir = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Rulebook/";
             in = assetManager.open("analyze_methods/" + booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean() + ".txt");
-	    String outPreDir = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Rulebook/";
-            String outDir = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Rulebook/" + getString(R.string.analyze_methods) + "/";
+	        String outDir = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Rulebook/" + getString(R.string.analyze_methods) + "/";
 
 	    File preDirectory = new File(outPreDir);
 		    if (! preDirectory.exists()){

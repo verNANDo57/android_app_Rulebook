@@ -83,7 +83,7 @@
     <string name="about_app">About</string>
     <string name="app_exit">Exit</string>
     <string name="app_theme_choose">Themes</string>
-    <string name="app_about_extended">Stable version. Status: release. Version: 1.0.0. Build: 100.</string>
+    <string name="app_about_extended">Stable version. Status: release. Version: 1.0.1. Build: 101.</string>
     <string name="app_about_name">Rulebook</string>
     <string name="search_main">Search</string>
     <string name="intent_to_main">Main menu</string>

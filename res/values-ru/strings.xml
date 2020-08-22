@@ -83,7 +83,7 @@
     <string name="about_app">О приложении</string>
     <string name="app_exit">Выход</string>
     <string name="app_theme_choose">Тема</string>
-    <string name="app_about_extended">Стабильная версия. Статус: release. Версия: 1.0.0. Сборка: 100.</string>
+    <string name="app_about_extended">Стабильная версия. Статус: release. Версия: 1.0.1. Сборка: 101.</string>
     <string name="app_about_name">Словарь - Русский Язык</string>
     <string name="search_main">Поиск</string>
     <string name="intent_to_main">Главная</string>

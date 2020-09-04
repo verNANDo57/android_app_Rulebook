@@ -1,5 +1,5 @@
 # Rulebook
-Sources of Rulebook application
+Source code of Rulebook application
 
 Rulebook is open-source application, which can help you to learn Russian language or prepare for exams. Useful for students and teachers.
 

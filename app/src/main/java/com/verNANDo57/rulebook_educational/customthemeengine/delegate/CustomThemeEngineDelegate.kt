@@ -95,7 +95,7 @@ abstract class CustomThemeEngineDelegate {
      * Create a [CustomThemeEngineDelegate] to be used in an [Activity].
      *
      * @param activity The activity
-     * @param customThemeEngine The cyanea instance for theming
+     * @param customThemeEngine The CustomThemeEngine instance for theming
      * @param themeResId The theme resource id
      * @return The delegate
      */

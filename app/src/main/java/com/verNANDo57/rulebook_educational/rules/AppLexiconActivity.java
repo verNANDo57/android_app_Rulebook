@@ -39,6 +39,16 @@ public class AppLexiconActivity extends CustomThemeEngineAppCompatActivity {
         app_rules_lexicon.getSettings().setJavaScriptEnabled(true);
         //WebView preferences
         app_rules_lexicon.setInitialScale(255);
+
+        //disable text selection
+        app_rules_lexicon.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                return true;
+            }
+        });
+        app_rules_lexicon.setLongClickable(false);
+
         app_rules_lexicon.getSettings().setSupportZoom(true);
         app_rules_lexicon.getSettings().setBuiltInZoomControls(true);
         app_rules_lexicon.getSettings().setDisplayZoomControls(false);

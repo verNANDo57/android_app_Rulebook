@@ -39,6 +39,16 @@ public class AppRulesInSchemesAndTablesActivity extends CustomThemeEngineAppComp
         apprulesinschemesandtablesview.getSettings().setJavaScriptEnabled(true);
         //WebView preferences
         apprulesinschemesandtablesview.setInitialScale(120);
+
+        //disable text selection
+        apprulesinschemesandtablesview.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                return true;
+            }
+        });
+        apprulesinschemesandtablesview.setLongClickable(false);
+
         apprulesinschemesandtablesview.getSettings().setSupportZoom(true);
         apprulesinschemesandtablesview.getSettings().setBuiltInZoomControls(true);
         apprulesinschemesandtablesview.getSettings().setDisplayZoomControls(false);

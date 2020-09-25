@@ -166,7 +166,7 @@ open class CustomThemeEngineSettingsFragment : PreferenceFragmentCompat(), OnPre
     }
   }
 
-  private inline fun <reified T : Preference> findPreference(key: String): T = super.findPreference(key) as T
+  private inline fun <reified T : Preference> findPreference(key: String): T = super.findPreference(key)!!
 
   companion object {
     private const val PREF_THEME_PICKER = "pref_theme_picker"

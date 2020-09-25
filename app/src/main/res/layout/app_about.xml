@@ -41,69 +41,77 @@
             android:layout_height="@dimen/activity_space_height"
             android:layout_below="@id/appaboutRelativeLayout1" />
 
-        <RelativeLayout
-            android:id="@+id/appaboutRelativeLayout2"
+        <HorizontalScrollView
+            android:id="@+id/appaboutHorizontalScrollView1"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:layout_below="@id/appaboutView2"
-            android:gravity="center">
+            android:layout_height="wrap_content"
+            android:layout_below="@id/appaboutView2">
 
-            <ImageButton
-                android:id="@+id/buttongit"
-                style="@style/AppImageButtonStyleEveryTheme"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:background="@drawable/github_share_icon" />
+            <RelativeLayout
+                android:id="@+id/appaboutRelativeLayout2"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                android:gravity="center">
 
-            <View
-                android:id="@+id/appaboutView1"
-                android:layout_width="10dp"
-                android:layout_height="60dp"
-                android:layout_toEndOf="@id/buttongit" />
+                <ImageButton
+                    android:id="@+id/buttongit"
+                    style="@style/AppImageButtonStyleEveryTheme"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/github_share_icon" />
 
-            <ImageButton
-                android:id="@+id/buttonvk"
-                style="@style/AppImageButtonStyleEveryTheme"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_toEndOf="@id/appaboutView1"
-                android:background="@drawable/vk_share_icon" />
+                <View
+                    android:id="@+id/appaboutView1"
+                    android:layout_width="10dp"
+                    android:layout_height="60dp"
+                    android:layout_toEndOf="@id/buttongit" />
 
-            <View
-                android:id="@+id/appaboutView4"
-                android:layout_width="10dp"
-                android:layout_height="60dp"
-                android:layout_toEndOf="@id/buttonvk" />
+                <ImageButton
+                    android:id="@+id/buttonvk"
+                    style="@style/AppImageButtonStyleEveryTheme"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_toEndOf="@id/appaboutView1"
+                    android:background="@drawable/vk_share_icon" />
 
-            <ImageButton
-                android:id="@+id/buttontg"
-                style="@style/AppImageButtonStyleEveryTheme"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_toEndOf="@id/appaboutView4"
-                android:background="@drawable/telegram_share_icon" />
+                <View
+                    android:id="@+id/appaboutView4"
+                    android:layout_width="10dp"
+                    android:layout_height="60dp"
+                    android:layout_toEndOf="@id/buttonvk" />
 
-            <View
-                android:id="@+id/appaboutView5"
-                android:layout_width="10dp"
-                android:layout_height="60dp"
-                android:layout_toEndOf="@id/buttontg" />
+                <ImageButton
+                    android:id="@+id/buttontg"
+                    style="@style/AppImageButtonStyleEveryTheme"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_toEndOf="@id/appaboutView4"
+                    android:background="@drawable/telegram_share_icon" />
 
-            <ImageButton
-                android:id="@+id/buttonqiwi"
-                style="@style/AppImageButtonStyleEveryTheme"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_toEndOf="@id/appaboutView5"
-                android:background="@drawable/qiwi_share_icon" />
+                <View
+                    android:id="@+id/appaboutView5"
+                    android:layout_width="10dp"
+                    android:layout_height="60dp"
+                    android:layout_toEndOf="@id/buttontg" />
 
-        </RelativeLayout>
+                <ImageButton
+                    android:id="@+id/buttonqiwi"
+                    style="@style/AppImageButtonStyleEveryTheme"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_toEndOf="@id/appaboutView5"
+                    android:background="@drawable/qiwi_share_icon" />
+
+            </RelativeLayout>
+
+        </HorizontalScrollView>
 
         <View
             android:id="@+id/appaboutView3"
             android:layout_width="match_parent"
             android:layout_height="@dimen/activity_space_height"
-            android:layout_below="@id/appaboutRelativeLayout2" />
+            android:layout_below="@id/appaboutHorizontalScrollView1" />
 
         <TextView
             android:id="@+id/appaboutTextView1"

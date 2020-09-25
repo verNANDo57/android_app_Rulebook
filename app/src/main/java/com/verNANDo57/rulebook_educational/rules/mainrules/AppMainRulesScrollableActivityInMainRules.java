@@ -3,7 +3,6 @@ package com.verNANDo57.rulebook_educational.rules.mainrules;
 import android.annotation.SuppressLint;
 import android.content.res.AssetManager;
 import android.content.res.ColorStateList;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
@@ -784,7 +783,7 @@ public class AppMainRulesScrollableActivityInMainRules extends CustomThemeEngine
             OutputStream out = null;
                 try {
 		        String outPreDir = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Rulebook/";
-		        String outDir = null;
+                String outDir = null;
                     if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("ortho_")) {
                         in = assetManager.open("mainrules/orthography/" + booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean() + ".txt");
 

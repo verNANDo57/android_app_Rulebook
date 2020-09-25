@@ -282,7 +282,7 @@ public class AppAnalyzeMethodsScrollableActivity extends CustomThemeEngineAppCom
             in = assetManager.open("analyze_methods/" + booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean() + ".txt");
 	        String outDir = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Rulebook/" + getString(R.string.analyze_methods) + "/";
 
-	    File preDirectory = new File(outPreDir);
+	        File preDirectory = new File(outPreDir);
 		    if (! preDirectory.exists()){
                         preDirectory.mkdir();
                         // If you require it to make the entire directory path including parents,

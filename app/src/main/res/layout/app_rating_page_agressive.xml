@@ -57,7 +57,7 @@
                 android:layout_marginEnd="@dimen/app_rating_page_review_box_marginEnd"
                 android:layout_marginBottom="@dimen/app_rating_page_review_box_marginBottom"
                 android:background="@drawable/app_write_review_edittext_shape"
-                android:inputType="textLongMessage"
+                android:inputType="textMultiLine"
                 android:hint="@string/write_a_review"
                 android:padding="@dimen/app_rating_page_edittext_padding"
                 android:singleLine="false" />

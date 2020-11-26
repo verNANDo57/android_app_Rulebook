@@ -1,11 +1,11 @@
 package com.verNANDo57.rulebook_educational.libs.nineoldandroids.animation;
 
+import android.view.animation.Interpolator;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
-
-import android.view.animation.Interpolator;
 
 /**
  * This class plays a set of {@link Animator} objects in the specified order. Animations

@@ -16,8 +16,6 @@ import com.verNANDo57.rulebook_educational.customlocaleengine.CustomLocaleEngine
 import com.verNANDo57.rulebook_educational.customthemeengine.prefs.CustomThemeEngineSettingsActivity;
 import com.verNANDo57.rulebook_educational.for_pills.R;
 
-import java.util.Objects;
-
 
 public class AppSettingsFragment extends PreferenceFragmentCompat
 {
@@ -88,27 +86,6 @@ public class AppSettingsFragment extends PreferenceFragmentCompat
 			}
 		});
 
-		androidx.preference.SwitchPreferenceCompat bottomappbar_autohide = (SwitchPreferenceCompat) findPreference("bottomappbar_autohide");
-		bottomappbar_autohide.setEnabled(true);
-		if(preferences.loadRulebookBottomAppBarAutoHideBooleanState()==false){
-			bottomappbar_autohide.setChecked(false);
-		} else if (preferences.loadRulebookBottomAppBarAutoHideBooleanState()==true){
-			bottomappbar_autohide.setChecked(true);
-		} else {
-			bottomappbar_autohide.setChecked(false);
-		}
-		bottomappbar_autohide.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
-			@Override
-			public boolean onPreferenceChange(Preference preference, Object newValue) {
-				if (newValue.toString().equals("true")){
-					preferences.setRulebookBottomAppBarAutoHideBooleanState(true);
-				} else {
-					preferences.setRulebookBottomAppBarAutoHideBooleanState(false);
-				}
-				return true;
-			}
-		});
-
 		//reboot option
 		androidx.preference.Preference RebootFromPrefs = findPreference("app_reboot_from_prefs");
 		RebootFromPrefs.setEnabled(true);
@@ -117,31 +94,6 @@ public class AppSettingsFragment extends PreferenceFragmentCompat
 			public boolean onPreferenceClick(Preference preference) {
 				restartRulebook();
 				return false;
-			}
-		});
-
-
-
-
-		//Functions
-		androidx.preference.SwitchPreferenceCompat disable_voicesearch = (SwitchPreferenceCompat) findPreference("voicesearch_disable");
-		disable_voicesearch.setEnabled(true);
-		if(preferences.loadRulebookVoiceSearchDisableState()==false){
-			disable_voicesearch.setChecked(false);
-		} else if (preferences.loadRulebookVoiceSearchDisableState()==true){
-			disable_voicesearch.setChecked(true);
-		} else {
-			disable_voicesearch.setChecked(false);
-		}
-		disable_voicesearch.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
-			@Override
-			public boolean onPreferenceChange(Preference preference, Object newValue) {
-				if (newValue.toString().equals("true")){
-					preferences.setRulebookVoiceSearchDisableState(true);
-				} else {
-					preferences.setRulebookVoiceSearchDisableState(false);
-				}
-				return true;
 			}
 		});
 
@@ -196,14 +148,14 @@ public class AppSettingsFragment extends PreferenceFragmentCompat
 
 	@RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
 	public void restartRulebook(){
-		Objects.requireNonNull(getActivity()).finishAffinity();
+		requireActivity().finishAffinity();
 		Intent restartRulebook = new Intent(getContext(), StrangeScreenActivity.class);
 		startActivity(restartRulebook);
 	}
 
 	@RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
 	public void restartRulebookAlternative(){
-		Objects.requireNonNull(getActivity()).finishAffinity();
+		requireActivity().finishAffinity();
 		Intent restartRulebook = new Intent(getContext(), StrangeScreenActivity.class);
 		restartRulebook.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK & Intent.FLAG_ACTIVITY_NEW_TASK);
 		startActivity(restartRulebook);

@@ -32,17 +32,6 @@ public class RulebookApplicationSharedPreferences {
         return RulebookSharedPreferences.getBoolean("AnimationsDisable", false);
     }
 
-    //This method will save status_page boolean state
-    public void setRulebookStatusPageBooleanState(Boolean state){
-        SharedPreferences.Editor editor= RulebookSharedPreferences.edit();
-        editor.putBoolean("StatusPageBoolean", state);
-        editor.apply();
-    }
-    //This method will load status_page boolean state
-    public Boolean loadRulebookStatusPageBooleanState (){
-        return RulebookSharedPreferences.getBoolean("StatusPageBoolean", false);
-    }
-
     //This method will save statusbar boolean state
     public void setRulebookStatusBarBooleanState(Boolean state){
         SharedPreferences.Editor editor= RulebookSharedPreferences.edit();
@@ -52,18 +41,6 @@ public class RulebookApplicationSharedPreferences {
     //This method will load statusbar boolean state
     public Boolean loadRulebookStatusBarBooleanState (){
         return RulebookSharedPreferences.getBoolean("StatusBarBoolean", false);
-    }
-
-
-    //This method will save bottomappbar_autohide boolean state
-    public void setRulebookBottomAppBarAutoHideBooleanState(Boolean state){
-        SharedPreferences.Editor editor= RulebookSharedPreferences.edit();
-        editor.putBoolean("BottomAppBarAutoHide", state);
-        editor.apply();
-    }
-    //This method will load bottomappbar_autohide boolean state
-    public Boolean loadRulebookBottomAppBarAutoHideBooleanState (){
-        return RulebookSharedPreferences.getBoolean("BottomAppBarAutoHide", true);
     }
 
     //This method will save locale state

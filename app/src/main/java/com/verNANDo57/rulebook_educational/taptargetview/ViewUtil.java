@@ -1,10 +1,11 @@
 package com.verNANDo57.rulebook_educational.taptargetview;
 
 import android.os.Build;
-import androidx.core.view.ViewCompat;
 import android.view.View;
 import android.view.ViewManager;
 import android.view.ViewTreeObserver;
+
+import androidx.core.view.ViewCompat;
 
 class ViewUtil {
   ViewUtil() {

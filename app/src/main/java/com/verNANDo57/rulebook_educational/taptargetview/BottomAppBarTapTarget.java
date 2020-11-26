@@ -3,13 +3,14 @@ package com.verNANDo57.rulebook_educational.taptargetview;
 import android.annotation.TargetApi;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
-import androidx.annotation.IdRes;
-import androidx.annotation.Nullable;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+
+import androidx.annotation.IdRes;
+import androidx.annotation.Nullable;
 
 import com.google.android.material.bottomappbar.BottomAppBar;
 

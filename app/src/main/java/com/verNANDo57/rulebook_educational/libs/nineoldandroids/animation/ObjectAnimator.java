@@ -1,14 +1,14 @@
 package com.verNANDo57.rulebook_educational.libs.nineoldandroids.animation;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-
 import android.util.Log;
 import android.view.View;
 
 import com.verNANDo57.rulebook_educational.libs.nineoldandroids.util.Property;
 import com.verNANDo57.rulebook_educational.libs.nineoldandroids.view.animation.AnimatorProxy;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * This subclass of {@link ValueAnimator} provides support for animating properties on target objects.

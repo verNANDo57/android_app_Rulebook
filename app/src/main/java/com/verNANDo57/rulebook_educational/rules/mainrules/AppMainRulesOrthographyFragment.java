@@ -8,9 +8,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
-import com.verNANDo57.rulebook_educational.for_pills.R;
-
 import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngineFragment;
+import com.verNANDo57.rulebook_educational.for_pills.R;
 import com.verNANDo57.rulebook_educational.preferences.RulebookApplicationSharedPreferences;
 import com.verNANDo57.rulebook_educational.rules.RulebookApplicationBooleans;
 

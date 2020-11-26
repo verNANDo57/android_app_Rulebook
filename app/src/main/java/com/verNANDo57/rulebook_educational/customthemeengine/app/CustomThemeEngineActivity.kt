@@ -7,11 +7,11 @@ import android.content.res.Resources
 import android.graphics.BitmapFactory
 import android.os.Build
 import android.os.Bundle
+import android.view.KeyEvent
 import android.view.Menu
 import android.view.View
 import android.view.WindowManager
 import androidx.core.content.ContextCompat
-import com.verNANDo57.rulebook_educational.AppRulebookClass
 import com.verNANDo57.rulebook_educational.customthemeengine.CustomThemeEngine
 import com.verNANDo57.rulebook_educational.customthemeengine.CustomThemeEngineResources
 import com.verNANDo57.rulebook_educational.customthemeengine.delegate.CustomThemeEngineDelegate
@@ -88,12 +88,23 @@ abstract class CustomThemeEngineActivity : Activity(), BaseCustomThemeEngineActi
     val RB = BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher_round)
     val taskDesc: TaskDescription
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-      taskDesc = TaskDescription(getString(R.string.app_name), RB, ContextCompat.getColor(this, R.color.coloraccent))
+      taskDesc = TaskDescription(getString(R.string.app_name), RB, ContextCompat.getColor(this, R.color.colorAccent))
       setTaskDescription(taskDesc)
     }
 
     delegate.onCreate(savedInstanceState)
     super.onCreate(savedInstanceState)
+  }
+
+  //system navbar
+  override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+    if (keyCode == KeyEvent.KEYCODE_BACK) {
+      onBackPressed()
+    }
+    return super.onKeyDown(keyCode, event)
+  }
+  override fun onBackPressed() {
+    finish()
   }
 
   override fun onPostCreate(savedInstanceState: Bundle?) {

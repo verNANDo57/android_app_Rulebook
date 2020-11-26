@@ -23,6 +23,7 @@
 	<color name="app_agressive_rating_mouth_color">#000000</color>
 
 	<color name="coloraccent_reference">#A55634</color>
+	<color name="colorAccent">@color/coloraccent</color>
 
 	<!-- Background colors -->
 	<eat-comment/>

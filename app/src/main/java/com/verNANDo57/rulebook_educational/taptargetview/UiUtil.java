@@ -2,9 +2,6 @@ package com.verNANDo57.rulebook_educational.taptargetview;
 
 import android.content.Context;
 import android.content.res.Resources;
-
-import androidx.annotation.ColorRes;
-import androidx.annotation.DimenRes;
 import android.util.TypedValue;
 
 class UiUtil {

@@ -24,7 +24,7 @@
 	<dimen name="bottomappbar_height">56dp</dimen>
 	<dimen name="bottomappbar_elevation">8dp</dimen>
 
-	<dimen name="app_collapsing_toolbar_height">240dp</dimen>
+	<dimen name="app_collapsing_toolbar_height">270dp</dimen>
 	<dimen name="app_collapsing_toolbar_userspace_height">120dp</dimen>
 
 	<dimen name="app_toolbar_height">90dp</dimen>

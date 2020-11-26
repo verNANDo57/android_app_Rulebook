@@ -1,10 +1,14 @@
-package com.verNANDo57.rulebook_educational.customclasses;
+package com.verNANDo57.rulebook_educational.useful;
 
-import android.graphics.Color;
+import android.Manifest;
+import android.content.Context;
+import android.content.pm.PackageManager;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.BackgroundColorSpan;
 import android.widget.TextView;
+
+import androidx.core.content.ContextCompat;
 
 import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngineAppCompatActivity;
 import com.verNANDo57.rulebook_educational.for_pills.R;

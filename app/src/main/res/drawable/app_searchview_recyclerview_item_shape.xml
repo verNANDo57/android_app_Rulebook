@@ -14,5 +14,5 @@
 
     <stroke
         android:width="@dimen/app_buttonshape_default_stroke_value"
-        android:color="@color/coloraccent"/>
+        android:color="@color/colorAccent"/>
 </shape>

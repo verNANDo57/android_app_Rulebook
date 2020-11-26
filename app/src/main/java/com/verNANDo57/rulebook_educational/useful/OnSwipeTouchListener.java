@@ -1,4 +1,4 @@
-package com.verNANDo57.rulebook_educational.customclasses;
+package com.verNANDo57.rulebook_educational.useful;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

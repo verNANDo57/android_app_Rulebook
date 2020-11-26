@@ -46,7 +46,7 @@
                         android:layout_centerHorizontal="true"
                         android:contentDescription="@string/app_name_mainrules"
                         android:background="@drawable/app_android_icon"
-                        android:backgroundTint="@color/coloraccent"/>
+                        android:backgroundTint="@color/colorAccent"/>
 
                     <LinearLayout
                         android:id="@+id/app_scrollableactivity_in_mainrules_titleandsubtitle_container"

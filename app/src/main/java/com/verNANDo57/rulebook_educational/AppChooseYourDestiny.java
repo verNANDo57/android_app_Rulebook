@@ -2,7 +2,6 @@ package com.verNANDo57.rulebook_educational;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.KeyEvent;
 import android.view.View;
 import android.view.animation.TranslateAnimation;
 import android.widget.Button;
@@ -115,11 +114,4 @@ public class AppChooseYourDestiny extends CustomThemeEngineAppCompatActivity {
             }
         });
     }
-
-    //system navigationbar
-    public boolean onKeyDown(int keyCode, KeyEvent event) {     switch (keyCode) {     case KeyEvent.KEYCODE_BACK:
-        if (android.os.Build.VERSION.SDK_INT <android.os.Build.VERSION_CODES.ECLAIR     && event.getRepeatCount() == 0) {     onBackPressed();     }     }
-        return super.onKeyDown(keyCode, event); }
-    public void onBackPressed(){ finish();}
-
 }

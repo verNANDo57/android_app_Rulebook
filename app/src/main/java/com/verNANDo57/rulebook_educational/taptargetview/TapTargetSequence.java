@@ -2,6 +2,7 @@ package com.verNANDo57.rulebook_educational.taptargetview;
 
 import android.app.Activity;
 import android.app.Dialog;
+
 import androidx.annotation.Nullable;
 import androidx.annotation.UiThread;
 

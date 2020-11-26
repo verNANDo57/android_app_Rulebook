@@ -26,13 +26,13 @@ import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.navigation.NavigationView;
 import com.verNANDo57.rulebook_educational.BottomNavBetweenLessonsFragment;
-import com.verNANDo57.rulebook_educational.customclasses.AppSomeUtils;
 import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngineAppCompatActivity;
 import com.verNANDo57.rulebook_educational.customthemeengine.utils.ColorUtils;
 import com.verNANDo57.rulebook_educational.for_pills.R;
 import com.verNANDo57.rulebook_educational.preferences.RulebookApplicationSharedPreferences;
 import com.verNANDo57.rulebook_educational.rules.RulebookApplicationBooleans;
 import com.verNANDo57.rulebook_educational.styleabletoast.StyleableToast;
+import com.verNANDo57.rulebook_educational.useful.AppSomeUtils;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -72,7 +72,7 @@ public class AppMainRulesScrollableActivityInMainRules extends CustomThemeEngine
         fade_in = AnimationUtils.loadAnimation(this, R.anim.app_fade_in);
         fade_out = AnimationUtils.loadAnimation(this, R.anim.app_fade_out);
 
-        int ImageViewBackgroundTintColor = ColorUtils.lighter(getResources().getColor(R.color.coloraccent), 0.01f);
+        int ImageViewBackgroundTintColor = ColorUtils.lighter(getResources().getColor(R.color.colorAccent), 0.01f);
 
         //Activity Content as LAYOUT
         setContentView(R.layout.app_scrollable_activity_in_mainrules);
@@ -779,65 +779,63 @@ public class AppMainRulesScrollableActivityInMainRules extends CustomThemeEngine
         } catch (IOException e) {
             Log.e("tag", getString(R.string.app_error_while_saving_file), e);
         }
-            InputStream in = null;
-            OutputStream out = null;
-                try {
-		        String outPreDir = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Rulebook/";
-                String outDir = null;
-                    if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("ortho_")) {
-                        in = assetManager.open("mainrules/orthography/" + booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean() + ".txt");
+        InputStream in = null;
+        OutputStream out = null;
+        try {
+            String outPreDir = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Rulebook/";
+            String outDir = null;
+            if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("ortho_")) {
+                in = assetManager.open("mainrules/orthography/" + booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean() + ".txt");
+                outDir = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Rulebook/" + getString(R.string.ortho) + "/";
+            } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("punct_")){
+                in = assetManager.open("mainrules/punctuation/" + booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean() + ".txt");
+                outDir = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Rulebook/" + getString(R.string.punct) + "/";
+            }
 
-                        outDir = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Rulebook/" + getString(R.string.ortho) + "/";
-                    } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("punct_")){
-                        in = assetManager.open("mainrules/punctuation/" + booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean() + ".txt");
+            File preDirectory = new File(outPreDir);
+            if (! preDirectory.exists()){
+                preDirectory.mkdir();
+                // If you require it to make the entire directory path including parents,
+                // use directory.mkdirs(); here instead.
+            }
 
-                        outDir = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Rulebook/" + getString(R.string.punct) + "/";
-                    }
+            File directory = new File(outDir);
+            if (! directory.exists()){
+                directory.mkdir();
+                // If you require it to make the entire directory path including parents,
+                // use directory.mkdirs(); here instead.
+            }
 
-		            File preDirectory = new File(outPreDir);
-		            if (! preDirectory.exists()){
-                        preDirectory.mkdir();
-                        // If you require it to make the entire directory path including parents,
-                        // use directory.mkdirs(); here instead.
-                    }
-
-                    File directory = new File(outDir);
-                    if (! directory.exists()){
-                        directory.mkdir();
-                        // If you require it to make the entire directory path including parents,
-                        // use directory.mkdirs(); here instead.
-                    }
-
-                    File outFile = new File(outDir,  outFileName + ".txt");
-                    if (outFile.exists()){
-                        new StyleableToast.Builder(getApplicationContext())
-                                .text(getString(R.string.app_saved_already) + ":" + outFileDir + outFileName + ".txt") // set text
-                                .textBold() //set text bold
-                                .iconStart(AppSomeUtils.getIconWarning()) //icon in start of toast
-                                .show(); //show custom toast
-                    } else {
-                        out = new FileOutputStream(outFile);
-                        AppSomeUtils.copyFile(in, out);
-                        in.close();
-                        in = null;
-                        out.flush();
-                        out.close();
-                        out = null;
-
-                        new StyleableToast.Builder(getApplicationContext())
-                                .text(getString(R.string.app_saved) + ":" + outFileDir + outFileName + ".txt") // set text
-                                .textBold() //set text bold
-                                .iconStart(AppSomeUtils.getIconWarning()) //icon in start of toast
-                                .show(); //show custom toast
-                    }
-            } catch(IOException e) {
-                Log.e("tag", getString(R.string.app_error_while_saving_file) + ":" + outFileDir + outFileName + ".txt" + "(" + booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean() + ".txt" + ")", e);
+            File outFile = new File(outDir,  outFileName + ".txt");
+            if (outFile.exists()){
+                new StyleableToast.Builder(getApplicationContext())
+                        .text(getString(R.string.app_saved_already) + ":" + outFileDir + outFileName + ".txt") // set text
+                        .textBold() //set text bold
+                        .iconStart(AppSomeUtils.getIconWarning()) //icon in start of toast
+                        .show(); //show custom toast
+            } else {
+                out = new FileOutputStream(outFile);
+                AppSomeUtils.copyFile(in, out);
+                in.close();
+                in = null;
+                out.flush();
+                out.close();
+                out = null;
 
                 new StyleableToast.Builder(getApplicationContext())
-                        .text(getString(R.string.app_error_while_saving_file)) // set text
+                        .text(getString(R.string.app_saved) + ":" + outFileDir + outFileName + ".txt") // set text
                         .textBold() //set text bold
                         .iconStart(AppSomeUtils.getIconWarning()) //icon in start of toast
                         .show(); //show custom toast
             }
+        } catch(IOException e) {
+            Log.e("tag", getString(R.string.app_error_while_saving_file) + ":" + outFileDir + outFileName + ".txt" + "(" + booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean() + ".txt" + ")", e);
+
+            new StyleableToast.Builder(getApplicationContext())
+                    .text(getString(R.string.app_error_while_saving_file)) // set text
+                    .textBold() //set text bold
+                    .iconStart(AppSomeUtils.getIconWarning()) //icon in start of toast
+                    .show(); //show custom toast
+        }
     }
 }

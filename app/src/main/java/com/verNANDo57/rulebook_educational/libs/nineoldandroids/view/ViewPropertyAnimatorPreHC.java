@@ -1,14 +1,16 @@
 package com.verNANDo57.rulebook_educational.libs.nineoldandroids.view;
 
+import android.view.View;
+import android.view.animation.Interpolator;
+
+import com.verNANDo57.rulebook_educational.libs.nineoldandroids.animation.Animator;
+import com.verNANDo57.rulebook_educational.libs.nineoldandroids.animation.ValueAnimator;
+import com.verNANDo57.rulebook_educational.libs.nineoldandroids.view.animation.AnimatorProxy;
+
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Set;
-import android.view.View;
-import android.view.animation.Interpolator;
-import com.verNANDo57.rulebook_educational.libs.nineoldandroids.animation.Animator;
-import com.verNANDo57.rulebook_educational.libs.nineoldandroids.animation.ValueAnimator;
-import com.verNANDo57.rulebook_educational.libs.nineoldandroids.view.animation.AnimatorProxy;
 
 class ViewPropertyAnimatorPreHC extends ViewPropertyAnimator {
     /**

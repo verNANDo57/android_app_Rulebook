@@ -6,8 +6,6 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 
-import androidx.core.content.ContextCompat;
-
 import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngineAppCompatActivity;
 import com.verNANDo57.rulebook_educational.customthemeengine.utils.ColorUtils;
 import com.verNANDo57.rulebook_educational.for_pills.R;
@@ -31,7 +29,7 @@ public class StrangeScreenActivity extends CustomThemeEngineAppCompatActivity
 
 		setContentView(R.layout.app_strangescreen);
 
-		int ImageViewBackgroundTintColor = ColorUtils.lighter(getResources().getColor(R.color.coloraccent), 0.01f);
+		int ImageViewBackgroundTintColor = ColorUtils.lighter(getResources().getColor(R.color.colorAccent), 0.01f);
 
 		ImageView strangescreen_image = findViewById(R.id.strangescreen_image);
 		strangescreen_image.setBackgroundTintList(ColorStateList.valueOf(ImageViewBackgroundTintColor));

@@ -4,13 +4,14 @@ import android.content.Context;
 import android.graphics.Rect;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
+import android.view.View;
+
 import androidx.annotation.ColorInt;
 import androidx.annotation.ColorRes;
 import androidx.annotation.DimenRes;
 import androidx.annotation.IdRes;
 import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
-import android.view.View;
 
 import com.google.android.material.bottomappbar.BottomAppBar;
 

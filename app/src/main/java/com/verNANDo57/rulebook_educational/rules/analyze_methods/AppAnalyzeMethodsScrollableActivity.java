@@ -2,7 +2,6 @@ package com.verNANDo57.rulebook_educational.rules.analyze_methods;
 
 import android.annotation.SuppressLint;
 import android.content.res.AssetManager;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
@@ -25,12 +24,12 @@ import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.navigation.NavigationView;
 import com.verNANDo57.rulebook_educational.BottomNavBetweenLessonsFragment;
-import com.verNANDo57.rulebook_educational.customclasses.AppSomeUtils;
 import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngineAppCompatActivity;
 import com.verNANDo57.rulebook_educational.for_pills.R;
 import com.verNANDo57.rulebook_educational.preferences.RulebookApplicationSharedPreferences;
 import com.verNANDo57.rulebook_educational.rules.RulebookApplicationBooleans;
 import com.verNANDo57.rulebook_educational.styleabletoast.StyleableToast;
+import com.verNANDo57.rulebook_educational.useful.AppSomeUtils;
 
 import org.jetbrains.annotations.NotNull;
 

@@ -1,6 +1,7 @@
 package com.verNANDo57.rulebook_educational.libs.nineoldandroids.animation;
 
 import android.view.View;
+
 import com.verNANDo57.rulebook_educational.libs.nineoldandroids.util.FloatProperty;
 import com.verNANDo57.rulebook_educational.libs.nineoldandroids.util.IntProperty;
 import com.verNANDo57.rulebook_educational.libs.nineoldandroids.util.Property;

@@ -1,10 +1,11 @@
 package com.verNANDo57.rulebook_educational.libs.nineoldandroids.view;
 
-import java.lang.ref.WeakReference;
-
 import android.view.View;
 import android.view.animation.Interpolator;
+
 import com.verNANDo57.rulebook_educational.libs.nineoldandroids.animation.Animator.AnimatorListener;
+
+import java.lang.ref.WeakReference;
 
 class ViewPropertyAnimatorICS extends ViewPropertyAnimator {
     /**

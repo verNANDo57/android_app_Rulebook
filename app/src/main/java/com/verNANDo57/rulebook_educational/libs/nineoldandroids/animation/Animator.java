@@ -1,8 +1,8 @@
 package com.verNANDo57.rulebook_educational.libs.nineoldandroids.animation;
 
-import java.util.ArrayList;
-
 import android.view.animation.Interpolator;
+
+import java.util.ArrayList;
 
 /**
  * This is the superclass for classes which provide basic support for animations which can be

@@ -14,10 +14,10 @@
         android:bottom="0dp"/>
 
     <solid
-        android:color="@color/coloraccent"/>
+        android:color="@color/colorAccent"/>
 
     <stroke
         android:width="@dimen/app_actionbar_shape_stroke_width"
-        android:color="@color/coloraccent"/>
+        android:color="@color/colorAccent"/>
 
 </shape>

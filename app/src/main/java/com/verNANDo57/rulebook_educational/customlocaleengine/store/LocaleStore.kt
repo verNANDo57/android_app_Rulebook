@@ -1,7 +1,7 @@
 package com.verNANDo57.rulebook_educational.customlocaleengine.store
 
 import com.verNANDo57.rulebook_educational.customlocaleengine.CustomLocaleEngine
-import java.util.*
+import java.util.Locale
 
 /**
  *  Interface to be used by [CustomLocaleEngine] for storing a Locale and its complementary data.

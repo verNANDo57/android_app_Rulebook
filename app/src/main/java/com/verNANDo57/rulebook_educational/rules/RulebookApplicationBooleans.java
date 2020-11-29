@@ -21,19 +21,6 @@ public class RulebookApplicationBooleans {
         return RulebookBooleansInMainRules.getString("MainRulesFragmentOpenedBoolean", "null");
     }
 
-    /*
-    //This method will save AppBarLayout_expanded boolean state
-    public void setAppBarLayoutExpanded(Boolean state){
-        SharedPreferences.Editor editor= RulebookBooleansInMainRules.edit();
-        editor.putBoolean("AppBarLayout_expanded", state);
-        editor.apply();
-    }
-    //This method will load AppBarLayout_expanded boolean state
-    public Boolean loadAppBarLayoutExpanded (){
-        return RulebookBooleansInMainRules.getBoolean("AppBarLayout_expanded", false);
-    }
-    */
-
     //This method will save boolean state
     public void setAppBarPageSelected(String state){
         SharedPreferences.Editor editor= RulebookBooleansInMainRules.edit();

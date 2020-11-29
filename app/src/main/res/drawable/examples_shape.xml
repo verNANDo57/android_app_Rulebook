@@ -17,5 +17,5 @@
 	
 	<stroke
 		android:width="@dimen/app_examplesshape_default_stroke_value"
-		android:color="@color/colorAccent"/>
+		android:color="@color/coloraccent"/>
 </shape>

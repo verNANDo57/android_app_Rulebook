@@ -24,12 +24,12 @@ import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.navigation.NavigationView;
 import com.verNANDo57.rulebook_educational.BottomNavBetweenLessonsFragment;
+import com.verNANDo57.rulebook_educational.usefulclasses.AppSomeUtils;
 import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngineAppCompatActivity;
 import com.verNANDo57.rulebook_educational.for_pills.R;
 import com.verNANDo57.rulebook_educational.preferences.RulebookApplicationSharedPreferences;
 import com.verNANDo57.rulebook_educational.rules.RulebookApplicationBooleans;
 import com.verNANDo57.rulebook_educational.styleabletoast.StyleableToast;
-import com.verNANDo57.rulebook_educational.useful.AppSomeUtils;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -220,6 +220,7 @@ public class AppAnalyzeMethodsScrollableActivity extends CustomThemeEngineAppCom
         return true;
     }
 
+    @SuppressLint("NonConstantResourceId")
     public boolean onOptionsItemSelected(MenuItem item)
     {
         switch (item.getItemId())
@@ -256,11 +257,7 @@ public class AppAnalyzeMethodsScrollableActivity extends CustomThemeEngineAppCom
     }
 
     //system navigationbar
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (keyCode == KeyEvent.KEYCODE_BACK) {
-            onBackPressed();
-        }
-        return super.onKeyDown(keyCode, event); }
+    @Override
     public void onBackPressed(){
         booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("null");
         finish();

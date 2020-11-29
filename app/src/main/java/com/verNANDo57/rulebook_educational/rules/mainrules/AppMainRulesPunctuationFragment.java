@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
@@ -32,8 +34,11 @@ public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        preferences = new RulebookApplicationSharedPreferences(Objects.requireNonNull(getContext()));
-        booleansInMainRules = new RulebookApplicationBooleans(Objects.requireNonNull(getContext()));
+        Animation fade_in = AnimationUtils.loadAnimation(requireContext(), R.anim.app_fade_in);
+        Animation fade_out = AnimationUtils.loadAnimation(requireContext(), R.anim.app_fade_out);
+
+        preferences = new RulebookApplicationSharedPreferences(requireContext());
+        booleansInMainRules = new RulebookApplicationBooleans(requireContext());
 
         view = inflater.inflate(R.layout.punctuation, container, false);
 
@@ -178,8 +183,10 @@ public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
             @Override
             public void onClick(View v) {
                 if (punctuationButton1_sub_container.getVisibility() == View.GONE) {
+                    punctuationButton1_sub_container.startAnimation(fade_in);
                     punctuationButton1_sub_container.setVisibility(View.VISIBLE);
                 } else {
+                    punctuationButton1_sub_container.startAnimation(fade_out);
                     punctuationButton1_sub_container.setVisibility(View.GONE);
                 }
             }
@@ -220,8 +227,10 @@ public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
             @Override
             public void onClick(View v) {
                 if (punctuationButton2_sub_container.getVisibility() == View.GONE) {
+                    punctuationButton2_sub_container.startAnimation(fade_in);
                     punctuationButton2_sub_container.setVisibility(View.VISIBLE);
                 } else {
+                    punctuationButton2_sub_container.startAnimation(fade_out);
                     punctuationButton2_sub_container.setVisibility(View.GONE);
                 }
             }
@@ -262,8 +271,10 @@ public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
             @Override
             public void onClick(View v) {
                 if (punctuationButton3_sub_container.getVisibility() == View.GONE) {
+                    punctuationButton3_sub_container.startAnimation(fade_in);
                     punctuationButton3_sub_container.setVisibility(View.VISIBLE);
                 } else {
+                    punctuationButton3_sub_container.startAnimation(fade_out);
                     punctuationButton3_sub_container.setVisibility(View.GONE);
                 }
             }
@@ -325,8 +336,10 @@ public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
             @Override
             public void onClick(View v) {
                 if (punctuationButton4_sub_container.getVisibility() == View.GONE) {
+                    punctuationButton4_sub_container.startAnimation(fade_in);
                     punctuationButton4_sub_container.setVisibility(View.VISIBLE);
                 } else {
+                    punctuationButton4_sub_container.startAnimation(fade_out);
                     punctuationButton4_sub_container.setVisibility(View.GONE);
                 }
             }
@@ -353,8 +366,10 @@ public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
             @Override
             public void onClick(View v) {
                 if (punctuationButton5_sub_container.getVisibility() == View.GONE) {
+                    punctuationButton5_sub_container.startAnimation(fade_in);
                     punctuationButton5_sub_container.setVisibility(View.VISIBLE);
                 } else {
+                    punctuationButton5_sub_container.startAnimation(fade_out);
                     punctuationButton5_sub_container.setVisibility(View.GONE);
                 }
             }
@@ -395,8 +410,10 @@ public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
             @Override
             public void onClick(View v) {
                 if (punctuationButton6_sub_container.getVisibility() == View.GONE) {
+                    punctuationButton6_sub_container.startAnimation(fade_in);
                     punctuationButton6_sub_container.setVisibility(View.VISIBLE);
                 } else {
+                    punctuationButton6_sub_container.startAnimation(fade_out);
                     punctuationButton6_sub_container.setVisibility(View.GONE);
                 }
             }
@@ -430,8 +447,10 @@ public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
             @Override
             public void onClick(View v) {
                 if (punctuationButton7_sub_container.getVisibility() == View.GONE) {
+                    punctuationButton7_sub_container.startAnimation(fade_in);
                     punctuationButton7_sub_container.setVisibility(View.VISIBLE);
                 } else {
+                    punctuationButton7_sub_container.startAnimation(fade_out);
                     punctuationButton7_sub_container.setVisibility(View.GONE);
                 }
             }
@@ -465,8 +484,10 @@ public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
             @Override
             public void onClick(View v) {
                 if (punctuationButton8_sub_container.getVisibility() == View.GONE) {
+                    punctuationButton8_sub_container.startAnimation(fade_in);
                     punctuationButton8_sub_container.setVisibility(View.VISIBLE);
                 } else {
+                    punctuationButton8_sub_container.startAnimation(fade_out);
                     punctuationButton8_sub_container.setVisibility(View.GONE);
                 }
             }
@@ -493,8 +514,10 @@ public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
             @Override
             public void onClick(View v) {
                 if (punctuationButton9_sub_container.getVisibility() == View.GONE) {
+                    punctuationButton9_sub_container.startAnimation(fade_in);
                     punctuationButton9_sub_container.setVisibility(View.VISIBLE);
                 } else {
+                    punctuationButton9_sub_container.startAnimation(fade_out);
                     punctuationButton9_sub_container.setVisibility(View.GONE);
                 }
             }
@@ -528,8 +551,10 @@ public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
             @Override
             public void onClick(View v) {
                 if (punctuationButton10_sub_container.getVisibility() == View.GONE) {
+                    punctuationButton10_sub_container.startAnimation(fade_in);
                     punctuationButton10_sub_container.setVisibility(View.VISIBLE);
                 } else {
+                    punctuationButton10_sub_container.startAnimation(fade_out);
                     punctuationButton10_sub_container.setVisibility(View.GONE);
                 }
             }
@@ -598,8 +623,10 @@ public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
             @Override
             public void onClick(View v) {
                 if (punctuationButton11_sub_container.getVisibility() == View.GONE) {
+                    punctuationButton11_sub_container.startAnimation(fade_in);
                     punctuationButton11_sub_container.setVisibility(View.VISIBLE);
                 } else {
+                    punctuationButton11_sub_container.startAnimation(fade_out);
                     punctuationButton11_sub_container.setVisibility(View.GONE);
                 }
             }
@@ -626,8 +653,10 @@ public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
             @Override
             public void onClick(View v) {
                 if (punctuationButton12_sub_container.getVisibility() == View.GONE) {
+                    punctuationButton12_sub_container.startAnimation(fade_in);
                     punctuationButton12_sub_container.setVisibility(View.VISIBLE);
                 } else {
+                    punctuationButton12_sub_container.startAnimation(fade_out);
                     punctuationButton12_sub_container.setVisibility(View.GONE);
                 }
             }
@@ -678,8 +707,10 @@ public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
             @Override
             public void onClick(View v) {
                 if (punctuationButton14_sub_container.getVisibility() == View.GONE) {
+                    punctuationButton14_sub_container.startAnimation(fade_in);
                     punctuationButton14_sub_container.setVisibility(View.VISIBLE);
                 } else {
+                    punctuationButton14_sub_container.startAnimation(fade_out);
                     punctuationButton14_sub_container.setVisibility(View.GONE);
                 }
             }
@@ -748,8 +779,10 @@ public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
             @Override
             public void onClick(View v) {
                 if (punctuationButton15_sub_container.getVisibility() == View.GONE) {
+                    punctuationButton15_sub_container.startAnimation(fade_in);
                     punctuationButton15_sub_container.setVisibility(View.VISIBLE);
                 } else {
+                    punctuationButton15_sub_container.startAnimation(fade_out);
                     punctuationButton15_sub_container.setVisibility(View.GONE);
                 }
             }
@@ -800,8 +833,10 @@ public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
             @Override
             public void onClick(View v) {
                 if (punctuationButton17_sub_container.getVisibility() == View.GONE) {
+                    punctuationButton17_sub_container.startAnimation(fade_in);
                     punctuationButton17_sub_container.setVisibility(View.VISIBLE);
                 } else {
+                    punctuationButton17_sub_container.startAnimation(fade_out);
                     punctuationButton17_sub_container.setVisibility(View.GONE);
                 }
             }
@@ -849,8 +884,10 @@ public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
             @Override
             public void onClick(View v) {
                 if (punctuationButton18_sub_container.getVisibility() == View.GONE) {
+                    punctuationButton18_sub_container.startAnimation(fade_in);
                     punctuationButton18_sub_container.setVisibility(View.VISIBLE);
                 } else {
+                    punctuationButton18_sub_container.startAnimation(fade_out);
                     punctuationButton18_sub_container.setVisibility(View.GONE);
                 }
             }
@@ -905,8 +942,10 @@ public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
             @Override
             public void onClick(View v) {
                 if (punctuationButton19_sub_container.getVisibility() == View.GONE) {
+                    punctuationButton19_sub_container.startAnimation(fade_in);
                     punctuationButton19_sub_container.setVisibility(View.VISIBLE);
                 } else {
+                    punctuationButton19_sub_container.startAnimation(fade_out);
                     punctuationButton19_sub_container.setVisibility(View.GONE);
                 }
             }

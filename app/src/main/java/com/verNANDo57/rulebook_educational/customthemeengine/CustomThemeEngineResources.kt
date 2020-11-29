@@ -7,9 +7,9 @@ import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.Drawable
 import android.os.Build
 import androidx.annotation.RequiresApi
-import com.verNANDo57.rulebook_educational.customthemeengine.tinting.CustomThemeEngineTinter.CustomThemeEngineTintException
 import com.verNANDo57.rulebook_educational.for_pills.R
-import java.util.*
+import com.verNANDo57.rulebook_educational.customthemeengine.tinting.CustomThemeEngineTinter.CustomThemeEngineTintException
+import java.util.Collections
 import java.util.concurrent.ConcurrentHashMap
 
 /**

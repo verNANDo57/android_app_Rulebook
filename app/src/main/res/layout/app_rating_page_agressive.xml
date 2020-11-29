@@ -32,7 +32,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="@dimen/app_rating_page_textview_marginTop"
                 android:text="@string/rate_us"
-                android:color="@color/colorAccent"
+                android:color="@color/coloraccent"
                 android:textSize="@dimen/app_rating_page_textview_textsize" />
 
             <RatingBar

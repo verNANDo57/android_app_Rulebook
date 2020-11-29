@@ -7,13 +7,11 @@
             <objectAnimator android:duration="@integer/config_shortAnimTime"
                 android:propertyName="scaleX"
                 android:startDelay="0"
-                android:valueFrom="0.9"
                 android:valueTo="1"
                 android:valueType="floatType"/>
             <objectAnimator android:duration="@integer/config_shortAnimTime"
                 android:propertyName="scaleY"
                 android:startDelay="0"
-                android:valueFrom="0.9"
                 android:valueTo="1"
                 android:valueType="floatType"/>
             <objectAnimator android:duration="@integer/config_shortAnimTime"
@@ -29,13 +27,11 @@
             <objectAnimator android:duration="@integer/config_shortAnimTime"
                 android:propertyName="scaleX"
                 android:startDelay="0"
-                android:valueFrom="1"
                 android:valueTo="0.9"
                 android:valueType="floatType"/>
             <objectAnimator android:duration="@integer/config_shortAnimTime"
                 android:propertyName="scaleY"
                 android:startDelay="0"
-                android:valueFrom="1"
                 android:valueTo="0.9"
                 android:valueType="floatType"/>
             <objectAnimator android:duration="@integer/config_shortAnimTime"

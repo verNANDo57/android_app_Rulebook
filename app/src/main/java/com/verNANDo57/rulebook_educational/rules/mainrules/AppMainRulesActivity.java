@@ -1,17 +1,26 @@
 package com.verNANDo57.rulebook_educational.rules.mainrules;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewTreeObserver;
+import android.view.animation.TranslateAnimation;
+import android.widget.ScrollView;
+import android.widget.TextView;
 
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.widget.NestedScrollView;
 import androidx.viewpager.widget.ViewPager;
 
+import com.google.android.material.bottomappbar.BottomAppBar;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.verNANDo57.rulebook_educational.BottomNavBetweenLessonsFragment;
+import com.verNANDo57.rulebook_educational.preferences.RulebookApplicationSharedPreferences;
 import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngineAppCompatActivity;
 import com.verNANDo57.rulebook_educational.for_pills.R;
-import com.verNANDo57.rulebook_educational.preferences.RulebookApplicationSharedPreferences;
 import com.verNANDo57.rulebook_educational.rules.mainrules.adapter.CustomPagerAdapter;
 
 
@@ -48,10 +57,4 @@ public class AppMainRulesActivity extends CustomThemeEngineAppCompatActivity
 		mViewPager.addOnPageChangeListener(new com.google.android.material.tabs.TabLayout.TabLayoutOnPageChangeListener(tabLayout));
 		tabLayout.addOnTabSelectedListener(new com.google.android.material.tabs.TabLayout.ViewPagerOnTabSelectedListener(mViewPager));
 	}
-
-	//system navigationbar
-	public boolean onKeyDown(int keyCode, KeyEvent event) {     switch (keyCode) {     case KeyEvent.KEYCODE_BACK:
-		if (android.os.Build.VERSION.SDK_INT <android.os.Build.VERSION_CODES.ECLAIR     && event.getRepeatCount() == 0) {     onBackPressed();     }     }
-		return super.onKeyDown(keyCode, event); }
-	public void onBackPressed(){ finish();}
 }

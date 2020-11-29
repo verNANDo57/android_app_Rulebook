@@ -14,6 +14,6 @@
 		android:bottom="0dp"/>
 
 	<stroke
-		android:width="@dimen/app_actionbar_shape_stroke_width"
-		android:color="@color/colorAccent"/>
+		android:width="@dimen/app_toolbar_shape_stroke_width"
+		android:color="@color/coloraccent"/>
 </shape>

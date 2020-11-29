@@ -14,5 +14,5 @@
 		android:bottom="0dp"/>
 
 	<solid
-		android:color="@color/colorAccent"/>
+		android:color="@color/coloraccent"/>
 </shape>

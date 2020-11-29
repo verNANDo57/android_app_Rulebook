@@ -12,11 +12,11 @@ import android.os.Build
 import android.os.Bundle
 import androidx.annotation.RequiresApi
 import com.verNANDo57.rulebook_educational.customthemeengine.CustomThemeEngine
+import com.verNANDo57.rulebook_educational.for_pills.R
 import com.verNANDo57.rulebook_educational.customthemeengine.getKey
 import com.verNANDo57.rulebook_educational.customthemeengine.utils.ColorUtils
 import com.verNANDo57.rulebook_educational.customthemeengine.utils.Reflection.Companion.getFieldValue
 import com.verNANDo57.rulebook_educational.customthemeengine.utils.Reflection.Companion.getMethod
-import com.verNANDo57.rulebook_educational.for_pills.R
 
 @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
 @TargetApi(Build.VERSION_CODES.LOLLIPOP)
@@ -77,7 +77,7 @@ internal open class CustomThemeEngineDelegateImplV21(
       val cache = getFieldValue<Any?>(activity.resources, "sPreloadedColorStateLists") ?: return
       val method = getMethod(cache, "put", Long::class.java, Object::class.java) ?: return
       for ((id, color) in hashMapOf<Int, Int>().apply {
-        put(R.color.colorAccent, customThemeEngine.accent)
+        put(R.color.coloraccent, customThemeEngine.accent)
         put(R.color.styleable_toast_default_text_color_reference, customThemeEngine.primary)
         put(R.color.bottomappbar_items_color_everytheme, customThemeEngine.bottomAppBarItemColor)
         put(R.color.styleable_toast_default_background_color, customThemeEngine.backgroundToast)

@@ -3,7 +3,7 @@ package com.verNANDo57.rulebook_educational.customlocaleengine.store
 import android.content.Context
 import android.content.SharedPreferences
 import org.json.JSONObject
-import java.util.*
+import java.util.Locale
 
 /**
  * Default implementation of [LocaleStore] using [SharedPreferences].

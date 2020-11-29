@@ -5,11 +5,14 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
-import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngineFragment;
 import com.verNANDo57.rulebook_educational.for_pills.R;
+
+import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngineFragment;
 import com.verNANDo57.rulebook_educational.preferences.RulebookApplicationSharedPreferences;
 import com.verNANDo57.rulebook_educational.rules.RulebookApplicationBooleans;
 
@@ -33,8 +36,11 @@ public class AppMainRulesOrthographyFragment extends CustomThemeEngineFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        preferences = new RulebookApplicationSharedPreferences(Objects.requireNonNull(getContext()));
-        booleansInMainRules = new RulebookApplicationBooleans(Objects.requireNonNull(getContext()));
+        Animation fade_in = AnimationUtils.loadAnimation(requireContext(), R.anim.app_fade_in);
+        Animation fade_out = AnimationUtils.loadAnimation(requireContext(), R.anim.app_fade_out);
+
+        preferences = new RulebookApplicationSharedPreferences(requireContext());
+        booleansInMainRules = new RulebookApplicationBooleans(requireContext());
 
 
         view = inflater.inflate(R.layout.orthography, container, false);
@@ -154,8 +160,10 @@ public class AppMainRulesOrthographyFragment extends CustomThemeEngineFragment {
             @Override
             public void onClick(View v) {
                 if (orthographyButton1_sub_container.getVisibility() == View.GONE) {
+                    orthographyButton1_sub_container.startAnimation(fade_in);
                     orthographyButton1_sub_container.setVisibility(View.VISIBLE);
                 } else {
+                    orthographyButton1_sub_container.startAnimation(fade_out);
                     orthographyButton1_sub_container.setVisibility(View.GONE);
                 }
             }
@@ -210,8 +218,10 @@ public class AppMainRulesOrthographyFragment extends CustomThemeEngineFragment {
             @Override
             public void onClick(View v) {
                 if (orthographyButton2_sub_container.getVisibility() == View.GONE) {
+                    orthographyButton2_sub_container.startAnimation(fade_in);
                     orthographyButton2_sub_container.setVisibility(View.VISIBLE);
                 } else {
+                    orthographyButton2_sub_container.startAnimation(fade_out);
                     orthographyButton2_sub_container.setVisibility(View.GONE);
                 }
             }
@@ -245,8 +255,10 @@ public class AppMainRulesOrthographyFragment extends CustomThemeEngineFragment {
             @Override
             public void onClick(View v) {
                 if (orthographyButton3_sub_container.getVisibility() == View.GONE) {
+                    orthographyButton3_sub_container.startAnimation(fade_in);
                     orthographyButton3_sub_container.setVisibility(View.VISIBLE);
                 } else {
+                    orthographyButton3_sub_container.startAnimation(fade_out);
                     orthographyButton3_sub_container.setVisibility(View.GONE);
                 }
             }
@@ -389,8 +401,10 @@ public class AppMainRulesOrthographyFragment extends CustomThemeEngineFragment {
             @Override
             public void onClick(View v) {
                 if (orthographyButton5_sub_container.getVisibility() == View.GONE) {
+                    orthographyButton5_sub_container.startAnimation(fade_in);
                     orthographyButton5_sub_container.setVisibility(View.VISIBLE);
                 } else {
+                    orthographyButton5_sub_container.startAnimation(fade_out);
                     orthographyButton5_sub_container.setVisibility(View.GONE);
                 }
             }
@@ -424,8 +438,10 @@ public class AppMainRulesOrthographyFragment extends CustomThemeEngineFragment {
             @Override
             public void onClick(View v) {
                 if (orthographyButton6_sub_container.getVisibility() == View.GONE) {
+                    orthographyButton6_sub_container.startAnimation(fade_in);
                     orthographyButton6_sub_container.setVisibility(View.VISIBLE);
                 } else {
+                    orthographyButton6_sub_container.startAnimation(fade_out);
                     orthographyButton6_sub_container.setVisibility(View.GONE);
                 }
             }
@@ -452,8 +468,10 @@ public class AppMainRulesOrthographyFragment extends CustomThemeEngineFragment {
             @Override
             public void onClick(View v) {
                 if (orthographyButton7_sub_container.getVisibility() == View.GONE) {
+                    orthographyButton7_sub_container.startAnimation(fade_in);
                     orthographyButton7_sub_container.setVisibility(View.VISIBLE);
                 } else {
+                    orthographyButton7_sub_container.startAnimation(fade_out);
                     orthographyButton7_sub_container.setVisibility(View.GONE);
                 }
             }
@@ -480,8 +498,10 @@ public class AppMainRulesOrthographyFragment extends CustomThemeEngineFragment {
             @Override
             public void onClick(View v) {
                 if (orthographyButton8_sub_container.getVisibility() == View.GONE) {
+                    orthographyButton8_sub_container.startAnimation(fade_in);
                     orthographyButton8_sub_container.setVisibility(View.VISIBLE);
                 } else {
+                    orthographyButton8_sub_container.startAnimation(fade_out);
                     orthographyButton8_sub_container.setVisibility(View.GONE);
                 }
             }
@@ -508,8 +528,10 @@ public class AppMainRulesOrthographyFragment extends CustomThemeEngineFragment {
             @Override
             public void onClick(View v) {
                 if (orthographyButton9_sub_container.getVisibility() == View.GONE) {
+                    orthographyButton9_sub_container.startAnimation(fade_in);
                     orthographyButton9_sub_container.setVisibility(View.VISIBLE);
                 } else {
+                    orthographyButton9_sub_container.startAnimation(fade_out);
                     orthographyButton9_sub_container.setVisibility(View.GONE);
                 }
             }
@@ -550,8 +572,10 @@ public class AppMainRulesOrthographyFragment extends CustomThemeEngineFragment {
             @Override
             public void onClick(View v) {
                 if (orthographyButton10_sub_container.getVisibility() == View.GONE) {
+                    orthographyButton10_sub_container.startAnimation(fade_in);
                     orthographyButton10_sub_container.setVisibility(View.VISIBLE);
                 } else {
+                    orthographyButton10_sub_container.startAnimation(fade_out);
                     orthographyButton10_sub_container.setVisibility(View.GONE);
                 }
             }
@@ -578,8 +602,10 @@ public class AppMainRulesOrthographyFragment extends CustomThemeEngineFragment {
             @Override
             public void onClick(View v) {
                 if (orthographyButton11_sub_container.getVisibility() == View.GONE) {
+                    orthographyButton11_sub_container.startAnimation(fade_in);
                     orthographyButton11_sub_container.setVisibility(View.VISIBLE);
                 } else {
+                    orthographyButton11_sub_container.startAnimation(fade_out);
                     orthographyButton11_sub_container.setVisibility(View.GONE);
                 }
             }
@@ -606,8 +632,10 @@ public class AppMainRulesOrthographyFragment extends CustomThemeEngineFragment {
             @Override
             public void onClick(View v) {
                 if (orthographyButton12_sub_container.getVisibility() == View.GONE) {
+                    orthographyButton12_sub_container.startAnimation(fade_in);
                     orthographyButton12_sub_container.setVisibility(View.VISIBLE);
                 } else {
+                    orthographyButton12_sub_container.startAnimation(fade_out);
                     orthographyButton12_sub_container.setVisibility(View.GONE);
                 }
             }
@@ -641,8 +669,10 @@ public class AppMainRulesOrthographyFragment extends CustomThemeEngineFragment {
             @Override
             public void onClick(View v) {
                 if (orthographyButton13_sub_container.getVisibility() == View.GONE) {
+                    orthographyButton13_sub_container.startAnimation(fade_in);
                     orthographyButton13_sub_container.setVisibility(View.VISIBLE);
                 } else {
+                    orthographyButton13_sub_container.startAnimation(fade_out);
                     orthographyButton13_sub_container.setVisibility(View.GONE);
                 }
             }
@@ -669,8 +699,10 @@ public class AppMainRulesOrthographyFragment extends CustomThemeEngineFragment {
             @Override
             public void onClick(View v) {
                 if (orthographyButton14_sub_container.getVisibility() == View.GONE) {
+                    orthographyButton14_sub_container.startAnimation(fade_in);
                     orthographyButton14_sub_container.setVisibility(View.VISIBLE);
                 } else {
+                    orthographyButton14_sub_container.startAnimation(fade_out);
                     orthographyButton14_sub_container.setVisibility(View.GONE);
                 }
             }
@@ -747,8 +779,10 @@ public class AppMainRulesOrthographyFragment extends CustomThemeEngineFragment {
             @Override
             public void onClick(View v) {
                 if (orthographyButton17_sub_container.getVisibility() == View.GONE) {
+                    orthographyButton17_sub_container.startAnimation(fade_in);
                     orthographyButton17_sub_container.setVisibility(View.VISIBLE);
                 } else {
+                    orthographyButton17_sub_container.startAnimation(fade_out);
                     orthographyButton17_sub_container.setVisibility(View.GONE);
                 }
             }

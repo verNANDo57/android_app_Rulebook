@@ -38,11 +38,11 @@ import androidx.core.graphics.ColorUtils;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.FragmentActivity;
 
-import com.verNANDo57.rulebook_educational.for_pills.R;
-
 import java.util.Arrays;
 import java.util.Locale;
 import java.util.Objects;
+
+import com.verNANDo57.rulebook_educational.for_pills.R;
 
 /**
  * <p>A dialog to pick a color.</p>

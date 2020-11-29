@@ -2,6 +2,7 @@ package com.verNANDo57.rulebook_educational;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.animation.TranslateAnimation;
 import android.widget.Button;
@@ -13,6 +14,7 @@ import com.google.android.material.navigation.NavigationView;
 import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngineAppCompatActivity;
 import com.verNANDo57.rulebook_educational.for_pills.R;
 import com.verNANDo57.rulebook_educational.preferences.RulebookApplicationSharedPreferences;
+import com.verNANDo57.rulebook_educational.usefulclasses.AppSomeUtils;
 
 public class AppChooseYourDestiny extends CustomThemeEngineAppCompatActivity {
 
@@ -40,15 +42,9 @@ public class AppChooseYourDestiny extends CustomThemeEngineAppCompatActivity {
 
         Button app_main_rules = findViewById(R.id.main_rules);
         app_main_rules.setEnabled(true);
-        //Antimation when activity starts------------------------------------------------
         if(preferences.loadRulebookAnimationsDisableState()==false) {
-            TranslateAnimation animate = new TranslateAnimation(
-                    -250, 0, 0, 0);
-            animate.setDuration(600);
-            animate.setFillAfter(false);
-            app_main_rules.startAnimation(animate);
+            AppSomeUtils.setAnimatorToAnyView(app_main_rules, "to_left", (float) 250);
         }
-        //End of Animation---------------------------------------------------------------
         app_main_rules.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -59,15 +55,9 @@ public class AppChooseYourDestiny extends CustomThemeEngineAppCompatActivity {
 
         Button app_lexicon_rules = findViewById(R.id.lexicon_rules);
         app_lexicon_rules.setEnabled(true);
-        //Antimation when activity starts------------------------------------------------
         if(preferences.loadRulebookAnimationsDisableState()==false) {
-            TranslateAnimation animate = new TranslateAnimation(
-                    250, 0, 0, 0);
-            animate.setDuration(600);
-            animate.setFillAfter(false);
-            app_lexicon_rules.startAnimation(animate);
+            AppSomeUtils.setAnimatorToAnyView(app_lexicon_rules, "to_right", (float) 250);
         }
-        //End of Animation---------------------------------------------------------------
         app_lexicon_rules.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -78,15 +68,9 @@ public class AppChooseYourDestiny extends CustomThemeEngineAppCompatActivity {
 
         Button app_schemes_and_tables = findViewById(R.id.schemes_and_tables);
         app_schemes_and_tables.setEnabled(true);
-        //Antimation when activity starts------------------------------------------------
         if(preferences.loadRulebookAnimationsDisableState()==false) {
-            TranslateAnimation animate = new TranslateAnimation(
-                    -250, 0, 0, 0);
-            animate.setDuration(600);
-            animate.setFillAfter(false);
-            app_schemes_and_tables.startAnimation(animate);
+            AppSomeUtils.setAnimatorToAnyView(app_schemes_and_tables, "to_left", (float) 250);
         }
-        //End of Animation---------------------------------------------------------------
         app_schemes_and_tables.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -97,15 +81,9 @@ public class AppChooseYourDestiny extends CustomThemeEngineAppCompatActivity {
 
         Button app_analyze_methods = findViewById(R.id.analyze_methods);
         app_analyze_methods.setEnabled(true);
-        //Antimation when activity starts------------------------------------------------
         if(preferences.loadRulebookAnimationsDisableState()==false) {
-            TranslateAnimation animate = new TranslateAnimation(
-                    250, 0, 0, 0);
-            animate.setDuration(600);
-            animate.setFillAfter(false);
-            app_analyze_methods.startAnimation(animate);
+            AppSomeUtils.setAnimatorToAnyView(app_analyze_methods, "to_right", (float) 250);
         }
-        //End of Animation---------------------------------------------------------------
         app_analyze_methods.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

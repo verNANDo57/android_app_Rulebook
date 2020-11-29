@@ -89,7 +89,7 @@ abstract class CustomThemeEngineAppCompatActivity : AppCompatActivity(), BaseCus
     val RB = BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher_round)
     val taskDesc: TaskDescription
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-      taskDesc = TaskDescription(getString(R.string.app_name), RB, ContextCompat.getColor(this, R.color.colorAccent))
+      taskDesc = TaskDescription(getString(R.string.app_name), RB, ContextCompat.getColor(this, R.color.coloraccent))
       setTaskDescription(taskDesc)
     }
 
@@ -97,13 +97,14 @@ abstract class CustomThemeEngineAppCompatActivity : AppCompatActivity(), BaseCus
     super.onCreate(savedInstanceState)
   }
 
-  //system navbar
+  //Catch "back" button press
   override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
     if (keyCode == KeyEvent.KEYCODE_BACK) {
       onBackPressed()
     }
     return super.onKeyDown(keyCode, event)
   }
+
   override fun onBackPressed() {
     finish()
   }

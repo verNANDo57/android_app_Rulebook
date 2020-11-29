@@ -11,10 +11,12 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.SwitchPreferenceCompat;
 
-import com.verNANDo57.rulebook_educational.StrangeScreenActivity;
+import com.verNANDo57.rulebook_educational.SplashScreenActivity;
 import com.verNANDo57.rulebook_educational.customlocaleengine.CustomLocaleEngine;
 import com.verNANDo57.rulebook_educational.customthemeengine.prefs.CustomThemeEngineSettingsActivity;
 import com.verNANDo57.rulebook_educational.for_pills.R;
+
+import java.util.Objects;
 
 
 public class AppSettingsFragment extends PreferenceFragmentCompat
@@ -99,6 +101,7 @@ public class AppSettingsFragment extends PreferenceFragmentCompat
 
 		//Other
 		androidx.preference.Preference select_locale = (Preference) findPreference("select_locale");
+		select_locale.setEnabled(false);
 		select_locale.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
 			@Override
 			public boolean onPreferenceClick(Preference preference) {
@@ -148,15 +151,15 @@ public class AppSettingsFragment extends PreferenceFragmentCompat
 
 	@RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
 	public void restartRulebook(){
-		requireActivity().finishAffinity();
-		Intent restartRulebook = new Intent(getContext(), StrangeScreenActivity.class);
+		getActivity().finishAffinity();
+		Intent restartRulebook = new Intent(getContext(), SplashScreenActivity.class);
 		startActivity(restartRulebook);
 	}
 
 	@RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
 	public void restartRulebookAlternative(){
-		requireActivity().finishAffinity();
-		Intent restartRulebook = new Intent(getContext(), StrangeScreenActivity.class);
+		getActivity().finishAffinity();
+		Intent restartRulebook = new Intent(getContext(), SplashScreenActivity.class);
 		restartRulebook.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK & Intent.FLAG_ACTIVITY_NEW_TASK);
 		startActivity(restartRulebook);
 	}

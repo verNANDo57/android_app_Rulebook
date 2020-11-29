@@ -23,7 +23,6 @@ import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.view.View;
-
 import com.verNANDo57.rulebook_educational.for_pills.R;
 
 /**

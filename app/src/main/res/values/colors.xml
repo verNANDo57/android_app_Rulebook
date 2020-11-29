@@ -23,6 +23,9 @@
 	<color name="app_agressive_rating_mouth_color">#000000</color>
 
 	<color name="coloraccent_reference">#A55634</color>
+
+	<color name="colorPrimary">@color/app_rulebook_theme</color>
+	<color name="colorPrimaryDark">@color/app_rulebook_theme</color>
 	<color name="colorAccent">@color/coloraccent</color>
 
 	<!-- Background colors -->

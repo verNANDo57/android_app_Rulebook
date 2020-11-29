@@ -6,6 +6,8 @@ import android.os.Build;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.animation.TranslateAnimation;
@@ -19,6 +21,7 @@ import com.google.android.material.bottomappbar.BottomAppBar;
 import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngineAppCompatActivity;
 import com.verNANDo57.rulebook_educational.for_pills.R;
 import com.verNANDo57.rulebook_educational.preferences.RulebookApplicationSharedPreferences;
+import com.verNANDo57.rulebook_educational.usefulclasses.AppSomeUtils;
 
 @SuppressLint("ClickableViewAccessibility")
 public class AppRatingAgressiveActivity extends CustomThemeEngineAppCompatActivity {
@@ -36,6 +39,9 @@ public class AppRatingAgressiveActivity extends CustomThemeEngineAppCompatActivi
         //BottomAppBar
         final BottomAppBar bar_in_rating_page = findViewById(R.id.bar_in_rating_page);
         setSupportActionBar(bar_in_rating_page);
+        if(preferences.loadRulebookAnimationsDisableState()==false) {
+            AppSomeUtils.setAnimatorToAnyView(bar_in_rating_page, "to_top", (float) 250);
+        }
 
         ScrollView rating_page_scrollview = findViewById(R.id.rating_page_scrollview);
         rating_page_scrollview.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener() {
@@ -43,25 +49,18 @@ public class AppRatingAgressiveActivity extends CustomThemeEngineAppCompatActivi
             public void onScrollChanged() {
                 //see https://gist.github.com/aqua30/e8623abaff190ee86727ee5ae8dac82a
                 int movement = rating_page_scrollview.getScrollY();
+
                 if(movement >= 100){
                     if (bar_in_rating_page.getVisibility() == View.VISIBLE) {
                         if (preferences.loadRulebookAnimationsDisableState() == false) {
-                            TranslateAnimation animate = new TranslateAnimation(
-                                    0, 0, 0, bar_in_rating_page.getHeight());
-                            animate.setDuration(250);
-                            animate.setFillAfter(false);
-                            bar_in_rating_page.startAnimation(animate);
+                            AppSomeUtils.setAnimatorToAnyView(bar_in_rating_page, "to_bottom");
                         }
                         bar_in_rating_page.setVisibility(View.GONE);
                     }
                 } else if(movement >= -100){
                     if (bar_in_rating_page.getVisibility() == View.GONE) {
                         if (preferences.loadRulebookAnimationsDisableState() == false) {
-                            TranslateAnimation animate = new TranslateAnimation(
-                                    0, 0, bar_in_rating_page.getHeight(), 0);
-                            animate.setDuration(250);
-                            animate.setFillAfter(false);
-                            bar_in_rating_page.startAnimation(animate);
+                            AppSomeUtils.setAnimatorToAnyView(bar_in_rating_page, "to_top");
                         }
                         bar_in_rating_page.setVisibility(View.VISIBLE);
                     }
@@ -93,7 +92,6 @@ public class AppRatingAgressiveActivity extends CustomThemeEngineAppCompatActivi
         review_send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Custom Method 7
                 SendReview();
             }
         });

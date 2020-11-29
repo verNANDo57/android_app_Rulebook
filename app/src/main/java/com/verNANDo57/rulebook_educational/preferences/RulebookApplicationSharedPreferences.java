@@ -8,18 +8,6 @@ public class RulebookApplicationSharedPreferences {
     public RulebookApplicationSharedPreferences(Context context) {
         RulebookSharedPreferences = context.getSharedPreferences("rulebookprefs", Context.MODE_PRIVATE);
     }
-    //This method will save voicesearch_disable boolean state
-    public void setRulebookVoiceSearchDisableState(Boolean state){
-        SharedPreferences.Editor editor= RulebookSharedPreferences.edit();
-        editor.putBoolean("VoiceSearchDisable", state);
-        editor.apply();
-    }
-    //This method will load voicesearch_disable boolean state
-    public Boolean loadRulebookVoiceSearchDisableState (){
-        return RulebookSharedPreferences.getBoolean("VoiceSearchDisable", false);
-    }
-
-
 
     //This method will save animations_disable boolean state
     public void setRulebookAnimationsDisableState(Boolean state){
@@ -40,7 +28,7 @@ public class RulebookApplicationSharedPreferences {
     }
     //This method will load statusbar boolean state
     public Boolean loadRulebookStatusBarBooleanState (){
-        return RulebookSharedPreferences.getBoolean("StatusBarBoolean", false);
+        return RulebookSharedPreferences.getBoolean("StatusBarBoolean", true);
     }
 
     //This method will save locale state

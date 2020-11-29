@@ -3,11 +3,11 @@ package com.verNANDo57.rulebook_educational;
 import android.app.Application;
 
 import com.verNANDo57.rulebook_educational.customlocaleengine.CustomLocaleEngine;
-import com.verNANDo57.rulebook_educational.customlocaleengine.store.PreferenceLocaleStore;
 import com.verNANDo57.rulebook_educational.customthemeengine.CustomThemeEngine;
-import com.verNANDo57.rulebook_educational.preferences.RulebookApplicationSharedPreferences;
 import com.verNANDo57.rulebook_educational.rules.RulebookApplicationBooleans;
+import com.verNANDo57.rulebook_educational.preferences.RulebookApplicationSharedPreferences;
 
+import com.verNANDo57.rulebook_educational.customlocaleengine.store.PreferenceLocaleStore;
 import java.util.Locale;
 
 public class AppRulebookClass extends Application {

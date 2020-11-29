@@ -4,10 +4,7 @@
 
 	<!-- <uses-permission android:name="android.permission.INTERNET" /> -->
 	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-	<uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"
-		tools:ignore="ScopedStorage" />
-	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
-		tools:ignore="ScopedStorage" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -21,7 +18,7 @@
 		android:requestLegacyExternalStorage="true"
 		tools:targetApi="q">
 		<activity
-            android:name="com.verNANDo57.rulebook_educational.StrangeScreenActivity"
+            android:name="com.verNANDo57.rulebook_educational.SplashScreenActivity"
             android:label="@string/app_name"
 	        android:configChanges="keyboard|keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout|navigation">
             <intent-filter>
@@ -76,6 +73,9 @@
 			android:name="com.verNANDo57.rulebook_educational.rules.analyze_methods.AppAnalyzeMethodsScrollableActivity"
 			android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize" />
 		<!-- EndOfMain  -->
+	
+	<!--logging-->
+        <!--logging-->
 	
 <!-- SearchInterface -->
 

@@ -24,7 +24,7 @@
 	<dimen name="bottomappbar_height">56dp</dimen>
 	<dimen name="bottomappbar_elevation">8dp</dimen>
 
-	<dimen name="app_collapsing_toolbar_height">270dp</dimen>
+	<dimen name="app_collapsing_toolbar_height">260dp</dimen>
 	<dimen name="app_collapsing_toolbar_userspace_height">120dp</dimen>
 
 	<dimen name="app_toolbar_height">90dp</dimen>
@@ -141,7 +141,8 @@
 	<dimen name="previous_fab_marginRightOrEnd">5dp</dimen>
 	<dimen name="text_margin">16dp</dimen>
 
-	<dimen name="app_actionbar_shape_stroke_width">5dp</dimen>
+	<dimen name="app_toolbar_marginbottom">20dp</dimen>
+	<dimen name="app_toolbar_shape_stroke_width">5dp</dimen>
 	<dimen name="app_bottomsheetdialog_shape_stroke_width">5dp</dimen>
 	<dimen name="app_bar_icon_width_height">60dp</dimen>
 

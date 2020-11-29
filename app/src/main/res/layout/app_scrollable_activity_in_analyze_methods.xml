@@ -28,19 +28,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginTop="@dimen/app_toolbar_height_in_scrollableactivity"
-                android:gravity="center"
+                android:gravity="center|bottom"
                 android:orientation="vertical"
-                android:layout_marginEnd="@dimen/app_actionbar_shape_stroke_width"
-                android:layout_marginStart="@dimen/app_actionbar_shape_stroke_width"
-                android:layout_marginBottom="@dimen/app_actionbar_shape_stroke_width">
+                android:layout_marginEnd="@dimen/app_toolbar_shape_stroke_width"
+                android:layout_marginStart="@dimen/app_toolbar_shape_stroke_width"
+                android:layout_marginBottom="@dimen/app_toolbar_marginbottom">
 
                 <RelativeLayout
                     android:id="@+id/app_scrollableactivity_in_analyzemethods_toolbarlayout_container"
                     android:layout_gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="@dimen/app_actionbar_shape_stroke_width"
-                    android:layout_marginStart="@dimen/app_actionbar_shape_stroke_width">
+                    android:layout_marginEnd="@dimen/app_toolbar_shape_stroke_width"
+                    android:layout_marginStart="@dimen/app_toolbar_shape_stroke_width">
 
                     <ImageView
                         android:id="@+id/app_scrollableactivity_in_analyzemethods_icon"
@@ -49,7 +49,7 @@
                         android:layout_centerHorizontal="true"
                         android:contentDescription="@string/app_name_mainrules"
                         android:background="@drawable/ic_search_black"
-                        android:backgroundTint="@color/colorAccent" />
+                        android:backgroundTint="@color/coloraccent" />
 
                     <LinearLayout
                         android:id="@+id/app_scrollableactivity_in_analyzemethods_titleandsubtitle_container"

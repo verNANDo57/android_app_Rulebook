@@ -11,5 +11,5 @@
 
     <stroke
         android:width="3dp"
-        android:color="@color/colorAccent"/>
+        android:color="@color/coloraccent"/>
 </shape>

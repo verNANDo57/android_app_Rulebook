@@ -1,6 +1,6 @@
 package com.verNANDo57.rulebook_educational.customlocaleengine.store
 
-import java.util.*
+import java.util.Locale
 
 /**
  * Implementation of [LocaleStore] that keeps data in memory.

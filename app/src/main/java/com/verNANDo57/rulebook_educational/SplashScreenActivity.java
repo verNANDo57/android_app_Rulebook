@@ -11,7 +11,7 @@ import com.verNANDo57.rulebook_educational.customthemeengine.utils.ColorUtils;
 import com.verNANDo57.rulebook_educational.for_pills.R;
 import com.verNANDo57.rulebook_educational.preferences.RulebookApplicationSharedPreferences;
 
-public class StrangeScreenActivity extends CustomThemeEngineAppCompatActivity
+public class SplashScreenActivity extends CustomThemeEngineAppCompatActivity
 {
 	RulebookApplicationSharedPreferences preferences;
 
@@ -29,7 +29,7 @@ public class StrangeScreenActivity extends CustomThemeEngineAppCompatActivity
 
 		setContentView(R.layout.app_strangescreen);
 
-		int ImageViewBackgroundTintColor = ColorUtils.lighter(getResources().getColor(R.color.colorAccent), 0.01f);
+		int ImageViewBackgroundTintColor = ColorUtils.lighter(getResources().getColor(R.color.coloraccent), 0.01f);
 
 		ImageView strangescreen_image = findViewById(R.id.strangescreen_image);
 		strangescreen_image.setBackgroundTintList(ColorStateList.valueOf(ImageViewBackgroundTintColor));
@@ -50,10 +50,10 @@ public class StrangeScreenActivity extends CustomThemeEngineAppCompatActivity
 		Indicator2.setMax(totalProgressTime);
 		Indicator3.setMax(totalProgressTime);
 
-		//Intent to MainActivity after strangescren process ends
+		//Intent to MainActivity after splashscreen process ends
 		final Intent StrangeActivityEnd = new Intent(this, MainActivity.class);
 
-		//strangescreen process start
+		//splashscreen process start
 		new Thread(new Runnable() {
 			public void run() {
 				int counter = 0;

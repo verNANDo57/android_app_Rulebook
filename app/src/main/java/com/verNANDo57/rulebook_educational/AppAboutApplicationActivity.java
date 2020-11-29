@@ -6,8 +6,10 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.view.animation.TranslateAnimation;
@@ -25,6 +27,8 @@ import com.google.android.material.navigation.NavigationView;
 import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngineAppCompatActivity;
 import com.verNANDo57.rulebook_educational.for_pills.R;
 import com.verNANDo57.rulebook_educational.preferences.RulebookApplicationSharedPreferences;
+import com.verNANDo57.rulebook_educational.styleabletoast.StyleableToast;
+import com.verNANDo57.rulebook_educational.usefulclasses.AppSomeUtils;
 
 
 public class AppAboutApplicationActivity extends CustomThemeEngineAppCompatActivity
@@ -51,6 +55,9 @@ public class AppAboutApplicationActivity extends CustomThemeEngineAppCompatActiv
 		});
 		final BottomAppBar bar_in_credits = findViewById(R.id.bar_in_about);
 		setSupportActionBar(bar_in_credits);
+		if(preferences.loadRulebookAnimationsDisableState()==false) {
+			AppSomeUtils.setAnimatorToAnyView(bar_in_credits, "to_top", (float) 250);
+		}
 
 		//BottomNavigationView
 		bar_in_credits.setNavigationOnClickListener(new NavigationView.OnClickListener() {
@@ -61,6 +68,7 @@ public class AppAboutApplicationActivity extends CustomThemeEngineAppCompatActiv
 			}
 		});
 
+		//Press the title to view the bottomappbar
 		TextView app_about_title = findViewById(R.id.app_about_title);
 
 		ScrollView about_scrollview = findViewById(R.id.about_scrollview);
@@ -72,11 +80,7 @@ public class AppAboutApplicationActivity extends CustomThemeEngineAppCompatActiv
 				if(movement >= 100){
 					if (bar_in_credits.getVisibility() == View.VISIBLE) {
 						if (preferences.loadRulebookAnimationsDisableState() == false) {
-							TranslateAnimation animate = new TranslateAnimation(
-									0, 0, 0, bar_in_credits.getHeight());
-							animate.setDuration(250);
-							animate.setFillAfter(false);
-							bar_in_credits.startAnimation(animate);
+							AppSomeUtils.setAnimatorToAnyView(bar_in_credits, "to_bottom");
 						}
 						bar_in_credits.setVisibility(View.GONE);
 						fab_in_about.hide();
@@ -84,11 +88,7 @@ public class AppAboutApplicationActivity extends CustomThemeEngineAppCompatActiv
 				} else if(movement >= -100){
 					if (bar_in_credits.getVisibility() == View.GONE) {
 						if (preferences.loadRulebookAnimationsDisableState() == false) {
-							TranslateAnimation animate = new TranslateAnimation(
-									0, 0, bar_in_credits.getHeight(), 0);
-							animate.setDuration(250);
-							animate.setFillAfter(false);
-							bar_in_credits.startAnimation(animate);
+							AppSomeUtils.setAnimatorToAnyView(bar_in_credits, "to_top");
 						}
 						bar_in_credits.setVisibility(View.VISIBLE);
 						fab_in_about.show();
@@ -101,16 +101,16 @@ public class AppAboutApplicationActivity extends CustomThemeEngineAppCompatActiv
 		review_page.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				//Custom Method 3
 				rate_us();
 			}
 		});
 
 		ImageView about_preview = findViewById(R.id.about_preview);
-		about_preview.setColorFilter(ContextCompat.getColor(this, R.color.colorAccent), android.graphics.PorterDuff.Mode.SRC_IN);
+		AppSomeUtils.setColorFilterToDrawable(about_preview, "SRC_IN", ContextCompat.getColor(this, R.color.coloraccent));
+
 
 		ImageButton buttongit = findViewById(R.id.buttongit);
-		buttongit.setColorFilter(ContextCompat.getColor(this, R.color.colorAccent), android.graphics.PorterDuff.Mode.SRC_IN);
+		AppSomeUtils.setColorFilterToDrawable(buttongit, "SRC_IN", ContextCompat.getColor(this, R.color.coloraccent));
 		buttongit.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -122,7 +122,7 @@ public class AppAboutApplicationActivity extends CustomThemeEngineAppCompatActiv
 		});
 
 		ImageButton buttonvk = findViewById(R.id.buttonvk);
-		buttonvk.setColorFilter(ContextCompat.getColor(this, R.color.colorAccent), android.graphics.PorterDuff.Mode.SRC_IN);
+		AppSomeUtils.setColorFilterToDrawable(buttonvk, "SRC_IN", ContextCompat.getColor(this, R.color.coloraccent));
 		buttonvk.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -134,7 +134,7 @@ public class AppAboutApplicationActivity extends CustomThemeEngineAppCompatActiv
 		});
 
 		ImageButton buttontg = findViewById(R.id.buttontg);
-		buttontg.setColorFilter(ContextCompat.getColor(this, R.color.colorAccent), android.graphics.PorterDuff.Mode.SRC_IN);
+		AppSomeUtils.setColorFilterToDrawable(buttontg, "SRC_IN", ContextCompat.getColor(this, R.color.coloraccent));
 		buttontg.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -146,7 +146,7 @@ public class AppAboutApplicationActivity extends CustomThemeEngineAppCompatActiv
 		});
 
 		ImageButton buttonqiwi = findViewById(R.id.buttonqiwi);
-		buttonqiwi.setColorFilter(ContextCompat.getColor(this, R.color.colorAccent), android.graphics.PorterDuff.Mode.SRC_IN);
+		AppSomeUtils.setColorFilterToDrawable(buttonqiwi, "SRC_IN", ContextCompat.getColor(this, R.color.coloraccent));
 		buttonqiwi.setOnClickListener(new View.OnClickListener(){
 			@Override
 			public void onClick(View v) {
@@ -200,11 +200,7 @@ public class AppAboutApplicationActivity extends CustomThemeEngineAppCompatActiv
 
 	public void rate_us(){
 		final Intent rate_app = new Intent(this, AppRatingAgressiveActivity.class);
-		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-			rate_app.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
-		} else {
-			rate_app.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-		}
+		rate_app.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
 		rate_app.addFlags(Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
 		startActivity(rate_app);
 	}

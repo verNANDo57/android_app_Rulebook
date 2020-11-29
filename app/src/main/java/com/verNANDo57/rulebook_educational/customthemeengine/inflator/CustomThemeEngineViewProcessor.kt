@@ -15,7 +15,13 @@ import android.os.Build.VERSION_CODES
 import android.util.AttributeSet
 import android.view.View
 import android.view.ViewGroup
-import android.widget.*
+import android.widget.AbsListView
+import android.widget.CompoundButton
+import android.widget.DatePicker
+import android.widget.ImageButton
+import android.widget.Switch
+import android.widget.TextView
+import android.widget.TimePicker
 import androidx.annotation.RequiresApi
 import androidx.appcompat.view.menu.ListMenuItemView
 import androidx.appcompat.widget.AlertDialogLayout
@@ -28,11 +34,11 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
 import com.google.android.material.textfield.TextInputLayout
 import com.verNANDo57.rulebook_educational.customthemeengine.CustomThemeEngine
+import com.verNANDo57.rulebook_educational.for_pills.R
 import com.verNANDo57.rulebook_educational.customthemeengine.tinting.EdgeEffectTint
 import com.verNANDo57.rulebook_educational.customthemeengine.tinting.WidgetTint
 import com.verNANDo57.rulebook_educational.customthemeengine.utils.ColorUtils
 import com.verNANDo57.rulebook_educational.customthemeengine.utils.Reflection
-import com.verNANDo57.rulebook_educational.for_pills.R
 
 abstract class CustomThemeEngineViewProcessor<T : View> {
 

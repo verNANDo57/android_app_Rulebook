@@ -8,10 +8,22 @@ import android.os.Build
 import android.os.Bundle
 import androidx.annotation.RequiresApi
 import com.verNANDo57.rulebook_educational.customthemeengine.CustomThemeEngine
-import com.verNANDo57.rulebook_educational.customthemeengine.getKey
-import com.verNANDo57.rulebook_educational.customthemeengine.inflator.*
-import com.verNANDo57.rulebook_educational.customthemeengine.utils.Reflection
 import com.verNANDo57.rulebook_educational.for_pills.R
+import com.verNANDo57.rulebook_educational.customthemeengine.getKey
+import com.verNANDo57.rulebook_educational.customthemeengine.inflator.AlertDialogProcessor
+import com.verNANDo57.rulebook_educational.customthemeengine.inflator.BottomAppBarProcessor
+import com.verNANDo57.rulebook_educational.customthemeengine.inflator.CompoundButtonProcessor
+import com.verNANDo57.rulebook_educational.customthemeengine.inflator.CustomThemeEngineViewProcessor
+import com.verNANDo57.rulebook_educational.customthemeengine.inflator.DatePickerProcessor
+import com.verNANDo57.rulebook_educational.customthemeengine.inflator.ImageButtonProcessor
+import com.verNANDo57.rulebook_educational.customthemeengine.inflator.ListMenuItemViewProcessor
+import com.verNANDo57.rulebook_educational.customthemeengine.inflator.SearchAutoCompleteProcessor
+import com.verNANDo57.rulebook_educational.customthemeengine.inflator.SwitchCompatProcessor
+import com.verNANDo57.rulebook_educational.customthemeengine.inflator.SwitchProcessor
+import com.verNANDo57.rulebook_educational.customthemeengine.inflator.TextViewProcessor
+import com.verNANDo57.rulebook_educational.customthemeengine.inflator.TimePickerProcessor
+import com.verNANDo57.rulebook_educational.customthemeengine.inflator.ViewGroupProcessor
+import com.verNANDo57.rulebook_educational.customthemeengine.utils.Reflection
 
 @RequiresApi(Build.VERSION_CODES.M)
 @TargetApi(Build.VERSION_CODES.M)
@@ -41,7 +53,7 @@ internal open class CustomThemeEngineDelegateImplV23(
         val method = Reflection.getMethod(cache, "put", Long::class.java, Object::class.java) ?: return
 
         for ((id, color) in hashMapOf<Int, Int>().apply {
-          put(R.color.colorAccent, customThemeEngine.accent)
+          put(R.color.coloraccent, customThemeEngine.accent)
           put(R.color.bottomappbar_items_color_everytheme, customThemeEngine.bottomAppBarItemColor)
           put(R.color.styleable_toast_default_background_color, customThemeEngine.backgroundToast)
           put(R.color.styleable_toast_default_text_color_reference, customThemeEngine.primary)
@@ -99,7 +111,7 @@ internal open class CustomThemeEngineDelegateImplV23(
 
     @SuppressLint("PrivateResource")
     private val PRELOADED_COLORS = intArrayOf(
-        R.color.colorAccent,
+        R.color.coloraccent,
         R.color.custom_bg_dark,
         R.color.custom_bg_dark_lighter,
         R.color.custom_bg_dark_darker,

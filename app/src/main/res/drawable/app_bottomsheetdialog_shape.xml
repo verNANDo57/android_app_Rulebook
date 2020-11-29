@@ -14,7 +14,7 @@
 
 	<stroke
 		android:width="@dimen/app_bottomsheetdialog_shape_stroke_width"
-		android:color="@color/colorAccent"/>
+		android:color="@color/coloraccent"/>
 
 	<solid
 		android:color="@color/bottomsheetdialog_background"/>

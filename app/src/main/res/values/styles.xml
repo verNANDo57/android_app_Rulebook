@@ -2,12 +2,12 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 	<style name="AppThemeRulebookLight" parent="Theme.MaterialComponents.Light.Bridge">
 		<item name="android:windowAnimationStyle">@style/app_rulebook_animations_from_q</item>
-		<item name="colorAccent">@color/colorAccent</item>
+		<item name="colorAccent">@color/coloraccent</item>
 		<item name="android:textColor">@color/text_normal</item>
 		<item name="actionBarStyle">@style/LightThemeActionBar</item>
 		<item name="android:actionBarStyle">@style/LightThemeActionBar</item>
 		<item name="bottomAppBarStyle">@style/AnyThemeBottomAppBar</item>
-		<item name="colorPrimary">@color/colorAccent</item>
+		<item name="colorPrimary">@color/coloraccent</item>
 		<item name="android:buttonStyle">@style/RulebookButtonDefault</item>
 		<item name="android:editTextStyle">@style/EditTextEverywhere</item>
 		<item name="buttonStyle">@style/RulebookButtonDefault</item>
@@ -64,8 +64,8 @@
 	</style>
 
 	<style name="AppRadioButtonStyleEveryTheme" parent="Widget.AppCompat.CompoundButton.RadioButton">
-		<item name="colorAccent">@color/colorAccent</item>
-		<item name="android:textColorPrimaryDisableOnly">@color/colorAccent</item>
+		<item name="colorAccent">@color/coloraccent</item>
+		<item name="android:textColorPrimaryDisableOnly">@color/coloraccent</item>
 		<item name="android:textAppearance">@style/TextAppearance.AppCompat</item>
 		<item name="android:textColor">@color/text_normal</item>
 	</style>
@@ -80,16 +80,16 @@
 	</style>
 
 	<style name="AppTabLayoutItemsStyleEveryTheme" parent="@style/Widget.MaterialComponents.TabLayout">
-		<item name="android:textColor">@color/colorAccent</item>
+		<item name="android:textColor">@color/coloraccent</item>
 		<item name="android:background">@android:color/transparent</item>
 		<item name="background">@android:color/transparent</item>
-		<item name="tabIconTint">@color/colorAccent</item>
-		<item name="tabIndicatorColor">@color/colorAccent</item>
-		<item name="tabTextColor">@color/colorAccent</item>
+		<item name="tabIconTint">@color/coloraccent</item>
+		<item name="tabIndicatorColor">@color/coloraccent</item>
+		<item name="tabTextColor">@color/coloraccent</item>
 	</style>
 
 	<style name="AnyThemeBottomAppBar" parent="Widget.MaterialComponents.BottomAppBar">
-		<item name="backgroundTint">@color/colorAccent</item>
+		<item name="backgroundTint">@color/coloraccent</item>
 		<item name="fabCradleRoundedCornerRadius">@dimen/bottomappbar_fab_cradle_rounded_corner_radius</item>
 		<item name="fabCradleVerticalOffset">@dimen/bottomappbar_fab_cradle_vertical_offset</item>
 		<item name="android:minHeight">@dimen/bottomappbar_height</item>
@@ -120,7 +120,7 @@
 		<item name="android:textColor">@color/bottomappbar_items_color_everytheme</item>
 		<item name="android:textSize">@dimen/appbar_title_textsize_large</item>
 		<item name="android:textStyle">bold</item>
-		<item name="android:background">@color/colorAccent</item>
+		<item name="android:background">@color/coloraccent</item>
 		<item name="android:minHeight">?actionBarSize</item>
 		<item name="android:gravity">center</item>
 	</style>
@@ -172,8 +172,8 @@
 	<style name="EditTextEverywhere" parent="Widget.AppCompat.EditText">
 		<item name="android:textStyle">normal</item>
 		<item name="android:singleLine">true</item>
-		<item name="android:textColorHint">@color/colorAccent</item>
-		<item name="android:textColor">@color/colorAccent</item>
+		<item name="android:textColorHint">@color/coloraccent</item>
+		<item name="android:textColor">@color/coloraccent</item>
 	</style>
 
 	<style name="TextImportantEveryTheme" parent="Widget.AppCompat.TextView">
@@ -259,7 +259,7 @@
 
 	<style name="AppThemeRulebookDark" parent="Theme.MaterialComponents.Bridge">
 		<item name="android:windowAnimationStyle">@style/app_rulebook_animations_from_q</item>
-		<item name="colorAccent">@color/colorAccent</item>
+		<item name="colorAccent">@color/coloraccent</item>
 		<item name="android:textColor">@color/text_normal</item>
 		<item name="android:actionBarStyle">@style/DarkThemeActionBar</item>
 		<item name="actionBarStyle">@style/DarkThemeActionBar</item>

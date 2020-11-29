@@ -8,7 +8,7 @@ import android.content.res.Configuration
 import android.content.res.Resources
 import com.verNANDo57.rulebook_educational.customlocaleengine.store.LocaleStore
 import com.verNANDo57.rulebook_educational.customlocaleengine.store.PreferenceLocaleStore
-import java.util.*
+import java.util.Locale
 
 /**
  * CustomLocaleEngine is a tool to manage your application locale and language.

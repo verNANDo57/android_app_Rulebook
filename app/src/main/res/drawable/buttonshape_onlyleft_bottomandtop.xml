@@ -13,6 +13,6 @@
         android:bottom="0dp"/>
 
     <stroke
-        android:width="@dimen/app_destinybuttonshape_default_stroke_value"
+        android:width="@dimen/app_hugebuttonshape_default_stroke_value"
         android:color="@color/button_color"/>
 </shape>

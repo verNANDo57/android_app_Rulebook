@@ -7,16 +7,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import com.verNANDo57.rulebook_educational.for_pills.R;
 
 import androidx.core.graphics.ColorUtils;
 
+import com.verNANDo57.rulebook_educational.for_pills.R;
+
 class ColorPaletteAdapter extends BaseAdapter {
 
-  /*package*/ final OnColorSelectedListener listener;
-  /*package*/ final int[] colors;
-  /*package*/ int selectedPosition;
-  /*package*/ int colorShape;
+  private final OnColorSelectedListener listener;
+  public final int[] colors;
+  private int selectedPosition;
+  private final int colorShape;
 
   ColorPaletteAdapter(OnColorSelectedListener listener, int[] colors, int selectedPosition,
       @ColorShape int colorShape) {

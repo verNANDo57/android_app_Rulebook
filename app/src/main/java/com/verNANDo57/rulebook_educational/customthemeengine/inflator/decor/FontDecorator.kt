@@ -12,7 +12,7 @@ import com.verNANDo57.rulebook_educational.for_pills.R
  * ```xml
  * <TextView
  *     ...
- *     app:cyaneaFont="fonts/CustomFont.ttf"
+ *     app:customThemeEngineFont="fonts/CustomFont.ttf"
  *     tools:ignore="MissingPrefix" />
  * ```
  */
@@ -26,7 +26,7 @@ class FontDecorator : AttrsDecorator<TextView>() {
   override fun styleable(): IntArray = R.styleable.FontDecorator
 
   override fun apply(view: TextView, typedArray: TypedArray) {
-    typedArray.getString(R.styleable.FontDecorator_cyaneaFont)?.let { path ->
+    typedArray.getString(R.styleable.FontDecorator_customThemeEngineFont)?.let { path ->
       view.typeface = getFont(view.context.assets, path)
     }
   }

@@ -16,9 +16,9 @@ class AlphaPatternDrawable extends Drawable {
 
   private int rectangleSize = 10;
 
-  private Paint paint = new Paint();
-  private Paint paintWhite = new Paint();
-  private Paint paintGray = new Paint();
+  private final Paint paint = new Paint();
+  private final Paint paintWhite = new Paint();
+  private final Paint paintGray = new Paint();
 
   private int numRectanglesHorizontal;
   private int numRectanglesVertical;
@@ -45,7 +45,7 @@ class AlphaPatternDrawable extends Drawable {
 
   @Override
   public int getOpacity() {
-    return 0;
+    return Integer.valueOf(0);
   }
 
   @Override

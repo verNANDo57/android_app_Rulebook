@@ -1,5 +1,6 @@
 package com.verNANDo57.rulebook_educational;
 
+import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.ColorStateList;
@@ -8,12 +9,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngineBottomSheetDialogFragment;
 import com.google.android.material.navigation.NavigationView;
+import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngineBottomSheetDialogFragment;
 import com.verNANDo57.rulebook_educational.customthemeengine.utils.ColorUtils;
 import com.verNANDo57.rulebook_educational.for_pills.R;
-
-import java.util.Objects;
+import com.verNANDo57.rulebook_educational.preferences.AppSettingsActivity;
+import com.verNANDo57.rulebook_educational.rules.dictionaries.AppDictionaries;
 
 public class BottomNavBetweenActivitiesFragment extends CustomThemeEngineBottomSheetDialogFragment {
 
@@ -21,7 +22,8 @@ public class BottomNavBetweenActivitiesFragment extends CustomThemeEngineBottomS
         //Required empty public constructor
     }
 
-    public View onCreateView(LayoutInflater inflater ,ViewGroup container, Bundle savedInstanceState) {
+    @SuppressLint("NonConstantResourceId")
+    public View onCreateView(LayoutInflater inflater , ViewGroup container, Bundle savedInstanceState) {
         View viewFragment = inflater.inflate(R.layout.fragment_bottomsheet_between_activities, container, false);
 
         NavigationView navigationbetweenlessons = viewFragment.findViewById(R.id.navigation_view_between_activities);
@@ -33,33 +35,35 @@ public class BottomNavBetweenActivitiesFragment extends CustomThemeEngineBottomS
 
             switch (id)
             {
-                case R.id.bottomsheetdialog_betweenactivities_first:
-                    Objects.requireNonNull(getActivity()).finish();
-                    Intent AppChooseYourDestiny = new Intent(getActivity(), AppChooseYourDestiny.class);
-                    startActivity(AppChooseYourDestiny);
+                case R.id.bottomsheetdialog_betweenactivities_mainrules:
+                    requireActivity().finish();
+                    startActivity(new Intent(getActivity(), AppChooseYourDestiny.class));
                     break;
 
-                case R.id.bottomsheetdialog_betweenactivities_second:
-                    Objects.requireNonNull(getActivity()).finish();
-                    Intent AppCreditsActivity = new Intent(getActivity(), AppAboutApplicationActivity.class);
-                    startActivity(AppCreditsActivity);
+                case R.id.bottomsheetdialog_betweenactivities_dictionaries:
+                    requireActivity().finish();
+                    startActivity(new Intent(getActivity(), AppDictionaries.class));
                     break;
 
-                case R.id.bottomsheetdialog_betweenactivities_third:
-                    Objects.requireNonNull(getActivity()).finish();
-                    Intent AppRulebookPreferencesScreenActivity = new Intent(getActivity(), com.verNANDo57.rulebook_educational.preferences.AppSettingsActivity.class);
-                    startActivity(AppRulebookPreferencesScreenActivity);
+                case R.id.bottomsheetdialog_betweenactivities_about:
+                    requireActivity().finish();
+                    startActivity(new Intent(getActivity(), AppAboutApplicationActivity.class));
                     break;
 
-                case R.id.bottomsheetdialog_betweenactivities_fourth:
-                    androidx.appcompat.app.AlertDialog.Builder builder = new androidx.appcompat.app.AlertDialog.Builder(Objects.requireNonNull(getActivity()));
+                case R.id.bottomsheetdialog_betweenactivities_settings:
+                    requireActivity().finish();
+                    startActivity(new Intent(getActivity(), AppSettingsActivity.class));
+                    break;
+
+                case R.id.bottomsheetdialog_betweenactivities_exit:
+                    androidx.appcompat.app.AlertDialog.Builder builder = new androidx.appcompat.app.AlertDialog.Builder(requireActivity());
                     builder.setTitle(getString(R.string.app_exit));
                     builder.setMessage(getString(R.string.are_you_sure));
                     builder.setIcon(R.drawable.ic_warning_outline);
                     builder.setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener(){
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            Objects.requireNonNull(getActivity()).finishAffinity();
+                            requireActivity().finishAffinity();
                         }
                     });
                     builder.setNegativeButton(getString(R.string.no), new DialogInterface.OnClickListener() {

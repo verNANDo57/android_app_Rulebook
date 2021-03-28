@@ -7,20 +7,11 @@ import android.os.Bundle
 import android.view.View
 import androidx.annotation.StyleRes
 import com.verNANDo57.rulebook_educational.customthemeengine.CustomThemeEngine
-import com.verNANDo57.rulebook_educational.for_pills.R
-import com.verNANDo57.rulebook_educational.customthemeengine.inflator.AlertDialogProcessor
-import com.verNANDo57.rulebook_educational.customthemeengine.inflator.BottomAppBarProcessor
-import com.verNANDo57.rulebook_educational.customthemeengine.inflator.CustomThemeEngineContextWrapper
-import com.verNANDo57.rulebook_educational.customthemeengine.inflator.CustomThemeEngineViewFactory
-import com.verNANDo57.rulebook_educational.customthemeengine.inflator.CustomThemeEngineViewProcessor
-import com.verNANDo57.rulebook_educational.customthemeengine.inflator.FloatingActionButtonProcessor
-import com.verNANDo57.rulebook_educational.customthemeengine.inflator.ListMenuItemViewProcessor
-import com.verNANDo57.rulebook_educational.customthemeengine.inflator.NavigationViewProcessor
-import com.verNANDo57.rulebook_educational.customthemeengine.inflator.TextInputLayoutProcessor
-import com.verNANDo57.rulebook_educational.customthemeengine.inflator.TextViewProcessor
+import com.verNANDo57.rulebook_educational.customthemeengine.inflator.*
 import com.verNANDo57.rulebook_educational.customthemeengine.inflator.decor.CustomThemeEngineDecorator
 import com.verNANDo57.rulebook_educational.customthemeengine.tinting.EdgeEffectTint
 import com.verNANDo57.rulebook_educational.customthemeengine.tinting.MenuTint
+import com.verNANDo57.rulebook_educational.for_pills.R
 
 internal open class CustomThemeEngineDelegateImplBase(
         private val activity: Activity,
@@ -150,6 +141,6 @@ internal open class CustomThemeEngineDelegateImplBase(
   }
 
   companion object {
-    private const val TAG = "CustomThemeEngineDelegateImplBase"
+    private const val TAG = "RULEBOOK_APP_CustomThemeEngineDelegateImplBase"
   }
 }

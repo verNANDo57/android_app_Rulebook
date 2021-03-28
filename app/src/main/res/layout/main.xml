@@ -1,76 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-	xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
 	android:id="@+id/main_layout_scrollview"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent">
-		
-	<RelativeLayout
+
+	<LinearLayout
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:layout_gravity="center">
+		android:orientation="vertical">
+
+		<ImageView
+			android:layout_width="@dimen/app_logo_in_main_width_in_layout"
+			android:layout_height="@dimen/app_logo_in_main_height_in_layout"
+			android:layout_marginTop="10dp"
+			android:id="@+id/imageview_in_main"
+			android:layout_gravity="center"
+			android:background="@drawable/app_book_colored" />
+
+		<TextView
+			android:id="@+id/mainTextView1"
+			style="@style/HeadlinesEveryTheme"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:text="@string/app_about_name"
+			android:layout_marginTop="10dp"
+			android:layout_marginBottom="10dp"/>
 
 		<RelativeLayout
+			android:gravity="start"
 			android:layout_width="match_parent"
-			android:layout_height="110dp"
-			android:gravity="center"
-			android:id="@+id/appmainimage">
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="10dp">
 
-			<ImageView
-				android:layout_width="@dimen/app_logo_in_main_width_in_layout"
-				android:layout_height="@dimen/app_logo_in_main_height_in_layout"
-				android:id="@+id/imageview_in_main"
-				android:background="@drawable/app_book_colored" />
+			<Button
+				android:id="@+id/app_rules_button"
+				style="@style/RulebookChooseDestinyButtonLeftToRight"
+				android:text="@string/rules"
+				android:paddingBottom="5dp" />
 
 		</RelativeLayout>
 
-	<View
-		android:layout_below="@id/appmainimage"
-		android:layout_width="match_parent"
-		android:layout_height="10dp"
-		android:id="@+id/mainView1"/>
+		<RelativeLayout
+			android:gravity="end"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="10dp">
 
-	<TextView
-		android:id="@+id/mainTextView1"
-		style="@style/HeadlinesEveryTheme"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:layout_below="@id/mainView1"
-		android:text="@string/app_about_name" />
+			<Button
+				android:id="@+id/app_dictionaries"
+				style="@style/RulebookChooseDestinyButtonRightToLeft"
+				android:text="@string/dictionaries"
+				android:paddingTop="5dp"
+				android:paddingBottom="5dp" />
 
-	<View
-		android:layout_width="match_parent"
-		android:layout_height="10dp"
-		android:layout_below="@id/mainTextView1"
-		android:id="@+id/mainView2"/>
+		</RelativeLayout>
 
-	<Button
-		android:id="@+id/mainButton1"
-		style="@style/RulebookButtonEveryThemeTop"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:layout_below="@id/mainView2"
-		android:onClick="app_rules"
-		android:text="@string/rules" />
+		<RelativeLayout
+			android:gravity="start"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="10dp">
 
-	<Button
-		android:id="@+id/mainButton3"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:layout_below="@id/mainButton1"
-		android:onClick="app_about"
-		android:text="@string/about_app" />
+			<Button
+				android:id="@+id/settings_button"
+				style="@style/RulebookChooseDestinyButtonLeftToRight"
+				android:text="@string/settings"
+				android:paddingTop="5dp"
+				android:paddingBottom="5dp" />
 
-	<Button
-		android:id="@+id/mainButton4"
-		style="@style/RulebookButtonEveryThemeBottom"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:layout_below="@id/mainButton3"
-		android:onClick="app_exit"
-		android:text="@string/app_exit" />
+		</RelativeLayout>
 
-	</RelativeLayout>
-		
+		<RelativeLayout
+			android:gravity="end"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="10dp">
+
+			<Button
+				android:id="@+id/about_app_button"
+				style="@style/RulebookChooseDestinyButtonRightToLeft"
+				android:text="@string/about_app"
+				android:paddingTop="5dp"
+				android:paddingBottom="5dp" />
+
+		</RelativeLayout>
+
+		<RelativeLayout
+			android:gravity="start"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+
+			<Button
+				android:id="@+id/app_exit_button"
+				style="@style/RulebookChooseDestinyButtonLeftToRight"
+				android:text="@string/app_exit"
+				android:paddingTop="5dp"
+				android:paddingBottom="5dp" />
+
+		</RelativeLayout>
+
+	</LinearLayout>
+
 </ScrollView>
+
+
 

@@ -38,11 +38,11 @@ import androidx.core.graphics.ColorUtils;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.FragmentActivity;
 
+import com.verNANDo57.rulebook_educational.for_pills.R;
+
 import java.util.Arrays;
 import java.util.Locale;
 import java.util.Objects;
-
-import com.verNANDo57.rulebook_educational.for_pills.R;
 
 /**
  * <p>A dialog to pick a color.</p>
@@ -58,7 +58,7 @@ import com.verNANDo57.rulebook_educational.for_pills.R;
 @SuppressLint("ClickableViewAccessibility")
 public class ColorPickerDialog extends DialogFragment implements ColorPickerView.OnColorChangedListener, TextWatcher {
 
-  private static final String TAG = "ColorPickerDialog";
+  private static final String TAG = "RULEBOOK_APP_ColorPickerDialog";
 
   public static final int TYPE_CUSTOM = 0;
   public static final int TYPE_PRESETS = 1;
@@ -134,7 +134,7 @@ public class ColorPickerDialog extends DialogFragment implements ColorPickerView
     public boolean onTouch(View v, MotionEvent event) {
       if (v != hexEditText && hexEditText.hasFocus()) {
         hexEditText.clearFocus();
-        InputMethodManager imm = (InputMethodManager) Objects.requireNonNull(getActivity()).getSystemService(Context.INPUT_METHOD_SERVICE);
+        InputMethodManager imm = (InputMethodManager) requireActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(hexEditText.getWindowToken(), 0);
         hexEditText.clearFocus();
         return true;

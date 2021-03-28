@@ -44,15 +44,19 @@
     <style name="RulebookChooseDestinyButtonLeftToRight" parent="Widget.AppCompat.Button">
         <item name="android:stateListAnimator" tools:targetApi="lollipop">@animator/btn_anim_translate_lefttoright</item>
         <item name="android:background">@drawable/buttonshape_onlyright_bottomandtop</item>
-        <item name="android:textSize">@dimen/app_choose_your_destiny_menu_button_text_size_in_layout</item>
+        <item name="android:textSize">@dimen/app_choose_your_destiny_menu_button_text_size</item>
         <item name="android:gravity">center</item>
+        <item name="android:layout_width">@dimen/app_choose_your_destiny_menu_button_width</item>
+        <item name="android:layout_height">@dimen/app_choose_your_destiny_menu_button_height</item>
     </style>
 
     <style name="RulebookChooseDestinyButtonRightToLeft" parent="Widget.AppCompat.Button">
         <item name="android:stateListAnimator" tools:targetApi="lollipop">@animator/btn_anim_translate_righttoleft</item>
         <item name="android:background">@drawable/buttonshape_onlyleft_bottomandtop</item>
-        <item name="android:textSize">@dimen/app_choose_your_destiny_menu_button_text_size_in_layout</item>
+        <item name="android:textSize">@dimen/app_choose_your_destiny_menu_button_text_size</item>
         <item name="android:gravity">center</item>
+        <item name="android:layout_width">@dimen/app_choose_your_destiny_menu_button_width</item>
+        <item name="android:layout_height">@dimen/app_choose_your_destiny_menu_button_height</item>
     </style>
 
 </resources>

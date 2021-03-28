@@ -32,21 +32,21 @@ import com.verNANDo57.rulebook_educational.customthemeengine.PrefKeys.PREF_BACKG
 import com.verNANDo57.rulebook_educational.customthemeengine.PrefKeys.PREF_BACKGROUND_LIGHT_DARKER
 import com.verNANDo57.rulebook_educational.customthemeengine.PrefKeys.PREF_BACKGROUND_LIGHT_LIGHTER
 import com.verNANDo57.rulebook_educational.customthemeengine.PrefKeys.PREF_BASE_THEME
-import com.verNANDo57.rulebook_educational.customthemeengine.PrefKeys.PREF_FILE_NAME
-import com.verNANDo57.rulebook_educational.customthemeengine.PrefKeys.PREF_PRIMARY
-import com.verNANDo57.rulebook_educational.customthemeengine.PrefKeys.PREF_TIMESTAMP
 import com.verNANDo57.rulebook_educational.customthemeengine.PrefKeys.PREF_BOTTOMAPPBAR_ITEMS_COLORS
 import com.verNANDo57.rulebook_educational.customthemeengine.PrefKeys.PREF_BOTTOMSHEETDIALOG_ACCENT
 import com.verNANDo57.rulebook_educational.customthemeengine.PrefKeys.PREF_BOTTOMSHEETDIALOG_BACKGROUND
 import com.verNANDo57.rulebook_educational.customthemeengine.PrefKeys.PREF_BOTTOMSHEETDIALOG_PRIMARY
 import com.verNANDo57.rulebook_educational.customthemeengine.PrefKeys.PREF_BUTTON_STROKE_COLOR
+import com.verNANDo57.rulebook_educational.customthemeengine.PrefKeys.PREF_FILE_NAME
+import com.verNANDo57.rulebook_educational.customthemeengine.PrefKeys.PREF_PRIMARY
+import com.verNANDo57.rulebook_educational.customthemeengine.PrefKeys.PREF_TIMESTAMP
 import com.verNANDo57.rulebook_educational.customthemeengine.PrefKeys.PREF_TOAST_ACCENT
 import com.verNANDo57.rulebook_educational.customthemeengine.PrefKeys.PREF_TOAST_BACKGROUND
-import com.verNANDo57.rulebook_educational.for_pills.R
 import com.verNANDo57.rulebook_educational.customthemeengine.inflator.CustomThemeEngineInflationDelegate
 import com.verNANDo57.rulebook_educational.customthemeengine.inflator.CustomThemeEngineLayoutInflater
 import com.verNANDo57.rulebook_educational.customthemeengine.tinting.CustomThemeEngineTinter
 import com.verNANDo57.rulebook_educational.customthemeengine.utils.ColorUtils
+import com.verNANDo57.rulebook_educational.for_pills.R
 import kotlin.properties.Delegates
 
 class CustomThemeEngine private constructor(private val prefs: SharedPreferences) {
@@ -265,7 +265,7 @@ class CustomThemeEngine private constructor(private val prefs: SharedPreferences
     /**
      * Get a instance of [CustomThemeEngine] by name. This will create a new instance if none exist.
      *
-     * This allows you to have more than one color scheme in an app. You must override Activity#getCyanea().
+     * This allows you to have more than one color scheme in an app. You must override Activity#getCustomThemeEngine().
      */
     @JvmStatic
     fun getInstance(name: String): CustomThemeEngine {

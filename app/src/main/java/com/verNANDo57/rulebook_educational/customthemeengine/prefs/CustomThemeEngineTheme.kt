@@ -110,7 +110,7 @@ data class CustomThemeEngineTheme internal constructor(
 
   companion object {
 
-    private const val TAG = "CustomThemeEngine_currentTheme"
+    private const val TAG = "RULEBOOK_APP_CustomThemeEngine_currentTheme"
 
     // JSON Keys
     private const val THEME_NAME = "theme_name"

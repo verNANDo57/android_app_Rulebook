@@ -1,5 +1,6 @@
 package com.verNANDo57.rulebook_educational;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.os.Bundle;
@@ -7,13 +8,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngineBottomSheetDialogFragment;
 import com.google.android.material.navigation.NavigationView;
+import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngineBottomSheetDialogFragment;
 import com.verNANDo57.rulebook_educational.customthemeengine.utils.ColorUtils;
 import com.verNANDo57.rulebook_educational.for_pills.R;
+import com.verNANDo57.rulebook_educational.rules.AppRulesInSchemesAndTablesActivity;
+import com.verNANDo57.rulebook_educational.rules.analyze_methods.AppAnalyzeMethods;
 import com.verNANDo57.rulebook_educational.rules.mainrules.AppMainRulesActivity;
-
-import java.util.Objects;
+import com.verNANDo57.rulebook_educational.search.AppSearchActivity;
 
 public class BottomNavBetweenLessonsFragment extends CustomThemeEngineBottomSheetDialogFragment {
 
@@ -21,7 +23,8 @@ public class BottomNavBetweenLessonsFragment extends CustomThemeEngineBottomShee
         //Required empty public constructor
     }
 
-    public View onCreateView(LayoutInflater inflater ,ViewGroup container, Bundle savedInstanceState) {
+    @SuppressLint("NonConstantResourceId")
+    public View onCreateView(LayoutInflater inflater , ViewGroup container, Bundle savedInstanceState) {
         View viewFragment = inflater.inflate(R.layout.fragment_bottomsheet_between_lessons, container, false);
 
         NavigationView navigationbetweenactivities = viewFragment.findViewById(R.id.navigation_view_between_lessons);
@@ -33,27 +36,29 @@ public class BottomNavBetweenLessonsFragment extends CustomThemeEngineBottomShee
 
             switch (id)
             {
-                case R.id.bottomsheetdialog_betweenlessons_first:
-                Objects.requireNonNull(getActivity()).finish();
-                Intent BASICS = new Intent(getActivity(), AppMainRulesActivity.class);
-                startActivity(BASICS);
+                case R.id.bottomsheetdialog_betweenlessons_orphoandpunct:
+                    requireActivity().finish();
+                    startActivity(new Intent(getActivity(), AppMainRulesActivity.class));
                 break;
 
-                case R.id.bottomsheetdialog_betweenlessons_second:
-                Intent AppLexiconRules = new Intent(getActivity(), com.verNANDo57.rulebook_educational.rules.AppLexiconActivity.class);
-                startActivity(AppLexiconRules);
+                case R.id.bottomsheetdialog_betweenlessons_lexicon:
+                    requireActivity().finish();
+                    startActivity(new Intent(getActivity(), com.verNANDo57.rulebook_educational.rules.AppLexiconActivity.class));
                 break;
 
-                case R.id.bottomsheetdialog_betweenlessons_third:
-                Objects.requireNonNull(getActivity()).finish();
-                Intent AppRulesInSchemesAndTablesActivity = new Intent(getActivity(), com.verNANDo57.rulebook_educational.rules.AppRulesInSchemesAndTablesActivity.class);
-                startActivity(AppRulesInSchemesAndTablesActivity);
+                case R.id.bottomsheetdialog_betweenlessons_intables:
+                    requireActivity().finish();
+                    startActivity(new Intent(getActivity(), AppRulesInSchemesAndTablesActivity.class));
                 break;
 
-                case R.id.bottomsheetdialog_betweenlessons_fourth:
-                Objects.requireNonNull(getActivity()).finish();
-                Intent AppAnalyzeMethods = new Intent(getActivity(), com.verNANDo57.rulebook_educational.rules.analyze_methods.AppAnalyzeMethods.class);
-                startActivity(AppAnalyzeMethods);
+                case R.id.bottomsheetdialog_betweenlessons_analyzemethods:
+                    requireActivity().finish();
+                    startActivity(new Intent(getActivity(), AppAnalyzeMethods.class));
+                break;
+
+                case R.id.bottomsheetdialog_betweenlessons_search:
+                    requireActivity().finish();
+                    startActivity(new Intent(getActivity(), AppSearchActivity.class));
                 break;
             }
 

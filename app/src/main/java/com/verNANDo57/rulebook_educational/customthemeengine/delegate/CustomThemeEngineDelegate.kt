@@ -70,7 +70,7 @@ abstract class CustomThemeEngineDelegate {
    * ```
    * override fun onResume() {
    *     super.onResume()
-   *     getCyaneaDelegate().onResume()
+   *     getCustomThemeEngineDelegate().onResume()
    *     // ...
    * }
    * ```

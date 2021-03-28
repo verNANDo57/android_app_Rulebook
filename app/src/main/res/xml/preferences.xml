@@ -42,20 +42,5 @@
 	  </androidx.preference.Preference>
 
   </androidx.preference.PreferenceCategory>
-
-  <androidx.preference.PreferenceCategory
-	   android:title="@string/category_pref_others">
-
-	  <androidx.preference.Preference
-		  android:key="select_locale"
-		  android:layout_width="fill_parent"
-		  android:layout_height="80dp"
-		  android:summary="@string/app_locale_select_extended"
-		  android:title="@string/app_locale_select"
-		  android:icon="@drawable/app_locale_icon">
-
-	  </androidx.preference.Preference>
-
-  </androidx.preference.PreferenceCategory>
   
 </androidx.preference.PreferenceScreen>

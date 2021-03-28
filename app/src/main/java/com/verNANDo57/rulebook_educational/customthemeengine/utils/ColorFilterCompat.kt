@@ -1,10 +1,6 @@
 package com.verNANDo57.rulebook_educational.customthemeengine.utils
 
-import android.graphics.BlendMode
-import android.graphics.BlendModeColorFilter
-import android.graphics.ColorFilter
-import android.graphics.PorterDuff
-import android.graphics.PorterDuffColorFilter
+import android.graphics.*
 import android.os.Build
 import androidx.annotation.ColorInt
 import androidx.annotation.RequiresApi

@@ -12,22 +12,12 @@ import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.SwitchPreferenceCompat;
 
 import com.verNANDo57.rulebook_educational.SplashScreenActivity;
-import com.verNANDo57.rulebook_educational.customlocaleengine.CustomLocaleEngine;
 import com.verNANDo57.rulebook_educational.customthemeengine.prefs.CustomThemeEngineSettingsActivity;
 import com.verNANDo57.rulebook_educational.for_pills.R;
-
-import java.util.Objects;
 
 
 public class AppSettingsFragment extends PreferenceFragmentCompat
 {
-	public static final String LANGUAGE_ENGLISH = "en";
-	public static final String LANGUAGE_ENGLISH_COUNTRY = "US";
-	//public static final String LANGUAGE_UKRAINIAN = "uk";
-	//public static final String LANGUAGE_UKRAINIAN_COUNTRY = "UA";
-	public static final String LANGUAGE_RUSSIAN = "ru";
-	public static final String LANGUAGE_RUSSIAN_COUNTRY = "RU";
-
 	RulebookApplicationSharedPreferences preferences;
 
 	public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -98,55 +88,6 @@ public class AppSettingsFragment extends PreferenceFragmentCompat
 				return false;
 			}
 		});
-
-		//Other
-		androidx.preference.Preference select_locale = (Preference) findPreference("select_locale");
-		select_locale.setEnabled(false);
-		select_locale.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
-			@Override
-			public boolean onPreferenceClick(Preference preference) {
-				int checkedItem = 0;
-				
-				AlertDialog.Builder alertDialog = new AlertDialog.Builder(getActivity());
-				alertDialog.setTitle(getString(R.string.app_locale_select_extended));
-				final String[] values = getResources().getStringArray(R.array.locales);
-				if(preferences.loadRulebookLocaleState().equals("ru")){
-					checkedItem = 0;
-				} else if (preferences.loadRulebookLocaleState().equals("en")){
-					checkedItem = 1;
-				} else {
-					checkedItem = 0;
-				}
-				alertDialog.setSingleChoiceItems(values, checkedItem, new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						switch (which) {
-							case 0:
-								//TODO
-								setNewLocale(LANGUAGE_RUSSIAN, LANGUAGE_RUSSIAN_COUNTRY);
-								preferences.setRulebookLocaleState("ru");
-								restartRulebookAlternative();
-								break;
-							case 1:
-								//TODO
-								setNewLocale(LANGUAGE_ENGLISH, LANGUAGE_ENGLISH_COUNTRY);
-								preferences.setRulebookLocaleState("en");
-								restartRulebookAlternative();
-								break;
-						}
-					}
-				});
-				AlertDialog alert = alertDialog.create();
-				alert.setCanceledOnTouchOutside(true);
-				alert.show();
-				return true;
-			}
-		});
-
-	}
-
-	public void setNewLocale(String language, String country){
-		CustomLocaleEngine.getInstance().setLocale(getContext(), language, country);
 	}
 
 	@RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)

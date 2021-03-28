@@ -34,7 +34,7 @@
 	<dimen name="app_bottom_navigation_icon_size">24dp</dimen>
 	<dimen name="app_bottom_navigation_elevation">8dp</dimen>
 
-	<dimen name="app_bottomsheetdialog_healine_size">30dp</dimen>
+	<dimen name="app_bottomsheetdialog_headline_size">30dp</dimen>
 	<dimen name="app_bottomsheetdialog_marginEndOrRight">5dp</dimen>
 	<dimen name="app_bottomsheetdialog_marginStartOrLeft">5dp</dimen>
 	<dimen name="app_bottomsheetdialog_marginBottom">0dp</dimen>
@@ -60,9 +60,14 @@
 	<item name="app_snackbar_background_overlay_color_alpha" format="float" type="dimen">0.8</item>
 	<item name="app_snackbar_action_text_color_alpha" format="float" type="dimen">0.5</item>
 
-	<dimen name="app_choose_your_destiny_menu_button_width_in_layout">290dp</dimen>
-	<dimen name="app_choose_your_destiny_menu_button_height_in_layout">100dp</dimen>
-	<dimen name="app_choose_your_destiny_menu_button_text_size_in_layout">30dp</dimen>
+	<dimen name="app_choose_your_destiny_menu_button_width">290dp</dimen>
+	<dimen name="app_choose_your_destiny_menu_button_height">100dp</dimen>
+	<dimen name="app_choose_your_destiny_menu_button_text_size">30dp</dimen>
+
+	<dimen name="app_hugebutton_default_height">100dp</dimen>
+	<dimen name="app_hugebutton_default_marginBottomAndTop">2.5dp</dimen>
+	<dimen name="app_hugebutton_default_marginLeftAndRight">5dp</dimen>
+	<dimen name="app_hugebutton_textsize">30dp</dimen>
 
 	<dimen name="app_rating_smile_height_layout">400dp</dimen>
 	<dimen name="app_rating_smile_width_layout">370dp</dimen>
@@ -86,8 +91,9 @@
 	<dimen name="app_buttonshape_default_topRightRadius_value">25dp</dimen>
 	<dimen name="app_buttonshape_default_bottomLeftRadius_value">25dp</dimen>
 	<dimen name="app_buttonshape_default_bottomRightRadius_value">25dp</dimen>
+	<dimen name="app_buttonshape_default_round_value">25dp</dimen>
 	<dimen name="app_buttonshape_default_stroke_value">2dp</dimen>
-	<dimen name="app_destinybuttonshape_default_stroke_value">5dp</dimen>
+	<dimen name="app_hugebuttonshape_default_stroke_value">5dp</dimen>
 
 	<dimen name="app_menu_shape_default_stroke_value">6dp</dimen>
 

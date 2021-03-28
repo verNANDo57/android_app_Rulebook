@@ -1,12 +1,13 @@
 package com.verNANDo57.rulebook_educational.rules.mainrules;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.content.res.AssetManager;
 import android.content.res.ColorStateList;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
-import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -26,13 +27,13 @@ import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.navigation.NavigationView;
 import com.verNANDo57.rulebook_educational.BottomNavBetweenLessonsFragment;
-import com.verNANDo57.rulebook_educational.usefulclasses.AppSomeUtils;
 import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngineAppCompatActivity;
 import com.verNANDo57.rulebook_educational.customthemeengine.utils.ColorUtils;
 import com.verNANDo57.rulebook_educational.for_pills.R;
 import com.verNANDo57.rulebook_educational.preferences.RulebookApplicationSharedPreferences;
-import com.verNANDo57.rulebook_educational.rules.RulebookApplicationBooleans;
+import com.verNANDo57.rulebook_educational.rules.RulebookBooleans;
 import com.verNANDo57.rulebook_educational.styleabletoast.StyleableToast;
+import com.verNANDo57.rulebook_educational.tools.Utils;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -42,10 +43,12 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
+import static com.verNANDo57.rulebook_educational.tools.Utils.LOG_TAG;
+
 public class AppMainRulesScrollableActivityInMainRules extends CustomThemeEngineAppCompatActivity {
 
     RulebookApplicationSharedPreferences preferences;
-    private RulebookApplicationBooleans booleansInMainRules;
+    private RulebookBooleans booleansInMainRules;
 
     private RelativeLayout app_scrollableactivity_in_mainrules_toolbarlayout_container;
     private RelativeLayout app_scrollableactivity_everywhere_toolbarlayout_search_container;
@@ -65,7 +68,7 @@ public class AppMainRulesScrollableActivityInMainRules extends CustomThemeEngine
     @SuppressLint({"ClickableViewAccessibility", "UseCompatLoadingForDrawables"})
     public void onCreate(Bundle savedInstanceState) {
         preferences = new RulebookApplicationSharedPreferences(this);
-        booleansInMainRules = new RulebookApplicationBooleans(this);
+        booleansInMainRules = new RulebookBooleans(this);
 
         booleansInMainRules.setAppBarPageSelected("info_container");
 
@@ -96,7 +99,7 @@ public class AppMainRulesScrollableActivityInMainRules extends CustomThemeEngine
             @Override
             public void onClick(View v) {
                 BottomNavBetweenLessonsFragment BottomNavFragmentFromLessons = new BottomNavBetweenLessonsFragment();
-                BottomNavFragmentFromLessons.show(getSupportFragmentManager(), "TAG");
+                BottomNavFragmentFromLessons.show(getSupportFragmentManager(), LOG_TAG);
             }
         });
 
@@ -633,16 +636,16 @@ public class AppMainRulesScrollableActivityInMainRules extends CustomThemeEngine
         try {
             if(booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("ortho_")) {
                 inputStream = getAssets().open("mainrules/orthography/" + booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean() + ".txt");
-                app_scrollableactivity_content_in_mainrules_text.setText(AppSomeUtils.convertStreamToString(inputStream));
+                app_scrollableactivity_content_in_mainrules_text.setText(Utils.convertStreamToString(inputStream));
             } else if(booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("punct_")){
                 inputStream = getAssets().open("mainrules/punctuation/" + booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean() + ".txt");
-                app_scrollableactivity_content_in_mainrules_text.setText(AppSomeUtils.convertStreamToString(inputStream));
+                app_scrollableactivity_content_in_mainrules_text.setText(Utils.convertStreamToString(inputStream));
             }
         } catch (IOException e) {
             new StyleableToast.Builder(getApplicationContext())
                     .text(getString(R.string.error_while_reading_a_file)) // set text
                     .textBold() //set text bold
-                    .iconStart(AppSomeUtils.getIconWarning()) //icon in start of toast
+                    .iconStart(Utils.getIconWarning()) //icon in start of toast
                     .show(); //show custom toast
             e.printStackTrace();
         }
@@ -664,31 +667,31 @@ public class AppMainRulesScrollableActivityInMainRules extends CustomThemeEngine
                 String criteria = app_wordsearch_edittext.getText().toString();
                 String fullText = app_scrollableactivity_content_in_mainrules_text.getText().toString();
 
-                AppSomeUtils.resetHighLightedText(app_scrollableactivity_content_in_mainrules_text, fullText);
+                Utils.resetHighLightedText(app_scrollableactivity_content_in_mainrules_text, fullText);
 
                 if(criteria.equals(" ")){
                     new StyleableToast.Builder(getApplicationContext())
                             .text(getString(R.string.app_edittext_is_empty)) // set text
                             .textBold() //set text bold
-                            .iconStart(AppSomeUtils.getIconWarning()) //icon in start of toast
+                            .iconStart(Utils.getIconWarning()) //icon in start of toast
                             .show(); //show custom toast
                 } else if (criteria.contains("        ")){
                     new StyleableToast.Builder(getApplicationContext())
                             .text(getString(R.string.app_edittext_is_empty)) // set text
                             .textBold() //set text bold
-                            .iconStart(AppSomeUtils.getIconWarning()) //icon in start of toast
+                            .iconStart(Utils.getIconWarning()) //icon in start of toast
                             .show(); //show custom toast
                 } else if (criteria.isEmpty()){
                     new StyleableToast.Builder(getApplicationContext())
                             .text(getString(R.string.app_edittext_is_empty)) // set text
                             .textBold() //set text bold
-                            .iconStart(AppSomeUtils.getIconWarning()) //icon in start of toast
+                            .iconStart(Utils.getIconWarning()) //icon in start of toast
                             .show(); //show custom toast
                 } else {
                     if (fullText.contains(criteria)) {
                         int indexOfCriteria = fullText.indexOf(criteria);
                         int lineNumber = app_scrollableactivity_content_in_mainrules_text.getLayout().getLineForOffset(indexOfCriteria);
-                        AppSomeUtils.setHighLightedText(app_scrollableactivity_content_in_mainrules_text, criteria);
+                        Utils.setHighLightedText(app_scrollableactivity_content_in_mainrules_text, criteria);
 
                         app_scrollableactivity_content_scrollview.scrollTo(0, app_scrollableactivity_content_in_mainrules_text.getLayout().getLineTop(lineNumber));
                     }
@@ -754,7 +757,13 @@ public class AppMainRulesScrollableActivityInMainRules extends CustomThemeEngine
                 return true;
 
             case R.id.save_rule:
-                copyAssets();
+                if(Build.VERSION.SDK_INT >= 23 && preferences.loadAppPermissionsAreGrantedBooleanState()==false){
+                    final Intent checkPermissions = new Intent(this, com.verNANDo57.rulebook_educational.tools.PermissionsCheck.class);
+                    checkPermissions.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(checkPermissions);
+                } else {
+                    copyAssets();
+                }
                 return true;
 
         }
@@ -774,10 +783,10 @@ public class AppMainRulesScrollableActivityInMainRules extends CustomThemeEngine
         try {
             files = assetManager.list("");
         } catch (IOException e) {
-            Log.e("tag", getString(R.string.app_error_while_saving_file), e);
+            Log.e(LOG_TAG, getString(R.string.app_error_while_saving_file), e);
         }
             InputStream in = null;
-            OutputStream out = null;
+            OutputStream out;
                 try {
 		        String outPreDir = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Rulebook/";
                 String outDir = null;
@@ -810,30 +819,28 @@ public class AppMainRulesScrollableActivityInMainRules extends CustomThemeEngine
                         new StyleableToast.Builder(getApplicationContext())
                                 .text(getString(R.string.app_saved_already) + ":" + outFileDir + outFileName + ".txt") // set text
                                 .textBold() //set text bold
-                                .iconStart(AppSomeUtils.getIconWarning()) //icon in start of toast
+                                .iconStart(Utils.getIconWarning()) //icon in start of toast
                                 .show(); //show custom toast
                     } else {
                         out = new FileOutputStream(outFile);
-                        AppSomeUtils.copyFile(in, out);
+                        Utils.copyFile(in, out);
                         in.close();
-                        in = null;
                         out.flush();
                         out.close();
-                        out = null;
 
                         new StyleableToast.Builder(getApplicationContext())
                                 .text(getString(R.string.app_saved) + ":" + outFileDir + outFileName + ".txt") // set text
                                 .textBold() //set text bold
-                                .iconStart(AppSomeUtils.getIconWarning()) //icon in start of toast
+                                .iconStart(Utils.getIconWarning()) //icon in start of toast
                                 .show(); //show custom toast
                     }
             } catch(IOException e) {
-                Log.e("tag", getString(R.string.app_error_while_saving_file) + ":" + outFileDir + outFileName + ".txt" + "(" + booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean() + ".txt" + ")", e);
+                Log.e(LOG_TAG, getString(R.string.app_error_while_saving_file) + ":" + outFileDir + outFileName + ".txt" + "(" + booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean() + ".txt" + ")", e);
 
                 new StyleableToast.Builder(getApplicationContext())
                         .text(getString(R.string.app_error_while_saving_file)) // set text
                         .textBold() //set text bold
-                        .iconStart(AppSomeUtils.getIconWarning()) //icon in start of toast
+                        .iconStart(Utils.getIconWarning()) //icon in start of toast
                         .show(); //show custom toast
             }
     }

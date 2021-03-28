@@ -10,19 +10,16 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
-import com.verNANDo57.rulebook_educational.for_pills.R;
-
 import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngineFragment;
+import com.verNANDo57.rulebook_educational.for_pills.R;
 import com.verNANDo57.rulebook_educational.preferences.RulebookApplicationSharedPreferences;
-import com.verNANDo57.rulebook_educational.rules.RulebookApplicationBooleans;
-
-import java.util.Objects;
+import com.verNANDo57.rulebook_educational.rules.RulebookBooleans;
 
 public class AppMainRulesOrthographyFragment extends CustomThemeEngineFragment {
 
     private View view;
     RulebookApplicationSharedPreferences preferences;
-    private RulebookApplicationBooleans booleansInMainRules;
+    private RulebookBooleans booleansInMainRules;
 
     public AppMainRulesOrthographyFragment() {
         //required empty constructor
@@ -40,7 +37,7 @@ public class AppMainRulesOrthographyFragment extends CustomThemeEngineFragment {
         Animation fade_out = AnimationUtils.loadAnimation(requireContext(), R.anim.app_fade_out);
 
         preferences = new RulebookApplicationSharedPreferences(requireContext());
-        booleansInMainRules = new RulebookApplicationBooleans(requireContext());
+        booleansInMainRules = new RulebookBooleans(requireContext());
 
 
         view = inflater.inflate(R.layout.orthography, container, false);

@@ -12,11 +12,11 @@ import android.os.Build
 import android.os.Bundle
 import androidx.annotation.RequiresApi
 import com.verNANDo57.rulebook_educational.customthemeengine.CustomThemeEngine
-import com.verNANDo57.rulebook_educational.for_pills.R
 import com.verNANDo57.rulebook_educational.customthemeengine.getKey
 import com.verNANDo57.rulebook_educational.customthemeengine.utils.ColorUtils
 import com.verNANDo57.rulebook_educational.customthemeengine.utils.Reflection.Companion.getFieldValue
 import com.verNANDo57.rulebook_educational.customthemeengine.utils.Reflection.Companion.getMethod
+import com.verNANDo57.rulebook_educational.for_pills.R
 
 @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
 @TargetApi(Build.VERSION_CODES.LOLLIPOP)
@@ -97,6 +97,6 @@ internal open class CustomThemeEngineDelegateImplV21(
   }
 
   companion object {
-    private const val TAG = "CustomThemeEngineDelegateImplV21"
+    private const val TAG = "RULEBOOK_APP_CustomThemeEngineDelegateImplV21"
   }
 }

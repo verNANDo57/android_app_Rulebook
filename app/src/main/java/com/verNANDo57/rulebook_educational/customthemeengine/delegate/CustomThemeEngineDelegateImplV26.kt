@@ -15,6 +15,6 @@ internal open class CustomThemeEngineDelegateImplV26(
 ) : CustomThemeEngineDelegateImplV24(activity, customThemeEngine, themeResId) {
 
   companion object {
-    private const val TAG = "CustomThemeEngineDelegateImplV26"
+    private const val TAG = "RULEBOOK_APP_CustomThemeEngineDelegateImplV26"
   }
 }

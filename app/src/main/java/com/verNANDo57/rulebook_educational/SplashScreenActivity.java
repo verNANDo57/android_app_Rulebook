@@ -29,18 +29,17 @@ public class SplashScreenActivity extends CustomThemeEngineAppCompatActivity
 
 		setContentView(R.layout.app_strangescreen);
 
-		int ImageViewBackgroundTintColor = ColorUtils.lighter(getResources().getColor(R.color.coloraccent), 0.01f);
+		int BackgroundTintColor = ColorUtils.lighter(getResources().getColor(R.color.coloraccent), 0.01f);
 
 		ImageView strangescreen_image = findViewById(R.id.strangescreen_image);
-		strangescreen_image.setBackgroundTintList(ColorStateList.valueOf(ImageViewBackgroundTintColor));
 
-		Indicator1 = findViewById(R.id.appstrangescreenProgressBar1); //Indicator1(ProgressBar1)
-		Indicator2 = findViewById(R.id.appstrangescreenProgressBar2); //Indicator2(ProgressBar2)
-		Indicator3 = findViewById(R.id.appstrangescreenProgressBar3); //Indicator3(ProgressBar3)
+		Indicator1 = findViewById(R.id.appSplashScreenProgressBar1); //Indicator1(ProgressBar1)
+		Indicator2 = findViewById(R.id.appSplashScreenProgressBar2); //Indicator2(ProgressBar2)
+		Indicator3 = findViewById(R.id.appSplashScreenProgressBar3); //Indicator3(ProgressBar3)
 
-		Indicator1.setIndeterminateTintList(ColorStateList.valueOf(ImageViewBackgroundTintColor));
-		Indicator2.setIndeterminateTintList(ColorStateList.valueOf(ImageViewBackgroundTintColor));
-		Indicator3.setIndeterminateTintList(ColorStateList.valueOf(ImageViewBackgroundTintColor));
+		Indicator1.setIndeterminateTintList(ColorStateList.valueOf(BackgroundTintColor));
+		Indicator2.setIndeterminateTintList(ColorStateList.valueOf(BackgroundTintColor));
+		Indicator3.setIndeterminateTintList(ColorStateList.valueOf(BackgroundTintColor));
 
 		Indicator1.setProgress(0); //Progress of Indicator1(ProgressBar1) at startup
 		Indicator2.setProgress(0); //Progress of Indicator2(ProgressBar2) at startup
@@ -70,7 +69,9 @@ public class SplashScreenActivity extends CustomThemeEngineAppCompatActivity
 				}
 				startActivity(StrangeActivityEnd);
 				finish();
-				}
-			}).start();
+			}
+		}).start();
     }
+
+
 }

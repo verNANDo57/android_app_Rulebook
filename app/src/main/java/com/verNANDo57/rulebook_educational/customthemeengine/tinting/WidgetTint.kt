@@ -21,7 +21,7 @@ class WidgetTint private constructor() {
 
   companion object {
 
-    private const val TAG = "WidgetTint"
+    private const val TAG = "RULEBOOK_APP_WidgetTint"
 
     fun setFastScrollThumbColor(listView: AbsListView, @ColorInt color: Int) {
       try {

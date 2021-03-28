@@ -3,16 +3,13 @@ package com.verNANDo57.rulebook_educational;
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.PorterDuff;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
-import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewTreeObserver;
-import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -27,8 +24,9 @@ import com.google.android.material.navigation.NavigationView;
 import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngineAppCompatActivity;
 import com.verNANDo57.rulebook_educational.for_pills.R;
 import com.verNANDo57.rulebook_educational.preferences.RulebookApplicationSharedPreferences;
-import com.verNANDo57.rulebook_educational.styleabletoast.StyleableToast;
-import com.verNANDo57.rulebook_educational.usefulclasses.AppSomeUtils;
+import com.verNANDo57.rulebook_educational.tools.Utils;
+
+import static com.verNANDo57.rulebook_educational.tools.Utils.LOG_TAG;
 
 
 public class AppAboutApplicationActivity extends CustomThemeEngineAppCompatActivity
@@ -56,7 +54,7 @@ public class AppAboutApplicationActivity extends CustomThemeEngineAppCompatActiv
 		final BottomAppBar bar_in_credits = findViewById(R.id.bar_in_about);
 		setSupportActionBar(bar_in_credits);
 		if(preferences.loadRulebookAnimationsDisableState()==false) {
-			AppSomeUtils.setAnimatorToAnyView(bar_in_credits, "to_top", (float) 250);
+			Utils.setAnimatorToAnyView(bar_in_credits, "to_top", (float) 250);
 		}
 
 		//BottomNavigationView
@@ -64,7 +62,7 @@ public class AppAboutApplicationActivity extends CustomThemeEngineAppCompatActiv
 			@Override
 			public void onClick(View v) {
 				BottomNavBetweenActivitiesFragment BottomNavBetweenActivities = new BottomNavBetweenActivitiesFragment();
-				BottomNavBetweenActivities.show(getSupportFragmentManager(), "TAG");
+				BottomNavBetweenActivities.show(getSupportFragmentManager(), LOG_TAG);
 			}
 		});
 
@@ -80,7 +78,7 @@ public class AppAboutApplicationActivity extends CustomThemeEngineAppCompatActiv
 				if(movement >= 100){
 					if (bar_in_credits.getVisibility() == View.VISIBLE) {
 						if (preferences.loadRulebookAnimationsDisableState() == false) {
-							AppSomeUtils.setAnimatorToAnyView(bar_in_credits, "to_bottom");
+							Utils.setAnimatorToAnyView(bar_in_credits, "to_bottom");
 						}
 						bar_in_credits.setVisibility(View.GONE);
 						fab_in_about.hide();
@@ -88,7 +86,7 @@ public class AppAboutApplicationActivity extends CustomThemeEngineAppCompatActiv
 				} else if(movement >= -100){
 					if (bar_in_credits.getVisibility() == View.GONE) {
 						if (preferences.loadRulebookAnimationsDisableState() == false) {
-							AppSomeUtils.setAnimatorToAnyView(bar_in_credits, "to_top");
+							Utils.setAnimatorToAnyView(bar_in_credits, "to_top");
 						}
 						bar_in_credits.setVisibility(View.VISIBLE);
 						fab_in_about.show();
@@ -106,11 +104,10 @@ public class AppAboutApplicationActivity extends CustomThemeEngineAppCompatActiv
 		});
 
 		ImageView about_preview = findViewById(R.id.about_preview);
-		AppSomeUtils.setColorFilterToDrawable(about_preview, "SRC_IN", ContextCompat.getColor(this, R.color.coloraccent));
-
+		about_preview.setColorFilter(R.color.coloraccent, PorterDuff.Mode.SRC_IN);
 
 		ImageButton buttongit = findViewById(R.id.buttongit);
-		AppSomeUtils.setColorFilterToDrawable(buttongit, "SRC_IN", ContextCompat.getColor(this, R.color.coloraccent));
+		buttongit.setColorFilter(R.color.coloraccent, PorterDuff.Mode.SRC_IN);
 		buttongit.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -122,7 +119,7 @@ public class AppAboutApplicationActivity extends CustomThemeEngineAppCompatActiv
 		});
 
 		ImageButton buttonvk = findViewById(R.id.buttonvk);
-		AppSomeUtils.setColorFilterToDrawable(buttonvk, "SRC_IN", ContextCompat.getColor(this, R.color.coloraccent));
+		buttonvk.setColorFilter(R.color.coloraccent, PorterDuff.Mode.SRC_IN);
 		buttonvk.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -134,7 +131,7 @@ public class AppAboutApplicationActivity extends CustomThemeEngineAppCompatActiv
 		});
 
 		ImageButton buttontg = findViewById(R.id.buttontg);
-		AppSomeUtils.setColorFilterToDrawable(buttontg, "SRC_IN", ContextCompat.getColor(this, R.color.coloraccent));
+		buttontg.setColorFilter(R.color.coloraccent, PorterDuff.Mode.SRC_IN);
 		buttontg.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -146,7 +143,7 @@ public class AppAboutApplicationActivity extends CustomThemeEngineAppCompatActiv
 		});
 
 		ImageButton buttonqiwi = findViewById(R.id.buttonqiwi);
-		AppSomeUtils.setColorFilterToDrawable(buttonqiwi, "SRC_IN", ContextCompat.getColor(this, R.color.coloraccent));
+		buttonqiwi.setColorFilter(R.color.coloraccent, PorterDuff.Mode.SRC_IN);
 		buttonqiwi.setOnClickListener(new View.OnClickListener(){
 			@Override
 			public void onClick(View v) {
@@ -170,7 +167,7 @@ public class AppAboutApplicationActivity extends CustomThemeEngineAppCompatActiv
 		switch (item.getItemId())
 		{
 			case R.id.preferences_screen:
-			Intent AppRulebookPreferencesScreenActivity = new Intent(this, com.verNANDo57.rulebook_educational.preferences.AppSettingsActivity.class);     startActivity(AppRulebookPreferencesScreenActivity);
+			startActivity(new Intent(this, com.verNANDo57.rulebook_educational.preferences.AppSettingsActivity.class));
 			return true;
 
 			case R.id.exit_actionbar_extended:

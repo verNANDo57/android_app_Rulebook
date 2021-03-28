@@ -8,22 +8,10 @@ import android.os.Build
 import android.os.Bundle
 import androidx.annotation.RequiresApi
 import com.verNANDo57.rulebook_educational.customthemeengine.CustomThemeEngine
-import com.verNANDo57.rulebook_educational.for_pills.R
 import com.verNANDo57.rulebook_educational.customthemeengine.getKey
-import com.verNANDo57.rulebook_educational.customthemeengine.inflator.AlertDialogProcessor
-import com.verNANDo57.rulebook_educational.customthemeengine.inflator.BottomAppBarProcessor
-import com.verNANDo57.rulebook_educational.customthemeengine.inflator.CompoundButtonProcessor
-import com.verNANDo57.rulebook_educational.customthemeengine.inflator.CustomThemeEngineViewProcessor
-import com.verNANDo57.rulebook_educational.customthemeengine.inflator.DatePickerProcessor
-import com.verNANDo57.rulebook_educational.customthemeengine.inflator.ImageButtonProcessor
-import com.verNANDo57.rulebook_educational.customthemeengine.inflator.ListMenuItemViewProcessor
-import com.verNANDo57.rulebook_educational.customthemeengine.inflator.SearchAutoCompleteProcessor
-import com.verNANDo57.rulebook_educational.customthemeengine.inflator.SwitchCompatProcessor
-import com.verNANDo57.rulebook_educational.customthemeengine.inflator.SwitchProcessor
-import com.verNANDo57.rulebook_educational.customthemeengine.inflator.TextViewProcessor
-import com.verNANDo57.rulebook_educational.customthemeengine.inflator.TimePickerProcessor
-import com.verNANDo57.rulebook_educational.customthemeengine.inflator.ViewGroupProcessor
+import com.verNANDo57.rulebook_educational.customthemeengine.inflator.*
 import com.verNANDo57.rulebook_educational.customthemeengine.utils.Reflection
+import com.verNANDo57.rulebook_educational.for_pills.R
 
 @RequiresApi(Build.VERSION_CODES.M)
 @TargetApi(Build.VERSION_CODES.M)
@@ -107,7 +95,7 @@ internal open class CustomThemeEngineDelegateImplV23(
 
   companion object {
 
-    private const val TAG = "CyaneaDelegateImplV23"
+    private const val TAG = "RULEBOOK_APP_CustomThemeEngineDelegateImplV23"
 
     @SuppressLint("PrivateResource")
     private val PRELOADED_COLORS = intArrayOf(

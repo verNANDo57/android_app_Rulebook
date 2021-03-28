@@ -12,7 +12,6 @@ import android.view.Menu
 import android.view.View
 import android.view.WindowManager
 import androidx.core.content.ContextCompat
-import com.verNANDo57.rulebook_educational.AppRulebookClass
 import com.verNANDo57.rulebook_educational.customthemeengine.CustomThemeEngine
 import com.verNANDo57.rulebook_educational.customthemeengine.CustomThemeEngineResources
 import com.verNANDo57.rulebook_educational.customthemeengine.delegate.CustomThemeEngineDelegate

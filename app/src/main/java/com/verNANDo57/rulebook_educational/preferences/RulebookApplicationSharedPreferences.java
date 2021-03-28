@@ -41,4 +41,15 @@ public class RulebookApplicationSharedPreferences {
     public String loadRulebookLocaleState (){
         return RulebookSharedPreferences.getString("RulebookLocale", "ru");
     }
+
+    //This method will save AppPermissionsAreGranted boolean state
+    public void setAppPermissionsAreGrantedBooleanState(Boolean state){
+        SharedPreferences.Editor editor= RulebookSharedPreferences.edit();
+        editor.putBoolean("AppPermissionsAreGranted", state);
+        editor.apply();
+    }
+    //This method will load AppPermissionsAreGranted boolean state
+    public Boolean loadAppPermissionsAreGrantedBooleanState (){
+        return RulebookSharedPreferences.getBoolean("AppPermissionsAreGranted", false);
+    }
 }

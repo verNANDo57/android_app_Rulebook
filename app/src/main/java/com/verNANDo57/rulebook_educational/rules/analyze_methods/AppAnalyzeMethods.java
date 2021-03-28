@@ -3,30 +3,24 @@ package com.verNANDo57.rulebook_educational.rules.analyze_methods;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.KeyEvent;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewTreeObserver;
-import android.view.animation.TranslateAnimation;
-import android.widget.ScrollView;
-import android.widget.TextView;
 
 import androidx.appcompat.widget.Toolbar;
 
-import com.google.android.material.bottomappbar.BottomAppBar;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.verNANDo57.rulebook_educational.BottomNavBetweenLessonsFragment;
 import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngineAppCompatActivity;
 import com.verNANDo57.rulebook_educational.for_pills.R;
 import com.verNANDo57.rulebook_educational.preferences.RulebookApplicationSharedPreferences;
-import com.verNANDo57.rulebook_educational.rules.RulebookApplicationBooleans;
+import com.verNANDo57.rulebook_educational.rules.RulebookBooleans;
+
+import static com.verNANDo57.rulebook_educational.tools.Utils.LOG_TAG;
 
 @SuppressLint("InflateParams")
 public class AppAnalyzeMethods extends CustomThemeEngineAppCompatActivity {
 
     RulebookApplicationSharedPreferences preferences;
-    private RulebookApplicationBooleans booleansInAnalyzeMethods;
+    private RulebookBooleans booleansInAnalyzeMethods;
 
     private Intent scrollableactivity_in_analyzemethods;
 
@@ -34,7 +28,7 @@ public class AppAnalyzeMethods extends CustomThemeEngineAppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         preferences = new RulebookApplicationSharedPreferences(this);
-        booleansInAnalyzeMethods = new RulebookApplicationBooleans(this);
+        booleansInAnalyzeMethods = new RulebookBooleans(this);
 
         scrollableactivity_in_analyzemethods = new Intent(this, AppAnalyzeMethodsScrollableActivity.class);
 
@@ -48,7 +42,7 @@ public class AppAnalyzeMethods extends CustomThemeEngineAppCompatActivity {
             @Override
             public void onClick(View v) {
                 BottomNavBetweenLessonsFragment BottomNavBetweenLessons = new BottomNavBetweenLessonsFragment();
-                BottomNavBetweenLessons.show(getSupportFragmentManager(), "TAG");
+                BottomNavBetweenLessons.show(getSupportFragmentManager(), LOG_TAG);
             }
         });
     }

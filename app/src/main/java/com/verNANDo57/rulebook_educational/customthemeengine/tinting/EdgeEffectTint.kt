@@ -38,7 +38,7 @@ class EdgeEffectTint(private val view: ViewGroup) {
 
   companion object {
 
-    private const val TAG = "EdgeEffectTint"
+    private const val TAG = "RULEBOOK_APP_EdgeEffectTint"
 
     @JvmStatic
     fun setEdgeEffectColor(edgeEffect: EdgeEffect, @ColorInt color: Int) {

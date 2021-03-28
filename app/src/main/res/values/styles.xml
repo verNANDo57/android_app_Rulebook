@@ -141,12 +141,6 @@
 
 	</style>
 
-	<style name="ExamplesAreaEveryTheme" parent="Widget.AppCompat.TextView">
-		<item name="android:background">@drawable/examples_shape</item>
-		<item name="android:textIsSelectable">true</item>
-		<item name="android:gravity">center</item>
-	</style>
-
 	<style name="HeadlinesEveryTheme" parent="Widget.AppCompat.TextView">
 		<item name="android:textStyle">bold</item>
 		<item name="android:textSize">@dimen/action_headlines_textsize</item>
@@ -157,7 +151,7 @@
 
 	<style name="BottomSheetDialogHeadlinesEveryTheme" parent="Widget.AppCompat.TextView">
 		<item name="android:textStyle">bold</item>
-		<item name="android:textSize">@dimen/app_bottomsheetdialog_healine_size</item>
+		<item name="android:textSize">@dimen/app_bottomsheetdialog_headline_size</item>
 		<item name="android:textColor">@color/bottomsheetdialog_primary</item>
 		<item name="android:textIsSelectable">false</item>
 		<item name="android:gravity">center</item>
@@ -212,15 +206,33 @@
 	<style name="RulebookChooseDestinyButtonLeftToRight" parent="Widget.AppCompat.Button">
 		<item name="android:stateListAnimator" tools:targetApi="lollipop">@animator/btn_anim_translate_lefttoright</item>
 		<item name="android:background">@drawable/buttonshape_onlyright_bottomandtop</item>
-		<item name="android:textSize">@dimen/app_choose_your_destiny_menu_button_text_size_in_layout</item>
+		<item name="android:textSize">@dimen/app_choose_your_destiny_menu_button_text_size</item>
 		<item name="android:gravity">center</item>
+		<item name="android:layout_width">@dimen/app_choose_your_destiny_menu_button_width</item>
+		<item name="android:layout_height">@dimen/app_choose_your_destiny_menu_button_height</item>
 	</style>
 
 	<style name="RulebookChooseDestinyButtonRightToLeft" parent="Widget.AppCompat.Button">
 		<item name="android:stateListAnimator" tools:targetApi="lollipop">@animator/btn_anim_translate_righttoleft</item>
 		<item name="android:background">@drawable/buttonshape_onlyleft_bottomandtop</item>
-		<item name="android:textSize">@dimen/app_choose_your_destiny_menu_button_text_size_in_layout</item>
+		<item name="android:textSize">@dimen/app_choose_your_destiny_menu_button_text_size</item>
 		<item name="android:gravity">center</item>
+		<item name="android:layout_width">@dimen/app_choose_your_destiny_menu_button_width</item>
+		<item name="android:layout_height">@dimen/app_choose_your_destiny_menu_button_height</item>
+	</style>
+
+	<style name="RulebookButtonHuge" parent="Widget.AppCompat.Button">
+		<item name="android:stateListAnimator" tools:targetApi="lollipop">@animator/btn_anim_zoom</item>
+		<item name="android:background">@drawable/buttonshape_huge</item>
+		<item name="android:textSize">@dimen/app_hugebutton_textsize</item>
+		<item name="android:gravity">center</item>
+		<item name="android:layout_height">@dimen/app_hugebutton_default_height</item>
+		<item name="android:layout_marginTop">@dimen/app_hugebutton_default_marginBottomAndTop</item>
+		<item name="android:layout_marginBottom">@dimen/app_hugebutton_default_marginBottomAndTop</item>
+		<item name="android:layout_marginRight">@dimen/app_hugebutton_default_marginLeftAndRight</item>
+		<item name="android:layout_marginEnd">@dimen/app_hugebutton_default_marginLeftAndRight</item>
+		<item name="android:layout_marginLeft">@dimen/app_hugebutton_default_marginLeftAndRight</item>
+		<item name="android:layout_marginStart">@dimen/app_hugebutton_default_marginLeftAndRight</item>
 	</style>
 
 	<style name="AppRatingBar" parent="Theme.MaterialComponents.Bridge">
@@ -249,12 +261,27 @@
 	</style>
 
 	<style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
 	<style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+	<!-- Default theme for activities that don't actually display a UI; that
+         is, they finish themselves before being resumed. -->
+	<style name="Theme.MaterialComponents.NoDisplay_Custom" parent="Theme.MaterialComponents.Bridge">
+		<!-- <item name="android:windowBackground">@null</item> -->
+		<item name="android:windowContentOverlay">@null</item>
+		<item name="android:windowIsTranslucent">true</item>
+		<item name="android:windowAnimationStyle">@null</item>
+		<item name="android:windowDisablePreview">true</item>
+		<item name="android:windowNoDisplay">true</item>
+		<item name="android:windowBackground">@android:color/transparent</item>
+		<item name="android:colorBackgroundCacheHint">@null</item>
+	</style>
 
-
-
+	<style name="Theme.MaterialComponents.NoDisplay_Custom.Fullscreen" parent="Theme.MaterialComponents.Bridge">
+		<item name="android:windowFullscreen">true</item>
+		<item name="android:windowNoTitle">true</item>
+	</style>
+	<!-- Default theme for activities that don't actually display a UI; that
+     is, they finish themselves before being resumed. -->
 
 
 	<style name="AppThemeRulebookDark" parent="Theme.MaterialComponents.Bridge">

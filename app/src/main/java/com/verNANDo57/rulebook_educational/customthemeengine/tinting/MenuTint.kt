@@ -5,11 +5,7 @@ import android.app.Activity
 import android.content.Context
 import android.graphics.PorterDuff
 import android.os.Build
-import android.view.Menu
-import android.view.MenuItem
-import android.view.View
-import android.view.ViewConfiguration
-import android.view.ViewGroup
+import android.view.*
 import android.widget.ImageView
 import android.widget.Toolbar
 import androidx.annotation.ColorInt
@@ -117,7 +113,7 @@ class MenuTint(
 
   companion object {
 
-    private const val TAG = "MenuTint"
+    private const val TAG = "RULEBOOK_APP_MenuTint"
 
     /**
      * Sets the color filter and/or the alpha transparency on a [MenuItem]'s icon.

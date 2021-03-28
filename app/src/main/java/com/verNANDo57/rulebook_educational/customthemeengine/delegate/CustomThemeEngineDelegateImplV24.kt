@@ -8,9 +8,9 @@ import android.os.Build
 import android.os.Bundle
 import androidx.annotation.RequiresApi
 import com.verNANDo57.rulebook_educational.customthemeengine.CustomThemeEngine
-import com.verNANDo57.rulebook_educational.for_pills.R
 import com.verNANDo57.rulebook_educational.customthemeengine.getKey
 import com.verNANDo57.rulebook_educational.customthemeengine.utils.Reflection
+import com.verNANDo57.rulebook_educational.for_pills.R
 
 @RequiresApi(Build.VERSION_CODES.N)
 @TargetApi(Build.VERSION_CODES.N)
@@ -61,6 +61,6 @@ internal open class CustomThemeEngineDelegateImplV24(
   }
 
   companion object {
-    private const val TAG = "CyaneaDelegateImplV24"
+    private const val TAG = "RULEBOOK_APP_CustomThemeEngineDelegateImplV24"
   }
 }

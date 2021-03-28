@@ -1,5 +1,6 @@
 package com.verNANDo57.rulebook_educational.colorpicker;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
@@ -23,6 +24,7 @@ import android.util.AttributeSet;
 import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.view.View;
+
 import com.verNANDo57.rulebook_educational.for_pills.R;
 
 /**
@@ -505,9 +507,8 @@ public class ColorPickerView extends View {
       y = y - rect.top;
     }
 
-    float hue = 360f - (y * 360f / height);
-
-    return hue;
+    //int HUE = 360f - (y * 360f / height);
+    return 360f - (y * 360f / height);
   }
 
   private int pointToAlpha(int x) {
@@ -526,6 +527,7 @@ public class ColorPickerView extends View {
     return 0xff - (x * 0xff / width);
   }
 
+  @SuppressLint("ClickableViewAccessibility")
   @Override
   public boolean onTouchEvent(MotionEvent event) {
     boolean update = false;

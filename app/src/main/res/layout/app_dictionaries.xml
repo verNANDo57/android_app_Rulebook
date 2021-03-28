@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.verNANDo57.rulebook_educational.rules.dictionaries.AppDictionaries"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_in_dictionaries"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_toolbar_height"
+        android:background="@drawable/app_toolbar"
+        android:layout_margin="@dimen/app_toolbar_margin"
+        app:navigationIcon="@drawable/ic_view_list_black"
+        app:title="@string/dictionaries" />
+
+    <ScrollView
+        android:id="@+id/scrollview_in_dictionaries"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/vocabulary_words"
+                style="@style/RulebookButtonHuge"
+                android:text="@string/vocabulary_words"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/app_hugebutton_default_height" />
+
+            <Button
+                android:id="@+id/phrasebook"
+                style="@style/RulebookButtonHuge"
+                android:text="@string/phrasebook"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/app_hugebutton_default_height" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

@@ -8,13 +8,13 @@
     <string name="app_name_schemesandtables">Rulebook: В схемах и таблицах</string>
     <string name="app_name_lexicon">Rulebook: Лексика</string>
     <string name="app_name_rating">Rulebook: Отзыв</string>
-    <string name="app_name_logging">Rulebook: Логгирование</string>
     <string name="app_name_search">Rulebook: Поиск</string>
     <string name="app_name_settings">Rulebook: Настройки</string>
     <string name="app_name_status">Rulebook: Страница состояния</string>
     <string name="app_name_analyze_methods">Rulebook: Виды разборов</string>
+    <string name="app_name_dictionaries">Rulebook: Словари</string>
 
-<!-- PLS do not translate strings below -->
+<!-- PLS do not touch strings below -->
     <string name="app_dev_email" translatable="false">silvenation@gmail.com</string>
     <string name="app_dev_part1" translatable="false">Оценка пользователя--</string>
     <string name="app_dev_part2" translatable="false">/5.0 звёзд</string>
@@ -31,20 +31,20 @@
         <item>Ru</item>
         <item>En</item>
     </string-array>
-<!-- PLS do not translate strings above -->
 
-    <string name="review_device_name">Устройство:</string>
-    <string name="review_device_manufacter">Изготовитель:</string>
-    <string name="review_device_model">Модель:</string>
-    <string name="review_oc_name">Наименование версии ОС:</string>
-    <string name="review_device_sdk_version">Версия SDK вашего устройства:</string>
-    <string name="review_device_hardware">Железо:</string>
-    <string name="review_device_current_dpi_value">DPI:</string>
-    <string name="review_device_brand">Бренд:</string>
-    <string name="review_device_fingerprint">Биометрия:</string>
-    <string name="review_device_serial">Серийный номер:</string>
-    <string name="review_device_android_version">Версия Андроида:</string>
-    <string name="review_device_screen_resolution">Разрешение экрана:</string>
+    <string name="review_device_name" translatable="false">Устройство:</string>
+    <string name="review_device_manufacter" translatable="false">Изготовитель:</string>
+    <string name="review_device_model" translatable="false">Модель:</string>
+    <string name="review_oc_name" translatable="false">Наименование версии ОС:</string>
+    <string name="review_device_sdk_version" translatable="false">Версия SDK вашего устройства:</string>
+    <string name="review_device_hardware" translatable="false">Железо:</string>
+    <string name="review_device_current_dpi_value" translatable="false">DPI:</string>
+    <string name="review_device_brand" translatable="false">Бренд:</string>
+    <string name="review_device_fingerprint" translatable="false">Биометрия:</string>
+    <string name="review_device_serial" translatable="false">Серийный номер:</string>
+    <string name="review_device_android_version" translatable="false">Версия Андроида:</string>
+    <string name="review_device_screen_resolution" translatable="false">Разрешение экрана:</string>
+<!-- PLS do not touch strings above -->
 
     <string name="app_status_details_headline">Дополнительная информация</string>
     <string name="app_status_value_null">пусто</string>
@@ -54,9 +54,6 @@
     <string name="app_status_page_boolean_state">Страница состояния:</string>
     <string name="app_statusbar_boolean_state">Строка состояния:</string>
     <string name="app_autohidebottomappbar_boolean_state">Контроль всплывающей панели навигации:</string>
-
-    <string name="app_status_boolean_state_yes">ДА</string>
-    <string name="app_status_boolean_state_no">НЕT</string>
 
     <string name="app_choose_email_client">Выберите почтовый клиент</string>
 
@@ -92,8 +89,6 @@
     <string name="app_autohide_bottomappbar_extended">Автоматически скрывать всплывающую панель навигации (При скроллинге вверх и вниз, соответственно)</string>
     <string name="app_prefs_warning_extended">После введённых изменений, для корректного отображения интерфейса может потребоваться перезагрузка. Для этого достаточно нажать сюда.</string>
     <string name="app_prefs_warning">Перезагрузка</string>
-    <string name="app_locale_select">Язык</string>
-    <string name="app_locale_select_extended">Выберите язык</string>
 
     <string name="app_edittext_is_empty">Напишите что-нибудь</string>
 
@@ -102,7 +97,7 @@
     <string name="about_app">О приложении</string>
     <string name="app_exit">Выход</string>
     <string name="app_theme_choose">Тема</string>
-    <string name="app_about_extended">Версия: 1.0.3</string>
+    <string name="app_about_extended">Версия: 1.0.4</string>
     <string name="app_about_name">Словарь - Русский Язык</string>
     <string name="search_main">Поиск</string>
     <string name="intent_to_main">Главная</string>
@@ -149,6 +144,11 @@
     <string name="app_saved">Сохранено</string>
     <string name="app_saved_already">Файл был сохранён ранее</string>
 
+    <string name="app_granted">Разрешено</string>
+    <string name="app_denied">Запрещено</string>
+    <string name="app_warning">Внимание</string>
+    <string name="app_reason_why_these_permissions_are_needed">Если вы не дадите приложению доступ к внутренней памяти устройства, то, к сожалению, будет невозможным что-либо сохранять. ¯\_(ツ)_/¯</string>
+
     <string name="compose_disabled_message">Ярлык недоступен по неизвестной причине.</string>
     <string name="error_while_reading_theme">Ошибка при попытке чтения темы</string>
 
@@ -161,6 +161,7 @@
 
     <string name="main_rules">Основные</string>
     <string name="lexicon_rules">Лексика</string>
+    <string name="dictionaries">Словари</string>
     <string name="tables_and_schemes_rules">Схемы и таблицы</string>
     <string name="analyze_methods">Виды разборов</string>
 
@@ -395,5 +396,8 @@
     <string name="syntactic_analyze_method_for_difficult_sentence">Синтаксический разбор сложного предложения</string>
     <string name="lexical_analyze_method_for_everyword">Лексический разбор слова</string>
     <string name="orthographic_analyze_method_for_everyword">Орфографический разбор</string>
+
+    <string name="vocabulary_words">Словарные слова</string>
+    <string name="phrasebook">Словарь фразеологизмов</string>
 
 </resources>

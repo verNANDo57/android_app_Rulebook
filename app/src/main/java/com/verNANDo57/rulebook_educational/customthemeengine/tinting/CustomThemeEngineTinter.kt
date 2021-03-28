@@ -4,23 +4,17 @@ import android.annotation.TargetApi
 import android.content.res.ColorStateList
 import android.content.res.Resources
 import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
-import android.graphics.drawable.Drawable
-import android.graphics.drawable.DrawableContainer
+import android.graphics.drawable.*
 import android.graphics.drawable.DrawableContainer.DrawableContainerState
-import android.graphics.drawable.GradientDrawable
-import android.graphics.drawable.LayerDrawable
-import android.graphics.drawable.NinePatchDrawable
-import android.graphics.drawable.RippleDrawable
 import android.os.Build
 import android.view.View
 import android.view.ViewGroup
 import com.verNANDo57.rulebook_educational.customthemeengine.CustomThemeEngine
 import com.verNANDo57.rulebook_educational.customthemeengine.CustomThemeEngineResources
-import com.verNANDo57.rulebook_educational.for_pills.R
 import com.verNANDo57.rulebook_educational.customthemeengine.utils.ColorUtils
 import com.verNANDo57.rulebook_educational.customthemeengine.utils.Reflection
 import com.verNANDo57.rulebook_educational.customthemeengine.utils.Reflection.Companion.getFieldValue
+import com.verNANDo57.rulebook_educational.for_pills.R
 import java.lang.reflect.Field
 import java.lang.reflect.Modifier
 
@@ -253,7 +247,7 @@ class CustomThemeEngineTinter {
 
   companion object {
 
-    private const val TAG = "CustomThemeEngineTinter"
+    private const val TAG = "RULEBOOK_APP_CustomThemeEngineTinter"
 
     private val COLOR_IDS = intArrayOf(
         R.color.custom_background_dark,

@@ -5,7 +5,7 @@ import android.view.MenuItem
 import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngineAppCompatActivity
 
 /**
- * Activity to show Cyanea preferences allowing the user to modify the primary, accent and background color of the app.
+ * Activity to show CustomThemeEngine preferences allowing the user to modify the primary, accent and background color of the app.
  */
 open class CustomThemeEngineSettingsActivity : CustomThemeEngineAppCompatActivity() {
 

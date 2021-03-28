@@ -2,23 +2,28 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group>
         <item
-            android:id="@+id/bottomsheetdialog_betweenlessons_first"
-            android:icon="@drawable/ic_view_list_black"
+            android:id="@+id/bottomsheetdialog_betweenlessons_orphoandpunct"
+            android:icon="@drawable/app_pen_icon"
             android:title="@string/bottomsheetdialog_betweenlessons_first" />
 
         <item
-            android:id="@+id/bottomsheetdialog_betweenlessons_second"
-            android:icon="@drawable/ic_view_list_black"
+            android:id="@+id/bottomsheetdialog_betweenlessons_lexicon"
+            android:icon="@drawable/ic_launch_lexicon_foreground"
             android:title="@string/bottomsheetdialog_betweenlessons_second" />
 
         <item
-            android:id="@+id/bottomsheetdialog_betweenlessons_third"
-            android:icon="@drawable/ic_view_list_black"
+            android:id="@+id/bottomsheetdialog_betweenlessons_intables"
+            android:icon="@drawable/app_table_icon"
             android:title="@string/bottomsheetdialog_betweenlessons_third" />
 
         <item
-            android:id="@+id/bottomsheetdialog_betweenlessons_fourth"
-            android:icon="@drawable/ic_view_list_black"
+            android:id="@+id/bottomsheetdialog_betweenlessons_analyzemethods"
+            android:icon="@drawable/app_table_icon"
             android:title="@string/bottomsheetdialog_betweenlessons_fourth" />
+
+        <item
+            android:id="@+id/bottomsheetdialog_betweenlessons_search"
+            android:icon="@drawable/ic_search_black"
+            android:title="@string/bottomsheetdialog_betweenlessons_fifth" />
     </group>
 </menu>

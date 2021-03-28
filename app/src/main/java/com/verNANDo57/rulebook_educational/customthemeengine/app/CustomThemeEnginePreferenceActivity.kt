@@ -14,12 +14,11 @@ import android.view.*
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat
-import com.verNANDo57.rulebook_educational.AppRulebookClass
-import com.verNANDo57.rulebook_educational.for_pills.R
 import com.verNANDo57.rulebook_educational.customthemeengine.CustomThemeEngine
 import com.verNANDo57.rulebook_educational.customthemeengine.CustomThemeEngineResources
 import com.verNANDo57.rulebook_educational.customthemeengine.delegate.BaseAppCompatDelegate
 import com.verNANDo57.rulebook_educational.customthemeengine.delegate.CustomThemeEngineDelegate
+import com.verNANDo57.rulebook_educational.for_pills.R
 import com.verNANDo57.rulebook_educational.preferences.RulebookApplicationSharedPreferences
 
 /**

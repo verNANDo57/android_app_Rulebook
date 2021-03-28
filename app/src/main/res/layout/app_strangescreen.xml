@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
-	xmlns:elastic="http://schemas.android.com/apk/res-auto"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
-	android:gravity="center">
+	android:gravity="center"
+	android:orientation="vertical">
 
-	<RelativeLayout
+	<LinearLayout
 		android:layout_width="match_parent"
 		android:layout_height="110dp"
 		android:id="@+id/appstrangescreenRelativeLayout1"
@@ -16,42 +16,37 @@
 			android:id="@+id/strangescreen_image"
 			android:layout_width="200dp"
 			android:layout_height="110dp"
-			android:background="@drawable/app_book_colored" />
+			android:src="@drawable/app_book_colored"/>
 
-	</RelativeLayout>
+	</LinearLayout>
 
 	<ProgressBar
 		android:layout_width="match_parent"
 		style="?android:attr/progressBarStyleHorizontal"
 		android:layout_height="wrap_content"
-		android:layout_below="@id/appstrangescreenRelativeLayout1"
-		android:id="@+id/appstrangescreenProgressBar1"/>
+		android:id="@+id/appSplashScreenProgressBar1"/>
 
-	<View
+	<Space
 		android:layout_width="match_parent"
 		android:layout_height="5dp"
-		android:layout_below="@id/appstrangescreenProgressBar1"
-		android:id="@+id/appstrangescreenView1"/>
+		android:id="@+id/appSplashScreenSpace1"/>
 
 	<ProgressBar
 		android:layout_width="match_parent"
 		style="?android:attr/progressBarStyleHorizontal"
 		android:layout_height="wrap_content"
-		android:layout_below="@id/appstrangescreenView1"
-		android:id="@+id/appstrangescreenProgressBar2"/>
+		android:id="@+id/appSplashScreenProgressBar2"/>
 
-	<View
+	<Space
 		android:layout_width="match_parent"
 		android:layout_height="5dp"
-		android:layout_below="@id/appstrangescreenProgressBar2"
-		android:id="@+id/appstrangescreenView2"/>
+		android:id="@+id/appSplashScreenSpace2"/>
 
 	<ProgressBar
 		android:layout_width="match_parent"
 		style="?android:attr/progressBarStyleHorizontal"
 		android:layout_height="wrap_content"
-		android:layout_below="@id/appstrangescreenView2"
-		android:id="@+id/appstrangescreenProgressBar3"/>
+		android:id="@+id/appSplashScreenProgressBar3"/>
 
-</RelativeLayout>
+</LinearLayout>
 

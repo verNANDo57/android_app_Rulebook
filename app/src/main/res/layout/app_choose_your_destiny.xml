@@ -38,8 +38,8 @@
                         android:id="@+id/main_rules"
                         style="@style/RulebookChooseDestinyButtonLeftToRight"
                         android:text="@string/main_rules"
-                        android:layout_width="@dimen/app_choose_your_destiny_menu_button_width_in_layout"
-                        android:layout_height="@dimen/app_choose_your_destiny_menu_button_height_in_layout"
+                        android:layout_width="@dimen/app_choose_your_destiny_menu_button_width"
+                        android:layout_height="@dimen/app_choose_your_destiny_menu_button_height"
                         android:paddingBottom="5dp" />
 
                 </RelativeLayout>
@@ -58,8 +58,8 @@
                             android:id="@+id/lexicon_rules"
                             style="@style/RulebookChooseDestinyButtonRightToLeft"
                             android:text="@string/lexicon_rules"
-                            android:layout_width="@dimen/app_choose_your_destiny_menu_button_width_in_layout"
-                            android:layout_height="@dimen/app_choose_your_destiny_menu_button_height_in_layout"
+                            android:layout_width="@dimen/app_choose_your_destiny_menu_button_width"
+                            android:layout_height="@dimen/app_choose_your_destiny_menu_button_height"
                             android:paddingTop="5dp"
                             android:paddingBottom="5dp" />
 
@@ -79,8 +79,8 @@
                             android:id="@+id/schemes_and_tables"
                             style="@style/RulebookChooseDestinyButtonLeftToRight"
                             android:text="@string/tables_and_schemes_rules"
-                            android:layout_width="@dimen/app_choose_your_destiny_menu_button_width_in_layout"
-                            android:layout_height="@dimen/app_choose_your_destiny_menu_button_height_in_layout"
+                            android:layout_width="@dimen/app_choose_your_destiny_menu_button_width"
+                            android:layout_height="@dimen/app_choose_your_destiny_menu_button_height"
                             android:paddingTop="5dp"
                             android:paddingBottom="5dp" />
 
@@ -100,8 +100,29 @@
                         android:id="@+id/analyze_methods"
                         style="@style/RulebookChooseDestinyButtonRightToLeft"
                         android:text="@string/analyze_methods"
-                        android:layout_width="@dimen/app_choose_your_destiny_menu_button_width_in_layout"
-                        android:layout_height="@dimen/app_choose_your_destiny_menu_button_height_in_layout"
+                        android:layout_width="@dimen/app_choose_your_destiny_menu_button_width"
+                        android:layout_height="@dimen/app_choose_your_destiny_menu_button_height"
+                        android:paddingTop="5dp"
+                        android:paddingBottom="5dp" />
+
+                </RelativeLayout>
+
+                <Space
+                    android:id="@+id/destiny_space4"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/activity_space_height"/>
+
+                <RelativeLayout
+                    android:gravity="start"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:id="@+id/search_function"
+                        style="@style/RulebookChooseDestinyButtonLeftToRight"
+                        android:text="@string/search_main"
+                        android:layout_width="@dimen/app_choose_your_destiny_menu_button_width"
+                        android:layout_height="@dimen/app_choose_your_destiny_menu_button_height"
                         android:paddingTop="5dp"
                         android:paddingBottom="5dp" />
 

@@ -3,10 +3,10 @@ package com.verNANDo57.rulebook_educational.rules;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-public class RulebookApplicationBooleans {
+public class RulebookBooleans {
     SharedPreferences RulebookBooleansInMainRules;
 
-    public RulebookApplicationBooleans(Context context) {
+    public RulebookBooleans(Context context) {
         RulebookBooleansInMainRules = context.getSharedPreferences("rulebookBooleansInMainRules", Context.MODE_PRIVATE);
     }
 

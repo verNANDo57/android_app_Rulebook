@@ -6,11 +6,8 @@ import android.os.Build;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
-import android.view.KeyEvent;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewTreeObserver;
-import android.view.animation.TranslateAnimation;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RatingBar;
@@ -21,7 +18,7 @@ import com.google.android.material.bottomappbar.BottomAppBar;
 import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngineAppCompatActivity;
 import com.verNANDo57.rulebook_educational.for_pills.R;
 import com.verNANDo57.rulebook_educational.preferences.RulebookApplicationSharedPreferences;
-import com.verNANDo57.rulebook_educational.usefulclasses.AppSomeUtils;
+import com.verNANDo57.rulebook_educational.tools.Utils;
 
 @SuppressLint("ClickableViewAccessibility")
 public class AppRatingAgressiveActivity extends CustomThemeEngineAppCompatActivity {
@@ -40,7 +37,7 @@ public class AppRatingAgressiveActivity extends CustomThemeEngineAppCompatActivi
         final BottomAppBar bar_in_rating_page = findViewById(R.id.bar_in_rating_page);
         setSupportActionBar(bar_in_rating_page);
         if(preferences.loadRulebookAnimationsDisableState()==false) {
-            AppSomeUtils.setAnimatorToAnyView(bar_in_rating_page, "to_top", (float) 250);
+            Utils.setAnimatorToAnyView(bar_in_rating_page, "to_top", (float) 250);
         }
 
         ScrollView rating_page_scrollview = findViewById(R.id.rating_page_scrollview);
@@ -53,29 +50,26 @@ public class AppRatingAgressiveActivity extends CustomThemeEngineAppCompatActivi
                 if(movement >= 100){
                     if (bar_in_rating_page.getVisibility() == View.VISIBLE) {
                         if (preferences.loadRulebookAnimationsDisableState() == false) {
-                            AppSomeUtils.setAnimatorToAnyView(bar_in_rating_page, "to_bottom");
+                            Utils.setAnimatorToAnyView(bar_in_rating_page, "to_bottom");
                         }
                         bar_in_rating_page.setVisibility(View.GONE);
                     }
                 } else if(movement >= -100){
                     if (bar_in_rating_page.getVisibility() == View.GONE) {
                         if (preferences.loadRulebookAnimationsDisableState() == false) {
-                            AppSomeUtils.setAnimatorToAnyView(bar_in_rating_page, "to_top");
+                            Utils.setAnimatorToAnyView(bar_in_rating_page, "to_top");
                         }
                         bar_in_rating_page.setVisibility(View.VISIBLE);
                     }
                 }
             }
         });
-
-        //Press the smile to view the bottomappbar
-        AppRatingAgressiveVector app_agressive_rating_vector = findViewById(R.id.app_agressive_rating_vector);
-
         //Title in Layout
         TextView rating_title = findViewById(R.id.rating_title);
 
         //Rating Bar in Layout
         RatingBar rating_bar = findViewById(R.id.rating_bar);
+        AppRatingAgressiveVector app_agressive_rating_vector = findViewById(R.id.app_agressive_rating_vector);
         rating_bar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
             public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
@@ -87,7 +81,7 @@ public class AppRatingAgressiveActivity extends CustomThemeEngineAppCompatActivi
         //Edittext for Review
         EditText review_box = findViewById(R.id.review_box);
 
-        //Button to send review to dev
+        //Button to send review
         Button review_send = findViewById(R.id.review_send_button);
         review_send.setOnClickListener(new View.OnClickListener() {
             @Override

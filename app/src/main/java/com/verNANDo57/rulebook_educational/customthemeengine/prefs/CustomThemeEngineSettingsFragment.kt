@@ -2,24 +2,18 @@ package com.verNANDo57.rulebook_educational.customthemeengine.prefs
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.XmlRes
-import androidx.preference.Preference
+import androidx.preference.*
 import androidx.preference.Preference.OnPreferenceChangeListener
 import androidx.preference.Preference.OnPreferenceClickListener
-import androidx.preference.PreferenceCategory
-import androidx.preference.PreferenceFragmentCompat
-import androidx.preference.PreferenceGroupAdapter
-import androidx.preference.PreferenceScreen
-import androidx.preference.PreferenceViewHolder
 import androidx.recyclerview.widget.RecyclerView
 import com.verNANDo57.rulebook_educational.colorpicker.ColorPreferenceCompat
 import com.verNANDo57.rulebook_educational.customthemeengine.CustomThemeEngine
-import com.verNANDo57.rulebook_educational.for_pills.R
 import com.verNANDo57.rulebook_educational.customthemeengine.app.BaseCustomThemeEngineActivity
+import com.verNANDo57.rulebook_educational.for_pills.R
 
 open class CustomThemeEngineSettingsFragment : PreferenceFragmentCompat(), OnPreferenceChangeListener, OnPreferenceClickListener {
 

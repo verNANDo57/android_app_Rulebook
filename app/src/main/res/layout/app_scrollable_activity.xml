@@ -1,33 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    tools:context="com.verNANDo57.rulebook_educational.rules.mainrules.AppMainRulesScrollableActivityInMainRules">
+    android:fitsSystemWindows="true">
 
     <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/app_bar_in_analyzemethods"
+        android:id="@+id/app_bar_in_scrollableactivity"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/app_collapsing_toolbar_height"
+        android:layout_height="wrap_content"
         android:fitsSystemWindows="true"
         android:background="@drawable/app_collapsing_toolbar"
         android:theme="@style/AppTheme.AppBarOverlay">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
-            android:id="@+id/toolbar_layout_in_analyzemethods"
+            android:id="@+id/toolbar_layout_in_scrollableactivity"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fitsSystemWindows="true"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            app:toolbarId="@+id/toolbar_in_analyzemethods">
+            app:toolbarId="@+id/toolbar_in_scrollableactivity">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="@dimen/app_toolbar_height_in_scrollableactivity"
+                android:layout_marginTop="@dimen/app_margin_top_in_scrollableactivity"
                 android:gravity="center|bottom"
                 android:orientation="vertical"
                 android:layout_marginEnd="@dimen/app_toolbar_shape_stroke_width"
@@ -35,7 +32,7 @@
                 android:layout_marginBottom="@dimen/app_toolbar_marginbottom">
 
                 <RelativeLayout
-                    android:id="@+id/app_scrollableactivity_in_analyzemethods_toolbarlayout_container"
+                    android:id="@+id/app_scrollableactivity_in_scrollableactivity_toolbarlayout_container"
                     android:layout_gravity="center"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -43,7 +40,7 @@
                     android:layout_marginStart="@dimen/app_toolbar_shape_stroke_width">
 
                     <ImageView
-                        android:id="@+id/app_scrollableactivity_in_analyzemethods_icon"
+                        android:id="@+id/app_scrollableactivity_in_scrollableactivity_icon"
                         android:layout_width="@dimen/app_bar_icon_width_height"
                         android:layout_height="@dimen/app_bar_icon_width_height"
                         android:layout_centerHorizontal="true"
@@ -52,14 +49,14 @@
                         android:backgroundTint="@color/coloraccent" />
 
                     <LinearLayout
-                        android:id="@+id/app_scrollableactivity_in_analyzemethods_titleandsubtitle_container"
+                        android:id="@+id/app_scrollableactivity_in_scrollableactivity_titleandsubtitle_container"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/app_scrollableactivity_in_analyzemethods_icon"
+                        android:layout_below="@id/app_scrollableactivity_in_scrollableactivity_icon"
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/app_scrollableactivity_in_analyzemethods_title"
+                            android:id="@+id/app_scrollableactivity_in_scrollableactivity_title"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/app_loading"
@@ -68,7 +65,7 @@
                             android:gravity="center" />
 
                         <TextView
-                            android:id="@+id/app_scrollableactivity_in_analyzemethods_subtitle"
+                            android:id="@+id/app_scrollableactivity_in_scrollableactivity_subtitle"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/app_loading"
@@ -83,7 +80,7 @@
             </LinearLayout>
 
             <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar_in_analyzemethods"
+                android:id="@+id/toolbar_in_scrollableactivity"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/app_toolbar_height_in_scrollableactivity"
                 android:background="@drawable/app_toolbar_in_scrollableactivity"
@@ -93,6 +90,6 @@
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/app_scrollable_activity_content_everywhere"/>
+    <include layout="@layout/app_scrollable_activity_content"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

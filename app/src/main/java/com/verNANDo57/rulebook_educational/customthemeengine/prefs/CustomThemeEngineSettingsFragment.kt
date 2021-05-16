@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.verNANDo57.rulebook_educational.colorpicker.ColorPreferenceCompat
 import com.verNANDo57.rulebook_educational.customthemeengine.CustomThemeEngine
 import com.verNANDo57.rulebook_educational.customthemeengine.app.BaseCustomThemeEngineActivity
-import com.verNANDo57.rulebook_educational.for_pills.R
+import com.verNANDo57.rulebook_educational.extradata.R
 
 open class CustomThemeEngineSettingsFragment : PreferenceFragmentCompat(), OnPreferenceChangeListener, OnPreferenceClickListener {
 

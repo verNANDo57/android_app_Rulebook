@@ -29,6 +29,7 @@
 
 	<dimen name="app_toolbar_height">90dp</dimen>
 	<dimen name="app_toolbar_height_in_scrollableactivity">60dp</dimen>
+	<dimen name="app_margin_top_in_scrollableactivity">70dp</dimen>
 	<dimen name="app_toolbar_margin">10dp</dimen>
 
 	<dimen name="app_bottom_navigation_icon_size">24dp</dimen>
@@ -84,6 +85,8 @@
 
 	<dimen name="app_searchword_edittext_padding">12dp</dimen>
 	<dimen name="app_searchword_edittext_margin">16dp</dimen>
+	<dimen name="app_searchitem_shape_stroke_width">5dp</dimen>
+	<dimen name="app_searchitem_corner_radius">15dp</dimen>
 
 	<dimen name="app_default_button_elevation">4dp</dimen>
 	<dimen name="app_default_button_margin">12dp</dimen>

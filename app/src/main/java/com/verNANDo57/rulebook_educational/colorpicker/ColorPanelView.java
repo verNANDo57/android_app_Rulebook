@@ -21,7 +21,7 @@ import android.view.View;
 import androidx.annotation.ColorInt;
 import androidx.core.view.ViewCompat;
 
-import com.verNANDo57.rulebook_educational.for_pills.R;
+import com.verNANDo57.rulebook_educational.extradata.R;
 import com.verNANDo57.rulebook_educational.styleabletoast.StyleableToast;
 import com.verNANDo57.rulebook_educational.tools.Utils;
 

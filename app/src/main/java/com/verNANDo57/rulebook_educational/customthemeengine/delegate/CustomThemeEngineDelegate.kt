@@ -13,8 +13,6 @@ import com.verNANDo57.rulebook_educational.customthemeengine.inflator.CustomThem
 import com.verNANDo57.rulebook_educational.customthemeengine.inflator.CustomThemeEngineViewProcessor
 import com.verNANDo57.rulebook_educational.customthemeengine.inflator.decor.CustomThemeEngineDecorator
 
-internal const val Build_VERSION_CODES_Q = 29
-
 /**
  * This class represents a delegate which you can use to extend [CustomThemeEngine]'s support to any [Activity].
  *
@@ -103,7 +101,8 @@ abstract class CustomThemeEngineDelegate {
     @JvmStatic
     fun create(activity: Activity, customThemeEngine: CustomThemeEngine, @StyleRes themeResId: Int): CustomThemeEngineDelegate {
       return when {
-        Build.VERSION.SDK_INT >= Build_VERSION_CODES_Q -> CustomThemeEngineDelegateImplV29(activity, customThemeEngine, themeResId)
+        Build.VERSION.SDK_INT >= Build.VERSION_CODES.R -> CustomThemeEngineDelegateImplV30(activity, customThemeEngine, themeResId)
+        Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q -> CustomThemeEngineDelegateImplV29(activity, customThemeEngine, themeResId)
         Build.VERSION.SDK_INT >= Build.VERSION_CODES.O -> CustomThemeEngineDelegateImplV26(activity, customThemeEngine, themeResId)
         Build.VERSION.SDK_INT >= Build.VERSION_CODES.N -> CustomThemeEngineDelegateImplV24(activity, customThemeEngine, themeResId)
         Build.VERSION.SDK_INT >= Build.VERSION_CODES.M -> CustomThemeEngineDelegateImplV23(activity, customThemeEngine, themeResId)

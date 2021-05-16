@@ -12,20 +12,20 @@ import androidx.appcompat.widget.Toolbar;
 import com.google.android.material.navigation.NavigationView;
 import com.verNANDo57.rulebook_educational.BottomNavBetweenActivitiesFragment;
 import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngineAppCompatActivity;
-import com.verNANDo57.rulebook_educational.for_pills.R;
+import com.verNANDo57.rulebook_educational.extradata.R;
 import com.verNANDo57.rulebook_educational.preferences.RulebookApplicationSharedPreferences;
-import com.verNANDo57.rulebook_educational.rules.RulebookBooleans;
+import com.verNANDo57.rulebook_educational.rules.AppExtraBooleans;
 
 import static com.verNANDo57.rulebook_educational.tools.Utils.LOG_TAG;
 
 public class AppDictionaries extends CustomThemeEngineAppCompatActivity {
     RulebookApplicationSharedPreferences preferences;
-    private RulebookBooleans booleansInMainRules;
+    private AppExtraBooleans booleansInMainRules;
 
     @SuppressLint("ClickableViewAccessibility")
     public void onCreate(Bundle savedInstanceState) {
         preferences = new RulebookApplicationSharedPreferences(this);
-        booleansInMainRules = new RulebookBooleans(this);
+        booleansInMainRules = new AppExtraBooleans(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.app_dictionaries);
 

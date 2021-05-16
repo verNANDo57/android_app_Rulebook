@@ -20,7 +20,7 @@ import androidx.core.content.ContextCompat;
 import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.core.widget.TextViewCompat;
 
-import com.verNANDo57.rulebook_educational.for_pills.R;
+import com.verNANDo57.rulebook_educational.extradata.R;
 
 import java.util.Objects;
 

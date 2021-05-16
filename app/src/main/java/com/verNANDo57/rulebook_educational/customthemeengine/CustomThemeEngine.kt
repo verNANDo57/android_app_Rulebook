@@ -46,7 +46,7 @@ import com.verNANDo57.rulebook_educational.customthemeengine.inflator.CustomThem
 import com.verNANDo57.rulebook_educational.customthemeengine.inflator.CustomThemeEngineLayoutInflater
 import com.verNANDo57.rulebook_educational.customthemeengine.tinting.CustomThemeEngineTinter
 import com.verNANDo57.rulebook_educational.customthemeengine.utils.ColorUtils
-import com.verNANDo57.rulebook_educational.for_pills.R
+import com.verNANDo57.rulebook_educational.extradata.R
 import kotlin.properties.Delegates
 
 class CustomThemeEngine private constructor(private val prefs: SharedPreferences) {

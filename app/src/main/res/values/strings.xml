@@ -73,7 +73,7 @@
     <string name="app_launch_ic_launch_search_rules">Поиск</string>
     <string name="app_launch_ic_launch_search_rules_extended">Быстрый доступ</string>
 
-    <string name="hello_trigger">Нету смысла пересобирать это apk-файл. Исходный код открыт для любого пользователя.</string>
+    <string name="hello_trigger">Нету смысла пересобирать приложение с открытым исходным кодом…</string>
 
     <string name="app_themepickerpreviewtitle">Текст</string>
 
@@ -97,7 +97,7 @@
     <string name="about_app">О приложении</string>
     <string name="app_exit">Выход</string>
     <string name="app_theme_choose">Тема</string>
-    <string name="app_about_extended">Версия: 1.0.4</string>
+    <string name="app_about_extended">Версия: </string>
     <string name="app_about_name">Словарь - Русский Язык</string>
     <string name="search_main">Поиск</string>
     <string name="intent_to_main">Главная</string>
@@ -137,7 +137,7 @@
     <string name="app_next">Далее</string>
     <string name="choosemode">Выберите режим</string>
 
-    <string name="app_error_while_saving_file">Ошибка при попытке сохранения файла</string>
+    <string name="app_error_while_saving_file">Ошибка при попытке сохранения файла. Вероятнее всего, приложение не имеет необходимых разрешений для сохранения файлов.</string>
 
     <string name="app_save">Сохранить</string>
     <string name="app_save_in_process">Сохранение…</string>
@@ -147,6 +147,7 @@
     <string name="app_granted">Разрешено</string>
     <string name="app_denied">Запрещено</string>
     <string name="app_warning">Внимание</string>
+    <string name="app_error_occured">Возникла неизвестная ошибка, проверьте логи</string>
     <string name="app_reason_why_these_permissions_are_needed">Если вы не дадите приложению доступ к внутренней памяти устройства, то, к сожалению, будет невозможным что-либо сохранять. ¯\_(ツ)_/¯</string>
 
     <string name="compose_disabled_message">Ярлык недоступен по неизвестной причине.</string>

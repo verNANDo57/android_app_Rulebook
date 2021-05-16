@@ -1,10 +1,8 @@
 package com.verNANDo57.rulebook_educational.rules.mainrules;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.content.res.AssetManager;
 import android.content.res.ColorStateList;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
@@ -29,9 +27,9 @@ import com.google.android.material.navigation.NavigationView;
 import com.verNANDo57.rulebook_educational.BottomNavBetweenLessonsFragment;
 import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngineAppCompatActivity;
 import com.verNANDo57.rulebook_educational.customthemeengine.utils.ColorUtils;
-import com.verNANDo57.rulebook_educational.for_pills.R;
+import com.verNANDo57.rulebook_educational.extradata.R;
 import com.verNANDo57.rulebook_educational.preferences.RulebookApplicationSharedPreferences;
-import com.verNANDo57.rulebook_educational.rules.RulebookBooleans;
+import com.verNANDo57.rulebook_educational.rules.AppExtraBooleans;
 import com.verNANDo57.rulebook_educational.styleabletoast.StyleableToast;
 import com.verNANDo57.rulebook_educational.tools.Utils;
 
@@ -48,7 +46,7 @@ import static com.verNANDo57.rulebook_educational.tools.Utils.LOG_TAG;
 public class AppMainRulesScrollableActivityInMainRules extends CustomThemeEngineAppCompatActivity {
 
     RulebookApplicationSharedPreferences preferences;
-    private RulebookBooleans booleansInMainRules;
+    private AppExtraBooleans booleansInMainRules;
 
     private RelativeLayout app_scrollableactivity_in_mainrules_toolbarlayout_container;
     private RelativeLayout app_scrollableactivity_everywhere_toolbarlayout_search_container;
@@ -59,36 +57,38 @@ public class AppMainRulesScrollableActivityInMainRules extends CustomThemeEngine
 
     private Menu menu;
 
-    private String out;
-    private  String outFileDir;
+    private String outFileDir;
     private String outFileName;
-
-    private File outFile;
 
     @SuppressLint({"ClickableViewAccessibility", "UseCompatLoadingForDrawables"})
     public void onCreate(Bundle savedInstanceState) {
         preferences = new RulebookApplicationSharedPreferences(this);
-        booleansInMainRules = new RulebookBooleans(this);
+        booleansInMainRules = new AppExtraBooleans(this);
+        super.onCreate(savedInstanceState);
 
         booleansInMainRules.setAppBarPageSelected("info_container");
 
         fade_in = AnimationUtils.loadAnimation(this, R.anim.app_fade_in);
         fade_out = AnimationUtils.loadAnimation(this, R.anim.app_fade_out);
 
-        int ImageViewBackgroundTintColor = ColorUtils.lighter(getResources().getColor(R.color.coloraccent), 0.01f);
-
         //Activity Content as LAYOUT
-        setContentView(R.layout.app_scrollable_activity_in_mainrules);
+        setContentView(R.layout.app_scrollable_activity);
 
-        super.onCreate(savedInstanceState);
+        ImageView app_scrollableactivity_in_scrollableactivity_icon = findViewById(R.id.app_scrollableactivity_in_scrollableactivity_icon);
+        if(booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("ortho_")){
+            app_scrollableactivity_in_scrollableactivity_icon.setBackground(getDrawable(R.drawable.app_pen_icon));
+        } else if(booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("punct_")){
+            app_scrollableactivity_in_scrollableactivity_icon.setBackground(getDrawable(R.drawable.app_pencil_icon));
+        }
+        app_scrollableactivity_in_scrollableactivity_icon.setBackgroundTintList(ColorStateList.valueOf(ColorUtils.lighter(getResources().getColor(R.color.coloraccent), 0.01f)));
 
-        TextView app_scrollableactivity_in_mainrules_title = findViewById(R.id.app_scrollableactivity_in_mainrules_title);
-        TextView app_scrollableactivity_in_mainrules_subtitle = findViewById(R.id.app_scrollableactivity_in_mainrules_subtitle);
+        TextView app_scrollableactivity_in_mainrules_title = findViewById(R.id.app_scrollableactivity_in_scrollableactivity_title);
+        TextView app_scrollableactivity_in_mainrules_subtitle = findViewById(R.id.app_scrollableactivity_in_scrollableactivity_subtitle);
         TextView app_scrollableactivity_content_in_mainrules_text = findViewById(R.id.app_scrollableactivity_content_everywhere_text);
-        app_scrollableactivity_in_mainrules_toolbarlayout_container = findViewById(R.id.app_scrollableactivity_in_mainrules_toolbarlayout_container);
+        app_scrollableactivity_in_mainrules_toolbarlayout_container = findViewById(R.id.app_scrollableactivity_in_scrollableactivity_toolbarlayout_container);
         app_scrollableactivity_everywhere_toolbarlayout_search_container = findViewById(R.id.app_scrollableactivity_everywhere_toolbarlayout_search_container);
 
-        Toolbar toolbar = findViewById(R.id.toolbar_in_mainrules);
+        Toolbar toolbar = findViewById(R.id.toolbar_in_scrollableactivity);
         if(booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("ortho_")){
             toolbar.setTitle(getString(R.string.ortho));
         } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("punct_")){
@@ -103,20 +103,12 @@ public class AppMainRulesScrollableActivityInMainRules extends CustomThemeEngine
             }
         });
 
-        CollapsingToolbarLayout toolBarLayout = (CollapsingToolbarLayout) findViewById(R.id.toolbar_layout_in_mainrules);
+        CollapsingToolbarLayout toolBarLayout = (CollapsingToolbarLayout) findViewById(R.id.toolbar_layout_in_scrollableactivity);
         toolBarLayout.setTitle(" "); //should be a space, otherwise the trick will not work
-        app_bar_in_mainrules = findViewById(R.id.app_bar_in_mainrules);
-        ImageView app_scrollableactivity_in_mainrules_icon = findViewById(R.id.app_scrollableactivity_in_mainrules_icon);
+        app_bar_in_mainrules = findViewById(R.id.app_bar_in_scrollableactivity);
         NestedScrollView app_scrollableactivity_content_scrollview = findViewById(R.id.app_scrollableactivity_content_scrollview);
         EditText app_wordsearch_edittext = findViewById(R.id.app_wordsearch_edittext);
         Button searchword_button = findViewById(R.id.searchword_button);
-
-        if(booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("ortho_")){
-            app_scrollableactivity_in_mainrules_icon.setBackground(getDrawable(R.drawable.app_pen_icon));
-        } else if(booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("punct_")){
-            app_scrollableactivity_in_mainrules_icon.setBackground(getDrawable(R.drawable.app_pencil_icon));
-        }
-        app_scrollableactivity_in_mainrules_icon.setBackgroundTintList(ColorStateList.valueOf(ImageViewBackgroundTintColor));
 
         if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("ortho_1_")) {
             app_scrollableactivity_in_mainrules_subtitle.setText(getString(R.string.ortho_1));
@@ -653,13 +645,10 @@ public class AppMainRulesScrollableActivityInMainRules extends CustomThemeEngine
         outFileName = app_scrollableactivity_in_mainrules_title.getText().toString();
 
         if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("ortho_")){
-            out = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Rulebook/" + getString(R.string.ortho) + "/";
             outFileDir = "/Rulebook/" + getString(R.string.ortho) + "/";
         } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("punct_")){
-            out = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Rulebook/" + getString(R.string.punct) + "/";
             outFileDir = "/Rulebook/" + getString(R.string.punct) + "/";
         }
-        outFile = new File(out, booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean() + ".txt");
 
         searchword_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -669,19 +658,7 @@ public class AppMainRulesScrollableActivityInMainRules extends CustomThemeEngine
 
                 Utils.resetHighLightedText(app_scrollableactivity_content_in_mainrules_text, fullText);
 
-                if(criteria.equals(" ")){
-                    new StyleableToast.Builder(getApplicationContext())
-                            .text(getString(R.string.app_edittext_is_empty)) // set text
-                            .textBold() //set text bold
-                            .iconStart(Utils.getIconWarning()) //icon in start of toast
-                            .show(); //show custom toast
-                } else if (criteria.contains("        ")){
-                    new StyleableToast.Builder(getApplicationContext())
-                            .text(getString(R.string.app_edittext_is_empty)) // set text
-                            .textBold() //set text bold
-                            .iconStart(Utils.getIconWarning()) //icon in start of toast
-                            .show(); //show custom toast
-                } else if (criteria.isEmpty()){
+                if(criteria.equals(" ") | criteria.contains("        ") | criteria.isEmpty()){
                     new StyleableToast.Builder(getApplicationContext())
                             .text(getString(R.string.app_edittext_is_empty)) // set text
                             .textBold() //set text bold
@@ -720,7 +697,7 @@ public class AppMainRulesScrollableActivityInMainRules extends CustomThemeEngine
 
     }
 
-    //ActionBar_Elements
+    //ActionBar elements
     public boolean onCreateOptionsMenu(@NotNull Menu menu) {
         getMenuInflater().inflate(R.menu.app_scrollableactivity_menu, menu);
         this.menu = menu;
@@ -757,20 +734,13 @@ public class AppMainRulesScrollableActivityInMainRules extends CustomThemeEngine
                 return true;
 
             case R.id.save_rule:
-                if(Build.VERSION.SDK_INT >= 23 && preferences.loadAppPermissionsAreGrantedBooleanState()==false){
-                    final Intent checkPermissions = new Intent(this, com.verNANDo57.rulebook_educational.tools.PermissionsCheck.class);
-                    checkPermissions.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(checkPermissions);
-                } else {
-                    copyAssets();
-                }
+                copyAssets();
                 return true;
 
         }
         return super.onOptionsItemSelected(item);
     }
 
-    //system navigationbar
     @Override
     public void onBackPressed(){
         booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("null");
@@ -779,12 +749,6 @@ public class AppMainRulesScrollableActivityInMainRules extends CustomThemeEngine
 
     private void copyAssets() {
         AssetManager assetManager = getAssets();
-        String[] files = null;
-        try {
-            files = assetManager.list("");
-        } catch (IOException e) {
-            Log.e(LOG_TAG, getString(R.string.app_error_while_saving_file), e);
-        }
             InputStream in = null;
             OutputStream out;
                 try {
@@ -792,11 +756,9 @@ public class AppMainRulesScrollableActivityInMainRules extends CustomThemeEngine
                 String outDir = null;
                     if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("ortho_")) {
                         in = assetManager.open("mainrules/orthography/" + booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean() + ".txt");
-
                         outDir = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Rulebook/" + getString(R.string.ortho) + "/";
                     } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("punct_")){
                         in = assetManager.open("mainrules/punctuation/" + booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean() + ".txt");
-
                         outDir = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Rulebook/" + getString(R.string.punct) + "/";
                     }
 

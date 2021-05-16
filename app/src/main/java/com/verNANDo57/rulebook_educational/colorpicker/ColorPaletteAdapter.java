@@ -10,7 +10,7 @@ import android.widget.ImageView;
 
 import androidx.core.graphics.ColorUtils;
 
-import com.verNANDo57.rulebook_educational.for_pills.R;
+import com.verNANDo57.rulebook_educational.extradata.R;
 
 class ColorPaletteAdapter extends BaseAdapter {
 

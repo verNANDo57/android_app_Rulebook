@@ -1,11 +1,8 @@
 package com.verNANDo57.rulebook_educational.search;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.content.Context;
-import android.graphics.Color;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
@@ -18,8 +15,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.verNANDo57.rulebook_educational.customthemeengine.utils.ColorUtils;
-import com.verNANDo57.rulebook_educational.for_pills.R;
-import com.verNANDo57.rulebook_educational.tools.Utils;
+import com.verNANDo57.rulebook_educational.extradata.R;
 
 import java.util.ArrayList;
 

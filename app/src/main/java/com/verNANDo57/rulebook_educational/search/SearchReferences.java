@@ -3,8 +3,8 @@ package com.verNANDo57.rulebook_educational.search;
 import android.content.Context;
 import android.content.Intent;
 
-import com.verNANDo57.rulebook_educational.for_pills.R;
-import com.verNANDo57.rulebook_educational.rules.RulebookBooleans;
+import com.verNANDo57.rulebook_educational.extradata.R;
+import com.verNANDo57.rulebook_educational.rules.AppExtraBooleans;
 import com.verNANDo57.rulebook_educational.rules.analyze_methods.AppAnalyzeMethodsScrollableActivity;
 import com.verNANDo57.rulebook_educational.rules.mainrules.AppMainRulesScrollableActivityInMainRules;
 
@@ -180,7 +180,7 @@ public class SearchReferences {
     }
 
     public static void SearchDataOnClickReferences (Context context, SearchAdapter.SearchHolder searchHolder) {
-        RulebookBooleans booleansInMainRules = new RulebookBooleans(context);
+        AppExtraBooleans booleansInMainRules = new AppExtraBooleans(context);
         Intent scrollableactivity_in_mainrules = new Intent(context, AppMainRulesScrollableActivityInMainRules.class);
         Intent scrollableactivity_in_analyzemethods = new Intent(context, AppAnalyzeMethodsScrollableActivity.class);
 

@@ -2,13 +2,14 @@ package com.verNANDo57.rulebook_educational.customthemeengine.delegate
 
 import android.annotation.TargetApi
 import android.app.Activity
+import android.os.Build
 import android.os.Bundle
 import androidx.annotation.RequiresApi
 import com.verNANDo57.rulebook_educational.customthemeengine.CustomThemeEngine
-import com.verNANDo57.rulebook_educational.for_pills.R
+import com.verNANDo57.rulebook_educational.extradata.R
 
-@RequiresApi(Build_VERSION_CODES_Q)
-@TargetApi(Build_VERSION_CODES_Q)
+@RequiresApi(Build.VERSION_CODES.Q)
+@TargetApi(Build.VERSION_CODES.Q)
 internal open class CustomThemeEngineDelegateImplV29(
         activity: Activity,
         private val customThemeEngine: CustomThemeEngine,

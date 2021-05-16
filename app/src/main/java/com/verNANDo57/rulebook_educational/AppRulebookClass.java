@@ -4,23 +4,13 @@ import android.app.Application;
 
 import com.verNANDo57.rulebook_educational.customthemeengine.CustomThemeEngine;
 import com.verNANDo57.rulebook_educational.preferences.RulebookApplicationSharedPreferences;
-import com.verNANDo57.rulebook_educational.rules.RulebookBooleans;
+import com.verNANDo57.rulebook_educational.rules.AppExtraBooleans;
 
 public class AppRulebookClass extends Application {
 
     RulebookApplicationSharedPreferences preferences;
-    RulebookBooleans booleansInMainRules;
+    AppExtraBooleans booleansInMainRules;
 
-    private static AppRulebookClass rulebookClass = null;
-
-    public static AppRulebookClass getInstance() {
-
-        if(rulebookClass == null)
-        {
-            rulebookClass = new AppRulebookClass();
-        }
-        return rulebookClass;
-    }
         public void onCreate() {
 
             //CustomThemeEngine.init
@@ -28,7 +18,7 @@ public class AppRulebookClass extends Application {
 
             //Load Preferences
             preferences =  new RulebookApplicationSharedPreferences(this);
-            booleansInMainRules = new RulebookBooleans(this);
+            booleansInMainRules = new AppExtraBooleans(this);
 
             //TODO: Crash fix
             booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("null");

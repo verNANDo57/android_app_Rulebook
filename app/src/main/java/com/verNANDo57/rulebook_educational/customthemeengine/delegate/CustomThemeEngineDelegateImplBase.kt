@@ -11,7 +11,7 @@ import com.verNANDo57.rulebook_educational.customthemeengine.inflator.*
 import com.verNANDo57.rulebook_educational.customthemeengine.inflator.decor.CustomThemeEngineDecorator
 import com.verNANDo57.rulebook_educational.customthemeengine.tinting.EdgeEffectTint
 import com.verNANDo57.rulebook_educational.customthemeengine.tinting.MenuTint
-import com.verNANDo57.rulebook_educational.for_pills.R
+import com.verNANDo57.rulebook_educational.extradata.R
 
 internal open class CustomThemeEngineDelegateImplBase(
         private val activity: Activity,

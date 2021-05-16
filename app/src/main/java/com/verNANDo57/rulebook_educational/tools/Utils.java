@@ -1,9 +1,12 @@
 package com.verNANDo57.rulebook_educational.tools;
 
 import android.content.Context;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.BackgroundColorSpan;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.animation.Animation;
@@ -13,13 +16,18 @@ import android.widget.TextView;
 
 import androidx.annotation.AnimRes;
 
-import com.verNANDo57.rulebook_educational.for_pills.R;
+import com.verNANDo57.rulebook_educational.extradata.R;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
 public class Utils {
+
+    public static int PACKAGEMANAGER_GET_APP_VERISON_NAME = 2;
+    public static int PACKAGEMANAGER_GET_APP_VERISON_CODE = 4;
+
+    public static PackageInfo pInfo;
 
     public static String LOG_TAG = "RULEBOOK_APP";
 
@@ -173,5 +181,39 @@ public class Utils {
 
     public static float dpToPx(Context context, int dp) {
         return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, context.getResources().getDisplayMetrics());
+    }
+
+    /**
+        This simple method have been created for fetching app's info (VerisionName or VersionCode).
+        It returns String, so his return value can be used instead of any string which defined in strings.xml and etc.
+
+        For Example:
+            anyTextView.setText(Utils.getApplicationVersionInfo( [CONTEXT] , PACKAGEMANAGER_GET_APP_VERISON_NAME);
+        Or:
+            anyTextView.setText(Utils.getApplicationVersionInfo( [CONTEXT] , PACKAGEMANAGER_GET_APP_VERISON_CODE);
+        Or:
+     */
+
+    public static String getApplicationVersionInfo(Context context, int info_mode) {
+        //Define output that will be used in the return statement
+        String output_info = null;
+
+        //Setup PackageInfo fetcher
+        try {
+            pInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), 0);
+        } catch (PackageManager.NameNotFoundException e) {
+            Log.e(Utils.LOG_TAG, context.getString(R.string.app_error_occured));
+            e.printStackTrace();
+        }
+
+        //Grab Info
+        if (info_mode==PACKAGEMANAGER_GET_APP_VERISON_NAME) {
+            output_info=pInfo.versionName.toString();
+        } else if (info_mode==PACKAGEMANAGER_GET_APP_VERISON_CODE)  {
+            output_info=String.valueOf(pInfo.versionCode);
+        }
+        
+        //Define return statement
+        return output_info;
     }
 }

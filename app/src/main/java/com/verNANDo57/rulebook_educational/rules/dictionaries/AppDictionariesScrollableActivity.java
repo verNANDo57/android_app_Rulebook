@@ -2,6 +2,7 @@ package com.verNANDo57.rulebook_educational.rules.dictionaries;
 
 import android.annotation.SuppressLint;
 import android.content.res.AssetManager;
+import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
@@ -12,6 +13,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -24,9 +26,10 @@ import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.navigation.NavigationView;
 import com.verNANDo57.rulebook_educational.BottomNavBetweenLessonsFragment;
 import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngineAppCompatActivity;
-import com.verNANDo57.rulebook_educational.for_pills.R;
+import com.verNANDo57.rulebook_educational.customthemeengine.utils.ColorUtils;
+import com.verNANDo57.rulebook_educational.extradata.R;
 import com.verNANDo57.rulebook_educational.preferences.RulebookApplicationSharedPreferences;
-import com.verNANDo57.rulebook_educational.rules.RulebookBooleans;
+import com.verNANDo57.rulebook_educational.rules.AppExtraBooleans;
 import com.verNANDo57.rulebook_educational.styleabletoast.StyleableToast;
 import com.verNANDo57.rulebook_educational.tools.Utils;
 
@@ -43,7 +46,7 @@ import static com.verNANDo57.rulebook_educational.tools.Utils.LOG_TAG;
 public class AppDictionariesScrollableActivity extends CustomThemeEngineAppCompatActivity {
 
     RulebookApplicationSharedPreferences preferences;
-    private RulebookBooleans booleansInMainRules;
+    private AppExtraBooleans booleansInMainRules;
 
     private RelativeLayout app_scrollableactivity_in_dictionaries_toolbarlayout_container;
     private RelativeLayout app_scrollableactivity_everywhere_toolbarlayout_search_container;
@@ -54,16 +57,14 @@ public class AppDictionariesScrollableActivity extends CustomThemeEngineAppCompa
 
     private Menu menu;
 
-    private String out;
     private String outFileDir;
     private String outFileName;
-
-    private File outFile;
 
     @SuppressLint("ClickableViewAccessibility")
     public void onCreate(Bundle savedInstanceState) {
         preferences = new RulebookApplicationSharedPreferences(this);
-        booleansInMainRules = new RulebookBooleans(this);
+        booleansInMainRules = new AppExtraBooleans(this);
+        super.onCreate(savedInstanceState);
 
         booleansInMainRules.setAppBarPageSelected("info_container");
 
@@ -71,10 +72,14 @@ public class AppDictionariesScrollableActivity extends CustomThemeEngineAppCompa
         fade_out = AnimationUtils.loadAnimation(this, R.anim.app_fade_out);
 
         //Activity Content as LAYOUT
-        setContentView(R.layout.app_scrollable_activity_in_dictionaries);
+        setContentView(R.layout.app_scrollable_activity);
 
-        TextView app_scrollableactivity_in_dictionaries_title = findViewById(R.id.app_scrollableactivity_in_dictionaries_title);
-        TextView app_scrollableactivity_in_dictionaries_subtitle = findViewById(R.id.app_scrollableactivity_in_dictionaries_subtitle);
+        ImageView app_scrollableactivity_in_scrollableactivity_icon = findViewById(R.id.app_scrollableactivity_in_scrollableactivity_icon);
+        app_scrollableactivity_in_scrollableactivity_icon.setBackground(ContextCompat.getDrawable(this, R.drawable.app_book_colored));
+        app_scrollableactivity_in_scrollableactivity_icon.setBackgroundTintList(ColorStateList.valueOf(ColorUtils.lighter(getResources().getColor(R.color.coloraccent), 0.01f)));
+
+        TextView app_scrollableactivity_in_dictionaries_title = findViewById(R.id.app_scrollableactivity_in_scrollableactivity_title);
+        TextView app_scrollableactivity_in_dictionaries_subtitle = findViewById(R.id.app_scrollableactivity_in_scrollableactivity_subtitle);
         TextView app_scrollableactivity_content_in_dictionaries_text = findViewById(R.id.app_scrollableactivity_content_everywhere_text);
 
         Toolbar toolbar = findViewById(R.id.toolbar_in_dictionaries);
@@ -88,19 +93,17 @@ public class AppDictionariesScrollableActivity extends CustomThemeEngineAppCompa
             }
         });
 
-        CollapsingToolbarLayout toolBarLayout = findViewById(R.id.toolbar_layout_in_dictionaries);
+        CollapsingToolbarLayout toolBarLayout = findViewById(R.id.toolbar_layout_in_scrollableactivity);
         toolBarLayout.setTitle(" "); //should be a space, otherwise the trick will not work
 
-        app_bar_in_dictionaries = findViewById(R.id.app_bar_in_dictionaries);
+        app_bar_in_dictionaries = findViewById(R.id.app_bar_in_scrollableactivity);
 
-        app_scrollableactivity_in_dictionaries_toolbarlayout_container = findViewById(R.id.app_scrollableactivity_in_dictionaries_toolbarlayout_container);
+        app_scrollableactivity_in_dictionaries_toolbarlayout_container = findViewById(R.id.app_scrollableactivity_in_scrollableactivity_toolbarlayout_container);
         app_scrollableactivity_everywhere_toolbarlayout_search_container = findViewById(R.id.app_scrollableactivity_everywhere_toolbarlayout_search_container);
 
         NestedScrollView app_scrollableactivity_content_scrollview = findViewById(R.id.app_scrollableactivity_content_scrollview);
         EditText app_wordsearch_edittext = findViewById(R.id.app_wordsearch_edittext);
         Button searchword_button = findViewById(R.id.searchword_button);
-
-        super.onCreate(savedInstanceState);
 
         if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("vocabulary_words")) {
             app_scrollableactivity_in_dictionaries_title.setText(getString(R.string.vocabulary_words));
@@ -124,9 +127,7 @@ public class AppDictionariesScrollableActivity extends CustomThemeEngineAppCompa
             }
 
             outFileName = app_scrollableactivity_in_dictionaries_title.getText().toString();
-            out = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Rulebook/" + getString(R.string.dictionaries) + "/";
             outFileDir = "/Rulebook/" + getString(R.string.dictionaries) + "/";
-            outFile = new File(out, booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean() + ".txt");
 
             searchword_button.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -136,19 +137,7 @@ public class AppDictionariesScrollableActivity extends CustomThemeEngineAppCompa
 
                     Utils.resetHighLightedText(app_scrollableactivity_content_in_dictionaries_text, fullText);
 
-                    if (criteria.equals(" ")) {
-                        new StyleableToast.Builder(getApplicationContext())
-                                .text(getString(R.string.app_edittext_is_empty)) // set text
-                                .textBold() //set text bold
-                                .iconStart(Utils.getIconWarning()) //icon in start of toast
-                                .show(); //show custom toast
-                    } else if (criteria.contains("        ")) {
-                        new StyleableToast.Builder(getApplicationContext())
-                                .text(getString(R.string.app_edittext_is_empty)) // set text
-                                .textBold() //set text bold
-                                .iconStart(Utils.getIconWarning()) //icon in start of toast
-                                .show(); //show custom toast
-                    } else if (criteria.isEmpty()) {
+                    if(criteria.equals(" ") | criteria.contains("        ") | criteria.isEmpty()){
                         new StyleableToast.Builder(getApplicationContext())
                                 .text(getString(R.string.app_edittext_is_empty)) // set text
                                 .textBold() //set text bold
@@ -186,7 +175,7 @@ public class AppDictionariesScrollableActivity extends CustomThemeEngineAppCompa
             });
         }
 
-    //ActionBar_Elements
+    //ActionBar elements
     public boolean onCreateOptionsMenu(@NotNull Menu menu) {
         getMenuInflater().inflate(R.menu.app_scrollableactivity_menu, menu);
         this.menu = menu;
@@ -229,7 +218,6 @@ public class AppDictionariesScrollableActivity extends CustomThemeEngineAppCompa
         return super.onOptionsItemSelected(item);
     }
 
-    //system navigationbar
     @Override
     public void onBackPressed(){
         booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("null");
@@ -238,12 +226,6 @@ public class AppDictionariesScrollableActivity extends CustomThemeEngineAppCompa
 
     private void copyAssets() {
         AssetManager assetManager = getAssets();
-        String[] files = null;
-        try {
-            files = assetManager.list("");
-        } catch (IOException e) {
-            Log.e(LOG_TAG, getString(R.string.app_error_while_saving_file), e);
-        }
         InputStream in = null;
         OutputStream out = null;
         try {

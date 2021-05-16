@@ -32,7 +32,7 @@ import com.verNANDo57.rulebook_educational.customthemeengine.tinting.EdgeEffectT
 import com.verNANDo57.rulebook_educational.customthemeengine.tinting.WidgetTint
 import com.verNANDo57.rulebook_educational.customthemeengine.utils.ColorUtils
 import com.verNANDo57.rulebook_educational.customthemeengine.utils.Reflection
-import com.verNANDo57.rulebook_educational.for_pills.R
+import com.verNANDo57.rulebook_educational.extradata.R
 
 abstract class CustomThemeEngineViewProcessor<T : View> {
 

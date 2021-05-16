@@ -14,7 +14,7 @@ import com.verNANDo57.rulebook_educational.customthemeengine.CustomThemeEngineRe
 import com.verNANDo57.rulebook_educational.customthemeengine.utils.ColorUtils
 import com.verNANDo57.rulebook_educational.customthemeengine.utils.Reflection
 import com.verNANDo57.rulebook_educational.customthemeengine.utils.Reflection.Companion.getFieldValue
-import com.verNANDo57.rulebook_educational.for_pills.R
+import com.verNANDo57.rulebook_educational.extradata.R
 import java.lang.reflect.Field
 import java.lang.reflect.Modifier
 

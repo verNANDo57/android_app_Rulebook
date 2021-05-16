@@ -10,9 +10,9 @@ import androidx.appcompat.widget.Toolbar;
 import com.google.android.material.navigation.NavigationView;
 import com.verNANDo57.rulebook_educational.BottomNavBetweenLessonsFragment;
 import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngineAppCompatActivity;
-import com.verNANDo57.rulebook_educational.for_pills.R;
+import com.verNANDo57.rulebook_educational.extradata.R;
 import com.verNANDo57.rulebook_educational.preferences.RulebookApplicationSharedPreferences;
-import com.verNANDo57.rulebook_educational.rules.RulebookBooleans;
+import com.verNANDo57.rulebook_educational.rules.AppExtraBooleans;
 
 import static com.verNANDo57.rulebook_educational.tools.Utils.LOG_TAG;
 
@@ -20,7 +20,7 @@ import static com.verNANDo57.rulebook_educational.tools.Utils.LOG_TAG;
 public class AppAnalyzeMethods extends CustomThemeEngineAppCompatActivity {
 
     RulebookApplicationSharedPreferences preferences;
-    private RulebookBooleans booleansInAnalyzeMethods;
+    private AppExtraBooleans booleansInAnalyzeMethods;
 
     private Intent scrollableactivity_in_analyzemethods;
 
@@ -28,7 +28,7 @@ public class AppAnalyzeMethods extends CustomThemeEngineAppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         preferences = new RulebookApplicationSharedPreferences(this);
-        booleansInAnalyzeMethods = new RulebookBooleans(this);
+        booleansInAnalyzeMethods = new AppExtraBooleans(this);
 
         scrollableactivity_in_analyzemethods = new Intent(this, AppAnalyzeMethodsScrollableActivity.class);
 

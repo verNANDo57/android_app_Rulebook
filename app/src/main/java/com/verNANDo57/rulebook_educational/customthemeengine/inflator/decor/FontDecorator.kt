@@ -4,7 +4,7 @@ import android.content.res.AssetManager
 import android.content.res.TypedArray
 import android.graphics.Typeface
 import android.widget.TextView
-import com.verNANDo57.rulebook_educational.for_pills.R
+import com.verNANDo57.rulebook_educational.extradata.R
 
 /**
  * Set a font from assets by adding an attribute to the view in your layout XML.

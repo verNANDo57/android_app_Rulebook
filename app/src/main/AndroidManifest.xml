@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:tools="http://schemas.android.com/tools"
-	package="com.verNANDo57.rulebook_educational.for_pills">
+	package="com.verNANDo57.rulebook_educational.extradata">
 
 	<!-- <uses-permission android:name="android.permission.INTERNET" /> -->
 	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -112,11 +112,6 @@
 			android:name="com.verNANDo57.rulebook_educational.customthemeengine.prefs.CustomThemeEngineSettingsActivity"
 			android:label="@string/label_theme_picker"
 			android:configChanges="keyboard|keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout|navigation"/>
-
-		<activity
-			android:name="com.verNANDo57.rulebook_educational.tools.PermissionsCheck"
-			android:configChanges="keyboard|keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout|navigation"
-			android:theme="@style/Theme.MaterialComponents.NoDisplay_Custom"/>
 
 	</application>
 </manifest>

@@ -13,13 +13,13 @@ import com.verNANDo57.rulebook_educational.customthemeengine.inflator.*
 import com.verNANDo57.rulebook_educational.customthemeengine.utils.Reflection
 import com.verNANDo57.rulebook_educational.extradata.R
 
-@RequiresApi(Build.VERSION_CODES.M)
-@TargetApi(Build.VERSION_CODES.M)
-internal open class CustomThemeEngineDelegateImplV23(
+@RequiresApi(Build.VERSION_CODES.R)
+@TargetApi(Build.VERSION_CODES.R)
+internal open class CustomThemeEngineDelegateImplV30(
         private val activity: Activity,
         private val customThemeEngine: CustomThemeEngine,
         themeResId: Int
-) : CustomThemeEngineDelegateImplV21(activity, customThemeEngine, themeResId) {
+) : CustomThemeEngineDelegateImplV29(activity, customThemeEngine, themeResId) {
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
@@ -30,7 +30,7 @@ internal open class CustomThemeEngineDelegateImplV23(
 
   @SuppressLint("PrivateApi")
   private fun preloadColors() {
-    if (Build.VERSION.SDK_INT == Build.VERSION_CODES.M) {
+    if (Build.VERSION.SDK_INT == Build.VERSION_CODES.R) {
       try {
         val klass = Class.forName("android.content.res.ColorStateList\$ColorStateListFactory")
         val constructor = klass.getConstructor(ColorStateList::class.java).apply {
@@ -95,7 +95,7 @@ internal open class CustomThemeEngineDelegateImplV23(
 
   companion object {
 
-    private const val TAG = "RULEBOOK_APP_CustomThemeEngineDelegateImplV23"
+    private const val TAG = "RULEBOOK_APP_CustomThemeEngineDelegateImplV30"
 
     @SuppressLint("PrivateResource")
     private val PRELOADED_COLORS = intArrayOf(

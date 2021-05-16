@@ -3,31 +3,31 @@ package com.verNANDo57.rulebook_educational.rules;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-public class RulebookBooleans {
+public class AppExtraBooleans {
     SharedPreferences RulebookBooleansInMainRules;
 
-    public RulebookBooleans(Context context) {
+    public AppExtraBooleans(Context context) {
         RulebookBooleansInMainRules = context.getSharedPreferences("rulebookBooleansInMainRules", Context.MODE_PRIVATE);
     }
 
-    //This method will save boolean state
+    //These methods will save boolean states
     public void setRulebookMainRulesFragmentOpenedBoolean(String state){
         SharedPreferences.Editor editor= RulebookBooleansInMainRules.edit();
         editor.putString("MainRulesFragmentOpenedBoolean", state);
         editor.apply();
     }
-    //This method will load boolean state
-    public String loadRulebookMainRulesFragmentOpenedBoolean (){
-        return RulebookBooleansInMainRules.getString("MainRulesFragmentOpenedBoolean", "null");
-    }
 
-    //This method will save boolean state
     public void setAppBarPageSelected(String state){
         SharedPreferences.Editor editor= RulebookBooleansInMainRules.edit();
         editor.putString("AppBarPageSelected", state);
         editor.apply();
     }
-    //This method will load boolean state
+
+    //These methods will load boolean states
+    public String loadRulebookMainRulesFragmentOpenedBoolean (){
+        return RulebookBooleansInMainRules.getString("MainRulesFragmentOpenedBoolean", "null");
+    }
+
     public String loadAppBarPageSelected (){
         return RulebookBooleansInMainRules.getString("AppBarPageSelected", "info_container");
     }

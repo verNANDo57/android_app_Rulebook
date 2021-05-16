@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 import com.google.android.material.navigation.NavigationView;
 import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngineBottomSheetDialogFragment;
 import com.verNANDo57.rulebook_educational.customthemeengine.utils.ColorUtils;
-import com.verNANDo57.rulebook_educational.for_pills.R;
+import com.verNANDo57.rulebook_educational.extradata.R;
 import com.verNANDo57.rulebook_educational.preferences.AppSettingsActivity;
 import com.verNANDo57.rulebook_educational.rules.dictionaries.AppDictionaries;
 

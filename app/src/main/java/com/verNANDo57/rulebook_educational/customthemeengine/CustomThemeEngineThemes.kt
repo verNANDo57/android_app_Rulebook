@@ -4,7 +4,7 @@ import androidx.annotation.StyleRes
 import androidx.appcompat.app.AppCompatActivity
 import com.verNANDo57.rulebook_educational.customthemeengine.CustomThemeEngine.BaseTheme.DARK
 import com.verNANDo57.rulebook_educational.customthemeengine.CustomThemeEngine.BaseTheme.LIGHT
-import com.verNANDo57.rulebook_educational.for_pills.R
+import com.verNANDo57.rulebook_educational.extradata.R
 
 /**
  * Theme that can be used in your customthemeengine based activity.

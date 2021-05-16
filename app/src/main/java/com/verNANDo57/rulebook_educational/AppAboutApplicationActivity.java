@@ -16,13 +16,11 @@ import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-import androidx.core.content.ContextCompat;
-
 import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngineAppCompatActivity;
-import com.verNANDo57.rulebook_educational.for_pills.R;
+import com.verNANDo57.rulebook_educational.extradata.R;
 import com.verNANDo57.rulebook_educational.preferences.RulebookApplicationSharedPreferences;
 import com.verNANDo57.rulebook_educational.tools.Utils;
 
@@ -66,8 +64,10 @@ public class AppAboutApplicationActivity extends CustomThemeEngineAppCompatActiv
 			}
 		});
 
-		//Press the title to view the bottomappbar
+		//TextViews
 		TextView app_about_title = findViewById(R.id.app_about_title);
+		TextView appaboutTextView2 = findViewById(R.id.appaboutTextView2);
+		appaboutTextView2.setText(getString(R.string.app_about_extended) + Utils.getApplicationVersionInfo(this, Utils.PACKAGEMANAGER_GET_APP_VERISON_NAME));
 
 		ScrollView about_scrollview = findViewById(R.id.about_scrollview);
 		about_scrollview.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener() {

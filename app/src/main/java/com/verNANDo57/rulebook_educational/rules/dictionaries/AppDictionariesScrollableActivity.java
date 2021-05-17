@@ -75,6 +75,8 @@ public class AppDictionariesScrollableActivity extends CustomThemeEngineAppCompa
         setContentView(R.layout.app_scrollable_activity);
 
         ImageView app_scrollableactivity_in_scrollableactivity_icon = findViewById(R.id.app_scrollableactivity_in_scrollableactivity_icon);
+        app_scrollableactivity_in_scrollableactivity_icon.getLayoutParams().width = 300;
+        app_scrollableactivity_in_scrollableactivity_icon.getLayoutParams().height = 180;
         app_scrollableactivity_in_scrollableactivity_icon.setBackground(ContextCompat.getDrawable(this, R.drawable.app_book_colored));
         app_scrollableactivity_in_scrollableactivity_icon.setBackgroundTintList(ColorStateList.valueOf(ColorUtils.lighter(getResources().getColor(R.color.coloraccent), 0.01f)));
 
@@ -82,7 +84,7 @@ public class AppDictionariesScrollableActivity extends CustomThemeEngineAppCompa
         TextView app_scrollableactivity_in_dictionaries_subtitle = findViewById(R.id.app_scrollableactivity_in_scrollableactivity_subtitle);
         TextView app_scrollableactivity_content_in_dictionaries_text = findViewById(R.id.app_scrollableactivity_content_everywhere_text);
 
-        Toolbar toolbar = findViewById(R.id.toolbar_in_dictionaries);
+        Toolbar toolbar = findViewById(R.id.toolbar_in_scrollableactivity);
         toolbar.setTitle(getString(R.string.dictionaries));
         setSupportActionBar(toolbar);
         toolbar.setNavigationOnClickListener(new NavigationView.OnClickListener() {

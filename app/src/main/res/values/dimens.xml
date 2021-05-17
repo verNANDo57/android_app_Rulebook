@@ -154,6 +154,7 @@
 	<dimen name="app_toolbar_shape_stroke_width">5dp</dimen>
 	<dimen name="app_bottomsheetdialog_shape_stroke_width">5dp</dimen>
 	<dimen name="app_bar_icon_width_height">60dp</dimen>
+	<dimen name="app_bar_icon_width_width">100dp</dimen>
 
 	<dimen name="title_text_size">20dp</dimen>
 </resources>

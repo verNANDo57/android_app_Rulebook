@@ -1,7 +1,7 @@
 # Rulebook
-Rulebook - simple android _"app"_, that can help you learn _"Russian Language"_.
-This application is, in fact, _"a collection"_ of all the existing and most important _"rules"_ of the Russian language (spelling, punctuation, vocabulary, etc.) with the ability to save them to the device internal storage in the form of _".txt"_ files and no more.
-The development was started in _"June 2020"_.
+Rulebook - simple android _app_, that can help you learn _Russian Language_.
+This application is, in fact, _a collection_ of all the existing and most important _rules_ of the Russian language (spelling, punctuation, vocabulary, etc.) with the ability to save them to the device internal storage in the form of _.txt_ files and no more.
+The development was started in _June 2020_.
 
 ```
 #

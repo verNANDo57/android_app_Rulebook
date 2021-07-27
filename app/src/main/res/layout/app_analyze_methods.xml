@@ -37,105 +37,90 @@
                 style="@style/RulebookButtonEveryThemeTop"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="phonetic_analyze_method_btn"
                 android:text="@string/phonetic_analyze_method" />
 
             <Button
                 android:id="@+id/morphemic_analyze_method_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="morphemic_analyze_method_btn"
                 android:text="@string/morphemic_analyze_method" />
 
             <Button
                 android:id="@+id/morphological_analyze_method_for_noun_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="morphological_analyze_method_for_noun_btn"
                 android:text="@string/morphological_analyze_method_for_noun" />
 
             <Button
                 android:id="@+id/morphological_analyze_method_for_verb_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="morphological_analyze_method_for_verb_btn"
                 android:text="@string/morphological_analyze_method_for_verb" />
 
             <Button
-                android:id="@+id/morphological_analyze_method_for_adjectve_btn"
+                android:id="@+id/morphological_analyze_method_for_adjective_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="morphological_analyze_method_for_adjective_btn"
                 android:text="@string/morphological_analyze_method_for_adjective" />
 
             <Button
                 android:id="@+id/morphological_analyze_method_for_numeral_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="morphological_analyze_method_for_numeral_btn"
                 android:text="@string/morphological_analyze_method_for_numeral" />
 
             <Button
                 android:id="@+id/morphological_analyze_method_for_adverb_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="morphological_analyze_method_for_adverb_btn"
                 android:text="@string/morphological_analyze_method_for_adverb" />
 
             <Button
                 android:id="@+id/morphological_analyze_method_for_participle_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="morphological_analyze_method_for_participle_btn"
                 android:text="@string/morphological_analyze_method_for_participle" />
 
             <Button
                 android:id="@+id/morphological_analyze_method_for_participle2_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="morphological_analyze_method_for_participle2_btn"
                 android:text="@string/morphological_analyze_method_for_participle2" />
 
             <Button
                 android:id="@+id/morphological_analyze_method_for_pretext_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="morphological_analyze_method_for_pretext_btn"
                 android:text="@string/morphological_analyze_method_for_pretext" />
 
             <Button
                 android:id="@+id/morphological_analyze_method_for_union_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="morphological_analyze_method_for_union_btn"
                 android:text="@string/morphological_analyze_method_for_union" />
 
             <Button
                 android:id="@+id/morphological_analyze_method_for_particle_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="morphological_analyze_method_for_particle_btn"
                 android:text="@string/morphological_analyze_method_for_particle" />
 
             <Button
                 android:id="@+id/syntactic_analyze_method_for_simple_sentence_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="syntactic_analyze_method_for_simple_sentence_btn"
                 android:text="@string/syntactic_analyze_method_for_simple_sentence" />
 
             <Button
                 android:id="@+id/syntactic_analyze_method_for_difficult_sentence_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="syntactic_analyze_method_for_difficult_sentence_btn"
                 android:text="@string/syntactic_analyze_method_for_difficult_sentence" />
 
             <Button
                 android:id="@+id/lexical_analyze_method_for_everyword_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="lexical_analyze_method_for_everyword_btn"
                 android:text="@string/lexical_analyze_method_for_everyword" />
 
             <Button
@@ -143,7 +128,6 @@
                 style="@style/RulebookButtonEveryThemeBottom"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:onClick="orthographic_analyze_method_for_everyword_btn"
                 android:text="@string/orthographic_analyze_method_for_everyword" />
 
         </LinearLayout>

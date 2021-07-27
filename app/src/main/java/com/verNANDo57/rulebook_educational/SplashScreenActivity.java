@@ -37,9 +37,6 @@ public class SplashScreenActivity extends CustomThemeEngineAppCompatActivity {
 
 	public static final int STORAGE_PERMISSION_CODE = 1;
 
-	public static final int PERMISSION_GRANTED = 0;
-	public static final int PERMISSION_DENIED = -1;
-
 	private ProgressBar Indicator1;
 	private ProgressBar Indicator2;
 	private ProgressBar Indicator3;
@@ -54,8 +51,6 @@ public class SplashScreenActivity extends CustomThemeEngineAppCompatActivity {
 		setContentView(R.layout.app_splashscreen);
 
 		int BackgroundTintColor = ColorUtils.lighter(getResources().getColor(R.color.coloraccent), 0.01f);
-
-		ImageView splashscreen_image = findViewById(R.id.splashscreen_image);
 
 		Indicator1 = findViewById(R.id.appSplashScreenProgressBar1); //Indicator1(ProgressBar1)
 		Indicator2 = findViewById(R.id.appSplashScreenProgressBar2); //Indicator2(ProgressBar2)
@@ -76,7 +71,7 @@ public class SplashScreenActivity extends CustomThemeEngineAppCompatActivity {
 		//splashscreen process start
 		new Thread(new Runnable() {
 			public void run() {
-				//Can't create handler inside thread Thread that has not called Looper.prepare()
+				//Can't create handler inside thread that has not called Looper.prepare()
 				Looper.prepare();
 
 				int counter = 0;
@@ -165,6 +160,7 @@ public class SplashScreenActivity extends CustomThemeEngineAppCompatActivity {
 
 	@Override
 	public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+		super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 		if (requestCode == STORAGE_PERMISSION_CODE) {
 			if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 				preferences.setAppPermissionsAreGrantedBooleanState(true);

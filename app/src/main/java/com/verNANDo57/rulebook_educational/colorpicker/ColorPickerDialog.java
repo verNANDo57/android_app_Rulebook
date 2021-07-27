@@ -39,6 +39,7 @@ import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.FragmentActivity;
 
 import com.verNANDo57.rulebook_educational.extradata.R;
+import com.verNANDo57.rulebook_educational.tools.Utils;
 
 import java.util.Arrays;
 import java.util.Locale;
@@ -56,8 +57,6 @@ import java.util.Locale;
  */
 @SuppressLint("ClickableViewAccessibility")
 public class ColorPickerDialog extends DialogFragment implements ColorPickerView.OnColorChangedListener, TextWatcher {
-
-  private static final String TAG = "RULEBOOK_APP_ColorPickerDialog";
 
   public static final int TYPE_CUSTOM = 0;
   public static final int TYPE_PRESETS = 1;
@@ -580,7 +579,7 @@ public class ColorPickerDialog extends DialogFragment implements ColorPickerView
 
   private void onColorSelected(int color) {
     if (colorPickerDialogListener != null) {
-      Log.w(TAG, "Using deprecated listener which may be remove in future releases");
+      Log.w(Utils.LOG_TAG, "Using deprecated listener which may be remove in future releases");
       colorPickerDialogListener.onColorSelected(dialogId, color);
       return;
     }
@@ -594,7 +593,7 @@ public class ColorPickerDialog extends DialogFragment implements ColorPickerView
 
   private void onDialogDismissed() {
     if (colorPickerDialogListener != null) {
-      Log.w(TAG, "Using deprecated listener which may be remove in future releases");
+      Log.w(Utils.LOG_TAG, "Using deprecated listener which may be remove in future releases");
       colorPickerDialogListener.onDialogDismissed(dialogId);
       return;
     }

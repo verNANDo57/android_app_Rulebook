@@ -26,13 +26,10 @@ public class MainActivity extends CustomThemeEngineAppCompatActivity
 
 		super.onCreate(savedInstanceState);
 
-		//Activity Content as LAYOUT
 		setContentView(R.layout.main);
 
 		ImageView main_image = findViewById(R.id.imageview_in_main);
 		main_image.setColorFilter(R.color.coloraccent, PorterDuff.Mode.SRC_IN);
-
-		ScrollView main_layout_scrollview = findViewById(R.id.main_layout_scrollview);
 
 		Button app_rules_button = findViewById(R.id.app_rules_button);
 		if(preferences.loadRulebookAnimationsDisableState()==false) {

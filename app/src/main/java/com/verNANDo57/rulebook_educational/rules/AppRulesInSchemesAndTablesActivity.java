@@ -29,8 +29,7 @@ public class AppRulesInSchemesAndTablesActivity extends CustomThemeEngineAppComp
 
         super.onCreate(savedInstanceState);
 
-        //Activity Content as LAYOUT
-        setContentView(R.layout.app_bottomappbar_in_webview);
+        setContentView(R.layout.app_bottomappbar_webview);
 
         //init WebView
         WebView apprulesinschemesandtablesview = findViewById(R.id.app_rules_webview);
@@ -40,7 +39,7 @@ public class AppRulesInSchemesAndTablesActivity extends CustomThemeEngineAppComp
         //WebView preferences
         apprulesinschemesandtablesview.setInitialScale(120);
 
-        //disable text selection
+        //Disable text selection
         apprulesinschemesandtablesview.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
@@ -53,7 +52,6 @@ public class AppRulesInSchemesAndTablesActivity extends CustomThemeEngineAppComp
         apprulesinschemesandtablesview.getSettings().setBuiltInZoomControls(true);
         apprulesinschemesandtablesview.getSettings().setDisplayZoomControls(false);
 
-        //BottomAppBar
         final FloatingActionButton fab_in_schemes_and_tables = findViewById(R.id.fab_in_webview);
         fab_in_schemes_and_tables.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,7 +65,6 @@ public class AppRulesInSchemesAndTablesActivity extends CustomThemeEngineAppComp
             Utils.setAnimatorToAnyView(bar_in_schemes_and_tables, "to_top", (float) 250);
         }
 
-        //BottomNavigationView
         bar_in_schemes_and_tables.setNavigationOnClickListener(new NavigationView.OnClickListener() {
             @Override
             public void onClick(View v) {

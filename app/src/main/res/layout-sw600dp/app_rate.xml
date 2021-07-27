@@ -11,13 +11,13 @@
         android:id="@+id/rating_page_scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="com.verNANDo57.rulebook_educational.AppRatingAgressiveActivity">
+        tools:context="com.verNANDo57.rulebook_educational.AppRatingActivity">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <com.verNANDo57.rulebook_educational.AppRatingAgressiveVector
+            <com.verNANDo57.rulebook_educational.AppRatingVector
                 android:id="@+id/app_agressive_rating_vector"
                 android:layout_width="@dimen/app_rating_smile_width_layout"
                 android:layout_centerHorizontal="true"

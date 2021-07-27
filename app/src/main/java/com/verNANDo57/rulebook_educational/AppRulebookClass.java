@@ -20,7 +20,7 @@ public class AppRulebookClass extends Application {
             preferences =  new RulebookApplicationSharedPreferences(this);
             booleansInMainRules = new AppExtraBooleans(this);
 
-            //TODO: Crash fix
+            //Crash fix
             booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("null");
 
             super.onCreate();

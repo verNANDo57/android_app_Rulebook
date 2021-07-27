@@ -89,20 +89,6 @@
                     android:layout_toEndOf="@id/appaboutView4"
                     android:background="@drawable/telegram_share_icon" />
 
-                <View
-                    android:id="@+id/appaboutView5"
-                    android:layout_width="10dp"
-                    android:layout_height="60dp"
-                    android:layout_toEndOf="@id/buttontg" />
-
-                <ImageButton
-                    android:id="@+id/buttonqiwi"
-                    style="@style/AppImageButtonStyleEveryTheme"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_toEndOf="@id/appaboutView5"
-                    android:background="@drawable/qiwi_share_icon" />
-
             </RelativeLayout>
 
         </HorizontalScrollView>

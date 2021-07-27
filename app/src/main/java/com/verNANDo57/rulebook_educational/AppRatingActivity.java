@@ -12,7 +12,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RatingBar;
 import android.widget.ScrollView;
-import android.widget.TextView;
 
 import com.google.android.material.bottomappbar.BottomAppBar;
 import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngineAppCompatActivity;
@@ -21,7 +20,7 @@ import com.verNANDo57.rulebook_educational.preferences.RulebookApplicationShared
 import com.verNANDo57.rulebook_educational.tools.Utils;
 
 @SuppressLint("ClickableViewAccessibility")
-public class AppRatingAgressiveActivity extends CustomThemeEngineAppCompatActivity {
+public class AppRatingActivity extends CustomThemeEngineAppCompatActivity {
 
     RulebookApplicationSharedPreferences preferences;
 
@@ -31,9 +30,8 @@ public class AppRatingAgressiveActivity extends CustomThemeEngineAppCompatActivi
 
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.app_bottomappbar_in_rating_page_agressive);
+        setContentView(R.layout.app_bottomappbar_rate);
 
-        //BottomAppBar
         final BottomAppBar bar_in_rating_page = findViewById(R.id.bar_in_rating_page);
         setSupportActionBar(bar_in_rating_page);
         if(preferences.loadRulebookAnimationsDisableState()==false) {
@@ -64,12 +62,9 @@ public class AppRatingAgressiveActivity extends CustomThemeEngineAppCompatActivi
                 }
             }
         });
-        //Title in Layout
-        TextView rating_title = findViewById(R.id.rating_title);
 
-        //Rating Bar in Layout
         RatingBar rating_bar = findViewById(R.id.rating_bar);
-        AppRatingAgressiveVector app_agressive_rating_vector = findViewById(R.id.app_agressive_rating_vector);
+        AppRatingVector app_agressive_rating_vector = findViewById(R.id.app_agressive_rating_vector);
         rating_bar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
             public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
@@ -78,10 +73,6 @@ public class AppRatingAgressiveActivity extends CustomThemeEngineAppCompatActivi
             }
         });
 
-        //Edittext for Review
-        EditText review_box = findViewById(R.id.review_box);
-
-        //Button to send review
         Button review_send = findViewById(R.id.review_send_button);
         review_send.setOnClickListener(new View.OnClickListener() {
             @Override

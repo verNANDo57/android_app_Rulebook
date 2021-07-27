@@ -29,8 +29,7 @@ public class AppLexiconActivity extends CustomThemeEngineAppCompatActivity {
 
         super.onCreate(savedInstanceState);
 
-        //Activity Content as LAYOUT
-        setContentView(R.layout.app_bottomappbar_in_webview);
+        setContentView(R.layout.app_bottomappbar_webview);
 
         //init WebView
         WebView app_rules_lexicon = findViewById(R.id.app_rules_webview);
@@ -53,7 +52,6 @@ public class AppLexiconActivity extends CustomThemeEngineAppCompatActivity {
         app_rules_lexicon.getSettings().setBuiltInZoomControls(true);
         app_rules_lexicon.getSettings().setDisplayZoomControls(false);
 
-        //BottomAppBar
         final FloatingActionButton fab_in_schemes_and_tables = findViewById(R.id.fab_in_webview);
         fab_in_schemes_and_tables.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,7 +65,6 @@ public class AppLexiconActivity extends CustomThemeEngineAppCompatActivity {
             Utils.setAnimatorToAnyView(bar_in_lexicon, "to_top", (float) 250);
         }
 
-        //BottomNavigationView
         bar_in_lexicon.setNavigationOnClickListener(new NavigationView.OnClickListener() {
             @Override
             public void onClick(View v) {

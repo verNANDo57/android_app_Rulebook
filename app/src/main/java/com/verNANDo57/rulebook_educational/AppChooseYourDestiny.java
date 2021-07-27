@@ -30,7 +30,6 @@ public class AppChooseYourDestiny extends CustomThemeEngineAppCompatActivity {
 
         super.onCreate(savedInstanceState);
 
-        //Activity Content as LAYOUT
         setContentView(R.layout.app_choose_your_destiny);
 
         Toolbar toolbar = findViewById(R.id.toolbar_in_chooseyourdestiny_layout);
@@ -42,8 +41,6 @@ public class AppChooseYourDestiny extends CustomThemeEngineAppCompatActivity {
                 BottomNavBetweenActivities.show(getSupportFragmentManager(), LOG_TAG);
             }
         });
-
-        ScrollView choose_destiny_scrollview = findViewById(R.id.choose_destiny_scrollview);
 
         Button app_main_rules = findViewById(R.id.main_rules);
         app_main_rules.setEnabled(true);

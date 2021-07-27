@@ -26,7 +26,6 @@ import com.verNANDo57.rulebook_educational.tools.Utils;
 
 import static com.verNANDo57.rulebook_educational.tools.Utils.LOG_TAG;
 
-
 public class AppAboutApplicationActivity extends CustomThemeEngineAppCompatActivity
 {
 	RulebookApplicationSharedPreferences preferences;
@@ -38,10 +37,8 @@ public class AppAboutApplicationActivity extends CustomThemeEngineAppCompatActiv
 
 		super.onCreate(savedInstanceState);
 
-        //Activity Content as LAYOUT
-        setContentView(R.layout.app_bottomappbar_in_about);
+        setContentView(R.layout.app_bottomappbar_about);
 
-		//BottomAppBar
 		final FloatingActionButton fab_in_about = findViewById(R.id.fab_in_about);
 		fab_in_about.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -55,7 +52,6 @@ public class AppAboutApplicationActivity extends CustomThemeEngineAppCompatActiv
 			Utils.setAnimatorToAnyView(bar_in_credits, "to_top", (float) 250);
 		}
 
-		//BottomNavigationView
 		bar_in_credits.setNavigationOnClickListener(new NavigationView.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -64,7 +60,6 @@ public class AppAboutApplicationActivity extends CustomThemeEngineAppCompatActiv
 			}
 		});
 
-		//TextViews
 		TextView app_about_title = findViewById(R.id.app_about_title);
 		TextView appaboutTextView2 = findViewById(R.id.appaboutTextView2);
 		appaboutTextView2.setText(getString(R.string.app_about_extended) + Utils.getApplicationVersionInfo(this, Utils.PACKAGEMANAGER_GET_APP_VERISON_NAME));
@@ -141,21 +136,8 @@ public class AppAboutApplicationActivity extends CustomThemeEngineAppCompatActiv
 				startActivity(intent3);
 		}
 		});
-
-		ImageButton buttonqiwi = findViewById(R.id.buttonqiwi);
-		buttonqiwi.setColorFilter(R.color.coloraccent, PorterDuff.Mode.SRC_IN);
-		buttonqiwi.setOnClickListener(new View.OnClickListener(){
-			@Override
-			public void onClick(View v) {
-				String qiwi = "https://qiwi.com/n/VERNANDO57";
-				Intent intent3 = new Intent(Intent.ACTION_VIEW);
-				intent3.setData(Uri.parse(qiwi));
-				startActivity(intent3);
-			}
-		});
 	}
 
-    //ActionBar_Elements
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.app_menu, menu);
 		return true;
@@ -196,7 +178,7 @@ public class AppAboutApplicationActivity extends CustomThemeEngineAppCompatActiv
 	}
 
 	public void rate_us(){
-		final Intent rate_app = new Intent(this, AppRatingAgressiveActivity.class);
+		final Intent rate_app = new Intent(this, AppRatingActivity.class);
 		rate_app.addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT);
 		rate_app.addFlags(Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
 		startActivity(rate_app);

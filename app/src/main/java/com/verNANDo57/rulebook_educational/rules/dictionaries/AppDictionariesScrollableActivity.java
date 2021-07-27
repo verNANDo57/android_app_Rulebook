@@ -177,7 +177,6 @@ public class AppDictionariesScrollableActivity extends CustomThemeEngineAppCompa
             });
         }
 
-    //ActionBar elements
     public boolean onCreateOptionsMenu(@NotNull Menu menu) {
         getMenuInflater().inflate(R.menu.app_scrollableactivity_menu, menu);
         this.menu = menu;

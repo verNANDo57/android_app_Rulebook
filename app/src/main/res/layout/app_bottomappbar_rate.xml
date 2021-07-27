@@ -4,9 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.verNANDo57.rulebook_educational.AppRatingAgressiveActivity">
+    tools:context="com.verNANDo57.rulebook_educational.AppRatingActivity">
 
-    <include layout="@layout/app_rating_page_agressive" />
+    <include layout="@layout/app_rate" />
 
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bar_in_rating_page"

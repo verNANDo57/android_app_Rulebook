@@ -39,12 +39,9 @@ public class AppDictionaries extends CustomThemeEngineAppCompatActivity {
             }
         });
 
-        ScrollView scrollview_in_dictionaries = findViewById(R.id.scrollview_in_dictionaries);
-
         Intent AppDictionariesScrollableActivity = new Intent(this, AppDictionariesScrollableActivity.class);
 
         Button vocabulary_words = findViewById(R.id.vocabulary_words);
-        vocabulary_words.setEnabled(true);
         vocabulary_words.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,7 +51,6 @@ public class AppDictionaries extends CustomThemeEngineAppCompatActivity {
         });
 
         Button phrasebook = findViewById(R.id.phrasebook);
-        phrasebook.setEnabled(true);
         phrasebook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

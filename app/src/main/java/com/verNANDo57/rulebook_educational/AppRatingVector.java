@@ -14,7 +14,7 @@ import android.view.animation.DecelerateInterpolator;
 
 import com.verNANDo57.rulebook_educational.extradata.R;
 
-public class AppRatingAgressiveVector extends View {
+public class AppRatingVector extends View {
 
     private int faceColor, eyesColor, mouthColor, tongueColor;
     private RectF faceBgOval, sadOval, neutralOval, slightHappyOval, happyOval, amazingOval, tongueOval, AwfulOval, AwfultongueOval;
@@ -27,7 +27,7 @@ public class AppRatingAgressiveVector extends View {
     ValueAnimator rightEyeAnimatorX, leftEyeAnimatorX, eyesAnimatorY;
     final long animationDuration = 300;
 
-    public AppRatingAgressiveVector(Context context) {
+    public AppRatingVector(Context context) {
         super(context);
 
         //Disable Hardware acceleration on device with API < 18
@@ -36,7 +36,7 @@ public class AppRatingAgressiveVector extends View {
         }
     }
 
-    public AppRatingAgressiveVector(Context context, AttributeSet attrs) {
+    public AppRatingVector(Context context, AttributeSet attrs) {
         super(context, attrs);
 
         //Initializing objects
@@ -86,6 +86,7 @@ public class AppRatingAgressiveVector extends View {
 
         switch (whatToDraw) {
             case 0:
+            case 5:
                 currEyeLX = (viewWidth / 2) - (viewWidth / 100 * 23);
                 currEyeRX = (viewWidth / 2) + (viewWidth / 100 * 23);
                 currEyeY = (viewHeight / 100 * 23);
@@ -109,11 +110,6 @@ public class AppRatingAgressiveVector extends View {
                 currEyeLX = (viewWidth / 2) - (viewWidth / 100 * 19);
                 currEyeRX = (viewWidth / 2) + (viewWidth / 100 * 19);
                 currEyeY = (viewHeight / 100 * 22);
-                break;
-            case 5:
-                currEyeLX = (viewWidth / 2) - (viewWidth / 100 * 23);
-                currEyeRX = (viewWidth / 2) + (viewWidth / 100 * 23);
-                currEyeY = (viewHeight / 100 * 23);
                 break;
         }
 

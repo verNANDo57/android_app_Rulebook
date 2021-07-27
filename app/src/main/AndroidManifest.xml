@@ -94,7 +94,7 @@
 		<!-- EndOfMain  -->
 
 		<activity
-			android:name="com.verNANDo57.rulebook_educational.AppRatingAgressiveActivity"
+			android:name="com.verNANDo57.rulebook_educational.AppRatingActivity"
 			android:label="@string/app_name_rating"
 			android:configChanges="keyboard|keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout|navigation" />
 

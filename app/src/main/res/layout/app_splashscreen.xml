@@ -14,9 +14,9 @@
 
 		<ImageView
 			android:id="@+id/splashscreen_image"
-			android:layout_width="200dp"
-			android:layout_height="110dp"
-			android:src="@drawable/app_book_colored"/>
+			android:layout_width="@dimen/app_logo_in_main_width_in_layout"
+			android:layout_height="@dimen/app_logo_in_main_height_in_layout"
+			android:background="@drawable/app_book_colored"/>
 
 	</LinearLayout>
 

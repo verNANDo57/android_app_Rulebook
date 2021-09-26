@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ScrollView;
 
 import androidx.appcompat.widget.Toolbar;
 
@@ -45,7 +44,7 @@ public class AppDictionaries extends CustomThemeEngineAppCompatActivity {
         vocabulary_words.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("vocabulary_words");
+                booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("vocabulary_words");
                 startActivity(AppDictionariesScrollableActivity);
             }
         });
@@ -54,7 +53,16 @@ public class AppDictionaries extends CustomThemeEngineAppCompatActivity {
         phrasebook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("phrasebook");
+                booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("phrasebook");
+                startActivity(AppDictionariesScrollableActivity);
+            }
+        });
+
+        Button orthoepical_dictionary = findViewById(R.id.orthoepical_dictionary);
+        orthoepical_dictionary.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("orthoepical_dictionary");
                 startActivity(AppDictionariesScrollableActivity);
             }
         });

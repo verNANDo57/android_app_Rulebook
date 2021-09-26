@@ -1,14 +1,23 @@
 package com.verNANDo57.rulebook_educational;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.PorterDuff;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ScrollView;
+
+import androidx.annotation.NonNull;
+import androidx.core.content.ContextCompat;
 
 import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngineAppCompatActivity;
 import com.verNANDo57.rulebook_educational.extradata.R;
@@ -16,9 +25,13 @@ import com.verNANDo57.rulebook_educational.preferences.RulebookApplicationShared
 import com.verNANDo57.rulebook_educational.rules.dictionaries.AppDictionaries;
 import com.verNANDo57.rulebook_educational.tools.Utils;
 
+import java.util.Arrays;
+
 public class MainActivity extends CustomThemeEngineAppCompatActivity
 {
 	RulebookApplicationSharedPreferences preferences;
+
+	public static final int STORAGE_PERMISSION_CODE = 1;
 
 	@SuppressLint("ClickableViewAccessibility")
 	public void onCreate(Bundle savedInstanceState) {
@@ -85,6 +98,9 @@ public class MainActivity extends CustomThemeEngineAppCompatActivity
 				app_exit();
 			}
 		});
+
+		//Check for storage permission
+		checkPermission();
 	}
 
 	@Override
@@ -111,5 +127,99 @@ public class MainActivity extends CustomThemeEngineAppCompatActivity
 		});
 		androidx.appcompat.app.AlertDialog alert = builder.create();
 		alert.show();
+	}
+
+	public void checkPermission() {
+		//Check if android version is Android 11 or higher
+		if (Build.VERSION.SDK_INT >= 30) {
+			//Check if storage permission already granted
+			if (Environment.isExternalStorageManager()==false) {
+				//If no then...
+				preferences.setAppPermissionsAreGrantedBooleanState(false);
+
+				//Ask user to give storage permission
+				AlertDialog.Builder builder = new AlertDialog.Builder(this);
+				builder.setTitle(getString(R.string.app_warning));
+				builder.setMessage(getString(R.string.app_storageaccess_warning));
+				builder.setIcon(R.drawable.ic_warning_outline);
+				builder.setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener(){
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						//GoToSettings Intent
+						startActivity(new Intent(android.provider.Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION));
+					}
+				});
+				builder.setNegativeButton(getString(R.string.no), new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						//Close dialog
+						dialog.cancel();
+					}
+				});
+				AlertDialog alert = builder.create();
+				alert.show();
+			} else {
+				preferences.setAppPermissionsAreGrantedBooleanState(true);
+			}
+		//Otherwise...
+			//Check if android version is Android 10 or lower
+		} else if (Build.VERSION.SDK_INT >= 23 && Build.VERSION.SDK_INT <= 29) {
+			//Check if storage permission already granted
+			if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED) {
+				preferences.setAppPermissionsAreGrantedBooleanState(false);
+
+				//Ask user to give storage permission
+				if (shouldShowRequestPermissionRationale(Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
+					createShouldShowRequestPermissionRationaleAlertDialogCompat();
+				} else {
+					requestPermissions(new String[]
+									{
+											Manifest.permission.WRITE_EXTERNAL_STORAGE,
+											Manifest.permission.READ_EXTERNAL_STORAGE
+									},
+							STORAGE_PERMISSION_CODE);
+				}
+			} else {
+				preferences.setAppPermissionsAreGrantedBooleanState(true);
+			}
+		}
+	}
+
+	public void createShouldShowRequestPermissionRationaleAlertDialogCompat(){
+		androidx.appcompat.app.AlertDialog.Builder builder = new androidx.appcompat.app.AlertDialog.Builder(this);
+		builder.setTitle(getString(R.string.app_warning));
+		builder.setIcon(ContextCompat.getDrawable(this, R.drawable.ic_warning_outline));
+		builder.setMessage(getString(R.string.app_reason_why_these_permissions_are_needed));
+		builder.setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				//Re-request permissions
+				checkPermission();
+			}
+		});
+		builder.setNegativeButton(getString(R.string.no), new DialogInterface.OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				dialog.cancel();
+			}
+		});
+		androidx.appcompat.app.AlertDialog alert = builder.create();
+		alert.setCancelable(false);
+		alert.setCanceledOnTouchOutside(false);
+		alert.show();
+	}
+
+	@Override
+	public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+		super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+		if (requestCode == STORAGE_PERMISSION_CODE) {
+			if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+				preferences.setAppPermissionsAreGrantedBooleanState(true);
+				Log.w(Utils.LOG_TAG, Arrays.toString(permissions) + " - " + getString(R.string.app_granted));
+			} else {
+				preferences.setAppPermissionsAreGrantedBooleanState(false);
+				Log.w(Utils.LOG_TAG, Arrays.toString(permissions) + " - " + getString(R.string.app_denied));
+			}
+		}
 	}
 }

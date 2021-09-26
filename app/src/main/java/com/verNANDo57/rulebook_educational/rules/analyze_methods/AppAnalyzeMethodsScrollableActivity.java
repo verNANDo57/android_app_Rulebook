@@ -106,37 +106,37 @@ public class AppAnalyzeMethodsScrollableActivity extends CustomThemeEngineAppCom
 
         super.onCreate(savedInstanceState);
 
-        if(booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("morphemic_analyze_method")) {
+        if(booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("morphemic_analyze_method")) {
             app_scrollableactivity_in_analyzemethods_title.setText(getString(R.string.morphemic_analyze_method));
-        } else if(booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("morphological_analyze_method_for_noun")) {
+        } else if(booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("morphological_analyze_method_for_noun")) {
             app_scrollableactivity_in_analyzemethods_title.setText(getString(R.string.morphological_analyze_method_for_noun));
-        } else if(booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("morphological_analyze_method_for_verb")) {
+        } else if(booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("morphological_analyze_method_for_verb")) {
             app_scrollableactivity_in_analyzemethods_title.setText(getString(R.string.morphological_analyze_method_for_verb));
-        } else if(booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("morphological_analyze_method_for_adjective")) {
+        } else if(booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("morphological_analyze_method_for_adjective")) {
             app_scrollableactivity_in_analyzemethods_title.setText(getString(R.string.morphological_analyze_method_for_adjective));
-        } else if(booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("morphological_analyze_method_for_numeral")) {
+        } else if(booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("morphological_analyze_method_for_numeral")) {
             app_scrollableactivity_in_analyzemethods_title.setText(getString(R.string.morphological_analyze_method_for_numeral));
-        } else if(booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("morphological_analyze_method_for_adverb")) {
+        } else if(booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("morphological_analyze_method_for_adverb")) {
             app_scrollableactivity_in_analyzemethods_title.setText(getString(R.string.morphological_analyze_method_for_adverb));
-        } else if(booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("morphological_analyze_method_for_participle")) {
+        } else if(booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("morphological_analyze_method_for_participle")) {
             app_scrollableactivity_in_analyzemethods_title.setText(getString(R.string.morphological_analyze_method_for_participle));
-        } else if(booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("morphological_analyze_method_for_participle2")) {
+        } else if(booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("morphological_analyze_method_for_participle2")) {
             app_scrollableactivity_in_analyzemethods_title.setText(getString(R.string.morphological_analyze_method_for_participle2));
-        } else if(booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("morphological_analyze_method_for_pretext")) {
+        } else if(booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("morphological_analyze_method_for_pretext")) {
             app_scrollableactivity_in_analyzemethods_title.setText(getString(R.string.morphological_analyze_method_for_pretext));
-        } else if(booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("morphological_analyze_method_for_union")) {
+        } else if(booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("morphological_analyze_method_for_union")) {
             app_scrollableactivity_in_analyzemethods_title.setText(getString(R.string.morphological_analyze_method_for_union));
-        } else if(booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("morphological_analyze_method_for_particle")) {
+        } else if(booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("morphological_analyze_method_for_particle")) {
             app_scrollableactivity_in_analyzemethods_title.setText(getString(R.string.morphological_analyze_method_for_particle));
-        } else if(booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("syntactic_analyze_method_for_simple_sentence")) {
+        } else if(booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("syntactic_analyze_method_for_simple_sentence")) {
             app_scrollableactivity_in_analyzemethods_title.setText(getString(R.string.syntactic_analyze_method_for_simple_sentence));
-        } else if(booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("syntactic_analyze_method_for_difficult_sentence")) {
+        } else if(booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("syntactic_analyze_method_for_difficult_sentence")) {
             app_scrollableactivity_in_analyzemethods_title.setText(getString(R.string.syntactic_analyze_method_for_difficult_sentence));
-        } else if(booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("lexical_analyze_method_for_everyword")) {
+        } else if(booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("lexical_analyze_method_for_everyword")) {
             app_scrollableactivity_in_analyzemethods_title.setText(getString(R.string.lexical_analyze_method_for_everyword));
-        } else if(booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("orthographic_analyze_method_for_everyword")) {
+        } else if(booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("orthographic_analyze_method_for_everyword")) {
             app_scrollableactivity_in_analyzemethods_title.setText(getString(R.string.orthographic_analyze_method_for_everyword));
-        } else if(booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("phonetic_analyze_method")) {
+        } else if(booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("phonetic_analyze_method")) {
             app_scrollableactivity_in_analyzemethods_title.setText(getString(R.string.phonetic_analyze_method));
         }
 
@@ -144,7 +144,7 @@ public class AppAnalyzeMethodsScrollableActivity extends CustomThemeEngineAppCom
 
         try {
             InputStream inputStream;
-            inputStream = getAssets().open("analyze_methods/" + booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean() + ".txt");
+            inputStream = getAssets().open("analyze_methods/" + booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean() + ".txt");
             app_scrollableactivity_content_in_analyzemethods_text.setText(Utils.convertStreamToString(inputStream));
         } catch (IOException e) {
             new StyleableToast.Builder(getApplicationContext())
@@ -241,7 +241,13 @@ public class AppAnalyzeMethodsScrollableActivity extends CustomThemeEngineAppCom
                 return true;
 
             case R.id.save_rule:
-                copyAssets();
+                Utils.copyTXTFileFromAssets(
+                        getApplicationContext(),
+                        "analyze_methods/" + booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean() + ".txt",
+                        Environment.getExternalStorageDirectory().getAbsolutePath() + "/Rulebook/",
+                        Environment.getExternalStorageDirectory().getAbsolutePath() + "/Rulebook/" + getString(R.string.analyze_methods) + "/",
+                        outFileName, outFileDir,
+                        getString(R.string.app_error_while_saving_file) + ":" + outFileDir + outFileName + ".txt" + "(" + booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean() + ".txt" + ")");
                 return true;
         }
         return super.onOptionsItemSelected(item);
@@ -249,64 +255,7 @@ public class AppAnalyzeMethodsScrollableActivity extends CustomThemeEngineAppCom
 
     @Override
     public void onBackPressed(){
-        booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("null");
+        booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("null");
         finish();
-    }
-
-    private void copyAssets() {
-        AssetManager assetManager = getAssets();
-        InputStream in = null;
-        OutputStream out = null;
-        try {
-            String outPreDir = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Rulebook/";
-            in = assetManager.open("analyze_methods/" + booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean() + ".txt");
-	        String outDir = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Rulebook/" + getString(R.string.analyze_methods) + "/";
-
-	        File preDirectory = new File(outPreDir);
-		    if (! preDirectory.exists()){
-                        preDirectory.mkdir();
-                        // If you require it to make the entire directory path including parents,
-                        // use directory.mkdirs(); here instead.
-            }
-
-            File directory = new File(outDir);
-            if (! directory.exists()){
-                directory.mkdir();
-                // If you require it to make the entire directory path including parents,
-                // use directory.mkdirs(); here instead.
-            }
-
-            File outFile = new File(outDir,  outFileName + ".txt");
-            if (outFile.exists()){
-                new StyleableToast.Builder(getApplicationContext())
-                        .text(getString(R.string.app_saved_already) + ":" + outFileDir + outFileName + ".txt") // set text
-                        .textBold() //set text bold
-                        .iconStart(Utils.getIconWarning()) //icon in start of toast
-                        .show(); //show custom toast
-            } else {
-                out = new FileOutputStream(outFile);
-                Utils.copyFile(in, out);
-                in.close();
-                in = null;
-                out.flush();
-                out.close();
-                out = null;
-
-                new StyleableToast.Builder(getApplicationContext())
-                        .text(getString(R.string.app_saved) + ":" + outFileDir + outFileName + ".txt") // set text
-                        .textBold() //set text bold
-                        .iconStart(Utils.getIconWarning()) //icon in start of toast
-                        .show(); //show custom toast
-            }
-
-        } catch(IOException e) {
-            Log.e(LOG_TAG, getString(R.string.app_error_while_saving_file) + ":" + outFileDir + outFileName + ".txt" + "(" + booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean() + ".txt" + ")", e);
-
-            new StyleableToast.Builder(getApplicationContext())
-                    .text(getString(R.string.app_error_while_saving_file)) // set text
-                    .textBold() //set text bold
-                    .iconStart(Utils.getIconWarning()) //icon in start of toast
-                    .show(); //show custom toast
-        }
     }
 }

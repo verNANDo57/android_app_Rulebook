@@ -30,7 +30,7 @@ public class AppAboutApplicationActivity extends CustomThemeEngineAppCompatActiv
 {
 	RulebookApplicationSharedPreferences preferences;
 
-	@SuppressLint("ClickableViewAccessibility")
+	@SuppressLint({"ClickableViewAccessibility", "SetTextI18n"})
 	public void onCreate(Bundle savedInstanceState)
     {
 		preferences =  new RulebookApplicationSharedPreferences(this);
@@ -60,7 +60,6 @@ public class AppAboutApplicationActivity extends CustomThemeEngineAppCompatActiv
 			}
 		});
 
-		TextView app_about_title = findViewById(R.id.app_about_title);
 		TextView appaboutTextView2 = findViewById(R.id.appaboutTextView2);
 		appaboutTextView2.setText(getString(R.string.app_about_extended) + Utils.getApplicationVersionInfo(this, Utils.PACKAGEMANAGER_GET_APP_VERISON_NAME));
 

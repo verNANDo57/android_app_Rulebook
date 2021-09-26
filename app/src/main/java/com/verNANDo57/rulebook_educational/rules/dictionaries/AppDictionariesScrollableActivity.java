@@ -107,17 +107,19 @@ public class AppDictionariesScrollableActivity extends CustomThemeEngineAppCompa
         EditText app_wordsearch_edittext = findViewById(R.id.app_wordsearch_edittext);
         Button searchword_button = findViewById(R.id.searchword_button);
 
-        if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("vocabulary_words")) {
+        if (booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("vocabulary_words")) {
             app_scrollableactivity_in_dictionaries_title.setText(getString(R.string.vocabulary_words));
-        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("phrasebook")) {
+        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("phrasebook")) {
             app_scrollableactivity_in_dictionaries_title.setText(getString(R.string.phrasebook));
+        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("orthoepical_dictionary")) {
+            app_scrollableactivity_in_dictionaries_title.setText(getString(R.string.orthoepical_dictionary));
         }
 
             app_scrollableactivity_in_dictionaries_subtitle.setText(getString(R.string.dictionaries));
 
             try {
                 InputStream inputStream;
-                inputStream = getAssets().open("dictionaries/" + booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean() + ".txt");
+                inputStream = getAssets().open("dictionaries/" + booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean() + ".txt");
                 app_scrollableactivity_content_in_dictionaries_text.setText(Utils.convertStreamToString(inputStream));
             } catch (IOException e) {
                 new StyleableToast.Builder(getApplicationContext())
@@ -213,7 +215,13 @@ public class AppDictionariesScrollableActivity extends CustomThemeEngineAppCompa
                 return true;
 
             case R.id.save_rule:
-                copyAssets();
+                Utils.copyTXTFileFromAssets(
+                        getApplicationContext(),
+                        "dictionaries/" + booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean() + ".txt",
+                        Environment.getExternalStorageDirectory().getAbsolutePath() + "/Rulebook/",
+                        Environment.getExternalStorageDirectory().getAbsolutePath() + "/Rulebook/" + getString(R.string.dictionaries) + "/",
+                        outFileName, outFileDir,
+                        getString(R.string.app_error_while_saving_file) + ":" + outFileDir + outFileName + ".txt" + "(" + booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean() + ".txt" + ")");
                 return true;
         }
         return super.onOptionsItemSelected(item);
@@ -221,64 +229,7 @@ public class AppDictionariesScrollableActivity extends CustomThemeEngineAppCompa
 
     @Override
     public void onBackPressed(){
-        booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("null");
+        booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("null");
         finish();
-    }
-
-    private void copyAssets() {
-        AssetManager assetManager = getAssets();
-        InputStream in = null;
-        OutputStream out = null;
-        try {
-            String outPreDir = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Rulebook/";
-            in = assetManager.open("dictionaries/" + booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean() + ".txt");
-            String outDir = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Rulebook/" + getString(R.string.dictionaries) + "/";
-
-            File preDirectory = new File(outPreDir);
-            if (! preDirectory.exists()){
-                preDirectory.mkdir();
-                // If you require it to make the entire directory path including parents,
-                // use directory.mkdirs(); here instead.
-            }
-
-            File directory = new File(outDir);
-            if (! directory.exists()){
-                directory.mkdir();
-                // If you require it to make the entire directory path including parents,
-                // use directory.mkdirs(); here instead.
-            }
-
-            File outFile = new File(outDir,  outFileName + ".txt");
-            if (outFile.exists()){
-                new StyleableToast.Builder(getApplicationContext())
-                        .text(getString(R.string.app_saved_already) + ":" + outFileDir + outFileName + ".txt") // set text
-                        .textBold() //set text bold
-                        .iconStart(Utils.getIconWarning()) //icon in start of toast
-                        .show(); //show custom toast
-            } else {
-                out = new FileOutputStream(outFile);
-                Utils.copyFile(in, out);
-                in.close();
-                in = null;
-                out.flush();
-                out.close();
-                out = null;
-
-                new StyleableToast.Builder(getApplicationContext())
-                        .text(getString(R.string.app_saved) + ":" + outFileDir + outFileName + ".txt") // set text
-                        .textBold() //set text bold
-                        .iconStart(Utils.getIconWarning()) //icon in start of toast
-                        .show(); //show custom toast
-            }
-
-        } catch(IOException e) {
-            Log.e(LOG_TAG, getString(R.string.app_error_while_saving_file) + ":" + outFileDir + outFileName + ".txt" + "(" + booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean() + ".txt" + ")", e);
-
-            new StyleableToast.Builder(getApplicationContext())
-                    .text(getString(R.string.app_error_while_saving_file)) // set text
-                    .textBold() //set text bold
-                    .iconStart(Utils.getIconWarning()) //icon in start of toast
-                    .show(); //show custom toast
-        }
     }
 }

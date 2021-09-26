@@ -110,7 +110,6 @@ public class AppRatingActivity extends CustomThemeEngineAppCompatActivity {
                 + getString(R.string.review_device_hardware) + Build.HARDWARE + "\n"
                 + getString(R.string.review_device_brand) + Build.BRAND + "\n"
                 + getString(R.string.review_device_fingerprint) + Build.FINGERPRINT + "\n"
-                + getString(R.string.review_device_serial) + Build.SERIAL + "\n"
                 + getString(R.string.review_device_android_version) + Build.VERSION.RELEASE + "\n"
                 + getString(R.string.review_device_screen_resolution) + screeenwidth + "x" + screenheight + "\n"
                 + getString(R.string.review_device_current_dpi_value) + screenInches);

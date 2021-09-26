@@ -136,6 +136,7 @@
     <string name="searchword_view_hint">Слово</string>
     <string name="app_next">Далее</string>
     <string name="choosemode">Выберите режим</string>
+    <string name="app_storageaccess_warning">С 11-й версии Android доступ к внутреннему хранилищу устройства получить не так уж и просто. Данное разрешение необходимо для сохранения текстовых файлов в памяти вашего устройвства. Разрешение необходимо выдать вручную, в настройках устройства. Помните, что данное разрешение выдавать не обязательно, иными словами вы можете пользоваться приложением и без него. Перейти в настройки?</string>
 
     <string name="app_error_while_saving_file">Ошибка при попытке сохранения файла. Вероятнее всего, приложение не имеет необходимых разрешений для сохранения файлов.</string>
 
@@ -400,5 +401,6 @@
 
     <string name="vocabulary_words">Словарные слова</string>
     <string name="phrasebook">Словарь фразеологизмов</string>
+    <string name="orthoepical_dictionary">Орфоэпический словник</string>
 
 </resources>

@@ -12,8 +12,7 @@ public class AppRulebookClass extends Application {
     AppExtraBooleans booleansInMainRules;
 
         public void onCreate() {
-
-            //CustomThemeEngine.init
+            //Initialize CustomThemeEngine
             CustomThemeEngine.init(this, getResources());
 
             //Load Preferences
@@ -21,9 +20,7 @@ public class AppRulebookClass extends Application {
             booleansInMainRules = new AppExtraBooleans(this);
 
             //Crash fix
-            booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("null");
-
+            booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("null");
             super.onCreate();
-
     }
 }

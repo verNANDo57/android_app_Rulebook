@@ -11,7 +11,7 @@ public class AppExtraBooleans {
     }
 
     //These methods will save boolean states
-    public void setRulebookMainRulesFragmentOpenedBoolean(String state){
+    public void setRulebookMainRulesFragmentOpenBoolean(String state){
         SharedPreferences.Editor editor= RulebookBooleansInMainRules.edit();
         editor.putString("MainRulesFragmentOpenedBoolean", state);
         editor.apply();
@@ -24,7 +24,7 @@ public class AppExtraBooleans {
     }
 
     //These methods will load boolean states
-    public String loadRulebookMainRulesFragmentOpenedBoolean (){
+    public String loadRulebookMainRulesFragmentOpenBoolean(){
         return RulebookBooleansInMainRules.getString("MainRulesFragmentOpenedBoolean", "null");
     }
 

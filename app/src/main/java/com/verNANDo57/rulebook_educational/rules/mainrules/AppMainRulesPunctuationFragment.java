@@ -192,28 +192,28 @@ public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
             punct1mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_1_1");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_1_1");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
             punct1mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_1_2");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_1_2");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
             punct1mainButton3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_1_3");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_1_3");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
             punct1mainButton4.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_1_4");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_1_4");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
@@ -236,28 +236,28 @@ public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
             punct2mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_2_5");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_2_5");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
             punct2mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_2_6");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_2_6");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
             punct2mainButton3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_2_7");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_2_7");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
             punct2mainButton4.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_2_8");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_2_8");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
@@ -280,49 +280,49 @@ public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
             punct3mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_3_9");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_3_9");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
             punct3mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_3_10");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_3_10");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
             punct3mainButton3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_3_11");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_3_11");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
             punct3mainButton4.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_3_12");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_3_12");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
             punct3mainButton5.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_3_13");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_3_13");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
             punct3mainButton6.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_3_14");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_3_14");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
             punct3mainButton7.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_3_15");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_3_15");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
@@ -345,14 +345,14 @@ public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
             punct4mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_4_16");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_4_16");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
             punct4mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_4_17");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_4_17");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
@@ -375,28 +375,28 @@ public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
             punct5mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_5_18");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_5_18");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
             punct5mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_5_19");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_5_19");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
             punct5mainButton3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_5_20");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_5_20");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
             punct5mainButton4.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_5_21");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_5_21");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
@@ -419,21 +419,21 @@ public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
             punct6mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_6_22");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_6_22");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
             punct6mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_6_23");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_6_23");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
             punct6mainButton3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_6_24");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_6_24");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
@@ -456,21 +456,21 @@ public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
             punct7mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_7_25");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_7_25");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
             punct7mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_7_26");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_7_26");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
             punct7mainButton3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_7_27");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_7_27");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
@@ -493,14 +493,14 @@ public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
             punct8mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_8_28");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_8_28");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
             punct8mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_8_29");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_8_29");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
@@ -523,21 +523,21 @@ public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
             punct9mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_9_30");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_9_30");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
             punct9mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_9_31");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_9_31");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
             punct9mainButton3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_9_32");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_9_32");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
@@ -560,56 +560,56 @@ public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
             punct10mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_10_33");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_10_33");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
             punct10mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_10_34");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_10_34");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
             punct10mainButton3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_10_35");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_10_35");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
             punct10mainButton4.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_10_36");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_10_36");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
             punct10mainButton5.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_10_37");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_10_37");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
             punct10mainButton6.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_10_38");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_10_38");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
             punct10mainButton7.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_10_39");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_10_39");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
             punct10mainButton8.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_10_40");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_10_40");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
@@ -632,14 +632,14 @@ public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
             punct11mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_11_41");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_11_41");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
             punct11mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_11_42");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_11_42");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
@@ -662,28 +662,28 @@ public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
             punct12mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_12_43");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_12_43");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
             punct12mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_12_44");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_12_44");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
             punct12mainButton3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_12_45");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_12_45");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
             punct12mainButton4.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_12_46");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_12_46");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
@@ -693,7 +693,7 @@ public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
         punctuationButton13.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_13_split");
+                booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_13_split");
                 startActivity(scrollableactivity_in_mainrules);
             }
         });
@@ -716,56 +716,56 @@ public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
             punct14mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_14_47");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_14_47");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
             punct14mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_14_48");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_14_48");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
             punct14mainButton3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_14_49");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_14_49");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
             punct14mainButton4.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_14_50");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_14_50");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
             punct14mainButton5.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_14_51");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_14_51");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
             punct14mainButton6.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_14_52");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_14_52");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
             punct14mainButton7.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_14_53");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_14_53");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
             punct14mainButton8.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_14_54");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_14_54");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
@@ -788,28 +788,28 @@ public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
             punct15mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_15_55");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_15_55");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
             punct15mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_15_56");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_15_56");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
             punct15mainButton3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_15_57");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_15_57");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
             punct15mainButton4.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_15_58");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_15_58");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
@@ -819,7 +819,7 @@ public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
         punctuationButton16.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_16_split");
+                booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_16_split");
                 startActivity(scrollableactivity_in_mainrules);
             }
         });
@@ -842,35 +842,35 @@ public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
             punct17mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_17_59");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_17_59");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
             punct17mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_17_60");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_17_60");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
             punct17mainButton3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_17_61");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_17_61");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
             punct17mainButton4.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_17_62");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_17_62");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
             punct17mainButton5.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_17_63");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_17_63");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
@@ -893,42 +893,42 @@ public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
             punct18mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_18_64");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_18_64");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
             punct18mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_18_65");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_18_65");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
             punct18mainButton3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_18_66");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_18_66");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
             punct18mainButton4.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_18_67");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_18_67");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
             punct18mainButton5.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_18_68");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_18_68");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
             punct18mainButton6.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_18_69");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_18_69");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
@@ -951,21 +951,21 @@ public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
             punct19mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_19_70");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_19_70");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
             punct19mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_19_71");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_19_71");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
             punct19mainButton3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_19_72");
+                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_19_72");
                     startActivity(scrollableactivity_in_mainrules);
                 }
             });
@@ -975,7 +975,7 @@ public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
         punctuationButton20.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_20_split");
+                booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_20_split");
                 startActivity(scrollableactivity_in_mainrules);
             }
         });
@@ -985,7 +985,7 @@ public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
         punctuationButton21.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("punct_21_split");
+                booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_21_split");
                 startActivity(scrollableactivity_in_mainrules);
             }
         });

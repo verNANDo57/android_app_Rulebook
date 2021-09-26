@@ -75,9 +75,9 @@ public class AppMainRulesScrollableActivityInMainRules extends CustomThemeEngine
         setContentView(R.layout.app_scrollable_activity);
 
         ImageView app_scrollableactivity_in_scrollableactivity_icon = findViewById(R.id.app_scrollableactivity_in_scrollableactivity_icon);
-        if(booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("ortho_")){
+        if(booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("ortho_")){
             app_scrollableactivity_in_scrollableactivity_icon.setBackground(getDrawable(R.drawable.app_pen_icon));
-        } else if(booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("punct_")){
+        } else if(booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("punct_")){
             app_scrollableactivity_in_scrollableactivity_icon.setBackground(getDrawable(R.drawable.app_pencil_icon));
         }
         app_scrollableactivity_in_scrollableactivity_icon.setBackgroundTintList(ColorStateList.valueOf(ColorUtils.lighter(getResources().getColor(R.color.coloraccent), 0.01f)));
@@ -89,9 +89,9 @@ public class AppMainRulesScrollableActivityInMainRules extends CustomThemeEngine
         app_scrollableactivity_everywhere_toolbarlayout_search_container = findViewById(R.id.app_scrollableactivity_everywhere_toolbarlayout_search_container);
 
         Toolbar toolbar = findViewById(R.id.toolbar_in_scrollableactivity);
-        if(booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("ortho_")){
+        if(booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("ortho_")){
             toolbar.setTitle(getString(R.string.ortho));
-        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("punct_")){
+        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("punct_")){
             toolbar.setTitle(getString(R.string.punct));
         }
         setSupportActionBar(toolbar);
@@ -110,89 +110,89 @@ public class AppMainRulesScrollableActivityInMainRules extends CustomThemeEngine
         EditText app_wordsearch_edittext = findViewById(R.id.app_wordsearch_edittext);
         Button searchword_button = findViewById(R.id.searchword_button);
 
-        if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("ortho_1_")) {
+        if (booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("ortho_1_")) {
             app_scrollableactivity_in_mainrules_subtitle.setText(getString(R.string.ortho_1));
-        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("ortho_2_")) {
+        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("ortho_2_")) {
             app_scrollableactivity_in_mainrules_subtitle.setText(getString(R.string.ortho_2));
-        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("ortho_3_")) {
+        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("ortho_3_")) {
             app_scrollableactivity_in_mainrules_subtitle.setText(getString(R.string.ortho_3));
-        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("ortho_4_")) {
+        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("ortho_4_")) {
             app_scrollableactivity_in_mainrules_subtitle.setVisibility(View.GONE);
-        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("ortho_5_")) {
+        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("ortho_5_")) {
             app_scrollableactivity_in_mainrules_subtitle.setText(getString(R.string.ortho_5));
-        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("ortho_6_")) {
+        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("ortho_6_")) {
             app_scrollableactivity_in_mainrules_subtitle.setText(getString(R.string.ortho_6));
-        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("ortho_7_")) {
+        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("ortho_7_")) {
             app_scrollableactivity_in_mainrules_subtitle.setText(getString(R.string.ortho_7));
-        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("ortho_8_")) {
+        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("ortho_8_")) {
             app_scrollableactivity_in_mainrules_subtitle.setText(getString(R.string.ortho_8));
-        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("ortho_9_")) {
+        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("ortho_9_")) {
             app_scrollableactivity_in_mainrules_subtitle.setText(getString(R.string.ortho_9));
-        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("ortho_10_")) {
+        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("ortho_10_")) {
             app_scrollableactivity_in_mainrules_subtitle.setText(getString(R.string.ortho_10));
-        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("ortho_11_")) {
+        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("ortho_11_")) {
             app_scrollableactivity_in_mainrules_subtitle.setText(getString(R.string.ortho_11));
-        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("ortho_12_")) {
+        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("ortho_12_")) {
             app_scrollableactivity_in_mainrules_subtitle.setText(getString(R.string.ortho_12));
-        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("ortho_13_")) {
+        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("ortho_13_")) {
             app_scrollableactivity_in_mainrules_subtitle.setText(getString(R.string.ortho_13));
-        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("ortho_14_")) {
+        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("ortho_14_")) {
             app_scrollableactivity_in_mainrules_subtitle.setText(getString(R.string.ortho_14));
-        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("ortho_15_")) {
+        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("ortho_15_")) {
             app_scrollableactivity_in_mainrules_subtitle.setVisibility(View.GONE);
-        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("ortho_16_")) {
+        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("ortho_16_")) {
             app_scrollableactivity_in_mainrules_subtitle.setVisibility(View.GONE);
-        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("ortho_17_")) {
+        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("ortho_17_")) {
             app_scrollableactivity_in_mainrules_subtitle.setText(getString(R.string.ortho_17));
-        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("ortho_18_")) {
+        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("ortho_18_")) {
             app_scrollableactivity_in_mainrules_subtitle.setVisibility(View.GONE);
-        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("ortho_19_")) {
+        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("ortho_19_")) {
             app_scrollableactivity_in_mainrules_subtitle.setVisibility(View.GONE);
-        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("punct_1_")) {
+        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("punct_1_")) {
             app_scrollableactivity_in_mainrules_subtitle.setText(getString(R.string.punct_1));
-        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("punct_2_")) {
+        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("punct_2_")) {
             app_scrollableactivity_in_mainrules_subtitle.setText(getString(R.string.punct_2));
-        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("punct_3_")) {
+        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("punct_3_")) {
             app_scrollableactivity_in_mainrules_subtitle.setText(getString(R.string.punct_3));
-        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("punct_4_")) {
+        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("punct_4_")) {
             app_scrollableactivity_in_mainrules_subtitle.setText(getString(R.string.punct_4));
-        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("punct_5_")) {
+        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("punct_5_")) {
             app_scrollableactivity_in_mainrules_subtitle.setText(getString(R.string.punct_5));
-        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("punct_6_")) {
+        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("punct_6_")) {
             app_scrollableactivity_in_mainrules_subtitle.setText(getString(R.string.punct_6));
-        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("punct_7_")) {
+        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("punct_7_")) {
             app_scrollableactivity_in_mainrules_subtitle.setText(getString(R.string.punct_7));
-        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("punct_8_")) {
+        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("punct_8_")) {
             app_scrollableactivity_in_mainrules_subtitle.setText(getString(R.string.punct_8));
-        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("punct_9_")) {
+        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("punct_9_")) {
             app_scrollableactivity_in_mainrules_subtitle.setText(getString(R.string.punct_9));
-        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("punct_10_")) {
+        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("punct_10_")) {
             app_scrollableactivity_in_mainrules_subtitle.setText(getString(R.string.punct_10));
-        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("punct_11_")) {
+        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("punct_11_")) {
             app_scrollableactivity_in_mainrules_subtitle.setText(getString(R.string.punct_11));
-        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("punct_12_")) {
+        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("punct_12_")) {
             app_scrollableactivity_in_mainrules_subtitle.setText(getString(R.string.punct_12));
-        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("punct_13_")) {
+        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("punct_13_")) {
             app_scrollableactivity_in_mainrules_subtitle.setVisibility(View.GONE);
-        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("punct_14_")) {
+        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("punct_14_")) {
             app_scrollableactivity_in_mainrules_subtitle.setText(getString(R.string.punct_14));
-        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("punct_15_")) {
+        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("punct_15_")) {
             app_scrollableactivity_in_mainrules_subtitle.setText(getString(R.string.punct_15));
-        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("punct_16_")) {
+        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("punct_16_")) {
             app_scrollableactivity_in_mainrules_subtitle.setVisibility(View.GONE);
-        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("punct_17_")) {
+        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("punct_17_")) {
             app_scrollableactivity_in_mainrules_subtitle.setText(getString(R.string.punct_17));
-        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("punct_18_")) {
+        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("punct_18_")) {
             app_scrollableactivity_in_mainrules_subtitle.setText(getString(R.string.punct_18));
-        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("punct_19_")) {
+        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("punct_19_")) {
             app_scrollableactivity_in_mainrules_subtitle.setText(getString(R.string.punct_19));
-        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("punct_20_")) {
+        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("punct_20_")) {
             app_scrollableactivity_in_mainrules_subtitle.setVisibility(View.GONE);
-        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("punct_21_")) {
+        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("punct_21_")) {
             app_scrollableactivity_in_mainrules_subtitle.setVisibility(View.GONE);
         }
 
-        switch (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean()) {
+        switch (booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean()) {
             case "ortho_1_1":
                 app_scrollableactivity_in_mainrules_title.setText(getString(R.string.ortho_1_1));
                 break;
@@ -626,11 +626,11 @@ public class AppMainRulesScrollableActivityInMainRules extends CustomThemeEngine
 
         InputStream inputStream;
         try {
-            if(booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("ortho_")) {
-                inputStream = getAssets().open("mainrules/orthography/" + booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean() + ".txt");
+            if(booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("ortho_")) {
+                inputStream = getAssets().open("mainrules/orthography/" + booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean() + ".txt");
                 app_scrollableactivity_content_in_mainrules_text.setText(Utils.convertStreamToString(inputStream));
-            } else if(booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("punct_")){
-                inputStream = getAssets().open("mainrules/punctuation/" + booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean() + ".txt");
+            } else if(booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("punct_")){
+                inputStream = getAssets().open("mainrules/punctuation/" + booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean() + ".txt");
                 app_scrollableactivity_content_in_mainrules_text.setText(Utils.convertStreamToString(inputStream));
             }
         } catch (IOException e) {
@@ -644,9 +644,9 @@ public class AppMainRulesScrollableActivityInMainRules extends CustomThemeEngine
 
         outFileName = app_scrollableactivity_in_mainrules_title.getText().toString();
 
-        if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("ortho_")){
+        if (booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("ortho_")){
             outFileDir = "/Rulebook/" + getString(R.string.ortho) + "/";
-        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("punct_")){
+        } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("punct_")){
             outFileDir = "/Rulebook/" + getString(R.string.punct) + "/";
         }
 
@@ -734,7 +734,23 @@ public class AppMainRulesScrollableActivityInMainRules extends CustomThemeEngine
                 return true;
 
             case R.id.save_rule:
-                copyAssets();
+                if (booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("ortho_")) {
+                    Utils.copyTXTFileFromAssets(
+                            getApplicationContext(),
+                            "mainrules/orthography/" + booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean() + ".txt",
+                            Environment.getExternalStorageDirectory().getAbsolutePath() + "/Rulebook/",
+                            Environment.getExternalStorageDirectory().getAbsolutePath() + "/Rulebook/" + getString(R.string.ortho) + "/",
+                            outFileName, outFileDir,
+                            getString(R.string.app_error_while_saving_file) + ":" + outFileDir + outFileName + ".txt" + "(" + booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean() + ".txt" + ")");
+                } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("punct_")){
+                    Utils.copyTXTFileFromAssets(
+                            getApplicationContext(),
+                            "mainrules/punctuation/" + booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean() + ".txt",
+                            Environment.getExternalStorageDirectory().getAbsolutePath() + "/Rulebook/",
+                            Environment.getExternalStorageDirectory().getAbsolutePath() + "/Rulebook/" + getString(R.string.punct) + "/",
+                            outFileName, outFileDir,
+                            getString(R.string.app_error_while_saving_file) + ":" + outFileDir + outFileName + ".txt" + "(" + booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean() + ".txt" + ")");
+                }
                 return true;
 
         }
@@ -743,67 +759,7 @@ public class AppMainRulesScrollableActivityInMainRules extends CustomThemeEngine
 
     @Override
     public void onBackPressed(){
-        booleansInMainRules.setRulebookMainRulesFragmentOpenedBoolean("null");
+        booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("null");
         finish();
-    }
-
-    private void copyAssets() {
-        AssetManager assetManager = getAssets();
-            InputStream in = null;
-            OutputStream out;
-                try {
-		        String outPreDir = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Rulebook/";
-                String outDir = null;
-                    if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("ortho_")) {
-                        in = assetManager.open("mainrules/orthography/" + booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean() + ".txt");
-                        outDir = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Rulebook/" + getString(R.string.ortho) + "/";
-                    } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean().contains("punct_")){
-                        in = assetManager.open("mainrules/punctuation/" + booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean() + ".txt");
-                        outDir = Environment.getExternalStorageDirectory().getAbsolutePath() + "/Rulebook/" + getString(R.string.punct) + "/";
-                    }
-
-		            File preDirectory = new File(outPreDir);
-		            if (! preDirectory.exists()){
-                        preDirectory.mkdir();
-                        // If you require it to make the entire directory path including parents,
-                        // use directory.mkdirs(); here instead.
-                    }
-
-                    File directory = new File(outDir);
-                    if (! directory.exists()){
-                        directory.mkdir();
-                        // If you require it to make the entire directory path including parents,
-                        // use directory.mkdirs(); here instead.
-                    }
-
-                    File outFile = new File(outDir,  outFileName + ".txt");
-                    if (outFile.exists()){
-                        new StyleableToast.Builder(getApplicationContext())
-                                .text(getString(R.string.app_saved_already) + ":" + outFileDir + outFileName + ".txt") // set text
-                                .textBold() //set text bold
-                                .iconStart(Utils.getIconWarning()) //icon in start of toast
-                                .show(); //show custom toast
-                    } else {
-                        out = new FileOutputStream(outFile);
-                        Utils.copyFile(in, out);
-                        in.close();
-                        out.flush();
-                        out.close();
-
-                        new StyleableToast.Builder(getApplicationContext())
-                                .text(getString(R.string.app_saved) + ":" + outFileDir + outFileName + ".txt") // set text
-                                .textBold() //set text bold
-                                .iconStart(Utils.getIconWarning()) //icon in start of toast
-                                .show(); //show custom toast
-                    }
-            } catch(IOException e) {
-                Log.e(LOG_TAG, getString(R.string.app_error_while_saving_file) + ":" + outFileDir + outFileName + ".txt" + "(" + booleansInMainRules.loadRulebookMainRulesFragmentOpenedBoolean() + ".txt" + ")", e);
-
-                new StyleableToast.Builder(getApplicationContext())
-                        .text(getString(R.string.app_error_while_saving_file)) // set text
-                        .textBold() //set text bold
-                        .iconStart(Utils.getIconWarning()) //icon in start of toast
-                        .show(); //show custom toast
-            }
     }
 }

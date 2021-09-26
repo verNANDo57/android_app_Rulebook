@@ -42,6 +42,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/app_hugebutton_default_height" />
 
+            <Button
+                android:id="@+id/orthoepical_dictionary"
+                style="@style/RulebookButtonHuge"
+                android:text="@string/orthoepical_dictionary"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/app_hugebutton_default_height" />
+
         </LinearLayout>
 
     </ScrollView>

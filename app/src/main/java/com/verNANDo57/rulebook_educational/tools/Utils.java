@@ -3,6 +3,8 @@ package com.verNANDo57.rulebook_educational.tools;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.content.res.AssetManager;
+import android.os.Environment;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.BackgroundColorSpan;
@@ -17,7 +19,10 @@ import android.widget.TextView;
 import androidx.annotation.AnimRes;
 
 import com.verNANDo57.rulebook_educational.extradata.R;
+import com.verNANDo57.rulebook_educational.styleabletoast.StyleableToast;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -215,5 +220,60 @@ public class Utils {
         
         //Define return statement
         return output_info;
+    }
+
+    public static void copyTXTFileFromAssets (Context context, String filename, String outPreDir, String outDir, String outFileName, String outFileDir, String log_msg){
+        AssetManager assetManager = context.getAssets();
+        InputStream in = null;
+        OutputStream out = null;
+        try {
+            in = assetManager.open(filename);
+
+            File preDirectory = new File(outPreDir);
+            if (! preDirectory.exists()){
+                preDirectory.mkdir();
+                // If you require it to make the entire directory path including parents,
+                // use directory.mkdirs(); here instead.
+            }
+
+            File directory = new File(outDir);
+            if (! directory.exists()){
+                directory.mkdir();
+                // If you require it to make the entire directory path including parents,
+                // use directory.mkdirs(); here instead.
+            }
+
+            File outFile = new File(outDir,  outFileName + ".txt");
+            if (outFile.exists()){
+                new StyleableToast.Builder(context)
+                        .text(context.getString(R.string.app_saved_already) + ":" + outFileDir + outFileName + ".txt") // set text
+                        .textBold() //set text bold
+                        .iconStart(Utils.getIconWarning()) //icon in start of toast
+                        .show(); //show custom toast
+            } else {
+                out = new FileOutputStream(outFile);
+                Utils.copyFile(in, out);
+                in.close();
+                in = null;
+                out.flush();
+                out.close();
+                out = null;
+
+                new StyleableToast.Builder(context)
+                        .text(context.getString(R.string.app_saved) + ":" + outFileDir + outFileName + ".txt") // set text
+                        .textBold() //set text bold
+                        .iconStart(Utils.getIconWarning()) //icon in start of toast
+                        .show(); //show custom toast
+            }
+
+        } catch(IOException e) {
+            Log.e(LOG_TAG, log_msg, e);
+
+            new StyleableToast.Builder(context)
+                    .text(context.getString(R.string.app_error_while_saving_file)) // set text
+                    .textBold() //set text bold
+                    .iconStart(Utils.getIconWarning()) //icon in start of toast
+                    .show(); //show custom toast
+        }
     }
 }

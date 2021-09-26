@@ -50,7 +50,7 @@ public class AppAnalyzeMethods extends CustomThemeEngineAppCompatActivity {
         phonetic_analyze_method_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                booleansInAnalyzeMethods.setRulebookMainRulesFragmentOpenedBoolean("phonetic_analyze_method");
+                booleansInAnalyzeMethods.setRulebookMainRulesFragmentOpenBoolean("phonetic_analyze_method");
                 startActivity(scrollableactivity_in_analyzemethods);
             }
         });
@@ -59,7 +59,7 @@ public class AppAnalyzeMethods extends CustomThemeEngineAppCompatActivity {
         morphemic_analyze_method_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                booleansInAnalyzeMethods.setRulebookMainRulesFragmentOpenedBoolean("morphemic_analyze_method");
+                booleansInAnalyzeMethods.setRulebookMainRulesFragmentOpenBoolean("morphemic_analyze_method");
                 startActivity(scrollableactivity_in_analyzemethods);
             }
         });
@@ -68,7 +68,7 @@ public class AppAnalyzeMethods extends CustomThemeEngineAppCompatActivity {
         morphological_analyze_method_for_noun_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                booleansInAnalyzeMethods.setRulebookMainRulesFragmentOpenedBoolean("morphological_analyze_method_for_noun");
+                booleansInAnalyzeMethods.setRulebookMainRulesFragmentOpenBoolean("morphological_analyze_method_for_noun");
                 startActivity(scrollableactivity_in_analyzemethods);
             }
         });
@@ -77,7 +77,7 @@ public class AppAnalyzeMethods extends CustomThemeEngineAppCompatActivity {
         morphological_analyze_method_for_verb_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                booleansInAnalyzeMethods.setRulebookMainRulesFragmentOpenedBoolean("morphological_analyze_method_for_verb");
+                booleansInAnalyzeMethods.setRulebookMainRulesFragmentOpenBoolean("morphological_analyze_method_for_verb");
                 startActivity(scrollableactivity_in_analyzemethods);
             }
         });
@@ -86,7 +86,7 @@ public class AppAnalyzeMethods extends CustomThemeEngineAppCompatActivity {
         morphological_analyze_method_for_adjective_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                booleansInAnalyzeMethods.setRulebookMainRulesFragmentOpenedBoolean("morphological_analyze_method_for_adjective");
+                booleansInAnalyzeMethods.setRulebookMainRulesFragmentOpenBoolean("morphological_analyze_method_for_adjective");
                 startActivity(scrollableactivity_in_analyzemethods);
             }
         });
@@ -95,7 +95,7 @@ public class AppAnalyzeMethods extends CustomThemeEngineAppCompatActivity {
         morphological_analyze_method_for_numeral_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                booleansInAnalyzeMethods.setRulebookMainRulesFragmentOpenedBoolean("morphological_analyze_method_for_numeral");
+                booleansInAnalyzeMethods.setRulebookMainRulesFragmentOpenBoolean("morphological_analyze_method_for_numeral");
                 startActivity(scrollableactivity_in_analyzemethods);
             }
         });
@@ -104,7 +104,7 @@ public class AppAnalyzeMethods extends CustomThemeEngineAppCompatActivity {
         morphological_analyze_method_for_adverb_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                booleansInAnalyzeMethods.setRulebookMainRulesFragmentOpenedBoolean("morphological_analyze_method_for_adverb");
+                booleansInAnalyzeMethods.setRulebookMainRulesFragmentOpenBoolean("morphological_analyze_method_for_adverb");
                 startActivity(scrollableactivity_in_analyzemethods);
             }
         });
@@ -113,7 +113,7 @@ public class AppAnalyzeMethods extends CustomThemeEngineAppCompatActivity {
         morphological_analyze_method_for_participle_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                booleansInAnalyzeMethods.setRulebookMainRulesFragmentOpenedBoolean("morphological_analyze_method_for_participle");
+                booleansInAnalyzeMethods.setRulebookMainRulesFragmentOpenBoolean("morphological_analyze_method_for_participle");
                 startActivity(scrollableactivity_in_analyzemethods);
             }
         });
@@ -122,7 +122,7 @@ public class AppAnalyzeMethods extends CustomThemeEngineAppCompatActivity {
         morphological_analyze_method_for_participle2_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                booleansInAnalyzeMethods.setRulebookMainRulesFragmentOpenedBoolean("morphological_analyze_method_for_participle2");
+                booleansInAnalyzeMethods.setRulebookMainRulesFragmentOpenBoolean("morphological_analyze_method_for_participle2");
                 startActivity(scrollableactivity_in_analyzemethods);
             }
         });
@@ -131,7 +131,7 @@ public class AppAnalyzeMethods extends CustomThemeEngineAppCompatActivity {
         morphological_analyze_method_for_pretext_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                booleansInAnalyzeMethods.setRulebookMainRulesFragmentOpenedBoolean("morphological_analyze_method_for_pretext");
+                booleansInAnalyzeMethods.setRulebookMainRulesFragmentOpenBoolean("morphological_analyze_method_for_pretext");
                 startActivity(scrollableactivity_in_analyzemethods);
             }
         });
@@ -140,7 +140,7 @@ public class AppAnalyzeMethods extends CustomThemeEngineAppCompatActivity {
         morphological_analyze_method_for_union_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                booleansInAnalyzeMethods.setRulebookMainRulesFragmentOpenedBoolean("morphological_analyze_method_for_union");
+                booleansInAnalyzeMethods.setRulebookMainRulesFragmentOpenBoolean("morphological_analyze_method_for_union");
                 startActivity(scrollableactivity_in_analyzemethods);
             }
         });
@@ -149,7 +149,7 @@ public class AppAnalyzeMethods extends CustomThemeEngineAppCompatActivity {
         morphological_analyze_method_for_particle_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                booleansInAnalyzeMethods.setRulebookMainRulesFragmentOpenedBoolean("morphological_analyze_method_for_particle");
+                booleansInAnalyzeMethods.setRulebookMainRulesFragmentOpenBoolean("morphological_analyze_method_for_particle");
                 startActivity(scrollableactivity_in_analyzemethods);
             }
         });
@@ -158,7 +158,7 @@ public class AppAnalyzeMethods extends CustomThemeEngineAppCompatActivity {
         syntactic_analyze_method_for_simple_sentence_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                booleansInAnalyzeMethods.setRulebookMainRulesFragmentOpenedBoolean("syntactic_analyze_method_for_simple_sentence");
+                booleansInAnalyzeMethods.setRulebookMainRulesFragmentOpenBoolean("syntactic_analyze_method_for_simple_sentence");
                 startActivity(scrollableactivity_in_analyzemethods);
             }
         });
@@ -167,7 +167,7 @@ public class AppAnalyzeMethods extends CustomThemeEngineAppCompatActivity {
         syntactic_analyze_method_for_difficult_sentence_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                booleansInAnalyzeMethods.setRulebookMainRulesFragmentOpenedBoolean("syntactic_analyze_method_for_difficult_sentence");
+                booleansInAnalyzeMethods.setRulebookMainRulesFragmentOpenBoolean("syntactic_analyze_method_for_difficult_sentence");
                 startActivity(scrollableactivity_in_analyzemethods);
             }
         });
@@ -176,7 +176,7 @@ public class AppAnalyzeMethods extends CustomThemeEngineAppCompatActivity {
         lexical_analyze_method_for_everyword_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                booleansInAnalyzeMethods.setRulebookMainRulesFragmentOpenedBoolean("lexical_analyze_method_for_everyword");
+                booleansInAnalyzeMethods.setRulebookMainRulesFragmentOpenBoolean("lexical_analyze_method_for_everyword");
                 startActivity(scrollableactivity_in_analyzemethods);
             }
         });
@@ -185,7 +185,7 @@ public class AppAnalyzeMethods extends CustomThemeEngineAppCompatActivity {
         orthographic_analyze_method_for_everyword_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                booleansInAnalyzeMethods.setRulebookMainRulesFragmentOpenedBoolean("orthographic_analyze_method_for_everyword");
+                booleansInAnalyzeMethods.setRulebookMainRulesFragmentOpenBoolean("orthographic_analyze_method_for_everyword");
                 startActivity(scrollableactivity_in_analyzemethods);
             }
         });

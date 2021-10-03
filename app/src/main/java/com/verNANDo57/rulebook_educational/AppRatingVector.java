@@ -2,26 +2,25 @@ package com.verNANDo57.rulebook_educational;
 
 import android.animation.AnimatorSet;
 import android.animation.ValueAnimator;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
-import android.os.Build;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.DecelerateInterpolator;
 
 import com.verNANDo57.rulebook_educational.extradata.R;
 
+@SuppressLint("CustomViewStyleable")
 public class AppRatingVector extends View {
 
     private int faceColor, eyesColor, mouthColor, tongueColor;
     private RectF faceBgOval, sadOval, neutralOval, slightHappyOval, happyOval, amazingOval, tongueOval, AwfulOval, AwfultongueOval;
     private Paint paint;
-    int centerOffset, viewWidth, viewHeight,
-            whatToDraw = 2, defaultRating, strokeWidth, eyeRadius;
-
+    float centerOffset, viewWidth, viewHeight, whatToDraw = 2, defaultRating, strokeWidth, eyeRadius;
     int currEyeLX, currEyeRX, currEyeY;
 
     ValueAnimator rightEyeAnimatorX, leftEyeAnimatorX, eyesAnimatorY;
@@ -29,11 +28,6 @@ public class AppRatingVector extends View {
 
     public AppRatingVector(Context context) {
         super(context);
-
-        //Disable Hardware acceleration on device with API < 18
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN_MR2) {
-            setLayerType(View.LAYER_TYPE_SOFTWARE, null);
-        }
     }
 
     public AppRatingVector(Context context, AttributeSet attrs) {
@@ -84,32 +78,32 @@ public class AppRatingVector extends View {
         eyeRadius = viewHeight / 25 + viewWidth / 25;
         centerOffset = viewHeight / 3;
 
-        switch (whatToDraw) {
+        switch ((int) whatToDraw) {
             case 0:
             case 5:
-                currEyeLX = (viewWidth / 2) - (viewWidth / 100 * 23);
-                currEyeRX = (viewWidth / 2) + (viewWidth / 100 * 23);
-                currEyeY = (viewHeight / 100 * 23);
+                currEyeLX = (int) ((viewWidth / 2) - (viewWidth / 100 * 23));
+                currEyeRX = (int) ((viewWidth / 2) + (viewWidth / 100 * 23));
+                currEyeY = (int) (viewHeight / 100 * 23);
                 break;
             case 1:
-                currEyeLX = (viewWidth / 2) - (viewWidth / 100 * 25);
-                currEyeRX = (viewWidth / 2) + (viewWidth / 100 * 25);
-                currEyeY = (viewHeight / 100 * 20);
+                currEyeLX = (int) ((viewWidth / 2) - (viewWidth / 100 * 25));
+                currEyeRX = (int) ((viewWidth / 2) + (viewWidth / 100 * 25));
+                currEyeY = (int) (viewHeight / 100 * 20);
                 break;
             case 2:
-                currEyeLX = (viewWidth / 2) - (viewWidth / 100 * 20);
-                currEyeRX = (viewWidth / 2) + (viewWidth / 100 * 20);
-                currEyeY = (viewHeight / 100 * 20);
+                currEyeLX = (int) ((viewWidth / 2) - (viewWidth / 100 * 20));
+                currEyeRX = (int) ((viewWidth / 2) + (viewWidth / 100 * 20));
+                currEyeY = (int) (viewHeight / 100 * 20);
                 break;
             case 3:
-                currEyeLX = (viewWidth / 2) - (viewWidth / 100 * 17);
-                currEyeRX = (viewWidth / 2) + (viewWidth / 100 * 17);
-                currEyeY = (viewHeight / 100 * 25);
+                currEyeLX = (int) ((viewWidth / 2) - (viewWidth / 100 * 17));
+                currEyeRX = (int) ((viewWidth / 2) + (viewWidth / 100 * 17));
+                currEyeY = (int) (viewHeight / 100 * 25);
                 break;
             case 4:
-                currEyeLX = (viewWidth / 2) - (viewWidth / 100 * 19);
-                currEyeRX = (viewWidth / 2) + (viewWidth / 100 * 19);
-                currEyeY = (viewHeight / 100 * 22);
+                currEyeLX = (int) ((viewWidth / 2) - (viewWidth / 100 * 19));
+                currEyeRX = (int) ((viewWidth / 2) + (viewWidth / 100 * 19));
+                currEyeY = (int) (viewHeight / 100 * 22);
                 break;
         }
 
@@ -153,7 +147,7 @@ public class AppRatingVector extends View {
         canvas.drawArc(faceBgOval, 0, 180, true, paint);
 
 
-        switch (whatToDraw) {
+        switch ((int) whatToDraw) {
             case 0:
                 drawAwfulFace(canvas);
                 break;
@@ -334,9 +328,9 @@ public class AppRatingVector extends View {
         }
     }
 
-    private void startEyesAnimation(int... newPositions) {
+    private void startEyesAnimation(float... newPositions) {
 
-        leftEyeAnimatorX.setIntValues(currEyeLX, newPositions[0]);
+        leftEyeAnimatorX.setIntValues(currEyeLX, (int) newPositions[0]);
         leftEyeAnimatorX.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
@@ -344,14 +338,14 @@ public class AppRatingVector extends View {
                 invalidate();
             }
         });
-        rightEyeAnimatorX.setIntValues(currEyeRX, newPositions[1]);
+        rightEyeAnimatorX.setIntValues(currEyeRX, (int) newPositions[1]);
         rightEyeAnimatorX.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
                 currEyeRX = (int) animation.getAnimatedValue();
             }
         });
-        eyesAnimatorY.setIntValues(currEyeY, newPositions[2]);
+        eyesAnimatorY.setIntValues(currEyeY, (int) newPositions[2]);
         eyesAnimatorY.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {

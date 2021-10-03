@@ -1,10 +1,11 @@
 package com.verNANDo57.rulebook_educational;
 
+import static com.verNANDo57.rulebook_educational.tools.Utils.LOG_TAG;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ScrollView;
 
 import androidx.appcompat.widget.Toolbar;
 
@@ -18,8 +19,6 @@ import com.verNANDo57.rulebook_educational.rules.analyze_methods.AppAnalyzeMetho
 import com.verNANDo57.rulebook_educational.rules.mainrules.AppMainRulesActivity;
 import com.verNANDo57.rulebook_educational.search.AppSearchActivity;
 import com.verNANDo57.rulebook_educational.tools.Utils;
-
-import static com.verNANDo57.rulebook_educational.tools.Utils.LOG_TAG;
 
 public class AppChooseYourDestiny extends CustomThemeEngineAppCompatActivity {
 

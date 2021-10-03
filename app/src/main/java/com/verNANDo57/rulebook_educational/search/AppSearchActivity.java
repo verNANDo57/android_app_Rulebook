@@ -1,5 +1,7 @@
 package com.verNANDo57.rulebook_educational.search;
 
+import static com.verNANDo57.rulebook_educational.tools.Utils.LOG_TAG;
+
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -17,8 +19,6 @@ import com.verNANDo57.rulebook_educational.extradata.R;
 
 import java.util.ArrayList;
 import java.util.Locale;
-
-import static com.verNANDo57.rulebook_educational.tools.Utils.LOG_TAG;
 
 public class AppSearchActivity extends CustomThemeEngineAppCompatActivity {
 

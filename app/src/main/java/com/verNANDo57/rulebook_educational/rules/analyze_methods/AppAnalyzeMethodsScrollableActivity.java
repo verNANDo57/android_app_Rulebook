@@ -1,11 +1,9 @@
 package com.verNANDo57.rulebook_educational.rules.analyze_methods;
 
 import android.annotation.SuppressLint;
-import android.content.res.AssetManager;
 import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.os.Environment;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -35,13 +33,8 @@ import com.verNANDo57.rulebook_educational.tools.Utils;
 
 import org.jetbrains.annotations.NotNull;
 
-import java.io.File;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.OutputStream;
-
-import static com.verNANDo57.rulebook_educational.tools.Utils.LOG_TAG;
 
 public class AppAnalyzeMethodsScrollableActivity extends CustomThemeEngineAppCompatActivity {
 

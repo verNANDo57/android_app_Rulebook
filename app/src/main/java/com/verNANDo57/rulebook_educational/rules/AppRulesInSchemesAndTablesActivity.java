@@ -1,10 +1,17 @@
 package com.verNANDo57.rulebook_educational.rules;
 
+import static com.verNANDo57.rulebook_educational.tools.Utils.LOG_TAG;
+
 import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.res.Configuration;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.webkit.WebView;
+
+import androidx.annotation.NonNull;
 
 import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -14,8 +21,6 @@ import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngi
 import com.verNANDo57.rulebook_educational.extradata.R;
 import com.verNANDo57.rulebook_educational.preferences.RulebookApplicationSharedPreferences;
 import com.verNANDo57.rulebook_educational.tools.Utils;
-
-import static com.verNANDo57.rulebook_educational.tools.Utils.LOG_TAG;
 
 public class AppRulesInSchemesAndTablesActivity extends CustomThemeEngineAppCompatActivity {
 
@@ -98,5 +103,15 @@ public class AppRulesInSchemesAndTablesActivity extends CustomThemeEngineAppComp
                 }
             }
         });
+    }
+
+    //Prevent system font-size managment from affecting to webview font size
+    @Override
+    protected void attachBaseContext(@NonNull Context newBase) {
+        super.attachBaseContext(newBase);
+        final Configuration override = new Configuration(newBase.getResources().getConfiguration());
+        override.fontScale = 1.0f;
+        applyOverrideConfiguration(override);
+        Log.i(LOG_TAG,"WEBVIEW fontScale now is 1.0f");
     }
 }

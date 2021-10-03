@@ -1,5 +1,7 @@
 package com.verNANDo57.rulebook_educational;
 
+import static com.verNANDo57.rulebook_educational.tools.Utils.LOG_TAG;
+
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -23,8 +25,6 @@ import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngi
 import com.verNANDo57.rulebook_educational.extradata.R;
 import com.verNANDo57.rulebook_educational.preferences.RulebookApplicationSharedPreferences;
 import com.verNANDo57.rulebook_educational.tools.Utils;
-
-import static com.verNANDo57.rulebook_educational.tools.Utils.LOG_TAG;
 
 public class AppAboutApplicationActivity extends CustomThemeEngineAppCompatActivity
 {

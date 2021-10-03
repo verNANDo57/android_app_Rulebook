@@ -1,5 +1,7 @@
 package com.verNANDo57.rulebook_educational.rules.mainrules;
 
+import static com.verNANDo57.rulebook_educational.tools.Utils.LOG_TAG;
+
 import android.os.Bundle;
 import android.view.View;
 
@@ -12,8 +14,6 @@ import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngi
 import com.verNANDo57.rulebook_educational.extradata.R;
 import com.verNANDo57.rulebook_educational.preferences.RulebookApplicationSharedPreferences;
 import com.verNANDo57.rulebook_educational.rules.mainrules.adapter.CustomPagerAdapter;
-
-import static com.verNANDo57.rulebook_educational.tools.Utils.LOG_TAG;
 
 
 public class AppMainRulesActivity extends CustomThemeEngineAppCompatActivity

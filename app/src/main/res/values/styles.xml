@@ -32,6 +32,7 @@
 		<item name="radioButtonStyle">@style/AppRadioButtonStyleEveryTheme</item>
 		<item name="android:radioButtonStyle">@style/AppRadioButtonStyleEveryTheme</item>
 		<item name="toolbarStyle">@style/AppToolBarStyleEveryTheme</item>
+		<item name="android:webViewStyle">@style/AppWebViewStyleLightTheme</item>
 	</style>
 
 	<style name="app_rulebook_animations_from_q" parent="@android:style/Animation.Activity">
@@ -39,6 +40,13 @@
 		<item name="android:activityOpenExitAnimation">@anim/app_slide_exit_to_right</item>
 		<item name="android:activityCloseEnterAnimation">@anim/app_slide_from_right</item>
 		<item name="android:activityCloseExitAnimation">@anim/app_slide_exit_to_left</item>
+	</style>
+
+	<style name="AppWebViewStyleLightTheme" parent="android:Widget.Material.WebView">
+		<item name="android:background">@color/custom_bg_light</item>
+		<item name="backgroundColor">@color/custom_bg_light</item>
+		<item name="backgroundColorDark">@color/custom_bg_light_darker</item>
+		<item name="backgroundColorLight">@color/custom_bg_light_lighter</item>
 	</style>
 
 	<style name="AppThemeRulebookLight.NoActionBar">
@@ -316,6 +324,14 @@
 		<item name="radioButtonStyle">@style/AppRadioButtonStyleEveryTheme</item>
 		<item name="android:radioButtonStyle">@style/AppRadioButtonStyleEveryTheme</item>
 		<item name="toolbarStyle">@style/AppToolBarStyleEveryTheme</item>
+		<item name="android:webViewStyle">@style/AppWebViewStyleDarkTheme</item>
+	</style>
+
+	<style name="AppWebViewStyleDarkTheme" parent="android:Widget.Material.WebView">
+		<item name="android:background">@color/custom_bg_dark</item>
+		<item name="backgroundColor">@color/custom_bg_dark</item>
+		<item name="backgroundColorDark">@color/custom_bg_dark_darker</item>
+		<item name="backgroundColorLight">@color/custom_bg_dark_lighter</item>
 	</style>
 
 	<style name="AppThemeRulebookDark.NoActionBar">

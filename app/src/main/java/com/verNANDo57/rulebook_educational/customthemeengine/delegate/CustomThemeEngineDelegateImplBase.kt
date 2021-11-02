@@ -29,17 +29,6 @@ internal open class CustomThemeEngineDelegateImplBase(
     if (customThemeEngine.isThemeModified && getThemeResId() != 0) {
       activity.setTheme(themeResId)
     }
-    if (customThemeEngine.isThemeModified) {
-      //TODO
-    } else {
-      // We use a transparent primary dark color so the library user
-      // is not required to specify a color value for customthemeengine_default_primary_dark
-      // If the theme is using the transparent (fake) primary dark color, we need
-      // to update the status bar background with the auto-generated primary
-      // dark color.
-      val defaultPrimaryDark = CustomThemeEngine.getOriginalColor(R.color.app_rulebook_theme)
-      val realPrimaryDark = CustomThemeEngine.getOriginalColor(R.color.app_rulebook_theme)
-    }
   }
 
   override fun onPostCreate(savedInstanceState: Bundle?) {

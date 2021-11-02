@@ -618,7 +618,7 @@ public class ColorPickerView extends View {
         }
 
         finalWidth = widthAllowed;
-      } else if (heightMode == MeasureSpec.EXACTLY && widthMode != MeasureSpec.EXACTLY) {
+      } else if (widthMode != MeasureSpec.EXACTLY) {
         //The height has been specified exactly, we need to stay within this height and adopt the width.
 
         int w = (heightAllowed + panelSpacingPx + huePanelWidthPx);
@@ -627,12 +627,8 @@ public class ColorPickerView extends View {
           w -= (panelSpacingPx + alphaPanelHeightPx);
         }
 
-        if (w > widthAllowed) {
-          //we can't fit within this container, set the size to whatever was allowed.
-          finalWidth = widthAllowed;
-        } else {
-          finalWidth = w;
-        }
+        //we can't fit within this container, set the size to whatever was allowed.
+        finalWidth = Math.min(w, widthAllowed);
 
         finalHeight = heightAllowed;
       } else {
@@ -676,7 +672,7 @@ public class ColorPickerView extends View {
       } else if (!heightOk && widthOk) {
         finalHeight = heightAllowed;
         finalWidth = widthNeeded;
-      } else if (!widthOk && heightOk) {
+      } else if (heightOk) {
         finalHeight = heightNeeded;
         finalWidth = widthAllowed;
       } else {

@@ -11,7 +11,7 @@ import android.widget.Button;
 import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.material.navigation.NavigationView;
-import com.verNANDo57.rulebook_educational.BottomNavBetweenActivitiesFragment;
+import com.verNANDo57.rulebook_educational.BottomNavAmongActivitiesFragment;
 import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngineAppCompatActivity;
 import com.verNANDo57.rulebook_educational.extradata.R;
 import com.verNANDo57.rulebook_educational.preferences.RulebookApplicationSharedPreferences;
@@ -33,7 +33,7 @@ public class AppDictionaries extends CustomThemeEngineAppCompatActivity {
         toolbar.setNavigationOnClickListener(new NavigationView.OnClickListener() {
             @Override
             public void onClick(View v) {
-                BottomNavBetweenActivitiesFragment BottomNavBetweenActivities = new BottomNavBetweenActivitiesFragment();
+                BottomNavAmongActivitiesFragment BottomNavBetweenActivities = new BottomNavAmongActivitiesFragment();
                 BottomNavBetweenActivities.show(getSupportFragmentManager(), LOG_TAG);
             }
         });

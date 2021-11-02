@@ -31,7 +31,7 @@ class CustomThemeEngineTinter {
   fun tint(drawable: Drawable?) {
     if (drawable is GradientDrawable) {
       tint(drawable)
-    } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP && drawable is RippleDrawable) {
+    } else if (drawable is RippleDrawable) {
       tint(drawable)
     } else if (drawable is LayerDrawable) {
       tint(drawable)
@@ -74,14 +74,8 @@ class CustomThemeEngineTinter {
 
       try {
         var changed = false
-        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.KITKAT) {
-          Reflection.getFieldValue<IntArray?>(csl, "mColors")?.let { colors ->
-            changed = updateColors(colors)
-          }
-        } else {
-          Reflection.invoke<IntArray?>(csl, "getColors")?.let { colors ->
-            changed = updateColors(colors)
-          }
+        Reflection.invoke<IntArray?>(csl, "getColors")?.let { colors ->
+          changed = updateColors(colors)
         }
         if (changed && Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
           Reflection.invoke<Any?>(csl, "onColorsChanged")
@@ -158,9 +152,7 @@ class CustomThemeEngineTinter {
       getFieldValue<Any?>(drawable, "mGradientState")?.let { state ->
         getFieldValue<ColorStateList?>(state, "mSolidColors")?.let { solidColors ->
           tint(solidColors)
-          if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             drawable.color = solidColors
-          }
         }
       }
     } catch (e: Exception) {
@@ -207,11 +199,9 @@ class CustomThemeEngineTinter {
   @Throws(CustomThemeEngineTintException::class)
   private fun tint(drawable: DrawableContainer) {
     try {
-      if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-        getFieldValue<DrawableContainerState?>(drawable, "mDrawableContainerState")?.let { state ->
-          for (i in 0 until state.childCount) {
-            tint(state.getChild(i))
-          }
+      getFieldValue<DrawableContainerState?>(drawable, "mDrawableContainerState")?.let { state ->
+        for (i in 0 until state.childCount) {
+          tint(state.getChild(i))
         }
       }
     } catch (e: Exception) {
@@ -226,8 +216,8 @@ class CustomThemeEngineTinter {
       return
     }
     try {
-      Reflection.getFieldValue<Any?>(drawable, "mNinePatchState")?.let { ninePatchState ->
-        Reflection.getFieldValue<ColorStateList?>(ninePatchState, "mTint")?.let { colorStateList ->
+      getFieldValue<Any?>(drawable, "mNinePatchState")?.let { ninePatchState ->
+        getFieldValue<ColorStateList?>(ninePatchState, "mTint")?.let { colorStateList ->
           tint(colorStateList)
         }
       }

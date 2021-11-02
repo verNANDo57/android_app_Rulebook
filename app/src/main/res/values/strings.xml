@@ -199,7 +199,7 @@
 
     <string name="colorpicker_default_title">Выберите цвет</string>
     <string name="colorpicker_presets">Предустановленные</string>
-    <string name="colorpicker_custom">Кастомные</string>
+    <string name="colorpicker_custom">Пользовательские</string>
     <string name="colorpicker_select">Выбрать</string>
     <string name="colorpicker_transparency">Прозрачность</string>
 

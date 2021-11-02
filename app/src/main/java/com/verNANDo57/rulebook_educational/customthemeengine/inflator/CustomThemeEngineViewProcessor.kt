@@ -9,7 +9,6 @@ import android.content.ContextWrapper
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.graphics.drawable.RippleDrawable
-import android.os.Build
 import android.os.Build.VERSION
 import android.os.Build.VERSION_CODES
 import android.util.AttributeSet
@@ -26,6 +25,7 @@ import androidx.core.content.ContextCompat
 import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.navigation.NavigationView
+import com.google.android.material.switchmaterial.SwitchMaterial
 import com.google.android.material.textfield.TextInputLayout
 import com.verNANDo57.rulebook_educational.customthemeengine.CustomThemeEngine
 import com.verNANDo57.rulebook_educational.customthemeengine.tinting.EdgeEffectTint
@@ -84,7 +84,7 @@ internal class BottomAppBarProcessor : CustomThemeEngineViewProcessor<BottomAppB
   }
 }
 
-@RequiresApi(Build.VERSION_CODES.M)
+@RequiresApi(VERSION_CODES.M)
 internal class CompoundButtonProcessor : CustomThemeEngineViewProcessor<CompoundButton>() {
 
   override fun getType(): Class<CompoundButton> = CompoundButton::class.java
@@ -123,9 +123,7 @@ internal class DatePickerProcessor : CustomThemeEngineViewProcessor<DatePicker>(
     if (datePickerId != 0) {
       view.findViewById<ViewGroup>(datePickerId)?.let { layout ->
         customThemeEngine.tinter.tint(layout.background)
-        if (VERSION.SDK_INT >= VERSION_CODES.LOLLIPOP) {
-          customThemeEngine.tinter.tint(layout.backgroundTintList)
-        }
+        customThemeEngine.tinter.tint(layout.backgroundTintList)
       }
     }
   }
@@ -140,7 +138,7 @@ internal class FloatingActionButtonProcessor : CustomThemeEngineViewProcessor<Fl
   }
 }
 
-@TargetApi(Build.VERSION_CODES.M)
+@TargetApi(VERSION_CODES.M)
 internal class ImageButtonProcessor : CustomThemeEngineViewProcessor<ImageButton>() {
 
   override fun getType(): Class<ImageButton> = ImageButton::class.java
@@ -181,15 +179,15 @@ internal class NavigationViewProcessor : CustomThemeEngineViewProcessor<Navigati
     view.apply {
       itemTextColor = ColorStateList(
           arrayOf(
-              intArrayOf(-android.R.attr.state_checked),
-              intArrayOf(android.R.attr.state_checked)
+              intArrayOf(-attr.state_checked),
+              intArrayOf(attr.state_checked)
           ),
           intArrayOf(unselectedTextColor, checkedColor)
       )
       itemIconTintList = ColorStateList(
           arrayOf(
-              intArrayOf(-android.R.attr.state_checked),
-              intArrayOf(android.R.attr.state_checked)
+              intArrayOf(-attr.state_checked),
+              intArrayOf(attr.state_checked)
           ),
           intArrayOf(unselectedIconColor, checkedColor)
       )
@@ -197,7 +195,7 @@ internal class NavigationViewProcessor : CustomThemeEngineViewProcessor<Navigati
   }
 }
 
-@TargetApi(Build.VERSION_CODES.M)
+@TargetApi(VERSION_CODES.M)
 internal class SearchAutoCompleteProcessor : CustomThemeEngineViewProcessor<SearchAutoComplete>() {
 
   override fun getType(): Class<SearchAutoComplete> = SearchAutoComplete::class.java
@@ -207,17 +205,15 @@ internal class SearchAutoCompleteProcessor : CustomThemeEngineViewProcessor<Sear
   }
 }
 
-@TargetApi(Build.VERSION_CODES.M)
-internal class SwitchProcessor : CustomThemeEngineViewProcessor<Switch>() {
+@TargetApi(VERSION_CODES.M)
+internal class SwitchProcessor : CustomThemeEngineViewProcessor<SwitchMaterial>() {
 
-  override fun getType(): Class<Switch> = Switch::class.java
+  override fun getType(): Class<SwitchMaterial> = SwitchMaterial::class.java
 
   @SuppressLint("PrivateResource")
-  override fun process(view: Switch, attrs: AttributeSet?, customThemeEngine: CustomThemeEngine) {
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-      customThemeEngine.tinter.tint(view.thumbDrawable)
-    }
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+  override fun process(view: SwitchMaterial, attrs: AttributeSet?, customThemeEngine: CustomThemeEngine) {
+    customThemeEngine.tinter.tint(view.thumbDrawable)
+    if (VERSION.SDK_INT >= VERSION_CODES.M) {
       view.trackTintList = ContextCompat.getColorStateList(view.context, R.color.abc_tint_switch_track)
     }
   }
@@ -249,7 +245,7 @@ internal class TextInputLayoutProcessor : CustomThemeEngineViewProcessor<TextInp
     if (view.boxStrokeColor == CustomThemeEngine.getOriginalColor(R.color.coloraccent_reference)) {
       view.boxStrokeColor = customThemeEngine.accent
     }
-    if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.LOLLIPOP_MR1) {
+    if (VERSION.SDK_INT <= VERSION_CODES.LOLLIPOP_MR1) {
       Reflection.getFieldValue<ColorStateList?>(view, "focusedTextColor")?.let { csl ->
         customThemeEngine.tinter.tint(csl)
       }
@@ -265,9 +261,7 @@ internal class TextViewProcessor : CustomThemeEngineViewProcessor<TextView>() {
     view.textColors?.let { colors ->
       view.setTextColor(customThemeEngine.tinter.tint(colors))
     }
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-      customThemeEngine.tinter.tint(view.backgroundTintList)
-    }
+    customThemeEngine.tinter.tint(view.backgroundTintList)
     customThemeEngine.tinter.tint(view.background)
   }
 }
@@ -281,7 +275,7 @@ internal class TimePickerProcessor : CustomThemeEngineViewProcessor<TimePicker>(
   }
 }
 
-@TargetApi(Build.VERSION_CODES.M)
+@TargetApi(VERSION_CODES.M)
 internal class ViewGroupProcessor : CustomThemeEngineViewProcessor<ViewGroup>() {
 
   override fun getType(): Class<ViewGroup> = ViewGroup::class.java

@@ -43,6 +43,7 @@ import com.verNANDo57.rulebook_educational.tools.Utils;
 
 import java.util.Arrays;
 import java.util.Locale;
+import java.util.Objects;
 
 /**
  * <p>A dialog to pick a color.</p>
@@ -150,8 +151,10 @@ public class ColorPickerDialog extends DialogFragment implements ColorPickerView
     return new Builder();
   }
 
+  @NonNull
   @Override
   public Dialog onCreateDialog(Bundle savedInstanceState) {
+    assert getArguments() != null;
     dialogId = getArguments().getInt(ARG_ID);
     showAlphaSlider = getArguments().getBoolean(ARG_ALPHA);
     showColorShades = getArguments().getBoolean(ARG_SHOW_COLOR_SHADES);
@@ -184,6 +187,7 @@ public class ColorPickerDialog extends DialogFragment implements ColorPickerView
           }
         });
 
+    assert getArguments() != null;
     int dialogTitleStringRes = getArguments().getInt(ARG_DIALOG_TITLE);
     if (dialogTitleStringRes != 0) {
       builder.setTitle(dialogTitleStringRes);
@@ -243,7 +247,7 @@ public class ColorPickerDialog extends DialogFragment implements ColorPickerView
   }
 
   @Override
-  public void onDismiss(DialogInterface dialog) {
+  public void onDismiss(@NonNull DialogInterface dialog) {
     super.onDismiss(dialog);
     onDialogDismissed();
   }
@@ -280,7 +284,7 @@ public class ColorPickerDialog extends DialogFragment implements ColorPickerView
     try {
       final TypedValue value = new TypedValue();
       TypedArray typedArray =
-          getActivity().obtainStyledAttributes(value.data, new int[] { android.R.attr.textColorPrimary });
+          requireActivity().obtainStyledAttributes(value.data, new int[] { android.R.attr.textColorPrimary });
       int arrowColor = typedArray.getColor(0, Color.BLACK);
       typedArray.recycle();
       arrowRight.setColorFilter(arrowColor);
@@ -288,6 +292,7 @@ public class ColorPickerDialog extends DialogFragment implements ColorPickerView
     }
 
     colorPicker.setAlphaSliderVisible(showAlphaSlider);
+    assert getArguments() != null;
     oldColorPanel.setColor(getArguments().getInt(ARG_COLOR));
     colorPicker.setColor(color, true);
     newColorPanel.setColor(color);
@@ -315,7 +320,7 @@ public class ColorPickerDialog extends DialogFragment implements ColorPickerView
       @Override
       public void onFocusChange(View v, boolean hasFocus) {
         if (hasFocus) {
-          InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+          InputMethodManager imm = (InputMethodManager) requireActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
           imm.showSoftInput(hexEditText, InputMethodManager.SHOW_IMPLICIT);
         }
       }
@@ -333,7 +338,7 @@ public class ColorPickerDialog extends DialogFragment implements ColorPickerView
     if (!fromEditText && hexEditText != null) {
       setHex(newColor);
       if (hexEditText.hasFocus()) {
-        InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+        InputMethodManager imm = (InputMethodManager) requireActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(hexEditText.getWindowToken(), 0);
         hexEditText.clearFocus();
       }
@@ -474,6 +479,7 @@ public class ColorPickerDialog extends DialogFragment implements ColorPickerView
 
   private void loadPresets() {
     int alpha = Color.alpha(color);
+    assert getArguments() != null;
     presets = getArguments().getIntArray(ARG_PRESETS);
     if (presets == null) presets = MATERIAL_COLORS;
     boolean isMaterialColors = presets == MATERIAL_COLORS;
@@ -749,7 +755,6 @@ public class ColorPickerDialog extends DialogFragment implements ColorPickerView
 
   public static final class Builder {
 
-    ColorPickerDialogListener colorPickerDialogListener;
     @StringRes
     int dialogTitle = R.string.colorpicker_default_title;
     @StringRes

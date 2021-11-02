@@ -24,9 +24,8 @@ import com.verNANDo57.rulebook_educational.extradata.R
 class CustomThemeEngineThemePickerAdapter(private val themes: List<CustomThemeEngineTheme>, private val customThemeEngine: CustomThemeEngine) : BaseAdapter() {
 
   override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-    val holder: ViewHolder
 
-    holder = if (convertView == null) {
+    val holder: ViewHolder = if (convertView == null) {
       val inflater = LayoutInflater.from(parent.context)
       val view = inflater.inflate(R.layout.customthemeengine_item_theme, parent, false)
       ViewHolder(view)
@@ -49,12 +48,12 @@ class CustomThemeEngineThemePickerAdapter(private val themes: List<CustomThemeEn
     val title = holder.find<TextView>(R.id.title)
     title.text = theme.themeName
 
-    val BottomAppBar = holder.find<BottomAppBar>(R.id.bar_in_theme_preview)
-    val BarMainColor = ColorUtils.lighter(theme.accent, 0.01f)
-    BottomAppBar.backgroundTint = ColorStateList.valueOf(BarMainColor)
+    val bottomAppBar = holder.find<BottomAppBar>(R.id.bar_in_theme_preview)
+    val barMainColor = ColorUtils.lighter(theme.accent, 0.01f)
+    bottomAppBar.backgroundTint = ColorStateList.valueOf(barMainColor)
 
-    val title_preview = holder.find<TextView>(R.id.text_title)
-    title_preview.setTextColor(ColorUtils.lighter(theme.accent, 0.01f))
+    val titlepreview = holder.find<TextView>(R.id.text_title)
+    titlepreview.setTextColor(ColorUtils.lighter(theme.accent, 0.01f))
 
     if (theme.isMatchingColorScheme(customThemeEngine)) {
       title.setBackgroundColor(ContextCompat.getColor(parent.context, R.color.customthemeengine_theme_selected_color))

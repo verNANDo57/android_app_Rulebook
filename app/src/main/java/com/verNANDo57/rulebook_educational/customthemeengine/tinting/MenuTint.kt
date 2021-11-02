@@ -3,16 +3,15 @@ package com.verNANDo57.rulebook_educational.customthemeengine.tinting
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
-import android.graphics.PorterDuff
-import android.os.Build
-import android.view.*
+import android.view.Menu
+import android.view.MenuItem
+import android.view.ViewConfiguration
+import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.Toolbar
 import androidx.annotation.ColorInt
 import androidx.annotation.DrawableRes
 import androidx.appcompat.view.menu.MenuItemImpl
 import androidx.appcompat.widget.ActionMenuView
-import com.verNANDo57.rulebook_educational.customthemeengine.CustomThemeEngine
 import com.verNANDo57.rulebook_educational.customthemeengine.utils.ColorFilterCompat
 import com.verNANDo57.rulebook_educational.customthemeengine.utils.Reflection
 
@@ -36,9 +35,9 @@ class MenuTint(
    *
    * Call this method after inflating/creating your menu in [Activity.onCreateOptionsMenu]
    *
-   * @param context The [activity][Activity] context
+   * The [activity][Activity] context
    */
-  fun apply(context: Context) {
+  fun apply() {
     if (forceIcons) {
       forceMenuIcons(menu)
     }
@@ -76,44 +75,16 @@ class MenuTint(
     }
   }
 
-  private fun tintActionBar(actionBar: ViewGroup) {
-    if (actionBar is androidx.appcompat.widget.Toolbar) {
-      actionBar.navigationIcon?.let { icon ->
-        bottomAppBarIconColorReference?.let { color ->
-          val navigationIcon = icon.mutate()
-          @Suppress("DEPRECATION")
-          navigationIcon.setColorFilter(color, PorterDuff.Mode.SRC_IN)
-        }
-      }
-    } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP && actionBar is Toolbar) {
-      actionBar.navigationIcon?.let { icon ->
-        bottomAppBarIconColorReference?.let { color ->
-          val navigationIcon = icon.mutate()
-          @Suppress("DEPRECATION")
-          navigationIcon.setColorFilter(color, PorterDuff.Mode.SRC_IN)
-        }
-      }
-    }
-  }
-
   private fun tintOverflow() {
     findOverflowMenuButton(actionBar)?.let { overflowView ->
       overflowDrawableRes?.let { resId -> overflowView.setImageResource(resId) }
       bottomAppBarIconColorReference?.let { color -> overflowView.setColorFilter(color) }
-      bottomAppBarIconAlpha?.let { alpha ->
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-          overflowView.imageAlpha = alpha
-        } else {
-          @Suppress("DEPRECATION")
-          overflowView.setAlpha(alpha)
-        }
+      bottomAppBarIconAlpha?.let { alpha -> overflowView.imageAlpha = alpha
       }
     }
   }
 
   companion object {
-
-    private const val TAG = "RULEBOOK_APP_MenuTint"
 
     /**
      * Sets the color filter and/or the alpha transparency on a [MenuItem]'s icon.
@@ -131,26 +102,6 @@ class MenuTint(
     }
 
     /**
-     * Sets the color filter and/or the alpha transparency on a [MenuItem]'s sub menus
-     *
-     * @param item The [MenuItem] to theme.
-     * @param color The color to set for the color filter or `null` for no changes.
-     * @param alpha The alpha value (0...255) to set on the icon or `null` for no changes.
-     */
-    fun colorSubMenus(item: MenuItem, color: Int?, alpha: Int? = null) {
-      if (item.hasSubMenu()) {
-        item.subMenu?.let { menu ->
-          val size = menu.size()
-          for (i in 0 until size) {
-            val menuItem = menu.getItem(i)
-            colorMenuItem(menuItem, color, alpha)
-            colorSubMenus(menuItem, color, alpha)
-          }
-        }
-      }
-    }
-
-    /**
      * Check if an item is showing (not in the overflow menu).
      *
      * @param item The MenuItem.
@@ -163,15 +114,6 @@ class MenuTint(
       }
       return Reflection.invoke(item, "isActionButton") ?: false
     }
-
-    /**
-     * Check if an item is in the overflow menu.
-     *
-     * @param item The MenuItem
-     * @return `true` if the MenuItem is in the overflow menu.
-     * @see [MenuTint.isActionButton]
-     */
-    fun isInOverflow(item: MenuItem) = !isActionButton(item)
 
     /**
      * Set the menu to show MenuItem icons in the overflow window.
@@ -214,38 +156,7 @@ class MenuTint(
       return null
     }
 
-    private fun findActionBar(activity: Activity): ViewGroup? {
-      try {
-        val id = activity.resources.getIdentifier("action_bar", "id", "android")
-        if (id != 0) {
-          activity.findViewById<ViewGroup>(id)?.let { return it }
-        }
-        return findToolbar(activity.findViewById<View>(android.R.id.content).rootView as ViewGroup)
-      } catch (e: Exception) {
-        CustomThemeEngine.log(TAG, "Error finding ActionBar", e)
-      }
-      return null
-    }
 
-    private fun findToolbar(viewGroup: ViewGroup): ViewGroup? {
-      var toolbar: ViewGroup? = null
-      var i = 0
-      val count = viewGroup.childCount
-      while (i < count) {
-        val view = viewGroup.getChildAt(i)
-        if (view.javaClass == androidx.appcompat.widget.Toolbar::class.java ||
-          view.javaClass.name == "android.widget.Toolbar") {
-          toolbar = view as ViewGroup
-        } else if (view is ViewGroup) {
-          toolbar = findToolbar(view)
-        }
-        if (toolbar != null) {
-          break
-        }
-        i++
-      }
-      return toolbar
-    }
   }
 
   inner class ActionExpandListener : MenuItem.OnActionExpandListener {

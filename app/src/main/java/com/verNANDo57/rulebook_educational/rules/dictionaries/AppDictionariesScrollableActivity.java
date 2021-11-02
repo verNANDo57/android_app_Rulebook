@@ -22,7 +22,7 @@ import androidx.core.widget.NestedScrollView;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.navigation.NavigationView;
-import com.verNANDo57.rulebook_educational.BottomNavBetweenLessonsFragment;
+import com.verNANDo57.rulebook_educational.BottomNavAmongLessonsFragment;
 import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngineAppCompatActivity;
 import com.verNANDo57.rulebook_educational.customthemeengine.utils.ColorUtils;
 import com.verNANDo57.rulebook_educational.extradata.R;
@@ -83,7 +83,7 @@ public class AppDictionariesScrollableActivity extends CustomThemeEngineAppCompa
         toolbar.setNavigationOnClickListener(new NavigationView.OnClickListener() {
             @Override
             public void onClick(View v) {
-                BottomNavBetweenLessonsFragment BottomNavFragmentFromLessons = new BottomNavBetweenLessonsFragment();
+                BottomNavAmongLessonsFragment BottomNavFragmentFromLessons = new BottomNavAmongLessonsFragment();
                 BottomNavFragmentFromLessons.show(getSupportFragmentManager(), "TAG");
             }
         });

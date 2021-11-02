@@ -4,6 +4,7 @@ import android.graphics.Color
 import androidx.annotation.ColorInt
 import androidx.annotation.FloatRange
 import androidx.core.graphics.ColorUtils
+import kotlin.math.roundToInt
 
 class ColorUtils private constructor() {
 
@@ -17,9 +18,10 @@ class ColorUtils private constructor() {
     @JvmOverloads
     @ColorInt
     fun darker(@ColorInt color: Int, @FloatRange(from = 0.0, to = 1.0) factor: Float = 0.85f): Int {
-      return Color.argb(Color.alpha(color), Math.max((Color.red(color) * factor).toInt(), 0),
-          Math.max((Color.green(color) * factor).toInt(), 0),
-          Math.max((Color.blue(color) * factor).toInt(), 0))
+      return Color.argb(Color.alpha(color), (Color.red(color) * factor).toInt().coerceAtLeast(0),
+        (Color.green(color) * factor).toInt().coerceAtLeast(0),
+        (Color.blue(color) * factor).toInt().coerceAtLeast(0)
+      )
     }
 
     @JvmStatic
@@ -89,7 +91,7 @@ class ColorUtils private constructor() {
     @JvmStatic
     @ColorInt
     fun adjustAlpha(@ColorInt color: Int, @FloatRange(from = 0.0, to = 1.0) factor: Float): Int {
-      val alpha = Math.round(Color.alpha(color) * factor)
+      val alpha = (Color.alpha(color) * factor).roundToInt()
       val red = Color.red(color)
       val green = Color.green(color)
       val blue = Color.blue(color)

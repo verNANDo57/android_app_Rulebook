@@ -4,7 +4,6 @@ import android.app.ActivityManager.TaskDescription
 import android.content.Context
 import android.content.res.Resources
 import android.graphics.BitmapFactory
-import android.os.Build
 import android.os.Bundle
 import android.view.KeyEvent
 import android.view.Menu
@@ -44,54 +43,26 @@ abstract class CustomThemeEngineFragmentActivity : FragmentActivity(), BaseCusto
     preferences = RulebookApplicationSharedPreferences(this)
 
     if (preferences!!.loadRulebookStatusBarBooleanState() == true) {
-      if (Build.VERSION.SDK_INT < 16) {
-        this.window.clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN)
-        if (Build.VERSION.SDK_INT >= 21) {
-          this.window.statusBarColor = ContextCompat.getColor(this, R.color.statusbar_color)
-        }
-      } else {
-        val decorView = window.decorView
-        // Show Status Bar.
-        val uiOptions = View.SYSTEM_UI_FLAG_VISIBLE
-        decorView.systemUiVisibility = uiOptions
-        if (Build.VERSION.SDK_INT >= 21) {
-          this.window.statusBarColor = ContextCompat.getColor(this, R.color.statusbar_color)
-        }
-      }
+      val decorView = window.decorView
+      // Show Status Bar.
+      val uiOptions = View.SYSTEM_UI_FLAG_VISIBLE
+      decorView.systemUiVisibility = uiOptions
+      this.window.statusBarColor = ContextCompat.getColor(this, R.color.statusbar_color)
     } else if (preferences!!.loadRulebookStatusBarBooleanState() == false) {
       // Hide Status Bar
       this.window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-              WindowManager.LayoutParams.FLAG_FULLSCREEN)
-      if (Build.VERSION.SDK_INT >= 21) {
-        this.window.statusBarColor = ContextCompat.getColor(this, R.color.statusbar_color)
-      } else {
-        // Hide Status Bar
-        this.window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN)
-        if (Build.VERSION.SDK_INT >= 21) {
-          this.window.statusBarColor = ContextCompat.getColor(this, R.color.statusbar_color)
-        }
-      }
+        WindowManager.LayoutParams.FLAG_FULLSCREEN)
+      this.window.statusBarColor = ContextCompat.getColor(this, R.color.statusbar_color)
     }
 
     //NavigationBarColor
-    if (Build.VERSION.SDK_INT >= 21) {
-      //If Build.VERSION.SDK_INT >= 21, set navbar color (declared by customthemeengine)
-      window.navigationBarColor = ContextCompat.getColor(this, R.color.navbar_color)
-    } else if (Build.VERSION.SDK_INT >= 16 && Build.VERSION.SDK_INT <= 20) {
-      //but if Build.VERSION.SDK_INT >= 16 and Build.VERSION.SDK_INT <=20, set navbar color value to transparent
-      var visibility = View.SYSTEM_UI_FLAG_LAYOUT_STABLE or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
-      visibility = visibility or View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-      window.decorView.systemUiVisibility = visibility
-    }
+    window.navigationBarColor = ContextCompat.getColor(this, R.color.navbar_color)
 
     //ActionBar color and icon in RECENTS
     val RB = BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher_round)
     val taskDesc: TaskDescription
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-      taskDesc = TaskDescription(getString(R.string.app_name), RB, ContextCompat.getColor(this, R.color.coloraccent))
-      setTaskDescription(taskDesc)
-    }
+    taskDesc = TaskDescription(getString(R.string.app_name), RB, ContextCompat.getColor(this, R.color.coloraccent))
+    setTaskDescription(taskDesc)
 
     delegate.onCreate(savedInstanceState)
     super.onCreate(savedInstanceState)

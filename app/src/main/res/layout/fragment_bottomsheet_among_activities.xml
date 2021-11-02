@@ -17,7 +17,7 @@
         android:text="@string/bottomsheetdialog_betweenactivities_headline" />
 
     <com.google.android.material.navigation.NavigationView
-        android:id="@+id/navigation_view_between_activities"
+        android:id="@+id/navigation_view_among_activities"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/app_bottomsheetdialog_marginStartOrLeft"

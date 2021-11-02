@@ -17,21 +17,21 @@ import com.verNANDo57.rulebook_educational.rules.analyze_methods.AppAnalyzeMetho
 import com.verNANDo57.rulebook_educational.rules.mainrules.AppMainRulesActivity;
 import com.verNANDo57.rulebook_educational.search.AppSearchActivity;
 
-public class BottomNavBetweenLessonsFragment extends CustomThemeEngineBottomSheetDialogFragment {
+public class BottomNavAmongLessonsFragment extends CustomThemeEngineBottomSheetDialogFragment {
 
-    public BottomNavBetweenLessonsFragment(){
+    public BottomNavAmongLessonsFragment(){
         //Required empty public constructor
     }
 
     @SuppressLint("NonConstantResourceId")
     public View onCreateView(LayoutInflater inflater , ViewGroup container, Bundle savedInstanceState) {
-        View viewFragment = inflater.inflate(R.layout.fragment_bottomsheet_between_lessons, container, false);
+        View viewFragment = inflater.inflate(R.layout.fragment_bottomsheet_among_lessons, container, false);
 
-        NavigationView navigationbetweenactivities = viewFragment.findViewById(R.id.navigation_view_between_lessons);
-        navigationbetweenactivities.setBackgroundColor(getResources().getColor(R.color.bottomsheetdialog_background));
-        navigationbetweenactivities.setItemTextColor(ColorStateList.valueOf(ColorUtils.lighter(getResources().getColor(R.color.bottomsheetdialog_primary), 0.01f)));
-        navigationbetweenactivities.setItemIconTintList(ColorStateList.valueOf(ColorUtils.lighter(getResources().getColor(R.color.bottomsheetdialog_accent), 0.01f)));
-        navigationbetweenactivities.setNavigationItemSelectedListener(menuItem -> {
+        NavigationView navigation_among_activities = viewFragment.findViewById(R.id.navigation_view_among_lessons);
+        navigation_among_activities.setBackgroundColor(getResources().getColor(R.color.bottomsheetdialog_background));
+        navigation_among_activities.setItemTextColor(ColorStateList.valueOf(ColorUtils.lighter(getResources().getColor(R.color.bottomsheetdialog_primary), 0.01f)));
+        navigation_among_activities.setItemIconTintList(ColorStateList.valueOf(ColorUtils.lighter(getResources().getColor(R.color.bottomsheetdialog_accent), 0.01f)));
+        navigation_among_activities.setNavigationItemSelectedListener(menuItem -> {
             int id = menuItem.getItemId();
 
             switch (id)

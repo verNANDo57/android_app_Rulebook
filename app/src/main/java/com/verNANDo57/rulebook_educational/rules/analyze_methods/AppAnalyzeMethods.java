@@ -11,7 +11,7 @@ import android.widget.Button;
 import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.material.navigation.NavigationView;
-import com.verNANDo57.rulebook_educational.BottomNavBetweenLessonsFragment;
+import com.verNANDo57.rulebook_educational.BottomNavAmongLessonsFragment;
 import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngineAppCompatActivity;
 import com.verNANDo57.rulebook_educational.extradata.R;
 import com.verNANDo57.rulebook_educational.preferences.RulebookApplicationSharedPreferences;
@@ -41,7 +41,7 @@ public class AppAnalyzeMethods extends CustomThemeEngineAppCompatActivity {
         toolbar.setNavigationOnClickListener(new NavigationView.OnClickListener() {
             @Override
             public void onClick(View v) {
-                BottomNavBetweenLessonsFragment BottomNavBetweenLessons = new BottomNavBetweenLessonsFragment();
+                BottomNavAmongLessonsFragment BottomNavBetweenLessons = new BottomNavAmongLessonsFragment();
                 BottomNavBetweenLessons.show(getSupportFragmentManager(), LOG_TAG);
             }
         });

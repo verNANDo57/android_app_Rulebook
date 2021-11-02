@@ -16,17 +16,17 @@ import com.verNANDo57.rulebook_educational.extradata.R;
 import com.verNANDo57.rulebook_educational.preferences.AppSettingsActivity;
 import com.verNANDo57.rulebook_educational.rules.dictionaries.AppDictionaries;
 
-public class BottomNavBetweenActivitiesFragment extends CustomThemeEngineBottomSheetDialogFragment {
+public class BottomNavAmongActivitiesFragment extends CustomThemeEngineBottomSheetDialogFragment {
 
-    public BottomNavBetweenActivitiesFragment(){
+    public BottomNavAmongActivitiesFragment(){
         //Required empty public constructor
     }
 
     @SuppressLint("NonConstantResourceId")
     public View onCreateView(LayoutInflater inflater , ViewGroup container, Bundle savedInstanceState) {
-        View viewFragment = inflater.inflate(R.layout.fragment_bottomsheet_between_activities, container, false);
+        View viewFragment = inflater.inflate(R.layout.fragment_bottomsheet_among_activities, container, false);
 
-        NavigationView navigationbetweenlessons = viewFragment.findViewById(R.id.navigation_view_between_activities);
+        NavigationView navigationbetweenlessons = viewFragment.findViewById(R.id.navigation_view_among_activities);
         navigationbetweenlessons.setBackgroundColor(getResources().getColor(R.color.bottomsheetdialog_background));
         navigationbetweenlessons.setItemTextColor(ColorStateList.valueOf(ColorUtils.lighter(getResources().getColor(R.color.bottomsheetdialog_primary), 0.01f)));
         navigationbetweenlessons.setItemIconTintList(ColorStateList.valueOf(ColorUtils.lighter(getResources().getColor(R.color.bottomsheetdialog_accent), 0.01f)));

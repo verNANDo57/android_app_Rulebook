@@ -39,7 +39,7 @@ class CustomThemeEngineLayoutInflater : LayoutInflater {
     return super.inflate(resource, root, attachToRoot)
   }
 
-  override fun setFactory(factory: LayoutInflater.Factory) {
+  override fun setFactory(factory: Factory) {
     if (factory !is WrapperFactory) {
       super.setFactory(WrapperFactory(this, factory))
     } else {
@@ -47,7 +47,7 @@ class CustomThemeEngineLayoutInflater : LayoutInflater {
     }
   }
 
-  override fun setFactory2(factory2: LayoutInflater.Factory2) {
+  override fun setFactory2(factory2: Factory2) {
     if (factory2 !is WrapperFactory2) {
       super.setFactory2(WrapperFactory2(this, factory2))
     } else {
@@ -129,14 +129,14 @@ class CustomThemeEngineLayoutInflater : LayoutInflater {
       return
     }
 
-    if (context !is LayoutInflater.Factory2) {
+    if (context !is Factory2) {
       setPrivateFactory = true
       return
     }
 
     val method = Reflection.getMethod(LayoutInflater::class.java, "setPrivateFactory", Factory2::class.java)
     method?.let {
-      val factory2 = context as? LayoutInflater.Factory2 ?: return
+      val factory2 = context as? Factory2 ?: return
       val factory = PrivateWrapperFactory2(this, factory2)
       try {
         it.invoke(this, factory)
@@ -150,10 +150,10 @@ class CustomThemeEngineLayoutInflater : LayoutInflater {
   private fun createViewFromDelegate(parent: View?, name: String, context: Context, attrs: AttributeSet): View? =
       inflationDelegate?.createView(parent, name, context, attrs)
 
-  private class WrapperFactory internal constructor(
+  private open class WrapperFactory(
           private val inflater: CustomThemeEngineLayoutInflater,
-          private val factory: LayoutInflater.Factory
-  ) : LayoutInflater.Factory {
+          private val factory: Factory
+  ) : Factory {
 
     override fun onCreateView(name: String, context: Context, attrs: AttributeSet): View? =
         processView(inflater.createViewFromDelegate(null, name, context, attrs)
@@ -162,10 +162,10 @@ class CustomThemeEngineLayoutInflater : LayoutInflater {
     protected fun processView(view: View?, attrs: AttributeSet): View? = inflater.processView(view, attrs)
   }
 
-  private open class WrapperFactory2 internal constructor(
-          internal val inflater: CustomThemeEngineLayoutInflater,
-          internal val factory: LayoutInflater.Factory2
-  ) : LayoutInflater.Factory2 {
+  private open class WrapperFactory2(
+          val inflater: CustomThemeEngineLayoutInflater,
+          val factory: Factory2
+  ) : Factory2 {
 
     override fun onCreateView(parent: View?, name: String, context: Context, attrs: AttributeSet): View? =
         processView(inflater.createViewFromDelegate(parent, name, context, attrs)
@@ -178,9 +178,9 @@ class CustomThemeEngineLayoutInflater : LayoutInflater {
     protected fun processView(view: View?, attrs: AttributeSet): View? = inflater.processView(view, attrs)
   }
 
-  private class PrivateWrapperFactory2 internal constructor(
+  private class PrivateWrapperFactory2(
           inflater: CustomThemeEngineLayoutInflater,
-          factory: LayoutInflater.Factory2
+          factory: Factory2
   ) : WrapperFactory2(inflater, factory) {
 
     override fun onCreateView(parent: View?, name: String, context: Context, attrs: AttributeSet): View? =

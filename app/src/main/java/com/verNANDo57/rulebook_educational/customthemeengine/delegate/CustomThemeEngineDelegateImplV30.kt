@@ -19,7 +19,7 @@ internal open class CustomThemeEngineDelegateImplV30(
         private val activity: Activity,
         private val customThemeEngine: CustomThemeEngine,
         themeResId: Int
-) : CustomThemeEngineDelegateImplV29(activity, customThemeEngine, themeResId) {
+) : CustomThemeEngineDelegateImplV26(activity, customThemeEngine, themeResId) {
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)

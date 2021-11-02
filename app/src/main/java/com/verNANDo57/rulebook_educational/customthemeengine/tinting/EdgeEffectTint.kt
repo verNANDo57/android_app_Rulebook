@@ -2,7 +2,6 @@ package com.verNANDo57.rulebook_educational.customthemeengine.tinting
 
 import android.app.Activity
 import android.graphics.drawable.Drawable
-import android.os.Build
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebView
@@ -43,10 +42,7 @@ class EdgeEffectTint(private val view: ViewGroup) {
     @JvmStatic
     fun setEdgeEffectColor(edgeEffect: EdgeEffect, @ColorInt color: Int) {
       try {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-          edgeEffect.color = color
-          return
-        }
+        edgeEffect.color = color
         for (name in arrayOf("mEdge", "mGlow")) {
           Reflection.getFieldValue<Drawable?>(edgeEffect, name)?.run {
             colorFilter = ColorFilterCompat.SRC_IN.get(color)

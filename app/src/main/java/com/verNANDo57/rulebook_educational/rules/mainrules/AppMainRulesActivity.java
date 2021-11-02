@@ -9,7 +9,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.navigation.NavigationView;
-import com.verNANDo57.rulebook_educational.BottomNavBetweenLessonsFragment;
+import com.verNANDo57.rulebook_educational.BottomNavAmongLessonsFragment;
 import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngineAppCompatActivity;
 import com.verNANDo57.rulebook_educational.extradata.R;
 import com.verNANDo57.rulebook_educational.preferences.RulebookApplicationSharedPreferences;
@@ -34,7 +34,7 @@ public class AppMainRulesActivity extends CustomThemeEngineAppCompatActivity
 		toolbar.setNavigationOnClickListener(new NavigationView.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				BottomNavBetweenLessonsFragment BottomNavFragmentFromLessons = new BottomNavBetweenLessonsFragment();
+				BottomNavAmongLessonsFragment BottomNavFragmentFromLessons = new BottomNavAmongLessonsFragment();
 				BottomNavFragmentFromLessons.show(getSupportFragmentManager(), LOG_TAG);
 			}
 		});

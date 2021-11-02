@@ -31,7 +31,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchHold
         public SearchHolder(@NonNull View itemView) {
             super(itemView);
             search_item_card = itemView.findViewById(R.id.recycler_view_item_card);
-            search_item_imageview = itemView.findViewById(R.id.search_item_imageview);
+            search_item_imageview = itemView.findViewById(R.id.searchitem_image_imageview);
             search_item_title = itemView.findViewById(R.id.search_item_title);
             search_item_summary= itemView.findViewById(R.id.search_item_summary);
         }

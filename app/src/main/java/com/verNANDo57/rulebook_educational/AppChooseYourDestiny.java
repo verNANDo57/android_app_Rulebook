@@ -36,7 +36,7 @@ public class AppChooseYourDestiny extends CustomThemeEngineAppCompatActivity {
         toolbar.setNavigationOnClickListener(new NavigationView.OnClickListener() {
             @Override
             public void onClick(View v) {
-                BottomNavBetweenActivitiesFragment BottomNavBetweenActivities = new BottomNavBetweenActivitiesFragment();
+                BottomNavAmongActivitiesFragment BottomNavBetweenActivities = new BottomNavAmongActivitiesFragment();
                 BottomNavBetweenActivities.show(getSupportFragmentManager(), LOG_TAG);
             }
         });

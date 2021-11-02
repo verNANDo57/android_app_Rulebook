@@ -31,23 +31,6 @@ data class CustomThemeEngineTheme internal constructor(
   @ColorInt val bottomSheetDialogBackground : Int
 ) {
 
-  constructor(themeName: String, customThemeEngine: CustomThemeEngine) : this(
-      themeName,
-      customThemeEngine.baseTheme,
-      customThemeEngine.primary,
-      customThemeEngine.accent,
-      customThemeEngine.backgroundColor,
-      customThemeEngine.backgroundColorDark,
-      customThemeEngine.backgroundColorLight,
-      customThemeEngine.bottomAppBarItemColor,
-      customThemeEngine.backgroundToast,
-      customThemeEngine.buttonStrokeColor,
-      customThemeEngine.accentToast,
-      customThemeEngine.bottomSheetDialogAccent,
-      customThemeEngine.bottomSheetDialogPrimary,
-      customThemeEngine.bottomSheetDialogBackground
-  )
-
   /**
    * Set the theme. The activity will need to be recreated for changes to be applied.
    */
@@ -73,24 +56,6 @@ data class CustomThemeEngineTheme internal constructor(
     bottomSheetDialogAccent(bottomSheetDialogAccent)
     bottomSheetDialogPrimary(bottomSheetDialogPrimary)
     bottomSheetDialogBackground(bottomSheetDialogBackground)
-  }
-
-  /**
-   * Convert this theme to a JSON object.
-   */
-  fun toJson(): JSONObject = JSONObject().apply {
-    put(THEME_NAME, themeName)
-    put(BASE_THEME, baseTheme.name)
-    put(PRIMARY_COLOR, ColorUtils.toHex(primary))
-    put(ACCENT_COLOR, ColorUtils.toHex(accent))
-    put(BACKGROUND_COLOR, ColorUtils.toHex(background))
-    put(BACKGROUND_DARK_COLOR, ColorUtils.toHex(backgroundDark))
-    put(BACKGROUND_LIGHT_COLOR, ColorUtils.toHex(backgroundLight))
-    put(BOTTOMAPPBAR_ICONS_COLOR, ColorUtils.toHex(bottomAppBarItemColor))
-    put(BUTTON_STROKE_COLOR, ColorUtils.toHex(buttonStrokeColor))
-    put(BOTTOMSHEETDIALOG_ACCENT, ColorUtils.toHex(bottomSheetDialogAccent))
-    put(BOTTOMSHEETDIALOG_PRIMARY, ColorUtils.toHex(bottomSheetDialogPrimary))
-    put(BOTTOMSHEETDIALOG_BACKGROUND, ColorUtils.toHex(bottomSheetDialogBackground))
   }
 
   /**
@@ -161,7 +126,7 @@ data class CustomThemeEngineTheme internal constructor(
     /**
      * Deserialize JSON to a [CustomThemeEngineTheme]
      */
-    fun newInstance(json: JSONObject): CustomThemeEngineTheme {
+    private fun newInstance(json: JSONObject): CustomThemeEngineTheme {
       // Get the theme name
       val themeName = json.optString(THEME_NAME)
 

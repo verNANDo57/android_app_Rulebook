@@ -41,6 +41,6 @@ abstract class AttrsDecorator<T : View> : CustomThemeEngineDecorator {
   protected fun defStyleRes(): Int = 0
 
   @Suppress("MemberVisibilityCanBePrivate")
-  protected fun obtainAttributes(context: Context, attributeSet: AttributeSet): TypedArray? =
+  protected fun obtainAttributes(context: Context, attributeSet: AttributeSet): TypedArray =
       context.theme.obtainStyledAttributes(attributeSet, styleable(), defStyleAttr(), defStyleRes())
 }

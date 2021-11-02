@@ -3,7 +3,6 @@ package com.verNANDo57.rulebook_educational.customthemeengine.utils
 import java.lang.reflect.AccessibleObject
 import java.lang.reflect.Field
 import java.lang.reflect.Method
-import java.lang.reflect.Modifier
 
 class Reflection private constructor() {
 
@@ -49,25 +48,6 @@ class Reflection private constructor() {
       return null
     }
 
-
-    @JvmStatic
-    fun setFieldValue(field: Field, obj: Any?, value: Any?): Boolean {
-      if (!field.isAccessible) {
-        field.isAccessible = true
-      }
-      try {
-        if (Modifier.isFinal(field.modifiers)) {
-          val modifiersField = Field::class.java.getDeclaredField("modifiers")
-          modifiersField.isAccessible = true
-          modifiersField.setInt(field, field.modifiers and Modifier.FINAL.inv())
-        }
-        field.set(obj, value)
-        return true
-      } catch (e: IllegalAccessException) {
-        e.printStackTrace()
-      }
-      return false
-    }
 
     @JvmStatic
     fun getMethod(obj: Any?, name: String, vararg types: Class<*>): Method? {

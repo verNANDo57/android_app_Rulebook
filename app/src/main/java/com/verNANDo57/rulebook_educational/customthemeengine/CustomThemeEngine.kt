@@ -154,11 +154,6 @@ class CustomThemeEngine private constructor(private val prefs: SharedPreferences
   fun edit() = Editor(this)
 
   /**
-   * Reset all theme values. The activity must be recreated after resetting.
-   */
-  fun reset() = prefs.edit().clear().apply().also { loadDefaults() }.run { Recreator() }
-
-  /**
    * Creates a new editor and applys any edits in the action parameter
    */
   inline fun edit(action: Editor.() -> Unit) = edit().also { editor -> action(editor) }.apply()
@@ -225,22 +220,6 @@ class CustomThemeEngine private constructor(private val prefs: SharedPreferences
       Companion.res = res
     }
 
-    /**
-     * Check if CustomThemeEngine has been initialized.
-     *
-     * @see [init]
-     */
-    @JvmStatic
-    fun isInitialized(): Boolean {
-      return try {
-        app
-        res
-        true
-      } catch (e: UninitializedPropertyAccessException) {
-        false
-      }
-    }
-
     private object Holder {
 
       val INSTANCE: CustomThemeEngine
@@ -254,30 +233,11 @@ class CustomThemeEngine private constructor(private val prefs: SharedPreferences
         }
     }
 
-    private val instances by lazy { mutableMapOf<String, CustomThemeEngine>() }
-
     /**
      * The singleton [CustomThemeEngine] instance that you can use throughout the application.
      */
     @JvmStatic
     val INSTANCE: CustomThemeEngine by lazy { Holder.INSTANCE }
-
-    /**
-     * Get a instance of [CustomThemeEngine] by name. This will create a new instance if none exist.
-     *
-     * This allows you to have more than one color scheme in an app. You must override Activity#getCustomThemeEngine().
-     */
-    @JvmStatic
-    fun getInstance(name: String): CustomThemeEngine {
-      instances[name]?.let { customThemeEngine ->
-        return customThemeEngine
-      } ?: run {
-        val preferences = app.getSharedPreferences(name, Context.MODE_PRIVATE)
-        val customthemeengine = CustomThemeEngine(preferences)
-        instances[name] = customthemeengine
-        return customthemeengine
-      }
-    }
 
     /**
      * Intercept and create views at inflation time
@@ -313,8 +273,7 @@ class CustomThemeEngine private constructor(private val prefs: SharedPreferences
     fun getOriginalColor(@ColorRes resid: Int): Int = res.getColor(resid)
 
     private fun getBaseTheme(prefs: SharedPreferences, res: Resources): BaseTheme {
-      val themeName = prefs.getString(PREF_BASE_THEME, null)
-      return when (themeName) {
+      return when (prefs.getString(PREF_BASE_THEME, null)) {
         LIGHT.name -> LIGHT
         DARK.name -> DARK
         else -> {
@@ -341,79 +300,18 @@ class CustomThemeEngine private constructor(private val prefs: SharedPreferences
     /**
      * Set the [primary] color using a color resource.
      *
-     * The [primaryDark], [primaryLight], [navigationBar], and [menuIconColor] will also be updated to match the theme.
-     */
-    fun primaryResource(@ColorRes resid: Int) = primary(res.getColor(resid))
-
-    /**
-     * Set the [accent] dark color using a color resource.
-     *
-     * The [accentDark] and [accentLight] colors will also be updated.
-     */
-    fun accentResource(@ColorRes resid: Int): Editor = accent(res.getColor(resid))
-
-    /**
-     * Set the background color using a color resource.
-     *
-     * The [baseTheme], [backgroundLight] and [backgroundDark] will also be updated.
-     */
-    fun backgroundResource(@ColorRes resid: Int) = background(res.getColor(resid))
-
-    /** Set the background color for a [LIGHT] theme using a color resource. */
-    fun backgroundLightResource(@ColorRes resid: Int) = backgroundLight(res.getColor(resid))
-
-    /** Set the background dark color for a [LIGHT] theme using a color resource. */
-    fun backgroundLightDarkerResource(@ColorRes resid: Int) = backgroundLightDarker(res.getColor(resid))
-
-    /** Set the background light color for a [LIGHT] theme using a color resource. */
-    fun backgroundLightLighterResource(@ColorRes resid: Int) = backgroundLightLighter(res.getColor(resid))
-
-    /** Set the background color for a [DARK] theme using a color resource. */
-    fun backgroundDarkResource(@ColorRes resid: Int) = backgroundDark(res.getColor(resid))
-
-    /** Set the background dark color for a [DARK] theme using a color resource. */
-    fun backgroundDarkDarkerResource(@ColorRes resid: Int) = backgroundDarkDarker(res.getColor(resid))
-
-    /** Set the background light color for a [DARK] theme using a color resource. */
-    fun backgroundDarkLighterResource(@ColorRes resid: Int) = backgroundDarkLighter(res.getColor(resid))
-
-    /** Set the [bottomAppBarItemColor] using a color resource */
-    fun bottomAppBarItemColorResource(@ColorRes resid: Int) = bottomAppBarItemColor(res.getColor(resid))
-
-    /** Set the [backgroundToast] using a color resource */
-    fun backgroundToastResource(@ColorRes resid: Int) = backgroundToast(res.getColor(resid))
-
-    /** Set the [accentToast] using a color resource */
-    fun accentToastResource(@ColorRes resid: Int) = accentToast(res.getColor(resid))
-
-    /** Set the [buttonStrokeColor] using a color resource */
-    fun buttonStrokeColorResource (@ColorRes resid: Int) = buttonStrokeColor(res.getColor(resid))
-
-    /** Set the [bottomSheetDialogBackground] using a color resource */
-    fun bottomSheetDialogBackgroundResource (@ColorRes resid: Int) = bottomSheetDialogBackground(res.getColor(resid))
-
-    /** Set the [bottomSheetDialogAccent] using a color resource */
-    fun bottomSheetDialogAccentResource (@ColorRes resid: Int) = bottomSheetDialogAccent(res.getColor(resid))
-
-    /** Set the [bottomSheetDialogPrimary] using a color resource */
-    fun bottomSheetDialogPrimaryResource (@ColorRes resid: Int) = bottomSheetDialogPrimary(res.getColor(resid))
-
-    /**
-     * Set the [primary] color using a color resource.
-     *
-     * The [primaryDark], [primaryLight], [navigationBar], and [menuIconColor] will also be updated to match the theme.
+     * The primaryDark, primaryLight, navigationBar, and menuIconColor will also be updated to match the theme.
      */
     fun primary(@ColorInt color: Int): Editor {
       customThemeEngine.primary = color
       editor.putInt(PREF_PRIMARY, color)
-      val isDarkColor = ColorUtils.isDarkColor(color, LIGHT_ACTIONBAR_LUMINANCE_FACTOR)
       return this
     }
 
     /**
      * Set the [accent] dark color using a color resource.
      *
-     * The [accentDark] and [accentLight] colors will also be updated.
+     * The accentDark and accentLight colors will also be updated.
      */
     fun accent(@ColorInt color: Int): Editor {
       customThemeEngine.accent = color
@@ -424,7 +322,7 @@ class CustomThemeEngine private constructor(private val prefs: SharedPreferences
     /**
      * Set the background color using a color resource.
      *
-     * The [baseTheme], [backgroundLight], [backgroundDark] and [subMenuIconColor] will also be updated.
+     * The [baseTheme], [backgroundLight] and [backgroundDark] will also be updated.
      */
     fun background(@ColorInt color: Int): Editor {
       val lighter = ColorUtils.lighter(color, DEFAULT_LIGHTER_FACTOR)

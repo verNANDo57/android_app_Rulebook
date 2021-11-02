@@ -1,15 +1,12 @@
 package com.verNANDo57.rulebook_educational.customthemeengine.tinting
 
 import android.graphics.PorterDuff
-import android.graphics.drawable.Drawable
-import android.os.Build
 import android.widget.AbsListView
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.ColorInt
 import androidx.core.content.ContextCompat
 import com.verNANDo57.rulebook_educational.customthemeengine.CustomThemeEngine
-import com.verNANDo57.rulebook_educational.customthemeengine.utils.ColorFilterCompat
 import com.verNANDo57.rulebook_educational.customthemeengine.utils.Reflection
 
 
@@ -25,15 +22,10 @@ class WidgetTint private constructor() {
 
     fun setFastScrollThumbColor(listView: AbsListView, @ColorInt color: Int) {
       try {
-        val name = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) "mFastScroll" else "mFastScroller"
+        val name = "mFastScroll"
         val scroller = Reflection.getFieldValue<Any?>(listView, name)
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-          Reflection.getFieldValue<ImageView?>(scroller, "mThumbImage")
-            ?.setColorFilter(color, PorterDuff.Mode.SRC_ATOP)
-        } else {
-          Reflection.getFieldValue<Drawable?>(scroller, "mThumbDrawable")
-            ?.colorFilter = ColorFilterCompat.SRC_ATOP.get(color)
-        }
+        Reflection.getFieldValue<ImageView?>(scroller, "mThumbImage")
+          ?.setColorFilter(color, PorterDuff.Mode.SRC_ATOP)
       } catch (e: Exception) {
         CustomThemeEngine.log(TAG, "Error tinting the fast scroll thumb", e)
       }

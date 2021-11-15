@@ -24,7 +24,7 @@ import com.verNANDo57.rulebook_educational.extradata.R;
 
 import java.util.Objects;
 
-/*
+/**
     int redColor = Color.parseColor("Your_color_or_import_from_res");
     Example:
     public void onClick (View v){
@@ -57,7 +57,7 @@ public class StyleableToast extends LinearLayout {
     private float textSize;
     private boolean isTextSizeFromStyleXml = false;
     private boolean textBold;
-    private String text;
+    private final String text;
     private TypedArray typedArray;
     private TextView textView;
     private int gravity;
@@ -165,28 +165,24 @@ public class StyleableToast extends LinearLayout {
         if (iconStart != 0) {
             Drawable drawable = DrawableCompat.wrap(Objects.requireNonNull(ContextCompat.getDrawable(getContext(), iconStart)));
             DrawableCompat.setTint(drawable, getResources().getColor(R.color.styleable_toast_default_accent_color));
-            if (drawable != null) {
-                drawable.setBounds(0, 0, iconSize, iconSize);
-                TextViewCompat.setCompoundDrawablesRelative(textView, drawable, null, null, null);
-                if (Utils.isRTL()) {
-                    rootLayout.setPadding(paddingNoIcon, paddingVertical, paddingHorizontal1, paddingVertical);
-                } else {
-                    rootLayout.setPadding(paddingHorizontal1, paddingVertical, paddingNoIcon, paddingVertical);
-                }
+            drawable.setBounds(0, 0, iconSize, iconSize);
+            TextViewCompat.setCompoundDrawablesRelative(textView, drawable, null, null, null);
+            if (StyleableToastUtils.isRTL()) {
+                rootLayout.setPadding(paddingNoIcon, paddingVertical, paddingHorizontal1, paddingVertical);
+            } else {
+                rootLayout.setPadding(paddingHorizontal1, paddingVertical, paddingNoIcon, paddingVertical);
             }
         }
 
         if (iconEnd != 0) {
             Drawable drawable = DrawableCompat.wrap(Objects.requireNonNull(ContextCompat.getDrawable(getContext(), iconEnd)));
             DrawableCompat.setTint(drawable, getResources().getColor(R.color.styleable_toast_default_accent_color));
-            if (drawable != null) {
-                drawable.setBounds(0, 0, iconSize, iconSize);
-                TextViewCompat.setCompoundDrawablesRelative(textView, null, null, drawable, null);
-                if (Utils.isRTL()) {
-                    rootLayout.setPadding(paddingHorizontal1, paddingVertical, paddingNoIcon, paddingVertical);
-                } else {
-                    rootLayout.setPadding(paddingNoIcon, paddingVertical, paddingHorizontal1, paddingVertical);
-                }
+            drawable.setBounds(0, 0, iconSize, iconSize);
+            TextViewCompat.setCompoundDrawablesRelative(textView, null, null, drawable, null);
+            if (StyleableToastUtils.isRTL()) {
+                rootLayout.setPadding(paddingHorizontal1, paddingVertical, paddingNoIcon, paddingVertical);
+            } else {
+                rootLayout.setPadding(paddingNoIcon, paddingVertical, paddingHorizontal1, paddingVertical);
             }
         }
 
@@ -278,7 +274,7 @@ public class StyleableToast extends LinearLayout {
         }
 
         public Builder stroke(int strokeWidth, @ColorInt int strokeColor) {
-            this.strokeWidth = Utils.toDp(context, strokeWidth);
+            this.strokeWidth = StyleableToastUtils.toDp(context, strokeWidth);
             return this;
         }
 
@@ -286,7 +282,7 @@ public class StyleableToast extends LinearLayout {
          * @param cornerRadius Sets the corner radius of the StyleableToast's shape.
          */
         public Builder cornerRadius(int cornerRadius) {
-            this.cornerRadius = Utils.toDp(context, cornerRadius);
+            this.cornerRadius = StyleableToastUtils.toDp(context, cornerRadius);
             return this;
         }
 

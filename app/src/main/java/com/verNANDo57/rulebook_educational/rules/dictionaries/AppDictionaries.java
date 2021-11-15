@@ -1,8 +1,7 @@
 package com.verNANDo57.rulebook_educational.rules.dictionaries;
 
-import static com.verNANDo57.rulebook_educational.tools.Utils.LOG_TAG;
+import static com.verNANDo57.rulebook_educational.AppUtils.LOG_TAG;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -14,16 +13,12 @@ import com.google.android.material.navigation.NavigationView;
 import com.verNANDo57.rulebook_educational.BottomNavAmongActivitiesFragment;
 import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngineAppCompatActivity;
 import com.verNANDo57.rulebook_educational.extradata.R;
-import com.verNANDo57.rulebook_educational.preferences.RulebookApplicationSharedPreferences;
 import com.verNANDo57.rulebook_educational.rules.AppExtraBooleans;
 
 public class AppDictionaries extends CustomThemeEngineAppCompatActivity {
-    RulebookApplicationSharedPreferences preferences;
     private AppExtraBooleans booleansInMainRules;
 
-    @SuppressLint("ClickableViewAccessibility")
     public void onCreate(Bundle savedInstanceState) {
-        preferences = new RulebookApplicationSharedPreferences(this);
         booleansInMainRules = new AppExtraBooleans(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.app_dictionaries);

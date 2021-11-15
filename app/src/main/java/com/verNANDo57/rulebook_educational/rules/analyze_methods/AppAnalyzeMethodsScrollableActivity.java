@@ -22,14 +22,13 @@ import androidx.core.widget.NestedScrollView;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.navigation.NavigationView;
+import com.verNANDo57.rulebook_educational.AppUtils;
 import com.verNANDo57.rulebook_educational.BottomNavAmongLessonsFragment;
 import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngineAppCompatActivity;
 import com.verNANDo57.rulebook_educational.customthemeengine.utils.ColorUtils;
 import com.verNANDo57.rulebook_educational.extradata.R;
-import com.verNANDo57.rulebook_educational.preferences.RulebookApplicationSharedPreferences;
 import com.verNANDo57.rulebook_educational.rules.AppExtraBooleans;
 import com.verNANDo57.rulebook_educational.styleabletoast.StyleableToast;
-import com.verNANDo57.rulebook_educational.tools.Utils;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -38,7 +37,6 @@ import java.io.InputStream;
 
 public class AppAnalyzeMethodsScrollableActivity extends CustomThemeEngineAppCompatActivity {
 
-    RulebookApplicationSharedPreferences preferences;
     private AppExtraBooleans booleansInMainRules;
 
     private RelativeLayout app_scrollableactivity_in_analyzemethods_toolbarlayout_container;
@@ -55,7 +53,6 @@ public class AppAnalyzeMethodsScrollableActivity extends CustomThemeEngineAppCom
 
     @SuppressLint("ClickableViewAccessibility")
     public void onCreate(Bundle savedInstanceState) {
-        preferences = new RulebookApplicationSharedPreferences(this);
         booleansInMainRules = new AppExtraBooleans(this);
 
         booleansInMainRules.setAppBarPageSelected("info_container");
@@ -138,12 +135,12 @@ public class AppAnalyzeMethodsScrollableActivity extends CustomThemeEngineAppCom
         try {
             InputStream inputStream;
             inputStream = getAssets().open("analyze_methods/" + booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean() + ".txt");
-            app_scrollableactivity_content_in_analyzemethods_text.setText(Utils.convertStreamToString(inputStream));
+            app_scrollableactivity_content_in_analyzemethods_text.setText(AppUtils.convertStreamToString(inputStream));
         } catch (IOException e) {
             new StyleableToast.Builder(getApplicationContext())
                     .text(getString(R.string.error_while_reading_a_file)) // set text
                     .textBold() //set text bold
-                    .iconStart(Utils.getIconWarning()) //icon in start of toast
+                    .iconStart(AppUtils.getIconWarning()) //icon in start of toast
                     .show(); //show custom toast
             e.printStackTrace();
         }
@@ -157,19 +154,19 @@ public class AppAnalyzeMethodsScrollableActivity extends CustomThemeEngineAppCom
                 String criteria = app_wordsearch_edittext.getText().toString();
                 String fullText = app_scrollableactivity_content_in_analyzemethods_text.getText().toString();
 
-                Utils.resetHighLightedText(app_scrollableactivity_content_in_analyzemethods_text, fullText);
+                AppUtils.resetHighLightedText(app_scrollableactivity_content_in_analyzemethods_text, fullText);
 
                 if(criteria.equals(" ") | criteria.contains("        ") | criteria.isEmpty()){
                     new StyleableToast.Builder(getApplicationContext())
                             .text(getString(R.string.app_edittext_is_empty)) // set text
                             .textBold() //set text bold
-                            .iconStart(Utils.getIconWarning()) //icon in start of toast
+                            .iconStart(AppUtils.getIconWarning()) //icon in start of toast
                             .show(); //show custom toast
                 } else {
                     if (fullText.contains(criteria)) {
                         int indexOfCriteria = fullText.indexOf(criteria);
                         int lineNumber = app_scrollableactivity_content_in_analyzemethods_text.getLayout().getLineForOffset(indexOfCriteria);
-                        Utils.setHighLightedText(app_scrollableactivity_content_in_analyzemethods_text, criteria);
+                        AppUtils.setHighLightedText(app_scrollableactivity_content_in_analyzemethods_text, criteria);
 
                         app_scrollableactivity_content_scrollview.scrollTo(0, app_scrollableactivity_content_in_analyzemethods_text.getLayout().getLineTop(lineNumber));
                     }
@@ -234,7 +231,7 @@ public class AppAnalyzeMethodsScrollableActivity extends CustomThemeEngineAppCom
                 return true;
 
             case R.id.save_rule:
-                Utils.copyTXTFileFromAssets(
+                AppUtils.copyTXTFileFromAssets(
                         getApplicationContext(),
                         "analyze_methods/" + booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean() + ".txt",
                         Environment.getExternalStorageDirectory().getAbsolutePath() + "/Rulebook/",
@@ -248,7 +245,7 @@ public class AppAnalyzeMethodsScrollableActivity extends CustomThemeEngineAppCom
 
     @Override
     public void onBackPressed(){
-        booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("null");
+        booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean(null);
         finish();
     }
 }

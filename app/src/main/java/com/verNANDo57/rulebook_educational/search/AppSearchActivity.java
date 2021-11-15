@@ -1,6 +1,6 @@
 package com.verNANDo57.rulebook_educational.search;
 
-import static com.verNANDo57.rulebook_educational.tools.Utils.LOG_TAG;
+import static com.verNANDo57.rulebook_educational.AppUtils.LOG_TAG;
 
 import android.os.Bundle;
 import android.text.Editable;
@@ -22,9 +22,7 @@ import java.util.Locale;
 
 public class AppSearchActivity extends CustomThemeEngineAppCompatActivity {
 
-    private RecyclerView recyclerView;
     private SearchAdapter searchAdapter;
-    private EditText search_edittext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,13 +41,13 @@ public class AppSearchActivity extends CustomThemeEngineAppCompatActivity {
         });
 
         // Init
-        recyclerView = findViewById(R.id.search_recyclerview);
+        RecyclerView recyclerView = findViewById(R.id.search_recyclerview);
         searchAdapter = new SearchAdapter(SearchReferences.setupSearchData(getApplicationContext()));
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(searchAdapter);
 
-        search_edittext = findViewById(R.id.search_edittext);
+        EditText search_edittext = findViewById(R.id.search_edittext);
         search_edittext.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -64,7 +62,7 @@ public class AppSearchActivity extends CustomThemeEngineAppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
                 //Auto-generated method
-               filter(s.toString());
+                filter(s.toString());
             }
         });
     }
@@ -80,6 +78,5 @@ public class AppSearchActivity extends CustomThemeEngineAppCompatActivity {
             }
         }
         this.searchAdapter.filterList(filteredList);
-        //notifyDataSetChanged();
     }
 }

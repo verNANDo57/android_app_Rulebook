@@ -38,12 +38,11 @@ import androidx.core.graphics.ColorUtils;
 import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.FragmentActivity;
 
+import com.verNANDo57.rulebook_educational.AppUtils;
 import com.verNANDo57.rulebook_educational.extradata.R;
-import com.verNANDo57.rulebook_educational.tools.Utils;
 
 import java.util.Arrays;
 import java.util.Locale;
-import java.util.Objects;
 
 /**
  * <p>A dialog to pick a color.</p>
@@ -585,7 +584,7 @@ public class ColorPickerDialog extends DialogFragment implements ColorPickerView
 
   private void onColorSelected(int color) {
     if (colorPickerDialogListener != null) {
-      Log.w(Utils.LOG_TAG, "Using deprecated listener which may be remove in future releases");
+      Log.w(AppUtils.LOG_TAG, "Using deprecated listener which may be remove in future releases");
       colorPickerDialogListener.onColorSelected(dialogId, color);
       return;
     }
@@ -599,7 +598,7 @@ public class ColorPickerDialog extends DialogFragment implements ColorPickerView
 
   private void onDialogDismissed() {
     if (colorPickerDialogListener != null) {
-      Log.w(Utils.LOG_TAG, "Using deprecated listener which may be remove in future releases");
+      Log.w(AppUtils.LOG_TAG, "Using deprecated listener which may be remove in future releases");
       colorPickerDialogListener.onDialogDismissed(dialogId);
       return;
     }

@@ -1,6 +1,5 @@
 package com.verNANDo57.rulebook_educational;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.os.Bundle;
@@ -23,7 +22,6 @@ public class BottomNavAmongLessonsFragment extends CustomThemeEngineBottomSheetD
         //Required empty public constructor
     }
 
-    @SuppressLint("NonConstantResourceId")
     public View onCreateView(LayoutInflater inflater , ViewGroup container, Bundle savedInstanceState) {
         View viewFragment = inflater.inflate(R.layout.fragment_bottomsheet_among_lessons, container, false);
 
@@ -34,32 +32,21 @@ public class BottomNavAmongLessonsFragment extends CustomThemeEngineBottomSheetD
         navigation_among_activities.setNavigationItemSelectedListener(menuItem -> {
             int id = menuItem.getItemId();
 
-            switch (id)
-            {
-                case R.id.bottomsheetdialog_betweenlessons_orphoandpunct:
-                    requireActivity().finish();
-                    startActivity(new Intent(getActivity(), AppMainRulesActivity.class));
-                break;
-
-                case R.id.bottomsheetdialog_betweenlessons_lexicon:
-                    requireActivity().finish();
-                    startActivity(new Intent(getActivity(), com.verNANDo57.rulebook_educational.rules.AppLexiconActivity.class));
-                break;
-
-                case R.id.bottomsheetdialog_betweenlessons_intables:
-                    requireActivity().finish();
-                    startActivity(new Intent(getActivity(), AppRulesInSchemesAndTablesActivity.class));
-                break;
-
-                case R.id.bottomsheetdialog_betweenlessons_analyzemethods:
-                    requireActivity().finish();
-                    startActivity(new Intent(getActivity(), AppAnalyzeMethods.class));
-                break;
-
-                case R.id.bottomsheetdialog_betweenlessons_search:
-                    requireActivity().finish();
-                    startActivity(new Intent(getActivity(), AppSearchActivity.class));
-                break;
+            if (id == R.id.bottomsheetdialog_betweenlessons_orphoandpunct) {
+                requireActivity().finish();
+                startActivity(new Intent(getActivity(), AppMainRulesActivity.class));
+            } else if (id == R.id.bottomsheetdialog_betweenlessons_lexicon) {
+                requireActivity().finish();
+                startActivity(new Intent(getActivity(), com.verNANDo57.rulebook_educational.rules.AppLexiconActivity.class));
+            } else if (id == R.id.bottomsheetdialog_betweenlessons_intables) {
+                requireActivity().finish();
+                startActivity(new Intent(getActivity(), AppRulesInSchemesAndTablesActivity.class));
+            } else if (id == R.id.bottomsheetdialog_betweenlessons_analyzemethods) {
+                requireActivity().finish();
+                startActivity(new Intent(getActivity(), AppAnalyzeMethods.class));
+            } else if (id == R.id.bottomsheetdialog_betweenlessons_search) {
+                requireActivity().finish();
+                startActivity(new Intent(getActivity(), AppSearchActivity.class));
             }
 
             return false;

@@ -8,7 +8,7 @@ import androidx.core.view.ViewCompat;
 
 import java.util.Locale;
 
-class Utils {
+class StyleableToastUtils {
     static int toDp(Context context, int value) {
         return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, value, context.getResources().getDisplayMetrics());
     }

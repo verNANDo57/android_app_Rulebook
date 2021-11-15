@@ -1,7 +1,6 @@
 package com.verNANDo57.rulebook_educational;
 
 import android.Manifest;
-import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -22,17 +21,14 @@ import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngi
 import com.verNANDo57.rulebook_educational.extradata.R;
 import com.verNANDo57.rulebook_educational.preferences.RulebookApplicationSharedPreferences;
 import com.verNANDo57.rulebook_educational.rules.dictionaries.AppDictionaries;
-import com.verNANDo57.rulebook_educational.tools.Utils;
 
 import java.util.Arrays;
 
-public class MainActivity extends CustomThemeEngineAppCompatActivity
-{
+public class MainActivity extends CustomThemeEngineAppCompatActivity {
 	RulebookApplicationSharedPreferences preferences;
 
 	public static final int STORAGE_PERMISSION_CODE = 1;
 
-	@SuppressLint("ClickableViewAccessibility")
 	public void onCreate(Bundle savedInstanceState) {
 		preferences = new RulebookApplicationSharedPreferences(this);
 
@@ -44,20 +40,16 @@ public class MainActivity extends CustomThemeEngineAppCompatActivity
 		main_image.setColorFilter(R.color.coloraccent, PorterDuff.Mode.SRC_IN);
 
 		Button app_rules_button = findViewById(R.id.app_rules_button);
-		if(preferences.loadRulebookAnimationsDisableState()==false) {
-			Utils.setAnimatorToAnyView(app_rules_button, "to_left", (float) 250);
-		}
+		AppUtils.setTranslateAnimation(app_rules_button, "to_left", (float) 250);
 		app_rules_button.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				startActivity(new Intent(getApplicationContext(), AppChooseYourDestiny.class));
+				startActivity(new Intent(getApplicationContext(), AppSectionSelectionActivity.class));
 			}
 		});
 
 		Button app_dictionaries = findViewById(R.id.app_dictionaries);
-		if(preferences.loadRulebookAnimationsDisableState()==false) {
-			Utils.setAnimatorToAnyView(app_dictionaries, "to_right", (float) 250);
-		}
+		AppUtils.setTranslateAnimation(app_dictionaries, "to_right", (float) 250);
 		app_dictionaries.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -66,9 +58,7 @@ public class MainActivity extends CustomThemeEngineAppCompatActivity
 		});
 
 		Button settings_button = findViewById(R.id.settings_button);
-		if(preferences.loadRulebookAnimationsDisableState()==false) {
-			Utils.setAnimatorToAnyView(settings_button, "to_left", (float) 250);
-		}
+		AppUtils.setTranslateAnimation(settings_button, "to_left", (float) 250);
 		settings_button.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -77,9 +67,7 @@ public class MainActivity extends CustomThemeEngineAppCompatActivity
 		});
 
 		Button about_app_button = findViewById(R.id.about_app_button);
-		if(preferences.loadRulebookAnimationsDisableState()==false) {
-			Utils.setAnimatorToAnyView(about_app_button, "to_right", (float) 250);
-		}
+		AppUtils.setTranslateAnimation(about_app_button, "to_right", (float) 250);
 		about_app_button.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -88,9 +76,7 @@ public class MainActivity extends CustomThemeEngineAppCompatActivity
 		});
 
 		Button app_exit_button = findViewById(R.id.app_exit_button);
-		if(preferences.loadRulebookAnimationsDisableState()==false) {
-			Utils.setAnimatorToAnyView(app_exit_button, "to_left", (float) 250);
-		}
+		AppUtils.setTranslateAnimation(app_exit_button, "to_left", (float) 250);
 		app_exit_button.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -128,6 +114,12 @@ public class MainActivity extends CustomThemeEngineAppCompatActivity
 		alert.show();
 	}
 
+	/*
+  		These permissions are required:
+        android.permission.WRITE_EXTERNAL_STORAGE,
+        android.permission.READ_EXTERNAL_STORAGE,
+        android.permission.MANAGE_EXTERNAL_STORAGE
+	*/
 	public void checkPermission() {
 		//Check if android version is Android 11 or higher
 		if (Build.VERSION.SDK_INT >= 30) {
@@ -214,10 +206,10 @@ public class MainActivity extends CustomThemeEngineAppCompatActivity
 		if (requestCode == STORAGE_PERMISSION_CODE) {
 			if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 				preferences.setAppPermissionsAreGrantedBooleanState(true);
-				Log.w(Utils.LOG_TAG, Arrays.toString(permissions) + " - " + getString(R.string.app_granted));
+				Log.w(AppUtils.LOG_TAG, Arrays.toString(permissions) + " - " + getString(R.string.app_granted));
 			} else {
 				preferences.setAppPermissionsAreGrantedBooleanState(false);
-				Log.w(Utils.LOG_TAG, Arrays.toString(permissions) + " - " + getString(R.string.app_denied));
+				Log.w(AppUtils.LOG_TAG, Arrays.toString(permissions) + " - " + getString(R.string.app_denied));
 			}
 		}
 	}

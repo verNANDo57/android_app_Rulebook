@@ -1,12 +1,11 @@
 package com.verNANDo57.rulebook_educational.search;
 
+import android.animation.AnimatorInflater;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -44,6 +43,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchHold
         SearchAdapter.listdata = listdata;
     }
 
+    @NonNull
     @Override
     public SearchHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
@@ -51,7 +51,6 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchHold
         return new SearchHolder(listItem);
     }
 
-    @SuppressLint("ClickableViewAccessibility")
     @Override
     public void onBindViewHolder(SearchHolder holder, int position) {
         Context context = holder.search_item_card.getContext();
@@ -64,32 +63,12 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchHold
         holder.search_item_card.setCardBackgroundColor(0);
         //Remove shadow around cardview to make it look better
         holder.search_item_card.setCardElevation(0);
+        holder.search_item_card.setStateListAnimator(AnimatorInflater.loadStateListAnimator(context, R.animator.btn_anim_fade));
         holder.search_item_card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //TODO: HANDLE CLICK
-                //Firstly animate view, then start activity
-                Animation animation = AnimationUtils.loadAnimation(context, R.anim.app_fade_out);
-                animation.setDuration(125);
-                animation.setAnimationListener(new Animation.AnimationListener() {
-                    @Override
-                    public void onAnimationStart(Animation animation) {
-                        //Generated Method
-                    }
-
-                    @Override
-                    public void onAnimationEnd(Animation animation) {
-                        //Generated Method
-                        //Get context from any VIEW object instead of passing CONTEXT as an argument to SearchAdapter and keeping it as class field
-                        SearchReferences.SearchDataOnClickReferences(context, holder);
-                    }
-
-                    @Override
-                    public void onAnimationRepeat(Animation animation) {
-                        //Generated Method
-                    }
-                });
-                view.startAnimation(animation);
+                //Get context from any VIEW object instead of passing CONTEXT as an argument to SearchAdapter and keeping it as class field
+                SearchReferences.performSearchItemOnClickAction(context, holder);
             }
         });
     }
@@ -99,6 +78,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchHold
         return listdata.size();
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     public void filterList(ArrayList<SearchItemData> filteredList) {
         listdata = filteredList;
         notifyDataSetChanged();

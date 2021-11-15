@@ -1,6 +1,6 @@
 package com.verNANDo57.rulebook_educational.rules;
 
-import static com.verNANDo57.rulebook_educational.tools.Utils.LOG_TAG;
+import static com.verNANDo57.rulebook_educational.AppUtils.LOG_TAG;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -16,22 +16,18 @@ import androidx.annotation.NonNull;
 import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
+import com.verNANDo57.rulebook_educational.AppUtils;
 import com.verNANDo57.rulebook_educational.BottomNavAmongLessonsFragment;
 import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngineAppCompatActivity;
 import com.verNANDo57.rulebook_educational.extradata.R;
-import com.verNANDo57.rulebook_educational.preferences.RulebookApplicationSharedPreferences;
-import com.verNANDo57.rulebook_educational.tools.Utils;
 
 public class AppLexiconActivity extends CustomThemeEngineAppCompatActivity {
 
     public String lexiconfile = "lexicon.html";
-    RulebookApplicationSharedPreferences preferences;
 
-    @SuppressLint({"ClickableViewAccessibility", "SetJavaScriptEnabled"})
+    @SuppressLint("SetJavaScriptEnabled")
     public void onCreate(Bundle savedInstanceState)
     {
-        preferences =  new RulebookApplicationSharedPreferences(this);
-
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.app_bottomappbar_webview);
@@ -66,10 +62,7 @@ public class AppLexiconActivity extends CustomThemeEngineAppCompatActivity {
         });
         final BottomAppBar bar_in_lexicon = findViewById(R.id.bar_in_webview);
         setSupportActionBar(bar_in_lexicon);
-        if(preferences.loadRulebookAnimationsDisableState()==false) {
-            Utils.setAnimatorToAnyView(bar_in_lexicon, "to_top", (float) 250);
-        }
-
+        AppUtils.setTranslateAnimation(bar_in_lexicon, "to_top", (float) 250);
         bar_in_lexicon.setNavigationOnClickListener(new NavigationView.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -86,17 +79,13 @@ public class AppLexiconActivity extends CustomThemeEngineAppCompatActivity {
 
                 if(movement >= 100){
                     if (bar_in_lexicon.getVisibility() == View.VISIBLE) {
-                        if (preferences.loadRulebookAnimationsDisableState() == false) {
-                            Utils.setAnimatorToAnyView(bar_in_lexicon, "to_bottom");
-                        }
+                        AppUtils.setTranslateAnimation(bar_in_lexicon, "to_bottom");
                         bar_in_lexicon.setVisibility(View.GONE);
                         fab_in_schemes_and_tables.hide();
                     }
                 } else if(movement >= -100){
                     if (bar_in_lexicon.getVisibility() == View.GONE) {
-                        if (preferences.loadRulebookAnimationsDisableState() == false) {
-                            Utils.setAnimatorToAnyView(bar_in_lexicon, "to_top");
-                        }
+                        AppUtils.setTranslateAnimation(bar_in_lexicon, "to_top");
                         bar_in_lexicon.setVisibility(View.VISIBLE);
                         fab_in_schemes_and_tables.show();
                     }

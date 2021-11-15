@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="AppRatingAgressiveVector">
+    <declare-styleable name="AppRatingVector">
         <attr name="face_color" format="color"/>
         <attr name="eyes_color" format="color"/>
         <attr name="tongue_color" format="color"/>

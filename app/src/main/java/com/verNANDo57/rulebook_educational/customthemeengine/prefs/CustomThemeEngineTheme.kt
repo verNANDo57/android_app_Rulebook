@@ -156,16 +156,16 @@ data class CustomThemeEngineTheme internal constructor(
         if (ColorUtils.isDarkColor(background)) DARK else LIGHT
       }
 
-      // Get the bottomappbar item colors
+      // Get the bottomappbar color
       val bottomAppBarItemColor = ColorUtils.parseColor(json.getString(BOTTOMAPPBAR_ICONS_COLOR))
 
-      // Get the backgroundToast item colors
+      // Get the backgroundToast color
       val backgroundToast = ColorUtils.parseColor(json.getString(BACKGROUND_TOAST))
 
-      // Get the accentToast item colors
+      // Get the accentToast color
       val accentToast = ColorUtils.parseColor(json.getString(ACCENT_TOAST))
 
-      // Get the accentToast item colors
+      // Get the accentToast color
       val buttonStrokeColor = ColorUtils.parseColor(json.getString(BUTTON_STROKE_COLOR))
 
       //Get the bottomsheetdialog accent color

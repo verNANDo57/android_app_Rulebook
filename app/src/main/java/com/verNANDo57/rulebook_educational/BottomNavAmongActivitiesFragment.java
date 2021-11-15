@@ -1,6 +1,5 @@
 package com.verNANDo57.rulebook_educational;
 
-import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.ColorStateList;
@@ -22,7 +21,6 @@ public class BottomNavAmongActivitiesFragment extends CustomThemeEngineBottomShe
         //Required empty public constructor
     }
 
-    @SuppressLint("NonConstantResourceId")
     public View onCreateView(LayoutInflater inflater , ViewGroup container, Bundle savedInstanceState) {
         View viewFragment = inflater.inflate(R.layout.fragment_bottomsheet_among_activities, container, false);
 
@@ -33,48 +31,37 @@ public class BottomNavAmongActivitiesFragment extends CustomThemeEngineBottomShe
         navigationbetweenlessons.setNavigationItemSelectedListener(menuItem -> {
             int id = menuItem.getItemId();
 
-            switch (id)
-            {
-                case R.id.bottomsheetdialog_betweenactivities_mainrules:
-                    requireActivity().finish();
-                    startActivity(new Intent(getActivity(), AppChooseYourDestiny.class));
-                    break;
-
-                case R.id.bottomsheetdialog_betweenactivities_dictionaries:
-                    requireActivity().finish();
-                    startActivity(new Intent(getActivity(), AppDictionaries.class));
-                    break;
-
-                case R.id.bottomsheetdialog_betweenactivities_about:
-                    requireActivity().finish();
-                    startActivity(new Intent(getActivity(), AppAboutApplicationActivity.class));
-                    break;
-
-                case R.id.bottomsheetdialog_betweenactivities_settings:
-                    requireActivity().finish();
-                    startActivity(new Intent(getActivity(), AppSettingsActivity.class));
-                    break;
-
-                case R.id.bottomsheetdialog_betweenactivities_exit:
-                    androidx.appcompat.app.AlertDialog.Builder builder = new androidx.appcompat.app.AlertDialog.Builder(requireActivity());
-                    builder.setTitle(getString(R.string.app_exit));
-                    builder.setMessage(getString(R.string.are_you_sure));
-                    builder.setIcon(R.drawable.ic_warning_outline);
-                    builder.setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener(){
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            requireActivity().finishAffinity();
-                        }
-                    });
-                    builder.setNegativeButton(getString(R.string.no), new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            dialog.cancel();
-                        }
-                    });
-                    androidx.appcompat.app.AlertDialog alert = builder.create();
-                    alert.show();
-                    break;
+            if (id == R.id.bottomsheetdialog_betweenactivities_mainrules) {
+                requireActivity().finish();
+                startActivity(new Intent(getActivity(), AppSectionSelectionActivity.class));
+            } else if (id == R.id.bottomsheetdialog_betweenactivities_dictionaries) {
+                requireActivity().finish();
+                startActivity(new Intent(getActivity(), AppDictionaries.class));
+            } else if (id == R.id.bottomsheetdialog_betweenactivities_about) {
+                requireActivity().finish();
+                startActivity(new Intent(getActivity(), AppAboutApplicationActivity.class));
+            } else if (id == R.id.bottomsheetdialog_betweenactivities_settings) {
+                requireActivity().finish();
+                startActivity(new Intent(getActivity(), AppSettingsActivity.class));
+            } else if (id == R.id.bottomsheetdialog_betweenactivities_exit) {
+                androidx.appcompat.app.AlertDialog.Builder builder = new androidx.appcompat.app.AlertDialog.Builder(requireActivity());
+                builder.setTitle(getString(R.string.app_exit));
+                builder.setMessage(getString(R.string.are_you_sure));
+                builder.setIcon(R.drawable.ic_warning_outline);
+                builder.setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener(){
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        requireActivity().finishAffinity();
+                    }
+                });
+                builder.setNegativeButton(getString(R.string.no), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+                androidx.appcompat.app.AlertDialog alert = builder.create();
+                alert.show();
             }
 
             return false;

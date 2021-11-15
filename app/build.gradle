@@ -2,15 +2,15 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.3"
+    compileSdkVersion 31
+    buildToolsVersion '31.0.0'
 
     defaultConfig {
         applicationId "com.verNANDo57.rulebook_educational"
         minSdkVersion 22
-        targetSdkVersion 30
-        versionCode 109
-        versionName '1.0.9'
+        targetSdkVersion 31
+        versionCode 110
+        versionName '1.1.0'
         multiDexEnabled true
     }
 
@@ -51,7 +51,7 @@ dependencies {
     implementation 'androidx.preference:preference-ktx:1.1.1'
     implementation 'androidx.coordinatorlayout:coordinatorlayout:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.6.0-RC'
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.6.0-RC2'
 }
 repositories {
     mavenCentral()

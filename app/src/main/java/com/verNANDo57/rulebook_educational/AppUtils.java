@@ -1,4 +1,4 @@
-package com.verNANDo57.rulebook_educational.tools;
+package com.verNANDo57.rulebook_educational;
 
 import android.content.Context;
 import android.content.pm.PackageInfo;
@@ -26,7 +26,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-public class Utils {
+public class AppUtils {
 
     public static int PACKAGEMANAGER_GET_APP_VERISON_NAME = 2;
     public static int PACKAGEMANAGER_GET_APP_VERISON_CODE = 4;
@@ -100,7 +100,7 @@ public class Utils {
      *
      * your view will move to right (to 250px right) from its current position
      */
-    public static void setAnimatorToAnyView(View view, String mode) {
+    public static void setTranslateAnimation(View view, String mode) {
         switch (mode) {
             case "to_right": {
                 TranslateAnimation animate = new TranslateAnimation(
@@ -139,7 +139,7 @@ public class Utils {
         }
     }
 
-    public static void setAnimatorToAnyView(View view, String mode, Float move_value) {
+    public static void setTranslateAnimation(View view, String mode, Float move_value) {
         switch (mode) {
             case "to_right": {
                 TranslateAnimation animate = new TranslateAnimation(
@@ -206,7 +206,7 @@ public class Utils {
         try {
             pInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), 0);
         } catch (PackageManager.NameNotFoundException e) {
-            Log.e(Utils.LOG_TAG, context.getString(R.string.app_error_occured));
+            Log.e(AppUtils.LOG_TAG, context.getString(R.string.app_error_occured));
             e.printStackTrace();
         }
 
@@ -247,11 +247,11 @@ public class Utils {
                 new StyleableToast.Builder(context)
                         .text(context.getString(R.string.app_saved_already) + ":" + outFileDir + outFileName + ".txt") // set text
                         .textBold() //set text bold
-                        .iconStart(Utils.getIconWarning()) //icon in start of toast
+                        .iconStart(AppUtils.getIconWarning()) //icon in start of toast
                         .show(); //show custom toast
             } else {
                 out = new FileOutputStream(outFile);
-                Utils.copyFile(in, out);
+                AppUtils.copyFile(in, out);
                 in.close();
                 in = null;
                 out.flush();
@@ -261,7 +261,7 @@ public class Utils {
                 new StyleableToast.Builder(context)
                         .text(context.getString(R.string.app_saved) + ":" + outFileDir + outFileName + ".txt") // set text
                         .textBold() //set text bold
-                        .iconStart(Utils.getIconWarning()) //icon in start of toast
+                        .iconStart(AppUtils.getIconWarning()) //icon in start of toast
                         .show(); //show custom toast
             }
 
@@ -271,7 +271,7 @@ public class Utils {
             new StyleableToast.Builder(context)
                     .text(context.getString(R.string.app_error_while_saving_file)) // set text
                     .textBold() //set text bold
-                    .iconStart(Utils.getIconWarning()) //icon in start of toast
+                    .iconStart(AppUtils.getIconWarning()) //icon in start of toast
                     .show(); //show custom toast
         }
     }

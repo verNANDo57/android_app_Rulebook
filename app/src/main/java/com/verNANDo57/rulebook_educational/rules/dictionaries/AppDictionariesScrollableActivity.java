@@ -22,14 +22,13 @@ import androidx.core.widget.NestedScrollView;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.navigation.NavigationView;
+import com.verNANDo57.rulebook_educational.AppUtils;
 import com.verNANDo57.rulebook_educational.BottomNavAmongLessonsFragment;
 import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngineAppCompatActivity;
 import com.verNANDo57.rulebook_educational.customthemeengine.utils.ColorUtils;
 import com.verNANDo57.rulebook_educational.extradata.R;
-import com.verNANDo57.rulebook_educational.preferences.RulebookApplicationSharedPreferences;
 import com.verNANDo57.rulebook_educational.rules.AppExtraBooleans;
 import com.verNANDo57.rulebook_educational.styleabletoast.StyleableToast;
-import com.verNANDo57.rulebook_educational.tools.Utils;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -38,7 +37,6 @@ import java.io.InputStream;
 
 public class AppDictionariesScrollableActivity extends CustomThemeEngineAppCompatActivity {
 
-    RulebookApplicationSharedPreferences preferences;
     private AppExtraBooleans booleansInMainRules;
 
     private RelativeLayout app_scrollableactivity_in_dictionaries_toolbarlayout_container;
@@ -53,9 +51,7 @@ public class AppDictionariesScrollableActivity extends CustomThemeEngineAppCompa
     private String outFileDir;
     private String outFileName;
 
-    @SuppressLint("ClickableViewAccessibility")
     public void onCreate(Bundle savedInstanceState) {
-        preferences = new RulebookApplicationSharedPreferences(this);
         booleansInMainRules = new AppExtraBooleans(this);
         super.onCreate(savedInstanceState);
 
@@ -64,14 +60,13 @@ public class AppDictionariesScrollableActivity extends CustomThemeEngineAppCompa
         fade_in = AnimationUtils.loadAnimation(this, R.anim.app_fade_in);
         fade_out = AnimationUtils.loadAnimation(this, R.anim.app_fade_out);
 
-        //Activity Content as LAYOUT
         setContentView(R.layout.app_scrollable_activity);
 
         ImageView app_scrollableactivity_in_scrollableactivity_icon = findViewById(R.id.app_scrollableactivity_in_scrollableactivity_icon);
         app_scrollableactivity_in_scrollableactivity_icon.getLayoutParams().width = 300;
         app_scrollableactivity_in_scrollableactivity_icon.getLayoutParams().height = 180;
         app_scrollableactivity_in_scrollableactivity_icon.setBackground(ContextCompat.getDrawable(this, R.drawable.app_book_colored));
-        app_scrollableactivity_in_scrollableactivity_icon.setBackgroundTintList(ColorStateList.valueOf(ColorUtils.lighter(getResources().getColor(R.color.coloraccent), 0.01f)));
+        app_scrollableactivity_in_scrollableactivity_icon.setBackgroundTintList(ColorStateList.valueOf(ColorUtils.Companion.lighter(getResources().getColor(R.color.coloraccent), 0.01f)));
 
         TextView app_scrollableactivity_in_dictionaries_title = findViewById(R.id.app_scrollableactivity_in_scrollableactivity_title);
         TextView app_scrollableactivity_in_dictionaries_subtitle = findViewById(R.id.app_scrollableactivity_in_scrollableactivity_subtitle);
@@ -84,7 +79,7 @@ public class AppDictionariesScrollableActivity extends CustomThemeEngineAppCompa
             @Override
             public void onClick(View v) {
                 BottomNavAmongLessonsFragment BottomNavFragmentFromLessons = new BottomNavAmongLessonsFragment();
-                BottomNavFragmentFromLessons.show(getSupportFragmentManager(), "TAG");
+                BottomNavFragmentFromLessons.show(getSupportFragmentManager(), AppUtils.LOG_TAG);
             }
         });
 
@@ -113,12 +108,12 @@ public class AppDictionariesScrollableActivity extends CustomThemeEngineAppCompa
             try {
                 InputStream inputStream;
                 inputStream = getAssets().open("dictionaries/" + booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean() + ".txt");
-                app_scrollableactivity_content_in_dictionaries_text.setText(Utils.convertStreamToString(inputStream));
+                app_scrollableactivity_content_in_dictionaries_text.setText(AppUtils.convertStreamToString(inputStream));
             } catch (IOException e) {
                 new StyleableToast.Builder(getApplicationContext())
                         .text(getString(R.string.error_while_reading_a_file)) // set text
                         .textBold() //set text bold
-                        .iconStart(Utils.getIconWarning()) //icon in start of toast
+                        .iconStart(AppUtils.getIconWarning()) //icon in start of toast
                         .show(); //show custom toast
                 e.printStackTrace();
             }
@@ -132,19 +127,19 @@ public class AppDictionariesScrollableActivity extends CustomThemeEngineAppCompa
                     String criteria = app_wordsearch_edittext.getText().toString();
                     String fullText = app_scrollableactivity_content_in_dictionaries_text.getText().toString();
 
-                    Utils.resetHighLightedText(app_scrollableactivity_content_in_dictionaries_text, fullText);
+                    AppUtils.resetHighLightedText(app_scrollableactivity_content_in_dictionaries_text, fullText);
 
                     if(criteria.equals(" ") | criteria.contains("        ") | criteria.isEmpty()){
                         new StyleableToast.Builder(getApplicationContext())
                                 .text(getString(R.string.app_edittext_is_empty)) // set text
                                 .textBold() //set text bold
-                                .iconStart(Utils.getIconWarning()) //icon in start of toast
+                                .iconStart(AppUtils.getIconWarning()) //icon in start of toast
                                 .show(); //show custom toast
                     } else {
                         if (fullText.contains(criteria)) {
                             int indexOfCriteria = fullText.indexOf(criteria);
                             int lineNumber = app_scrollableactivity_content_in_dictionaries_text.getLayout().getLineForOffset(indexOfCriteria);
-                            Utils.setHighLightedText(app_scrollableactivity_content_in_dictionaries_text, criteria);
+                            AppUtils.setHighLightedText(app_scrollableactivity_content_in_dictionaries_text, criteria);
 
                             app_scrollableactivity_content_scrollview.scrollTo(0, app_scrollableactivity_content_in_dictionaries_text.getLayout().getLineTop(lineNumber));
                         }
@@ -208,7 +203,7 @@ public class AppDictionariesScrollableActivity extends CustomThemeEngineAppCompa
                 return true;
 
             case R.id.save_rule:
-                Utils.copyTXTFileFromAssets(
+                AppUtils.copyTXTFileFromAssets(
                         getApplicationContext(),
                         "dictionaries/" + booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean() + ".txt",
                         Environment.getExternalStorageDirectory().getAbsolutePath() + "/Rulebook/",
@@ -222,7 +217,7 @@ public class AppDictionariesScrollableActivity extends CustomThemeEngineAppCompa
 
     @Override
     public void onBackPressed(){
-        booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("null");
+        booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean(null);
         finish();
     }
 }

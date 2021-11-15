@@ -1,8 +1,7 @@
 package com.verNANDo57.rulebook_educational.rules.analyze_methods;
 
-import static com.verNANDo57.rulebook_educational.tools.Utils.LOG_TAG;
+import static com.verNANDo57.rulebook_educational.AppUtils.LOG_TAG;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -14,20 +13,16 @@ import com.google.android.material.navigation.NavigationView;
 import com.verNANDo57.rulebook_educational.BottomNavAmongLessonsFragment;
 import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngineAppCompatActivity;
 import com.verNANDo57.rulebook_educational.extradata.R;
-import com.verNANDo57.rulebook_educational.preferences.RulebookApplicationSharedPreferences;
 import com.verNANDo57.rulebook_educational.rules.AppExtraBooleans;
 
-@SuppressLint("InflateParams")
 public class AppAnalyzeMethods extends CustomThemeEngineAppCompatActivity {
 
-    RulebookApplicationSharedPreferences preferences;
     private AppExtraBooleans booleansInAnalyzeMethods;
     private Intent scrollableactivity_in_analyzemethods;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        preferences = new RulebookApplicationSharedPreferences(this);
         booleansInAnalyzeMethods = new AppExtraBooleans(this);
 
         scrollableactivity_in_analyzemethods = new Intent(this, AppAnalyzeMethodsScrollableActivity.class);

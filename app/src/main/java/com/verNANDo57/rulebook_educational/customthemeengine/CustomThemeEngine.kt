@@ -182,25 +182,25 @@ class CustomThemeEngine private constructor(private val prefs: SharedPreferences
     baseTheme = getBaseTheme(prefs, res)
 
     bottomAppBarItemColor = prefs.getInt(PREF_BOTTOMAPPBAR_ITEMS_COLORS,
-      res.getColor(if (baseTheme == LIGHT) R.color.bottomappbar_items_color_everytheme_reference else R.color.bottomappbar_items_color_everytheme_reference))
+      res.getColor(R.color.bottomappbar_items_color_everytheme_reference))
 
     backgroundToast = prefs.getInt(PREF_TOAST_BACKGROUND,
-            res.getColor(if (baseTheme == LIGHT) R.color.styleable_toast_default_background_color_reference else R.color.styleable_toast_default_background_color_reference))
+            res.getColor(R.color.styleable_toast_default_background_color_reference))
 
     accentToast = prefs.getInt(PREF_TOAST_ACCENT,
-            res.getColor(if (baseTheme == LIGHT) R.color.styleable_toast_default_accent_color_reference else R.color.styleable_toast_default_accent_color_reference))
+            res.getColor(R.color.styleable_toast_default_accent_color_reference))
 
     buttonStrokeColor = prefs.getInt(PREF_BUTTON_STROKE_COLOR,
-      res.getColor(if (baseTheme == LIGHT) R.color.button_color_default else R.color.button_color_default))
+      res.getColor(R.color.button_color_default))
 
     bottomSheetDialogAccent = prefs.getInt(PREF_BOTTOMSHEETDIALOG_ACCENT,
-            res.getColor(if (baseTheme == LIGHT) R.color.bottomsheetdialog_accent_reference else R.color.bottomsheetdialog_accent_reference))
+            res.getColor(R.color.bottomsheetdialog_accent_reference))
 
     bottomSheetDialogPrimary = prefs.getInt(PREF_BOTTOMSHEETDIALOG_PRIMARY,
-            res.getColor(if (baseTheme == LIGHT) R.color.bottomsheetdialog_primary_reference else R.color.bottomsheetdialog_primary_reference))
+            res.getColor(R.color.bottomsheetdialog_primary_reference))
 
     bottomSheetDialogBackground = prefs.getInt(PREF_BOTTOMSHEETDIALOG_BACKGROUND,
-            res.getColor(if (baseTheme == LIGHT) R.color.bottomsheetdialog_background_reference else R.color.bottomsheetdialog_background_reference))
+            res.getColor(R.color.bottomsheetdialog_background_reference))
 
     timestamp = prefs.getLong(PREF_TIMESTAMP, NONE_TIMESTAMP)
   }

@@ -12,13 +12,10 @@ import android.widget.LinearLayout;
 
 import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngineFragment;
 import com.verNANDo57.rulebook_educational.extradata.R;
-import com.verNANDo57.rulebook_educational.preferences.RulebookApplicationSharedPreferences;
 import com.verNANDo57.rulebook_educational.rules.AppExtraBooleans;
 
 public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
 
-    private View view;
-    RulebookApplicationSharedPreferences preferences;
     private AppExtraBooleans booleansInMainRules;
 
     public AppMainRulesPunctuationFragment() {
@@ -35,10 +32,9 @@ public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
         Animation fade_in = AnimationUtils.loadAnimation(requireContext(), R.anim.app_fade_in);
         Animation fade_out = AnimationUtils.loadAnimation(requireContext(), R.anim.app_fade_out);
 
-        preferences = new RulebookApplicationSharedPreferences(requireContext());
         booleansInMainRules = new AppExtraBooleans(requireContext());
 
-        view = inflater.inflate(R.layout.punctuation, container, false);
+        View view = inflater.inflate(R.layout.punctuation, container, false);
 
         LinearLayout punctuationButton1_container = view.findViewById(R.id.punctuationButton1_container);
         LinearLayout punctuationButton2_container = view.findViewById(R.id.punctuationButton2_container);

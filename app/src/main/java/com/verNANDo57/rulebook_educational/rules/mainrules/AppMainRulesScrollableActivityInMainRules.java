@@ -1,6 +1,6 @@
 package com.verNANDo57.rulebook_educational.rules.mainrules;
 
-import static com.verNANDo57.rulebook_educational.tools.Utils.LOG_TAG;
+import static com.verNANDo57.rulebook_educational.AppUtils.LOG_TAG;
 
 import android.annotation.SuppressLint;
 import android.content.res.ColorStateList;
@@ -24,14 +24,13 @@ import androidx.core.widget.NestedScrollView;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.navigation.NavigationView;
+import com.verNANDo57.rulebook_educational.AppUtils;
 import com.verNANDo57.rulebook_educational.BottomNavAmongLessonsFragment;
 import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngineAppCompatActivity;
 import com.verNANDo57.rulebook_educational.customthemeengine.utils.ColorUtils;
 import com.verNANDo57.rulebook_educational.extradata.R;
-import com.verNANDo57.rulebook_educational.preferences.RulebookApplicationSharedPreferences;
 import com.verNANDo57.rulebook_educational.rules.AppExtraBooleans;
 import com.verNANDo57.rulebook_educational.styleabletoast.StyleableToast;
-import com.verNANDo57.rulebook_educational.tools.Utils;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -40,7 +39,6 @@ import java.io.InputStream;
 
 public class AppMainRulesScrollableActivityInMainRules extends CustomThemeEngineAppCompatActivity {
 
-    RulebookApplicationSharedPreferences preferences;
     private AppExtraBooleans booleansInMainRules;
 
     private RelativeLayout app_scrollableactivity_in_mainrules_toolbarlayout_container;
@@ -55,9 +53,8 @@ public class AppMainRulesScrollableActivityInMainRules extends CustomThemeEngine
     private String outFileDir;
     private String outFileName;
 
-    @SuppressLint({"ClickableViewAccessibility", "UseCompatLoadingForDrawables"})
+    @SuppressLint("UseCompatLoadingForDrawables")
     public void onCreate(Bundle savedInstanceState) {
-        preferences = new RulebookApplicationSharedPreferences(this);
         booleansInMainRules = new AppExtraBooleans(this);
         super.onCreate(savedInstanceState);
 
@@ -623,16 +620,16 @@ public class AppMainRulesScrollableActivityInMainRules extends CustomThemeEngine
         try {
             if(booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("ortho_")) {
                 inputStream = getAssets().open("mainrules/orthography/" + booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean() + ".txt");
-                app_scrollableactivity_content_in_mainrules_text.setText(Utils.convertStreamToString(inputStream));
+                app_scrollableactivity_content_in_mainrules_text.setText(AppUtils.convertStreamToString(inputStream));
             } else if(booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("punct_")){
                 inputStream = getAssets().open("mainrules/punctuation/" + booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean() + ".txt");
-                app_scrollableactivity_content_in_mainrules_text.setText(Utils.convertStreamToString(inputStream));
+                app_scrollableactivity_content_in_mainrules_text.setText(AppUtils.convertStreamToString(inputStream));
             }
         } catch (IOException e) {
             new StyleableToast.Builder(getApplicationContext())
                     .text(getString(R.string.error_while_reading_a_file)) // set text
                     .textBold() //set text bold
-                    .iconStart(Utils.getIconWarning()) //icon in start of toast
+                    .iconStart(AppUtils.getIconWarning()) //icon in start of toast
                     .show(); //show custom toast
             e.printStackTrace();
         }
@@ -651,19 +648,19 @@ public class AppMainRulesScrollableActivityInMainRules extends CustomThemeEngine
                 String criteria = app_wordsearch_edittext.getText().toString();
                 String fullText = app_scrollableactivity_content_in_mainrules_text.getText().toString();
 
-                Utils.resetHighLightedText(app_scrollableactivity_content_in_mainrules_text, fullText);
+                AppUtils.resetHighLightedText(app_scrollableactivity_content_in_mainrules_text, fullText);
 
                 if(criteria.equals(" ") | criteria.contains("        ") | criteria.isEmpty()){
                     new StyleableToast.Builder(getApplicationContext())
                             .text(getString(R.string.app_edittext_is_empty)) // set text
                             .textBold() //set text bold
-                            .iconStart(Utils.getIconWarning()) //icon in start of toast
+                            .iconStart(AppUtils.getIconWarning()) //icon in start of toast
                             .show(); //show custom toast
                 } else {
                     if (fullText.contains(criteria)) {
                         int indexOfCriteria = fullText.indexOf(criteria);
                         int lineNumber = app_scrollableactivity_content_in_mainrules_text.getLayout().getLineForOffset(indexOfCriteria);
-                        Utils.setHighLightedText(app_scrollableactivity_content_in_mainrules_text, criteria);
+                        AppUtils.setHighLightedText(app_scrollableactivity_content_in_mainrules_text, criteria);
 
                         app_scrollableactivity_content_scrollview.scrollTo(0, app_scrollableactivity_content_in_mainrules_text.getLayout().getLineTop(lineNumber));
                     }
@@ -730,7 +727,7 @@ public class AppMainRulesScrollableActivityInMainRules extends CustomThemeEngine
 
             case R.id.save_rule:
                 if (booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("ortho_")) {
-                    Utils.copyTXTFileFromAssets(
+                    AppUtils.copyTXTFileFromAssets(
                             getApplicationContext(),
                             "mainrules/orthography/" + booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean() + ".txt",
                             Environment.getExternalStorageDirectory().getAbsolutePath() + "/Rulebook/",
@@ -738,7 +735,7 @@ public class AppMainRulesScrollableActivityInMainRules extends CustomThemeEngine
                             outFileName, outFileDir,
                             getString(R.string.app_error_while_saving_file) + ":" + outFileDir + outFileName + ".txt" + "(" + booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean() + ".txt" + ")");
                 } else if (booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean().contains("punct_")){
-                    Utils.copyTXTFileFromAssets(
+                    AppUtils.copyTXTFileFromAssets(
                             getApplicationContext(),
                             "mainrules/punctuation/" + booleansInMainRules.loadRulebookMainRulesFragmentOpenBoolean() + ".txt",
                             Environment.getExternalStorageDirectory().getAbsolutePath() + "/Rulebook/",
@@ -754,7 +751,7 @@ public class AppMainRulesScrollableActivityInMainRules extends CustomThemeEngine
 
     @Override
     public void onBackPressed(){
-        booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("null");
+        booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean(null);
         finish();
     }
 }

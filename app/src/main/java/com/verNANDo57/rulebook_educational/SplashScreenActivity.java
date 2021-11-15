@@ -1,12 +1,6 @@
-/*
-  This app uses these permissions to save user needed rules as txt files:
-        android.permission.WRITE_EXTERNAL_STORAGE,
-        android.permission.READ_EXTERNAL_STORAGE,
-        android.permission.MANAGE_EXTERNAL_STORAGE
- */
-
 package com.verNANDo57.rulebook_educational;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.os.Bundle;
@@ -17,11 +11,9 @@ import android.widget.ProgressBar;
 import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngineAppCompatActivity;
 import com.verNANDo57.rulebook_educational.customthemeengine.utils.ColorUtils;
 import com.verNANDo57.rulebook_educational.extradata.R;
-import com.verNANDo57.rulebook_educational.preferences.RulebookApplicationSharedPreferences;
-import com.verNANDo57.rulebook_educational.tools.Utils;
 
+@SuppressLint("CustomSplashScreen")
 public class SplashScreenActivity extends CustomThemeEngineAppCompatActivity {
-	private static RulebookApplicationSharedPreferences preferences;
 
 	private ProgressBar Indicator1;
 	private ProgressBar Indicator2;
@@ -32,11 +24,9 @@ public class SplashScreenActivity extends CustomThemeEngineAppCompatActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		preferences = new RulebookApplicationSharedPreferences(this);
-
 		setContentView(R.layout.app_splashscreen);
 
-		int BackgroundTintColor = ColorUtils.lighter(getResources().getColor(R.color.coloraccent), 0.01f);
+		int BackgroundTintColor = ColorUtils.Companion.lighter(getResources().getColor(R.color.coloraccent), 0.01f);
 
 		Indicator1 = findViewById(R.id.appSplashScreenProgressBar1); //Indicator1(ProgressBar1)
 		Indicator2 = findViewById(R.id.appSplashScreenProgressBar2); //Indicator2(ProgressBar2)
@@ -69,7 +59,7 @@ public class SplashScreenActivity extends CustomThemeEngineAppCompatActivity {
 						Indicator2.setProgress(counter);
 						Indicator3.setProgress(counter);
 					} catch (InterruptedException e) {
-						Log.e(Utils.LOG_TAG, getString(R.string.app_error_occured));
+						Log.e(AppUtils.LOG_TAG, getString(R.string.app_error_occured));
 						e.printStackTrace();
 					}
 				}

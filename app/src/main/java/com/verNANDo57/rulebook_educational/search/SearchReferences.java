@@ -179,7 +179,7 @@ public class SearchReferences {
         return listdata;
     }
 
-    public static void SearchDataOnClickReferences (Context context, SearchAdapter.SearchHolder searchHolder) {
+    public static void performSearchItemOnClickAction(Context context, SearchAdapter.SearchHolder searchHolder) {
         AppExtraBooleans booleansInMainRules = new AppExtraBooleans(context);
         Intent scrollableactivity_in_mainrules = new Intent(context, AppMainRulesScrollableActivityInMainRules.class);
         Intent scrollableactivity_in_analyzemethods = new Intent(context, AppAnalyzeMethodsScrollableActivity.class);

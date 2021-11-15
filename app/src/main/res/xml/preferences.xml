@@ -6,39 +6,27 @@
 	  android:title="@string/category_pref_interface">
 
 	  <androidx.preference.Preference
-		  android:key="other_themes"
+		  android:key="appThemes"
 		  android:layout_width="fill_parent"
-		  android:layout_height="80dp"
 		  android:icon="@drawable/app_themeengine_icon"
-		  android:summary="@string/app_themes_extended"
+		  android:summary="@string/app_themes_summary"
 		  android:title="@string/app_themes">
 	  </androidx.preference.Preference>
 
 	  <androidx.preference.SwitchPreferenceCompat
-		  android:key="animations_disable"
-		  android:layout_width="fill_parent"
-		  android:layout_height="90dp"
-		  android:icon="@drawable/app_android_icon"
-		  android:summary="@string/app_disable_some_animations_extended"
-		  android:title="@string/app_disable_some_animations">
-	  </androidx.preference.SwitchPreferenceCompat>
-
-	  <androidx.preference.SwitchPreferenceCompat
 		  android:key="statusbar_enable"
 		  android:layout_width="fill_parent"
-		  android:layout_height="90dp"
 		  android:icon="@drawable/app_fullscreenmode_icon"
-		  android:summary="@string/app_enable_statusbar_extended"
+		  android:summary="@string/app_enable_statusbar_summary"
 		  android:title="@string/app_enable_statusbar">
 	  </androidx.preference.SwitchPreferenceCompat>
 
 	  <androidx.preference.Preference
 		  android:key="app_reboot_from_prefs"
 		  android:layout_width="fill_parent"
-		  android:layout_height="80dp"
 		  android:icon="@drawable/app_refresh_icon"
-		  android:summary="@string/app_prefs_warning_extended"
-		  android:title="@string/app_prefs_warning">
+		  android:summary="@string/app_prefs_warning_summary"
+		  android:selectable="false">
 	  </androidx.preference.Preference>
 
   </androidx.preference.PreferenceCategory>

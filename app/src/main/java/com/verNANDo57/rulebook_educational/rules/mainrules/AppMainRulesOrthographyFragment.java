@@ -12,13 +12,10 @@ import android.widget.LinearLayout;
 
 import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngineFragment;
 import com.verNANDo57.rulebook_educational.extradata.R;
-import com.verNANDo57.rulebook_educational.preferences.RulebookApplicationSharedPreferences;
 import com.verNANDo57.rulebook_educational.rules.AppExtraBooleans;
 
 public class AppMainRulesOrthographyFragment extends CustomThemeEngineFragment {
 
-    private View view;
-    RulebookApplicationSharedPreferences preferences;
     private AppExtraBooleans booleansInMainRules;
 
     public AppMainRulesOrthographyFragment() {
@@ -31,16 +28,13 @@ public class AppMainRulesOrthographyFragment extends CustomThemeEngineFragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         Animation fade_in = AnimationUtils.loadAnimation(requireContext(), R.anim.app_fade_in);
         Animation fade_out = AnimationUtils.loadAnimation(requireContext(), R.anim.app_fade_out);
 
-        preferences = new RulebookApplicationSharedPreferences(requireContext());
         booleansInMainRules = new AppExtraBooleans(requireContext());
 
-
-        view = inflater.inflate(R.layout.orthography, container, false);
+        View view = inflater.inflate(R.layout.orthography, container, false);
 
         LinearLayout orthographyButton1_container = view.findViewById(R.id.orthographyButton1_container);
         LinearLayout orthographyButton2_container = view.findViewById(R.id.orthographyButton2_container);

@@ -34,7 +34,7 @@
 
 			<Button
 				android:id="@+id/app_rules_button"
-				style="@style/RulebookChooseDestinyButtonLeftToRight"
+				style="@style/RulebookChooseDestinyButtonLeft"
 				android:text="@string/rules"
 				android:paddingBottom="5dp" />
 
@@ -48,7 +48,7 @@
 
 			<Button
 				android:id="@+id/app_dictionaries"
-				style="@style/RulebookChooseDestinyButtonRightToLeft"
+				style="@style/RulebookChooseDestinyButtonRight"
 				android:text="@string/dictionaries"
 				android:paddingTop="5dp"
 				android:paddingBottom="5dp" />
@@ -63,7 +63,7 @@
 
 			<Button
 				android:id="@+id/settings_button"
-				style="@style/RulebookChooseDestinyButtonLeftToRight"
+				style="@style/RulebookChooseDestinyButtonLeft"
 				android:text="@string/settings"
 				android:paddingTop="5dp"
 				android:paddingBottom="5dp" />
@@ -78,7 +78,7 @@
 
 			<Button
 				android:id="@+id/about_app_button"
-				style="@style/RulebookChooseDestinyButtonRightToLeft"
+				style="@style/RulebookChooseDestinyButtonRight"
 				android:text="@string/about_app"
 				android:paddingTop="5dp"
 				android:paddingBottom="5dp" />
@@ -92,7 +92,7 @@
 
 			<Button
 				android:id="@+id/app_exit_button"
-				style="@style/RulebookChooseDestinyButtonLeftToRight"
+				style="@style/RulebookChooseDestinyButtonLeft"
 				android:text="@string/app_exit"
 				android:paddingTop="5dp"
 				android:paddingBottom="5dp" />

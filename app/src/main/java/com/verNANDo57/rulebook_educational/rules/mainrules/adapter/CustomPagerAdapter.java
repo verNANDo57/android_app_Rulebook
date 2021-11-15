@@ -1,24 +1,26 @@
 package com.verNANDo57.rulebook_educational.rules.mainrules.adapter;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.lifecycle.Lifecycle;
+import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 import com.verNANDo57.rulebook_educational.rules.mainrules.AppMainRulesOrthographyFragment;
 import com.verNANDo57.rulebook_educational.rules.mainrules.AppMainRulesPunctuationFragment;
 
-
-public class CustomPagerAdapter extends FragmentPagerAdapter {
+public class CustomPagerAdapter extends FragmentStateAdapter {
 
     Fragment orthography = new AppMainRulesOrthographyFragment();
     Fragment punctuation = new AppMainRulesPunctuationFragment();
 
-    public CustomPagerAdapter(FragmentManager fm) {
-        super(fm);
+    public CustomPagerAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
+        super(fragmentManager, lifecycle);
     }
 
+    @NonNull
     @Override
-    public Fragment getItem(int position) {
+    public Fragment createFragment(int position) {
         if (position == 0) {
             return orthography;
         } else if (position == 1) {
@@ -28,7 +30,7 @@ public class CustomPagerAdapter extends FragmentPagerAdapter {
     }
 
     @Override
-    public int getCount() {
-        return 2;
+    public int getItemCount() {
+        return PagerConstants.MAINRULES_PAGER_ITEM_COUNT;
     }
 }

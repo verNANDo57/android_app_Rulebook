@@ -1,6 +1,5 @@
 package com.verNANDo57.rulebook_educational;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -16,28 +15,18 @@ import android.widget.ScrollView;
 import com.google.android.material.bottomappbar.BottomAppBar;
 import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngineAppCompatActivity;
 import com.verNANDo57.rulebook_educational.extradata.R;
-import com.verNANDo57.rulebook_educational.preferences.RulebookApplicationSharedPreferences;
-import com.verNANDo57.rulebook_educational.tools.Utils;
 
-@SuppressLint("ClickableViewAccessibility")
 public class AppRatingActivity extends CustomThemeEngineAppCompatActivity {
-
-    RulebookApplicationSharedPreferences preferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        preferences =  new RulebookApplicationSharedPreferences(this);
-
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.app_bottomappbar_rate);
 
         final BottomAppBar bar_in_rating_page = findViewById(R.id.bar_in_rating_page);
         setSupportActionBar(bar_in_rating_page);
-        if(preferences.loadRulebookAnimationsDisableState()==false) {
-            Utils.setAnimatorToAnyView(bar_in_rating_page, "to_top", (float) 250);
-        }
-
+        AppUtils.setTranslateAnimation(bar_in_rating_page, "to_top", (float) 250);
         ScrollView rating_page_scrollview = findViewById(R.id.rating_page_scrollview);
         rating_page_scrollview.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener() {
             @Override
@@ -47,16 +36,12 @@ public class AppRatingActivity extends CustomThemeEngineAppCompatActivity {
 
                 if(movement >= 100){
                     if (bar_in_rating_page.getVisibility() == View.VISIBLE) {
-                        if (preferences.loadRulebookAnimationsDisableState() == false) {
-                            Utils.setAnimatorToAnyView(bar_in_rating_page, "to_bottom");
-                        }
+                        AppUtils.setTranslateAnimation(bar_in_rating_page, "to_bottom");
                         bar_in_rating_page.setVisibility(View.GONE);
                     }
                 } else if(movement >= -100){
                     if (bar_in_rating_page.getVisibility() == View.GONE) {
-                        if (preferences.loadRulebookAnimationsDisableState() == false) {
-                            Utils.setAnimatorToAnyView(bar_in_rating_page, "to_top");
-                        }
+                        AppUtils.setTranslateAnimation(bar_in_rating_page, "to_top");
                         bar_in_rating_page.setVisibility(View.VISIBLE);
                     }
                 }

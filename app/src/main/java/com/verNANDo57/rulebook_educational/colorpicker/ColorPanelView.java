@@ -21,9 +21,9 @@ import android.view.View;
 import androidx.annotation.ColorInt;
 import androidx.core.view.ViewCompat;
 
+import com.verNANDo57.rulebook_educational.AppUtils;
 import com.verNANDo57.rulebook_educational.extradata.R;
 import com.verNANDo57.rulebook_educational.styleabletoast.StyleableToast;
-import com.verNANDo57.rulebook_educational.tools.Utils;
 
 import java.util.Locale;
 
@@ -291,7 +291,7 @@ public class ColorPanelView extends View {
     new StyleableToast.Builder(getContext())
             .text(hint.toString()) // set text
             .textBold() //set text bold
-            .iconStart(Utils.getIconWarning()) //icon in start of toast
+            .iconStart(AppUtils.getIconWarning()) //icon in start of toast
             .show(); //show custom toast
   }
 }

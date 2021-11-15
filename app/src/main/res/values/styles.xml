@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
 	<style name="AppThemeRulebookLight" parent="Theme.MaterialComponents.Light.Bridge">
-		<item name="android:windowAnimationStyle">@style/app_rulebook_animations_from_q</item>
 		<item name="colorAccent">@color/coloraccent</item>
 		<item name="android:textColor">@color/text_normal</item>
 		<item name="actionBarStyle">@style/LightThemeActionBar</item>
@@ -33,13 +32,6 @@
 		<item name="android:radioButtonStyle">@style/AppRadioButtonStyleEveryTheme</item>
 		<item name="toolbarStyle">@style/AppToolBarStyleEveryTheme</item>
 		<item name="android:webViewStyle">@style/AppWebViewStyleLightTheme</item>
-	</style>
-
-	<style name="app_rulebook_animations_from_q" parent="@android:style/Animation.Activity">
-		<item name="android:activityOpenEnterAnimation">@anim/app_slide_from_left</item>
-		<item name="android:activityOpenExitAnimation">@anim/app_slide_exit_to_right</item>
-		<item name="android:activityCloseEnterAnimation">@anim/app_slide_from_right</item>
-		<item name="android:activityCloseExitAnimation">@anim/app_slide_exit_to_left</item>
 	</style>
 
 	<style name="AppWebViewStyleLightTheme" parent="android:Widget.Material.WebView">
@@ -144,10 +136,6 @@
 		<item name="elevation">@dimen/app_bottom_navigation_elevation</item>
 		<item name="android:background">@drawable/app_bottomsheetdialog_shape</item>
 	</style>
-	
-	<style name="AppToolBarLayoutStyle" parent="Widget.MaterialComponents.Toolbar">
-
-	</style>
 
 	<style name="HeadlinesEveryTheme" parent="Widget.AppCompat.TextView">
 		<item name="android:textStyle">bold</item>
@@ -211,8 +199,8 @@
 		<item name="android:textStyle">bold</item>
 	</style>
 
-	<style name="RulebookChooseDestinyButtonLeftToRight" parent="Widget.AppCompat.Button">
-		<item name="android:stateListAnimator" tools:targetApi="lollipop">@animator/btn_anim_translate_lefttoright</item>
+	<style name="RulebookChooseDestinyButtonLeft" parent="Widget.AppCompat.Button">
+		<item name="android:stateListAnimator" tools:targetApi="lollipop">@animator/btn_anim_translate_to_right</item>
 		<item name="android:background">@drawable/buttonshape_onlyright_bottomandtop</item>
 		<item name="android:textSize">@dimen/app_choose_your_destiny_menu_button_text_size</item>
 		<item name="android:gravity">center</item>
@@ -220,8 +208,8 @@
 		<item name="android:layout_height">@dimen/app_choose_your_destiny_menu_button_height</item>
 	</style>
 
-	<style name="RulebookChooseDestinyButtonRightToLeft" parent="Widget.AppCompat.Button">
-		<item name="android:stateListAnimator" tools:targetApi="lollipop">@animator/btn_anim_translate_righttoleft</item>
+	<style name="RulebookChooseDestinyButtonRight" parent="Widget.AppCompat.Button">
+		<item name="android:stateListAnimator" tools:targetApi="lollipop">@animator/btn_anim_translate_to_left</item>
 		<item name="android:background">@drawable/buttonshape_onlyleft_bottomandtop</item>
 		<item name="android:textSize">@dimen/app_choose_your_destiny_menu_button_text_size</item>
 		<item name="android:gravity">center</item>
@@ -293,7 +281,6 @@
 
 
 	<style name="AppThemeRulebookDark" parent="Theme.MaterialComponents.Bridge">
-		<item name="android:windowAnimationStyle">@style/app_rulebook_animations_from_q</item>
 		<item name="colorAccent">@color/coloraccent</item>
 		<item name="android:textColor">@color/text_normal</item>
 		<item name="android:actionBarStyle">@style/DarkThemeActionBar</item>

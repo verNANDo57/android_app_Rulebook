@@ -1,6 +1,6 @@
 package com.verNANDo57.rulebook_educational;
 
-import static com.verNANDo57.rulebook_educational.tools.Utils.LOG_TAG;
+import static com.verNANDo57.rulebook_educational.AppUtils.LOG_TAG;
 
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
@@ -18,23 +18,19 @@ import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+
 import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngineAppCompatActivity;
 import com.verNANDo57.rulebook_educational.extradata.R;
-import com.verNANDo57.rulebook_educational.preferences.RulebookApplicationSharedPreferences;
-import com.verNANDo57.rulebook_educational.tools.Utils;
 
 public class AppAboutApplicationActivity extends CustomThemeEngineAppCompatActivity
 {
-	RulebookApplicationSharedPreferences preferences;
-
-	@SuppressLint({"ClickableViewAccessibility", "SetTextI18n"})
+	@SuppressLint("SetTextI18n")
 	public void onCreate(Bundle savedInstanceState)
     {
-		preferences =  new RulebookApplicationSharedPreferences(this);
-
 		super.onCreate(savedInstanceState);
 
         setContentView(R.layout.app_bottomappbar_about);
@@ -48,10 +44,7 @@ public class AppAboutApplicationActivity extends CustomThemeEngineAppCompatActiv
 		});
 		final BottomAppBar bar_in_credits = findViewById(R.id.bar_in_about);
 		setSupportActionBar(bar_in_credits);
-		if(preferences.loadRulebookAnimationsDisableState()==false) {
-			Utils.setAnimatorToAnyView(bar_in_credits, "to_top", (float) 250);
-		}
-
+		AppUtils.setTranslateAnimation(bar_in_credits, "to_top", (float) 250);
 		bar_in_credits.setNavigationOnClickListener(new NavigationView.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -61,7 +54,7 @@ public class AppAboutApplicationActivity extends CustomThemeEngineAppCompatActiv
 		});
 
 		TextView appaboutTextView2 = findViewById(R.id.appaboutTextView2);
-		appaboutTextView2.setText(getString(R.string.app_about_extended) + Utils.getApplicationVersionInfo(this, Utils.PACKAGEMANAGER_GET_APP_VERISON_NAME));
+		appaboutTextView2.setText(getString(R.string.app_about_extended) + AppUtils.getApplicationVersionInfo(this, AppUtils.PACKAGEMANAGER_GET_APP_VERISON_NAME));
 
 		ScrollView about_scrollview = findViewById(R.id.about_scrollview);
 		about_scrollview.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener() {
@@ -71,17 +64,13 @@ public class AppAboutApplicationActivity extends CustomThemeEngineAppCompatActiv
 				int movement = about_scrollview.getScrollY();
 				if(movement >= 100){
 					if (bar_in_credits.getVisibility() == View.VISIBLE) {
-						if (preferences.loadRulebookAnimationsDisableState() == false) {
-							Utils.setAnimatorToAnyView(bar_in_credits, "to_bottom");
-						}
+						AppUtils.setTranslateAnimation(bar_in_credits, "to_bottom");
 						bar_in_credits.setVisibility(View.GONE);
 						fab_in_about.hide();
 					}
 				} else if(movement >= -100){
 					if (bar_in_credits.getVisibility() == View.GONE) {
-						if (preferences.loadRulebookAnimationsDisableState() == false) {
-							Utils.setAnimatorToAnyView(bar_in_credits, "to_top");
-						}
+						AppUtils.setTranslateAnimation(bar_in_credits, "to_top");
 						bar_in_credits.setVisibility(View.VISIBLE);
 						fab_in_about.show();
 					}
@@ -137,7 +126,7 @@ public class AppAboutApplicationActivity extends CustomThemeEngineAppCompatActiv
 		});
 	}
 
-	public boolean onCreateOptionsMenu(Menu menu) {
+	public boolean onCreateOptionsMenu(@NonNull Menu menu) {
 		getMenuInflater().inflate(R.menu.app_menu, menu);
 		return true;
 	}

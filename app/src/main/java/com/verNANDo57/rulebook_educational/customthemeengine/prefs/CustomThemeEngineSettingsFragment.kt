@@ -52,7 +52,6 @@ open class CustomThemeEngineSettingsFragment : PreferenceFragmentCompat(), OnPre
    * By default, if the action bar is displaying home as up then padding will be added to the preference.
    */
   open val iconSpaceReserved = false
-//    get() = (activity as? AppCompatActivity)?.supportActionBar?.displayOptions?.and(ActionBar.DISPLAY_HOME_AS_UP) != 0
 
   override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
     setPreferencesFromResource(getPreferenceXmlResId(), rootKey)

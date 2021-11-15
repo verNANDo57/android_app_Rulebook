@@ -2,7 +2,6 @@ package com.verNANDo57.rulebook_educational;
 
 import android.animation.AnimatorSet;
 import android.animation.ValueAnimator;
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Canvas;
@@ -14,9 +13,7 @@ import android.view.animation.DecelerateInterpolator;
 
 import com.verNANDo57.rulebook_educational.extradata.R;
 
-@SuppressLint("CustomViewStyleable")
 public class AppRatingVector extends View {
-
     private int faceColor, eyesColor, mouthColor, tongueColor;
     private RectF faceBgOval, sadOval, neutralOval, slightHappyOval, happyOval, amazingOval, tongueOval, AwfulOval, AwfultongueOval;
     private Paint paint;
@@ -49,18 +46,18 @@ public class AppRatingVector extends View {
         eyesAnimatorY = new ValueAnimator();
 
         //Getting attributes value
-        TypedArray typedArray = getContext().obtainStyledAttributes(attrs, R.styleable.AppRatingAgressiveVector);
+        TypedArray typedArray = getContext().obtainStyledAttributes(attrs, R.styleable.AppRatingVector);
         try {
-            faceColor = typedArray.getColor(R.styleable.AppRatingAgressiveVector_face_color,
+            faceColor = typedArray.getColor(R.styleable.AppRatingVector_face_color,
                     getResources().getColor(R.color.app_agressive_rating_face_color));
-            eyesColor = typedArray.getColor(R.styleable.AppRatingAgressiveVector_eyes_color,
+            eyesColor = typedArray.getColor(R.styleable.AppRatingVector_eyes_color,
                     getResources().getColor(R.color.app_agressive_rating_eyes_color));
-            mouthColor = typedArray.getColor(R.styleable.AppRatingAgressiveVector_mouth_color,
+            mouthColor = typedArray.getColor(R.styleable.AppRatingVector_mouth_color,
                     getResources().getColor(R.color.app_agressive_rating_mouth_color));
-            tongueColor = typedArray.getColor(R.styleable.AppRatingAgressiveVector_tongue_color,
+            tongueColor = typedArray.getColor(R.styleable.AppRatingVector_tongue_color,
                     getResources().getColor(R.color.app_agressive_rating_tongue_color));
             defaultRating = typedArray.getInteger(
-                    R.styleable.AppRatingAgressiveVector_default_rating, 2);
+                    R.styleable.AppRatingVector_default_rating, 2);
         } finally {
             typedArray.recycle();
         }

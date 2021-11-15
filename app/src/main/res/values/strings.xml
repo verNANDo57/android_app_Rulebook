@@ -79,16 +79,13 @@
 
     <string name="voicesearch">Голосовой Ввод</string>
     <string name="disable_voicesearch">Отключить голосовой ввод</string>
-    <string name="app_themes_extended">Выберите одну из тем или создайте свою</string>
+    <string name="app_themes_summary">Выберите одну из тем или создайте свою</string>
     <string name="app_themes">Визуальное оформление</string>
-    <string name="app_disable_some_animations">Анимации</string>
-    <string name="app_disable_some_animations_extended">Отключить некоторые анимации (Повышает скорость работы приложения)</string>
     <string name="app_enable_statusbar">Строка состояния</string>
-    <string name="app_enable_statusbar_extended">Не скрывать строку состояния</string>
+    <string name="app_enable_statusbar_summary">Не скрывать строку состояния</string>
     <string name="app_autohide_bottomappbar">Всплывающая панель навигации</string>
-    <string name="app_autohide_bottomappbar_extended">Автоматически скрывать всплывающую панель навигации (При скроллинге вверх и вниз, соответственно)</string>
-    <string name="app_prefs_warning_extended">После введённых изменений, для корректного отображения интерфейса может потребоваться перезагрузка. Для этого достаточно нажать сюда.</string>
-    <string name="app_prefs_warning">Перезагрузка</string>
+    <string name="app_autohide_bottomappbar_summary">Автоматически скрывать всплывающую панель навигации (При скроллинге вверх и вниз, соответственно)</string>
+    <string name="app_prefs_warning_summary">После введённых изменений, для корректного отображения интерфейса может потребоваться перезагрузка.</string>
 
     <string name="app_edittext_is_empty">Напишите что-нибудь</string>
 

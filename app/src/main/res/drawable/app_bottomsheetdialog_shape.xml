@@ -17,5 +17,5 @@
 		android:color="@color/coloraccent"/>
 
 	<solid
-		android:color="@color/bottomsheetdialog_background"/>
+		android:color="@color/app_rulebook_background"/>
 </shape>

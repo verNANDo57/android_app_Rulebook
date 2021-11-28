@@ -48,7 +48,7 @@ internal open class CustomThemeEngineDelegateImplV24(
         put(R.color.button_color, customThemeEngine.buttonStrokeColor)
         put(R.color.bottomsheetdialog_accent, customThemeEngine.bottomSheetDialogAccent)
         put(R.color.bottomsheetdialog_primary, customThemeEngine.bottomSheetDialogPrimary)
-        put(R.color.bottomsheetdialog_background, customThemeEngine.bottomSheetDialogBackground)
+        put(R.color.app_rulebook_background, customThemeEngine.bottomSheetDialogBackground)
       }) {
         constructor.newInstance(ColorStateList.valueOf(color))?.let { factory ->
           val key = activity.resources.getKey(id)

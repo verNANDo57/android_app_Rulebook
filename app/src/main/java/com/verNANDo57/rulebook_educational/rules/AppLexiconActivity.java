@@ -1,106 +1,68 @@
 package com.verNANDo57.rulebook_educational.rules;
 
 import static com.verNANDo57.rulebook_educational.AppUtils.LOG_TAG;
+import static com.verNANDo57.rulebook_educational.AppUtils.TRANSLATE_DIRECTION_BOTTOM;
+import static com.verNANDo57.rulebook_educational.AppUtils.TRANSLATE_DIRECTION_TOP;
 
-import android.annotation.SuppressLint;
-import android.content.Context;
-import android.content.res.Configuration;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.view.ViewTreeObserver;
-import android.webkit.WebView;
 
-import androidx.annotation.NonNull;
+import androidx.appcompat.widget.Toolbar;
 
-import com.google.android.material.bottomappbar.BottomAppBar;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.navigation.NavigationView;
 import com.verNANDo57.rulebook_educational.AppUtils;
 import com.verNANDo57.rulebook_educational.BottomNavAmongLessonsFragment;
 import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngineAppCompatActivity;
 import com.verNANDo57.rulebook_educational.extradata.R;
+import com.verNANDo57.rulebook_educational.pdflib.pdfviewer.PDFView;
+import com.verNANDo57.rulebook_educational.pdflib.pdfviewer.listener.OnPageScrollListener;
+import com.verNANDo57.rulebook_educational.pdflib.pdfviewer.scroll.DefaultScrollHandle;
+import com.verNANDo57.rulebook_educational.pdflib.pdfviewer.util.FitPolicy;
 
 public class AppLexiconActivity extends CustomThemeEngineAppCompatActivity {
 
-    public String lexiconfile = "lexicon.html";
+    private Toolbar toolbar_pdfview;
 
-    @SuppressLint("SetJavaScriptEnabled")
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.app_bottomappbar_webview);
+        setContentView(R.layout.app_bottomappbar_pdfview);
 
-        //init WebView
-        WebView app_rules_lexicon = findViewById(R.id.app_rules_webview);
-        // displaying content in WebView from html file that stored in assets folder
-        app_rules_lexicon.loadUrl("file:///android_asset/lexicon/" + lexiconfile);
-        app_rules_lexicon.getSettings().setJavaScriptEnabled(true);
-        //WebView preferences
-        app_rules_lexicon.setInitialScale(255);
-
-        //disable text selection
-        app_rules_lexicon.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                return true;
-            }
-        });
-        app_rules_lexicon.setLongClickable(false);
-
-        app_rules_lexicon.getSettings().setSupportZoom(true);
-        app_rules_lexicon.getSettings().setBuiltInZoomControls(true);
-        app_rules_lexicon.getSettings().setDisplayZoomControls(false);
-
-        final FloatingActionButton fab_in_schemes_and_tables = findViewById(R.id.fab_in_webview);
-        fab_in_schemes_and_tables.setOnClickListener(new View.OnClickListener() {
+        toolbar_pdfview = findViewById(R.id.toolbar_pdfview);
+        setSupportActionBar(toolbar_pdfview);
+        toolbar_pdfview.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
-            }
-        });
-        final BottomAppBar bar_in_lexicon = findViewById(R.id.bar_in_webview);
-        setSupportActionBar(bar_in_lexicon);
-        AppUtils.setTranslateAnimation(bar_in_lexicon, "to_top", (float) 250);
-        bar_in_lexicon.setNavigationOnClickListener(new NavigationView.OnClickListener() {
-            @Override
-            public void onClick(View v) {
                 BottomNavAmongLessonsFragment BottomNavBetweenLessons = new BottomNavAmongLessonsFragment();
                 BottomNavBetweenLessons.show(getSupportFragmentManager(), LOG_TAG);
             }
         });
 
-        app_rules_lexicon.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener() {
-            @Override
-            public void onScrollChanged() {
-                //see https://gist.github.com/aqua30/e8623abaff190ee86727ee5ae8dac82a
-                int movement = app_rules_lexicon.getScrollY();
+        // Init PdfView
+        PDFView lexicon_pdfview = findViewById(R.id.pdfView);
 
-                if(movement >= 100){
-                    if (bar_in_lexicon.getVisibility() == View.VISIBLE) {
-                        AppUtils.setTranslateAnimation(bar_in_lexicon, "to_bottom");
-                        bar_in_lexicon.setVisibility(View.GONE);
-                        fab_in_schemes_and_tables.hide();
+        // Load PDF from assets
+        lexicon_pdfview.fromAsset("lexicon/lexicon.pdf")
+                .enableAnnotationRendering(true)
+                .pageFitPolicy(FitPolicy.BOTH)
+                .scrollHandle(new DefaultScrollHandle(this))
+                .onPageScroll(new OnPageScrollListener() {
+                    @Override
+                    public void onPageScrolled(int page, float positionOffset) {
+                        if (page >= lexicon_pdfview.getPageCount() - 2) {
+                            if (toolbar_pdfview.getVisibility() == View.VISIBLE) {
+                                AppUtils.setTranslateAnimation(toolbar_pdfview, TRANSLATE_DIRECTION_BOTTOM, (float) 250);
+                                toolbar_pdfview.setVisibility(View.GONE);
+                            }
+                        } else if (page < lexicon_pdfview.getPageCount() - 2) {
+                            if (toolbar_pdfview.getVisibility() == View.GONE) {
+                                AppUtils.setTranslateAnimation(toolbar_pdfview, TRANSLATE_DIRECTION_TOP, (float) 250);
+                                toolbar_pdfview.setVisibility(View.VISIBLE);
+                            }
+                        }
                     }
-                } else if(movement >= -100){
-                    if (bar_in_lexicon.getVisibility() == View.GONE) {
-                        AppUtils.setTranslateAnimation(bar_in_lexicon, "to_top");
-                        bar_in_lexicon.setVisibility(View.VISIBLE);
-                        fab_in_schemes_and_tables.show();
-                    }
-                }
-            }
-        });
-    }
-
-    //Prevent system font-size managment from affecting to webview font size
-    @Override
-    protected void attachBaseContext(@NonNull Context newBase) {
-        super.attachBaseContext(newBase);
-        final Configuration override = new Configuration(newBase.getResources().getConfiguration());
-        override.fontScale = 1.0f;
-        applyOverrideConfiguration(override);
-        Log.i(LOG_TAG,"WEBVIEW fontScale now is 1.0f");
+                })
+                .load();
+        lexicon_pdfview.useBestQuality(true);
     }
 }

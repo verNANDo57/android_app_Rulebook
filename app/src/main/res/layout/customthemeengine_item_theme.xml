@@ -32,7 +32,7 @@
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:minHeight="?actionBarSize"
-            android:text="@string/app_themepickerpreviewtitle"
+            android:text="@string/app_themepickerpreview_title"
             android:textAllCaps="true"
             style="@style/ActionTitleTextStyle" />
 

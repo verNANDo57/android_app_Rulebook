@@ -36,7 +36,11 @@ public class AppMainRulesActivity extends CustomThemeEngineAppCompatActivity
 		ViewPager2 mViewPager = findViewById(R.id.viewpager);
 		mViewPager.setAdapter(new CustomPagerAdapter(getSupportFragmentManager(), getLifecycle()));
 
-		com.google.android.material.tabs.TabLayout tabLayout = findViewById(R.id.tablayout);
+		TabLayout tabLayout = findViewById(R.id.tablayout);
+		// For some reason custom colors aren't set, so we have to set colors dynamically instead of setting them in styles.xml
+		//tabLayout.setTabIconTint(ColorStateList.valueOf(ColorUtils.lighter(getResources().getColor(R.color.coloraccent), 0.01f)));
+		//tabLayout.setTabTextColors(ColorStateList.valueOf(ColorUtils.lighter(getResources().getColor(R.color.coloraccent), 0.01f)));
+		//tabLayout.setTabRippleColor(ColorStateList.valueOf(ColorUtils.lighter(getResources().getColor(R.color.coloraccent), 0.01f)));
 		tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
 			@Override
 			public void onTabSelected(TabLayout.Tab tab) {

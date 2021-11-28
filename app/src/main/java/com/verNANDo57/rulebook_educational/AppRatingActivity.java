@@ -1,5 +1,9 @@
 package com.verNANDo57.rulebook_educational;
 
+import static com.verNANDo57.rulebook_educational.AppUtils.LOG_TAG;
+import static com.verNANDo57.rulebook_educational.AppUtils.TRANSLATE_DIRECTION_BOTTOM;
+import static com.verNANDo57.rulebook_educational.AppUtils.TRANSLATE_DIRECTION_TOP;
+
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -26,7 +30,7 @@ public class AppRatingActivity extends CustomThemeEngineAppCompatActivity {
 
         final BottomAppBar bar_in_rating_page = findViewById(R.id.bar_in_rating_page);
         setSupportActionBar(bar_in_rating_page);
-        AppUtils.setTranslateAnimation(bar_in_rating_page, "to_top", (float) 250);
+        AppUtils.setTranslateAnimation(bar_in_rating_page, TRANSLATE_DIRECTION_TOP, (float) 250);
         ScrollView rating_page_scrollview = findViewById(R.id.rating_page_scrollview);
         rating_page_scrollview.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener() {
             @Override
@@ -36,12 +40,12 @@ public class AppRatingActivity extends CustomThemeEngineAppCompatActivity {
 
                 if(movement >= 100){
                     if (bar_in_rating_page.getVisibility() == View.VISIBLE) {
-                        AppUtils.setTranslateAnimation(bar_in_rating_page, "to_bottom");
+                        AppUtils.setTranslateAnimation(bar_in_rating_page, TRANSLATE_DIRECTION_BOTTOM);
                         bar_in_rating_page.setVisibility(View.GONE);
                     }
                 } else if(movement >= -100){
                     if (bar_in_rating_page.getVisibility() == View.GONE) {
-                        AppUtils.setTranslateAnimation(bar_in_rating_page, "to_top");
+                        AppUtils.setTranslateAnimation(bar_in_rating_page, TRANSLATE_DIRECTION_TOP);
                         bar_in_rating_page.setVisibility(View.VISIBLE);
                     }
                 }
@@ -53,7 +57,7 @@ public class AppRatingActivity extends CustomThemeEngineAppCompatActivity {
         rating_bar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
             public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
-                Log.d("Rating", String.valueOf(rating));
+                Log.d(LOG_TAG, String.valueOf(rating));
                 app_agressive_rating_vector.setSmiley(rating);
             }
         });

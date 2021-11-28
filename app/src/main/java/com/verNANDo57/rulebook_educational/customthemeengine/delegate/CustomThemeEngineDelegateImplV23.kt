@@ -49,7 +49,7 @@ internal open class CustomThemeEngineDelegateImplV23(
           put(R.color.button_color, customThemeEngine.buttonStrokeColor)
           put(R.color.bottomsheetdialog_accent, customThemeEngine.bottomSheetDialogAccent)
           put(R.color.bottomsheetdialog_primary, customThemeEngine.bottomSheetDialogPrimary)
-          put(R.color.bottomsheetdialog_background, customThemeEngine.bottomSheetDialogBackground)
+          put(R.color.app_rulebook_background, customThemeEngine.bottomSheetDialogBackground)
         }) {
           try {
             constructor.newInstance(ColorStateList.valueOf(color))?.let { factory ->

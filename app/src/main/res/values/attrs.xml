@@ -8,6 +8,13 @@
         <attr name="default_rating" format="integer"/>
     </declare-styleable>
 
+    <declare-styleable name="ScrollBar">
+        <attr name="sb_handlerColor" format="color|reference" />
+        <attr name="sb_indicatorColor" format="color|reference" />
+        <attr name="sb_indicatorTextColor" format="color|reference" />
+        <attr name="sb_horizontal" format="boolean|reference" />
+    </declare-styleable>
+
     <attr format="reference|color" name="backgroundColor"/>
     <attr format="reference|color" name="backgroundColorLight"/>
     <attr format="reference|color" name="backgroundColorDark"/>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.verNANDo57.rulebook_educational.bookmarks.AppBookmarks"
+    android:layout_margin="@dimen/app_toolbar_margin"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_bookmarks"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_toolbar_height"
+        android:background="@drawable/app_toolbar"
+        app:navigationIcon="@drawable/ic_view_list_black"
+        app:title="@string/app_bookmarks" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/bookmarks_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

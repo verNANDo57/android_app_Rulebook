@@ -23,15 +23,6 @@
     <string name="app_inches" translatable="false">inches</string>
     <string name="app_dpi" translatable="false">dpi</string>
 
-    <string-array name="locales">
-        <item>Русский</item>
-        <item>English</item>
-    </string-array>
-    <string-array name="locale_values">
-        <item>Ru</item>
-        <item>En</item>
-    </string-array>
-
     <string name="review_device_name" translatable="false">Устройство:</string>
     <string name="review_device_manufacter" translatable="false">Изготовитель:</string>
     <string name="review_device_model" translatable="false">Модель:</string>
@@ -75,7 +66,7 @@
 
     <string name="hello_trigger">Нету смысла пересобирать приложение с открытым исходным кодом…</string>
 
-    <string name="app_themepickerpreviewtitle">Текст</string>
+    <string name="app_themepickerpreview_title">Текст</string>
 
     <string name="voicesearch">Голосовой Ввод</string>
     <string name="disable_voicesearch">Отключить голосовой ввод</string>
@@ -132,16 +123,12 @@
     <string name="search_viewhint">Поисковая строка</string>
     <string name="searchword_view_hint">Слово</string>
     <string name="app_next">Далее</string>
-    <string name="choosemode">Выберите режим</string>
     <string name="app_storageaccess_warning">С 11-й версии Android доступ к внутреннему хранилищу устройства получить не так уж и просто. Данное разрешение необходимо для сохранения текстовых файлов в памяти вашего устройвства. Разрешение необходимо выдать вручную, в настройках устройства. Помните, что данное разрешение выдавать не обязательно, иными словами вы можете пользоваться приложением и без него. Перейти в настройки?</string>
-
     <string name="app_error_while_saving_file">Ошибка при попытке сохранения файла. Вероятнее всего, приложение не имеет необходимых разрешений для сохранения файлов.</string>
-
     <string name="app_save">Сохранить</string>
     <string name="app_save_in_process">Сохранение…</string>
     <string name="app_saved">Сохранено</string>
     <string name="app_saved_already">Файл был сохранён ранее</string>
-
     <string name="app_granted">Разрешено</string>
     <string name="app_denied">Запрещено</string>
     <string name="app_warning">Внимание</string>
@@ -199,6 +186,19 @@
     <string name="colorpicker_custom">Пользовательские</string>
     <string name="colorpicker_select">Выбрать</string>
     <string name="colorpicker_transparency">Прозрачность</string>
+
+    <string name="app_pdf_title">Название</string>
+    <string name="app_pdf_author">Автор</string>
+    <string name="app_pdf_subject">Тема</string>
+    <string name="app_pdf_keywords">Ключевые слова</string>
+    <string name="app_pdf_creator">Создатель</string>
+    <string name="app_pdf_producer">Продюсер</string>
+    <string name="app_pdf_creationDate">Дата создания</string>
+    <string name="app_pdf_modDate">Дата введения последних правок</string>
+
+    <string name="app_bookmarks">Закладки</string>
+    <string name="app_add_bookmark">Добавить в закладки</string>
+    <string name="app_remove_bookmark">Удалить из закладок</string>
 
     <string name="ortho">Орфография</string>
     <string name="punct">Пунктуация</string>

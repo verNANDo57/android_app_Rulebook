@@ -17,24 +17,24 @@
         android:padding="@dimen/app_searchitem_shape_stroke_width">
 
         <RelativeLayout
-            android:id="@+id/searchitem_image_relativelayout"
+            android:id="@+id/recyclerview_image_relativelayout"
             android:layout_width="match_parent"
             android:layout_height="@dimen/app_searchitem_image_relativelayout_height"
             android:gravity="center">
 
             <ImageView
-                android:id="@+id/searchitem_image_imageview"
+                android:id="@+id/recyclerview_image_imageview"
                 android:layout_width="@dimen/app_searchitem_image_imageview_width"
                 android:layout_height="@dimen/app_searchitem_image_imageview_height"
                 android:padding="@dimen/app_searchitem_image_imageview_padding" />
         </RelativeLayout>
 
         <TextView
-            android:id="@+id/search_item_title"
+            android:id="@+id/recyclerview_item_title"
             style="@style/TextImportantEveryTheme"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/searchitem_image_relativelayout"
+            android:layout_below="@+id/recyclerview_image_relativelayout"
             android:focusable="false"
             android:text="@string/app_status_value_null"
             android:textIsSelectable="false"
@@ -42,11 +42,11 @@
             android:gravity="center"/>
 
         <TextView
-            android:id="@+id/search_item_summary"
+            android:id="@+id/recyclerview_item_summary"
             style="@style/TextRegularEveryTheme"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/search_item_title"
+            android:layout_below="@+id/recyclerview_item_title"
             android:focusable="false"
             android:gravity="center"
             android:text="@string/app_status_value_null"
@@ -54,9 +54,9 @@
             android:textSize="@dimen/app_searchitem_summary_textsize" />
 
         <Space
-            android:id="@+id/recycler_view_item_card_space"
+            android:id="@+id/recyclerview_item_card_space"
             android:layout_width="match_parent"
             android:layout_height="@dimen/activity_space_height"
-            android:layout_below="@id/search_item_summary"/>
+            android:layout_below="@id/recyclerview_item_summary"/>
     </RelativeLayout>
 </androidx.cardview.widget.CardView>

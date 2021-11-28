@@ -2,7 +2,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 	<style name="AppThemeRulebookLight" parent="Theme.MaterialComponents.Light.Bridge">
 		<item name="colorAccent">@color/coloraccent</item>
-		<item name="android:textColor">@color/text_normal</item>
+		<item name="android:textColor">@color/app_text</item>
 		<item name="actionBarStyle">@style/LightThemeActionBar</item>
 		<item name="android:actionBarStyle">@style/LightThemeActionBar</item>
 		<item name="bottomAppBarStyle">@style/AnyThemeBottomAppBar</item>
@@ -48,17 +48,17 @@
 
 	<style name="LightThemeActionBar" parent="Widget.AppCompat.Light.ActionBar">
 		<item name="titleTextStyle">@style/ActionTitleTextStyle</item>
-		<item name="subtitleTextStyle">@style/ActionSubTitleTextStyle</item>
+		<item name="subtitleTextStyle">@style/ActionSummaryTextStyle</item>
 	</style>
 
 	<style name="AppAlertDialogThemeLight" parent="Theme.AppCompat.Light.Dialog.Alert">
-		<item name="titleTextColor">@color/text_normal_reference</item>
-		<item name="android:textColor">@color/text_normal_reference</item>
-		<item name="android:titleTextColor" tools:targetApi="m">@color/text_normal_reference</item>
-		<item name="android:subtitleTextColor" tools:targetApi="m">@color/text_normal_reference</item>
-		<item name="subtitleTextColor" tools:targetApi="m">@color/text_normal_reference</item>
-		<item name="buttonTint">@color/text_normal_reference</item>
-		<item name="android:buttonTint" tools:targetApi="lollipop">@color/text_normal_reference</item>
+		<item name="titleTextColor">@color/app_text_reference</item>
+		<item name="android:textColor">@color/app_text_reference</item>
+		<item name="android:titleTextColor" tools:targetApi="m">@color/app_text_reference</item>
+		<item name="android:subtitleTextColor" tools:targetApi="m">@color/app_text_reference</item>
+		<item name="subtitleTextColor" tools:targetApi="m">@color/app_text_reference</item>
+		<item name="buttonTint">@color/app_text_reference</item>
+		<item name="android:buttonTint" tools:targetApi="lollipop">@color/app_text_reference</item>
 		<item name="backgroundTint">@color/custom_bg_light</item>
 		<item name="android:backgroundTint" tools:targetApi="lollipop">@color/custom_bg_light</item>
 	</style>
@@ -67,10 +67,10 @@
 		<item name="colorAccent">@color/coloraccent</item>
 		<item name="android:textColorPrimaryDisableOnly">@color/coloraccent</item>
 		<item name="android:textAppearance">@style/TextAppearance.AppCompat</item>
-		<item name="android:textColor">@color/text_normal</item>
+		<item name="android:textColor">@color/app_text</item>
 	</style>
 
-	<style name="AppToolBarStyleEveryTheme" parent="Widget.MaterialComponents.Toolbar">
+	<style name="AppToolBarStyleEveryTheme" parent="Widget.AppCompat.Toolbar">
 		<item name="buttonGravity">center_vertical</item>
 		<item name="titleTextAppearance">@style/AppBarTitleTextStyle</item>
 		<item name="popupTheme">@style/AppTheme.PopupOverlay</item>
@@ -80,7 +80,6 @@
 	</style>
 
 	<style name="AppTabLayoutItemsStyleEveryTheme" parent="@style/Widget.MaterialComponents.TabLayout">
-		<item name="android:textColor">@color/coloraccent</item>
 		<item name="android:background">@android:color/transparent</item>
 		<item name="background">@android:color/transparent</item>
 		<item name="tabIconTint">@color/coloraccent</item>
@@ -89,7 +88,7 @@
 	</style>
 
 	<style name="AnyThemeBottomAppBar" parent="Widget.MaterialComponents.BottomAppBar">
-		<item name="backgroundTint">@color/coloraccent</item>
+		<item name="android:backgroundTint">@color/coloraccent</item>
 		<item name="fabCradleRoundedCornerRadius">@dimen/bottomappbar_fab_cradle_rounded_corner_radius</item>
 		<item name="fabCradleVerticalOffset">@dimen/bottomappbar_fab_cradle_vertical_offset</item>
 		<item name="android:minHeight">@dimen/bottomappbar_height</item>
@@ -103,7 +102,7 @@
 	    <item name="android:textStyle">bold</item>
 	</style>
 
-	<style name="ActionSubTitleTextStyle">
+	<style name="ActionSummaryTextStyle">
 		<item name="android:textColor">@color/app_rulebook_theme</item>
 		<item name="android:textSize">@dimen/action_subtitle_textsize</item>
 	    <item name="android:textStyle">normal</item>
@@ -282,7 +281,7 @@
 
 	<style name="AppThemeRulebookDark" parent="Theme.MaterialComponents.Bridge">
 		<item name="colorAccent">@color/coloraccent</item>
-		<item name="android:textColor">@color/text_normal</item>
+		<item name="android:textColor">@color/app_text</item>
 		<item name="android:actionBarStyle">@style/DarkThemeActionBar</item>
 		<item name="actionBarStyle">@style/DarkThemeActionBar</item>
 		<item name="bottomAppBarStyle">@style/AnyThemeBottomAppBar</item>
@@ -328,17 +327,17 @@
 
 	<style name="DarkThemeActionBar" parent="Widget.AppCompat.ActionBar">
 		<item name="titleTextStyle">@style/ActionTitleTextStyle</item>
-		<item name="subtitleTextStyle">@style/ActionSubTitleTextStyle</item>
+		<item name="subtitleTextStyle">@style/ActionSummaryTextStyle</item>
 	</style>
 
 	<style name="AppAlertDialogThemeDark" parent="Theme.AppCompat.Dialog.Alert">
-		<item name="titleTextColor">@color/text_normal_reference</item>
-		<item name="android:textColor">@color/text_normal_reference</item>
-		<item name="android:titleTextColor" tools:targetApi="m">@color/text_normal_reference</item>
-		<item name="android:subtitleTextColor" tools:targetApi="m">@color/text_normal_reference</item>
-		<item name="subtitleTextColor" tools:targetApi="m">@color/text_normal_reference</item>
-		<item name="buttonTint">@color/text_normal_reference</item>
-		<item name="android:buttonTint" tools:targetApi="lollipop">@color/text_normal_reference</item>
+		<item name="titleTextColor">@color/app_text_reference</item>
+		<item name="android:textColor">@color/app_text_reference</item>
+		<item name="android:titleTextColor" tools:targetApi="m">@color/app_text_reference</item>
+		<item name="android:subtitleTextColor" tools:targetApi="m">@color/app_text_reference</item>
+		<item name="subtitleTextColor" tools:targetApi="m">@color/app_text_reference</item>
+		<item name="buttonTint">@color/app_text_reference</item>
+		<item name="android:buttonTint" tools:targetApi="lollipop">@color/app_text_reference</item>
 		<item name="backgroundTint">@color/custom_bg_dark</item>
 		<item name="android:backgroundTint" tools:targetApi="lollipop">@color/custom_bg_dark</item>
 	</style>

@@ -1,5 +1,8 @@
 package com.verNANDo57.rulebook_educational;
 
+import static com.verNANDo57.rulebook_educational.AppUtils.TRANSLATE_DIRECTION_LEFT;
+import static com.verNANDo57.rulebook_educational.AppUtils.TRANSLATE_DIRECTION_RIGHT;
+
 import android.Manifest;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -40,7 +43,7 @@ public class MainActivity extends CustomThemeEngineAppCompatActivity {
 		main_image.setColorFilter(R.color.coloraccent, PorterDuff.Mode.SRC_IN);
 
 		Button app_rules_button = findViewById(R.id.app_rules_button);
-		AppUtils.setTranslateAnimation(app_rules_button, "to_left", (float) 250);
+		AppUtils.setTranslateAnimation(app_rules_button, TRANSLATE_DIRECTION_LEFT, (float) 250);
 		app_rules_button.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -49,7 +52,7 @@ public class MainActivity extends CustomThemeEngineAppCompatActivity {
 		});
 
 		Button app_dictionaries = findViewById(R.id.app_dictionaries);
-		AppUtils.setTranslateAnimation(app_dictionaries, "to_right", (float) 250);
+		AppUtils.setTranslateAnimation(app_dictionaries, TRANSLATE_DIRECTION_RIGHT, (float) 250);
 		app_dictionaries.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -58,7 +61,7 @@ public class MainActivity extends CustomThemeEngineAppCompatActivity {
 		});
 
 		Button settings_button = findViewById(R.id.settings_button);
-		AppUtils.setTranslateAnimation(settings_button, "to_left", (float) 250);
+		AppUtils.setTranslateAnimation(settings_button, TRANSLATE_DIRECTION_LEFT, (float) 250);
 		settings_button.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -67,7 +70,7 @@ public class MainActivity extends CustomThemeEngineAppCompatActivity {
 		});
 
 		Button about_app_button = findViewById(R.id.about_app_button);
-		AppUtils.setTranslateAnimation(about_app_button, "to_right", (float) 250);
+		AppUtils.setTranslateAnimation(about_app_button, TRANSLATE_DIRECTION_RIGHT, (float) 250);
 		about_app_button.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -76,7 +79,7 @@ public class MainActivity extends CustomThemeEngineAppCompatActivity {
 		});
 
 		Button app_exit_button = findViewById(R.id.app_exit_button);
-		AppUtils.setTranslateAnimation(app_exit_button, "to_left", (float) 250);
+		AppUtils.setTranslateAnimation(app_exit_button, TRANSLATE_DIRECTION_LEFT, (float) 250);
 		app_exit_button.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {

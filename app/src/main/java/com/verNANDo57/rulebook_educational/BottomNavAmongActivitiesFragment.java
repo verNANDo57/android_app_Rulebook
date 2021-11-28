@@ -25,7 +25,7 @@ public class BottomNavAmongActivitiesFragment extends CustomThemeEngineBottomShe
         View viewFragment = inflater.inflate(R.layout.fragment_bottomsheet_among_activities, container, false);
 
         NavigationView navigationbetweenlessons = viewFragment.findViewById(R.id.navigation_view_among_activities);
-        navigationbetweenlessons.setBackgroundColor(getResources().getColor(R.color.bottomsheetdialog_background));
+        navigationbetweenlessons.setBackgroundColor(getResources().getColor(R.color.app_rulebook_background));
         navigationbetweenlessons.setItemTextColor(ColorStateList.valueOf(ColorUtils.lighter(getResources().getColor(R.color.bottomsheetdialog_primary), 0.01f)));
         navigationbetweenlessons.setItemIconTintList(ColorStateList.valueOf(ColorUtils.lighter(getResources().getColor(R.color.bottomsheetdialog_accent), 0.01f)));
         navigationbetweenlessons.setNavigationItemSelectedListener(menuItem -> {

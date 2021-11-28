@@ -251,8 +251,7 @@ class CustomThemeEngineTinter {
         R.color.custom_bg_light,
         R.color.custom_bg_dark,
         R.color.app_rulebook_theme,
-        R.color.text_example,
-        R.color.text_normal,
+        R.color.app_text,
         R.color.button_color_default,
         R.color.actionbar_in_recents_default_color)
   }

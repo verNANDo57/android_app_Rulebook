@@ -30,9 +30,9 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchHold
         public SearchHolder(@NonNull View itemView) {
             super(itemView);
             search_item_card = itemView.findViewById(R.id.recycler_view_item_card);
-            search_item_imageview = itemView.findViewById(R.id.searchitem_image_imageview);
-            search_item_title = itemView.findViewById(R.id.search_item_title);
-            search_item_summary= itemView.findViewById(R.id.search_item_summary);
+            search_item_imageview = itemView.findViewById(R.id.recyclerview_image_imageview);
+            search_item_title = itemView.findViewById(R.id.recyclerview_item_title);
+            search_item_summary= itemView.findViewById(R.id.recyclerview_item_summary);
         }
     }
 
@@ -59,11 +59,16 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchHold
         holder.search_item_summary.setText(listdata.get(position).getItemDescription());
         holder.search_item_imageview.setImageResource(listdata.get(position).getItemImgId());
         holder.search_item_imageview.setColorFilter(ColorUtils.lighter(context.getResources().getColor(R.color.coloraccent), 0.01f));
+
         //Set CardView background value to TRANSPARENT (equals 0) to make it look better
         holder.search_item_card.setCardBackgroundColor(0);
+
         //Remove shadow around cardview to make it look better
         holder.search_item_card.setCardElevation(0);
+
+        //Set custom StateListAnimator
         holder.search_item_card.setStateListAnimator(AnimatorInflater.loadStateListAnimator(context, R.animator.btn_anim_fade));
+
         holder.search_item_card.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

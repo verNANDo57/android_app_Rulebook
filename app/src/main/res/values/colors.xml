@@ -7,20 +7,20 @@
 	<color name="layout_dark_reference">#242424</color>
 	<color name="layout_light_reference">#FFFFFF</color>
 	<color name="bottomappbar_items_color_everytheme_reference">#000000</color>
-	<color name="text_normal_reference">#562C22</color>
+	<color name="app_text_reference">#562C22</color>
 	<color name="text_appbar_black">#000000</color>
-	<color name="text_example_reference">#562C22</color>
 
 	<color name="bottomsheetdialog_accent_reference">#A55634</color>
 	<color name="bottomsheetdialog_primary_reference">#562C22</color>
-	<color name="bottomsheetdialog_background_reference">#FFFFFF</color>
+
+	<color name="app_rulebook_background_reference">#FFFFFF</color>
 
 	<color name="button_color_default">#A55634</color>
 
-	<color name="app_agressive_rating_face_color">#562C22</color>
-	<color name="app_agressive_rating_eyes_color">#000000</color>
-	<color name="app_agressive_rating_tongue_color">#c32925</color>
-	<color name="app_agressive_rating_mouth_color">#000000</color>
+	<color name="app_vector_rating_face_color">#562C22</color>
+	<color name="app_vector_rating_eyes_color">#000000</color>
+	<color name="app_vector_rating_tongue_color">#c32925</color>
+	<color name="app_vector_rating_mouth_color">#000000</color>
 
 	<color name="coloraccent_reference">#A55634</color>
 

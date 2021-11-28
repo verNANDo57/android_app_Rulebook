@@ -50,6 +50,8 @@
 
 	<dimen name="app_everycardview_margintop">8dp</dimen>
 
+	<dimen name="app_pdfview_scrollhandle_stroke_width">3dp</dimen>
+
 	<dimen name="app_design_snackbar_min_width">-1px</dimen>
 	<dimen name="app_design_snackbar_max_width">-1px</dimen>
 	<dimen name="app_design_snackbar_elevation">6dp</dimen>

@@ -66,7 +66,7 @@ class CustomThemeEngineResources(original: Resources, private val customThemeEng
       -> ColorDrawable(customThemeEngine.backgroundToast)
       R.color.button_color_default, R.drawable.button_color_default
       -> ColorDrawable(customThemeEngine.buttonStrokeColor)
-      R.color.bottomsheetdialog_background_reference, R.drawable.bottomsheetdialog_background_reference
+      R.color.app_rulebook_background_reference, R.drawable.app_rulebook_background_reference
       -> ColorDrawable(customThemeEngine.bottomSheetDialogBackground)
       else -> {
         super.getDrawable(id, theme)
@@ -83,7 +83,7 @@ class CustomThemeEngineResources(original: Resources, private val customThemeEng
   @Throws(NotFoundException::class)
   override fun getColor(id: Int, theme: Theme?): Int = when (id) {
     // ------ PRIMARY COLORS ------
-    R.color.navbar_color, R.color.statusbar_color, R.color.app_rulebook_theme, R.color.app_agressive_rating_face_color, R.color.text_normal_reference, R.color.styleable_toast_default_text_color_reference, R.color.text_example, R.color.actionbar_in_recents_default_color -> customThemeEngine.primary
+    R.color.navbar_color, R.color.statusbar_color, R.color.app_rulebook_theme, R.color.app_vector_rating_face_color, R.color.app_text_reference, R.color.styleable_toast_default_text_color_reference, R.color.actionbar_in_recents_default_color -> customThemeEngine.primary
     // ------ ACCENT COLORS ------
     R.color.coloraccent_reference -> customThemeEngine.accent
     // ------ BACKGROUND COLORS ------
@@ -102,7 +102,7 @@ class CustomThemeEngineResources(original: Resources, private val customThemeEng
     // ------ BOTTOMSHEETDIALOG PRIMARY COLOR ------
     R.color.bottomsheetdialog_primary_reference -> customThemeEngine.bottomSheetDialogPrimary
     // ------ BOTTOMSHEETDIALOG BACKGROUND COLOR ------
-    R.color.bottomsheetdialog_background_reference -> customThemeEngine.bottomSheetDialogBackground
+    R.color.app_rulebook_background_reference -> customThemeEngine.bottomSheetDialogBackground
     else -> {
       if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M)
         super.getColor(id) else super.getColor(id, theme)

@@ -61,7 +61,7 @@
                             android:layout_height="wrap_content"
                             android:text="@string/app_loading"
                             style="@style/HeadlinesEveryTheme"
-                            android:textColor="@color/text_normal"
+                            android:textColor="@color/app_text"
                             android:gravity="center" />
 
                         <TextView
@@ -70,12 +70,12 @@
                             android:layout_height="wrap_content"
                             android:text="@string/app_loading"
                             android:gravity="center"
-                            android:textColor="@color/text_normal"
+                            android:textColor="@color/app_text"
                             style="@style/TextImportantEveryTheme"/>
                     </LinearLayout>
                 </RelativeLayout>
 
-                <include layout="@layout/app_searchword_in_scrollable_activity_layout" />
+                <include layout="@layout/app_search_in_scrollable_activity" />
 
             </LinearLayout>
 

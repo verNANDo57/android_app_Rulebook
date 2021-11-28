@@ -19,3 +19,9 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+-keep public class com.verNANDo57.rulebook_educational.pdflib.pdfium.util.Size
+-keep public class com.verNANDo57.rulebook_educational.pdflib.pdfium.util.SizeF
+-keep public class com.verNANDo57.rulebook_educational.pdflib.pdfium.PdfDocument
+-keep public class com.verNANDo57.rulebook_educational.pdflib.pdfium.PdfiumCore
+-keep public class com.verNANDo57.rulebook_educational.pdflib.pdfium.PdfPasswordException

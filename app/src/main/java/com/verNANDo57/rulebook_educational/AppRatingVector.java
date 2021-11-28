@@ -49,13 +49,13 @@ public class AppRatingVector extends View {
         TypedArray typedArray = getContext().obtainStyledAttributes(attrs, R.styleable.AppRatingVector);
         try {
             faceColor = typedArray.getColor(R.styleable.AppRatingVector_face_color,
-                    getResources().getColor(R.color.app_agressive_rating_face_color));
+                    getResources().getColor(R.color.app_vector_rating_face_color));
             eyesColor = typedArray.getColor(R.styleable.AppRatingVector_eyes_color,
-                    getResources().getColor(R.color.app_agressive_rating_eyes_color));
+                    getResources().getColor(R.color.app_vector_rating_eyes_color));
             mouthColor = typedArray.getColor(R.styleable.AppRatingVector_mouth_color,
-                    getResources().getColor(R.color.app_agressive_rating_mouth_color));
+                    getResources().getColor(R.color.app_vector_rating_mouth_color));
             tongueColor = typedArray.getColor(R.styleable.AppRatingVector_tongue_color,
-                    getResources().getColor(R.color.app_agressive_rating_tongue_color));
+                    getResources().getColor(R.color.app_vector_rating_tongue_color));
             defaultRating = typedArray.getInteger(
                     R.styleable.AppRatingVector_default_rating, 2);
         } finally {

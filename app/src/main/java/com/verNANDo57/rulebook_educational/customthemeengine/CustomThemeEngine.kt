@@ -49,7 +49,7 @@ import com.verNANDo57.rulebook_educational.customthemeengine.utils.ColorUtils
 import com.verNANDo57.rulebook_educational.extradata.R
 import kotlin.properties.Delegates
 
-class CustomThemeEngine private constructor(private val prefs: SharedPreferences) {
+public class CustomThemeEngine private constructor(private val prefs: SharedPreferences) {
 
   /** The primary color displayed most frequently across your app */
   var primary by Delegates.notNull<Int>()
@@ -200,7 +200,7 @@ class CustomThemeEngine private constructor(private val prefs: SharedPreferences
             res.getColor(R.color.bottomsheetdialog_primary_reference))
 
     bottomSheetDialogBackground = prefs.getInt(PREF_BOTTOMSHEETDIALOG_BACKGROUND,
-            res.getColor(R.color.bottomsheetdialog_background_reference))
+            res.getColor(R.color.app_rulebook_background_reference))
 
     timestamp = prefs.getLong(PREF_TIMESTAMP, NONE_TIMESTAMP)
   }

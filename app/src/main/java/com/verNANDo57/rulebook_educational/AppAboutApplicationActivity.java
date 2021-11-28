@@ -1,6 +1,8 @@
 package com.verNANDo57.rulebook_educational;
 
 import static com.verNANDo57.rulebook_educational.AppUtils.LOG_TAG;
+import static com.verNANDo57.rulebook_educational.AppUtils.TRANSLATE_DIRECTION_BOTTOM;
+import static com.verNANDo57.rulebook_educational.AppUtils.TRANSLATE_DIRECTION_TOP;
 
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
@@ -25,6 +27,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngineAppCompatActivity;
 import com.verNANDo57.rulebook_educational.extradata.R;
+import com.verNANDo57.rulebook_educational.preferences.AppSettingsActivity;
 
 public class AppAboutApplicationActivity extends CustomThemeEngineAppCompatActivity
 {
@@ -44,7 +47,7 @@ public class AppAboutApplicationActivity extends CustomThemeEngineAppCompatActiv
 		});
 		final BottomAppBar bar_in_credits = findViewById(R.id.bar_in_about);
 		setSupportActionBar(bar_in_credits);
-		AppUtils.setTranslateAnimation(bar_in_credits, "to_top", (float) 250);
+		AppUtils.setTranslateAnimation(bar_in_credits, TRANSLATE_DIRECTION_TOP, (float) 250);
 		bar_in_credits.setNavigationOnClickListener(new NavigationView.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -64,13 +67,13 @@ public class AppAboutApplicationActivity extends CustomThemeEngineAppCompatActiv
 				int movement = about_scrollview.getScrollY();
 				if(movement >= 100){
 					if (bar_in_credits.getVisibility() == View.VISIBLE) {
-						AppUtils.setTranslateAnimation(bar_in_credits, "to_bottom");
+						AppUtils.setTranslateAnimation(bar_in_credits, TRANSLATE_DIRECTION_BOTTOM);
 						bar_in_credits.setVisibility(View.GONE);
 						fab_in_about.hide();
 					}
 				} else if(movement >= -100){
 					if (bar_in_credits.getVisibility() == View.GONE) {
-						AppUtils.setTranslateAnimation(bar_in_credits, "to_top");
+						AppUtils.setTranslateAnimation(bar_in_credits, TRANSLATE_DIRECTION_TOP);
 						bar_in_credits.setVisibility(View.VISIBLE);
 						fab_in_about.show();
 					}
@@ -131,36 +134,31 @@ public class AppAboutApplicationActivity extends CustomThemeEngineAppCompatActiv
 		return true;
 	}
 
-	@SuppressLint("NonConstantResourceId")
 	public boolean onOptionsItemSelected(MenuItem item)
 	{
-		switch (item.getItemId())
-		{
-			case R.id.preferences_screen:
-			startActivity(new Intent(this, com.verNANDo57.rulebook_educational.preferences.AppSettingsActivity.class));
-			return true;
+		int id = item.getItemId();
 
-			case R.id.exit_actionbar_extended:
-				androidx.appcompat.app.AlertDialog.Builder builder = new androidx.appcompat.app.AlertDialog.Builder(this);
-				builder.setTitle(getString(R.string.app_exit));
-				builder.setMessage(getString(R.string.are_you_sure));
-				builder.setIcon(R.drawable.ic_warning_outline);
-				builder.setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener(){
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						finishAffinity();
-					}
-				});
-				builder.setNegativeButton(getString(R.string.no), new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int which) {
-						dialog.cancel();
-					}
-				});
-				androidx.appcompat.app.AlertDialog alert = builder.create();
-				alert.show();
-			return true;
-
+		if (id == R.id.preferences_screen) {
+			startActivity(new Intent(this, AppSettingsActivity.class));
+		} else if (id == R.id.exit_actionbar_extended) {
+			androidx.appcompat.app.AlertDialog.Builder builder = new androidx.appcompat.app.AlertDialog.Builder(this);
+			builder.setTitle(getString(R.string.app_exit));
+			builder.setMessage(getString(R.string.are_you_sure));
+			builder.setIcon(R.drawable.ic_warning_outline);
+			builder.setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener(){
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					finishAffinity();
+				}
+			});
+			builder.setNegativeButton(getString(R.string.no), new DialogInterface.OnClickListener() {
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					dialog.cancel();
+				}
+			});
+			androidx.appcompat.app.AlertDialog alert = builder.create();
+			alert.show();
 		}
 		return super.onOptionsItemSelected(item);
 	}

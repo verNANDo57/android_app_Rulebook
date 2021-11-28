@@ -94,87 +94,68 @@ public class AppUtils {
     /**
      * U can use this method to set animation to any view
      * firstly, u need to define your view, then animator_mode, then [Float] move value (optional)
-     *
-     * For example: If you wrote smth like this:
-     *      setAnimatorToAnyView(yourview, to_right, 250)
-     *
-     * your view will move to right (to 250px right) from its current position
      */
-    public static void setTranslateAnimation(View view, String mode) {
-        switch (mode) {
-            case "to_right": {
-                TranslateAnimation animate = new TranslateAnimation(
-                        view.getWidth(), 0, 0, 0);
-                animate.setDuration(600);
-                animate.setFillAfter(false);
-                view.startAnimation(animate);
-                break;
-            }
-            case "to_left": {
-                float mode_value_reference = view.getWidth() - (view.getWidth() * 2);
+    public static int TRANSLATE_DIRECTION_RIGHT = 1;
+    public static int TRANSLATE_DIRECTION_LEFT = 2;
+    public static int TRANSLATE_DIRECTION_BOTTOM = 3;
+    public static int TRANSLATE_DIRECTION_TOP = 4;
+    public static void setTranslateAnimation(View view, int mode) {
+        if (mode == TRANSLATE_DIRECTION_RIGHT) {
+            TranslateAnimation animate = new TranslateAnimation(
+                    view.getWidth(), 0, 0, 0);
+            animate.setDuration(600);
+            animate.setFillAfter(false);
+            view.startAnimation(animate);
+        } else if (mode == TRANSLATE_DIRECTION_LEFT) {
+            float mode_value_reference = view.getWidth() - (view.getWidth() * 2);
 
-                TranslateAnimation animate = new TranslateAnimation(
-                        mode_value_reference, 0, 0, 0);
-                animate.setDuration(600);
-                animate.setFillAfter(false);
-                view.startAnimation(animate);
-                break;
-            }
-            case "to_bottom": {
-                TranslateAnimation animate = new TranslateAnimation(
-                        0, 0, 0, view.getHeight());
-                animate.setDuration(250);
-                animate.setFillAfter(false);
-                view.startAnimation(animate);
-                break;
-            }
-            case "to_top": {
-                TranslateAnimation animate = new TranslateAnimation(
-                        0, 0, view.getHeight(), 0);
-                animate.setDuration(250);
-                animate.setFillAfter(false);
-                view.startAnimation(animate);
-                break;
-            }
+            TranslateAnimation animate = new TranslateAnimation(
+                    mode_value_reference, 0, 0, 0);
+            animate.setDuration(600);
+            animate.setFillAfter(false);
+            view.startAnimation(animate);
+        } else if (mode == TRANSLATE_DIRECTION_BOTTOM) {
+            TranslateAnimation animate = new TranslateAnimation(
+                    0, 0, 0, view.getHeight());
+            animate.setDuration(250);
+            animate.setFillAfter(false);
+            view.startAnimation(animate);
+        } else if (mode == TRANSLATE_DIRECTION_TOP) {
+            TranslateAnimation animate = new TranslateAnimation(
+                    0, 0, view.getHeight(), 0);
+            animate.setDuration(250);
+            animate.setFillAfter(false);
+            view.startAnimation(animate);
         }
     }
 
-    public static void setTranslateAnimation(View view, String mode, Float move_value) {
-        switch (mode) {
-            case "to_right": {
-                TranslateAnimation animate = new TranslateAnimation(
-                        move_value, 0, 0, 0);
-                animate.setDuration(600);
-                animate.setFillAfter(false);
-                view.startAnimation(animate);
-                break;
-            }
-            case "to_left": {
-                float mode_value_reference = move_value - (move_value * 2);
+    public static void setTranslateAnimation(View view, int mode, Float move_value) {
+        if (mode == TRANSLATE_DIRECTION_RIGHT) {
+            TranslateAnimation animate = new TranslateAnimation(
+                    move_value, 0, 0, 0);
+            animate.setDuration(600);
+            animate.setFillAfter(false);
+            view.startAnimation(animate);
+        } else if (mode == TRANSLATE_DIRECTION_LEFT) {
+            float mode_value_reference = move_value - (move_value * 2);
 
-                TranslateAnimation animate = new TranslateAnimation(
-                        mode_value_reference, 0, 0, 0);
-                animate.setDuration(600);
-                animate.setFillAfter(false);
-                view.startAnimation(animate);
-                break;
-            }
-            case "to_bottom": {
-                TranslateAnimation animate = new TranslateAnimation(
-                        0, 0, 0, move_value);
-                animate.setDuration(250);
-                animate.setFillAfter(false);
-                view.startAnimation(animate);
-                break;
-            }
-            case "to_top": {
-                TranslateAnimation animate = new TranslateAnimation(
-                        0, 0, move_value, 0);
-                animate.setDuration(250);
-                animate.setFillAfter(false);
-                view.startAnimation(animate);
-                break;
-            }
+            TranslateAnimation animate = new TranslateAnimation(
+                    mode_value_reference, 0, 0, 0);
+            animate.setDuration(600);
+            animate.setFillAfter(false);
+            view.startAnimation(animate);
+        } else if (mode == TRANSLATE_DIRECTION_BOTTOM) {
+            TranslateAnimation animate = new TranslateAnimation(
+                    0, 0, 0, move_value);
+            animate.setDuration(250);
+            animate.setFillAfter(false);
+            view.startAnimation(animate);
+        } else if (mode == TRANSLATE_DIRECTION_TOP) {
+            TranslateAnimation animate = new TranslateAnimation(
+                    0, 0, move_value, 0);
+            animate.setDuration(250);
+            animate.setFillAfter(false);
+            view.startAnimation(animate);
         }
     }
 
@@ -223,8 +204,8 @@ public class AppUtils {
 
     public static void copyTXTFileFromAssets (Context context, String filename, String outPreDir, String outDir, String outFileName, String outFileDir, String log_msg){
         AssetManager assetManager = context.getAssets();
-        InputStream in = null;
-        OutputStream out = null;
+        InputStream in;
+        OutputStream out;
         try {
             in = assetManager.open(filename);
 
@@ -253,10 +234,8 @@ public class AppUtils {
                 out = new FileOutputStream(outFile);
                 AppUtils.copyFile(in, out);
                 in.close();
-                in = null;
                 out.flush();
                 out.close();
-                out = null;
 
                 new StyleableToast.Builder(context)
                         .text(context.getString(R.string.app_saved) + ":" + outFileDir + outFileName + ".txt") // set text

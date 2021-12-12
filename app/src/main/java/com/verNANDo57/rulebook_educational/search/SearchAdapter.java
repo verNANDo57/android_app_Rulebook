@@ -13,7 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.verNANDo57.rulebook_educational.customthemeengine.utils.ColorUtils;
+import com.verNANDo57.rulebook_educational.utils.ColorUtils;
 import com.verNANDo57.rulebook_educational.extradata.R;
 
 import java.util.ArrayList;
@@ -30,7 +30,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchHold
         public SearchHolder(@NonNull View itemView) {
             super(itemView);
             search_item_card = itemView.findViewById(R.id.recycler_view_item_card);
-            search_item_imageview = itemView.findViewById(R.id.recyclerview_image_imageview);
+            search_item_imageview = itemView.findViewById(R.id.recyclerview_image);
             search_item_title = itemView.findViewById(R.id.recyclerview_item_title);
             search_item_summary= itemView.findViewById(R.id.recyclerview_item_summary);
         }
@@ -58,7 +58,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchHold
         holder.search_item_title.setText(listdata.get(position).getItemTitle());
         holder.search_item_summary.setText(listdata.get(position).getItemDescription());
         holder.search_item_imageview.setImageResource(listdata.get(position).getItemImgId());
-        holder.search_item_imageview.setColorFilter(ColorUtils.lighter(context.getResources().getColor(R.color.coloraccent), 0.01f));
+        holder.search_item_imageview.setColorFilter(ColorUtils.lighter(context.getResources().getColor(R.color.colorAccent), 0.01f));
 
         //Set CardView background value to TRANSPARENT (equals 0) to make it look better
         holder.search_item_card.setCardBackgroundColor(0);
@@ -73,7 +73,7 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchHold
             @Override
             public void onClick(View view) {
                 //Get context from any VIEW object instead of passing CONTEXT as an argument to SearchAdapter and keeping it as class field
-                SearchReferences.performSearchItemOnClickAction(context, holder);
+                SearchReferences.performSearchItemOnClickAction(context, holder.search_item_title.getText().toString());
             }
         });
     }

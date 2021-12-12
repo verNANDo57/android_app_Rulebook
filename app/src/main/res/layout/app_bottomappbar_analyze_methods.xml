@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.verNANDo57.rulebook_educational.rules.analyze_methods.AppAnalyzeMethods">
+    tools:context="com.verNANDo57.rulebook_educational.rules.AppAnalyzeMethods">
 
     <include layout="@layout/app_analyze_methods" />
 

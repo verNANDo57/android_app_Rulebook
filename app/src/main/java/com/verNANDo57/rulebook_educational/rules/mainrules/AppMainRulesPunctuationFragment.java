@@ -10,13 +10,13 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
-import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngineFragment;
+import androidx.fragment.app.Fragment;
+
+import com.verNANDo57.rulebook_educational.utils.AppUtils;
 import com.verNANDo57.rulebook_educational.extradata.R;
-import com.verNANDo57.rulebook_educational.rules.AppExtraBooleans;
+import com.verNANDo57.rulebook_educational.rules.AppBaseScrollableActivity;
 
-public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
-
-    private AppExtraBooleans booleansInMainRules;
+public class AppMainRulesPunctuationFragment extends Fragment {
 
     public AppMainRulesPunctuationFragment() {
         //required empty constructor
@@ -32,45 +32,25 @@ public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
         Animation fade_in = AnimationUtils.loadAnimation(requireContext(), R.anim.app_fade_in);
         Animation fade_out = AnimationUtils.loadAnimation(requireContext(), R.anim.app_fade_out);
 
-        booleansInMainRules = new AppExtraBooleans(requireContext());
-
         View view = inflater.inflate(R.layout.punctuation, container, false);
 
-        LinearLayout punctuationButton1_container = view.findViewById(R.id.punctuationButton1_container);
-        LinearLayout punctuationButton2_container = view.findViewById(R.id.punctuationButton2_container);
-        LinearLayout punctuationButton3_container = view.findViewById(R.id.punctuationButton3_container);
-        LinearLayout punctuationButton4_container = view.findViewById(R.id.punctuationButton4_container);
-        LinearLayout punctuationButton5_container = view.findViewById(R.id.punctuationButton5_container);
-        LinearLayout punctuationButton6_container = view.findViewById(R.id.punctuationButton6_container);
-        LinearLayout punctuationButton7_container = view.findViewById(R.id.punctuationButton7_container);
-        LinearLayout punctuationButton8_container = view.findViewById(R.id.punctuationButton8_container);
-        LinearLayout punctuationButton9_container = view.findViewById(R.id.punctuationButton9_container);
-        LinearLayout punctuationButton10_container = view.findViewById(R.id.punctuationButton10_container);
-        LinearLayout punctuationButton11_container = view.findViewById(R.id.punctuationButton11_container);
-        LinearLayout punctuationButton12_container = view.findViewById(R.id.punctuationButton12_container);
-        LinearLayout punctuationButton14_container = view.findViewById(R.id.punctuationButton14_container);
-        LinearLayout punctuationButton15_container = view.findViewById(R.id.punctuationButton15_container);
-        LinearLayout punctuationButton17_container = view.findViewById(R.id.punctuationButton17_container);
-        LinearLayout punctuationButton18_container = view.findViewById(R.id.punctuationButton18_container);
-        LinearLayout punctuationButton19_container = view.findViewById(R.id.punctuationButton19_container);
-
-        LinearLayout punctuationButton1_sub_container = view.findViewById(R.id.punctuationButton1_sub_container);
-        LinearLayout punctuationButton2_sub_container = view.findViewById(R.id.punctuationButton2_sub_container);
-        LinearLayout punctuationButton3_sub_container = view.findViewById(R.id.punctuationButton3_sub_container);
-        LinearLayout punctuationButton4_sub_container = view.findViewById(R.id.punctuationButton4_sub_container);
-        LinearLayout punctuationButton5_sub_container = view.findViewById(R.id.punctuationButton5_sub_container);
-        LinearLayout punctuationButton6_sub_container = view.findViewById(R.id.punctuationButton6_sub_container);
-        LinearLayout punctuationButton7_sub_container = view.findViewById(R.id.punctuationButton7_sub_container);
-        LinearLayout punctuationButton8_sub_container = view.findViewById(R.id.punctuationButton8_sub_container);
-        LinearLayout punctuationButton9_sub_container = view.findViewById(R.id.punctuationButton9_sub_container);
-        LinearLayout punctuationButton10_sub_container = view.findViewById(R.id.punctuationButton10_sub_container);
-        LinearLayout punctuationButton11_sub_container = view.findViewById(R.id.punctuationButton11_sub_container);
-        LinearLayout punctuationButton12_sub_container = view.findViewById(R.id.punctuationButton12_sub_container);
-        LinearLayout punctuationButton14_sub_container = view.findViewById(R.id.punctuationButton14_sub_container);
-        LinearLayout punctuationButton15_sub_container = view.findViewById(R.id.punctuationButton15_sub_container);
-        LinearLayout punctuationButton17_sub_container = view.findViewById(R.id.punctuationButton17_sub_container);
-        LinearLayout punctuationButton18_sub_container = view.findViewById(R.id.punctuationButton18_sub_container);
-        LinearLayout punctuationButton19_sub_container = view.findViewById(R.id.punctuationButton19_sub_container);
+        LinearLayout punctuationButton1_sub_container = view.findViewById(R.id.punctuationButton1_container2);
+        LinearLayout punctuationButton2_sub_container = view.findViewById(R.id.punctuationButton2_container2);
+        LinearLayout punctuationButton3_sub_container = view.findViewById(R.id.punctuationButton3_container2);
+        LinearLayout punctuationButton4_sub_container = view.findViewById(R.id.punctuationButton4_container2);
+        LinearLayout punctuationButton5_sub_container = view.findViewById(R.id.punctuationButton5_container2);
+        LinearLayout punctuationButton6_sub_container = view.findViewById(R.id.punctuationButton6_container2);
+        LinearLayout punctuationButton7_sub_container = view.findViewById(R.id.punctuationButton7_container2);
+        LinearLayout punctuationButton8_sub_container = view.findViewById(R.id.punctuationButton8_container2);
+        LinearLayout punctuationButton9_sub_container = view.findViewById(R.id.punctuationButton9_container2);
+        LinearLayout punctuationButton10_sub_container = view.findViewById(R.id.punctuationButton10_container2);
+        LinearLayout punctuationButton11_sub_container = view.findViewById(R.id.punctuationButton11_container2);
+        LinearLayout punctuationButton12_sub_container = view.findViewById(R.id.punctuationButton12_container2);
+        LinearLayout punctuationButton14_sub_container = view.findViewById(R.id.punctuationButton14_container2);
+        LinearLayout punctuationButton15_sub_container = view.findViewById(R.id.punctuationButton15_container2);
+        LinearLayout punctuationButton17_sub_container = view.findViewById(R.id.punctuationButton17_container2);
+        LinearLayout punctuationButton18_sub_container = view.findViewById(R.id.punctuationButton18_container2);
+        LinearLayout punctuationButton19_sub_container = view.findViewById(R.id.punctuationButton19_container2);
 
         Button punct1mainButton1 = view.findViewById(R.id.punct1mainButton1);
         Button punct1mainButton2 = view.findViewById(R.id.punct1mainButton2);
@@ -169,9 +149,8 @@ public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
 
         Button punctuationButton21 = view.findViewById(R.id.punctuationButton21);
 
-        Intent scrollableactivity_in_mainrules = new Intent(getContext(), AppMainRulesScrollableActivityInMainRules.class);
+        Intent scrollableactivity = new Intent(getContext(), AppBaseScrollableActivity.class);
 
-        //punct_1
         Button punct_1 = view.findViewById(R.id.punctuationButton1);
         punct_1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -188,34 +167,32 @@ public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
             punct1mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_1_1");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_1_1");
+                    startActivity(scrollableactivity);
                 }
             });
             punct1mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_1_2");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_1_2");
+                    startActivity(scrollableactivity);
                 }
             });
             punct1mainButton3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_1_3");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_1_3");
+                    startActivity(scrollableactivity);
                 }
             });
             punct1mainButton4.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_1_4");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_1_4");
+                    startActivity(scrollableactivity);
                 }
             });
-        //punct_1
 
-        //punct_2
         Button punct_2 = view.findViewById(R.id.punctuationButton2);
         punct_2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -232,34 +209,32 @@ public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
             punct2mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_2_5");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_2_5");
+                    startActivity(scrollableactivity);
                 }
             });
             punct2mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_2_6");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_2_6");
+                    startActivity(scrollableactivity);
                 }
             });
             punct2mainButton3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_2_7");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_2_7");
+                    startActivity(scrollableactivity);
                 }
             });
             punct2mainButton4.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_2_8");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_2_8");
+                    startActivity(scrollableactivity);
                 }
             });
-        //punct_2
 
-        //punct_3
         Button punct_3 = view.findViewById(R.id.punctuationButton3);
         punct_3.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -276,55 +251,53 @@ public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
             punct3mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_3_9");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_3_9");
+                    startActivity(scrollableactivity);
                 }
             });
             punct3mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_3_10");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_3_10");
+                    startActivity(scrollableactivity);
                 }
             });
             punct3mainButton3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_3_11");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_3_11");
+                    startActivity(scrollableactivity);
                 }
             });
             punct3mainButton4.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_3_12");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_3_12");
+                    startActivity(scrollableactivity);
                 }
             });
             punct3mainButton5.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_3_13");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_3_13");
+                    startActivity(scrollableactivity);
                 }
             });
             punct3mainButton6.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_3_14");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_3_14");
+                    startActivity(scrollableactivity);
                 }
             });
             punct3mainButton7.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_3_15");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_3_15");
+                    startActivity(scrollableactivity);
                 }
             });
-        //punct_3
 
-        //punct_4
         Button punct_4 = view.findViewById(R.id.punctuationButton4);
         punct_4.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -341,20 +314,18 @@ public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
             punct4mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_4_16");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_4_16");
+                    startActivity(scrollableactivity);
                 }
             });
             punct4mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_4_17");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_4_17");
+                    startActivity(scrollableactivity);
                 }
             });
-        //punct_4
 
-        //punct_5
         Button punct_5 = view.findViewById(R.id.punctuationButton5);
         punct_5.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -371,34 +342,32 @@ public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
             punct5mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_5_18");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_5_18");
+                    startActivity(scrollableactivity);
                 }
             });
             punct5mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_5_19");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_5_19");
+                    startActivity(scrollableactivity);
                 }
             });
             punct5mainButton3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_5_20");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_5_20");
+                    startActivity(scrollableactivity);
                 }
             });
             punct5mainButton4.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_5_21");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_5_21");
+                    startActivity(scrollableactivity);
                 }
             });
-        //punct_5
 
-        //punct_6
         Button punct_6 = view.findViewById(R.id.punctuationButton6);
         punct_6.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -415,27 +384,25 @@ public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
             punct6mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_6_22");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_6_22");
+                    startActivity(scrollableactivity);
                 }
             });
             punct6mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_6_23");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_6_23");
+                    startActivity(scrollableactivity);
                 }
             });
             punct6mainButton3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_6_24");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_6_24");
+                    startActivity(scrollableactivity);
                 }
             });
-        //punct_6
 
-        //punct_7
         Button punct_7 = view.findViewById(R.id.punctuationButton7);
         punct_7.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -452,27 +419,25 @@ public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
             punct7mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_7_25");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_7_25");
+                    startActivity(scrollableactivity);
                 }
             });
             punct7mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_7_26");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_7_26");
+                    startActivity(scrollableactivity);
                 }
             });
             punct7mainButton3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_7_27");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_7_27");
+                    startActivity(scrollableactivity);
                 }
             });
-        //punct_7
 
-        //punct_8
         Button punct_8 = view.findViewById(R.id.punctuationButton8);
         punct_8.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -489,20 +454,18 @@ public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
             punct8mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_8_28");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_8_28");
+                    startActivity(scrollableactivity);
                 }
             });
             punct8mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_8_29");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_8_29");
+                    startActivity(scrollableactivity);
                 }
             });
-        //punct_8
 
-        //punct_9
         Button punct_9 = view.findViewById(R.id.punctuationButton9);
         punct_9.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -519,27 +482,25 @@ public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
             punct9mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_9_30");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_9_30");
+                    startActivity(scrollableactivity);
                 }
             });
             punct9mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_9_31");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_9_31");
+                    startActivity(scrollableactivity);
                 }
             });
             punct9mainButton3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_9_32");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_9_32");
+                    startActivity(scrollableactivity);
                 }
             });
-        //punct_9
 
-        //punct_10
         Button punct_10 = view.findViewById(R.id.punctuationButton10);
         punct_10.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -556,62 +517,60 @@ public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
             punct10mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_10_33");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_10_33");
+                    startActivity(scrollableactivity);
                 }
             });
             punct10mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_10_34");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_10_34");
+                    startActivity(scrollableactivity);
                 }
             });
             punct10mainButton3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_10_35");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_10_35");
+                    startActivity(scrollableactivity);
                 }
             });
             punct10mainButton4.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_10_36");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_10_36");
+                    startActivity(scrollableactivity);
                 }
             });
             punct10mainButton5.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_10_37");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_10_37");
+                    startActivity(scrollableactivity);
                 }
             });
             punct10mainButton6.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_10_38");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_10_38");
+                    startActivity(scrollableactivity);
                 }
             });
             punct10mainButton7.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_10_39");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_10_39");
+                    startActivity(scrollableactivity);
                 }
             });
             punct10mainButton8.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_10_40");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_10_40");
+                    startActivity(scrollableactivity);
                 }
             });
-        //punct_10
 
-        //punct_11
         Button punct_11 = view.findViewById(R.id.punctuationButton11);
         punct_11.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -628,20 +587,18 @@ public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
             punct11mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_11_41");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_11_41");
+                    startActivity(scrollableactivity);
                 }
             });
             punct11mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_11_42");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_11_42");
+                    startActivity(scrollableactivity);
                 }
             });
-        //punct_11
 
-        //punct_12
         Button punct_12 = view.findViewById(R.id.punctuationButton12);
         punct_12.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -658,44 +615,40 @@ public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
             punct12mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_12_43");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_12_43");
+                    startActivity(scrollableactivity);
                 }
             });
             punct12mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_12_44");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_12_44");
+                    startActivity(scrollableactivity);
                 }
             });
             punct12mainButton3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_12_45");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_12_45");
+                    startActivity(scrollableactivity);
                 }
             });
             punct12mainButton4.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_12_46");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_12_46");
+                    startActivity(scrollableactivity);
                 }
             });
-        //punct_12
 
-        //punct_13
         punctuationButton13.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_13_split");
-                startActivity(scrollableactivity_in_mainrules);
+                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_13_split");
+                startActivity(scrollableactivity);
             }
         });
-        //punct_13
 
-        //punct_14
         Button punct_14 = view.findViewById(R.id.punctuationButton14);
         punct_14.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -712,62 +665,60 @@ public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
             punct14mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_14_47");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_14_47");
+                    startActivity(scrollableactivity);
                 }
             });
             punct14mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_14_48");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_14_48");
+                    startActivity(scrollableactivity);
                 }
             });
             punct14mainButton3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_14_49");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_14_49");
+                    startActivity(scrollableactivity);
                 }
             });
             punct14mainButton4.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_14_50");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_14_50");
+                    startActivity(scrollableactivity);
                 }
             });
             punct14mainButton5.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_14_51");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_14_51");
+                    startActivity(scrollableactivity);
                 }
             });
             punct14mainButton6.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_14_52");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_14_52");
+                    startActivity(scrollableactivity);
                 }
             });
             punct14mainButton7.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_14_53");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_14_53");
+                    startActivity(scrollableactivity);
                 }
             });
             punct14mainButton8.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_14_54");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_14_54");
+                    startActivity(scrollableactivity);
                 }
             });
-        //punct_14
 
-        //punct_15
         Button punct_15 = view.findViewById(R.id.punctuationButton15);
         punct_15.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -784,44 +735,40 @@ public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
             punct15mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_15_55");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_15_55");
+                    startActivity(scrollableactivity);
                 }
             });
             punct15mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_15_56");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_15_56");
+                    startActivity(scrollableactivity);
                 }
             });
             punct15mainButton3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_15_57");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_15_57");
+                    startActivity(scrollableactivity);
                 }
             });
             punct15mainButton4.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_15_58");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_15_58");
+                    startActivity(scrollableactivity);
                 }
             });
-        //punct_15
 
-        //punct_16
         punctuationButton16.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_16_split");
-                startActivity(scrollableactivity_in_mainrules);
+                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_16_split");
+                startActivity(scrollableactivity);
             }
         });
-        //punct_16
 
-        //punct_17
         Button punct_17 = view.findViewById(R.id.punctuationButton17);
         punct_17.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -838,41 +785,39 @@ public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
             punct17mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_17_59");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_17_59");
+                    startActivity(scrollableactivity);
                 }
             });
             punct17mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_17_60");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_17_60");
+                    startActivity(scrollableactivity);
                 }
             });
             punct17mainButton3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_17_61");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_17_61");
+                    startActivity(scrollableactivity);
                 }
             });
             punct17mainButton4.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_17_62");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_17_62");
+                    startActivity(scrollableactivity);
                 }
             });
             punct17mainButton5.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_17_63");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_17_63");
+                    startActivity(scrollableactivity);
                 }
             });
-        //punct_17
 
-        //punct_18
         Button punct_18 = view.findViewById(R.id.punctuationButton18);
         punct_18.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -889,48 +834,46 @@ public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
             punct18mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_18_64");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_18_64");
+                    startActivity(scrollableactivity);
                 }
             });
             punct18mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_18_65");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_18_65");
+                    startActivity(scrollableactivity);
                 }
             });
             punct18mainButton3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_18_66");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_18_66");
+                    startActivity(scrollableactivity);
                 }
             });
             punct18mainButton4.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_18_67");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_18_67");
+                    startActivity(scrollableactivity);
                 }
             });
             punct18mainButton5.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_18_68");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_18_68");
+                    startActivity(scrollableactivity);
                 }
             });
             punct18mainButton6.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_18_69");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_18_69");
+                    startActivity(scrollableactivity);
                 }
             });
-        //punct_18
 
-        //punct_19
         Button punct_19 = view.findViewById(R.id.punctuationButton19);
         punct_19.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -947,45 +890,40 @@ public class AppMainRulesPunctuationFragment extends CustomThemeEngineFragment {
             punct19mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_19_70");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_19_70");
+                    startActivity(scrollableactivity);
                 }
             });
             punct19mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_19_71");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_19_71");
+                    startActivity(scrollableactivity);
                 }
             });
             punct19mainButton3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_19_72");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_19_72");
+                    startActivity(scrollableactivity);
                 }
             });
-        //punct_19
 
-        //punct_20
         punctuationButton20.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_20_split");
-                startActivity(scrollableactivity_in_mainrules);
+                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_20_split");
+                startActivity(scrollableactivity);
             }
         });
-        //punct_20
 
-        //punct_21
         punctuationButton21.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("punct_21_split");
-                startActivity(scrollableactivity_in_mainrules);
+                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_21_split");
+                startActivity(scrollableactivity);
             }
         });
-        //punct_21
 
         return view;
     }

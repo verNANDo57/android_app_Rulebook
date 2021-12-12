@@ -56,7 +56,7 @@
 
                 <ImageButton
                     android:id="@+id/buttongit"
-                    style="@style/AppImageButtonStyleEveryTheme"
+                    style="@style/AppImageButtonStyle"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:background="@drawable/github_share_icon" />
@@ -69,7 +69,7 @@
 
                 <ImageButton
                     android:id="@+id/buttonvk"
-                    style="@style/AppImageButtonStyleEveryTheme"
+                    style="@style/AppImageButtonStyle"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_toEndOf="@id/appaboutView1"
@@ -83,7 +83,7 @@
 
                 <ImageButton
                     android:id="@+id/buttontg"
-                    style="@style/AppImageButtonStyleEveryTheme"
+                    style="@style/AppImageButtonStyle"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_toEndOf="@id/appaboutView4"
@@ -101,7 +101,7 @@
 
         <TextView
             android:id="@+id/appaboutTextView1"
-            style="@style/HeadlinesEveryTheme"
+            style="@style/Headlines"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/appaboutView3"
@@ -110,7 +110,7 @@
 
         <TextView
             android:id="@+id/appaboutTextView2"
-            style="@style/TextImportantEveryTheme"
+            style="@style/TextBold"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_below="@id/appaboutTextView1"

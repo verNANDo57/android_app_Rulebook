@@ -8,9 +8,10 @@ import android.os.Looper;
 import android.util.Log;
 import android.widget.ProgressBar;
 
-import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngineAppCompatActivity;
-import com.verNANDo57.rulebook_educational.customthemeengine.utils.ColorUtils;
+import com.verNANDo57.rulebook_educational.app.CustomThemeEngineAppCompatActivity;
 import com.verNANDo57.rulebook_educational.extradata.R;
+import com.verNANDo57.rulebook_educational.utils.AppUtils;
+import com.verNANDo57.rulebook_educational.utils.ColorUtils;
 
 @SuppressLint("CustomSplashScreen")
 public class SplashScreenActivity extends CustomThemeEngineAppCompatActivity {
@@ -26,7 +27,7 @@ public class SplashScreenActivity extends CustomThemeEngineAppCompatActivity {
 
 		setContentView(R.layout.app_splashscreen);
 
-		int BackgroundTintColor = ColorUtils.Companion.lighter(getResources().getColor(R.color.coloraccent), 0.01f);
+		int BackgroundTintColor = ColorUtils.Companion.lighter(getResources().getColor(R.color.colorAccent), 0.01f);
 
 		Indicator1 = findViewById(R.id.appSplashScreenProgressBar1); //Indicator1(ProgressBar1)
 		Indicator2 = findViewById(R.id.appSplashScreenProgressBar2); //Indicator2(ProgressBar2)

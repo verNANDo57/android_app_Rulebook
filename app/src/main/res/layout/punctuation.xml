@@ -103,7 +103,7 @@
 			android:text="@string/punct_21"
 			android:id="@+id/punctuationButton21"
 			android:layout_below="@id/punctuationButton20"
-			style="@style/RulebookButtonEveryThemeBottom"/>
+			style="@style/RulebookButtonBottom"/>
 
 	</RelativeLayout>
 

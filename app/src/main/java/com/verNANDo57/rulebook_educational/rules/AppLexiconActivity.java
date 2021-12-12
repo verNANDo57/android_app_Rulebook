@@ -1,17 +1,17 @@
 package com.verNANDo57.rulebook_educational.rules;
 
-import static com.verNANDo57.rulebook_educational.AppUtils.LOG_TAG;
-import static com.verNANDo57.rulebook_educational.AppUtils.TRANSLATE_DIRECTION_BOTTOM;
-import static com.verNANDo57.rulebook_educational.AppUtils.TRANSLATE_DIRECTION_TOP;
+import static com.verNANDo57.rulebook_educational.utils.AppUtils.LOG_TAG;
+import static com.verNANDo57.rulebook_educational.utils.AppUtils.TRANSLATE_DIRECTION_BOTTOM;
+import static com.verNANDo57.rulebook_educational.utils.AppUtils.TRANSLATE_DIRECTION_TOP;
 
 import android.os.Bundle;
 import android.view.View;
 
 import androidx.appcompat.widget.Toolbar;
 
-import com.verNANDo57.rulebook_educational.AppUtils;
+import com.verNANDo57.rulebook_educational.utils.AppUtils;
 import com.verNANDo57.rulebook_educational.BottomNavAmongLessonsFragment;
-import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngineAppCompatActivity;
+import com.verNANDo57.rulebook_educational.app.CustomThemeEngineAppCompatActivity;
 import com.verNANDo57.rulebook_educational.extradata.R;
 import com.verNANDo57.rulebook_educational.pdflib.pdfviewer.PDFView;
 import com.verNANDo57.rulebook_educational.pdflib.pdfviewer.listener.OnPageScrollListener;

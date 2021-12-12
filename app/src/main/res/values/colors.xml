@@ -1,69 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
-	<color name="app_rulebook_theme">#562C22</color>
-	<color name="navbar_color">#562C22</color>
-	<color name="statusbar_color">#562C22</color>
-	<color name="actionbar_in_recents_default_color">#562C22</color>
-	<color name="layout_dark_reference">#242424</color>
-	<color name="layout_light_reference">#FFFFFF</color>
-	<color name="bottomappbar_items_color_everytheme_reference">#000000</color>
-	<color name="app_text_reference">#562C22</color>
+<resources>
+	<color name="navbar_color">#FF562C22</color>
+	<color name="statusbar_color">#FF562C22</color>
+	<color name="actionbar_in_recents_default_color">#FF562C22</color>
+	<color name="bottomappbar_item_color">#FFF0E3DD</color>
+	<color name="app_text">#FF562C22</color>
 	<color name="text_appbar_black">#000000</color>
 
-	<color name="bottomsheetdialog_accent_reference">#A55634</color>
-	<color name="bottomsheetdialog_primary_reference">#562C22</color>
+	<color name="bottomsheetdialog_accent">#FF562C22</color>
+	<color name="bottomsheetdialog_primary">#FF562C22</color>
 
-	<color name="app_rulebook_background_reference">#FFFFFF</color>
+	<color name="app_rulebook_background">#FFFFFF</color>
 
-	<color name="button_color_default">#A55634</color>
+	<color name="button_color_default">#FF562C22</color>
 
-	<color name="app_vector_rating_face_color">#562C22</color>
+	<color name="app_vector_rating_face_color">#FF562C22</color>
 	<color name="app_vector_rating_eyes_color">#000000</color>
 	<color name="app_vector_rating_tongue_color">#c32925</color>
 	<color name="app_vector_rating_mouth_color">#000000</color>
 
-	<color name="coloraccent_reference">#A55634</color>
-
-	<color name="colorPrimary">@color/app_rulebook_theme</color>
-	<color name="colorPrimaryDark">@color/app_rulebook_theme</color>
-	<color name="colorAccent">@color/coloraccent</color>
+	<color name="colorPrimary">#FF562C22</color>
+	<color name="colorPrimaryDark">#FF49251C</color>
+	<color name="colorAccent">#FF562C22</color>
 
 	<!-- Background colors -->
 	<eat-comment/>
-	<color name="custom_background_dark">#FF303030</color>
-	<color name="custom_background_dark_darker">#FF1E1E1E</color>
-	<color name="custom_background_dark_lighter">#FF2D2D2D</color>
-	<color name="custom_background_light">#FFFAFAFA</color>
-	<color name="custom_background_light_darker">#FFC0C0C0</color>
-	<color name="custom_background_light_lighter">#FFF8F8F8</color>
-	<color name="background_material_dark" tools:override="true">@color/custom_background_dark</color>
-	<color name="background_material_light" tools:override="true">@color/custom_background_light</color>
+	<color name="custom_background">#FFF0E3DD</color>
+	<color name="custom_background_darker">#FFF0E3DD</color>
+	<color name="custom_background_lighter">#FFF0E3DD</color>
 
-	<!-- Menu colors -->
-	<eat-comment/>
-	<color name="custom_menu_icon_light">#FFFFFFFF</color>
-	<color name="custom_menu_icon_dark">#DE000000</color>
-	<color name="custom_sub_menu_icon_light">#B3FFFFFF</color>
-	<color name="custom_sub_menu_icon_dark">#8A000000</color>
+	<color name="styleable_toast_default_background_color">#FFF0E3DD</color>
+	<color name="styleable_toast_default_accent_color">#FF562C22</color>
+	<color name="styleable_toast_default_text_color">#FF562C22</color>
 
-	<!-- Button selector colors -->
-	<eat-comment/>
-	<color name="custom_selector_default">#FF9E9E9E</color>
-
-	<!-- Background selector colors -->
-	<eat-comment/>
-	<color name="custom_disabled_selected_reference">#FF757575</color>
-
-	<!-- Theme picker -->
-	<color name="customthemeengine_theme_title_bg_color">#CC37474F</color>
-	<color name="customthemeengine_theme_selected_color">#FF689F38</color>
-
-	<color name="styleable_toast_default_background_color_reference">#FFFFFF</color>
-	<color name="styleable_toast_default_accent_color_reference">#562C22</color>
-	<color name="styleable_toast_default_text_color_reference">#562C22</color>
-
-	<color name="orange_salmon">#EC5745</color>
-	<color name="red_wine">#A6463A</color>
-	<color name="red_wood">#4B1D17</color>
-	<color name="green_grass">#109121</color>
 </resources>

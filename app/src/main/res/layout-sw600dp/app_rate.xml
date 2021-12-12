@@ -32,7 +32,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="@dimen/app_rating_page_textview_marginTop"
                 android:text="@string/rate_us"
-                android:color="@color/coloraccent"
+                android:color="@color/colorAccent"
                 android:textSize="@dimen/app_rating_page_textview_textsize" />
 
             <RatingBar
@@ -56,7 +56,7 @@
                 android:layout_marginTop="@dimen/app_rating_page_review_box_marginTop"
                 android:layout_marginEnd="@dimen/app_rating_page_review_box_marginEnd"
                 android:layout_marginBottom="@dimen/app_rating_page_review_box_marginBottom"
-                android:background="@drawable/app_write_review_edittext_shape"
+                android:background="@drawable/app_review_edittext_shape"
                 android:inputType="textMultiLine"
                 android:hint="@string/write_a_review"
                 android:padding="@dimen/app_rating_page_edittext_padding"

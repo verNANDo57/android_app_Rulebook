@@ -2,7 +2,7 @@ package com.verNANDo57.rulebook_educational.preferences;
 
 import android.os.Bundle;
 
-import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngineAppCompatActivity;
+import com.verNANDo57.rulebook_educational.app.CustomThemeEngineAppCompatActivity;
 
 public class AppSettingsActivity extends CustomThemeEngineAppCompatActivity {
 

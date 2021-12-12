@@ -10,13 +10,13 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
-import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngineFragment;
+import androidx.fragment.app.Fragment;
+
+import com.verNANDo57.rulebook_educational.utils.AppUtils;
 import com.verNANDo57.rulebook_educational.extradata.R;
-import com.verNANDo57.rulebook_educational.rules.AppExtraBooleans;
+import com.verNANDo57.rulebook_educational.rules.AppBaseScrollableActivity;
 
-public class AppMainRulesOrthographyFragment extends CustomThemeEngineFragment {
-
-    private AppExtraBooleans booleansInMainRules;
+public class AppMainRulesOrthographyFragment extends Fragment {
 
     public AppMainRulesOrthographyFragment() {
         //required empty constructor
@@ -32,40 +32,22 @@ public class AppMainRulesOrthographyFragment extends CustomThemeEngineFragment {
         Animation fade_in = AnimationUtils.loadAnimation(requireContext(), R.anim.app_fade_in);
         Animation fade_out = AnimationUtils.loadAnimation(requireContext(), R.anim.app_fade_out);
 
-        booleansInMainRules = new AppExtraBooleans(requireContext());
-
         View view = inflater.inflate(R.layout.orthography, container, false);
 
-        LinearLayout orthographyButton1_container = view.findViewById(R.id.orthographyButton1_container);
-        LinearLayout orthographyButton2_container = view.findViewById(R.id.orthographyButton2_container);
-        LinearLayout orthographyButton3_container = view.findViewById(R.id.orthographyButton3_container);
-        LinearLayout orthographyButton4_container = view.findViewById(R.id.orthographyButton4_container);
-        LinearLayout orthographyButton5_container = view.findViewById(R.id.orthographyButton5_container);
-        LinearLayout orthographyButton6_container = view.findViewById(R.id.orthographyButton6_container);
-        LinearLayout orthographyButton7_container = view.findViewById(R.id.orthographyButton7_container);
-        LinearLayout orthographyButton8_container = view.findViewById(R.id.orthographyButton8_container);
-        LinearLayout orthographyButton9_container = view.findViewById(R.id.orthographyButton9_container);
-        LinearLayout orthographyButton10_container = view.findViewById(R.id.orthographyButton10_container);
-        LinearLayout orthographyButton11_container = view.findViewById(R.id.orthographyButton11_container);
-        LinearLayout orthographyButton12_container = view.findViewById(R.id.orthographyButton12_container);
-        LinearLayout orthographyButton13_container = view.findViewById(R.id.orthographyButton13_container);
-        LinearLayout orthographyButton14_container = view.findViewById(R.id.orthographyButton14_container);
-        LinearLayout orthographyButton17_container = view.findViewById(R.id.orthographyButton17_container);
-
-        LinearLayout orthographyButton1_sub_container = view.findViewById(R.id.orthographyButton1_sub_container);
-        LinearLayout orthographyButton2_sub_container = view.findViewById(R.id.orthographyButton2_sub_container);
-        LinearLayout orthographyButton3_sub_container = view.findViewById(R.id.orthographyButton3_sub_container);
-        LinearLayout orthographyButton5_sub_container = view.findViewById(R.id.orthographyButton5_sub_container);
-        LinearLayout orthographyButton6_sub_container = view.findViewById(R.id.orthographyButton6_sub_container);
-        LinearLayout orthographyButton7_sub_container = view.findViewById(R.id.orthographyButton7_sub_container);
-        LinearLayout orthographyButton8_sub_container = view.findViewById(R.id.orthographyButton8_sub_container);
-        LinearLayout orthographyButton9_sub_container = view.findViewById(R.id.orthographyButton9_sub_container);
-        LinearLayout orthographyButton10_sub_container = view.findViewById(R.id.orthographyButton10_sub_container);
-        LinearLayout orthographyButton11_sub_container = view.findViewById(R.id.orthographyButton11_sub_container);
-        LinearLayout orthographyButton12_sub_container = view.findViewById(R.id.orthographyButton12_sub_container);
-        LinearLayout orthographyButton13_sub_container = view.findViewById(R.id.orthographyButton13_sub_container);
-        LinearLayout orthographyButton14_sub_container = view.findViewById(R.id.orthographyButton14_sub_container);
-        LinearLayout orthographyButton17_sub_container = view.findViewById(R.id.orthographyButton17_sub_container);
+        LinearLayout orthographyButton1_sub_container = view.findViewById(R.id.orthographyButton1_container2);
+        LinearLayout orthographyButton2_sub_container = view.findViewById(R.id.orthographyButton2_container2);
+        LinearLayout orthographyButton3_sub_container = view.findViewById(R.id.orthographyButton3_container2);
+        LinearLayout orthographyButton5_sub_container = view.findViewById(R.id.orthographyButton5_container2);
+        LinearLayout orthographyButton6_sub_container = view.findViewById(R.id.orthographyButton6_container2);
+        LinearLayout orthographyButton7_sub_container = view.findViewById(R.id.orthographyButton7_container2);
+        LinearLayout orthographyButton8_sub_container = view.findViewById(R.id.orthographyButton8_container2);
+        LinearLayout orthographyButton9_sub_container = view.findViewById(R.id.orthographyButton9_container2);
+        LinearLayout orthographyButton10_sub_container = view.findViewById(R.id.orthographyButton10_container2);
+        LinearLayout orthographyButton11_sub_container = view.findViewById(R.id.orthographyButton11_container2);
+        LinearLayout orthographyButton12_sub_container = view.findViewById(R.id.orthographyButton12_container2);
+        LinearLayout orthographyButton13_sub_container = view.findViewById(R.id.orthographyButton13_container2);
+        LinearLayout orthographyButton14_sub_container = view.findViewById(R.id.orthographyButton14_container2);
+        LinearLayout orthographyButton17_sub_container = view.findViewById(R.id.orthographyButton17_container2);
 
         Button ortho1mainButton1 = view.findViewById(R.id.ortho1mainButton1);
         Button ortho1mainButton2 = view.findViewById(R.id.ortho1mainButton2);
@@ -143,9 +125,8 @@ public class AppMainRulesOrthographyFragment extends CustomThemeEngineFragment {
         Button ortho17mainButton7 = view.findViewById(R.id.ortho17mainButton7);
         Button ortho17mainButton8 = view.findViewById(R.id.ortho17mainButton8);
 
-        Intent scrollableactivity_in_mainrules = new Intent(getContext(), AppMainRulesScrollableActivityInMainRules.class);
+        Intent scrollableactivity = new Intent(getContext(), AppBaseScrollableActivity.class);
 
-        //ortho_1
         Button ortho_1 = view.findViewById(R.id.orthographyButton1);
         ortho_1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -162,48 +143,46 @@ public class AppMainRulesOrthographyFragment extends CustomThemeEngineFragment {
             ortho1mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_1_1");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_1_1");
+                    startActivity(scrollableactivity);
                 }
             });
             ortho1mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_1_2");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_1_2");
+                    startActivity(scrollableactivity);
                 }
             });
             ortho1mainButton3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_1_3");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_1_3");
+                    startActivity(scrollableactivity);
                 }
             });
             ortho1mainButton4.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_1_4");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_1_4");
+                    startActivity(scrollableactivity);
                 }
             });
             ortho1mainButton5.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_1_5");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_1_5");
+                    startActivity(scrollableactivity);
                 }
             });
             ortho1mainButton6.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_1_6");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_1_6");
+                    startActivity(scrollableactivity);
                 }
             });
-        //ortho_1
 
-        //ortho_2
         Button ortho_2 = view.findViewById(R.id.orthographyButton2);
         ortho_2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -220,27 +199,25 @@ public class AppMainRulesOrthographyFragment extends CustomThemeEngineFragment {
             ortho2mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_2_7");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_2_7");
+                    startActivity(scrollableactivity);
                 }
             });
             ortho2mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_2_8");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_2_8");
+                    startActivity(scrollableactivity);
                 }
             });
             ortho2mainButton3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_2_9");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_2_9");
+                    startActivity(scrollableactivity);
                 }
             });
-        //ortho_2
 
-        //ortho_3
         Button ortho_3 = view.findViewById(R.id.orthographyButton3);
         ortho_3.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -257,136 +234,132 @@ public class AppMainRulesOrthographyFragment extends CustomThemeEngineFragment {
             ortho3mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_3_10");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_3_10");
+                    startActivity(scrollableactivity);
                 }
             });
             ortho3mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_3_11");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_3_11");
+                    startActivity(scrollableactivity);
                 }
             });
             ortho3mainButton3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_3_12");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_3_12");
+                    startActivity(scrollableactivity);
                 }
             });
             ortho3mainButton4.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_3_13");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_3_13");
+                    startActivity(scrollableactivity);
                 }
             });
             ortho3mainButton5.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_3_14");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_3_14");
+                    startActivity(scrollableactivity);
                 }
             });
             ortho3mainButton6.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_3_15");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_3_15");
+                    startActivity(scrollableactivity);
                 }
             });
             ortho3mainButton7.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_3_16");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_3_16");
+                    startActivity(scrollableactivity);
                 }
             });
             ortho3mainButton8.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_3_17");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_3_17");
+                    startActivity(scrollableactivity);
                 }
             });
             ortho3mainButton9.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_3_18");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_3_18");
+                    startActivity(scrollableactivity);
                 }
             });
             ortho3mainButton10.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_3_19");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_3_19");
+                    startActivity(scrollableactivity);
                 }
             });
             ortho3mainButton11.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_3_20");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_3_20");
+                    startActivity(scrollableactivity);
                 }
             });
             ortho3mainButton12.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_3_21");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_3_21");
+                    startActivity(scrollableactivity);
                 }
             });
             ortho3mainButton13.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_3_22");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_3_22");
+                    startActivity(scrollableactivity);
                 }
             });
             ortho3mainButton14.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_3_23");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_3_23");
+                    startActivity(scrollableactivity);
                 }
             });
             ortho3mainButton15.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_3_24");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_3_24");
+                    startActivity(scrollableactivity);
                 }
             });
             ortho3mainButton16.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_3_25");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_3_25");
+                    startActivity(scrollableactivity);
                 }
             });
             ortho3mainButton17.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_3_26");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_3_26");
+                    startActivity(scrollableactivity);
                 }
             });
-        //ortho_3
 
-        //ortho_4
         Button ortho_4 = view.findViewById(R.id.orthographyButton4);
         ortho_4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_4_split");
-                startActivity(scrollableactivity_in_mainrules);
+                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_4_split");
+                startActivity(scrollableactivity);
             }
         });
-        //ortho_4
 
-        //ortho_5
         Button ortho_5 = view.findViewById(R.id.orthographyButton5);
         ortho_5.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -403,27 +376,25 @@ public class AppMainRulesOrthographyFragment extends CustomThemeEngineFragment {
             ortho5mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_5_27");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_5_27");
+                    startActivity(scrollableactivity);
                 }
             });
             ortho5mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_5_28");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_5_28");
+                    startActivity(scrollableactivity);
                 }
             });
             ortho5mainButton3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_5_29");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_5_29");
+                    startActivity(scrollableactivity);
                 }
             });
-        //ortho_5
 
-        //ortho_6
         Button ortho_6 = view.findViewById(R.id.orthographyButton6);
         ortho_6.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -440,20 +411,18 @@ public class AppMainRulesOrthographyFragment extends CustomThemeEngineFragment {
             ortho6mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_6_30");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_6_30");
+                    startActivity(scrollableactivity);
                 }
             });
             ortho6mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_6_31");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_6_31");
+                    startActivity(scrollableactivity);
                 }
             });
-        //ortho_6
 
-        //ortho_7
         Button ortho_7 = view.findViewById(R.id.orthographyButton7);
         ortho_7.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -470,20 +439,18 @@ public class AppMainRulesOrthographyFragment extends CustomThemeEngineFragment {
             ortho7mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_7_32");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_7_32");
+                    startActivity(scrollableactivity);
                 }
             });
             ortho7mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_7_33");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_7_33");
+                    startActivity(scrollableactivity);
                 }
             });
-        //ortho_7
 
-        //ortho_8
         Button ortho_8 = view.findViewById(R.id.orthographyButton8);
         ortho_8.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -500,20 +467,18 @@ public class AppMainRulesOrthographyFragment extends CustomThemeEngineFragment {
             ortho8mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_8_34");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_8_34");
+                    startActivity(scrollableactivity);
                 }
             });
             ortho8mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_8_35");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_8_35");
+                    startActivity(scrollableactivity);
                 }
             });
-        //ortho_8
 
-        //ortho_9
         Button ortho_9 = view.findViewById(R.id.orthographyButton9);
         ortho_9.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -530,34 +495,32 @@ public class AppMainRulesOrthographyFragment extends CustomThemeEngineFragment {
             ortho9mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_9_36");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_9_36");
+                    startActivity(scrollableactivity);
                 }
             });
             ortho9mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_9_37");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_9_37");
+                    startActivity(scrollableactivity);
                 }
             });
             ortho9mainButton3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_9_38");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_9_38");
+                    startActivity(scrollableactivity);
                 }
             });
             ortho9mainButton4.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_9_39");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_9_39");
+                    startActivity(scrollableactivity);
                 }
             });
-        //ortho_9
 
-        //ortho_10
         Button ortho_10 = view.findViewById(R.id.orthographyButton10);
         ortho_10.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -574,20 +537,18 @@ public class AppMainRulesOrthographyFragment extends CustomThemeEngineFragment {
             ortho10mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_10_40");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_10_40");
+                    startActivity(scrollableactivity);
                 }
             });
             ortho10mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_10_41");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_10_41");
+                    startActivity(scrollableactivity);
                 }
             });
-        //ortho_10
 
-        //ortho_11
         Button ortho_11 = view.findViewById(R.id.orthographyButton11);
         ortho_11.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -604,20 +565,18 @@ public class AppMainRulesOrthographyFragment extends CustomThemeEngineFragment {
             ortho11mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_11_42");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_11_42");
+                    startActivity(scrollableactivity);
                 }
             });
             ortho11mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_11_43");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_11_43");
+                    startActivity(scrollableactivity);
                 }
             });
-        //ortho_11
 
-        //ortho_12
         Button ortho_12 = view.findViewById(R.id.orthographyButton12);
         ortho_12.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -634,27 +593,25 @@ public class AppMainRulesOrthographyFragment extends CustomThemeEngineFragment {
             ortho12mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_12_44");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_12_44");
+                    startActivity(scrollableactivity);
                 }
             });
             ortho12mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_12_45");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_12_45");
+                    startActivity(scrollableactivity);
                 }
             });
             ortho12mainButton3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_12_46");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_12_46");
+                    startActivity(scrollableactivity);
                 }
             });
-        //ortho_12
 
-        //ortho_13
         Button ortho_13 = view.findViewById(R.id.orthographyButton13);
         ortho_13.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -671,20 +628,18 @@ public class AppMainRulesOrthographyFragment extends CustomThemeEngineFragment {
             ortho13mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_13_47");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_13_47");
+                    startActivity(scrollableactivity);
                 }
             });
             ortho13mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_13_48");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_13_48");
+                    startActivity(scrollableactivity);
                 }
             });
-        //ortho_13
 
-        //ortho_14
         Button ortho_14 = view.findViewById(R.id.orthographyButton14);
         ortho_14.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -701,70 +656,64 @@ public class AppMainRulesOrthographyFragment extends CustomThemeEngineFragment {
             ortho14mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_14_49");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_14_49");
+                    startActivity(scrollableactivity);
                 }
             });
             ortho14mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_14_50");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_14_50");
+                    startActivity(scrollableactivity);
                 }
             });
             ortho14mainButton3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_14_51");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_14_51");
+                    startActivity(scrollableactivity);
                 }
             });
             ortho14mainButton4.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_14_52");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_14_52");
+                    startActivity(scrollableactivity);
                 }
             });
             ortho14mainButton5.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_14_53");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_14_53");
+                    startActivity(scrollableactivity);
                 }
             });
             ortho14mainButton6.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_14_54");
-                    startActivity(scrollableactivity_in_mainrules);
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_14_54");
+                    startActivity(scrollableactivity);
                 }
             });
-        //ortho_14
 
-        //ortho_15
         Button ortho_15 = view.findViewById(R.id.orthographyButton15);
         ortho_15.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_15_split");
-                startActivity(scrollableactivity_in_mainrules);
+                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_15_split");
+                startActivity(scrollableactivity);
             }
         });
-        //ortho_15
 
-        //ortho_16
         Button ortho_16 = view.findViewById(R.id.orthographyButton16);
         ortho_16.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_16_split");
-                startActivity(scrollableactivity_in_mainrules);
+                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_16_split");
+                startActivity(scrollableactivity);
             }
         });
-        //ortho_16
 
-        //ortho_17
         Button ortho_17 = view.findViewById(R.id.orthographyButton17);
         ortho_17.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -781,82 +730,77 @@ public class AppMainRulesOrthographyFragment extends CustomThemeEngineFragment {
         ortho17mainButton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_17_55");
-                startActivity(scrollableactivity_in_mainrules);
+                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_17_55");
+                startActivity(scrollableactivity);
             }
         });
         ortho17mainButton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_17_56");
-                startActivity(scrollableactivity_in_mainrules);
+                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_17_56");
+                startActivity(scrollableactivity);
             }
         });
         ortho17mainButton3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_17_57");
-                startActivity(scrollableactivity_in_mainrules);
+                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_17_57");
+                startActivity(scrollableactivity);
             }
         });
         ortho17mainButton4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_17_58");
-                startActivity(scrollableactivity_in_mainrules);
+                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_17_58");
+                startActivity(scrollableactivity);
             }
         });
         ortho17mainButton5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_17_59");
-                startActivity(scrollableactivity_in_mainrules);
+                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_17_59");
+                startActivity(scrollableactivity);
             }
         });
         ortho17mainButton6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_17_60");
-                startActivity(scrollableactivity_in_mainrules);
+                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_17_60");
+                startActivity(scrollableactivity);
             }
         });
         ortho17mainButton7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_17_61");
-                startActivity(scrollableactivity_in_mainrules);
+                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_17_61");
+                startActivity(scrollableactivity);
             }
         });
         ortho17mainButton8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_17_62");
-                startActivity(scrollableactivity_in_mainrules);
+                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_17_62");
+                startActivity(scrollableactivity);
             }
         });
-        //ortho_17
 
-        //ortho_18
         Button ortho_18 = view.findViewById(R.id.orthographyButton18);
         ortho_18.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_18_split");
-                startActivity(scrollableactivity_in_mainrules);
+                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_18_split");
+                startActivity(scrollableactivity);
             }
         });
-        //ortho_18
 
-        //ortho_19
         Button ortho_19 = view.findViewById(R.id.orthographyButton19);
         ortho_19.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean("ortho_19_split");
-                startActivity(scrollableactivity_in_mainrules);
+                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_19_split");
+                startActivity(scrollableactivity);
             }
         });
-        //ortho_19
         return view;
     }
 }

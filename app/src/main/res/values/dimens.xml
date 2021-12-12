@@ -5,6 +5,9 @@
         that the view wants to be as big as its parent.
     -->
 
+	<dimen name="app_minHeight">48dp</dimen>
+	<dimen name="app_minWidth">48dp</dimen>
+
 	<dimen name="action_title_textsize">20dp</dimen>
 	<dimen name="action_subtitle_textsize">10dp</dimen>
 
@@ -67,10 +70,6 @@
 	<dimen name="app_mtrl_snackbar_margin">8dp</dimen>
 	<item name="app_snackbar_background_overlay_color_alpha" format="float" type="dimen">0.8</item>
 	<item name="app_snackbar_action_text_color_alpha" format="float" type="dimen">0.5</item>
-
-	<dimen name="app_choose_your_destiny_menu_button_width">290dp</dimen>
-	<dimen name="app_choose_your_destiny_menu_button_height">100dp</dimen>
-	<dimen name="app_choose_your_destiny_menu_button_text_size">30dp</dimen>
 
 	<dimen name="app_hugebutton_default_height">100dp</dimen>
 	<dimen name="app_hugebutton_default_marginBottomAndTop">2.5dp</dimen>

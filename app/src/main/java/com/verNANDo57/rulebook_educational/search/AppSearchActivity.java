@@ -1,6 +1,6 @@
 package com.verNANDo57.rulebook_educational.search;
 
-import static com.verNANDo57.rulebook_educational.AppUtils.LOG_TAG;
+import static com.verNANDo57.rulebook_educational.utils.AppUtils.LOG_TAG;
 
 import android.os.Bundle;
 import android.text.Editable;
@@ -13,8 +13,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.navigation.NavigationView;
-import com.verNANDo57.rulebook_educational.BottomNavAmongLessonsFragment;
-import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngineAppCompatActivity;
+import com.verNANDo57.rulebook_educational.BottomNavAmongActivitiesFragment;
+import com.verNANDo57.rulebook_educational.app.CustomThemeEngineAppCompatActivity;
 import com.verNANDo57.rulebook_educational.extradata.R;
 
 import java.util.ArrayList;
@@ -30,13 +30,13 @@ public class AppSearchActivity extends CustomThemeEngineAppCompatActivity {
 
         setContentView(R.layout.app_search);
 
-        Toolbar toolbar = findViewById(R.id.toolbar_in_search);
+        Toolbar toolbar = findViewById(R.id.toolbar_search);
         setSupportActionBar(toolbar);
         toolbar.setNavigationOnClickListener(new NavigationView.OnClickListener() {
             @Override
             public void onClick(View v) {
-                BottomNavAmongLessonsFragment BottomNavFragmentFromLessons = new BottomNavAmongLessonsFragment();
-                BottomNavFragmentFromLessons.show(getSupportFragmentManager(), LOG_TAG);
+                BottomNavAmongActivitiesFragment bottomNavFragmentAmongActivities = new BottomNavAmongActivitiesFragment();
+                bottomNavFragmentAmongActivities.show(getSupportFragmentManager(), LOG_TAG);
             }
         });
 

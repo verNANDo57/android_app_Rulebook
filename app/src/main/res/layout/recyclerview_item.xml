@@ -23,7 +23,7 @@
             android:gravity="center">
 
             <ImageView
-                android:id="@+id/recyclerview_image_imageview"
+                android:id="@+id/recyclerview_image"
                 android:layout_width="@dimen/app_searchitem_image_imageview_width"
                 android:layout_height="@dimen/app_searchitem_image_imageview_height"
                 android:padding="@dimen/app_searchitem_image_imageview_padding" />
@@ -31,7 +31,7 @@
 
         <TextView
             android:id="@+id/recyclerview_item_title"
-            style="@style/TextImportantEveryTheme"
+            style="@style/TextBold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/recyclerview_image_relativelayout"
@@ -43,7 +43,7 @@
 
         <TextView
             android:id="@+id/recyclerview_item_summary"
-            style="@style/TextRegularEveryTheme"
+            style="@style/TextRegular"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/recyclerview_item_title"

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="AppToolBarStyleEveryTheme" parent="Widget.AppCompat.Toolbar">
+    <style name="AppToolBarStyle" parent="Widget.AppCompat.Toolbar">
         <item name="buttonGravity">center_vertical</item>
         <item name="titleTextAppearance">@style/AppBarTitleTextStyle</item>
         <item name="popupTheme">@style/AppTheme.PopupOverlay</item>
         <item name="android:minHeight">?attr/actionBarSize</item>
         <item name="android:gravity">center</item>
-        <item name="android:titleTextColor">@color/bottomappbar_items_color_everytheme</item>
+        <item name="android:titleTextColor">@color/bottomappbar_item_color</item>
     </style>
 </resources>

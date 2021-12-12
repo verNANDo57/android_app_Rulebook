@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group>
+        <item
+            android:id="@+id/bottomsheetdialog_amonglessons_mainrules"
+            android:icon="@drawable/app_pen_icon"
+            android:title="@string/main_rules" />
+
+        <item
+            android:id="@+id/bottomsheetdialog_amonglessons_lexicon"
+            android:icon="@drawable/app_locale_icon"
+            android:title="@string/lexicon_rules" />
+
+        <item
+            android:id="@+id/bottomsheetdialog_amonglessons_schemesandtables"
+            android:icon="@drawable/app_table_icon"
+            android:title="@string/tables_and_schemes_rules" />
+
+        <item
+            android:id="@+id/bottomsheetdialog_amonglessons_analyzemethods"
+            android:icon="@drawable/app_table_icon"
+            android:title="@string/analyze_methods" />
+
+        <item
+            android:id="@+id/bottomsheetdialog_amonglessons_bookmarks"
+            android:icon="@drawable/app_bookmarks"
+            android:title="@string/app_bookmarks" />
+
+        <item
+            android:id="@+id/bottomsheetdialog_amonglessons_search"
+            android:icon="@drawable/ic_search_menu"
+            android:title="@string/search" />
+
+        <item
+            android:id="@+id/bottomsheetdialog_amonglessons_about"
+            android:icon="@drawable/ic_warning_outline"
+            android:title="@string/about_app" />
+
+        <item
+            android:id="@+id/bottomsheetdialog_amonglessons_settings"
+            android:icon="@drawable/ic_settings"
+            android:title="@string/settings" />
+    </group>
+</menu>

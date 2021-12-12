@@ -13,7 +13,7 @@
         android:allowBackup="true"
         android:label="@string/app_name"
         android:name="com.verNANDo57.rulebook_educational.AppRulebookClass"
-        android:theme="@style/AppThemeRulebookLight"
+        android:theme="@style/AppThemeRulebook"
 		android:icon="@drawable/ic_launcher" 
 		android:roundIcon="@drawable/ic_launcher_round"
 		android:fullBackupContent="true"
@@ -51,6 +51,11 @@
 			android:configChanges="keyboard|keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout|navigation" />
 
 		<activity
+			android:name="com.verNANDo57.rulebook_educational.rules.AppBaseScrollableActivity"
+			android:label="@string/app_name_mainrules"
+			android:configChanges="keyboard|keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout|navigation"/>
+
+		<activity
 			android:name="com.verNANDo57.rulebook_educational.rules.AppRulesInSchemesAndTablesActivity"
 			android:label="@string/app_name_schemesandtables"
 			android:configChanges="keyboard|keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout|navigation" />
@@ -61,20 +66,15 @@
 			android:configChanges="keyboard|keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout|navigation" />
 
 		<activity
-			android:name="com.verNANDo57.rulebook_educational.rules.analyze_methods.AppAnalyzeMethods"
+			android:name="com.verNANDo57.rulebook_educational.rules.AppAnalyzeMethods"
 			android:label="@string/app_name_analyze_methods"
 			android:configChanges="keyboard|keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout|navigation" />
 
 		<activity
-			android:name="com.verNANDo57.rulebook_educational.rules.dictionaries.AppDictionaries"
+			android:name="com.verNANDo57.rulebook_educational.rules.AppDictionaries"
 			android:label="@string/app_name_dictionaries"
 			android:configChanges="keyboard|keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout|navigation" />
 
-		<activity
-			android:name="com.verNANDo57.rulebook_educational.rules.dictionaries.AppDictionariesScrollableActivity"
-			android:label="@string/app_name_dictionaries"
-			android:configChanges="keyboard|keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout|navigation" />
-		
 		<activity
 			android:name="com.verNANDo57.rulebook_educational.AppAboutApplicationActivity"
 			android:label="@string/app_name_credits"
@@ -86,12 +86,10 @@
 			android:configChanges="keyboard|keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout|navigation"/>
 
 		<activity
-			android:name="com.verNANDo57.rulebook_educational.rules.mainrules.AppMainRulesScrollableActivityInMainRules"
-			android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize" />
+			android:name="com.verNANDo57.rulebook_educational.bookmarks.AppBookmarksActivity"
+			android:label="@string/app_bookmarks"
+			android:configChanges="keyboard|keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout|navigation"/>
 
-        <activity
-			android:name="com.verNANDo57.rulebook_educational.rules.analyze_methods.AppAnalyzeMethodsScrollableActivity"
-			android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize" />
 		<!-- EndOfMain  -->
 
 		<activity

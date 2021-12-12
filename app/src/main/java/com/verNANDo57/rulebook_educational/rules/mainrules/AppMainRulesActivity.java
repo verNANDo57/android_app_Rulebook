@@ -1,6 +1,6 @@
 package com.verNANDo57.rulebook_educational.rules.mainrules;
 
-import static com.verNANDo57.rulebook_educational.AppUtils.LOG_TAG;
+import static com.verNANDo57.rulebook_educational.utils.AppUtils.LOG_TAG;
 
 import android.os.Bundle;
 import android.view.View;
@@ -11,12 +11,12 @@ import androidx.viewpager2.widget.ViewPager2;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.tabs.TabLayout;
 import com.verNANDo57.rulebook_educational.BottomNavAmongLessonsFragment;
-import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngineAppCompatActivity;
+import com.verNANDo57.rulebook_educational.app.CustomThemeEngineAppCompatActivity;
 import com.verNANDo57.rulebook_educational.extradata.R;
 import com.verNANDo57.rulebook_educational.rules.mainrules.adapter.CustomPagerAdapter;
 
-public class AppMainRulesActivity extends CustomThemeEngineAppCompatActivity
-{
+public class AppMainRulesActivity extends CustomThemeEngineAppCompatActivity {
+
 	public void onCreate(Bundle savedInstanceState) {
 
 		super.onCreate(savedInstanceState);

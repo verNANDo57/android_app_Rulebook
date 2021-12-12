@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -45,8 +46,8 @@
                         android:layout_height="@dimen/app_bar_icon_width_height"
                         android:layout_centerHorizontal="true"
                         android:contentDescription="@string/app_name_mainrules"
-                        android:background="@drawable/ic_search_black"
-                        android:backgroundTint="@color/coloraccent" />
+                        android:background="@drawable/ic_search_menu"
+                        android:backgroundTint="@color/colorAccent" />
 
                     <LinearLayout
                         android:id="@+id/app_scrollableactivity_in_scrollableactivity_titleandsubtitle_container"
@@ -60,18 +61,18 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/app_loading"
-                            style="@style/HeadlinesEveryTheme"
+                            style="@style/Headlines"
                             android:textColor="@color/app_text"
                             android:gravity="center" />
 
                         <TextView
-                            android:id="@+id/app_scrollableactivity_in_scrollableactivity_subtitle"
+                            android:id="@+id/app_scrollableactivity_in_scrollableactivity_summary"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="@string/app_loading"
                             android:gravity="center"
                             android:textColor="@color/app_text"
-                            style="@style/TextImportantEveryTheme"/>
+                            style="@style/TextBold"/>
                     </LinearLayout>
                 </RelativeLayout>
 
@@ -83,7 +84,7 @@
                 android:id="@+id/toolbar_in_scrollableactivity"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/app_toolbar_height_in_scrollableactivity"
-                android:background="@drawable/app_toolbar_in_scrollableactivity"
+                android:background="@drawable/app_toolbar_scrollableactivity"
                 app:navigationIcon="@drawable/ic_view_list_black"
                 app:layout_collapseMode="pin" />
 

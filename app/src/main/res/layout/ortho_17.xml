@@ -13,7 +13,7 @@
         android:id="@+id/orthographyButton17" />
 
     <LinearLayout
-        android:id="@+id/orthographyButton17_sub_container"
+        android:id="@+id/orthographyButton17_container2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -28,7 +28,7 @@
             android:layout_width="match_parent"
             android:text="@string/ortho_17_55"
             android:id="@+id/ortho17mainButton1"
-            style="@style/RulebookButtonEveryThemeTop"/>
+            style="@style/RulebookButtonTop"/>
 
         <Button
             android:layout_height="wrap_content"
@@ -71,7 +71,7 @@
             android:layout_width="match_parent"
             android:text="@string/ortho_17_62"
             android:id="@+id/ortho17mainButton8"
-            style="@style/RulebookButtonEveryThemeBottom"/>
+            style="@style/RulebookButtonBottom"/>
 
         <Space
             android:layout_width="match_parent"

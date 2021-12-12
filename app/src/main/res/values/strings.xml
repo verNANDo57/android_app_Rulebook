@@ -37,14 +37,7 @@
     <string name="review_device_screen_resolution" translatable="false">Разрешение экрана:</string>
 <!-- PLS do not touch strings above -->
 
-    <string name="app_status_details_headline">Дополнительная информация</string>
     <string name="app_status_value_null">пусто</string>
-    <string name="app_status_reset_all">Сбросить</string>
-    <string name="app_status_voicesearch_boolean_state">Голосовой ввод:</string>
-    <string name="app_status_anim_boolean_state">Анимации:</string>
-    <string name="app_status_page_boolean_state">Страница состояния:</string>
-    <string name="app_statusbar_boolean_state">Строка состояния:</string>
-    <string name="app_autohidebottomappbar_boolean_state">Контроль всплывающей панели навигации:</string>
 
     <string name="app_choose_email_client">Выберите почтовый клиент</string>
 
@@ -55,8 +48,6 @@
     <string name="app_launch_basics_extended">Орфография и Пунктуация</string>
     <string name="app_launch_lexicon">Лексика</string>
     <string name="app_launch_lexicon_extended">Правила лексики</string>
-    <string name="app_launch_debug">Логи</string>
-    <string name="app_launch_debug_extended">Логгирование</string>
     <string name="app_launch_schemes_and_tables_extended">В схемах и таблицах</string>
     <string name="app_launch_schemes_and_tables">В таблицах</string>
     <string name="app_launch_analyze">Разборы</string>
@@ -64,14 +55,17 @@
     <string name="app_launch_ic_launch_search_rules">Поиск</string>
     <string name="app_launch_ic_launch_search_rules_extended">Быстрый доступ</string>
 
-    <string name="hello_trigger">Нету смысла пересобирать приложение с открытым исходным кодом…</string>
-
     <string name="app_themepickerpreview_title">Текст</string>
 
     <string name="voicesearch">Голосовой Ввод</string>
-    <string name="disable_voicesearch">Отключить голосовой ввод</string>
-    <string name="app_themes_summary">Выберите одну из тем или создайте свою</string>
-    <string name="app_themes">Визуальное оформление</string>
+
+    <string name="app_darktheme_switch_summary">Выберите режим</string>
+    <string name="app_darktheme_switch">Тёмная тема</string>
+    <string name="app_darktheme_mode_followsystem">Следовать настройкам системы</string>
+    <string name="app_darktheme_mode_no">Отключить</string>
+    <string name="app_darktheme_mode_yes">Включить</string>
+    <string name="app_darktheme_mode_battery">Включать в режиме энергосбережения</string>
+
     <string name="app_enable_statusbar">Строка состояния</string>
     <string name="app_enable_statusbar_summary">Не скрывать строку состояния</string>
     <string name="app_autohide_bottomappbar">Всплывающая панель навигации</string>
@@ -87,7 +81,7 @@
     <string name="app_theme_choose">Тема</string>
     <string name="app_about_extended">Версия: </string>
     <string name="app_about_name">Словарь - Русский Язык</string>
-    <string name="search_main">Поиск</string>
+    <string name="search">Поиск</string>
     <string name="intent_to_main">Главная</string>
     <string name="search_actionbar">Поиск</string>
     <string name="exit_actionbar">Выход</string>
@@ -103,10 +97,6 @@
     <string name="rulebook_main">Словарь</string>
     <string name="are_you_sure">Уверены?</string>
     <string name="tap_again_to_exit">Нажмите ещё раз чтобы выйти</string>
-    <string name="tap_three_times">Нажмите ещё три раза</string>
-    <string name="tap_two_times">Нажмите ещё два раза</string>
-    <string name="tap_again">Нажмите ещё один раз</string>
-    <string name="yes_and_reset">Сбросить настройки</string>
     <string name="accept">Принять</string>
     <string name="cancel">Отменить</string>
     <string name="main_page">Главная</string>
@@ -133,17 +123,15 @@
     <string name="app_denied">Запрещено</string>
     <string name="app_warning">Внимание</string>
     <string name="app_error_occured">Возникла неизвестная ошибка, проверьте логи</string>
+    <string name="app_error_file">Такого файла не существует</string>
+    <string name="app_error_file_rename">Не удалось переименовать файл</string>
+    <string name="app_error_file_delete">Не удалось удалить файл</string>
     <string name="app_reason_why_these_permissions_are_needed">Если вы не дадите приложению доступ к внутренней памяти устройства, то, к сожалению, будет невозможным что-либо сохранять. ¯\_(ツ)_/¯</string>
 
     <string name="compose_disabled_message">Ярлык недоступен по неизвестной причине.</string>
     <string name="error_while_reading_theme">Ошибка при попытке чтения темы</string>
 
-    <string name="bottomsheetdialog_betweenactivities_headline">Меню быстрого доступа</string>
-    <string name="bottomsheetdialog_betweenlessons_first">Правила орфографии и пунктуации</string>
-    <string name="bottomsheetdialog_betweenlessons_second">Лексика</string>
-    <string name="bottomsheetdialog_betweenlessons_third">Схемы и таблицы</string>
-    <string name="bottomsheetdialog_betweenlessons_fourth">Виды разборов</string>
-    <string name="bottomsheetdialog_betweenlessons_fifth">Поисковик</string>
+    <string name="bottomsheetdialog_headline">Меню быстрого доступа</string>
 
     <string name="main_rules">Основные</string>
     <string name="lexicon_rules">Лексика</string>
@@ -197,8 +185,10 @@
     <string name="app_pdf_modDate">Дата введения последних правок</string>
 
     <string name="app_bookmarks">Закладки</string>
-    <string name="app_add_bookmark">Добавить в закладки</string>
-    <string name="app_remove_bookmark">Удалить из закладок</string>
+    <string name="app_add_bookmark">Добавить закладку</string>
+    <string name="app_remove_bookmark">Удалить закладку</string>
+    <string name="app_bookmark_added">Закладка добавлена</string>
+    <string name="app_bookmark_removed">Закладка удалена</string>
 
     <string name="ortho">Орфография</string>
     <string name="punct">Пунктуация</string>

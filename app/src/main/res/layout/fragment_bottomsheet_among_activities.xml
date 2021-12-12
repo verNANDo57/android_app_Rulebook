@@ -8,13 +8,13 @@
 
     <TextView
         android:id="@+id/mainTextView1"
-        style="@style/BottomSheetDialogHeadlinesEveryTheme"
+        style="@style/BottomSheetDialogHeadlines"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/app_bottomsheetdialog_headline_marginTop"
         android:layout_marginStart="@dimen/app_bottomsheetdialog_marginStartOrLeft"
         android:layout_marginEnd="@dimen/app_bottomsheetdialog_marginEndOrRight"
-        android:text="@string/bottomsheetdialog_betweenactivities_headline" />
+        android:text="@string/bottomsheetdialog_headline" />
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigation_view_among_activities"
@@ -24,6 +24,6 @@
         android:layout_marginEnd="@dimen/app_bottomsheetdialog_marginEndOrRight"
         android:layout_marginBottom="@dimen/app_bottomsheetdialog_marginBottom"
         android:layout_marginTop="@dimen/app_bottomsheetdialog_marginTop"
-        app:menu="@menu/bottom_nav_drawer_menu_between_activities"/>
+        app:menu="@menu/bottom_nav_drawer_menu_among_activities"/>
 
 </LinearLayout>

@@ -14,5 +14,5 @@
 
     <stroke
         android:width="@dimen/app_searchitem_shape_stroke_width"
-        android:color="@color/coloraccent"/>
+        android:color="@color/colorAccent"/>
 </shape>

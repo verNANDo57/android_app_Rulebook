@@ -1,8 +1,6 @@
 package com.verNANDo57.rulebook_educational;
 
-import static com.verNANDo57.rulebook_educational.AppUtils.LOG_TAG;
-import static com.verNANDo57.rulebook_educational.AppUtils.TRANSLATE_DIRECTION_BOTTOM;
-import static com.verNANDo57.rulebook_educational.AppUtils.TRANSLATE_DIRECTION_TOP;
+import static com.verNANDo57.rulebook_educational.utils.AppUtils.LOG_TAG;
 
 import android.content.Intent;
 import android.os.Build;
@@ -10,14 +8,11 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewTreeObserver;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RatingBar;
-import android.widget.ScrollView;
 
-import com.google.android.material.bottomappbar.BottomAppBar;
-import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngineAppCompatActivity;
+import com.verNANDo57.rulebook_educational.app.CustomThemeEngineAppCompatActivity;
 import com.verNANDo57.rulebook_educational.extradata.R;
 
 public class AppRatingActivity extends CustomThemeEngineAppCompatActivity {
@@ -26,31 +21,7 @@ public class AppRatingActivity extends CustomThemeEngineAppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.app_bottomappbar_rate);
-
-        final BottomAppBar bar_in_rating_page = findViewById(R.id.bar_in_rating_page);
-        setSupportActionBar(bar_in_rating_page);
-        AppUtils.setTranslateAnimation(bar_in_rating_page, TRANSLATE_DIRECTION_TOP, (float) 250);
-        ScrollView rating_page_scrollview = findViewById(R.id.rating_page_scrollview);
-        rating_page_scrollview.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener() {
-            @Override
-            public void onScrollChanged() {
-                //see https://gist.github.com/aqua30/e8623abaff190ee86727ee5ae8dac82a
-                int movement = rating_page_scrollview.getScrollY();
-
-                if(movement >= 100){
-                    if (bar_in_rating_page.getVisibility() == View.VISIBLE) {
-                        AppUtils.setTranslateAnimation(bar_in_rating_page, TRANSLATE_DIRECTION_BOTTOM);
-                        bar_in_rating_page.setVisibility(View.GONE);
-                    }
-                } else if(movement >= -100){
-                    if (bar_in_rating_page.getVisibility() == View.GONE) {
-                        AppUtils.setTranslateAnimation(bar_in_rating_page, TRANSLATE_DIRECTION_TOP);
-                        bar_in_rating_page.setVisibility(View.VISIBLE);
-                    }
-                }
-            }
-        });
+        setContentView(R.layout.app_rate);
 
         RatingBar rating_bar = findViewById(R.id.rating_bar);
         AppRatingVector app_agressive_rating_vector = findViewById(R.id.app_agressive_rating_vector);

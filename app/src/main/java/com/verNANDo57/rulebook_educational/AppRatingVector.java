@@ -76,12 +76,6 @@ public class AppRatingVector extends View {
         centerOffset = viewHeight / 3;
 
         switch ((int) whatToDraw) {
-            case 0:
-            case 5:
-                currEyeLX = (int) ((viewWidth / 2) - (viewWidth / 100 * 23));
-                currEyeRX = (int) ((viewWidth / 2) + (viewWidth / 100 * 23));
-                currEyeY = (int) (viewHeight / 100 * 23);
-                break;
             case 1:
                 currEyeLX = (int) ((viewWidth / 2) - (viewWidth / 100 * 25));
                 currEyeRX = (int) ((viewWidth / 2) + (viewWidth / 100 * 25));
@@ -101,6 +95,11 @@ public class AppRatingVector extends View {
                 currEyeLX = (int) ((viewWidth / 2) - (viewWidth / 100 * 19));
                 currEyeRX = (int) ((viewWidth / 2) + (viewWidth / 100 * 19));
                 currEyeY = (int) (viewHeight / 100 * 22);
+                break;
+            case 5:
+                currEyeLX = (int) ((viewWidth / 2) - (viewWidth / 100 * 23));
+                currEyeRX = (int) ((viewWidth / 2) + (viewWidth / 100 * 23));
+                currEyeY = (int) (viewHeight / 100 * 23);
                 break;
         }
 
@@ -146,8 +145,6 @@ public class AppRatingVector extends View {
 
         switch ((int) whatToDraw) {
             case 0:
-                drawAwfulFace(canvas);
-                break;
             case 1:
                 drawSadFace(canvas);
                 break;
@@ -164,26 +161,6 @@ public class AppRatingVector extends View {
                 drawAmazingFace(canvas);
                 break;
         }
-    }
-
-    private void drawAwfulFace(Canvas canvas) {
-
-        //Draw Eyes
-        paint.setColor(eyesColor);
-        paint.setStyle(Paint.Style.FILL);
-
-        canvas.drawCircle(currEyeLX, currEyeY, eyeRadius, paint);
-        canvas.drawCircle(currEyeRX, currEyeY, eyeRadius, paint);
-
-        //Draw mouth
-        paint.setColor(mouthColor);
-        paint.setStyle(Paint.Style.FILL);
-        canvas.drawArc(AwfulOval, 0, -180, true, paint);
-
-        //Draw tongue
-        paint.setColor(tongueColor);
-        paint.setStyle(Paint.Style.FILL);
-        canvas.drawArc(AwfultongueOval, 0, -180, true, paint);
     }
 
     private void drawSadFace(Canvas canvas) {
@@ -287,11 +264,6 @@ public class AppRatingVector extends View {
     public void setSmiley(float rating) {
         switch ((int) rating) {
             case 0:
-                whatToDraw = 0;
-                startEyesAnimation((viewWidth / 2) - (viewWidth / 100 * 23),
-                        (viewWidth / 2) + (viewWidth / 100 * 23),
-                        (viewHeight / 100 * 23));
-                break;
             case 1:
                 whatToDraw = 1;
                 startEyesAnimation((viewWidth / 2) - (viewWidth / 100 * 25),

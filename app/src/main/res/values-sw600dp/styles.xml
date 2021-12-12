@@ -4,32 +4,32 @@
 
     <style name="AppTopBarTitleTextStyle" parent="Widget.AppCompat.TextView">
         <item name="android:textAppearance">@style/TextAppearance.Widget.AppCompat.Toolbar.Title</item>
-        <item name="android:textColor">@color/bottomappbar_items_color_everytheme</item>
+        <item name="android:textColor">@color/bottomappbar_item_color</item>
         <item name="android:textSize">@dimen/appbar_title_textsize_large</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:background">@color/coloraccent</item>
+        <item name="android:background">@color/colorAccent</item>
         <item name="android:minHeight">?actionBarSize</item>
         <item name="android:gravity">center</item>
     </style>
 
-    <style name="TextImportantEveryTheme" parent="Widget.AppCompat.TextView">
+    <style name="TextBold" parent="Widget.AppCompat.TextView">
         <item name="android:textStyle">bold</item>
         <item name="android:textIsSelectable">true</item>
         <item name="android:textAppearance">?android:attr/textAppearanceMedium</item>
     </style>
 
-    <style name="TextRegularEveryTheme" parent="Widget.AppCompat.TextView">
+    <style name="TextRegular" parent="Widget.AppCompat.TextView">
         <item name="android:textStyle">normal</item>
         <item name="android:textIsSelectable">true</item>
         <item name="android:textAppearance">?android:attr/textAppearanceMedium</item>
     </style>
 
-    <style name="RulebookButtonEveryThemeTop" parent="Widget.AppCompat.Button">
+    <style name="RulebookButtonTop" parent="Widget.AppCompat.Button">
         <item name="android:stateListAnimator" tools:targetApi="lollipop">@animator/btn_anim_zoom</item>
         <item name="android:background">@drawable/buttonshape_top_rightandleft</item>
     </style>
 
-    <style name="RulebookButtonEveryThemeBottom" parent="Widget.AppCompat.Button">
+    <style name="RulebookButtonBottom" parent="Widget.AppCompat.Button">
         <item name="android:stateListAnimator" tools:targetApi="lollipop">@animator/btn_anim_zoom</item>
         <item name="android:background">@drawable/buttonshape_bottom_rightandleft</item>
     </style>
@@ -39,24 +39,6 @@
         <item name="android:stateListAnimator" tools:targetApi="lollipop">@animator/btn_anim_zoom</item>
         <item name="android:background">@drawable/buttonshape</item>
         <item name="android:textStyle">bold</item>
-    </style>
-
-    <style name="RulebookChooseDestinyButtonLeft" parent="Widget.AppCompat.Button">
-        <item name="android:stateListAnimator" tools:targetApi="lollipop">@animator/btn_anim_translate_to_right</item>
-        <item name="android:background">@drawable/buttonshape_onlyright_bottomandtop</item>
-        <item name="android:textSize">@dimen/app_choose_your_destiny_menu_button_text_size</item>
-        <item name="android:gravity">center</item>
-        <item name="android:layout_width">@dimen/app_choose_your_destiny_menu_button_width</item>
-        <item name="android:layout_height">@dimen/app_choose_your_destiny_menu_button_height</item>
-    </style>
-
-    <style name="RulebookChooseDestinyButtonRight" parent="Widget.AppCompat.Button">
-        <item name="android:stateListAnimator" tools:targetApi="lollipop">@animator/btn_anim_translate_to_left</item>
-        <item name="android:background">@drawable/buttonshape_onlyleft_bottomandtop</item>
-        <item name="android:textSize">@dimen/app_choose_your_destiny_menu_button_text_size</item>
-        <item name="android:gravity">center</item>
-        <item name="android:layout_width">@dimen/app_choose_your_destiny_menu_button_width</item>
-        <item name="android:layout_height">@dimen/app_choose_your_destiny_menu_button_height</item>
     </style>
 
 </resources>

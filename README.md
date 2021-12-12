@@ -7,7 +7,6 @@ The development was started in _June 2020_.
 These libraries were used:
  - PdfiumAndroid (no longer maintained) [Modified]
  - AndroidPdfViewer (no longer maintained) [Modified]
- - CyaneaThemeEngine (no longer maintained) [Modified]
 
 
 ```

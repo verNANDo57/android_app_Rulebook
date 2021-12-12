@@ -4,8 +4,10 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.verNANDo57.rulebook_educational.bookmarks.AppBookmarks"
-    android:layout_margin="@dimen/app_toolbar_margin"
+    tools:context="com.verNANDo57.rulebook_educational.bookmarks.AppBookmarksActivity"
+    android:layout_marginTop="@dimen/activity_vertical_margin"
+    android:layout_marginStart="@dimen/activity_horizontal_margin"
+    android:layout_marginEnd="@dimen/activity_horizontal_margin"
     android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
@@ -15,6 +17,16 @@
         android:background="@drawable/app_toolbar"
         app:navigationIcon="@drawable/ic_view_list_black"
         app:title="@string/app_bookmarks" />
+
+    <EditText
+        android:id="@+id/bookmark_edittext"
+        style="@style/EditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/search_viewhint"
+        android:importantForAutofill="no"
+        android:inputType="textAutoCorrect"
+        android:minHeight="@dimen/app_minHeight" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/bookmarks_recyclerview"

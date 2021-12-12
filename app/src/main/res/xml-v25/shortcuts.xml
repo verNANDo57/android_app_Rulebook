@@ -55,8 +55,8 @@
         android:icon="@drawable/ic_launch_search"
         android:roundIcon="@drawable/ic_launch_search_round"
         android:label="@string/app_name_search"
-        android:shortcutShortLabel="@string/search_main"
-        android:shortcutLongLabel="@string/search_main"
+        android:shortcutShortLabel="@string/search"
+        android:shortcutLongLabel="@string/search"
         android:shortcutDisabledMessage="@string/compose_disabled_message">
         <intent
             android:action="android.intent.action.VIEW"

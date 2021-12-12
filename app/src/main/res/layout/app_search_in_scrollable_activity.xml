@@ -11,7 +11,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/app_wordsearch_edittext"
         android:hint="@string/searchword_view_hint"
-        android:background="@drawable/app_write_review_edittext_shape"
+        android:background="@drawable/app_review_edittext_shape"
         android:inputType="textLongMessage"
         android:layout_marginStart="@dimen/app_searchword_edittext_margin"
         android:layout_marginEnd="@dimen/app_searchword_edittext_margin"
@@ -22,7 +22,7 @@
     <Button
         android:id="@+id/searchword_button"
         android:layout_below="@id/app_wordsearch_edittext"
-        android:text="@string/search_main"
+        android:text="@string/search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/app_searchword_edittext_margin"

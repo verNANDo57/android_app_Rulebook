@@ -95,7 +95,7 @@
 				android:text="@string/ortho_19"
 				android:layout_below="@id/orthographyButton18"
 				android:id="@+id/orthographyButton19"
-				style="@style/RulebookButtonEveryThemeBottom"/>
+				style="@style/RulebookButtonBottom"/>
 
 		</RelativeLayout>
 

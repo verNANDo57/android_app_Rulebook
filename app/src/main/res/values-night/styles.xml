@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="AppThemeRulebook" parent="Theme.MaterialComponents.DayNight.Bridge">
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColor">@color/app_text</item>
+        <item name="android:actionBarStyle">@style/DarkThemeActionBar</item>
+        <item name="actionBarStyle">@style/DarkThemeActionBar</item>
+        <item name="bottomAppBarStyle">@style/BottomAppBar</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="android:buttonStyle">@style/RulebookButtonDefault</item>
+        <item name="android:editTextStyle">@style/EditText</item>
+        <item name="android:listViewStyle">@style/ThemeListView</item>
+        <item name="buttonStyle">@style/RulebookButtonDefault</item>
+        <item name="editTextStyle">@style/EditText</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="bottomSheetDialogTheme">@style/AppBarBottomSheetDialogDark</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/app_rulebook_productsans_fontfamily</item>
+        <item name="fontFamily">@font/app_rulebook_productsans_fontfamily</item>
+        <item name="snackbarStyle">@style/SnackBar</item>
+        <item name="android:popupTheme" tools:targetApi="lollipop">@style/ThemeOverlay.MaterialComponents.Dark</item>
+        <item name="android:windowBackground">@color/custom_background</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+        <item name="popupTheme">@style/ThemeOverlay.MaterialComponents.Dark</item>
+        <item name="backgroundColor">@color/custom_background</item>
+        <item name="backgroundColorDark">@color/custom_background_darker</item>
+        <item name="backgroundColorLight">@color/custom_background_lighter</item>
+        <item name="imageButtonStyle">@style/AppImageButtonStyle</item>
+        <item name="alertDialogTheme">@style/AppAlertDialogThemeDark</item>
+        <item name="tabStyle">@style/AppTabLayoutItemsStyle</item>
+        <item name="radioButtonStyle">@style/AppRadioButtonStyle</item>
+        <item name="android:radioButtonStyle">@style/AppRadioButtonStyle</item>
+        <item name="toolbarStyle">@style/AppToolBarStyle</item>
+        <item name="android:webViewStyle">@style/AppWebViewStyleDarkTheme</item>
+    </style>
+
+    <style name="AppWebViewStyleDarkTheme" parent="android:Widget.Material.WebView">
+        <item name="android:background">@color/custom_background</item>
+        <item name="backgroundColor">@color/custom_background</item>
+        <item name="backgroundColorDark">@color/custom_background_darker</item>
+        <item name="backgroundColorLight">@color/custom_background_lighter</item>
+    </style>
+
+    <style name="DarkThemeActionBar" parent="Widget.AppCompat.ActionBar">
+        <item name="titleTextStyle">@style/ActionTitleTextStyle</item>
+        <item name="subtitleTextStyle">@style/ActionSummaryTextStyle</item>
+    </style>
+
+    <style name="AppAlertDialogThemeDark" parent="Theme.AppCompat.Dialog.Alert">
+        <item name="titleTextColor">@color/app_text</item>
+        <item name="textColor">@color/app_text</item>
+        <item name="android:textColor">@color/app_text</item>
+        <item name="android:textColorPrimary">@color/app_text</item>
+        <item name="textColorAlertDialogListItem">@color/app_text</item>
+        <item name="android:textColorAlertDialogListItem">@color/app_text</item>
+        <item name="android:titleTextColor" tools:targetApi="m">@color/app_text</item>
+        <item name="android:subtitleTextColor" tools:targetApi="m">@color/app_text</item>
+        <item name="subtitleTextColor" tools:targetApi="m">@color/app_text</item>
+        <item name="buttonTint">@color/app_text</item>
+        <item name="android:buttonTint" tools:targetApi="lollipop">@color/app_text</item>
+        <item name="background">@color/custom_background</item>
+        <item name="android:background">@color/custom_background</item>
+        <item name="backgroundTint">@color/custom_background</item>
+        <item name="android:backgroundTint" tools:targetApi="lollipop">@color/custom_background</item>
+        <item name="colorControlNormal">@color/colorPrimary</item>
+        <item name="colorControlActivated">@color/colorPrimary</item>
+        <item name="android:colorControlNormal">@color/colorPrimary</item>
+        <item name="android:colorControlActivated">@color/colorPrimary</item>
+    </style>
+
+    <style name="AppBarBottomSheetDialogDark" parent="Theme.Design.BottomSheetDialog">
+        <item name="enforceTextAppearance">true</item>
+        <item name="enforceMaterialTheme">false</item>
+        <item name="itemIconSize">@dimen/app_bottom_navigation_icon_size</item>
+        <item name="bottomSheetStyle">@style/AppBarBottomSheetStyleDark</item>
+    </style>
+
+    <style name="AppBarBottomSheetStyleDark" parent="Widget.Design.BottomSheet.Modal">
+        <item name="elevation">@dimen/app_bottom_navigation_elevation</item>
+        <item name="android:background">@drawable/app_bottomsheetdialog_shape</item>
+    </style>
+
+</resources>

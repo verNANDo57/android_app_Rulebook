@@ -13,7 +13,7 @@
         android:id="@+id/punctuationButton15"/>
 
     <LinearLayout
-        android:id="@+id/punctuationButton15_sub_container"
+        android:id="@+id/punctuationButton15_container2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -25,7 +25,7 @@
 
         <Button
             android:id="@+id/punct15mainButton1"
-            style="@style/RulebookButtonEveryThemeTop"
+            style="@style/RulebookButtonTop"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/punct_15_55" />
@@ -47,7 +47,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/punct_15_58"
-            style="@style/RulebookButtonEveryThemeBottom"/>
+            style="@style/RulebookButtonBottom"/>
 
         <Space
             android:layout_width="match_parent"

@@ -2,20 +2,28 @@ package com.verNANDo57.rulebook_educational;
 
 import android.app.Application;
 
-import com.verNANDo57.rulebook_educational.customthemeengine.CustomThemeEngine;
-import com.verNANDo57.rulebook_educational.rules.AppExtraBooleans;
+import androidx.appcompat.app.AppCompatDelegate;
+
+import com.verNANDo57.rulebook_educational.preferences.RulebookApplicationSharedPreferences;
 
 public class AppRulebookClass extends Application {
+    RulebookApplicationSharedPreferences preferences;
 
-        public void onCreate() {
-            //Initialize CustomThemeEngine
-            CustomThemeEngine.init(this, getResources());
+    public void onCreate() {
+        super.onCreate();
 
-            //Load Preferences
-            AppExtraBooleans booleansInMainRules = new AppExtraBooleans(this);
+        preferences = new RulebookApplicationSharedPreferences(getApplicationContext());
 
-            //Crash fix
-            booleansInMainRules.setRulebookMainRulesFragmentOpenBoolean(null);
-            super.onCreate();
+        if (preferences.loadRulebookDarkModeBooleanState() == AppCompatDelegate.MODE_NIGHT_NO) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        } else if (preferences.loadRulebookDarkModeBooleanState() == AppCompatDelegate.MODE_NIGHT_YES) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        } else if (preferences.loadRulebookDarkModeBooleanState() == AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
+        } else if (preferences.loadRulebookDarkModeBooleanState() == AppCompatDelegate.MODE_NIGHT_AUTO_BATTERY) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_AUTO_BATTERY);
+        } else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }
     }
 }

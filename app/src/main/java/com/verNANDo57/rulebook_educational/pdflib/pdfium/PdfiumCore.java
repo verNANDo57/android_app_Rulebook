@@ -1,6 +1,6 @@
 package com.verNANDo57.rulebook_educational.pdflib.pdfium;
 
-import static com.verNANDo57.rulebook_educational.AppUtils.LOG_TAG;
+import static com.verNANDo57.rulebook_educational.utils.AppUtils.LOG_TAG;
 
 import android.content.Context;
 import android.graphics.Bitmap;

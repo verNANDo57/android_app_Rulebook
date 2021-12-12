@@ -9,7 +9,7 @@
     android:clickable="true"
     android:focusable="true"
     android:focusableInTouchMode="true"
-    tools:context="com.verNANDo57.rulebook_educational.rules.analyze_methods.AppAnalyzeMethods">
+    tools:context="com.verNANDo57.rulebook_educational.rules.AppAnalyzeMethods">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_in_analyze_methods_layout"
@@ -34,7 +34,7 @@
 
             <Button
                 android:id="@+id/phonetic_analyze_method_btn"
-                style="@style/RulebookButtonEveryThemeTop"
+                style="@style/RulebookButtonTop"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/phonetic_analyze_method" />
@@ -125,7 +125,7 @@
 
             <Button
                 android:id="@+id/orthographic_analyze_method_for_everyword_btn"
-                style="@style/RulebookButtonEveryThemeBottom"
+                style="@style/RulebookButtonBottom"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/orthographic_analyze_method_for_everyword" />

@@ -1,76 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rating_page_scrollview"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context="com.verNANDo57.rulebook_educational.AppRatingActivity"
     android:orientation="vertical">
 
-    <ScrollView
-        android:id="@+id/rating_page_scrollview"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context="com.verNANDo57.rulebook_educational.AppRatingActivity">
+        android:layout_height="wrap_content">
 
-        <RelativeLayout
+        <com.verNANDo57.rulebook_educational.AppRatingVector
+            android:id="@+id/app_agressive_rating_vector"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_centerHorizontal="true"
+            android:layout_height="@dimen/app_rating_smile_height_layout"
+            app:default_rating="1"/>
 
-            <com.verNANDo57.rulebook_educational.AppRatingVector
-                android:id="@+id/app_agressive_rating_vector"
-                android:layout_width="match_parent"
-                android:layout_centerHorizontal="true"
-                android:layout_height="@dimen/app_rating_smile_height_layout"
-                app:default_rating="1"/>
+        <TextView
+            android:id="@+id/rating_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/app_agressive_rating_vector"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/app_rating_page_textview_marginTop"
+            android:text="@string/rate_us"
+            android:color="@color/colorAccent"
+            android:textSize="@dimen/app_rating_page_textview_textsize" />
 
-            <TextView
-                android:id="@+id/rating_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/app_agressive_rating_vector"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="@dimen/app_rating_page_textview_marginTop"
-                android:text="@string/rate_us"
-                android:color="@color/coloraccent"
-                android:textSize="@dimen/app_rating_page_textview_textsize" />
+        <RatingBar
+            android:id="@+id/rating_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/app_agressive_rating_vector"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/app_rating_bar_marginTop"
+            android:numStars="5"
+            android:rating="1"
+            android:stepSize="1"
+            android:theme="@style/AppRatingBar" />
 
-            <RatingBar
-                android:id="@+id/rating_bar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/app_agressive_rating_vector"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="@dimen/app_rating_bar_marginTop"
-                android:numStars="5"
-                android:rating="1"
-                android:stepSize="1"
-                android:theme="@style/AppRatingBar" />
+        <EditText
+            android:id="@+id/review_box"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rating_bar"
+            android:layout_marginStart="@dimen/app_rating_page_review_box_marginStart"
+            android:layout_marginTop="@dimen/app_rating_page_review_box_marginTop"
+            android:layout_marginEnd="@dimen/app_rating_page_review_box_marginEnd"
+            android:layout_marginBottom="@dimen/app_rating_page_review_box_marginBottom"
+            android:background="@drawable/app_review_edittext_shape"
+            android:inputType="textMultiLine"
+            android:hint="@string/write_a_review"
+            android:padding="@dimen/app_rating_page_edittext_padding"
+            android:singleLine="false"
+            android:importantForAutofill="no" />
 
-            <EditText
-                android:id="@+id/review_box"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/rating_bar"
-                android:layout_marginStart="@dimen/app_rating_page_review_box_marginStart"
-                android:layout_marginTop="@dimen/app_rating_page_review_box_marginTop"
-                android:layout_marginEnd="@dimen/app_rating_page_review_box_marginEnd"
-                android:layout_marginBottom="@dimen/app_rating_page_review_box_marginBottom"
-                android:background="@drawable/app_write_review_edittext_shape"
-                android:inputType="textMultiLine"
-                android:hint="@string/write_a_review"
-                android:padding="@dimen/app_rating_page_edittext_padding"
-                android:singleLine="false" />
+        <Button
+            android:id="@+id/review_send_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/review_box"
+            android:layout_margin="@dimen/app_default_button_margin"
+            android:text="@string/send_review_to_developer" />
 
-            <Button
-                android:id="@+id/review_send_button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/review_box"
-                android:layout_margin="@dimen/app_default_button_margin"
-                android:text="@string/send_review_to_developer" />
-        </RelativeLayout>
+    </RelativeLayout>
 
-    </ScrollView>
-
-</LinearLayout>
+</ScrollView>

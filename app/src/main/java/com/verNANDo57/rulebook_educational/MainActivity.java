@@ -1,8 +1,5 @@
 package com.verNANDo57.rulebook_educational;
 
-import static com.verNANDo57.rulebook_educational.AppUtils.TRANSLATE_DIRECTION_LEFT;
-import static com.verNANDo57.rulebook_educational.AppUtils.TRANSLATE_DIRECTION_RIGHT;
-
 import android.Manifest;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -20,10 +17,14 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 
-import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngineAppCompatActivity;
+import com.verNANDo57.rulebook_educational.bookmarks.AppBookmarksActivity;
+import com.verNANDo57.rulebook_educational.app.CustomThemeEngineAppCompatActivity;
 import com.verNANDo57.rulebook_educational.extradata.R;
+import com.verNANDo57.rulebook_educational.preferences.AppSettingsActivity;
 import com.verNANDo57.rulebook_educational.preferences.RulebookApplicationSharedPreferences;
-import com.verNANDo57.rulebook_educational.rules.dictionaries.AppDictionaries;
+import com.verNANDo57.rulebook_educational.rules.AppDictionaries;
+import com.verNANDo57.rulebook_educational.search.AppSearchActivity;
+import com.verNANDo57.rulebook_educational.utils.AppUtils;
 
 import java.util.Arrays;
 
@@ -40,10 +41,9 @@ public class MainActivity extends CustomThemeEngineAppCompatActivity {
 		setContentView(R.layout.main);
 
 		ImageView main_image = findViewById(R.id.imageview_in_main);
-		main_image.setColorFilter(R.color.coloraccent, PorterDuff.Mode.SRC_IN);
+		main_image.setColorFilter(R.color.colorAccent, PorterDuff.Mode.SRC_IN);
 
 		Button app_rules_button = findViewById(R.id.app_rules_button);
-		AppUtils.setTranslateAnimation(app_rules_button, TRANSLATE_DIRECTION_LEFT, (float) 250);
 		app_rules_button.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -52,7 +52,6 @@ public class MainActivity extends CustomThemeEngineAppCompatActivity {
 		});
 
 		Button app_dictionaries = findViewById(R.id.app_dictionaries);
-		AppUtils.setTranslateAnimation(app_dictionaries, TRANSLATE_DIRECTION_RIGHT, (float) 250);
 		app_dictionaries.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -60,17 +59,31 @@ public class MainActivity extends CustomThemeEngineAppCompatActivity {
 			}
 		});
 
+		Button bookmarks_button = findViewById(R.id.app_bookmarks);
+		bookmarks_button.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				startActivity(new Intent(getApplicationContext(), AppBookmarksActivity.class));
+			}
+		});
+
+		Button search_function = findViewById(R.id.search_function);
+		search_function.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				startActivity(new Intent(getApplicationContext(), AppSearchActivity.class));
+			}
+		});
+
 		Button settings_button = findViewById(R.id.settings_button);
-		AppUtils.setTranslateAnimation(settings_button, TRANSLATE_DIRECTION_LEFT, (float) 250);
 		settings_button.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				startActivity(new Intent(getApplicationContext(), com.verNANDo57.rulebook_educational.preferences.AppSettingsActivity.class));
+				startActivity(new Intent(getApplicationContext(), AppSettingsActivity.class));
 			}
 		});
 
 		Button about_app_button = findViewById(R.id.about_app_button);
-		AppUtils.setTranslateAnimation(about_app_button, TRANSLATE_DIRECTION_RIGHT, (float) 250);
 		about_app_button.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -79,7 +92,6 @@ public class MainActivity extends CustomThemeEngineAppCompatActivity {
 		});
 
 		Button app_exit_button = findViewById(R.id.app_exit_button);
-		AppUtils.setTranslateAnimation(app_exit_button, TRANSLATE_DIRECTION_LEFT, (float) 250);
 		app_exit_button.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -127,7 +139,7 @@ public class MainActivity extends CustomThemeEngineAppCompatActivity {
 		//Check if android version is Android 11 or higher
 		if (Build.VERSION.SDK_INT >= 30) {
 			//Check if storage permission already granted
-			if (Environment.isExternalStorageManager()==false) {
+			if (!Environment.isExternalStorageManager()) {
 				//If no then...
 				preferences.setAppPermissionsAreGrantedBooleanState(false);
 
@@ -157,7 +169,7 @@ public class MainActivity extends CustomThemeEngineAppCompatActivity {
 			}
 		//Otherwise...
 			//Check if android version is Android 10 or lower
-		} else if (Build.VERSION.SDK_INT >= 23 && Build.VERSION.SDK_INT <= 29) {
+		} else if (Build.VERSION.SDK_INT >= 23) {
 			//Check if storage permission already granted
 			if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED) {
 				preferences.setAppPermissionsAreGrantedBooleanState(false);

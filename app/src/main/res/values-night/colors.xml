@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="navbar_color">#FF562C22</color>
+	<color name="statusbar_color">#FF562C22</color>
+	<color name="actionbar_in_recents_default_color">#FF562C22</color>
+	<color name="bottomappbar_item_color">#FF562C22</color>
+	<color name="app_text">#FFF0E3DD</color>
+	<color name="text_appbar_black">#FFF0E3DD</color>
+
+	<color name="bottomsheetdialog_accent">#FFF0E3DD</color>
+	<color name="bottomsheetdialog_primary">#FFF0E3DD</color>
+
+	<color name="app_rulebook_background">#FF562C22</color>
+
+	<color name="button_color_default">#FFF0E3DD</color>
+
+	<color name="app_vector_rating_face_color">#FFF0E3DD</color>
+	<color name="app_vector_rating_eyes_color">#FF562C22</color>
+	<color name="app_vector_rating_tongue_color">#c32925</color>
+	<color name="app_vector_rating_mouth_color">#FF562C22</color>
+
+	<color name="colorPrimary">#FFF0E3DD</color>
+	<color name="colorPrimaryDark">#FFCABDB7</color>
+	<color name="colorAccent">#FFF0E3DD</color>
+
+	<!-- Background colors -->
+	<eat-comment/>
+	<color name="custom_background">#FF562C22</color>
+	<color name="custom_background_darker">#FF562C22</color>
+	<color name="custom_background_lighter">#FF562C22</color>
+
+	<color name="styleable_toast_default_background_color">#FF562C22</color>
+	<color name="styleable_toast_default_accent_color">#FFF0E3DD</color>
+	<color name="styleable_toast_default_text_color">#FFF0E3DD</color>
+</resources>

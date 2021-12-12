@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="none">
+        <item
+            android:id="@+id/bottomsheetdialog_amongactivities_mainrules"
+            android:icon="@drawable/ic_view_list"
+            android:title="@string/rules" />
+
+        <item
+            android:id="@+id/bottomsheetdialog_amongactivities_dictionaries"
+            android:icon="@drawable/app_char_icon"
+            android:title="@string/dictionaries" />
+
+        <item
+            android:id="@+id/bottomsheetdialog_amongactivities_bookmarks"
+            android:icon="@drawable/app_bookmarks"
+            android:title="@string/app_bookmarks" />
+
+        <item
+            android:id="@+id/bottomsheetdialog_amongactivities_search"
+            android:icon="@drawable/ic_search_menu"
+            android:title="@string/search" />
+
+        <item
+            android:id="@+id/bottomsheetdialog_amongactivities_about"
+            android:icon="@drawable/ic_warning_outline"
+            android:title="@string/about_app" />
+
+        <item
+            android:id="@+id/bottomsheetdialog_amongactivities_settings"
+            android:icon="@drawable/ic_settings"
+            android:title="@string/settings" />
+
+    </group>
+</menu>

@@ -40,7 +40,7 @@
           android:layout_gravity="center_vertical"
           android:paddingLeft="4dp"
           android:paddingRight="4dp"
-          app:srcCompat="@drawable/colorpicker_ic_arrow_right_black_24dp"
+          app:srcCompat="@drawable/colorpicker_ic_arrow_right_black"
           tools:ignore="ContentDescription"
           />
 

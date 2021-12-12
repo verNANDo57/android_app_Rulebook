@@ -1,8 +1,8 @@
 package com.verNANDo57.rulebook_educational;
 
-import static com.verNANDo57.rulebook_educational.AppUtils.LOG_TAG;
-import static com.verNANDo57.rulebook_educational.AppUtils.TRANSLATE_DIRECTION_BOTTOM;
-import static com.verNANDo57.rulebook_educational.AppUtils.TRANSLATE_DIRECTION_TOP;
+import static com.verNANDo57.rulebook_educational.utils.AppUtils.LOG_TAG;
+import static com.verNANDo57.rulebook_educational.utils.AppUtils.TRANSLATE_DIRECTION_BOTTOM;
+import static com.verNANDo57.rulebook_educational.utils.AppUtils.TRANSLATE_DIRECTION_TOP;
 
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
@@ -25,9 +25,10 @@ import androidx.annotation.NonNull;
 import com.google.android.material.bottomappbar.BottomAppBar;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
-import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngineAppCompatActivity;
+import com.verNANDo57.rulebook_educational.app.CustomThemeEngineAppCompatActivity;
 import com.verNANDo57.rulebook_educational.extradata.R;
 import com.verNANDo57.rulebook_educational.preferences.AppSettingsActivity;
+import com.verNANDo57.rulebook_educational.utils.AppUtils;
 
 public class AppAboutApplicationActivity extends CustomThemeEngineAppCompatActivity
 {
@@ -90,10 +91,10 @@ public class AppAboutApplicationActivity extends CustomThemeEngineAppCompatActiv
 		});
 
 		ImageView about_preview = findViewById(R.id.about_preview);
-		about_preview.setColorFilter(R.color.coloraccent, PorterDuff.Mode.SRC_IN);
+		about_preview.setColorFilter(R.color.colorAccent, PorterDuff.Mode.SRC_IN);
 
 		ImageButton buttongit = findViewById(R.id.buttongit);
-		buttongit.setColorFilter(R.color.coloraccent, PorterDuff.Mode.SRC_IN);
+		buttongit.setColorFilter(R.color.colorAccent, PorterDuff.Mode.SRC_IN);
 		buttongit.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -105,7 +106,7 @@ public class AppAboutApplicationActivity extends CustomThemeEngineAppCompatActiv
 		});
 
 		ImageButton buttonvk = findViewById(R.id.buttonvk);
-		buttonvk.setColorFilter(R.color.coloraccent, PorterDuff.Mode.SRC_IN);
+		buttonvk.setColorFilter(R.color.colorAccent, PorterDuff.Mode.SRC_IN);
 		buttonvk.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -117,7 +118,7 @@ public class AppAboutApplicationActivity extends CustomThemeEngineAppCompatActiv
 		});
 
 		ImageButton buttontg = findViewById(R.id.buttontg);
-		buttontg.setColorFilter(R.color.coloraccent, PorterDuff.Mode.SRC_IN);
+		buttontg.setColorFilter(R.color.colorAccent, PorterDuff.Mode.SRC_IN);
 		buttontg.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {

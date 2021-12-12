@@ -6,11 +6,11 @@
 	  android:title="@string/category_pref_interface">
 
 	  <androidx.preference.Preference
-		  android:key="appThemes"
+		  android:key="darktheme_switch"
 		  android:layout_width="fill_parent"
 		  android:icon="@drawable/app_themeengine_icon"
-		  android:summary="@string/app_themes_summary"
-		  android:title="@string/app_themes">
+		  android:summary="@string/app_darktheme_switch_summary"
+		  android:title="@string/app_darktheme_switch">
 	  </androidx.preference.Preference>
 
 	  <androidx.preference.SwitchPreferenceCompat

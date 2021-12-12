@@ -19,85 +19,61 @@
 
 		<TextView
 			android:id="@+id/mainTextView1"
-			style="@style/HeadlinesEveryTheme"
+			style="@style/Headlines"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
 			android:text="@string/app_about_name"
 			android:layout_marginTop="10dp"
 			android:layout_marginBottom="10dp"/>
 
-		<RelativeLayout
-			android:gravity="start"
+		<Button
+			android:id="@+id/app_rules_button"
+			style="@style/RulebookButtonHuge"
+			android:text="@string/rules"
 			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:layout_marginBottom="10dp">
+			android:layout_height="@dimen/app_hugebutton_default_height" />
 
-			<Button
-				android:id="@+id/app_rules_button"
-				style="@style/RulebookChooseDestinyButtonLeft"
-				android:text="@string/rules"
-				android:paddingBottom="5dp" />
-
-		</RelativeLayout>
-
-		<RelativeLayout
-			android:gravity="end"
+		<Button
+			android:id="@+id/app_dictionaries"
+			style="@style/RulebookButtonHuge"
+			android:text="@string/dictionaries"
 			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:layout_marginBottom="10dp">
+			android:layout_height="@dimen/app_hugebutton_default_height" />
 
-			<Button
-				android:id="@+id/app_dictionaries"
-				style="@style/RulebookChooseDestinyButtonRight"
-				android:text="@string/dictionaries"
-				android:paddingTop="5dp"
-				android:paddingBottom="5dp" />
-
-		</RelativeLayout>
-
-		<RelativeLayout
-			android:gravity="start"
+		<Button
+			android:id="@+id/app_bookmarks"
+			style="@style/RulebookButtonHuge"
+			android:text="@string/app_bookmarks"
 			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:layout_marginBottom="10dp">
+			android:layout_height="@dimen/app_hugebutton_default_height" />
 
-			<Button
-				android:id="@+id/settings_button"
-				style="@style/RulebookChooseDestinyButtonLeft"
-				android:text="@string/settings"
-				android:paddingTop="5dp"
-				android:paddingBottom="5dp" />
-
-		</RelativeLayout>
-
-		<RelativeLayout
-			android:gravity="end"
+		<Button
+			android:id="@+id/search_function"
+			style="@style/RulebookButtonHuge"
+			android:text="@string/search"
 			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:layout_marginBottom="10dp">
+			android:layout_height="@dimen/app_hugebutton_default_height" />
 
-			<Button
-				android:id="@+id/about_app_button"
-				style="@style/RulebookChooseDestinyButtonRight"
-				android:text="@string/about_app"
-				android:paddingTop="5dp"
-				android:paddingBottom="5dp" />
-
-		</RelativeLayout>
-
-		<RelativeLayout
-			android:gravity="start"
+		<Button
+			android:id="@+id/settings_button"
+			style="@style/RulebookButtonHuge"
+			android:text="@string/settings"
 			android:layout_width="match_parent"
-			android:layout_height="wrap_content">
+			android:layout_height="@dimen/app_hugebutton_default_height" />
 
-			<Button
-				android:id="@+id/app_exit_button"
-				style="@style/RulebookChooseDestinyButtonLeft"
-				android:text="@string/app_exit"
-				android:paddingTop="5dp"
-				android:paddingBottom="5dp" />
+		<Button
+			android:id="@+id/about_app_button"
+			style="@style/RulebookButtonHuge"
+			android:text="@string/about_app"
+			android:layout_width="match_parent"
+			android:layout_height="@dimen/app_hugebutton_default_height" />
 
-		</RelativeLayout>
+		<Button
+			android:id="@+id/app_exit_button"
+			style="@style/RulebookButtonHuge"
+			android:text="@string/app_exit"
+			android:layout_width="match_parent"
+			android:layout_height="@dimen/app_hugebutton_default_height" />
 
 	</LinearLayout>
 

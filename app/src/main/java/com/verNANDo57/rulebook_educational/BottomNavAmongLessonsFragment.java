@@ -7,16 +7,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 import com.google.android.material.navigation.NavigationView;
-import com.verNANDo57.rulebook_educational.customthemeengine.app.CustomThemeEngineBottomSheetDialogFragment;
-import com.verNANDo57.rulebook_educational.customthemeengine.utils.ColorUtils;
+import com.verNANDo57.rulebook_educational.bookmarks.AppBookmarksActivity;
 import com.verNANDo57.rulebook_educational.extradata.R;
+import com.verNANDo57.rulebook_educational.preferences.AppSettingsActivity;
+import com.verNANDo57.rulebook_educational.rules.AppAnalyzeMethods;
 import com.verNANDo57.rulebook_educational.rules.AppRulesInSchemesAndTablesActivity;
-import com.verNANDo57.rulebook_educational.rules.analyze_methods.AppAnalyzeMethods;
 import com.verNANDo57.rulebook_educational.rules.mainrules.AppMainRulesActivity;
 import com.verNANDo57.rulebook_educational.search.AppSearchActivity;
+import com.verNANDo57.rulebook_educational.utils.ColorUtils;
 
-public class BottomNavAmongLessonsFragment extends CustomThemeEngineBottomSheetDialogFragment {
+public class BottomNavAmongLessonsFragment extends BottomSheetDialogFragment {
 
     public BottomNavAmongLessonsFragment(){
         //Required empty public constructor
@@ -32,22 +34,24 @@ public class BottomNavAmongLessonsFragment extends CustomThemeEngineBottomSheetD
         navigation_among_activities.setNavigationItemSelectedListener(menuItem -> {
             int id = menuItem.getItemId();
 
-            if (id == R.id.bottomsheetdialog_betweenlessons_orphoandpunct) {
-                requireActivity().finish();
+            if (id == R.id.bottomsheetdialog_amonglessons_mainrules) {
                 startActivity(new Intent(getActivity(), AppMainRulesActivity.class));
-            } else if (id == R.id.bottomsheetdialog_betweenlessons_lexicon) {
-                requireActivity().finish();
+            } else if (id == R.id.bottomsheetdialog_amonglessons_lexicon) {
                 startActivity(new Intent(getActivity(), com.verNANDo57.rulebook_educational.rules.AppLexiconActivity.class));
-            } else if (id == R.id.bottomsheetdialog_betweenlessons_intables) {
-                requireActivity().finish();
+            } else if (id == R.id.bottomsheetdialog_amonglessons_schemesandtables) {
                 startActivity(new Intent(getActivity(), AppRulesInSchemesAndTablesActivity.class));
-            } else if (id == R.id.bottomsheetdialog_betweenlessons_analyzemethods) {
-                requireActivity().finish();
+            } else if (id == R.id.bottomsheetdialog_amonglessons_analyzemethods) {
                 startActivity(new Intent(getActivity(), AppAnalyzeMethods.class));
-            } else if (id == R.id.bottomsheetdialog_betweenlessons_search) {
-                requireActivity().finish();
+            } else if (id == R.id.bottomsheetdialog_amonglessons_bookmarks) {
+                startActivity(new Intent(getActivity(), AppBookmarksActivity.class));
+            } else if (id == R.id.bottomsheetdialog_amonglessons_search) {
                 startActivity(new Intent(getActivity(), AppSearchActivity.class));
+            } else if (id == R.id.bottomsheetdialog_amonglessons_about) {
+                startActivity(new Intent(getActivity(), AppAboutApplicationActivity.class));
+            } else if (id == R.id.bottomsheetdialog_amonglessons_settings) {
+                startActivity(new Intent(getActivity(), AppSettingsActivity.class));
             }
+            requireActivity().finish();
 
             return false;
         });

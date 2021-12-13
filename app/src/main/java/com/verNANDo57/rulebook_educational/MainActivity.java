@@ -17,11 +17,10 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 
-import com.verNANDo57.rulebook_educational.bookmarks.AppBookmarksActivity;
 import com.verNANDo57.rulebook_educational.app.CustomThemeEngineAppCompatActivity;
+import com.verNANDo57.rulebook_educational.bookmarks.AppBookmarksActivity;
 import com.verNANDo57.rulebook_educational.extradata.R;
 import com.verNANDo57.rulebook_educational.preferences.AppSettingsActivity;
-import com.verNANDo57.rulebook_educational.preferences.RulebookApplicationSharedPreferences;
 import com.verNANDo57.rulebook_educational.rules.AppDictionaries;
 import com.verNANDo57.rulebook_educational.search.AppSearchActivity;
 import com.verNANDo57.rulebook_educational.utils.AppUtils;
@@ -29,13 +28,10 @@ import com.verNANDo57.rulebook_educational.utils.AppUtils;
 import java.util.Arrays;
 
 public class MainActivity extends CustomThemeEngineAppCompatActivity {
-	RulebookApplicationSharedPreferences preferences;
 
 	public static final int STORAGE_PERMISSION_CODE = 1;
 
 	public void onCreate(Bundle savedInstanceState) {
-		preferences = new RulebookApplicationSharedPreferences(this);
-
 		super.onCreate(savedInstanceState);
 
 		setContentView(R.layout.main);
@@ -140,9 +136,6 @@ public class MainActivity extends CustomThemeEngineAppCompatActivity {
 		if (Build.VERSION.SDK_INT >= 30) {
 			//Check if storage permission already granted
 			if (!Environment.isExternalStorageManager()) {
-				//If no then...
-				preferences.setAppPermissionsAreGrantedBooleanState(false);
-
 				//Ask user to give storage permission
 				AlertDialog.Builder builder = new AlertDialog.Builder(this);
 				builder.setTitle(getString(R.string.app_warning));
@@ -164,16 +157,12 @@ public class MainActivity extends CustomThemeEngineAppCompatActivity {
 				});
 				AlertDialog alert = builder.create();
 				alert.show();
-			} else {
-				preferences.setAppPermissionsAreGrantedBooleanState(true);
 			}
 		//Otherwise...
 			//Check if android version is Android 10 or lower
 		} else if (Build.VERSION.SDK_INT >= 23) {
 			//Check if storage permission already granted
 			if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED) {
-				preferences.setAppPermissionsAreGrantedBooleanState(false);
-
 				//Ask user to give storage permission
 				if (shouldShowRequestPermissionRationale(Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
 					createShouldShowRequestPermissionRationaleAlertDialogCompat();
@@ -185,8 +174,6 @@ public class MainActivity extends CustomThemeEngineAppCompatActivity {
 									},
 							STORAGE_PERMISSION_CODE);
 				}
-			} else {
-				preferences.setAppPermissionsAreGrantedBooleanState(true);
 			}
 		}
 	}
@@ -220,10 +207,8 @@ public class MainActivity extends CustomThemeEngineAppCompatActivity {
 		super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 		if (requestCode == STORAGE_PERMISSION_CODE) {
 			if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-				preferences.setAppPermissionsAreGrantedBooleanState(true);
 				Log.w(AppUtils.LOG_TAG, Arrays.toString(permissions) + " - " + getString(R.string.app_granted));
 			} else {
-				preferences.setAppPermissionsAreGrantedBooleanState(false);
 				Log.w(AppUtils.LOG_TAG, Arrays.toString(permissions) + " - " + getString(R.string.app_denied));
 			}
 		}

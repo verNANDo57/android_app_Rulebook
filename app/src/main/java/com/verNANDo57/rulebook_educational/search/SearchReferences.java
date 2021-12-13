@@ -895,7 +895,7 @@ public class SearchReferences {
     }
 
     public static String getSummaryOrthography(Context context, String input) {
-        String output = null;
+        String output = context.getResources().getString(R.string.ortho);
 
         if (input.contains("ortho_1_")) {
             output = context.getResources().getString(R.string.ortho_1);
@@ -1168,7 +1168,7 @@ public class SearchReferences {
     }
 
     public static String getSummaryPunctuation(Context context, String input) {
-        String output = null;
+        String output = context.getResources().getString(R.string.punct);
 
         if (input.contains("punct_1_")) {
             output = context.getResources().getString(R.string.punct_1);

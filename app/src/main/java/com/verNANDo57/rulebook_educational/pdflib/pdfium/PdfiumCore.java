@@ -2,6 +2,7 @@ package com.verNANDo57.rulebook_educational.pdflib.pdfium;
 
 import static com.verNANDo57.rulebook_educational.utils.AppUtils.LOG_TAG;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Point;
@@ -21,9 +22,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PdfiumCore {
-    private static final Class FD_CLASS = FileDescriptor.class;
-    private static final String FD_FIELD_NAME = "descriptor";
-
     static {
         try {
             System.loadLibrary("c++_shared");
@@ -101,10 +99,11 @@ public class PdfiumCore {
     private static Field mFdField = null;
     private final int mCurrentDpi;
 
+    @SuppressLint("DiscouragedPrivateApi")
     public static int getNumFd(ParcelFileDescriptor fdObj) {
         try {
             if (mFdField == null) {
-                mFdField = FD_CLASS.getDeclaredField(FD_FIELD_NAME);
+                mFdField = FileDescriptor.class.getDeclaredField("descriptor");
                 mFdField.setAccessible(true);
             }
 
@@ -269,7 +268,6 @@ public class PdfiumCore {
                            boolean renderAnnot) {
         synchronized (lock) {
             try {
-                //nativeRenderPage(doc.mNativePagesPtr.get(pageIndex), surface, mCurrentDpi);
                 nativeRenderPage(doc.mNativePagesPtr.get(pageIndex), surface, mCurrentDpi,
                         startX, startY, drawSizeX, drawSizeY, renderAnnot);
             } catch (NullPointerException e) {

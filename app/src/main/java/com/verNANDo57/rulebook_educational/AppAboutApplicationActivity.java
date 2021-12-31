@@ -32,6 +32,7 @@ import com.verNANDo57.rulebook_educational.utils.AppUtils;
 
 public class AppAboutApplicationActivity extends CustomThemeEngineAppCompatActivity
 {
+
 	@SuppressLint("SetTextI18n")
 	public void onCreate(Bundle savedInstanceState)
     {

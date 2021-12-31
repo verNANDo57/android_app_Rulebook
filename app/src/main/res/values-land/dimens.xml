@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <dimen name="customthemeengine_theme_item_width">180dp</dimen>
   <dimen name="app_rating_smile_width_layout">270dp</dimen>
   <dimen name="app_rating_smile_height_layout">250dp</dimen>
 </resources>

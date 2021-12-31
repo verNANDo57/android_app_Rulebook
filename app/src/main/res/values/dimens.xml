@@ -1,13 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<!--
-        NOTE: -1dp equals to MATCH_PARENT, which means
-        that the view wants to be as big as its parent.
-    -->
-
-	<dimen name="app_minHeight">48dp</dimen>
-	<dimen name="app_minWidth">48dp</dimen>
-
 	<dimen name="action_title_textsize">20dp</dimen>
 	<dimen name="action_subtitle_textsize">10dp</dimen>
 
@@ -122,15 +114,6 @@
 	<dimen name="app_bottomsheetdialogshape_default_paddingBottom_value">0dp</dimen>
 
 	<dimen name="customthemeengine_theme_item_width">140dp</dimen>
-
-	<dimen name="cpv_required_padding">6dp</dimen>
-	<dimen name="cpv_dialog_preview_width">66dp</dimen>
-	<dimen name="cpv_dialog_preview_height">34dp</dimen>
-	<dimen name="cpv_column_width">58dp</dimen>
-	<dimen name="cpv_item_size">50dp</dimen>
-	<dimen name="cpv_item_horizontal_padding">8dp</dimen>
-	<dimen name="cpv_color_preference_normal">28dp</dimen>
-	<dimen name="cpv_color_preference_large">40dp</dimen>
 
 	<dimen name="app_pagertabstrip_height">40dp</dimen>
 

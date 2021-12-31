@@ -57,7 +57,7 @@ public class AppBookmarksActivity extends CustomThemeEngineAppCompatActivity {
             }
         });
 
-        mRecyclerView = (RecyclerView) findViewById(R.id.bookmarks_recyclerview);
+        mRecyclerView = findViewById(R.id.bookmarks_recyclerview);
 
         // use this setting to improve performance if you know that changes
         // in content do not change the layout size of the RecyclerView

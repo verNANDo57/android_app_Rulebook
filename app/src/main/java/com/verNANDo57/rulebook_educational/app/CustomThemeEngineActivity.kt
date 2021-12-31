@@ -14,9 +14,7 @@ import com.verNANDo57.rulebook_educational.extradata.R
 import com.verNANDo57.rulebook_educational.preferences.RulebookApplicationSharedPreferences
 
 /**
- * Base class for an [Activity] that uses [CustomThemeEngine] for dynamic themes.
- *
- * You must implement [BaseCustomThemeEngineActivity.getThemeResId] and return a valid customthemeengine theme.
+ * Base class for an [Activity].
  */
 abstract class CustomThemeEngineActivity : Activity() {
 
@@ -42,9 +40,8 @@ abstract class CustomThemeEngineActivity : Activity() {
     window.navigationBarColor = ContextCompat.getColor(this, R.color.navbar_color)
 
     //ActionBar color and icon in RECENTS
-    val RB = BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher_round)
-    val taskDesc: TaskDescription
-    taskDesc = TaskDescription(getString(R.string.app_name), RB, ContextCompat.getColor(this, R.color.colorAccent))
+    val RB = BitmapFactory.decodeResource(resources, R.drawable.ic_launcher_round)
+    val taskDesc = TaskDescription(getString(R.string.app_name), RB, ContextCompat.getColor(this, R.color.colorAccent))
     setTaskDescription(taskDesc)
 
     super.onCreate(savedInstanceState)

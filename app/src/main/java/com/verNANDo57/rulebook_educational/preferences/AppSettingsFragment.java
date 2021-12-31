@@ -88,11 +88,7 @@ public class AppSettingsFragment extends PreferenceFragmentCompat
 
 		androidx.preference.SwitchPreferenceCompat statusbar_enable = (SwitchPreferenceCompat) findPreference(PreferenceKeys.STATUSBAR_PREF);
 		assert statusbar_enable != null;
-		if(!preferences.loadRulebookStatusBarBooleanState()){
-			statusbar_enable.setChecked(false);
-		} else {
-			statusbar_enable.setChecked(true);
-		}
+		statusbar_enable.setChecked(preferences.loadRulebookStatusBarBooleanState());
 		statusbar_enable.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
 			@Override
 			public boolean onPreferenceChange(Preference preference, Object newValue) {

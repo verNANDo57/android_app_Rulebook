@@ -39,9 +39,8 @@ abstract class CustomThemeEngineAppCompatActivity : AppCompatActivity() {
     window.navigationBarColor = ContextCompat.getColor(this, R.color.navbar_color)
 
     //ActionBar color and icon in RECENTS
-    val RB = BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher_round)
-    val taskDesc: TaskDescription
-    taskDesc = TaskDescription(getString(R.string.app_name), RB, ContextCompat.getColor(this, R.color.colorAccent))
+    val RB = BitmapFactory.decodeResource(resources, R.drawable.ic_launcher_round)
+    val taskDesc = TaskDescription(getString(R.string.app_name), RB, ContextCompat.getColor(this, R.color.colorAccent))
     setTaskDescription(taskDesc)
 
     delegate.onCreate(savedInstanceState)

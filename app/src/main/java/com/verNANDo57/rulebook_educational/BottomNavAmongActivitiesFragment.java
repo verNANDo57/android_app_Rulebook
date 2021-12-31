@@ -31,22 +31,39 @@ public class BottomNavAmongActivitiesFragment extends BottomSheetDialogFragment 
         navigationbetweenlessons.setItemIconTintList(ColorStateList.valueOf(ColorUtils.lighter(getResources().getColor(R.color.bottomsheetdialog_accent), 0.01f)));
         navigationbetweenlessons.setNavigationItemSelectedListener(menuItem -> {
             int id = menuItem.getItemId();
+            String className = requireActivity().getClass().getName();
 
             if (id == R.id.bottomsheetdialog_amongactivities_mainrules) {
-                startActivity(new Intent(getActivity(), AppSectionSelectionActivity.class));
+                if (!(className.equals(AppSectionSelectionActivity.class.getName()))) {
+                    startActivity(new Intent(getActivity(), AppSectionSelectionActivity.class));
+                    requireActivity().finish();
+                }
             } else if (id == R.id.bottomsheetdialog_amongactivities_dictionaries) {
-                startActivity(new Intent(getActivity(), AppDictionaries.class));
+                if (!(className.equals(AppDictionaries.class.getName()))) {
+                    startActivity(new Intent(getActivity(), AppDictionaries.class));
+                    requireActivity().finish();
+                }
             } else if (id == R.id.bottomsheetdialog_amongactivities_bookmarks) {
-                startActivity(new Intent(getActivity(), AppBookmarksActivity.class));
-            } else if (id == R.id.bottomsheetdialog_amongactivities_search) { ;
-                startActivity(new Intent(getActivity(), AppSearchActivity.class));
+                if (!(className.equals(AppBookmarksActivity.class.getName()))) {
+                    startActivity(new Intent(getActivity(), AppBookmarksActivity.class));
+                    requireActivity().finish();
+                }
+            } else if (id == R.id.bottomsheetdialog_amongactivities_search) {
+                if (!(className.equals(AppSearchActivity.class.getName()))) {
+                    startActivity(new Intent(getActivity(), AppSearchActivity.class));
+                    requireActivity().finish();
+                }
             } else if (id == R.id.bottomsheetdialog_amongactivities_about) {
-                startActivity(new Intent(getActivity(), AppAboutApplicationActivity.class));
+                if (!(className.equals(AppAboutApplicationActivity.class.getName()))) {
+                    startActivity(new Intent(getActivity(), AppAboutApplicationActivity.class));
+                    requireActivity().finish();
+                }
             } else if (id == R.id.bottomsheetdialog_amongactivities_settings) {
-                startActivity(new Intent(getActivity(), AppSettingsActivity.class));
+                if (!(className.equals(AppSettingsActivity.class.getName()))) {
+                    startActivity(new Intent(getActivity(), AppSettingsActivity.class));
+                    requireActivity().finish();
+                }
             }
-            requireActivity().finish();
-
             return false;
         });
         return viewFragment;

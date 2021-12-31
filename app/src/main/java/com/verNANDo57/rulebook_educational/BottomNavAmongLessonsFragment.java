@@ -13,6 +13,7 @@ import com.verNANDo57.rulebook_educational.bookmarks.AppBookmarksActivity;
 import com.verNANDo57.rulebook_educational.extradata.R;
 import com.verNANDo57.rulebook_educational.preferences.AppSettingsActivity;
 import com.verNANDo57.rulebook_educational.rules.AppAnalyzeMethods;
+import com.verNANDo57.rulebook_educational.rules.AppLexiconActivity;
 import com.verNANDo57.rulebook_educational.rules.AppRulesInSchemesAndTablesActivity;
 import com.verNANDo57.rulebook_educational.rules.mainrules.AppMainRulesActivity;
 import com.verNANDo57.rulebook_educational.search.AppSearchActivity;
@@ -33,26 +34,47 @@ public class BottomNavAmongLessonsFragment extends BottomSheetDialogFragment {
         navigation_among_activities.setItemIconTintList(ColorStateList.valueOf(ColorUtils.lighter(getResources().getColor(R.color.bottomsheetdialog_accent), 0.01f)));
         navigation_among_activities.setNavigationItemSelectedListener(menuItem -> {
             int id = menuItem.getItemId();
+            String className = requireActivity().getClass().getName();
 
             if (id == R.id.bottomsheetdialog_amonglessons_mainrules) {
-                startActivity(new Intent(getActivity(), AppMainRulesActivity.class));
+                if (!(className.equals(AppMainRulesActivity.class.getName()))) {
+                    startActivity(new Intent(getActivity(), AppMainRulesActivity.class));
+                    requireActivity().finish();
+                }
             } else if (id == R.id.bottomsheetdialog_amonglessons_lexicon) {
-                startActivity(new Intent(getActivity(), com.verNANDo57.rulebook_educational.rules.AppLexiconActivity.class));
+                if (!(className.equals(AppLexiconActivity.class.getName()))) {
+                    startActivity(new Intent(getActivity(), AppLexiconActivity.class));
+                    requireActivity().finish();
+                }
             } else if (id == R.id.bottomsheetdialog_amonglessons_schemesandtables) {
-                startActivity(new Intent(getActivity(), AppRulesInSchemesAndTablesActivity.class));
+                if (!(className.equals(AppRulesInSchemesAndTablesActivity.class.getName()))) {
+                    startActivity(new Intent(getActivity(), AppRulesInSchemesAndTablesActivity.class));
+                    requireActivity().finish();
+                }
             } else if (id == R.id.bottomsheetdialog_amonglessons_analyzemethods) {
-                startActivity(new Intent(getActivity(), AppAnalyzeMethods.class));
+                if (!(className.equals(AppAnalyzeMethods.class.getName()))) {
+                    startActivity(new Intent(getActivity(), AppAnalyzeMethods.class));
+                    requireActivity().finish();
+                }
             } else if (id == R.id.bottomsheetdialog_amonglessons_bookmarks) {
-                startActivity(new Intent(getActivity(), AppBookmarksActivity.class));
+                if (!(className.equals(AppBookmarksActivity.class.getName()))) {
+                    startActivity(new Intent(getActivity(), AppBookmarksActivity.class));
+                }
             } else if (id == R.id.bottomsheetdialog_amonglessons_search) {
-                startActivity(new Intent(getActivity(), AppSearchActivity.class));
+                if (!(className.equals(AppSearchActivity.class.getName()))) {
+                    startActivity(new Intent(getActivity(), AppSearchActivity.class));
+                }
             } else if (id == R.id.bottomsheetdialog_amonglessons_about) {
-                startActivity(new Intent(getActivity(), AppAboutApplicationActivity.class));
+                if (!(className.equals(AppAboutApplicationActivity.class.getName()))) {
+                    startActivity(new Intent(getActivity(), AppAboutApplicationActivity.class));
+                    requireActivity().finish();
+                }
             } else if (id == R.id.bottomsheetdialog_amonglessons_settings) {
-                startActivity(new Intent(getActivity(), AppSettingsActivity.class));
+                if (!(className.equals(AppSettingsActivity.class.getName()))) {
+                    startActivity(new Intent(getActivity(), AppSettingsActivity.class));
+                    requireActivity().finish();
+                }
             }
-            requireActivity().finish();
-
             return false;
         });
         return viewFragment;

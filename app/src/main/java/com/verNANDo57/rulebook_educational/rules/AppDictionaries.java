@@ -31,14 +31,14 @@ public class AppDictionaries extends CustomThemeEngineAppCompatActivity {
             }
         });
 
-        Intent scrollableactivity = new Intent(this, AppBaseScrollableActivity.class);
+        Intent scrollable_activity = new Intent(this, AppBaseScrollableActivity.class);
 
         Button vocabulary_words = findViewById(R.id.vocabulary_words);
         vocabulary_words.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "dict_vocabulary_words");
-                startActivity(scrollableactivity);
+                scrollable_activity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.DICT_VOCABULARY_WORDS);
+                startActivity(scrollable_activity);
             }
         });
 
@@ -46,8 +46,8 @@ public class AppDictionaries extends CustomThemeEngineAppCompatActivity {
         phrasebook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "dict_phrasebook");
-                startActivity(scrollableactivity);
+                scrollable_activity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.DICT_PHRASEBOOK);
+                startActivity(scrollable_activity);
             }
         });
 
@@ -55,8 +55,8 @@ public class AppDictionaries extends CustomThemeEngineAppCompatActivity {
         orthoepical_dictionary.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "dict_orthoepical");
-                startActivity(scrollableactivity);
+                scrollable_activity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.DICT_ORTHOEPICAL);
+                startActivity(scrollable_activity);
             }
         });
     }

@@ -379,12 +379,12 @@
     <string name="morphological_analyze_method_for_participle">Морфологический разбор причастия</string>
     <string name="morphological_analyze_method_for_participle2">Морфологический разбор деепричастия</string>
     <string name="morphological_analyze_method_for_pretext">Морфологический разбор предлога</string>
-    <string name="morphological_analyze_method_for_union">Морфологический разбор союза</string>
+    <string name="morphological_analyze_method_for_conjunctions">Морфологический разбор союза</string>
     <string name="morphological_analyze_method_for_particle">Морфологический разбор частицы</string>
     <string name="syntactic_analyze_method_for_simple_sentence">Cинтаксический разбор простого предложения</string>
     <string name="syntactic_analyze_method_for_difficult_sentence">Синтаксический разбор сложного предложения</string>
-    <string name="lexical_analyze_method_for_everyword">Лексический разбор слова</string>
-    <string name="orthographic_analyze_method_for_everyword">Орфографический разбор</string>
+    <string name="lexical_analyze_method">Лексический разбор слова</string>
+    <string name="orthographic_analyze_method">Орфографический разбор</string>
 
     <string name="vocabulary_words">Словарные слова</string>
     <string name="phrasebook">Словарь фразеологизмов</string>

@@ -20,7 +20,7 @@ public class AppAnalyzeMethods extends CustomThemeEngineAppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        Intent scrollableactivity = new Intent(this, AppBaseScrollableActivity.class);
+        Intent scrollable_activity = new Intent(this, AppBaseScrollableActivity.class);
 
         super.onCreate(savedInstanceState);
 
@@ -40,8 +40,8 @@ public class AppAnalyzeMethods extends CustomThemeEngineAppCompatActivity {
         phonetic_analyze_method_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "phonetic_analyze_method");
-                startActivity(scrollableactivity);
+                scrollable_activity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PHONETIC_ANALYZE_METHOD);
+                startActivity(scrollable_activity);
             }
         });
 
@@ -49,8 +49,8 @@ public class AppAnalyzeMethods extends CustomThemeEngineAppCompatActivity {
         morphemic_analyze_method_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "morphemic_analyze_method");
-                startActivity(scrollableactivity);
+                scrollable_activity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.MORPHEMIC_ANALYZE_METHOD);
+                startActivity(scrollable_activity);
             }
         });
 
@@ -58,8 +58,8 @@ public class AppAnalyzeMethods extends CustomThemeEngineAppCompatActivity {
         morphological_analyze_method_for_noun_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "morphological_analyze_method_for_noun");
-                startActivity(scrollableactivity);
+                scrollable_activity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.MORPHOLOGICAL_ANALYZE_METHOD_FOR_NOUN);
+                startActivity(scrollable_activity);
             }
         });
 
@@ -67,8 +67,8 @@ public class AppAnalyzeMethods extends CustomThemeEngineAppCompatActivity {
         morphological_analyze_method_for_verb_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "morphological_analyze_method_for_verb");
-                startActivity(scrollableactivity);
+                scrollable_activity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.MORPHOLOGICAL_ANALYZE_METHOD_FOR_VERB);
+                startActivity(scrollable_activity);
             }
         });
 
@@ -76,8 +76,8 @@ public class AppAnalyzeMethods extends CustomThemeEngineAppCompatActivity {
         morphological_analyze_method_for_adjective_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "morphological_analyze_method_for_adjective");
-                startActivity(scrollableactivity);
+                scrollable_activity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.MORPHOLOGICAL_ANALYZE_METHOD_FOR_ADJECTIVE);
+                startActivity(scrollable_activity);
             }
         });
 
@@ -85,8 +85,8 @@ public class AppAnalyzeMethods extends CustomThemeEngineAppCompatActivity {
         morphological_analyze_method_for_numeral_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "morphological_analyze_method_for_numeral");
-                startActivity(scrollableactivity);
+                scrollable_activity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.MORPHOLOGICAL_ANALYZE_METHOD_FOR_NUMERAL);
+                startActivity(scrollable_activity);
             }
         });
 
@@ -94,8 +94,8 @@ public class AppAnalyzeMethods extends CustomThemeEngineAppCompatActivity {
         morphological_analyze_method_for_adverb_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "morphological_analyze_method_for_adverb");
-                startActivity(scrollableactivity);
+                scrollable_activity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.MORPHOLOGICAL_ANALYZE_METHOD_FOR_ADVERB);
+                startActivity(scrollable_activity);
             }
         });
 
@@ -103,8 +103,8 @@ public class AppAnalyzeMethods extends CustomThemeEngineAppCompatActivity {
         morphological_analyze_method_for_participle_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "morphological_analyze_method_for_participle");
-                startActivity(scrollableactivity);
+                scrollable_activity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.MORPHOLOGICAL_ANALYZE_METHOD_FOR_PARTICIPLE);
+                startActivity(scrollable_activity);
             }
         });
 
@@ -112,8 +112,8 @@ public class AppAnalyzeMethods extends CustomThemeEngineAppCompatActivity {
         morphological_analyze_method_for_participle2_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "morphological_analyze_method_for_participle2");
-                startActivity(scrollableactivity);
+                scrollable_activity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.MORPHOLOGICAL_ANALYZE_METHOD_FOR_PARTICIPLE2);
+                startActivity(scrollable_activity);
             }
         });
 
@@ -121,17 +121,17 @@ public class AppAnalyzeMethods extends CustomThemeEngineAppCompatActivity {
         morphological_analyze_method_for_pretext_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "morphological_analyze_method_for_pretext");
-                startActivity(scrollableactivity);
+                scrollable_activity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.MORPHOLOGICAL_ANALYZE_METHOD_FOR_PRETEXT);
+                startActivity(scrollable_activity);
             }
         });
 
-        Button morphological_analyze_method_for_union_btn = findViewById(R.id.morphological_analyze_method_for_union_btn);
-        morphological_analyze_method_for_union_btn.setOnClickListener(new View.OnClickListener() {
+        Button morphological_analyze_method_for_conjunctions_btn = findViewById(R.id.morphological_analyze_method_for_conjunctions_btn);
+        morphological_analyze_method_for_conjunctions_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "morphological_analyze_method_for_union");
-                startActivity(scrollableactivity);
+                scrollable_activity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.MORPHOLOGICAL_ANALYZE_METHOD_FOR_CONJUNCTIONS);
+                startActivity(scrollable_activity);
             }
         });
 
@@ -139,8 +139,8 @@ public class AppAnalyzeMethods extends CustomThemeEngineAppCompatActivity {
         morphological_analyze_method_for_particle_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "morphological_analyze_method_for_particle");
-                startActivity(scrollableactivity);
+                scrollable_activity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.MORPHOLOGICAL_ANALYZE_METHOD_FOR_PARTICLE);
+                startActivity(scrollable_activity);
             }
         });
 
@@ -148,8 +148,8 @@ public class AppAnalyzeMethods extends CustomThemeEngineAppCompatActivity {
         syntactic_analyze_method_for_simple_sentence_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "syntactic_analyze_method_for_simple_sentence");
-                startActivity(scrollableactivity);
+                scrollable_activity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.SYNTACTIC_ANALYZE_METHOD_FOR_SIMPLE_SENTENCE);
+                startActivity(scrollable_activity);
             }
         });
 
@@ -157,26 +157,26 @@ public class AppAnalyzeMethods extends CustomThemeEngineAppCompatActivity {
         syntactic_analyze_method_for_difficult_sentence_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "syntactic_analyze_method_for_difficult_sentence");
-                startActivity(scrollableactivity);
+                scrollable_activity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.SYNTACTIC_ANALYZE_METHOD_FOR_DIFFICULT_SENTENCE);
+                startActivity(scrollable_activity);
             }
         });
 
-        Button lexical_analyze_method_for_everyword_btn = findViewById(R.id.lexical_analyze_method_for_everyword_btn);
-        lexical_analyze_method_for_everyword_btn.setOnClickListener(new View.OnClickListener() {
+        Button lexical_analyze_method_btn = findViewById(R.id.lexical_analyze_method_btn);
+        lexical_analyze_method_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "lexical_analyze_method_for_everyword");
-                startActivity(scrollableactivity);
+                scrollable_activity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.LEXICAL_ANALYZE_METHOD);
+                startActivity(scrollable_activity);
             }
         });
 
-        Button orthographic_analyze_method_for_everyword_btn = findViewById(R.id.orthographic_analyze_method_for_everyword_btn);
-        orthographic_analyze_method_for_everyword_btn.setOnClickListener(new View.OnClickListener() {
+        Button orthographic_analyze_method_btn = findViewById(R.id.orthographic_analyze_method_btn);
+        orthographic_analyze_method_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "orthographic_analyze_method_for_everyword");
-                startActivity(scrollableactivity);
+                scrollable_activity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHIC_ANALYZE_METHOD);
+                startActivity(scrollable_activity);
             }
         });
     }

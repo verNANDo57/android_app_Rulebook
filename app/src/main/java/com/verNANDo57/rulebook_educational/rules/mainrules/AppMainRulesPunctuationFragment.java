@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment;
 import com.verNANDo57.rulebook_educational.utils.AppUtils;
 import com.verNANDo57.rulebook_educational.extradata.R;
 import com.verNANDo57.rulebook_educational.rules.AppBaseScrollableActivity;
+import com.verNANDo57.rulebook_educational.rules.Constants;
 
 public class AppMainRulesPunctuationFragment extends Fragment {
 
@@ -167,28 +168,28 @@ public class AppMainRulesPunctuationFragment extends Fragment {
             punct1mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_1_1");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_1_1);
                     startActivity(scrollableactivity);
                 }
             });
             punct1mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_1_2");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_1_2);
                     startActivity(scrollableactivity);
                 }
             });
             punct1mainButton3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_1_3");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_1_3);
                     startActivity(scrollableactivity);
                 }
             });
             punct1mainButton4.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_1_4");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_1_4);
                     startActivity(scrollableactivity);
                 }
             });
@@ -209,28 +210,28 @@ public class AppMainRulesPunctuationFragment extends Fragment {
             punct2mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_2_5");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_2_5);
                     startActivity(scrollableactivity);
                 }
             });
             punct2mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_2_6");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_2_6);
                     startActivity(scrollableactivity);
                 }
             });
             punct2mainButton3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_2_7");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_2_7);
                     startActivity(scrollableactivity);
                 }
             });
             punct2mainButton4.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_2_8");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_2_8);
                     startActivity(scrollableactivity);
                 }
             });
@@ -251,49 +252,49 @@ public class AppMainRulesPunctuationFragment extends Fragment {
             punct3mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_3_9");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_3_9);
                     startActivity(scrollableactivity);
                 }
             });
             punct3mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_3_10");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_3_10);
                     startActivity(scrollableactivity);
                 }
             });
             punct3mainButton3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_3_11");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_3_11);
                     startActivity(scrollableactivity);
                 }
             });
             punct3mainButton4.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_3_12");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_3_12);
                     startActivity(scrollableactivity);
                 }
             });
             punct3mainButton5.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_3_13");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_3_13);
                     startActivity(scrollableactivity);
                 }
             });
             punct3mainButton6.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_3_14");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_3_14);
                     startActivity(scrollableactivity);
                 }
             });
             punct3mainButton7.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_3_15");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_3_15);
                     startActivity(scrollableactivity);
                 }
             });
@@ -314,14 +315,14 @@ public class AppMainRulesPunctuationFragment extends Fragment {
             punct4mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_4_16");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_4_16);
                     startActivity(scrollableactivity);
                 }
             });
             punct4mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_4_17");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_4_17);
                     startActivity(scrollableactivity);
                 }
             });
@@ -342,28 +343,28 @@ public class AppMainRulesPunctuationFragment extends Fragment {
             punct5mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_5_18");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_5_18);
                     startActivity(scrollableactivity);
                 }
             });
             punct5mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_5_19");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_5_19);
                     startActivity(scrollableactivity);
                 }
             });
             punct5mainButton3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_5_20");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_5_20);
                     startActivity(scrollableactivity);
                 }
             });
             punct5mainButton4.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_5_21");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_5_21);
                     startActivity(scrollableactivity);
                 }
             });
@@ -384,21 +385,21 @@ public class AppMainRulesPunctuationFragment extends Fragment {
             punct6mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_6_22");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_6_22);
                     startActivity(scrollableactivity);
                 }
             });
             punct6mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_6_23");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_6_23);
                     startActivity(scrollableactivity);
                 }
             });
             punct6mainButton3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_6_24");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_6_24);
                     startActivity(scrollableactivity);
                 }
             });
@@ -419,21 +420,21 @@ public class AppMainRulesPunctuationFragment extends Fragment {
             punct7mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_7_25");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_7_25);
                     startActivity(scrollableactivity);
                 }
             });
             punct7mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_7_26");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_7_26);
                     startActivity(scrollableactivity);
                 }
             });
             punct7mainButton3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_7_27");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_7_27);
                     startActivity(scrollableactivity);
                 }
             });
@@ -454,14 +455,14 @@ public class AppMainRulesPunctuationFragment extends Fragment {
             punct8mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_8_28");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_8_28);
                     startActivity(scrollableactivity);
                 }
             });
             punct8mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_8_29");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_8_29);
                     startActivity(scrollableactivity);
                 }
             });
@@ -482,21 +483,21 @@ public class AppMainRulesPunctuationFragment extends Fragment {
             punct9mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_9_30");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_9_30);
                     startActivity(scrollableactivity);
                 }
             });
             punct9mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_9_31");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_9_31);
                     startActivity(scrollableactivity);
                 }
             });
             punct9mainButton3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_9_32");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_9_32);
                     startActivity(scrollableactivity);
                 }
             });
@@ -517,56 +518,56 @@ public class AppMainRulesPunctuationFragment extends Fragment {
             punct10mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_10_33");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_10_33);
                     startActivity(scrollableactivity);
                 }
             });
             punct10mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_10_34");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_10_34);
                     startActivity(scrollableactivity);
                 }
             });
             punct10mainButton3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_10_35");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_10_35);
                     startActivity(scrollableactivity);
                 }
             });
             punct10mainButton4.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_10_36");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_10_36);
                     startActivity(scrollableactivity);
                 }
             });
             punct10mainButton5.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_10_37");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_10_37);
                     startActivity(scrollableactivity);
                 }
             });
             punct10mainButton6.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_10_38");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_10_38);
                     startActivity(scrollableactivity);
                 }
             });
             punct10mainButton7.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_10_39");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_10_39);
                     startActivity(scrollableactivity);
                 }
             });
             punct10mainButton8.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_10_40");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_10_40);
                     startActivity(scrollableactivity);
                 }
             });
@@ -587,14 +588,14 @@ public class AppMainRulesPunctuationFragment extends Fragment {
             punct11mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_11_41");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_11_41);
                     startActivity(scrollableactivity);
                 }
             });
             punct11mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_11_42");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_11_42);
                     startActivity(scrollableactivity);
                 }
             });
@@ -615,28 +616,28 @@ public class AppMainRulesPunctuationFragment extends Fragment {
             punct12mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_12_43");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_12_43);
                     startActivity(scrollableactivity);
                 }
             });
             punct12mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_12_44");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_12_44);
                     startActivity(scrollableactivity);
                 }
             });
             punct12mainButton3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_12_45");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_12_45);
                     startActivity(scrollableactivity);
                 }
             });
             punct12mainButton4.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_12_46");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_12_46);
                     startActivity(scrollableactivity);
                 }
             });
@@ -644,7 +645,7 @@ public class AppMainRulesPunctuationFragment extends Fragment {
         punctuationButton13.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_13_split");
+                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_13_SPLIT);
                 startActivity(scrollableactivity);
             }
         });
@@ -665,56 +666,56 @@ public class AppMainRulesPunctuationFragment extends Fragment {
             punct14mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_14_47");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_14_47);
                     startActivity(scrollableactivity);
                 }
             });
             punct14mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_14_48");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_14_48);
                     startActivity(scrollableactivity);
                 }
             });
             punct14mainButton3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_14_49");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_14_49);
                     startActivity(scrollableactivity);
                 }
             });
             punct14mainButton4.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_14_50");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_14_50);
                     startActivity(scrollableactivity);
                 }
             });
             punct14mainButton5.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_14_51");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_14_51);
                     startActivity(scrollableactivity);
                 }
             });
             punct14mainButton6.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_14_52");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_14_52);
                     startActivity(scrollableactivity);
                 }
             });
             punct14mainButton7.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_14_53");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_14_53);
                     startActivity(scrollableactivity);
                 }
             });
             punct14mainButton8.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_14_54");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_14_54);
                     startActivity(scrollableactivity);
                 }
             });
@@ -735,28 +736,28 @@ public class AppMainRulesPunctuationFragment extends Fragment {
             punct15mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_15_55");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_15_55);
                     startActivity(scrollableactivity);
                 }
             });
             punct15mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_15_56");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_15_56);
                     startActivity(scrollableactivity);
                 }
             });
             punct15mainButton3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_15_57");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_15_57);
                     startActivity(scrollableactivity);
                 }
             });
             punct15mainButton4.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_15_58");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_15_58);
                     startActivity(scrollableactivity);
                 }
             });
@@ -764,7 +765,7 @@ public class AppMainRulesPunctuationFragment extends Fragment {
         punctuationButton16.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_16_split");
+                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_16_SPLIT);
                 startActivity(scrollableactivity);
             }
         });
@@ -785,35 +786,35 @@ public class AppMainRulesPunctuationFragment extends Fragment {
             punct17mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_17_59");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_17_59);
                     startActivity(scrollableactivity);
                 }
             });
             punct17mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_17_60");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_17_60);
                     startActivity(scrollableactivity);
                 }
             });
             punct17mainButton3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_17_61");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_17_61);
                     startActivity(scrollableactivity);
                 }
             });
             punct17mainButton4.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_17_62");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_17_62);
                     startActivity(scrollableactivity);
                 }
             });
             punct17mainButton5.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_17_63");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_17_63);
                     startActivity(scrollableactivity);
                 }
             });
@@ -834,42 +835,42 @@ public class AppMainRulesPunctuationFragment extends Fragment {
             punct18mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_18_64");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_18_64);
                     startActivity(scrollableactivity);
                 }
             });
             punct18mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_18_65");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_18_65);
                     startActivity(scrollableactivity);
                 }
             });
             punct18mainButton3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_18_66");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_18_66);
                     startActivity(scrollableactivity);
                 }
             });
             punct18mainButton4.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_18_67");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_18_67);
                     startActivity(scrollableactivity);
                 }
             });
             punct18mainButton5.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_18_68");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_18_68);
                     startActivity(scrollableactivity);
                 }
             });
             punct18mainButton6.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_18_69");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_18_69);
                     startActivity(scrollableactivity);
                 }
             });
@@ -890,21 +891,21 @@ public class AppMainRulesPunctuationFragment extends Fragment {
             punct19mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_19_70");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_19_70);
                     startActivity(scrollableactivity);
                 }
             });
             punct19mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_19_71");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_19_71);
                     startActivity(scrollableactivity);
                 }
             });
             punct19mainButton3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_19_72");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_19_72);
                     startActivity(scrollableactivity);
                 }
             });
@@ -912,7 +913,7 @@ public class AppMainRulesPunctuationFragment extends Fragment {
         punctuationButton20.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_20_split");
+                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_20_SPLIT);
                 startActivity(scrollableactivity);
             }
         });
@@ -920,7 +921,7 @@ public class AppMainRulesPunctuationFragment extends Fragment {
         punctuationButton21.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "punct_21_split");
+                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.PUNCTUATION_21_SPLIT);
                 startActivity(scrollableactivity);
             }
         });

@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment;
 import com.verNANDo57.rulebook_educational.utils.AppUtils;
 import com.verNANDo57.rulebook_educational.extradata.R;
 import com.verNANDo57.rulebook_educational.rules.AppBaseScrollableActivity;
+import com.verNANDo57.rulebook_educational.rules.Constants;
 
 public class AppMainRulesOrthographyFragment extends Fragment {
 
@@ -143,42 +144,42 @@ public class AppMainRulesOrthographyFragment extends Fragment {
             ortho1mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_1_1");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_1_1);
                     startActivity(scrollableactivity);
                 }
             });
             ortho1mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_1_2");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_1_2);
                     startActivity(scrollableactivity);
                 }
             });
             ortho1mainButton3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_1_3");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_1_3);
                     startActivity(scrollableactivity);
                 }
             });
             ortho1mainButton4.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_1_4");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_1_4);
                     startActivity(scrollableactivity);
                 }
             });
             ortho1mainButton5.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_1_5");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_1_5);
                     startActivity(scrollableactivity);
                 }
             });
             ortho1mainButton6.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_1_6");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_1_6);
                     startActivity(scrollableactivity);
                 }
             });
@@ -199,21 +200,21 @@ public class AppMainRulesOrthographyFragment extends Fragment {
             ortho2mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_2_7");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_2_7);
                     startActivity(scrollableactivity);
                 }
             });
             ortho2mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_2_8");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_2_8);
                     startActivity(scrollableactivity);
                 }
             });
             ortho2mainButton3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_2_9");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_2_9);
                     startActivity(scrollableactivity);
                 }
             });
@@ -234,119 +235,119 @@ public class AppMainRulesOrthographyFragment extends Fragment {
             ortho3mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_3_10");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_3_10);
                     startActivity(scrollableactivity);
                 }
             });
             ortho3mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_3_11");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_3_11);
                     startActivity(scrollableactivity);
                 }
             });
             ortho3mainButton3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_3_12");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_3_12);
                     startActivity(scrollableactivity);
                 }
             });
             ortho3mainButton4.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_3_13");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_3_13);
                     startActivity(scrollableactivity);
                 }
             });
             ortho3mainButton5.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_3_14");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_3_14);
                     startActivity(scrollableactivity);
                 }
             });
             ortho3mainButton6.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_3_15");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_3_15);
                     startActivity(scrollableactivity);
                 }
             });
             ortho3mainButton7.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_3_16");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_3_16);
                     startActivity(scrollableactivity);
                 }
             });
             ortho3mainButton8.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_3_17");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_3_17);
                     startActivity(scrollableactivity);
                 }
             });
             ortho3mainButton9.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_3_18");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_3_18);
                     startActivity(scrollableactivity);
                 }
             });
             ortho3mainButton10.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_3_19");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_3_19);
                     startActivity(scrollableactivity);
                 }
             });
             ortho3mainButton11.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_3_20");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_3_20);
                     startActivity(scrollableactivity);
                 }
             });
             ortho3mainButton12.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_3_21");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_3_21);
                     startActivity(scrollableactivity);
                 }
             });
             ortho3mainButton13.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_3_22");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_3_22);
                     startActivity(scrollableactivity);
                 }
             });
             ortho3mainButton14.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_3_23");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_3_23);
                     startActivity(scrollableactivity);
                 }
             });
             ortho3mainButton15.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_3_24");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_3_24);
                     startActivity(scrollableactivity);
                 }
             });
             ortho3mainButton16.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_3_25");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_3_25);
                     startActivity(scrollableactivity);
                 }
             });
             ortho3mainButton17.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_3_26");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_3_26);
                     startActivity(scrollableactivity);
                 }
             });
@@ -355,7 +356,7 @@ public class AppMainRulesOrthographyFragment extends Fragment {
         ortho_4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_4_split");
+                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_4_SPLIT);
                 startActivity(scrollableactivity);
             }
         });
@@ -376,21 +377,21 @@ public class AppMainRulesOrthographyFragment extends Fragment {
             ortho5mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_5_27");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_5_27);
                     startActivity(scrollableactivity);
                 }
             });
             ortho5mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_5_28");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_5_28);
                     startActivity(scrollableactivity);
                 }
             });
             ortho5mainButton3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_5_29");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_5_29);
                     startActivity(scrollableactivity);
                 }
             });
@@ -411,14 +412,14 @@ public class AppMainRulesOrthographyFragment extends Fragment {
             ortho6mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_6_30");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_6_30);
                     startActivity(scrollableactivity);
                 }
             });
             ortho6mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_6_31");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_6_31);
                     startActivity(scrollableactivity);
                 }
             });
@@ -439,14 +440,14 @@ public class AppMainRulesOrthographyFragment extends Fragment {
             ortho7mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_7_32");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_7_32);
                     startActivity(scrollableactivity);
                 }
             });
             ortho7mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_7_33");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_7_33);
                     startActivity(scrollableactivity);
                 }
             });
@@ -467,14 +468,14 @@ public class AppMainRulesOrthographyFragment extends Fragment {
             ortho8mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_8_34");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_8_34);
                     startActivity(scrollableactivity);
                 }
             });
             ortho8mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_8_35");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_8_35);
                     startActivity(scrollableactivity);
                 }
             });
@@ -495,28 +496,28 @@ public class AppMainRulesOrthographyFragment extends Fragment {
             ortho9mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_9_36");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_9_36);
                     startActivity(scrollableactivity);
                 }
             });
             ortho9mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_9_37");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_9_37);
                     startActivity(scrollableactivity);
                 }
             });
             ortho9mainButton3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_9_38");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_9_38);
                     startActivity(scrollableactivity);
                 }
             });
             ortho9mainButton4.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_9_39");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_9_39);
                     startActivity(scrollableactivity);
                 }
             });
@@ -537,14 +538,14 @@ public class AppMainRulesOrthographyFragment extends Fragment {
             ortho10mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_10_40");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_10_40);
                     startActivity(scrollableactivity);
                 }
             });
             ortho10mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_10_41");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_10_41);
                     startActivity(scrollableactivity);
                 }
             });
@@ -565,14 +566,14 @@ public class AppMainRulesOrthographyFragment extends Fragment {
             ortho11mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_11_42");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_11_42);
                     startActivity(scrollableactivity);
                 }
             });
             ortho11mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_11_43");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_11_43);
                     startActivity(scrollableactivity);
                 }
             });
@@ -593,21 +594,21 @@ public class AppMainRulesOrthographyFragment extends Fragment {
             ortho12mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_12_44");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_12_44);
                     startActivity(scrollableactivity);
                 }
             });
             ortho12mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_12_45");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_12_45);
                     startActivity(scrollableactivity);
                 }
             });
             ortho12mainButton3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_12_46");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_12_46);
                     startActivity(scrollableactivity);
                 }
             });
@@ -628,14 +629,14 @@ public class AppMainRulesOrthographyFragment extends Fragment {
             ortho13mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_13_47");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_13_47);
                     startActivity(scrollableactivity);
                 }
             });
             ortho13mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_13_48");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_13_48);
                     startActivity(scrollableactivity);
                 }
             });
@@ -656,42 +657,42 @@ public class AppMainRulesOrthographyFragment extends Fragment {
             ortho14mainButton1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_14_49");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_14_49);
                     startActivity(scrollableactivity);
                 }
             });
             ortho14mainButton2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_14_50");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_14_50);
                     startActivity(scrollableactivity);
                 }
             });
             ortho14mainButton3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_14_51");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_14_51);
                     startActivity(scrollableactivity);
                 }
             });
             ortho14mainButton4.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_14_52");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_14_52);
                     startActivity(scrollableactivity);
                 }
             });
             ortho14mainButton5.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_14_53");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_14_53);
                     startActivity(scrollableactivity);
                 }
             });
             ortho14mainButton6.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_14_54");
+                    scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_14_54);
                     startActivity(scrollableactivity);
                 }
             });
@@ -700,7 +701,7 @@ public class AppMainRulesOrthographyFragment extends Fragment {
         ortho_15.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_15_split");
+                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_15_SPLIT);
                 startActivity(scrollableactivity);
             }
         });
@@ -709,7 +710,7 @@ public class AppMainRulesOrthographyFragment extends Fragment {
         ortho_16.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_16_split");
+                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_16_SPLIT);
                 startActivity(scrollableactivity);
             }
         });
@@ -730,56 +731,56 @@ public class AppMainRulesOrthographyFragment extends Fragment {
         ortho17mainButton1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_17_55");
+                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_17_55);
                 startActivity(scrollableactivity);
             }
         });
         ortho17mainButton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_17_56");
+                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_17_56);
                 startActivity(scrollableactivity);
             }
         });
         ortho17mainButton3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_17_57");
+                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_17_57);
                 startActivity(scrollableactivity);
             }
         });
         ortho17mainButton4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_17_58");
+                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_17_58);
                 startActivity(scrollableactivity);
             }
         });
         ortho17mainButton5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_17_59");
+                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_17_59);
                 startActivity(scrollableactivity);
             }
         });
         ortho17mainButton6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_17_60");
+                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_17_60);
                 startActivity(scrollableactivity);
             }
         });
         ortho17mainButton7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_17_61");
+                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_17_61);
                 startActivity(scrollableactivity);
             }
         });
         ortho17mainButton8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_17_62");
+                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_17_62);
                 startActivity(scrollableactivity);
             }
         });
@@ -788,7 +789,7 @@ public class AppMainRulesOrthographyFragment extends Fragment {
         ortho_18.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_18_split");
+                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_18_SPLIT);
                 startActivity(scrollableactivity);
             }
         });
@@ -797,7 +798,7 @@ public class AppMainRulesOrthographyFragment extends Fragment {
         ortho_19.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, "ortho_19_split");
+                scrollableactivity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.ORTHOGRAPHY_19_SPLIT);
                 startActivity(scrollableactivity);
             }
         });

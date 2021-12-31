@@ -94,10 +94,10 @@
                 android:text="@string/morphological_analyze_method_for_pretext" />
 
             <Button
-                android:id="@+id/morphological_analyze_method_for_union_btn"
+                android:id="@+id/morphological_analyze_method_for_conjunctions_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/morphological_analyze_method_for_union" />
+                android:text="@string/morphological_analyze_method_for_conjunctions" />
 
             <Button
                 android:id="@+id/morphological_analyze_method_for_particle_btn"
@@ -118,17 +118,17 @@
                 android:text="@string/syntactic_analyze_method_for_difficult_sentence" />
 
             <Button
-                android:id="@+id/lexical_analyze_method_for_everyword_btn"
+                android:id="@+id/lexical_analyze_method_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/lexical_analyze_method_for_everyword" />
+                android:text="@string/lexical_analyze_method" />
 
             <Button
-                android:id="@+id/orthographic_analyze_method_for_everyword_btn"
+                android:id="@+id/orthographic_analyze_method_btn"
                 style="@style/RulebookButtonBottom"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/orthographic_analyze_method_for_everyword" />
+                android:text="@string/orthographic_analyze_method" />
 
         </LinearLayout>
 

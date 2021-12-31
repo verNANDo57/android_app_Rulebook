@@ -24,9 +24,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/search_viewhint"
-        android:importantForAutofill="no"
-        android:inputType="textAutoCorrect"
-        android:minHeight="@dimen/app_minHeight" />
+        android:inputType="textAutoComplete"
+        android:importantForAutofill="no" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/bookmarks_recyclerview"

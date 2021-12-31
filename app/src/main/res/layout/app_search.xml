@@ -22,9 +22,8 @@
         android:layout_height="wrap_content"
         style="@style/EditText"
         android:hint="@string/search_viewhint"
-        android:inputType="textAutoCorrect"
-        android:importantForAutofill="no"
-        android:minHeight="@dimen/app_minHeight" />
+        android:inputType="textAutoComplete"
+        android:importantForAutofill="no" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/search_recyclerview"

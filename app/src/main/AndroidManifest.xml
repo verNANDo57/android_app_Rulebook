@@ -2,7 +2,6 @@
 	xmlns:tools="http://schemas.android.com/tools"
 	package="com.verNANDo57.rulebook_educational.extradata">
 
-	<!-- <uses-permission android:name="android.permission.INTERNET" /> -->
 	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
 		tools:ignore="ScopedStorage" />

@@ -1,3 +1,8 @@
+/*
+ * Author: VerNANDo57 <silvenation@gmail.com>
+ * date: 2022/01/24 6:01PM GMT+7
+ */
+
 package com.verNANDo57.rulebook_educational.rules;
 
 import static com.verNANDo57.rulebook_educational.utils.AppUtils.LOG_TAG;
@@ -9,7 +14,6 @@ import android.view.View;
 
 import androidx.appcompat.widget.Toolbar;
 
-import com.verNANDo57.rulebook_educational.utils.AppUtils;
 import com.verNANDo57.rulebook_educational.BottomNavAmongLessonsFragment;
 import com.verNANDo57.rulebook_educational.app.CustomThemeEngineAppCompatActivity;
 import com.verNANDo57.rulebook_educational.extradata.R;
@@ -17,6 +21,7 @@ import com.verNANDo57.rulebook_educational.pdflib.pdfviewer.PDFView;
 import com.verNANDo57.rulebook_educational.pdflib.pdfviewer.listener.OnPageScrollListener;
 import com.verNANDo57.rulebook_educational.pdflib.pdfviewer.scroll.DefaultScrollHandle;
 import com.verNANDo57.rulebook_educational.pdflib.pdfviewer.util.FitPolicy;
+import com.verNANDo57.rulebook_educational.utils.AppUtils;
 
 public class AppLexiconActivity extends CustomThemeEngineAppCompatActivity {
 

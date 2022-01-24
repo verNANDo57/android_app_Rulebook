@@ -1,3 +1,8 @@
+/*
+ * Author: VerNANDo57 <silvenation@gmail.com>
+ * date: 2022/01/24 6:01PM GMT+7
+ */
+
 package com.verNANDo57.rulebook_educational.bookmarks;
 
 import static com.verNANDo57.rulebook_educational.utils.AppUtils.LOG_TAG;
@@ -5,9 +10,9 @@ import static com.verNANDo57.rulebook_educational.utils.AppUtils.LOG_TAG;
 import android.content.Context;
 import android.util.Log;
 
-import com.verNANDo57.rulebook_educational.utils.AppUtils;
 import com.verNANDo57.rulebook_educational.extradata.R;
 import com.verNANDo57.rulebook_educational.styleabletoast.StyleableToast;
+import com.verNANDo57.rulebook_educational.utils.AppUtils;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -108,10 +113,10 @@ public class AppBookmarkUtils {
             FileWriter writer2 = new FileWriter(jsonFile, true);
             AppUtils.removeLastLine(jsonFile);
             if (AppUtils.countLineBufferedReader(jsonFile) < 2) {
-                writer2.append("\n" + generateJSONObject(object_key, object_title, object_summary).toString() + "\n" + "]");
+                writer2.append("\n").append(generateJSONObject(object_key, object_title, object_summary).toString()).append("\n").append("]");
             } else {
                 modifyJson(context);
-                writer2.append("," + "\n" + generateJSONObject(object_key, object_title, object_summary).toString() + "\n" + "]");
+                writer2.append("," + "\n").append(generateJSONObject(object_key, object_title, object_summary).toString()).append("\n").append("]");
             }
 
             writer2.close();

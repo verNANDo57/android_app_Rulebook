@@ -1,3 +1,8 @@
+/*
+ * Author: VerNANDo57 <silvenation@gmail.com>
+ * date: 2022/01/24 6:01PM GMT+7
+ */
+
 package com.verNANDo57.rulebook_educational.rules.mainrules;
 
 import static com.verNANDo57.rulebook_educational.utils.AppUtils.LOG_TAG;
@@ -37,24 +42,21 @@ public class AppMainRulesActivity extends CustomThemeEngineAppCompatActivity {
 		mViewPager.setAdapter(new CustomPagerAdapter(getSupportFragmentManager(), getLifecycle()));
 
 		TabLayout tabLayout = findViewById(R.id.tablayout);
-		// For some reason custom colors aren't set, so we have to set colors dynamically instead of setting them in styles.xml
-		//tabLayout.setTabIconTint(ColorStateList.valueOf(ColorUtils.lighter(getResources().getColor(R.color.coloraccent), 0.01f)));
-		//tabLayout.setTabTextColors(ColorStateList.valueOf(ColorUtils.lighter(getResources().getColor(R.color.coloraccent), 0.01f)));
-		//tabLayout.setTabRippleColor(ColorStateList.valueOf(ColorUtils.lighter(getResources().getColor(R.color.coloraccent), 0.01f)));
 		tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
 			@Override
 			public void onTabSelected(TabLayout.Tab tab) {
+				// TODO: Auto-generated method
 				mViewPager.setCurrentItem(tab.getPosition());
 			}
 
 			@Override
 			public void onTabUnselected(TabLayout.Tab tab) {
-
+				// TODO: Auto-generated method
 			}
 
 			@Override
 			public void onTabReselected(TabLayout.Tab tab) {
-
+				// TODO: Auto-generated method
 			}
 		});
 

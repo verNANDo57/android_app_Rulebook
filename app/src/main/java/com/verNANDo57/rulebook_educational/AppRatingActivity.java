@@ -1,3 +1,8 @@
+/*
+ * Author: VerNANDo57 <silvenation@gmail.com>
+ * date: 2022/01/24 6:01PM GMT+7
+ */
+
 package com.verNANDo57.rulebook_educational;
 
 import static com.verNANDo57.rulebook_educational.utils.AppUtils.LOG_TAG;
@@ -64,7 +69,7 @@ public class AppRatingActivity extends CustomThemeEngineAppCompatActivity {
         email.putExtra(Intent.EXTRA_TEXT, review_box.getText().toString() + "\n" +"\n"
                 + getString(R.string.review_device_name) + Build.DEVICE + "\n"
                 + getString(R.string.review_device_model) + Build.MODEL + "\n"
-                + getString(R.string.review_device_manufacter) + Build.MANUFACTURER + "\n"
+                + getString(R.string.review_device_manufacturer) + Build.MANUFACTURER + "\n"
                 + getString(R.string.review_oc_name) + Build.ID + "\n"
                 + getString(R.string.review_device_sdk_version) + Build.VERSION.SDK_INT + "\n"
                 + getString(R.string.review_device_hardware) + Build.HARDWARE + "\n"

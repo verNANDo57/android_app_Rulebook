@@ -1,3 +1,8 @@
+/*
+ * Author: VerNANDo57 <silvenation@gmail.com>
+ * date: 2022/01/24 6:01PM GMT+7
+ */
+
 package com.verNANDo57.rulebook_educational.bookmarks;
 
 public class BookmarkItem {

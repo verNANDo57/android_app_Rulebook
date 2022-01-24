@@ -1,3 +1,11 @@
+/*
+ * Author: Muddz
+ * date: 2021/08/02
+ *
+ * Modified by: VerNANDo57 <silvenation@gmail.com>
+ * date: 2021/06/05
+ */
+
 package com.verNANDo57.rulebook_educational.styleabletoast;
 
 import android.content.Context;

@@ -1,3 +1,8 @@
+/*
+ * Author: VerNANDo57 <silvenation@gmail.com>
+ * date: 2022/01/24 6:01PM GMT+7
+ */
+
 package com.verNANDo57.rulebook_educational;
 
 import android.Manifest;
@@ -139,7 +144,7 @@ public class MainActivity extends CustomThemeEngineAppCompatActivity {
 				//Ask user to give storage permission
 				AlertDialog.Builder builder = new AlertDialog.Builder(this);
 				builder.setTitle(getString(R.string.app_warning));
-				builder.setMessage(getString(R.string.app_storageaccess_warning));
+				builder.setMessage(getString(R.string.app_storageAccess_warning));
 				builder.setIcon(R.drawable.ic_warning_outline);
 				builder.setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener(){
 					@Override

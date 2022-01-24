@@ -1,3 +1,8 @@
+/*
+ * Author: VerNANDo57 <silvenation@gmail.com>
+ * date: 2022/01/24 6:01PM GMT+7
+ */
+
 package com.verNANDo57.rulebook_educational;
 
 import android.annotation.SuppressLint;
@@ -27,7 +32,7 @@ public class SplashScreenActivity extends CustomThemeEngineAppCompatActivity {
 
 		setContentView(R.layout.app_splashscreen);
 
-		int BackgroundTintColor = ColorUtils.Companion.lighter(getResources().getColor(R.color.colorAccent), 0.01f);
+		int BackgroundTintColor = ColorUtils.lighter(getResources().getColor(R.color.colorAccent), 0.01f);
 
 		Indicator1 = findViewById(R.id.appSplashScreenProgressBar1); //Indicator1(ProgressBar1)
 		Indicator2 = findViewById(R.id.appSplashScreenProgressBar2); //Indicator2(ProgressBar2)
@@ -60,7 +65,7 @@ public class SplashScreenActivity extends CustomThemeEngineAppCompatActivity {
 						Indicator2.setProgress(counter);
 						Indicator3.setProgress(counter);
 					} catch (InterruptedException e) {
-						Log.e(AppUtils.LOG_TAG, getString(R.string.app_error_occured));
+						Log.e(AppUtils.LOG_TAG, getString(R.string.app_error_occurred));
 						e.printStackTrace();
 					}
 				}

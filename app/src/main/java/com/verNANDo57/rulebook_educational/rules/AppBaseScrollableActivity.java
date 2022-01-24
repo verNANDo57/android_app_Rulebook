@@ -1,3 +1,8 @@
+/*
+ * Author: VerNANDo57 <silvenation@gmail.com>
+ * date: 2022/01/24 6:01PM GMT+7
+ */
+
 package com.verNANDo57.rulebook_educational.rules;
 
 import static com.verNANDo57.rulebook_educational.utils.AppUtils.LOG_TAG;
@@ -26,14 +31,15 @@ import androidx.core.widget.NestedScrollView;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.navigation.NavigationView;
-import com.verNANDo57.rulebook_educational.utils.AppUtils;
 import com.verNANDo57.rulebook_educational.BottomNavAmongLessonsFragment;
-import com.verNANDo57.rulebook_educational.bookmarks.AppBookmarkUtils;
 import com.verNANDo57.rulebook_educational.app.CustomThemeEngineAppCompatActivity;
-import com.verNANDo57.rulebook_educational.utils.ColorUtils;
+import com.verNANDo57.rulebook_educational.bookmarks.AppBookmarkUtils;
 import com.verNANDo57.rulebook_educational.extradata.R;
+import com.verNANDo57.rulebook_educational.markwon.Markwon;
 import com.verNANDo57.rulebook_educational.search.SearchReferences;
 import com.verNANDo57.rulebook_educational.styleabletoast.StyleableToast;
+import com.verNANDo57.rulebook_educational.utils.AppUtils;
+import com.verNANDo57.rulebook_educational.utils.ColorUtils;
 
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONException;
@@ -207,7 +213,7 @@ public class AppBaseScrollableActivity extends CustomThemeEngineAppCompatActivit
                 menu.getItem(1).setTitle(getResources().getString(R.string.app_remove_bookmark));
             }
         } catch (IOException e) {
-            Log.e(LOG_TAG, getResources().getString(R.string.app_error_occured));
+            Log.e(LOG_TAG, getResources().getString(R.string.app_error_occurred));
             e.printStackTrace();
         }
         return true;
@@ -247,7 +253,7 @@ public class AppBaseScrollableActivity extends CustomThemeEngineAppCompatActivit
                     menu.getItem(1).setIcon(ContextCompat.getDrawable(this, R.drawable.app_bookmark_minus));
                     menu.getItem(1).setTitle(getResources().getString(R.string.app_remove_bookmark));
                 } catch (IOException | JSONException e) {
-                    Log.e(LOG_TAG, getResources().getString(R.string.app_error_occured));
+                    Log.e(LOG_TAG, getResources().getString(R.string.app_error_occurred));
                     e.printStackTrace();
                 }
             } else {
@@ -260,7 +266,7 @@ public class AppBaseScrollableActivity extends CustomThemeEngineAppCompatActivit
                     menu.getItem(1).setIcon(ContextCompat.getDrawable(this, R.drawable.app_bookmark_plus));
                     menu.getItem(1).setTitle(getResources().getString(R.string.app_add_bookmark));
                 } catch (IOException | JSONException e) {
-                    Log.e(LOG_TAG, getResources().getString(R.string.app_error_occured));
+                    Log.e(LOG_TAG, getResources().getString(R.string.app_error_occurred));
                     e.printStackTrace();
                 }
             }

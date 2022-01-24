@@ -1,3 +1,8 @@
+/*
+ * Author: VerNANDo57 <silvenation@gmail.com>
+ * date: 2022/01/24 6:01PM GMT+7
+ */
+
 package com.verNANDo57.rulebook_educational;
 
 import static com.verNANDo57.rulebook_educational.utils.AppUtils.LOG_TAG;
@@ -94,39 +99,36 @@ public class AppAboutApplicationActivity extends CustomThemeEngineAppCompatActiv
 		ImageView about_preview = findViewById(R.id.about_preview);
 		about_preview.setColorFilter(R.color.colorAccent, PorterDuff.Mode.SRC_IN);
 
-		ImageButton buttongit = findViewById(R.id.buttongit);
-		buttongit.setColorFilter(R.color.colorAccent, PorterDuff.Mode.SRC_IN);
-		buttongit.setOnClickListener(new View.OnClickListener() {
+		ImageButton buttonGithub = findViewById(R.id.buttongit);
+		buttonGithub.setColorFilter(R.color.colorAccent, PorterDuff.Mode.SRC_IN);
+		buttonGithub.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				String github = "https://github.com/verNANDo57";
-				Intent intent3 = new Intent(Intent.ACTION_VIEW);
-				intent3.setData(Uri.parse(github));
-				startActivity(intent3);
+				Intent githubIntent = new Intent(Intent.ACTION_VIEW);
+				githubIntent.setData(Uri.parse("https://github.com/verNANDo57"));
+				startActivity(githubIntent);
 			}
 		});
 
-		ImageButton buttonvk = findViewById(R.id.buttonvk);
-		buttonvk.setColorFilter(R.color.colorAccent, PorterDuff.Mode.SRC_IN);
-		buttonvk.setOnClickListener(new View.OnClickListener() {
+		ImageButton buttonVk = findViewById(R.id.buttonvk);
+		buttonVk.setColorFilter(R.color.colorAccent, PorterDuff.Mode.SRC_IN);
+		buttonVk.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				String vk = "https://vk.com/vernando57";
-				Intent intent3 = new Intent(Intent.ACTION_VIEW);
-				intent3.setData(Uri.parse(vk));
-				startActivity(intent3);
+				Intent vkIntent = new Intent(Intent.ACTION_VIEW);
+				vkIntent.setData(Uri.parse("https://vk.com/vernando57"));
+				startActivity(vkIntent);
 		}
 		});
 
-		ImageButton buttontg = findViewById(R.id.buttontg);
-		buttontg.setColorFilter(R.color.colorAccent, PorterDuff.Mode.SRC_IN);
-		buttontg.setOnClickListener(new View.OnClickListener() {
+		ImageButton buttonTelegram = findViewById(R.id.buttontg);
+		buttonTelegram.setColorFilter(R.color.colorAccent, PorterDuff.Mode.SRC_IN);
+		buttonTelegram.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				String telegram = "https://t.me/VerNANDo57";
-				Intent intent3 = new Intent(Intent.ACTION_VIEW);
-				intent3.setData(Uri.parse(telegram));
-				startActivity(intent3);
+				Intent telegramIntent = new Intent(Intent.ACTION_VIEW);
+				telegramIntent.setData(Uri.parse("https://t.me/VerNANDo57"));
+				startActivity(telegramIntent);
 		}
 		});
 	}

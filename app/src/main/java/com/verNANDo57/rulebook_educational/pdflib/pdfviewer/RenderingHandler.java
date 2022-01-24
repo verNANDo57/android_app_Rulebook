@@ -1,3 +1,11 @@
+/*
+ * Author: barteksc
+ * date: 2019/08/18
+ *
+ * Modified by: VerNANDo57 <silvenation@gmail.com>
+ * date: 2022/01/24 6:01PM GMT+7
+ */
+
 package com.verNANDo57.rulebook_educational.pdflib.pdfviewer;
 
 import android.graphics.Bitmap;
@@ -25,11 +33,11 @@ class RenderingHandler extends Handler {
 
     private static final String TAG = RenderingHandler.class.getName();
 
-    private PDFView pdfView;
+    private final PDFView pdfView;
 
-    private RectF renderBounds = new RectF();
-    private Rect roundedRenderBounds = new Rect();
-    private Matrix renderMatrix = new Matrix();
+    private final RectF renderBounds = new RectF();
+    private final Rect roundedRenderBounds = new Rect();
+    private final Matrix renderMatrix = new Matrix();
     private boolean running = false;
 
     RenderingHandler(Looper looper, PDFView pdfView) {
@@ -115,7 +123,7 @@ class RenderingHandler extends Handler {
         running = true;
     }
 
-    private class RenderingTask {
+    private static class RenderingTask {
 
         float width, height;
 

@@ -1,3 +1,11 @@
+/*
+ * Author: barteksc
+ * date: 2019/08/18
+ *
+ * Modified by: VerNANDo57 <silvenation@gmail.com>
+ * date: 2022/01/24 6:01PM GMT+7
+ */
+
 package com.verNANDo57.rulebook_educational.pdflib.pdfviewer;
 
 import android.content.Context;
@@ -20,6 +28,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.widget.RelativeLayout;
 
+import com.verNANDo57.rulebook_educational.extradata.R;
 import com.verNANDo57.rulebook_educational.pdflib.pdfium.PdfDocument;
 import com.verNANDo57.rulebook_educational.pdflib.pdfium.PdfiumCore;
 import com.verNANDo57.rulebook_educational.pdflib.pdfium.util.Size;
@@ -52,6 +61,7 @@ import com.verNANDo57.rulebook_educational.pdflib.pdfviewer.util.FitPolicy;
 import com.verNANDo57.rulebook_educational.pdflib.pdfviewer.util.MathUtils;
 import com.verNANDo57.rulebook_educational.pdflib.pdfviewer.util.SnapEdge;
 import com.verNANDo57.rulebook_educational.pdflib.pdfviewer.util.Util;
+import com.verNANDo57.rulebook_educational.utils.ColorUtils;
 
 import java.io.File;
 import java.io.InputStream;
@@ -158,8 +168,6 @@ public class PDFView extends RelativeLayout {
 
     private boolean doubletapEnabled = true;
 
-    private boolean nightMode = false;
-
     private boolean pageSnap = true;
 
     /** Pdfium core for loading and rendering PDFs */
@@ -238,6 +246,9 @@ public class PDFView extends RelativeLayout {
         pagesLoader = new PagesLoader(this);
 
         paint = new Paint();
+        ColorMatrixColorFilter filter = new ColorMatrixColorFilter(new ColorMatrix(ColorUtils.createColorMatrixFromHex(getResources().getColor(R.color.app_custom_background))));
+        paint.setColorFilter(filter);
+
         debugPaint = new Paint();
         debugPaint.setStyle(Style.STROKE);
 
@@ -361,23 +372,6 @@ public class PDFView extends RelativeLayout {
         this.enableSwipe = enableSwipe;
     }
 
-    public void setNightMode(boolean nightMode) {
-        this.nightMode = nightMode;
-        if (nightMode) {
-            ColorMatrix colorMatrixInverted =
-                    new ColorMatrix(new float[]{
-                            -1, 0, 0, 0, 255,
-                            0, -1, 0, 0, 255,
-                            0, 0, -1, 0, 255,
-                            0, 0, 0, 1, 0});
-
-            ColorMatrixColorFilter filter = new ColorMatrixColorFilter(colorMatrixInverted);
-            paint.setColorFilter(filter);
-        } else {
-            paint.setColorFilter(null);
-        }
-    }
-
     void enableDoubletap(boolean enableDoubletap) {
         this.doubletapEnabled = enableDoubletap;
     }
@@ -427,10 +421,6 @@ public class PDFView extends RelativeLayout {
         recycled = true;
         callbacks = new Callbacks();
         state = State.DEFAULT;
-    }
-
-    public boolean isRecycled() {
-        return recycled;
     }
 
     /** Handle fling animation */
@@ -503,17 +493,12 @@ public class PDFView extends RelativeLayout {
         if (swipeVertical) {
             if (direction < 0 && currentXOffset < 0) {
                 return true;
-            } else if (direction > 0 && currentXOffset + toCurrentScale(pdfFile.getMaxPageWidth()) > getWidth()) {
-                return true;
-            }
+            } else return direction > 0 && currentXOffset + toCurrentScale(pdfFile.getMaxPageWidth()) > getWidth();
         } else {
             if (direction < 0 && currentXOffset < 0) {
                 return true;
-            } else if (direction > 0 && currentXOffset + pdfFile.getDocLen(zoom) > getWidth()) {
-                return true;
-            }
+            } else return direction > 0 && currentXOffset + pdfFile.getDocLen(zoom) > getWidth();
         }
-        return false;
     }
 
     @Override
@@ -580,7 +565,7 @@ public class PDFView extends RelativeLayout {
 
         Drawable bg = getBackground();
         if (bg == null) {
-            canvas.drawColor(nightMode ? Color.BLACK : Color.WHITE);
+            canvas.drawColor(getResources().getColor(R.color.app_custom_background));
         } else {
             bg.draw(canvas);
         }
@@ -1352,8 +1337,6 @@ public class PDFView extends RelativeLayout {
 
         private boolean pageSnap = false;
 
-        private boolean nightMode = false;
-
         private Configurator(DocumentSource documentSource) {
             this.documentSource = documentSource;
         }
@@ -1503,11 +1486,6 @@ public class PDFView extends RelativeLayout {
             return this;
         }
 
-        public Configurator nightMode(boolean nightMode) {
-            this.nightMode = nightMode;
-            return this;
-        }
-
         public Configurator disableLongpress() {
             PDFView.this.dragPinchManager.disableLongpress();
             return this;
@@ -1533,7 +1511,6 @@ public class PDFView extends RelativeLayout {
             PDFView.this.callbacks.setOnPageError(onPageErrorListener);
             PDFView.this.callbacks.setLinkHandler(linkHandler);
             PDFView.this.setSwipeEnabled(enableSwipe);
-            PDFView.this.setNightMode(nightMode);
             PDFView.this.enableDoubletap(enableDoubletap);
             PDFView.this.setDefaultPage(defaultPage);
             PDFView.this.setSwipeVertical(!swipeHorizontal);

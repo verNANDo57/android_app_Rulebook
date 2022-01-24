@@ -1,3 +1,11 @@
+/*
+ * Author: sujithkanna
+ * date: 2020/03/29
+ *
+ * Modified by: VerNANDo57 <silvenation@gmail.com>
+ * date: 2021/06/05
+ */
+
 package com.verNANDo57.rulebook_educational;
 
 import android.animation.AnimatorSet;

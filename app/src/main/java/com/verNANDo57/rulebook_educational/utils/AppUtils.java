@@ -1,9 +1,18 @@
+/*
+ * Author: VerNANDo57 <silvenation@gmail.com>
+ * date: 2022/01/24 6:01PM GMT+7
+ *
+ * Modified by: VerNANDo57 <silvenation@gmail.com>
+ * date: 2021/06/05
+ */
+
 package com.verNANDo57.rulebook_educational.utils;
 
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
+import android.content.res.Configuration;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.BackgroundColorSpan;
@@ -18,6 +27,7 @@ import android.widget.TextView;
 import androidx.annotation.AnimRes;
 
 import com.verNANDo57.rulebook_educational.extradata.R;
+import com.verNANDo57.rulebook_educational.rules.Constants;
 import com.verNANDo57.rulebook_educational.styleabletoast.StyleableToast;
 
 import java.io.BufferedReader;
@@ -244,13 +254,13 @@ public class AppUtils {
         try {
             pInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), 0);
         } catch (PackageManager.NameNotFoundException e) {
-            Log.e(AppUtils.LOG_TAG, context.getString(R.string.app_error_occured));
+            Log.e(AppUtils.LOG_TAG, context.getString(R.string.app_error_occurred));
             e.printStackTrace();
         }
 
         //Grab Info
         if (info_mode==PACKAGEMANAGER_GET_APP_VERISON_NAME) {
-            output_info=pInfo.versionName.toString();
+            output_info=pInfo.versionName;
         } else if (info_mode==PACKAGEMANAGER_GET_APP_VERISON_CODE)  {
             output_info=String.valueOf(pInfo.versionCode);
         }
@@ -259,7 +269,7 @@ public class AppUtils {
         return output_info;
     }
 
-    public static void copyTXTFileFromAssets (Context context, String filename, String outPreDir, String outDir, String outFileName, String outFileDir, String log_msg){
+    public static void copyTXTFileFromAssets (Context context, String filename, String outPreDir, String outDir, String outFileName, String outFileDir, String log_msg) {
         AssetManager assetManager = context.getAssets();
         InputStream in;
         OutputStream out;
@@ -295,6 +305,7 @@ public class AppUtils {
                 out.close();
 
                 new StyleableToast.Builder(context)
+                        .text(context.getString(R.string.app_saved) + ":" + outFileDir + outFileName + Constants.FILE_EXPORT_FORMAT) // set text
                         .textBold() //set text bold
                         .iconStart(AppUtils.getIconWarning()) //icon in start of toast
                         .show(); //show custom toast
@@ -309,5 +320,24 @@ public class AppUtils {
                     .iconStart(AppUtils.getIconWarning()) //icon in start of toast
                     .show(); //show custom toast
         }
+    }
+
+    /**
+     * @param context
+     *
+     * Using this method we can find out which theme is being used.
+     * This method is needed because of DayNight engine.
+     * Since user can use FOLLOW_SYSTEM or AUTO_BATTERY option, we can't just use AppCompatDelegate to find out which theme is being used.
+     *
+     * Returns TRUE if dark theme is being used, otherwise it returns FALSE.
+     */
+    public static boolean darkModeIsEnabled(Context context) {
+        switch (context.getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK) {
+            case Configuration.UI_MODE_NIGHT_YES:
+                return true;
+            case Configuration.UI_MODE_NIGHT_NO:
+                return false;
+        }
+        return false;
     }
 }

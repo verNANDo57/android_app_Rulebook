@@ -1,3 +1,8 @@
+/*
+ * Author: VerNANDo57 <silvenation@gmail.com>
+ * date: 2022/01/24 6:01PM GMT+7
+ */
+
 package com.verNANDo57.rulebook_educational.search;
 
 import android.content.Context;
@@ -5,8 +10,8 @@ import android.content.Intent;
 
 import com.verNANDo57.rulebook_educational.extradata.R;
 import com.verNANDo57.rulebook_educational.rules.AppBaseScrollableActivity;
-import com.verNANDo57.rulebook_educational.utils.AppUtils;
 import com.verNANDo57.rulebook_educational.rules.Constants;
+import com.verNANDo57.rulebook_educational.utils.AppUtils;
 
 import java.util.ArrayList;
 

@@ -1,3 +1,11 @@
+/*
+ * Author: Muddz
+ * date: 2021/08/02
+ *
+ * Modified by: VerNANDo57 <silvenation@gmail.com>
+ * date: 2021/06/05
+ */
+
 package com.verNANDo57.rulebook_educational.styleabletoast;
 
 import android.annotation.SuppressLint;
@@ -164,7 +172,7 @@ public class StyleableToast extends LinearLayout {
 
         if (iconStart != 0) {
             Drawable drawable = DrawableCompat.wrap(Objects.requireNonNull(ContextCompat.getDrawable(getContext(), iconStart)));
-            DrawableCompat.setTint(drawable, getResources().getColor(R.color.styleable_toast_default_accent_color));
+            DrawableCompat.setTint(drawable, getResources().getColor(R.color.app_styleable_toast_default_accent_color));
             drawable.setBounds(0, 0, iconSize, iconSize);
             TextViewCompat.setCompoundDrawablesRelative(textView, drawable, null, null, null);
             if (StyleableToastUtils.isRTL()) {
@@ -176,7 +184,7 @@ public class StyleableToast extends LinearLayout {
 
         if (iconEnd != 0) {
             Drawable drawable = DrawableCompat.wrap(Objects.requireNonNull(ContextCompat.getDrawable(getContext(), iconEnd)));
-            DrawableCompat.setTint(drawable, getResources().getColor(R.color.styleable_toast_default_accent_color));
+            DrawableCompat.setTint(drawable, getResources().getColor(R.color.app_styleable_toast_default_accent_color));
             drawable.setBounds(0, 0, iconSize, iconSize);
             TextViewCompat.setCompoundDrawablesRelative(textView, null, null, drawable, null);
             if (StyleableToastUtils.isRTL()) {
@@ -206,7 +214,7 @@ public class StyleableToast extends LinearLayout {
             return;
         }
 
-        backgroundColor = typedArray.getColor(R.styleable.StyleableToast_stColorBackground, ContextCompat.getColor(getContext(), R.color.styleable_toast_default_background_color));
+        backgroundColor = typedArray.getColor(R.styleable.StyleableToast_stColorBackground, ContextCompat.getColor(getContext(), R.color.app_styleable_toast_default_background_color));
         int defaultCornerRadius = (int) getResources().getDimension(R.dimen.default_corner_radius);
         cornerRadius = (int) typedArray.getDimension(R.styleable.StyleableToast_stRadius, defaultCornerRadius);
         length = typedArray.getInt(R.styleable.StyleableToast_stLength, 0);

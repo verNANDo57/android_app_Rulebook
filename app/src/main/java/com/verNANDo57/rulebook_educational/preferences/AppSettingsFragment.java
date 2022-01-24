@@ -1,3 +1,8 @@
+/*
+ * Author: VerNANDo57 <silvenation@gmail.com>
+ * date: 2022/01/24 6:01PM GMT+7
+ */
+
 package com.verNANDo57.rulebook_educational.preferences;
 
 import android.content.DialogInterface;
@@ -28,13 +33,13 @@ public class AppSettingsFragment extends PreferenceFragmentCompat
 			public boolean onPreferenceClick(Preference preference) {
 				// setup the alert builder
 				AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
-				builder.setTitle(getString(R.string.app_darktheme_switch_summary));
+				builder.setTitle(getString(R.string.app_darkTheme_switch_summary));
 				// add a list
 				String[] options = {
-						getString(R.string.app_darktheme_mode_no),
-						getString(R.string.app_darktheme_mode_yes),
-						getString(R.string.app_darktheme_mode_followsystem),
-						getString(R.string.app_darktheme_mode_battery)};
+						getString(R.string.app_darkTheme_mode_no),
+						getString(R.string.app_darkTheme_mode_yes),
+						getString(R.string.app_darkTheme_mode_followSystem),
+						getString(R.string.app_darkTheme_mode_battery)};
 
 				int checkedItem = 0; // Dark mode: NO
 				if (preferences.loadRulebookDarkModeBooleanState() == AppCompatDelegate.MODE_NIGHT_YES) {

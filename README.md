@@ -5,9 +5,10 @@ The development was started in _June 2020_.
 
 ## Notes
 These libraries were used:
- - PdfiumAndroid (no longer maintained) [Modified]
- - AndroidPdfViewer (no longer maintained) [Modified]
-
+ - [PdfiumAndroid](https://github.com/barteksc/PdfiumAndroid) [Modified]
+ - [AndroidPdfViewer](https://github.com/barteksc/AndroidPdfViewer) [Modified]
+ - [SmileyRating](https://github.com/sujithkanna) [Modified]
+ - [Markwon](https://github.com/noties/Markwon) [Modified]
 
 ```
 #

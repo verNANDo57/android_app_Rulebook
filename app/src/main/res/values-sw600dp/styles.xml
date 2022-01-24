@@ -4,7 +4,7 @@
 
     <style name="AppTopBarTitleTextStyle" parent="Widget.AppCompat.TextView">
         <item name="android:textAppearance">@style/TextAppearance.Widget.AppCompat.Toolbar.Title</item>
-        <item name="android:textColor">@color/bottomappbar_item_color</item>
+        <item name="android:textColor">@color/app_toolbar_item_color</item>
         <item name="android:textSize">@dimen/appbar_title_textsize_large</item>
         <item name="android:textStyle">bold</item>
         <item name="android:background">@color/colorAccent</item>
@@ -35,7 +35,7 @@
     </style>
 
     <style name="RulebookButtonDefault" parent="Widget.AppCompat.Button">
-        <item name="android:textColor">@color/button_color_default</item>
+        <item name="android:textColor">@color/app_button_color_default</item>
         <item name="android:stateListAnimator" tools:targetApi="lollipop">@animator/btn_anim_zoom</item>
         <item name="android:background">@drawable/buttonshape</item>
         <item name="android:textStyle">bold</item>

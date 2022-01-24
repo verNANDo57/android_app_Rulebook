@@ -5,5 +5,5 @@
     android:viewportHeight="225">
   <path
       android:pathData="M28,79.5L21.5,86.03L112.5,177L203.5,86.01L190.48,73L112.5,151L34.49,72.98L28,79.5Z"
-      android:fillColor="@color/bottomappbar_item_color"/>
+      android:fillColor="@color/app_toolbar_item_color"/>
 </vector>

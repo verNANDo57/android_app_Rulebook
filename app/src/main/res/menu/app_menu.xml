@@ -11,7 +11,7 @@
 
         <item
             android:id="@+id/exit_actionbar_extended"
-            android:icon="@drawable/ic_close_black"
+            android:icon="@drawable/ic_close_toolbar"
             android:title="@string/exit_actionbar"
             app:showAsAction="ifRoom">
         </item>

@@ -16,7 +16,7 @@
         android:layout_height="wrap_content"
         android:drawablePadding="@dimen/drawable_padding"
         android:gravity="center"
-        android:textColor="@color/styleable_toast_default_accent_color"
+        android:textColor="@color/app_styleable_toast_default_accent_color"
         android:textSize="@dimen/default_text_size"
         tools:text="Hello World" />
 

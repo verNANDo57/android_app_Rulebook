@@ -12,9 +12,7 @@
 		android:id="@+id/toolbar_in_mainrules_layout"
 		android:layout_width="match_parent"
 		android:layout_height="@dimen/app_toolbar_height"
-		android:background="@drawable/app_toolbar"
 		android:layout_margin="@dimen/app_toolbar_margin"
-		app:navigationIcon="@drawable/ic_view_list_black"
 		app:title="@string/main_rules" />
 
 	<com.google.android.material.tabs.TabLayout

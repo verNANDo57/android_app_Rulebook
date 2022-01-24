@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Rulebook</string>
-    <string name="app_name_mainactivity">Rulebook: Меню</string>
+    <string name="app_name_mainActivity">Rulebook: Меню</string>
     <string name="app_name_credits">Rulebook: О Приложении</string>
-    <string name="app_name_chooseyourdestiny">Rulebook: Правила</string>
-    <string name="app_name_mainrules">Rulebook: Основы</string>
-    <string name="app_name_schemesandtables">Rulebook: В схемах и таблицах</string>
+    <string name="app_name_sectionSelection">Rulebook: Правила</string>
+    <string name="app_name_mainRules">Rulebook: Основы</string>
+    <string name="app_name_schemesAndTables">Rulebook: В схемах и таблицах</string>
     <string name="app_name_lexicon">Rulebook: Лексика</string>
     <string name="app_name_rating">Rulebook: Отзыв</string>
     <string name="app_name_search">Rulebook: Поиск</string>
@@ -24,7 +24,7 @@
     <string name="app_dpi" translatable="false">dpi</string>
 
     <string name="review_device_name" translatable="false">Устройство:</string>
-    <string name="review_device_manufacter" translatable="false">Изготовитель:</string>
+    <string name="review_device_manufacturer" translatable="false">Изготовитель:</string>
     <string name="review_device_model" translatable="false">Модель:</string>
     <string name="review_oc_name" translatable="false">Наименование версии ОС:</string>
     <string name="review_device_sdk_version" translatable="false">Версия SDK вашего устройства:</string>
@@ -55,21 +55,19 @@
     <string name="app_launch_ic_launch_search_rules">Поиск</string>
     <string name="app_launch_ic_launch_search_rules_extended">Быстрый доступ</string>
 
-    <string name="app_themepickerpreview_title">Текст</string>
+    <string name="voiceSearch">Голосовой Ввод</string>
 
-    <string name="voicesearch">Голосовой Ввод</string>
+    <string name="app_darkTheme_switch_summary">Выберите режим</string>
+    <string name="app_darkTheme_switch">Тёмная тема</string>
+    <string name="app_darkTheme_mode_followSystem">Следовать настройкам системы</string>
+    <string name="app_darkTheme_mode_no">Отключить</string>
+    <string name="app_darkTheme_mode_yes">Включить</string>
+    <string name="app_darkTheme_mode_battery">Включать в режиме энергосбережения</string>
 
-    <string name="app_darktheme_switch_summary">Выберите режим</string>
-    <string name="app_darktheme_switch">Тёмная тема</string>
-    <string name="app_darktheme_mode_followsystem">Следовать настройкам системы</string>
-    <string name="app_darktheme_mode_no">Отключить</string>
-    <string name="app_darktheme_mode_yes">Включить</string>
-    <string name="app_darktheme_mode_battery">Включать в режиме энергосбережения</string>
-
-    <string name="app_enable_statusbar">Строка состояния</string>
-    <string name="app_enable_statusbar_summary">Не скрывать строку состояния</string>
-    <string name="app_autohide_bottomappbar">Всплывающая панель навигации</string>
-    <string name="app_autohide_bottomappbar_summary">Автоматически скрывать всплывающую панель навигации (При скроллинге вверх и вниз, соответственно)</string>
+    <string name="app_enable_statusBar">Строка состояния</string>
+    <string name="app_enable_statusBar_summary">Не скрывать строку состояния</string>
+    <string name="app_autoHide_bottomAppBar">Всплывающая панель навигации</string>
+    <string name="app_autoHide_bottomAppBar_summary">Автоматически скрывать всплывающую панель навигации (При скроллинге вверх и вниз, соответственно)</string>
     <string name="app_prefs_warning_summary">После введённых изменений, для корректного отображения интерфейса может потребоваться перезагрузка.</string>
 
     <string name="app_edittext_is_empty">Напишите что-нибудь</string>
@@ -110,10 +108,10 @@
     <string name="category_pref_interface">Интерфейс</string>
     <string name="category_pref_functions">Функции</string>
     <string name="category_pref_others">Другое</string>
-    <string name="search_viewhint">Поисковая строка</string>
-    <string name="searchword_view_hint">Слово</string>
+    <string name="search_viewHint">Поисковая строка</string>
+    <string name="searchWord_view_hint">Слово</string>
     <string name="app_next">Далее</string>
-    <string name="app_storageaccess_warning">С 11-й версии Android доступ к внутреннему хранилищу устройства получить не так уж и просто. Данное разрешение необходимо для сохранения текстовых файлов в памяти вашего устройвства. Разрешение необходимо выдать вручную, в настройках устройства. Помните, что данное разрешение выдавать не обязательно, иными словами вы можете пользоваться приложением и без него. Перейти в настройки?</string>
+    <string name="app_storageAccess_warning">С 11-й версии Android доступ к внутреннему хранилищу устройства получить не так уж и просто. Данное разрешение необходимо для сохранения текстовых файлов в памяти вашего устройвства. Разрешение необходимо выдать вручную, в настройках устройства. Помните, что данное разрешение выдавать не обязательно, иными словами вы можете пользоваться приложением и без него. Перейти в настройки?</string>
     <string name="app_error_while_saving_file">Ошибка при попытке сохранения файла. Вероятнее всего, приложение не имеет необходимых разрешений для сохранения файлов.</string>
     <string name="app_save">Сохранить</string>
     <string name="app_save_in_process">Сохранение…</string>
@@ -122,58 +120,22 @@
     <string name="app_granted">Разрешено</string>
     <string name="app_denied">Запрещено</string>
     <string name="app_warning">Внимание</string>
-    <string name="app_error_occured">Возникла неизвестная ошибка, проверьте логи</string>
+    <string name="app_error_occurred">Возникла неизвестная ошибка, проверьте логи</string>
     <string name="app_error_file">Такого файла не существует</string>
     <string name="app_error_file_rename">Не удалось переименовать файл</string>
     <string name="app_error_file_delete">Не удалось удалить файл</string>
     <string name="app_reason_why_these_permissions_are_needed">Если вы не дадите приложению доступ к внутренней памяти устройства, то, к сожалению, будет невозможным что-либо сохранять. ¯\_(ツ)_/¯</string>
 
-    <string name="compose_disabled_message">Ярлык недоступен по неизвестной причине.</string>
+    <string name="compose_disabled_message">Ярлык недоступен по неизвестной причине</string>
     <string name="error_while_reading_theme">Ошибка при попытке чтения темы</string>
 
-    <string name="bottomsheetdialog_headline">Меню быстрого доступа</string>
+    <string name="BottomSheetDialog_headline">МЕНЮ</string>
 
     <string name="main_rules">Основные</string>
     <string name="lexicon_rules">Лексика</string>
     <string name="dictionaries">Словари</string>
     <string name="tables_and_schemes_rules">Схемы и таблицы</string>
     <string name="analyze_methods">Виды разборов</string>
-
-    <string name="label_theme_picker">Выберите тему</string>
-
-    <string name="pref_theme_title">Темы</string>
-    <string name="pref_theme_summary">Выберите одну из предустановленных тем</string>
-    <string name="pref_primary_color_title">Основной цвет</string>
-    <string name="pref_primary_color_summary">Покрывает меньшую часть приложения</string>
-    <string name="pref_accent_color_title">Цвет акцента</string>
-    <string name="pref_accent_color_summary">Цвет акцента покрывает основную часть приложения</string>
-    <string name="pref_background_color_title">Фоновой цвет</string>
-    <string name="pref_background_color_summary">Фоновой цвет</string>
-    <string name="pref_bottomappbar_item_color_title">Цвет элементов всплывающей панели навигации</string>
-    <string name="pref_bottomappbar_item_color_summary">Цвет кнопок панели навигации</string>
-    <string name="pref_toast_background_color_title">Фоновой цвет Toast сообщений</string>
-    <string name="pref_toast_background_color_summary">Задаёт цвет фона для Toast сообщений</string>
-    <string name="pref_toast_accent_color_title">Цвет акцента Toast сообщений</string>
-    <string name="pref_toast_accent_color_summary">Цвет акцента покрывает основную часть Toast сообщения</string>
-    <string name="pref_button_stroke_color_title">Цвет кнопок</string>
-    <string name="pref_button_stroke_color_summary">Кнопки покрываются основным цветом</string>
-    <string name="pref_bottomsheetdialog_accent_title">Цвет акцента в меню быстрого доступа</string>
-    <string name="pref_bottomsheetdialog_accent_summary">Цвет акцента покрывает основную часть меню быстрого доступа</string>
-    <string name="pref_bottomsheetdialog_primary_title">Основной цвет в меню быстрого доступа</string>
-    <string name="pref_bottomsheetdialog_primary_summary">Основной цвет покрывает меньшую часть меню быстрого доступа</string>
-    <string name="pref_bottomsheetdialog_background_title">Цвет фона в меню быстрого доступа</string>
-
-    <string name="pref_category_appearance">Внешний вид</string>
-    <string name="pref_category_appearance_bottomappbar">Всплывающая панель навигации</string>
-    <string name="pref_category_appearance_toast">Toast сообщения</string>
-    <string name="pref_category_appearance_button">Кнопки</string>
-    <string name="pref_category_appearance_bottomsheetdialog">Меню быстрого доступа</string>
-
-    <string name="colorpicker_default_title">Выберите цвет</string>
-    <string name="colorpicker_presets">Предустановленные</string>
-    <string name="colorpicker_custom">Пользовательские</string>
-    <string name="colorpicker_select">Выбрать</string>
-    <string name="colorpicker_transparency">Прозрачность</string>
 
     <string name="app_pdf_title">Название</string>
     <string name="app_pdf_author">Автор</string>

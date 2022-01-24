@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         app:fabAlignmentMode="center"
-        app:navigationIcon="@drawable/ic_view_list_black"
+        app:navigationIcon="@drawable/ic_view_list_toolbar"
         app:hideOnScroll="true"
         app:layout_scrollFlags="scroll|exitUntilCollapsed">
 

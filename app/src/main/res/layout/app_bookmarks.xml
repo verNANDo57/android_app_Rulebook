@@ -14,8 +14,6 @@
         android:id="@+id/toolbar_bookmarks"
         android:layout_width="match_parent"
         android:layout_height="@dimen/app_toolbar_height"
-        android:background="@drawable/app_toolbar"
-        app:navigationIcon="@drawable/ic_view_list_black"
         app:title="@string/app_bookmarks" />
 
     <EditText
@@ -23,7 +21,7 @@
         style="@style/EditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/search_viewhint"
+        android:hint="@string/search_viewHint"
         android:inputType="textAutoComplete"
         android:importantForAutofill="no" />
 

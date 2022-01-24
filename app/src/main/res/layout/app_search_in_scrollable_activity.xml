@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/app_wordsearch_edittext"
-        android:hint="@string/searchword_view_hint"
+        android:hint="@string/searchWord_view_hint"
         android:background="@drawable/app_review_edittext_shape"
         android:inputType="textLongMessage"
         android:layout_marginStart="@dimen/app_searchword_edittext_margin"

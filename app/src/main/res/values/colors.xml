@@ -1,36 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<color name="navbar_color">#FF562C22</color>
-	<color name="statusbar_color">#FF562C22</color>
-	<color name="actionbar_in_recents_default_color">#FF562C22</color>
-	<color name="bottomappbar_item_color">#FFF0E3DD</color>
-	<color name="app_text">#FF562C22</color>
-	<color name="text_appbar_black">#000000</color>
+	<color name="app_navbar_color">#562C22</color>
+	<color name="app_statusbar_color">#562C22</color>
+	<color name="app_actionbar_in_recents_default_color">#562C22</color>
+	<color name="app_toolbar_item_color">#F0E3DD</color>
+	<color name="app_text">#562C22</color>
+	<color name="app_text_appbar_black">#000000</color>
 
-	<color name="bottomsheetdialog_accent">#FF562C22</color>
-	<color name="bottomsheetdialog_primary">#FF562C22</color>
+	<color name="app_bottomsheetdialog_accent">#562C22</color>
+	<color name="app_bottomsheetdialog_primary">#562C22</color>
 
-	<color name="app_rulebook_background">#FFFFFF</color>
+	<color name="app_button_color_default">#562C22</color>
 
-	<color name="button_color_default">#FF562C22</color>
-
-	<color name="app_vector_rating_face_color">#FF562C22</color>
+	<color name="app_vector_rating_face_color">#562C22</color>
 	<color name="app_vector_rating_eyes_color">#000000</color>
 	<color name="app_vector_rating_tongue_color">#c32925</color>
 	<color name="app_vector_rating_mouth_color">#000000</color>
 
-	<color name="colorPrimary">#FF562C22</color>
-	<color name="colorPrimaryDark">#FF49251C</color>
-	<color name="colorAccent">#FF562C22</color>
+	<color name="colorPrimary">#562C22</color>
+	<color name="colorPrimaryDark">#49251C</color>
+	<color name="colorAccent">#562C22</color>
 
 	<!-- Background colors -->
-	<eat-comment/>
-	<color name="custom_background">#FFF0E3DD</color>
-	<color name="custom_background_darker">#FFF0E3DD</color>
-	<color name="custom_background_lighter">#FFF0E3DD</color>
+	<color name="app_custom_background">#F0E3DD</color>
+	<color name="app_custom_background_darker">#F0E3DD</color>
+	<color name="app_custom_background_lighter">#F0E3DD</color>
 
-	<color name="styleable_toast_default_background_color">#FFF0E3DD</color>
-	<color name="styleable_toast_default_accent_color">#FF562C22</color>
-	<color name="styleable_toast_default_text_color">#FF562C22</color>
+	<color name="app_styleable_toast_default_background_color">#F0E3DD</color>
+	<color name="app_styleable_toast_default_accent_color">#562C22</color>
+	<color name="app_styleable_toast_default_text_color">#562C22</color>
 
 </resources>

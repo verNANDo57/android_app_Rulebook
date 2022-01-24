@@ -6,7 +6,7 @@
         android:enabled="true"
         android:icon="@drawable/ic_launch_basics"
         android:roundIcon="@drawable/ic_launch_basics_round"
-        android:label="@string/app_name_mainrules"
+        android:label="@string/app_name_mainRules"
         android:shortcutShortLabel="@string/app_launch_basics"
         android:shortcutLongLabel="@string/app_launch_basics_extended"
         android:shortcutDisabledMessage="@string/compose_disabled_message">
@@ -22,7 +22,7 @@
         android:enabled="true"
         android:icon="@drawable/ic_launch_analyze_methods"
         android:roundIcon="@drawable/ic_launch_analyze_methods_round"
-        android:label="@string/app_name_schemesandtables"
+        android:label="@string/app_name_schemesAndTables"
         android:shortcutShortLabel="@string/app_launch_schemes_and_tables"
         android:shortcutLongLabel="@string/app_launch_schemes_and_tables_extended"
         android:shortcutDisabledMessage="@string/compose_disabled_message">

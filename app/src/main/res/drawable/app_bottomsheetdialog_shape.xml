@@ -3,8 +3,8 @@
 	<corners
 		android:topLeftRadius="15dp"
 		android:topRightRadius="15dp"
-		android:bottomLeftRadius="0dp"
-		android:bottomRightRadius="0dp"/>
+		android:bottomLeftRadius="15dp"
+		android:bottomRightRadius="15dp"/>
 
 	<padding
 		android:left="0dp"
@@ -17,5 +17,5 @@
 		android:color="@color/colorAccent"/>
 
 	<solid
-		android:color="@color/app_rulebook_background"/>
+		android:color="@color/app_custom_background"/>
 </shape>

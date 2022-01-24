@@ -35,13 +35,17 @@
 	<dimen name="app_bottom_navigation_icon_size">24dp</dimen>
 	<dimen name="app_bottom_navigation_elevation">8dp</dimen>
 
+	<dimen name="app_bottomsheetdialog_shape_stroke_width">5dp</dimen>
+
 	<dimen name="app_bottomsheetdialog_headline_size">30dp</dimen>
 	<dimen name="app_bottomsheetdialog_marginEndOrRight">5dp</dimen>
 	<dimen name="app_bottomsheetdialog_marginStartOrLeft">5dp</dimen>
-	<dimen name="app_bottomsheetdialog_marginBottom">0dp</dimen>
-	<dimen name="app_bottomsheetdialog_marginTop">0dp</dimen>
-	<dimen name="app_bottomsheetdialog_headline_marginTop">10dp</dimen>
+	<dimen name="app_bottomsheetdialog_marginBottom">5dp</dimen>
+	<dimen name="app_bottomsheetdialog_marginTop">10dp</dimen>
 	<dimen name="app_bottomsheetdialog_constraintHorizontal_bias">0.0</dimen>
+
+	<dimen name="app_bottomsheetdialog_handler_width">110dp</dimen>
+	<dimen name="app_bottomsheetdialog_handler_height">10dp</dimen>
 
 	<dimen name="app_everycardview_margintop">8dp</dimen>
 
@@ -140,7 +144,6 @@
 
 	<dimen name="app_toolbar_marginbottom">20dp</dimen>
 	<dimen name="app_toolbar_shape_stroke_width">5dp</dimen>
-	<dimen name="app_bottomsheetdialog_shape_stroke_width">5dp</dimen>
 	<dimen name="app_bar_icon_width_height">60dp</dimen>
 	<dimen name="app_bar_icon_width_width">100dp</dimen>
 

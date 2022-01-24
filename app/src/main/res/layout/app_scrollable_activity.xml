@@ -45,7 +45,7 @@
                         android:layout_width="@dimen/app_bar_icon_width_height"
                         android:layout_height="@dimen/app_bar_icon_width_height"
                         android:layout_centerHorizontal="true"
-                        android:contentDescription="@string/app_name_mainrules"
+                        android:contentDescription="@string/app_name_mainRules"
                         android:background="@drawable/ic_search_menu"
                         android:backgroundTint="@color/colorAccent" />
 
@@ -85,7 +85,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/app_toolbar_height_in_scrollableactivity"
                 android:background="@drawable/app_toolbar_scrollableactivity"
-                app:navigationIcon="@drawable/ic_view_list_black"
                 app:layout_collapseMode="pin" />
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>

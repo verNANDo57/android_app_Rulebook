@@ -8,5 +8,5 @@
     <corners
         android:bottomLeftRadius="10dp"
         android:topLeftRadius="10dp" />
-    <solid android:color="@color/app_rulebook_background" />
+    <solid android:color="@color/app_custom_background" />
 </shape>

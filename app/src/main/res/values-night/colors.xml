@@ -1,35 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<color name="navbar_color">#FF562C22</color>
-	<color name="statusbar_color">#FF562C22</color>
-	<color name="actionbar_in_recents_default_color">#FF562C22</color>
-	<color name="bottomappbar_item_color">#FF562C22</color>
-	<color name="app_text">#FFF0E3DD</color>
-	<color name="text_appbar_black">#FFF0E3DD</color>
+	<color name="app_navbar_color">#562C22</color>
+	<color name="app_statusbar_color">#562C22</color>
+	<color name="app_actionbar_in_recents_default_color">#562C22</color>
+	<color name="app_toolbar_item_color">#562C22</color>
+	<color name="app_text">#F0E3DD</color>
+	<color name="app_text_appbar_black">#F0E3DD</color>
 
-	<color name="bottomsheetdialog_accent">#FFF0E3DD</color>
-	<color name="bottomsheetdialog_primary">#FFF0E3DD</color>
+	<color name="app_bottomsheetdialog_accent">#F0E3DD</color>
+	<color name="app_bottomsheetdialog_primary">#F0E3DD</color>
 
-	<color name="app_rulebook_background">#FF562C22</color>
+	<color name="app_button_color_default">#F0E3DD</color>
 
-	<color name="button_color_default">#FFF0E3DD</color>
-
-	<color name="app_vector_rating_face_color">#FFF0E3DD</color>
-	<color name="app_vector_rating_eyes_color">#FF562C22</color>
+	<color name="app_vector_rating_face_color">#F0E3DD</color>
+	<color name="app_vector_rating_eyes_color">#562C22</color>
 	<color name="app_vector_rating_tongue_color">#c32925</color>
-	<color name="app_vector_rating_mouth_color">#FF562C22</color>
+	<color name="app_vector_rating_mouth_color">#562C22</color>
 
-	<color name="colorPrimary">#FFF0E3DD</color>
-	<color name="colorPrimaryDark">#FFCABDB7</color>
-	<color name="colorAccent">#FFF0E3DD</color>
+	<color name="colorPrimary">#F0E3DD</color>
+	<color name="colorPrimaryDark">#CABDB7</color>
+	<color name="colorAccent">#F0E3DD</color>
 
 	<!-- Background colors -->
-	<eat-comment/>
-	<color name="custom_background">#FF562C22</color>
-	<color name="custom_background_darker">#FF562C22</color>
-	<color name="custom_background_lighter">#FF562C22</color>
+	<color name="app_custom_background">#562C22</color>
+	<color name="app_custom_background_darker">#562C22</color>
+	<color name="app_custom_background_lighter">#562C22</color>
 
-	<color name="styleable_toast_default_background_color">#FF562C22</color>
-	<color name="styleable_toast_default_accent_color">#FFF0E3DD</color>
-	<color name="styleable_toast_default_text_color">#FFF0E3DD</color>
+	<color name="app_styleable_toast_default_background_color">#562C22</color>
+	<color name="app_styleable_toast_default_accent_color">#F0E3DD</color>
+	<color name="app_styleable_toast_default_text_color">#F0E3DD</color>
 </resources>

@@ -15,31 +15,33 @@
 		<item name="windowActionBar">false</item>
 		<item name="windowNoTitle">true</item>
 		<item name="android:listViewStyle">@style/ThemeListView</item>
-		<item name="bottomSheetDialogTheme">@style/AppBarBottomSheetDialogLight</item>
+		<item name="bottomSheetDialogTheme">@style/AppBarBottomSheetDialogStyle</item>
         <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/app_rulebook_productsans_fontfamily</item>
 		<item name="fontFamily">@font/app_rulebook_productsans_fontfamily</item>
 		<item name="snackbarStyle">@style/SnackBar</item>
 		<item name="android:popupTheme" tools:targetApi="lollipop">@style/ThemeOverlay.MaterialComponents.Light</item>
-		<item name="android:windowBackground">@color/custom_background</item>
+		<item name="android:windowBackground">@color/app_custom_background</item>
 		<item name="popupTheme">@style/ThemeOverlay.MaterialComponents.Light</item>
 		<item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
-		<item name="backgroundColor">@color/custom_background</item>
-		<item name="backgroundColorDark">@color/custom_background_darker</item>
-		<item name="backgroundColorLight">@color/custom_background_lighter</item>
+		<item name="backgroundColor">@color/app_custom_background</item>
+		<item name="backgroundColorDark">@color/app_custom_background_darker</item>
+		<item name="backgroundColorLight">@color/app_custom_background_lighter</item>
 		<item name="imageButtonStyle">@style/AppImageButtonStyle</item>
 		<item name="alertDialogTheme">@style/AppAlertDialogThemeLight</item>
 		<item name="tabStyle">@style/AppTabLayoutItemsStyle</item>
 		<item name="radioButtonStyle">@style/AppRadioButtonStyle</item>
 		<item name="android:radioButtonStyle">@style/AppRadioButtonStyle</item>
-		<item name="toolbarStyle">@style/AppToolBarStyle</item>
+		<item name="toolbarStyle">@style/AppToolbarStyle</item>
+		<item name="android:toolbarStyle">@style/AppToolbarStyle</item>
 		<item name="android:webViewStyle">@style/AppWebViewStyleLightTheme</item>
+		<item name="navigationViewStyle">@style/NavigationViewStyle</item>
 	</style>
 
 	<style name="AppWebViewStyleLightTheme" parent="android:Widget.Material.WebView">
-		<item name="android:background">@color/custom_background</item>
-		<item name="backgroundColor">@color/custom_background</item>
-		<item name="backgroundColorDark">@color/custom_background_darker</item>
-		<item name="backgroundColorLight">@color/custom_background_lighter</item>
+		<item name="android:background">@color/app_custom_background</item>
+		<item name="backgroundColor">@color/app_custom_background</item>
+		<item name="backgroundColorDark">@color/app_custom_background_darker</item>
+		<item name="backgroundColorLight">@color/app_custom_background_lighter</item>
 	</style>
 
 	<style name="AppThemeRulebook.NoActionBar">
@@ -64,10 +66,10 @@
 		<item name="subtitleTextColor" tools:targetApi="m">@color/app_text</item>
 		<item name="buttonTint">@color/app_text</item>
 		<item name="android:buttonTint" tools:targetApi="lollipop">@color/app_text</item>
-		<item name="background">@color/custom_background</item>
-		<item name="android:background">@color/custom_background</item>
-		<item name="backgroundTint">@color/custom_background</item>
-		<item name="android:backgroundTint" tools:targetApi="lollipop">@color/custom_background</item>
+		<item name="background">@color/app_custom_background</item>
+		<item name="android:background">@color/app_custom_background</item>
+		<item name="backgroundTint">@color/app_custom_background</item>
+		<item name="android:backgroundTint" tools:targetApi="lollipop">@color/app_custom_background</item>
 		<item name="colorControlNormal">@color/colorPrimary</item>
 		<item name="colorControlActivated">@color/colorPrimary</item>
 		<item name="android:colorControlNormal">@color/colorPrimary</item>
@@ -81,21 +83,26 @@
 		<item name="android:textColor">@color/app_text</item>
 	</style>
 
-	<style name="AppToolBarStyle" parent="Widget.AppCompat.Toolbar">
-		<item name="buttonGravity">center_vertical</item>
-		<item name="titleTextAppearance">@style/AppBarTitleTextStyle</item>
-		<item name="popupTheme">@style/AppTheme.PopupOverlay</item>
-		<item name="android:minHeight">?attr/actionBarSize</item>
-		<item name="android:gravity">center</item>
-		<item name="titleTextColor">@color/bottomappbar_item_color</item>
-	</style>
-
 	<style name="AppTabLayoutItemsStyle" parent="@style/Widget.MaterialComponents.TabLayout">
 		<item name="android:background">@android:color/transparent</item>
 		<item name="background">@android:color/transparent</item>
 		<item name="tabIconTint">@color/colorAccent</item>
 		<item name="tabIndicatorColor">@color/colorAccent</item>
 		<item name="tabTextColor">@color/colorAccent</item>
+	</style>
+
+	<style name="AppToolbarStyle" parent="Widget.AppCompat.Toolbar">
+		<item name="navigationIcon">@drawable/ic_view_list_toolbar</item>
+		<item name="navigationIconTint">@color/app_toolbar_item_color</item>
+		<item name="background">@drawable/app_toolbar</item>
+		<item name="android:background">@drawable/app_toolbar</item>
+		<item name="android:navigationIcon">@drawable/ic_view_list_toolbar</item>
+		<item name="titleTextColor">@color/app_toolbar_item_color</item>
+		<item name="popupTheme">@style/AppTheme.PopupOverlay</item>
+		<item name="android:minHeight">?attr/actionBarSize</item>
+		<item name="android:gravity">center</item>
+		<item name="titleTextAppearance">@style/AppBarTitleTextStyle</item>
+		<item name="buttonGravity">center_vertical</item>
 	</style>
 
 	<style name="BottomAppBar" parent="Widget.MaterialComponents.BottomAppBar">
@@ -120,14 +127,14 @@
 	</style>
 
 	<style name="AppBarTitleTextStyle" parent="Widget.AppCompat.TextView">
-		<item name="android:textColor">@color/bottomappbar_item_color</item>
+		<item name="android:textColor">@color/app_toolbar_item_color</item>
 		<item name="android:textSize">@dimen/appbar_title_textsize_large</item>
 		<item name="android:textStyle">bold</item>
 	</style>
 
 	<style name="AppTopBarTitleTextStyle" parent="Widget.AppCompat.TextView">
 		<item name="android:textAppearance">@style/TextAppearance.Widget.AppCompat.Toolbar.Title</item>
-		<item name="android:textColor">@color/bottomappbar_item_color</item>
+		<item name="android:textColor">@color/app_toolbar_item_color</item>
 		<item name="android:textSize">@dimen/appbar_title_textsize_large</item>
 		<item name="android:textStyle">bold</item>
 		<item name="android:background">@color/colorAccent</item>
@@ -135,16 +142,30 @@
 		<item name="android:gravity">center</item>
 	</style>
 
-	<style name="AppBarBottomSheetDialogLight" parent="Theme.Design.BottomSheetDialog">
+	<style name="AppBarBottomSheetDialogStyle" parent="Theme.Design.BottomSheetDialog">
 		<item name="enforceTextAppearance">true</item>
 		<item name="enforceMaterialTheme">false</item>
 		<item name="itemIconSize">@dimen/app_bottom_navigation_icon_size</item>
-		<item name="bottomSheetStyle">@style/AppBarBottomSheetStyleLight</item>
+		<item name="bottomSheetStyle">@style/AppBarBottomSheetStyle</item>
 	</style>
 
-	<style name="AppBarBottomSheetStyleLight" parent="Widget.Design.BottomSheet.Modal">
+	<style name="AppBarBottomSheetStyle" parent="Widget.Design.BottomSheet.Modal">
 		<item name="elevation">@dimen/app_bottom_navigation_elevation</item>
 		<item name="android:background">@drawable/app_bottomsheetdialog_shape</item>
+	</style>
+
+	<style name="NavigationViewStyle" parent="Widget.Design.NavigationView">
+		<!-- set background color TRANSPARENT -->
+		<item name="android:background">@android:color/transparent</item>
+		<item name="background">@android:color/transparent</item>
+
+		<!-- remove shadow -->
+		<item name="elevation">0dp</item>
+		<item name="android:elevation">0dp</item>
+
+		<!-- set item text and icon colors -->
+		<item name="itemTextColor">@color/app_bottomsheetdialog_primary</item>
+		<item name="itemIconTint">@color/app_bottomsheetdialog_accent</item>
 	</style>
 
 	<style name="Headlines" parent="Widget.AppCompat.TextView">
@@ -155,10 +176,10 @@
 		<item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
 	</style>
 
-	<style name="BottomSheetDialogHeadlines" parent="Widget.AppCompat.TextView">
+	<style name="BottomSheetDialogHeadline" parent="Widget.AppCompat.TextView">
 		<item name="android:textStyle">bold</item>
 		<item name="android:textSize">@dimen/app_bottomsheetdialog_headline_size</item>
-		<item name="android:textColor">@color/bottomsheetdialog_primary</item>
+		<item name="android:textColor">@color/app_bottomsheetdialog_primary</item>
 		<item name="android:textIsSelectable">false</item>
 		<item name="android:gravity">center</item>
 	</style>
@@ -174,6 +195,7 @@
 		<item name="android:singleLine">true</item>
 		<item name="android:textColorHint">@color/colorAccent</item>
 		<item name="android:textColor">@color/colorAccent</item>
+		<item name="textColor">@color/colorAccent</item>
 	</style>
 
 	<style name="TextBold" parent="Widget.AppCompat.TextView">

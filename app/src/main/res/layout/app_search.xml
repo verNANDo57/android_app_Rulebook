@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -12,16 +12,14 @@
         android:id="@+id/toolbar_search"
         android:layout_width="match_parent"
         android:layout_height="@dimen/app_toolbar_height"
-        android:background="@drawable/app_toolbar"
-        app:navigationIcon="@drawable/ic_view_list_black"
         app:title="@string/search" />
 
-    <EditText
+    <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/search_edittext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/EditText"
-        android:hint="@string/search_viewhint"
+        android:hint="@string/search_viewHint"
         android:inputType="textAutoComplete"
         android:importantForAutofill="no" />
 
@@ -30,4 +28,4 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
-</LinearLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>

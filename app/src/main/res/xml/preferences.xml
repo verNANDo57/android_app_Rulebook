@@ -9,16 +9,16 @@
 		  android:key="darktheme_switch"
 		  android:layout_width="fill_parent"
 		  android:icon="@drawable/app_themeengine_icon"
-		  android:summary="@string/app_darktheme_switch_summary"
-		  android:title="@string/app_darktheme_switch">
+		  android:summary="@string/app_darkTheme_switch_summary"
+		  android:title="@string/app_darkTheme_switch">
 	  </androidx.preference.Preference>
 
 	  <androidx.preference.SwitchPreferenceCompat
 		  android:key="statusbar_enable"
 		  android:layout_width="fill_parent"
 		  android:icon="@drawable/app_fullscreenmode_icon"
-		  android:summary="@string/app_enable_statusbar_summary"
-		  android:title="@string/app_enable_statusbar">
+		  android:summary="@string/app_enable_statusBar_summary"
+		  android:title="@string/app_enable_statusBar">
 	  </androidx.preference.SwitchPreferenceCompat>
 
 	  <androidx.preference.Preference

@@ -1,6 +1,10 @@
 package com.verNANDo57.rulebook_educational.rules;
 
 public interface Constants {
+    // Formats
+    String FILE_FORMAT = ".md";
+    String FILE_EXPORT_FORMAT = ".txt";
+
     // Orthography
     String ORTHOGRAPHY_1 = "ortho_1";
     String ORTHOGRAPHY_1_1 = "ortho_1_1";

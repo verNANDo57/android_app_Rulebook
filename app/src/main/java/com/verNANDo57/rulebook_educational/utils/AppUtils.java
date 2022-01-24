@@ -280,10 +280,10 @@ public class AppUtils {
                 // use directory.mkdirs(); here instead.
             }
 
-            File outFile = new File(outDir,  outFileName + ".txt");
+            File outFile = new File(outDir,  outFileName + Constants.FILE_EXPORT_FORMAT);
             if (outFile.exists()){
                 new StyleableToast.Builder(context)
-                        .text(context.getString(R.string.app_saved_already) + ":" + outFileDir + outFileName + ".txt") // set text
+                        .text(context.getString(R.string.app_saved_already) + ":" + outFileDir + outFileName + Constants.FILE_EXPORT_FORMAT) // set text
                         .textBold() //set text bold
                         .iconStart(AppUtils.getIconWarning()) //icon in start of toast
                         .show(); //show custom toast
@@ -295,7 +295,6 @@ public class AppUtils {
                 out.close();
 
                 new StyleableToast.Builder(context)
-                        .text(context.getString(R.string.app_saved) + ":" + outFileDir + outFileName + ".txt") // set text
                         .textBold() //set text bold
                         .iconStart(AppUtils.getIconWarning()) //icon in start of toast
                         .show(); //show custom toast

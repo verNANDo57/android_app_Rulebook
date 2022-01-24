@@ -129,19 +129,20 @@ public class AppBaseScrollableActivity extends CustomThemeEngineAppCompatActivit
         Button searchword_button = findViewById(R.id.searchword_button);
 
         InputStream inputStream;
+        final Markwon markwon = Markwon.create(getApplicationContext());
         try {
             if(sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME).contains("ortho_")) {
-                inputStream = getAssets().open("mainrules/orthography/" + sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME) + ".txt");
-                app_scrollableactivity_content_in_mainrules_text.setText(AppUtils.convertStreamToString(inputStream));
+                inputStream = getAssets().open("mainrules/orthography/" + sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME) + Constants.FILE_FORMAT);
+                markwon.setMarkdown(app_scrollableactivity_content_in_mainrules_text, AppUtils.convertStreamToString(inputStream));
             } else if(sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME).contains("punct_")){
-                inputStream = getAssets().open("mainrules/punctuation/" + sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME) + ".txt");
-                app_scrollableactivity_content_in_mainrules_text.setText(AppUtils.convertStreamToString(inputStream));
+                inputStream = getAssets().open("mainrules/punctuation/" + sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME) + Constants.FILE_FORMAT);
+                markwon.setMarkdown(app_scrollableactivity_content_in_mainrules_text, AppUtils.convertStreamToString(inputStream));
             } else if (sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME).contains("dict_")) {
-                inputStream = getAssets().open("dictionaries/" + sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME) + ".txt");
-                app_scrollableactivity_content_in_mainrules_text.setText(AppUtils.convertStreamToString(inputStream));
+                inputStream = getAssets().open("dictionaries/" + sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME) + Constants.FILE_FORMAT);
+                markwon.setMarkdown(app_scrollableactivity_content_in_mainrules_text, AppUtils.convertStreamToString(inputStream));
             } else {
-                inputStream = getAssets().open("analyze_methods/" + sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME) + ".txt");
-                app_scrollableactivity_content_in_mainrules_text.setText(AppUtils.convertStreamToString(inputStream));
+                inputStream = getAssets().open("analyze_methods/" + sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME) + Constants.FILE_FORMAT);
+                markwon.setMarkdown(app_scrollableactivity_content_in_mainrules_text, AppUtils.convertStreamToString(inputStream));
             }
         } catch (IOException e) {
             new StyleableToast.Builder(getApplicationContext())
@@ -267,35 +268,35 @@ public class AppBaseScrollableActivity extends CustomThemeEngineAppCompatActivit
             if (sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME).contains("ortho_")) {
                 AppUtils.copyTXTFileFromAssets(
                         getApplicationContext(),
-                        "mainrules/orthography/" + sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME) + ".txt",
+                        "mainrules/orthography/" + sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME) + Constants.FILE_FORMAT,
                         Environment.getExternalStorageDirectory().getAbsolutePath() + "/Rulebook/",
                         Environment.getExternalStorageDirectory().getAbsolutePath() + "/Rulebook/" + getString(R.string.ortho) + "/",
                         outFileName, outFileDir,
-                        getString(R.string.app_error_while_saving_file) + ":" + outFileDir + outFileName + ".txt" + "(" + sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME) + ".txt" + ")");
+                        getString(R.string.app_error_while_saving_file) + ":" + outFileDir + outFileName + Constants.FILE_EXPORT_FORMAT + "(" + sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME) + Constants.FILE_EXPORT_FORMAT + ")");
             } else if (sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME).contains("punct_")){
                 AppUtils.copyTXTFileFromAssets(
                         getApplicationContext(),
-                        "mainrules/punctuation/" + sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME) + ".txt",
+                        "mainrules/punctuation/" + sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME) + Constants.FILE_FORMAT,
                         Environment.getExternalStorageDirectory().getAbsolutePath() + "/Rulebook/",
                         Environment.getExternalStorageDirectory().getAbsolutePath() + "/Rulebook/" + getString(R.string.punct) + "/",
                         outFileName, outFileDir,
-                        getString(R.string.app_error_while_saving_file) + ":" + outFileDir + outFileName + ".txt" + "(" + sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME) + ".txt" + ")");
+                        getString(R.string.app_error_while_saving_file) + ":" + outFileDir + outFileName + Constants.FILE_EXPORT_FORMAT + "(" + sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME) + Constants.FILE_EXPORT_FORMAT + ")");
             } else if (sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME).contains("dict_")){
                 AppUtils.copyTXTFileFromAssets(
                         getApplicationContext(),
-                        "dictionaries/" + sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME) + ".txt",
+                        "dictionaries/" + sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME) + Constants.FILE_FORMAT,
                         Environment.getExternalStorageDirectory().getAbsolutePath() + "/Rulebook/",
                         Environment.getExternalStorageDirectory().getAbsolutePath() + "/Rulebook/" + getString(R.string.dictionaries) + "/",
                         outFileName, outFileDir,
-                        getString(R.string.app_error_while_saving_file) + ":" + outFileDir + outFileName + ".txt" + "(" + sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME) + ".txt" + ")");
+                        getString(R.string.app_error_while_saving_file) + ":" + outFileDir + outFileName + Constants.FILE_EXPORT_FORMAT + "(" + sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME) + Constants.FILE_EXPORT_FORMAT + ")");
             } else {
                 AppUtils.copyTXTFileFromAssets(
                         getApplicationContext(),
-                        "analyze_methods/" + sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME) + ".txt",
+                        "analyze_methods/" + sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME) + Constants.FILE_FORMAT,
                         Environment.getExternalStorageDirectory().getAbsolutePath() + "/Rulebook/",
                         Environment.getExternalStorageDirectory().getAbsolutePath() + "/Rulebook/" + getString(R.string.analyze_methods) + "/",
                         outFileName, outFileDir,
-                        getString(R.string.app_error_while_saving_file) + ":" + outFileDir + outFileName + ".txt" + "(" + sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME) + ".txt" + ")");
+                        getString(R.string.app_error_while_saving_file) + ":" + outFileDir + outFileName + Constants.FILE_EXPORT_FORMAT + "(" + sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME) + Constants.FILE_EXPORT_FORMAT + ")");
             }
         }
         return super.onOptionsItemSelected(item);

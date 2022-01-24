@@ -1,29 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
+    <View
+        android:id="@+id/bottomsheetdialog_handler"
+        android:background="@drawable/app_bottomsheetdialog_handler"
+        android:layout_width="@dimen/app_bottomsheetdialog_handler_width"
+        android:layout_height="@dimen/app_bottomsheetdialog_handler_height"
+        android:layout_marginStart="@dimen/app_bottomsheetdialog_marginStartOrLeft"
+        android:layout_marginEnd="@dimen/app_bottomsheetdialog_marginEndOrRight"
+        android:layout_marginTop="@dimen/app_bottomsheetdialog_marginTop"
+        android:layout_gravity="center"/>
+
     <TextView
         android:id="@+id/mainTextView1"
-        style="@style/BottomSheetDialogHeadlines"
+        style="@style/BottomSheetDialogHeadline"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/app_bottomsheetdialog_headline_marginTop"
         android:layout_marginStart="@dimen/app_bottomsheetdialog_marginStartOrLeft"
         android:layout_marginEnd="@dimen/app_bottomsheetdialog_marginEndOrRight"
-        android:text="@string/bottomsheetdialog_headline" />
+        android:text="@string/BottomSheetDialog_headline"
+        android:gravity="center"/>
 
     <com.google.android.material.navigation.NavigationView
-        android:id="@+id/navigation_view_among_activities"
+        android:id="@+id/navigation_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/app_bottomsheetdialog_marginStartOrLeft"
         android:layout_marginEnd="@dimen/app_bottomsheetdialog_marginEndOrRight"
-        android:layout_marginBottom="@dimen/app_bottomsheetdialog_marginBottom"
-        android:layout_marginTop="@dimen/app_bottomsheetdialog_marginTop"
-        app:menu="@menu/bottom_nav_drawer_menu_among_activities"/>
+        android:layout_marginBottom="@dimen/app_bottomsheetdialog_marginBottom" />
 
 </LinearLayout>

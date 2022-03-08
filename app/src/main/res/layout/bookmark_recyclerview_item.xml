@@ -16,25 +16,33 @@
         android:layout_margin="4dp"
         android:padding="@dimen/app_searchitem_shape_stroke_width">
 
-        <RelativeLayout
-            android:id="@+id/recyclerview_image_relativelayout"
+        <FrameLayout
+            android:id="@+id/recyclerview_image_framelayout"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/app_searchitem_image_relativelayout_height"
-            android:gravity="center">
+            android:layout_height="@dimen/app_searchitem_image_relativelayout_height">
 
             <ImageView
-                android:id="@+id/recyclerview_image"
+                android:id="@+id/cardview_image"
                 android:layout_width="@dimen/app_searchitem_image_imageview_width"
                 android:layout_height="@dimen/app_searchitem_image_imageview_height"
-                android:padding="@dimen/app_searchitem_image_imageview_padding" />
-        </RelativeLayout>
+                android:padding="@dimen/app_searchitem_image_imageview_padding"
+                android:layout_gravity="center"/>
+
+            <ImageView
+                android:id="@+id/cardview_selected_imageview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/app_bookmark_selected"
+                android:layout_gravity="top|end"
+                android:visibility="gone"/>
+        </FrameLayout>
 
         <TextView
             android:id="@+id/recyclerview_item_title"
             style="@style/TextBold"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/recyclerview_image_relativelayout"
+            android:layout_below="@+id/recyclerview_image_framelayout"
             android:focusable="false"
             android:text="@string/app_status_value_null"
             android:textIsSelectable="false"

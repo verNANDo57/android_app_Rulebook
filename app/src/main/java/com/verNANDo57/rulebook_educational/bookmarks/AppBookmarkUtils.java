@@ -11,7 +11,6 @@ import android.content.Context;
 import android.util.Log;
 
 import com.verNANDo57.rulebook_educational.extradata.R;
-import com.verNANDo57.rulebook_educational.styleabletoast.StyleableToast;
 import com.verNANDo57.rulebook_educational.utils.AppUtils;
 
 import org.json.JSONException;
@@ -27,6 +26,7 @@ import java.io.PrintWriter;
 public class AppBookmarkUtils {
 
     public static String JSON_FILE = "app_bookmarks.json";
+    public static String JSON_FILE_BACKUP = "app_bookmarks_backup.json";
     public static String JSON_OBJECT_KEY = "object_key";
     public static String JSON_OBJECT_TITLE = "object_title";
     public static String JSON_OBJECT_SUMMARY = "object_summary";
@@ -121,15 +121,10 @@ public class AppBookmarkUtils {
 
             writer2.close();
         }
-
-        new StyleableToast.Builder(context)
-                .text(context.getString(R.string.app_bookmark_added))
-                .textBold()
-                .iconStart(AppUtils.getIconWarning())
-                .show();
     }
 
     public static void removeBookmark (Context context, String object_key, String object_title, String object_summary) throws IOException, JSONException {
+        // Initialize input bookmark file
         File inputFile = new File(context.getApplicationContext().getFilesDir(), JSON_FILE);
         if (!inputFile.isFile()) {
             Log.e(LOG_TAG, context.getResources().getString(R.string.app_error_file));
@@ -158,19 +153,13 @@ public class AppBookmarkUtils {
             return;
         }
 
+        // Do final check
         finalCheck(context, tempFile);
 
         //Rename the new file to the filename the original file had.
         if (!tempFile.renameTo(inputFile)) {
             Log.e(LOG_TAG, context.getResources().getString(R.string.app_error_file_rename));
-            return;
         }
-
-        new StyleableToast.Builder(context)
-                .text(context.getString(R.string.app_bookmark_removed))
-                .textBold()
-                .iconStart(AppUtils.getIconWarning())
-                .show();
     }
 
     public static boolean checkIfBookmarkExist (Context context, String object_key) throws IOException {
@@ -184,5 +173,42 @@ public class AppBookmarkUtils {
         }
         reader.close();
         return output;
+    }
+
+    public static void makeBookmarksListBackup(Context context) throws IOException {
+        // Initialize bookmarks backup json file
+        File backupFile = new File(context.getApplicationContext().getFilesDir(), JSON_FILE_BACKUP);
+        // Initialize original bookmarks json file
+        File orginalFile = new File(context.getApplicationContext().getFilesDir(), JSON_FILE);
+        if (!orginalFile.isFile()) {
+            Log.e(LOG_TAG, context.getResources().getString(R.string.app_error_file));
+            return;
+        }
+        // If bookmarks backup json file already exist then delete it
+        if (backupFile.exists()) {
+            backupFile.delete();
+        }
+        // Make copy of that file with different name
+        AppUtils.copyFileUsingNIO(orginalFile, backupFile);
+    }
+
+    public static void undoBookmarkDeletion(Context context) {
+        // Initialize original bookmarks json file
+        File orginalFile = new File(context.getApplicationContext().getFilesDir(), JSON_FILE);
+        if (!orginalFile.isFile()) {
+            Log.e(LOG_TAG, context.getResources().getString(R.string.app_error_file));
+            return;
+        }
+        // Initialize bookmarks backup json file
+        File backupFile = new File(context.getApplicationContext().getFilesDir(), JSON_FILE_BACKUP);
+        //Delete the original file
+        if (!orginalFile.delete()) {
+            Log.e(LOG_TAG, context.getResources().getString(R.string.app_error_file_delete));
+            return;
+        }
+        //Rename the backupFile to the filename the original file had.
+        if (!backupFile.renameTo(orginalFile)) {
+            Log.e(LOG_TAG, context.getResources().getString(R.string.app_error_file_rename));
+        }
     }
 }

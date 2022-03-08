@@ -5,10 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center">
+        android:layout_gravity="center"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/app_about_title"
@@ -24,7 +25,6 @@
             android:id="@+id/appaboutRelativeLayout1"
             android:layout_width="match_parent"
             android:layout_height="110dp"
-            android:layout_below="@id/app_about_title"
             android:gravity="center">
 
             <ImageView
@@ -35,76 +35,45 @@
 
         </RelativeLayout>
 
-        <View
-            android:id="@+id/appaboutView2"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/activity_space_height"
-            android:layout_below="@id/appaboutRelativeLayout1" />
+        <RelativeLayout
+            android:id="@+id/appaboutRelativeLayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:gravity="center">
 
-        <HorizontalScrollView
-            android:id="@+id/appaboutHorizontalScrollView1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/appaboutView2">
+            <ImageButton
+                android:id="@+id/buttongit"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:scaleType="fitCenter"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/github_share_icon" />
 
-            <RelativeLayout
-                android:id="@+id/appaboutRelativeLayout2"
-                android:layout_width="wrap_content"
-                android:layout_height="80dp"
-                android:layout_gravity="center"
-                android:gravity="center">
+            <ImageButton
+                android:id="@+id/buttonvk"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:scaleType="fitCenter"
+                android:layout_marginEnd="10dp"
+                android:layout_toEndOf="@id/buttongit"
+                android:src="@drawable/vk_share_icon" />
 
-                <ImageButton
-                    android:id="@+id/buttongit"
-                    style="@style/AppImageButtonStyle"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:background="@drawable/github_share_icon" />
+            <ImageButton
+                android:id="@+id/buttontg"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:scaleType="fitCenter"
+                android:layout_toEndOf="@id/buttonvk"
+                android:src="@drawable/telegram_share_icon" />
 
-                <View
-                    android:id="@+id/appaboutView1"
-                    android:layout_width="10dp"
-                    android:layout_height="60dp"
-                    android:layout_toEndOf="@id/buttongit" />
-
-                <ImageButton
-                    android:id="@+id/buttonvk"
-                    style="@style/AppImageButtonStyle"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_toEndOf="@id/appaboutView1"
-                    android:background="@drawable/vk_share_icon" />
-
-                <View
-                    android:id="@+id/appaboutView4"
-                    android:layout_width="10dp"
-                    android:layout_height="60dp"
-                    android:layout_toEndOf="@id/buttonvk" />
-
-                <ImageButton
-                    android:id="@+id/buttontg"
-                    style="@style/AppImageButtonStyle"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_toEndOf="@id/appaboutView4"
-                    android:background="@drawable/telegram_share_icon" />
-
-            </RelativeLayout>
-
-        </HorizontalScrollView>
-
-        <View
-            android:id="@+id/appaboutView3"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/activity_space_height"
-            android:layout_below="@id/appaboutHorizontalScrollView1" />
+        </RelativeLayout>
 
         <TextView
             android:id="@+id/appaboutTextView1"
             style="@style/Headlines"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/appaboutView3"
             android:gravity="center"
             android:text="@string/app_about_name" />
 
@@ -113,7 +82,6 @@
             style="@style/TextBold"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_below="@id/appaboutTextView1"
             android:gravity="center"
             android:text="@string/app_about_extended" />
 
@@ -121,10 +89,9 @@
             android:id="@+id/review_page"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/appaboutTextView2"
             android:layout_margin="@dimen/app_default_button_margin"
             android:text="@string/rate_us" />
 
-    </RelativeLayout>
+    </LinearLayout>
 
 </ScrollView>

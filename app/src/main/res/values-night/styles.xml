@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-
     <style name="AppThemeRulebook" parent="Theme.MaterialComponents.DayNight.Bridge">
+        <item name="android:windowAnimationStyle">@style/AppWindowAnimations</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:textColor">@color/app_text</item>
         <item name="android:actionBarStyle">@style/DarkThemeActionBar</item>
@@ -20,13 +20,13 @@
         <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/app_rulebook_productsans_fontfamily</item>
         <item name="fontFamily">@font/app_rulebook_productsans_fontfamily</item>
         <item name="snackbarStyle">@style/SnackBar</item>
-        <item name="android:popupTheme" tools:targetApi="lollipop">@style/ThemeOverlay.MaterialComponents.Dark</item>
+        <item name="snackbarButtonStyle">@style/SnackBarButton</item>
+        <item name="snackbarTextViewStyle">@style/SnackBarTextViewStyle</item>
+        <item name="android:popupTheme" tools:targetApi="lollipop">@style/AppTheme.PopupOverlay</item>
         <item name="android:windowBackground">@color/app_custom_background</item>
         <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
-        <item name="popupTheme">@style/ThemeOverlay.MaterialComponents.Dark</item>
+        <item name="popupTheme">@style/AppTheme.PopupOverlay</item>
         <item name="backgroundColor">@color/app_custom_background</item>
-        <item name="backgroundColorDark">@color/app_custom_background_darker</item>
-        <item name="backgroundColorLight">@color/app_custom_background_lighter</item>
         <item name="imageButtonStyle">@style/AppImageButtonStyle</item>
         <item name="alertDialogTheme">@style/AppAlertDialogThemeDark</item>
         <item name="tabStyle">@style/AppTabLayoutItemsStyle</item>
@@ -36,13 +36,12 @@
         <item name="android:toolbarStyle">@style/AppToolbarStyle</item>
         <item name="android:webViewStyle">@style/AppWebViewStyleDarkTheme</item>
         <item name="navigationViewStyle">@style/NavigationViewStyle</item>
+        <item name="android:textColorSecondary">@color/colorAccent</item>
     </style>
 
     <style name="AppWebViewStyleDarkTheme" parent="android:Widget.Material.WebView">
         <item name="android:background">@color/app_custom_background</item>
         <item name="backgroundColor">@color/app_custom_background</item>
-        <item name="backgroundColorDark">@color/app_custom_background_darker</item>
-        <item name="backgroundColorLight">@color/app_custom_background_lighter</item>
     </style>
 
     <style name="DarkThemeActionBar" parent="Widget.AppCompat.ActionBar">
@@ -52,7 +51,6 @@
 
     <style name="AppAlertDialogThemeDark" parent="Theme.AppCompat.Dialog.Alert">
         <item name="titleTextColor">@color/app_text</item>
-        <item name="textColor">@color/app_text</item>
         <item name="android:textColor">@color/app_text</item>
         <item name="android:textColorPrimary">@color/app_text</item>
         <item name="textColorAlertDialogListItem">@color/app_text</item>

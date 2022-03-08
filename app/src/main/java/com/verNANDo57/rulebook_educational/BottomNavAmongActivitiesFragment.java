@@ -52,7 +52,6 @@ public class BottomNavAmongActivitiesFragment extends BottomSheetDialogFragment 
             } else if (id == R.id.bottomsheetdialog_amongactivities_bookmarks) {
                 if (!(className.equals(AppBookmarksActivity.class.getName()))) {
                     startActivity(new Intent(getActivity(), AppBookmarksActivity.class));
-                    requireActivity().finish();
                 }
             } else if (id == R.id.bottomsheetdialog_amongactivities_search) {
                 if (!(className.equals(AppSearchActivity.class.getName()))) {

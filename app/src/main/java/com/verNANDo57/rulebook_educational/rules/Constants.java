@@ -10,7 +10,15 @@ public interface Constants {
     String FILE_FORMAT = ".md";
     String FILE_EXPORT_FORMAT = ".txt";
 
+    // Directories
+    String RULEBOOK_APP_DIRECTORY = "/Rulebook/";
+    String RULEBOOK_ORTHOGRAPHY_DIRECTORY_ASSETS = "mainrules/orthography/";
+    String RULEBOOK_PUNCTUATION_DIRECTORY_ASSETS = "mainrules/punctuation/";
+    String RULEBOOK_DICTIONARIES_DIRECTORY_ASSETS = "dictionaries/";
+    String RULEBOOK_ANALYZE_METHODS_DIRECTORY_ASSETS = "analyze_methods/";
+
     // Orthography
+    String ORTHOGRAPHY = "ortho_";
     String ORTHOGRAPHY_1 = "ortho_1";
     String ORTHOGRAPHY_1_1 = "ortho_1_1";
     String ORTHOGRAPHY_1_2 = "ortho_1_2";
@@ -94,6 +102,7 @@ public interface Constants {
     String ORTHOGRAPHY_19_SPLIT = "ortho_19_split";
 
     // Punctuation
+    String PUNCTUATION = "punct_";
     String PUNCTUATION_1 = "punct_1";
     String PUNCTUATION_1_1 = "punct_1_1";
     String PUNCTUATION_1_2 = "punct_1_2";
@@ -189,25 +198,27 @@ public interface Constants {
     String PUNCTUATION_21_SPLIT = "punct_21_split";
 
     // Analyze Methods
-    String PHONETIC_ANALYZE_METHOD = "phonetic_analyze_method";
-    String MORPHEMIC_ANALYZE_METHOD = "morphemic_analyze_method";
-    String MORPHOLOGICAL_ANALYZE_METHOD_FOR_NOUN = "morphological_analyze_method_for_noun";
-    String MORPHOLOGICAL_ANALYZE_METHOD_FOR_VERB = "morphological_analyze_method_for_verb";
-    String MORPHOLOGICAL_ANALYZE_METHOD_FOR_ADJECTIVE = "morphological_analyze_method_for_adjective";
-    String MORPHOLOGICAL_ANALYZE_METHOD_FOR_NUMERAL = "morphological_analyze_method_for_numeral";
-    String MORPHOLOGICAL_ANALYZE_METHOD_FOR_ADVERB = "morphological_analyze_method_for_adverb";
-    String MORPHOLOGICAL_ANALYZE_METHOD_FOR_PARTICIPLE = "morphological_analyze_method_for_participle";
-    String MORPHOLOGICAL_ANALYZE_METHOD_FOR_PARTICIPLE2 = "morphological_analyze_method_for_participle2";
-    String MORPHOLOGICAL_ANALYZE_METHOD_FOR_PRETEXT = "morphological_analyze_method_for_pretext";
-    String MORPHOLOGICAL_ANALYZE_METHOD_FOR_CONJUNCTIONS = "morphological_analyze_method_for_conjunctions";
-    String MORPHOLOGICAL_ANALYZE_METHOD_FOR_PARTICLE = "morphological_analyze_method_for_particle";
-    String SYNTACTIC_ANALYZE_METHOD_FOR_SIMPLE_SENTENCE = "syntactic_analyze_method_for_simple_sentence";
-    String SYNTACTIC_ANALYZE_METHOD_FOR_DIFFICULT_SENTENCE = "syntactic_analyze_method_for_difficult_sentence";
-    String LEXICAL_ANALYZE_METHOD = "lexical_analyze_method";
-    String ORTHOGRAPHIC_ANALYZE_METHOD = "orthographic_analyze_method";
+    String ANALYZE_METHOD = "analyze_method";
+    String PHONETIC_ANALYZE_METHOD = "analyze_method_1";
+    String MORPHEMIC_ANALYZE_METHOD = "analyze_method_2";
+    String MORPHOLOGICAL_ANALYZE_METHOD_FOR_NOUN = "analyze_method_3";
+    String MORPHOLOGICAL_ANALYZE_METHOD_FOR_VERB = "analyze_method_4";
+    String MORPHOLOGICAL_ANALYZE_METHOD_FOR_ADJECTIVE = "analyze_method_5";
+    String MORPHOLOGICAL_ANALYZE_METHOD_FOR_NUMERAL = "analyze_method_6";
+    String MORPHOLOGICAL_ANALYZE_METHOD_FOR_ADVERB = "analyze_method_7";
+    String MORPHOLOGICAL_ANALYZE_METHOD_FOR_PARTICIPLE = "analyze_method_8";
+    String MORPHOLOGICAL_ANALYZE_METHOD_FOR_PARTICIPLE2 = "analyze_method_9";
+    String MORPHOLOGICAL_ANALYZE_METHOD_FOR_PRETEXT = "analyze_method_10";
+    String MORPHOLOGICAL_ANALYZE_METHOD_FOR_CONJUNCTIONS = "analyze_method_11";
+    String MORPHOLOGICAL_ANALYZE_METHOD_FOR_PARTICLE = "analyze_method_12";
+    String SYNTACTIC_ANALYZE_METHOD_FOR_SIMPLE_SENTENCE = "analyze_method_13";
+    String SYNTACTIC_ANALYZE_METHOD_FOR_DIFFICULT_SENTENCE = "analyze_method_14";
+    String LEXICAL_ANALYZE_METHOD = "analyze_method_15";
+    String ORTHOGRAPHIC_ANALYZE_METHOD = "analyze_method_16";
 
     // Dictionaries
-    String DICT_VOCABULARY_WORDS = "dict_vocabulary_words";
-    String DICT_PHRASEBOOK = "dict_phrasebook";
-    String DICT_ORTHOEPICAL = "dict_orthoepical";
+    String DICTIONARIES = "dict_";
+    String DICT_VOCABULARY_WORDS = "dict_1";
+    String DICT_PHRASEBOOK = "dict_2";
+    String DICT_ORTHOEPICAL = "dict_3";
 }

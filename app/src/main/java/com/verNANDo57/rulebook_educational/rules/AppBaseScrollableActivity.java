@@ -8,9 +8,7 @@ package com.verNANDo57.rulebook_educational.rules;
 import static com.verNANDo57.rulebook_educational.utils.AppUtils.LOG_TAG;
 
 import android.content.Intent;
-import android.content.res.ColorStateList;
 import android.os.Bundle;
-import android.os.Environment;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -25,29 +23,32 @@ import android.widget.TextView;
 
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.appcompat.widget.Toolbar;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.content.ContextCompat;
 import androidx.core.widget.NestedScrollView;
 
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.snackbar.Snackbar;
 import com.verNANDo57.rulebook_educational.BottomNavAmongLessonsFragment;
 import com.verNANDo57.rulebook_educational.app.CustomThemeEngineAppCompatActivity;
 import com.verNANDo57.rulebook_educational.bookmarks.AppBookmarkUtils;
 import com.verNANDo57.rulebook_educational.extradata.R;
 import com.verNANDo57.rulebook_educational.markwon.Markwon;
+import com.verNANDo57.rulebook_educational.search.SearchItemData;
 import com.verNANDo57.rulebook_educational.search.SearchReferences;
-import com.verNANDo57.rulebook_educational.styleabletoast.StyleableToast;
 import com.verNANDo57.rulebook_educational.utils.AppUtils;
-import com.verNANDo57.rulebook_educational.utils.ColorUtils;
 
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONException;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 
 public class AppBaseScrollableActivity extends CustomThemeEngineAppCompatActivity {
+    private CoordinatorLayout mRootLayout;
     private RelativeLayout app_basescrollableactivity_toolbar_container;
     private RelativeLayout app_basescrollableactivity_search_container;
     private AppBarLayout appbar;
@@ -57,8 +58,8 @@ public class AppBaseScrollableActivity extends CustomThemeEngineAppCompatActivit
 
     private Menu menu;
 
-    private String outFileDir;
-    private String outFileName;
+    private String inputFileDir;
+    private String exportFileDir;
 
     private TextView app_basescrollableactivity_title;
     private TextView app_basescrollableactivity_summary;
@@ -70,10 +71,14 @@ public class AppBaseScrollableActivity extends CustomThemeEngineAppCompatActivit
 
         sourceIntent = getIntent();
 
+        ArrayList<SearchItemData> listdata = SearchReferences.setupSearchData(getApplicationContext());
+
         fade_in = AnimationUtils.loadAnimation(this, R.anim.app_fade_in);
         fade_out = AnimationUtils.loadAnimation(this, R.anim.app_fade_out);
 
         setContentView(R.layout.app_scrollable_activity);
+
+        mRootLayout = findViewById(R.id.scrollableactivity_root);
 
         ImageView app_basescrollableactivity_icon = findViewById(R.id.app_scrollableactivity_in_scrollableactivity_icon);
         app_basescrollableactivity_title = findViewById(R.id.app_scrollableactivity_in_scrollableactivity_title);
@@ -83,41 +88,29 @@ public class AppBaseScrollableActivity extends CustomThemeEngineAppCompatActivit
         app_basescrollableactivity_search_container = findViewById(R.id.app_scrollableactivity_everywhere_toolbarlayout_search_container);
 
         Toolbar toolbar = findViewById(R.id.toolbar_in_scrollableactivity);
-        if (sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME).contains("ortho_")) {
+        if (sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME).contains(Constants.ORTHOGRAPHY)) {
             app_basescrollableactivity_icon.setBackground(AppCompatResources.getDrawable(this, R.drawable.app_pen_icon));
             toolbar.setTitle(getString(R.string.ortho));
-            app_basescrollableactivity_title.setText(SearchReferences.getTitleOrthography(getApplicationContext(), sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME)));
-            if (SearchReferences.getSummaryOrthography(getApplicationContext(), sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME)) != null) {
-                app_basescrollableactivity_summary.setText(SearchReferences.getSummaryOrthography(getApplicationContext(), sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME)));
-            } else {
-                app_basescrollableactivity_summary.setVisibility(View.GONE);
-            }
-            outFileDir = "/Rulebook/" + getString(R.string.ortho) + "/";
-        } else if (sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME).contains("punct_")){
+            inputFileDir = Constants.RULEBOOK_ORTHOGRAPHY_DIRECTORY_ASSETS;
+            exportFileDir = Constants.RULEBOOK_APP_DIRECTORY + getString(R.string.ortho) + "/";
+        } else if (sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME).contains(Constants.PUNCTUATION)){
             app_basescrollableactivity_icon.setBackground(AppCompatResources.getDrawable(this, R.drawable.app_pencil_icon));
             toolbar.setTitle(getString(R.string.punct));
-            app_basescrollableactivity_title.setText(SearchReferences.getTitlePunctuation(getApplicationContext(), sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME)));
-            if (SearchReferences.getSummaryPunctuation(getApplicationContext(), sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME)) != null) {
-                app_basescrollableactivity_summary.setText(SearchReferences.getSummaryPunctuation(getApplicationContext(), sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME)));
-            } else {
-                app_basescrollableactivity_summary.setVisibility(View.GONE);
-            }
-            outFileDir = "/Rulebook/" + getString(R.string.punct) + "/";
-        } else if (sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME).contains("dict_")) {
+            inputFileDir = Constants.RULEBOOK_PUNCTUATION_DIRECTORY_ASSETS;
+            exportFileDir = Constants.RULEBOOK_APP_DIRECTORY + getString(R.string.punct) + "/";
+        } else if (sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME).contains(Constants.DICTIONARIES)) {
             app_basescrollableactivity_icon.setBackground(AppCompatResources.getDrawable(this, R.drawable.app_char_icon));
             toolbar.setTitle(getString(R.string.dictionaries));
-            app_basescrollableactivity_title.setText(SearchReferences.getTitleDictionaries(getApplicationContext(), sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME)));
-            app_basescrollableactivity_summary.setText(getString(R.string.dictionaries));
-            outFileDir = "/Rulebook/" + getString(R.string.dictionaries) + "/";
-        } else {
+            inputFileDir = Constants.RULEBOOK_DICTIONARIES_DIRECTORY_ASSETS;
+            exportFileDir = Constants.RULEBOOK_APP_DIRECTORY + getString(R.string.dictionaries) + "/";
+        } else if (sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME).contains(Constants.ANALYZE_METHOD)) {
             app_basescrollableactivity_icon.setBackground(AppCompatResources.getDrawable(this, R.drawable.ic_search_menu));
             toolbar.setTitle(getString(R.string.analyze_methods));
-            app_basescrollableactivity_title.setText(SearchReferences.getTitleAnalyzeMethods(getApplicationContext(), sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME)));
-            app_basescrollableactivity_summary.setText(getString(R.string.analyze_methods));
-            outFileDir = "/Rulebook/" + getString(R.string.analyze_methods) + "/";
+            inputFileDir = Constants.RULEBOOK_ANALYZE_METHODS_DIRECTORY_ASSETS;
+            exportFileDir = Constants.RULEBOOK_APP_DIRECTORY + getString(R.string.analyze_methods) + "/";
         }
-        app_basescrollableactivity_icon.setBackgroundTintList(ColorStateList.valueOf(ColorUtils.lighter(getResources().getColor(R.color.colorAccent), 0.01f)));
-        outFileName = app_basescrollableactivity_title.getText().toString();
+        app_basescrollableactivity_title.setText(listdata.get(sourceIntent.getIntExtra(AppUtils.EXTRA_DATA_POSITION, 0)).getItemTitle());
+        app_basescrollableactivity_summary.setText(listdata.get(sourceIntent.getIntExtra(AppUtils.EXTRA_DATA_POSITION, 0)).getItemDescription());
         setSupportActionBar(toolbar);
         toolbar.setNavigationOnClickListener(new NavigationView.OnClickListener() {
             @Override
@@ -127,7 +120,7 @@ public class AppBaseScrollableActivity extends CustomThemeEngineAppCompatActivit
             }
         });
 
-        CollapsingToolbarLayout toolBarLayout = (CollapsingToolbarLayout) findViewById(R.id.toolbar_layout_in_scrollableactivity);
+        CollapsingToolbarLayout toolBarLayout = findViewById(R.id.toolbar_layout_in_scrollableactivity);
         toolBarLayout.setTitle(" "); //should be a space, otherwise the trick will not work
         appbar = findViewById(R.id.app_bar_in_scrollableactivity);
         NestedScrollView app_scrollableactivity_content_scrollview = findViewById(R.id.app_scrollableactivity_content_scrollview);
@@ -151,11 +144,7 @@ public class AppBaseScrollableActivity extends CustomThemeEngineAppCompatActivit
                 markwon.setMarkdown(app_scrollableactivity_content_in_mainrules_text, AppUtils.convertStreamToString(inputStream));
             }
         } catch (IOException e) {
-            new StyleableToast.Builder(getApplicationContext())
-                    .text(getString(R.string.error_while_reading_a_file)) // set text
-                    .textBold() //set text bold
-                    .iconStart(AppUtils.getIconWarning()) //icon in start of toast
-                    .show(); //show custom toast
+            Snackbar.make(mRootLayout, getString(R.string.error_while_reading_a_file), Snackbar.LENGTH_LONG).show();
             e.printStackTrace();
         }
 
@@ -168,11 +157,7 @@ public class AppBaseScrollableActivity extends CustomThemeEngineAppCompatActivit
                 AppUtils.resetHighLightedText(app_scrollableactivity_content_in_mainrules_text, fullText);
 
                 if(criteria.equals(" ") | criteria.contains("        ") | criteria.isEmpty()){
-                    new StyleableToast.Builder(getApplicationContext())
-                            .text(getString(R.string.app_edittext_is_empty)) // set text
-                            .textBold() //set text bold
-                            .iconStart(AppUtils.getIconWarning()) //icon in start of toast
-                            .show(); //show custom toast
+                    Snackbar.make(mRootLayout, getString(R.string.app_edittext_is_empty), Snackbar.LENGTH_LONG).show();
                 } else {
                     if (fullText.contains(criteria)) {
                         int indexOfCriteria = fullText.indexOf(criteria);
@@ -209,7 +194,7 @@ public class AppBaseScrollableActivity extends CustomThemeEngineAppCompatActivit
 
         try {
             if (AppBookmarkUtils.checkIfBookmarkExist(getApplicationContext(), sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME))) {
-                menu.getItem(1).setIcon(ContextCompat.getDrawable(this, R.drawable.app_bookmark_minus));
+                menu.getItem(1).setIcon(ContextCompat.getDrawable(this, R.drawable.app_bookmark_remove));
                 menu.getItem(1).setTitle(getResources().getString(R.string.app_remove_bookmark));
             }
         } catch (IOException e) {
@@ -231,7 +216,7 @@ public class AppBaseScrollableActivity extends CustomThemeEngineAppCompatActivit
                 app_basescrollableactivity_search_container.startAnimation(fade_in);
                 app_basescrollableactivity_search_container.setVisibility(View.VISIBLE);
 
-                menu.getItem(0).setIcon(ContextCompat.getDrawable(this, R.drawable.ic_warning_outline_menu));
+                menu.getItem(0).setIcon(ContextCompat.getDrawable(this, R.drawable.ic_warning_menu));
             } else {
                 app_basescrollableactivity_search_container.startAnimation(fade_out);
                 app_basescrollableactivity_search_container.setVisibility(View.GONE);
@@ -250,7 +235,8 @@ public class AppBaseScrollableActivity extends CustomThemeEngineAppCompatActivit
                             sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME),
                             app_basescrollableactivity_title.getText().toString(),
                             app_basescrollableactivity_summary.getText().toString());
-                    menu.getItem(1).setIcon(ContextCompat.getDrawable(this, R.drawable.app_bookmark_minus));
+                    Snackbar.make(mRootLayout, getResources().getString(R.string.app_bookmark_added), Snackbar.LENGTH_LONG).show();
+                    menu.getItem(1).setIcon(ContextCompat.getDrawable(this, R.drawable.app_bookmark_remove));
                     menu.getItem(1).setTitle(getResources().getString(R.string.app_remove_bookmark));
                 } catch (IOException | JSONException e) {
                     Log.e(LOG_TAG, getResources().getString(R.string.app_error_occurred));
@@ -263,7 +249,8 @@ public class AppBaseScrollableActivity extends CustomThemeEngineAppCompatActivit
                             sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME),
                             app_basescrollableactivity_title.getText().toString(),
                             app_basescrollableactivity_summary.getText().toString());
-                    menu.getItem(1).setIcon(ContextCompat.getDrawable(this, R.drawable.app_bookmark_plus));
+                    Snackbar.make(mRootLayout, getResources().getString(R.string.app_bookmark_removed), Snackbar.LENGTH_LONG).show();
+                    menu.getItem(1).setIcon(ContextCompat.getDrawable(this, R.drawable.app_bookmark_add));
                     menu.getItem(1).setTitle(getResources().getString(R.string.app_add_bookmark));
                 } catch (IOException | JSONException e) {
                     Log.e(LOG_TAG, getResources().getString(R.string.app_error_occurred));
@@ -271,39 +258,13 @@ public class AppBaseScrollableActivity extends CustomThemeEngineAppCompatActivit
                 }
             }
         } else if (id == R.id.save_rule) {
-            if (sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME).contains("ortho_")) {
-                AppUtils.copyTXTFileFromAssets(
-                        getApplicationContext(),
-                        "mainrules/orthography/" + sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME) + Constants.FILE_FORMAT,
-                        Environment.getExternalStorageDirectory().getAbsolutePath() + "/Rulebook/",
-                        Environment.getExternalStorageDirectory().getAbsolutePath() + "/Rulebook/" + getString(R.string.ortho) + "/",
-                        outFileName, outFileDir,
-                        getString(R.string.app_error_while_saving_file) + ":" + outFileDir + outFileName + Constants.FILE_EXPORT_FORMAT + "(" + sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME) + Constants.FILE_EXPORT_FORMAT + ")");
-            } else if (sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME).contains("punct_")){
-                AppUtils.copyTXTFileFromAssets(
-                        getApplicationContext(),
-                        "mainrules/punctuation/" + sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME) + Constants.FILE_FORMAT,
-                        Environment.getExternalStorageDirectory().getAbsolutePath() + "/Rulebook/",
-                        Environment.getExternalStorageDirectory().getAbsolutePath() + "/Rulebook/" + getString(R.string.punct) + "/",
-                        outFileName, outFileDir,
-                        getString(R.string.app_error_while_saving_file) + ":" + outFileDir + outFileName + Constants.FILE_EXPORT_FORMAT + "(" + sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME) + Constants.FILE_EXPORT_FORMAT + ")");
-            } else if (sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME).contains("dict_")){
-                AppUtils.copyTXTFileFromAssets(
-                        getApplicationContext(),
-                        "dictionaries/" + sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME) + Constants.FILE_FORMAT,
-                        Environment.getExternalStorageDirectory().getAbsolutePath() + "/Rulebook/",
-                        Environment.getExternalStorageDirectory().getAbsolutePath() + "/Rulebook/" + getString(R.string.dictionaries) + "/",
-                        outFileName, outFileDir,
-                        getString(R.string.app_error_while_saving_file) + ":" + outFileDir + outFileName + Constants.FILE_EXPORT_FORMAT + "(" + sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME) + Constants.FILE_EXPORT_FORMAT + ")");
-            } else {
-                AppUtils.copyTXTFileFromAssets(
-                        getApplicationContext(),
-                        "analyze_methods/" + sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME) + Constants.FILE_FORMAT,
-                        Environment.getExternalStorageDirectory().getAbsolutePath() + "/Rulebook/",
-                        Environment.getExternalStorageDirectory().getAbsolutePath() + "/Rulebook/" + getString(R.string.analyze_methods) + "/",
-                        outFileName, outFileDir,
-                        getString(R.string.app_error_while_saving_file) + ":" + outFileDir + outFileName + Constants.FILE_EXPORT_FORMAT + "(" + sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME) + Constants.FILE_EXPORT_FORMAT + ")");
-            }
+            AppUtils.copyFileFromAssets(
+                    getApplicationContext(),
+                    mRootLayout,
+                    inputFileDir,
+                    sourceIntent.getStringExtra(AppUtils.EXTRA_DATA_NAME) + Constants.FILE_FORMAT,
+                    exportFileDir,
+                    app_basescrollableactivity_title.getText() + Constants.FILE_EXPORT_FORMAT);
         }
         return super.onOptionsItemSelected(item);
     }

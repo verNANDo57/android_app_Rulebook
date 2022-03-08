@@ -12,7 +12,6 @@ import static com.verNANDo57.rulebook_educational.utils.AppUtils.TRANSLATE_DIREC
 import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
@@ -21,7 +20,6 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
@@ -96,11 +94,7 @@ public class AppAboutApplicationActivity extends CustomThemeEngineAppCompatActiv
 			}
 		});
 
-		ImageView about_preview = findViewById(R.id.about_preview);
-		about_preview.setColorFilter(R.color.colorAccent, PorterDuff.Mode.SRC_IN);
-
 		ImageButton buttonGithub = findViewById(R.id.buttongit);
-		buttonGithub.setColorFilter(R.color.colorAccent, PorterDuff.Mode.SRC_IN);
 		buttonGithub.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -111,7 +105,6 @@ public class AppAboutApplicationActivity extends CustomThemeEngineAppCompatActiv
 		});
 
 		ImageButton buttonVk = findViewById(R.id.buttonvk);
-		buttonVk.setColorFilter(R.color.colorAccent, PorterDuff.Mode.SRC_IN);
 		buttonVk.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -122,7 +115,6 @@ public class AppAboutApplicationActivity extends CustomThemeEngineAppCompatActiv
 		});
 
 		ImageButton buttonTelegram = findViewById(R.id.buttontg);
-		buttonTelegram.setColorFilter(R.color.colorAccent, PorterDuff.Mode.SRC_IN);
 		buttonTelegram.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -148,7 +140,7 @@ public class AppAboutApplicationActivity extends CustomThemeEngineAppCompatActiv
 			androidx.appcompat.app.AlertDialog.Builder builder = new androidx.appcompat.app.AlertDialog.Builder(this);
 			builder.setTitle(getString(R.string.app_exit));
 			builder.setMessage(getString(R.string.are_you_sure));
-			builder.setIcon(R.drawable.ic_warning_outline);
+			builder.setIcon(R.drawable.ic_warning);
 			builder.setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener(){
 				@Override
 				public void onClick(DialogInterface dialog, int which) {

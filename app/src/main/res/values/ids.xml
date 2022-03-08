@@ -1,8 +1,4 @@
 <resources>
-  <item name="colorpicker_color_picker_view" type="id"/>
-  <item name="colorpicker_color_panel_old" type="id"/>
-  <item name="colorpicker_color_panel_new" type="id"/>
-  <item name="colorpicker_preference_preview_color_panel" type="id"/>
   <item name="markwon_drawables_scheduler" type="id"/>
   <item name="markwon_drawables_scheduler_last_text_hashcode" type="id"/>
   <item name="markwon_tables_scheduler" type="id"/>

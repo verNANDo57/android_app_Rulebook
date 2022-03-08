@@ -11,11 +11,12 @@ package com.verNANDo57.rulebook_educational.utils;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import android.content.res.AssetManager;
 import android.content.res.Configuration;
+import android.os.Environment;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.BackgroundColorSpan;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
@@ -26,28 +27,30 @@ import android.widget.TextView;
 
 import androidx.annotation.AnimRes;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.verNANDo57.rulebook_educational.extradata.R;
-import com.verNANDo57.rulebook_educational.rules.Constants;
-import com.verNANDo57.rulebook_educational.styleabletoast.StyleableToast;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.RandomAccessFile;
+import java.nio.channels.FileChannel;
 
 public class AppUtils {
 
-    public static int PACKAGEMANAGER_GET_APP_VERISON_NAME = 2;
-    public static int PACKAGEMANAGER_GET_APP_VERISON_CODE = 4;
+    public static int PACKAGEMANAGER_GET_APP_VERISON_NAME = 0;
+    public static int PACKAGEMANAGER_GET_APP_VERISON_CODE = 1;
 
     public static PackageInfo pInfo;
 
     public static String LOG_TAG = "RULEBOOK_APP";
     public static String EXTRA_DATA_NAME = "rule_fragment";
+    public static String EXTRA_DATA_POSITION = "rule_position";
 
     //Thanks to this method, we can read a text file
     public static String convertStreamToString(java.io.InputStream is) {
@@ -63,7 +66,7 @@ public class AppUtils {
      */
     public static void setHighLightedText(TextView tv, String textToHighlight) {
         String tvt = tv.getText().toString();
-        int ofe = tvt.indexOf(textToHighlight, 0);
+        int ofe = tvt.indexOf(textToHighlight);
         Spannable wordToSpan = new SpannableString(tv.getText());
         for (int ofs = 0; ofs < tvt.length() && ofe != -1; ofs = ofe + 1) {
             ofe = tvt.indexOf(textToHighlight, ofs);
@@ -79,7 +82,7 @@ public class AppUtils {
 
     public static void resetHighLightedText(TextView tv, String textToResetColor) {
         String tvt = tv.getText().toString();
-        int ofe = tvt.indexOf(textToResetColor, 0);
+        int ofe = tvt.indexOf(textToResetColor);
         Spannable wordToSpan = new SpannableString(tv.getText());
         for (int ofs = 0; ofs < tvt.length() && ofe != -1; ofs = ofe + 1) {
             ofe = tvt.indexOf(textToResetColor, ofs);
@@ -93,16 +96,59 @@ public class AppUtils {
         }
     }
 
-    public static void copyFile(InputStream in, OutputStream out) throws IOException {
-        byte[] buffer = new byte[1024];
-        int read;
-        while((read = in.read(buffer)) != -1){
-            out.write(buffer, 0, read);
+    /**
+     * Using this function we can copy files (uses java.nio)
+     *
+     * @param sourceFile is the file that will be copied
+     * @param destinationFile is the copy of sourceFile
+     * @throws IOException - for cases when something interrupts the process
+     */
+    public static void copyFileUsingNIO(File sourceFile, File destinationFile) throws IOException {
+        FileInputStream inputStream = new FileInputStream(sourceFile);
+        FileOutputStream outputStream = new FileOutputStream(destinationFile);
+        FileChannel inChannel = inputStream.getChannel();
+        FileChannel outChannel = outputStream.getChannel();
+        try {
+            inChannel.transferTo(0, inChannel.size(), outChannel);
+        } finally {
+            inChannel.close();
+            outChannel.close();
+            inputStream.close();
+            outputStream.close();
+        }
+    }
+
+    public static void copyFileFromAssets(Context context, View rootView, String inputFileDir, String inputFile, String outputFileDir, String outputFile) {
+        try {
+            // Create output dir if needed
+            new File(Environment.getExternalStorageDirectory().getAbsolutePath() + outputFileDir).mkdirs();
+            // Initialize output file
+            File output = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + outputFileDir + outputFile);
+            if (!output.exists()) {
+                InputStream in;
+                OutputStream out;
+                in = context.getAssets().open(inputFileDir + inputFile);
+                out = new FileOutputStream(output);
+
+                byte[] buffer = new byte[1024];
+                int read;
+                while((read = in.read(buffer)) != -1){
+                    out.write(buffer, 0, read);
+                }
+
+                Snackbar.make(rootView, context.getString(R.string.app_saved) + ":" + outputFileDir + outputFile, Snackbar.LENGTH_LONG).show();
+            } else {
+                Snackbar.make(rootView, context.getString(R.string.app_saved_already) + ":" + outputFileDir + outputFile, Snackbar.LENGTH_LONG).show();
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            Log.e(LOG_TAG, context.getResources().getString(R.string.app_error_while_saving_file), e);
+            Snackbar.make(rootView, context.getString(R.string.app_error_while_saving_file), Snackbar.LENGTH_LONG).show();
         }
     }
 
     public static int getIconWarning() {
-        return R.drawable.ic_warning_outline;
+        return R.drawable.ic_warning;
     }
 
     /* Using these methods we can remove last line of any text file */
@@ -236,16 +282,18 @@ public class AppUtils {
     }
 
     /**
-        This simple method have been created for fetching app's info (VerisionName or VersionCode).
-        It returns String, so his return value can be used instead of any string which defined in strings.xml and etc.
-
-        For Example:
-            anyTextView.setText(Utils.getApplicationVersionInfo( [CONTEXT] , PACKAGEMANAGER_GET_APP_VERISON_NAME);
-        Or:
-            anyTextView.setText(Utils.getApplicationVersionInfo( [CONTEXT] , PACKAGEMANAGER_GET_APP_VERISON_CODE);
-        Or:
+     *  This simple method have been created for fetching app's info (VerisionName or VersionCode).
+     *  It returns String, so his return value can be used instead of any string which defined in strings.xml and etc.
+     *
+     *  For Example:
+     *      anyTextView.setText(Utils.getApplicationVersionInfo( [CONTEXT] , PACKAGEMANAGER_GET_APP_VERISON_NAME);
+     *  Or:
+     *     anyTextView.setText(Utils.getApplicationVersionInfo( [CONTEXT] , PACKAGEMANAGER_GET_APP_VERISON_CODE);
+     *
+     * @param context - ApplicationContext is needed for fetching app information
+     * @param info_mode - Using this parameter we can choose between app version code and app version name
+     * @return - returns version code or version name as a string
      */
-
     public static String getApplicationVersionInfo(Context context, int info_mode) {
         //Define output that will be used in the return statement
         String output_info = null;
@@ -269,59 +317,6 @@ public class AppUtils {
         return output_info;
     }
 
-    public static void copyTXTFileFromAssets (Context context, String filename, String outPreDir, String outDir, String outFileName, String outFileDir, String log_msg) {
-        AssetManager assetManager = context.getAssets();
-        InputStream in;
-        OutputStream out;
-        try {
-            in = assetManager.open(filename);
-
-            File preDirectory = new File(outPreDir);
-            if (! preDirectory.exists()){
-                preDirectory.mkdir();
-                // If you require it to make the entire directory path including parents,
-                // use directory.mkdirs(); here instead.
-            }
-
-            File directory = new File(outDir);
-            if (! directory.exists()){
-                directory.mkdir();
-                // If you require it to make the entire directory path including parents,
-                // use directory.mkdirs(); here instead.
-            }
-
-            File outFile = new File(outDir,  outFileName + Constants.FILE_EXPORT_FORMAT);
-            if (outFile.exists()){
-                new StyleableToast.Builder(context)
-                        .text(context.getString(R.string.app_saved_already) + ":" + outFileDir + outFileName + Constants.FILE_EXPORT_FORMAT) // set text
-                        .textBold() //set text bold
-                        .iconStart(AppUtils.getIconWarning()) //icon in start of toast
-                        .show(); //show custom toast
-            } else {
-                out = new FileOutputStream(outFile);
-                AppUtils.copyFile(in, out);
-                in.close();
-                out.flush();
-                out.close();
-
-                new StyleableToast.Builder(context)
-                        .text(context.getString(R.string.app_saved) + ":" + outFileDir + outFileName + Constants.FILE_EXPORT_FORMAT) // set text
-                        .textBold() //set text bold
-                        .iconStart(AppUtils.getIconWarning()) //icon in start of toast
-                        .show(); //show custom toast
-            }
-
-        } catch(IOException e) {
-            Log.e(LOG_TAG, log_msg, e);
-
-            new StyleableToast.Builder(context)
-                    .text(context.getString(R.string.app_error_while_saving_file)) // set text
-                    .textBold() //set text bold
-                    .iconStart(AppUtils.getIconWarning()) //icon in start of toast
-                    .show(); //show custom toast
-        }
-    }
-
     /**
      * @param context
      *
@@ -339,5 +334,17 @@ public class AppUtils {
                 return false;
         }
         return false;
+    }
+
+    /**
+     * Using this function we can calculate available number of columns, given a desired column width.
+     * @param context - needed for getting display metrics
+     * @param columnWidthDp - column width dp 0_o
+     * @return - returns number of columns as integer
+     */
+    public static int calculateNumberOfColumns(Context context, float columnWidthDp) {
+        DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
+        float screenWidthDp = displayMetrics.widthPixels / displayMetrics.density;
+        return (int) (screenWidthDp / columnWidthDp + 0.5);
     }
 }

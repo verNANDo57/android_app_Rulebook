@@ -32,7 +32,7 @@ public class SplashScreenActivity extends CustomThemeEngineAppCompatActivity {
 
 		setContentView(R.layout.app_splashscreen);
 
-		int BackgroundTintColor = ColorUtils.lighter(getResources().getColor(R.color.colorAccent), 0.01f);
+		int BackgroundTintColor = ColorUtils.lighter(getResources().getColor(R.color.colorAccent));
 
 		Indicator1 = findViewById(R.id.appSplashScreenProgressBar1); //Indicator1(ProgressBar1)
 		Indicator2 = findViewById(R.id.appSplashScreenProgressBar2); //Indicator2(ProgressBar2)

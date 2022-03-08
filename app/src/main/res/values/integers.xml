@@ -2,4 +2,5 @@
 <resources>
     <integer name="fullBackgroundAlpha">255</integer>
     <integer name="defaultBackgroundAlpha">230</integer>
+    <integer name="snackbarMaxLines">6</integer>
 </resources>

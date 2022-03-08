@@ -55,8 +55,6 @@
     <string name="app_launch_ic_launch_search_rules">Поиск</string>
     <string name="app_launch_ic_launch_search_rules_extended">Быстрый доступ</string>
 
-    <string name="voiceSearch">Голосовой Ввод</string>
-
     <string name="app_darkTheme_switch_summary">Выберите режим</string>
     <string name="app_darkTheme_switch">Тёмная тема</string>
     <string name="app_darkTheme_mode_followSystem">Следовать настройкам системы</string>
@@ -66,9 +64,8 @@
 
     <string name="app_enable_statusBar">Строка состояния</string>
     <string name="app_enable_statusBar_summary">Не скрывать строку состояния</string>
-    <string name="app_autoHide_bottomAppBar">Всплывающая панель навигации</string>
-    <string name="app_autoHide_bottomAppBar_summary">Автоматически скрывать всплывающую панель навигации (При скроллинге вверх и вниз, соответственно)</string>
-    <string name="app_prefs_warning_summary">После введённых изменений, для корректного отображения интерфейса может потребоваться перезагрузка.</string>
+
+    <string name="app_prefs_warning_summary">После введённых изменений для корректного отображения интерфейса может потребоваться перезапуск приложения.</string>
 
     <string name="app_edittext_is_empty">Напишите что-нибудь</string>
 
@@ -83,6 +80,7 @@
     <string name="intent_to_main">Главная</string>
     <string name="search_actionbar">Поиск</string>
     <string name="exit_actionbar">Выход</string>
+    <string name="app_empty">Пусто</string>
 
     <string name="rate_us_headline">Отзыв</string>
     <string name="rate_us">Оцените приложение</string>
@@ -98,12 +96,8 @@
     <string name="accept">Принять</string>
     <string name="cancel">Отменить</string>
     <string name="main_page">Главная</string>
-    <string name="need_to_install_google_voice">Необходимо установить Голосовой Поиск Google</string>
-    <string name="we_are_listening_you">Слушаю</string>
-    <string name="accept_and_install">Установить</string>
     <string name="yes">Да</string>
     <string name="no">Нет</string>
-    <string name="have_read">Прочитал</string>
     <string name="error_while_reading_a_file">Возникла ошибка при попытке чтения файла</string>
     <string name="category_pref_interface">Интерфейс</string>
     <string name="category_pref_functions">Функции</string>
@@ -114,7 +108,6 @@
     <string name="app_storageAccess_warning">С 11-й версии Android доступ к внутреннему хранилищу устройства получить не так уж и просто. Данное разрешение необходимо для сохранения текстовых файлов в памяти вашего устройвства. Разрешение необходимо выдать вручную, в настройках устройства. Помните, что данное разрешение выдавать не обязательно, иными словами вы можете пользоваться приложением и без него. Перейти в настройки?</string>
     <string name="app_error_while_saving_file">Ошибка при попытке сохранения файла. Вероятнее всего, приложение не имеет необходимых разрешений для сохранения файлов.</string>
     <string name="app_save">Сохранить</string>
-    <string name="app_save_in_process">Сохранение…</string>
     <string name="app_saved">Сохранено</string>
     <string name="app_saved_already">Файл был сохранён ранее</string>
     <string name="app_granted">Разрешено</string>
@@ -127,9 +120,8 @@
     <string name="app_reason_why_these_permissions_are_needed">Если вы не дадите приложению доступ к внутренней памяти устройства, то, к сожалению, будет невозможным что-либо сохранять. ¯\_(ツ)_/¯</string>
 
     <string name="compose_disabled_message">Ярлык недоступен по неизвестной причине</string>
-    <string name="error_while_reading_theme">Ошибка при попытке чтения темы</string>
 
-    <string name="BottomSheetDialog_headline">МЕНЮ</string>
+    <string name="bottomSheetDialog_headline">МЕНЮ</string>
 
     <string name="main_rules">Основные</string>
     <string name="lexicon_rules">Лексика</string>
@@ -149,8 +141,12 @@
     <string name="app_bookmarks">Закладки</string>
     <string name="app_add_bookmark">Добавить закладку</string>
     <string name="app_remove_bookmark">Удалить закладку</string>
+    <string name="app_remove_several_bookmarks">Удалить закладки</string>
     <string name="app_bookmark_added">Закладка добавлена</string>
     <string name="app_bookmark_removed">Закладка удалена</string>
+    <string name="app_several_bookmarks_removed">Закладки удалены</string>
+    <string name="app_bookmarks_refresh">Обновить список</string>
+    <string name="app_bookmarks_selectall">Выбрать все</string>
 
     <string name="ortho">Орфография</string>
     <string name="punct">Пунктуация</string>

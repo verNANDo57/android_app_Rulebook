@@ -246,8 +246,7 @@ public class PDFView extends RelativeLayout {
         pagesLoader = new PagesLoader(this);
 
         paint = new Paint();
-        ColorMatrixColorFilter filter = new ColorMatrixColorFilter(new ColorMatrix(ColorUtils.createColorMatrixFromHex(getResources().getColor(R.color.app_custom_background))));
-        paint.setColorFilter(filter);
+        paint.setColorFilter(new ColorMatrixColorFilter(new ColorMatrix(ColorUtils.createColorMatrixFromHex(getResources().getColor(R.color.app_custom_background)))));
 
         debugPaint = new Paint();
         debugPaint.setStyle(Style.STROKE);

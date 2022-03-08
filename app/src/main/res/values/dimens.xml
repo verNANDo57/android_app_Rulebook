@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+	<dimen name="app_minHeight">48dp</dimen>
+
 	<dimen name="action_title_textsize">20dp</dimen>
 	<dimen name="action_subtitle_textsize">10dp</dimen>
 
@@ -53,7 +55,6 @@
 
 	<dimen name="app_design_snackbar_min_width">-1px</dimen>
 	<dimen name="app_design_snackbar_max_width">-1px</dimen>
-	<dimen name="app_design_snackbar_elevation">6dp</dimen>
 	<dimen name="app_design_snackbar_background_corner_radius">0dp</dimen>
 	<dimen name="app_design_snackbar_padding_horizontal">12dp</dimen>
 	<dimen name="app_design_snackbar_extra_spacing_horizontal">0dp</dimen>
@@ -117,7 +118,7 @@
 	<dimen name="app_bottomsheetdialogshape_default_paddingTop_value">0dp</dimen>
 	<dimen name="app_bottomsheetdialogshape_default_paddingBottom_value">0dp</dimen>
 
-	<dimen name="customthemeengine_theme_item_width">140dp</dimen>
+	<dimen name="gridview_item_width">140dp</dimen>
 
 	<dimen name="app_pagertabstrip_height">40dp</dimen>
 
@@ -127,13 +128,6 @@
 	<dimen name="default_text_size">16sp</dimen>
 	<dimen name="default_corner_radius">30dp</dimen>
 	<dimen name="default_stroke_width">3dp</dimen>
-
-	<!--These two are only used when an icon is applied to the StyleableToast. previous 22 -->
-	<dimen name="toast_horizontal_padding_icon_side">20dp</dimen>
-	<dimen name="toast_horizontal_padding_empty_side">25dp</dimen>
-
-	<dimen name="toast_horizontal_padding">25dp</dimen>
-	<dimen name="toast_vertical_padding">11.2dp</dimen>
 
 	<dimen name="drawable_padding">8dp</dimen>
 	<dimen name="icon_size">19dp</dimen>

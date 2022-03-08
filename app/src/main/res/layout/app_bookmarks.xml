@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bookmarks_root_linearlayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
@@ -22,12 +24,35 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/search_viewHint"
-        android:inputType="textAutoComplete"
-        android:importantForAutofill="no" />
+        android:importantForAutofill="no"
+        android:inputType="textAutoComplete" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/bookmarks_recyclerview"
+    <com.verNANDo57.rulebook_educational.app.CustomThemeEngineSwipeRefreshLayout
+        android:id="@+id/bookmarks_swiperefreshlayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/bookmarks_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/bookmarks_empty_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/app_empty"
+                app:drawableTopCompat="@drawable/app_smile"
+                android:layout_gravity="center"
+                android:visibility="gone"/>
+
+        </FrameLayout>
+
+    </com.verNANDo57.rulebook_educational.app.CustomThemeEngineSwipeRefreshLayout>
 
 </LinearLayout>

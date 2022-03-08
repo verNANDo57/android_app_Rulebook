@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
 	<style name="AppThemeRulebook" parent="Theme.MaterialComponents.DayNight.Bridge">
+		<item name="android:windowAnimationStyle">@style/AppWindowAnimations</item>
 		<item name="colorAccent">@color/colorAccent</item>
 		<item name="android:textColor">@color/app_text</item>
 		<item name="actionBarStyle">@style/LightThemeActionBar</item>
@@ -19,13 +20,13 @@
         <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/app_rulebook_productsans_fontfamily</item>
 		<item name="fontFamily">@font/app_rulebook_productsans_fontfamily</item>
 		<item name="snackbarStyle">@style/SnackBar</item>
-		<item name="android:popupTheme" tools:targetApi="lollipop">@style/ThemeOverlay.MaterialComponents.Light</item>
+		<item name="snackbarButtonStyle">@style/SnackBarButton</item>
+		<item name="snackbarTextViewStyle">@style/SnackBarTextViewStyle</item>
+		<item name="android:popupTheme" tools:targetApi="lollipop">@style/AppTheme.PopupOverlay</item>
 		<item name="android:windowBackground">@color/app_custom_background</item>
-		<item name="popupTheme">@style/ThemeOverlay.MaterialComponents.Light</item>
+		<item name="popupTheme">@style/AppTheme.PopupOverlay</item>
 		<item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
 		<item name="backgroundColor">@color/app_custom_background</item>
-		<item name="backgroundColorDark">@color/app_custom_background_darker</item>
-		<item name="backgroundColorLight">@color/app_custom_background_lighter</item>
 		<item name="imageButtonStyle">@style/AppImageButtonStyle</item>
 		<item name="alertDialogTheme">@style/AppAlertDialogThemeLight</item>
 		<item name="tabStyle">@style/AppTabLayoutItemsStyle</item>
@@ -35,13 +36,19 @@
 		<item name="android:toolbarStyle">@style/AppToolbarStyle</item>
 		<item name="android:webViewStyle">@style/AppWebViewStyleLightTheme</item>
 		<item name="navigationViewStyle">@style/NavigationViewStyle</item>
+		<item name="android:textColorSecondary">@color/colorAccent</item>
+	</style>
+
+	<style name="AppWindowAnimations" parent="@android:style/Animation.Activity">
+		<item name="android:activityOpenEnterAnimation">@anim/app_slide_from_right</item>
+		<item name="android:activityOpenExitAnimation">@anim/app_slide_exit_to_left</item>
+		<item name="android:activityCloseEnterAnimation">@anim/app_slide_from_left</item>
+		<item name="android:activityCloseExitAnimation">@anim/app_slide_exit_to_right</item>
 	</style>
 
 	<style name="AppWebViewStyleLightTheme" parent="android:Widget.Material.WebView">
 		<item name="android:background">@color/app_custom_background</item>
 		<item name="backgroundColor">@color/app_custom_background</item>
-		<item name="backgroundColorDark">@color/app_custom_background_darker</item>
-		<item name="backgroundColorLight">@color/app_custom_background_lighter</item>
 	</style>
 
 	<style name="AppThemeRulebook.NoActionBar">
@@ -56,7 +63,6 @@
 
 	<style name="AppAlertDialogThemeLight" parent="Theme.AppCompat.Light.Dialog.Alert">
 		<item name="titleTextColor">@color/app_text</item>
-		<item name="textColor">@color/app_text</item>
 		<item name="android:textColor">@color/app_text</item>
 		<item name="android:textColorPrimary">@color/app_text</item>
 		<item name="textColorAlertDialogListItem">@color/app_text</item>
@@ -98,7 +104,6 @@
 		<item name="android:background">@drawable/app_toolbar</item>
 		<item name="android:navigationIcon">@drawable/ic_view_list_toolbar</item>
 		<item name="titleTextColor">@color/app_toolbar_item_color</item>
-		<item name="popupTheme">@style/AppTheme.PopupOverlay</item>
 		<item name="android:minHeight">?attr/actionBarSize</item>
 		<item name="android:gravity">center</item>
 		<item name="titleTextAppearance">@style/AppBarTitleTextStyle</item>
@@ -191,11 +196,11 @@
 	</style>
 
 	<style name="EditText" parent="Widget.AppCompat.EditText">
+		<item name="android:minHeight">@dimen/app_minHeight</item>
 		<item name="android:textStyle">normal</item>
 		<item name="android:singleLine">true</item>
 		<item name="android:textColorHint">@color/colorAccent</item>
 		<item name="android:textColor">@color/colorAccent</item>
-		<item name="textColor">@color/colorAccent</item>
 	</style>
 
 	<style name="TextBold" parent="Widget.AppCompat.TextView">
@@ -250,19 +255,25 @@
 		<item name="colorControlActivated">@color/colorPrimary</item>
 	</style>
 
-	<style name="SnackBar" parent="Widget.MaterialComponents.Snackbar">
+	<style name="SnackBar" parent="Widget.Design.Snackbar">
 		<item name="android:minWidth">@dimen/app_design_snackbar_min_width</item>
 		<item name="android:maxWidth">@dimen/app_design_snackbar_max_width</item>
-		<!-- <item name="android:background">@drawable/app_design_snackbar_background</item> -->
+		<item name="android:background">@drawable/shape_snackbar</item>
 		<item name="android:paddingLeft">@dimen/app_design_snackbar_padding_horizontal</item>
 		<item name="android:paddingRight">@dimen/app_design_snackbar_padding_horizontal</item>
-		<item name="elevation">@dimen/app_design_snackbar_elevation</item>
 		<item name="maxActionInlineWidth">@dimen/app_design_snackbar_action_inline_max_width</item>
 	</style>
 
-	<style name="TextAppearanceDesignSnackbarLightTheme" parent="TextAppearance.Design.Snackbar.Message">
-		<item name="android:textSize">@dimen/app_design_snackbar_text_size</item>
+	<style name="SnackBarButton" parent="Widget.MaterialComponents.Button.TextButton.Snackbar">
 		<item name="android:textColor">@color/app_text</item>
+		<item name="android:textStyle">bold</item>
+	</style>
+
+	<style name="SnackBarTextViewStyle" parent="Widget.MaterialComponents.Snackbar.TextView">
+		<item name="android:maxLines">@integer/snackbarMaxLines</item>
+		<item name="maxLines">@integer/snackbarMaxLines</item>
+		<item name="android:textColor">@color/app_text</item>
+		<item name="android:textStyle">bold</item>
 	</style>
 
 	<style name="cpv_ColorPickerViewStyle">
@@ -271,7 +282,10 @@
 	</style>
 
 	<style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-	<style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+	<style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light">
+		<item name="android:colorBackground">@color/app_custom_background</item>
+		<item name="android:textColor">@color/colorAccent</item>
+	</style>
 
 	<!-- Default theme for activities that don't actually display a UI; that
          is, they finish themselves before being resumed. -->
@@ -295,5 +309,7 @@
 
 	<style name="AppImageButtonStyle" parent="Widget.AppCompat.ImageButton">
 		<item name="android:stateListAnimator" tools:targetApi="lollipop">@animator/btn_anim_zoom</item>
+		<item name="android:background">@android:color/transparent</item>
+		<item name="background">@android:color/transparent</item>
 	</style>
 </resources>

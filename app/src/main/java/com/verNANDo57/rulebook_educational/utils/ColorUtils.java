@@ -20,8 +20,8 @@ public final class ColorUtils {
     }
 
     @ColorInt
-    public static int darker (@ColorInt int color, @FloatRange(from = 0.0D,to = 1.0D) float factor) {
-        factor = 0.85f;
+    public static int darker (@ColorInt int color) {
+        @FloatRange(from = 0.0D,to = 1.0D) float factor = 0.85f;
         return Color.argb(Color.alpha(color), ((int) (Color.red(color) * factor)),
                 ((int) (Color.green(color) * factor)),
                 ((int) (Color.blue(color) * factor))
@@ -29,8 +29,8 @@ public final class ColorUtils {
     }
 
     @ColorInt
-    public static int lighter(@ColorInt int color, @FloatRange(from = 0.0, to = 1.0) float factor) {
-        factor = 0.15f;
+    public static int lighter(@ColorInt int color) {
+        @FloatRange(from = 0.0, to = 1.0) float factor = 0.15f;
         int alpha = Color.alpha(color);
         int red = (int)(((float)Color.red(color) * ((float)1 - factor) / (float)255 + factor) * (float)255);
         int green = (int)(((float)Color.green(color) * ((float)1 - factor) / (float)255 + factor) * (float)255);
@@ -60,24 +60,14 @@ public final class ColorUtils {
     }
 
     /**
-     * Returns `true` if the luminance of the color is greater than or equal to 0.5
-     *
-     * @param color The color to calculate the luminance.
-     * @return `true` if the color is light
-     */
-    public static boolean isLightColor(@ColorInt int color) {
-        return isLightColor(color, 0.5);
-    }
-
-    /**
      * Returns `true` if the luminance of the color is less than or equal to the luminance factor
      *
      * @param color The color to calculate the luminance.
-     * @param luminance Value from 0-1. 1 = white. 0 = black.
+     * luminance Value from 0-1. 1 = white. 0 = black.
      * @return `true` if the color is light
      */
-    public static boolean isLightColor(@ColorInt int color, @FloatRange(from = 0.0, to = 1.0) double luminance) {
-        luminance = 0.5;
+    public static boolean isLightColor(@ColorInt int color) {
+        @FloatRange(from = 0.0, to = 1.0) double luminance = 0.5;
         return androidx.core.graphics.ColorUtils.calculateLuminance(color) >= luminance;
     }
 
@@ -193,14 +183,13 @@ public final class ColorUtils {
 
     /**
      * Using these methods we can create color matrix.
+     *
+     * Here we transform six-centric number into a decimal using {@link Integer#parseInt(String, int)}
+     * and then round it to hundredths using {@link DecimalFormat#format(double)}
      */
     public static float[] createColorMatrixFromHex(int colorFromResource) {
         String hex = Integer.toHexString(colorFromResource);
 
-        /**
-         * Here we transform six-centric number into a decimal using {@link Integer#parseInt(String, int)}
-         * and then round it to hundredths using {@link DecimalFormat#format(double)}
-         */
         float a = Float.parseFloat(new DecimalFormat("#.##").format(Integer.parseInt(hex.substring(0, 2), 16) / 255.0f)); // Alpha (Transparency in percents) [First Two
         float r = Float.parseFloat(new DecimalFormat("#.##").format(Integer.parseInt(hex.substring(2, 4), 16) / 255.0f)); // Red
         float g = Float.parseFloat(new DecimalFormat("#.##").format(Integer.parseInt(hex.substring(4, 6), 16) / 255.0f)); // Green
@@ -227,10 +216,6 @@ public final class ColorUtils {
             hex = hex.substring(1);
         }
 
-        /**
-         * Here we transform six-centric number into a decimal using {@link Integer#parseInt(String, int)}
-         * and then round it to hundredths using {@link DecimalFormat#format(double)}
-         */
         float a = Float.parseFloat(new DecimalFormat("#.##").format(Integer.parseInt(hex.substring(0, 2), 16) / 255.0f)); // Alpha (Transparency in percents) [First Two
         float r = Float.parseFloat(new DecimalFormat("#.##").format(Integer.parseInt(hex.substring(2, 4), 16) / 255.0f)); // Red
         float g = Float.parseFloat(new DecimalFormat("#.##").format(Integer.parseInt(hex.substring(4, 6), 16) / 255.0f)); // Green

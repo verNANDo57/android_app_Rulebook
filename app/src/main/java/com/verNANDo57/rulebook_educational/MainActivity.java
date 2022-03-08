@@ -112,7 +112,7 @@ public class MainActivity extends CustomThemeEngineAppCompatActivity {
 	public void app_exit() {
 		androidx.appcompat.app.AlertDialog.Builder builder = new androidx.appcompat.app.AlertDialog.Builder(this);
 		builder.setTitle(getString(R.string.app_exit));
-		builder.setIcon(R.drawable.ic_warning_outline);
+		builder.setIcon(R.drawable.ic_warning);
 		builder.setMessage(getString(R.string.are_you_sure));
 		builder.setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener() {
 			@Override
@@ -130,11 +130,11 @@ public class MainActivity extends CustomThemeEngineAppCompatActivity {
 		alert.show();
 	}
 
-	/*
-  		These permissions are required:
-        android.permission.WRITE_EXTERNAL_STORAGE,
-        android.permission.READ_EXTERNAL_STORAGE,
-        android.permission.MANAGE_EXTERNAL_STORAGE
+	/**
+	 * These permissions are required:
+	 * android.permission.WRITE_EXTERNAL_STORAGE,
+	 * android.permission.READ_EXTERNAL_STORAGE,
+	 * android.permission.MANAGE_EXTERNAL_STORAGE
 	*/
 	public void checkPermission() {
 		//Check if android version is Android 11 or higher
@@ -145,7 +145,7 @@ public class MainActivity extends CustomThemeEngineAppCompatActivity {
 				AlertDialog.Builder builder = new AlertDialog.Builder(this);
 				builder.setTitle(getString(R.string.app_warning));
 				builder.setMessage(getString(R.string.app_storageAccess_warning));
-				builder.setIcon(R.drawable.ic_warning_outline);
+				builder.setIcon(R.drawable.ic_warning);
 				builder.setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener(){
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
@@ -186,7 +186,7 @@ public class MainActivity extends CustomThemeEngineAppCompatActivity {
 	public void createShouldShowRequestPermissionRationaleAlertDialogCompat(){
 		androidx.appcompat.app.AlertDialog.Builder builder = new androidx.appcompat.app.AlertDialog.Builder(this);
 		builder.setTitle(getString(R.string.app_warning));
-		builder.setIcon(ContextCompat.getDrawable(this, R.drawable.ic_warning_outline));
+		builder.setIcon(ContextCompat.getDrawable(this, R.drawable.ic_warning));
 		builder.setMessage(getString(R.string.app_reason_why_these_permissions_are_needed));
 		builder.setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener() {
 			@Override

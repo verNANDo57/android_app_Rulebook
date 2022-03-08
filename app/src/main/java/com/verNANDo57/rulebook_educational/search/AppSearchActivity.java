@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.EditText;
 
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -21,6 +22,7 @@ import com.google.android.material.navigation.NavigationView;
 import com.verNANDo57.rulebook_educational.BottomNavAmongActivitiesFragment;
 import com.verNANDo57.rulebook_educational.app.CustomThemeEngineAppCompatActivity;
 import com.verNANDo57.rulebook_educational.extradata.R;
+import com.verNANDo57.rulebook_educational.utils.AppUtils;
 
 import java.util.ArrayList;
 import java.util.Locale;
@@ -49,7 +51,17 @@ public class AppSearchActivity extends CustomThemeEngineAppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.search_recyclerview);
         searchAdapter = new SearchAdapter(SearchReferences.setupSearchData(getApplicationContext()));
         recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        // Initialize LayoutManager
+        RecyclerView.LayoutManager layoutManager;
+        // Check if device is tablet
+        if (getResources().getBoolean(R.bool.deviceIsTablet)) {
+            // If so, use GridLayoutManager
+            layoutManager = new GridLayoutManager(this, AppUtils.calculateNumberOfColumns(this, getResources().getDimension(R.dimen.gridview_item_width)));
+        } else {
+            // Otherwise use LinearLayoutManager
+            layoutManager = new LinearLayoutManager(this);
+        }
+        recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(searchAdapter);
 
         EditText search_edittext = findViewById(R.id.search_edittext);

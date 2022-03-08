@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/app_bottomsheetdialog_marginStartOrLeft"
         android:layout_marginEnd="@dimen/app_bottomsheetdialog_marginEndOrRight"
-        android:text="@string/BottomSheetDialog_headline"
+        android:text="@string/bottomSheetDialog_headline"
         android:gravity="center"/>
 
     <com.google.android.material.navigation.NavigationView

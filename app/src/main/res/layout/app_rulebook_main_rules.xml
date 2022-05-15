@@ -9,10 +9,12 @@
 	android:orientation="vertical">
 
 	<androidx.appcompat.widget.Toolbar
-		android:id="@+id/toolbar_in_mainrules_layout"
+		android:id="@+id/toolbar_mainrules"
 		android:layout_width="match_parent"
 		android:layout_height="@dimen/app_toolbar_height"
-		android:layout_margin="@dimen/app_toolbar_margin"
+		android:layout_marginStart="@dimen/app_toolbar_margin"
+		android:layout_marginTop="@dimen/app_toolbar_margin"
+		android:layout_marginEnd="@dimen/app_toolbar_margin"
 		app:title="@string/main_rules" />
 
 	<com.google.android.material.tabs.TabLayout
@@ -34,6 +36,8 @@
 	<androidx.viewpager2.widget.ViewPager2
 		android:id="@+id/viewpager"
 		android:layout_width="match_parent"
-		android:layout_height="wrap_content" />
+		android:layout_height="match_parent"
+		android:layout_marginStart="@dimen/app_toolbar_margin"
+		android:layout_marginEnd="@dimen/app_toolbar_margin"/>
 
 </LinearLayout>

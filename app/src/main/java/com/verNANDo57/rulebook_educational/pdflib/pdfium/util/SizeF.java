@@ -6,7 +6,6 @@
  * date: 2022/01/24 6:01PM GMT+7
  */
 
-
 package com.verNANDo57.rulebook_educational.pdflib.pdfium.util;
 
 import androidx.annotation.NonNull;

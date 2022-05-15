@@ -1,6 +1,5 @@
 /*
  * Author: VerNANDo57 <silvenation@gmail.com>
- * date: 2022/01/24 6:01PM GMT+7
  */
 
 package com.verNANDo57.rulebook_educational.bookmarks;
@@ -33,7 +32,7 @@ import com.verNANDo57.rulebook_educational.BottomNavAmongActivitiesFragment;
 import com.verNANDo57.rulebook_educational.app.CustomThemeEngineAppCompatActivity;
 import com.verNANDo57.rulebook_educational.app.CustomThemeEngineSwipeRefreshLayout;
 import com.verNANDo57.rulebook_educational.extradata.R;
-import com.verNANDo57.rulebook_educational.search.SearchReferences;
+import com.verNANDo57.rulebook_educational.rules.data.RulesDatabase;
 import com.verNANDo57.rulebook_educational.utils.AppUtils;
 
 import org.json.JSONArray;
@@ -108,7 +107,7 @@ public class AppBookmarksActivity extends CustomThemeEngineAppCompatActivity {
                     mAdapter.toggleSelection(position);
                     bookmarkSelectionMode();
                 } else {
-                    SearchReferences.performSearchItemOnClickAction(mRecyclerView.getContext(), mAdapter.listRecyclerItem.get(position).getObject_key(), SearchReferences.getItemPosition(mAdapter.listRecyclerItem.get(position).getObject_key()));
+                    RulesDatabase.performOnClickAction(mRecyclerView.getContext(), mAdapter.listRecyclerItem.get(position).getObject_key(), mAdapter.listRecyclerItem.get(position).getObject_title(), mAdapter.listRecyclerItem.get(position).getObject_summary());
                 }
             }
 
@@ -304,7 +303,7 @@ public class AppBookmarksActivity extends CustomThemeEngineAppCompatActivity {
                 String object_title = itemObj.getString(AppBookmarkUtils.JSON_OBJECT_TITLE);
                 String object_summary = itemObj.getString(AppBookmarkUtils.JSON_OBJECT_SUMMARY);
 
-                BookmarkItem bookmarkItem = new BookmarkItem(object_key,object_title, object_summary);
+                BookmarkItem bookmarkItem = new BookmarkItem(object_key, object_title, object_summary);
                 viewItems.add(bookmarkItem);
             }
         } catch (JSONException | IOException e) {

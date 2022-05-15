@@ -28,7 +28,7 @@ public class AppMainRulesActivity extends CustomThemeEngineAppCompatActivity {
 
 		setContentView(R.layout.app_rulebook_main_rules);
 
-		Toolbar toolbar = findViewById(R.id.toolbar_in_mainrules_layout);
+		Toolbar toolbar = findViewById(R.id.toolbar_mainrules);
 		setSupportActionBar(toolbar);
 		toolbar.setNavigationOnClickListener(new NavigationView.OnClickListener() {
 			@Override

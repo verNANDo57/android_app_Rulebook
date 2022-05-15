@@ -22,7 +22,6 @@
 		android:configChanges="keyboard|keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout|navigation">
 		<activity
             android:name="com.verNANDo57.rulebook_educational.SplashScreenActivity"
-            android:label="@string/app_name"
 			android:configChanges="keyboard|keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout|navigation"
 			android:exported="true">
             <intent-filter>
@@ -77,11 +76,6 @@
 		<activity
 			android:name="com.verNANDo57.rulebook_educational.AppAboutApplicationActivity"
 			android:label="@string/app_name_credits"
-			android:configChanges="keyboard|keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout|navigation"/>
-
-		<activity
-			android:name="com.verNANDo57.rulebook_educational.search.AppSearchActivity"
-			android:label="@string/app_name_search"
 			android:configChanges="keyboard|keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout|navigation"/>
 
 		<activity

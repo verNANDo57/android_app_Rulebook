@@ -8,7 +8,6 @@
     <string name="app_name_schemesAndTables">Rulebook: В схемах и таблицах</string>
     <string name="app_name_lexicon">Rulebook: Лексика</string>
     <string name="app_name_rating">Rulebook: Отзыв</string>
-    <string name="app_name_search">Rulebook: Поиск</string>
     <string name="app_name_settings">Rulebook: Настройки</string>
     <string name="app_name_status">Rulebook: Страница состояния</string>
     <string name="app_name_analyze_methods">Rulebook: Виды разборов</string>
@@ -103,7 +102,6 @@
     <string name="category_pref_functions">Функции</string>
     <string name="category_pref_others">Другое</string>
     <string name="search_viewHint">Поисковая строка</string>
-    <string name="searchWord_view_hint">Слово</string>
     <string name="app_next">Далее</string>
     <string name="app_storageAccess_warning">С 11-й версии Android доступ к внутреннему хранилищу устройства получить не так уж и просто. Данное разрешение необходимо для сохранения текстовых файлов в памяти вашего устройвства. Разрешение необходимо выдать вручную, в настройках устройства. Помните, что данное разрешение выдавать не обязательно, иными словами вы можете пользоваться приложением и без него. Перейти в настройки?</string>
     <string name="app_error_while_saving_file">Ошибка при попытке сохранения файла. Вероятнее всего, приложение не имеет необходимых разрешений для сохранения файлов.</string>

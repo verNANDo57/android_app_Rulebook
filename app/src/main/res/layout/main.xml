@@ -48,13 +48,6 @@
 			android:layout_height="@dimen/app_hugebutton_default_height" />
 
 		<Button
-			android:id="@+id/search_function"
-			style="@style/RulebookButtonHuge"
-			android:text="@string/search"
-			android:layout_width="match_parent"
-			android:layout_height="@dimen/app_hugebutton_default_height" />
-
-		<Button
 			android:id="@+id/settings_button"
 			style="@style/RulebookButtonHuge"
 			android:text="@string/settings"

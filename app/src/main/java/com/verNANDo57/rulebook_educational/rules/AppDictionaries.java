@@ -1,32 +1,44 @@
 /*
  * Author: VerNANDo57 <silvenation@gmail.com>
- * date: 2022/01/24 6:01PM GMT+7
  */
 
 package com.verNANDo57.rulebook_educational.rules;
 
 import static com.verNANDo57.rulebook_educational.utils.AppUtils.LOG_TAG;
 
-import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
-import android.widget.Button;
+import android.widget.EditText;
 
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.navigation.NavigationView;
 import com.verNANDo57.rulebook_educational.BottomNavAmongActivitiesFragment;
 import com.verNANDo57.rulebook_educational.app.CustomThemeEngineAppCompatActivity;
 import com.verNANDo57.rulebook_educational.extradata.R;
+import com.verNANDo57.rulebook_educational.rules.data.RuleItemData;
+import com.verNANDo57.rulebook_educational.rules.data.RulesDatabase;
+import com.verNANDo57.rulebook_educational.rules.mainrules.BaseRecyclerViewAdapterOne;
 import com.verNANDo57.rulebook_educational.utils.AppUtils;
 
+import java.util.ArrayList;
+import java.util.Locale;
+
 public class AppDictionaries extends CustomThemeEngineAppCompatActivity {
+
+    private BaseRecyclerViewAdapterOne baseRecyclerViewAdapterOne;
+    private ArrayList<RuleItemData> viewItems;
 
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.app_dictionaries);
 
-        Toolbar toolbar = findViewById(R.id.toolbar_in_dictionaries);
+        Toolbar toolbar = findViewById(R.id.toolbar_dictionaries);
         setSupportActionBar(toolbar);
         toolbar.setNavigationOnClickListener(new NavigationView.OnClickListener() {
             @Override
@@ -36,33 +48,55 @@ public class AppDictionaries extends CustomThemeEngineAppCompatActivity {
             }
         });
 
-        Intent scrollable_activity = new Intent(this, AppBaseScrollableActivity.class);
+        viewItems = RulesDatabase.setupDictionariesRulesData(this);
 
-        Button vocabulary_words = findViewById(R.id.vocabulary_words);
-        vocabulary_words.setOnClickListener(new View.OnClickListener() {
+        //Init
+        RecyclerView recyclerView = findViewById(R.id.base_recyclerview);
+        baseRecyclerViewAdapterOne = new BaseRecyclerViewAdapterOne(viewItems);
+        recyclerView.setHasFixedSize(true);
+        // Initialize LayoutManager
+        RecyclerView.LayoutManager layoutManager;
+        // Check if device is tablet
+        if (getResources().getBoolean(R.bool.deviceIsTablet)) {
+            // If so, use GridLayoutManager
+            layoutManager = new GridLayoutManager(this, AppUtils.calculateNumberOfColumns(this, getResources().getDimension(R.dimen.gridview_item_width)));
+        } else {
+            // Otherwise use LinearLayoutManager
+            layoutManager = new LinearLayoutManager(this);
+        }
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(baseRecyclerViewAdapterOne);
+
+        EditText search_edittext = findViewById(R.id.base_edittext);
+        search_edittext.addTextChangedListener(new TextWatcher() {
             @Override
-            public void onClick(View v) {
-                scrollable_activity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.DICT_VOCABULARY_WORDS);
-                startActivity(scrollable_activity);
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                //Auto-generated method
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                //Auto-generated method
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                //Auto-generated method
+                filter(s.toString());
             }
         });
+    }
 
-        Button phrasebook = findViewById(R.id.phrasebook);
-        phrasebook.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                scrollable_activity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.DICT_PHRASEBOOK);
-                startActivity(scrollable_activity);
+    public void filter(String charText) {
+        charText = charText.toLowerCase(Locale.getDefault());
+        ArrayList<RuleItemData> filteredList = new ArrayList<>();
+        for (RuleItemData item : viewItems) {
+            if (item.getItemTitle().toLowerCase().contains(charText)) {
+                filteredList.add(item);
+            } else if (item.getItemSummary().toLowerCase().contains(charText)) {
+                filteredList.add(item);
             }
-        });
-
-        Button orthoepical_dictionary = findViewById(R.id.orthoepical_dictionary);
-        orthoepical_dictionary.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                scrollable_activity.putExtra(AppUtils.EXTRA_DATA_NAME, Constants.DICT_ORTHOEPICAL);
-                startActivity(scrollable_activity);
-            }
-        });
+        }
+        this.baseRecyclerViewAdapterOne.filterList(filteredList);
     }
 }

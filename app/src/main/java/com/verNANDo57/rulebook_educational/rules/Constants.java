@@ -1,6 +1,5 @@
 /*
  * Author: VerNANDo57 <silvenation@gmail.com>
- * date: 2022/01/24 6:01PM GMT+7
  */
 
 package com.verNANDo57.rulebook_educational.rules;
@@ -199,22 +198,22 @@ public interface Constants {
 
     // Analyze Methods
     String ANALYZE_METHOD = "analyze_method";
-    String PHONETIC_ANALYZE_METHOD = "analyze_method_1";
+    String LEXICAL_ANALYZE_METHOD = "analyze_method_1";
     String MORPHEMIC_ANALYZE_METHOD = "analyze_method_2";
-    String MORPHOLOGICAL_ANALYZE_METHOD_FOR_NOUN = "analyze_method_3";
-    String MORPHOLOGICAL_ANALYZE_METHOD_FOR_VERB = "analyze_method_4";
-    String MORPHOLOGICAL_ANALYZE_METHOD_FOR_ADJECTIVE = "analyze_method_5";
-    String MORPHOLOGICAL_ANALYZE_METHOD_FOR_NUMERAL = "analyze_method_6";
-    String MORPHOLOGICAL_ANALYZE_METHOD_FOR_ADVERB = "analyze_method_7";
+    String MORPHOLOGICAL_ANALYZE_METHOD_FOR_ADJECTIVE = "analyze_method_3";
+    String MORPHOLOGICAL_ANALYZE_METHOD_FOR_ADVERB = "analyze_method_4";
+    String MORPHOLOGICAL_ANALYZE_METHOD_FOR_CONJUNCTIONS = "analyze_method_5";
+    String MORPHOLOGICAL_ANALYZE_METHOD_FOR_NOUN = "analyze_method_6";
+    String MORPHOLOGICAL_ANALYZE_METHOD_FOR_NUMERAL = "analyze_method_7";
     String MORPHOLOGICAL_ANALYZE_METHOD_FOR_PARTICIPLE = "analyze_method_8";
     String MORPHOLOGICAL_ANALYZE_METHOD_FOR_PARTICIPLE2 = "analyze_method_9";
-    String MORPHOLOGICAL_ANALYZE_METHOD_FOR_PRETEXT = "analyze_method_10";
-    String MORPHOLOGICAL_ANALYZE_METHOD_FOR_CONJUNCTIONS = "analyze_method_11";
-    String MORPHOLOGICAL_ANALYZE_METHOD_FOR_PARTICLE = "analyze_method_12";
-    String SYNTACTIC_ANALYZE_METHOD_FOR_SIMPLE_SENTENCE = "analyze_method_13";
-    String SYNTACTIC_ANALYZE_METHOD_FOR_DIFFICULT_SENTENCE = "analyze_method_14";
-    String LEXICAL_ANALYZE_METHOD = "analyze_method_15";
-    String ORTHOGRAPHIC_ANALYZE_METHOD = "analyze_method_16";
+    String MORPHOLOGICAL_ANALYZE_METHOD_FOR_PARTICLE = "analyze_method_10";
+    String MORPHOLOGICAL_ANALYZE_METHOD_FOR_PRETEXT = "analyze_method_11";
+    String MORPHOLOGICAL_ANALYZE_METHOD_FOR_VERB = "analyze_method_12";
+    String ORTHOGRAPHIC_ANALYZE_METHOD = "analyze_method_13";
+    String PHONETIC_ANALYZE_METHOD = "analyze_method_14";
+    String SYNTACTIC_ANALYZE_METHOD_FOR_DIFFICULT_SENTENCE = "analyze_method_15";
+    String SYNTACTIC_ANALYZE_METHOD_FOR_SIMPLE_SENTENCE = "analyze_method_16";
 
     // Dictionaries
     String DICTIONARIES = "dict_";

@@ -8,9 +8,9 @@ android {
     defaultConfig {
         applicationId "com.verNANDo57.rulebook_educational"
         minSdkVersion 22
-        targetSdk 31
-        versionCode 114
-        versionName '1.1.4'
+        targetSdk 32
+        versionCode 115
+        versionName '1.1.5'
         multiDexEnabled true
     }
 
@@ -47,13 +47,13 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.4.1'
-    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'com.google.android.material:material:1.6.0'
     implementation 'androidx.preference:preference-ktx:1.2.0'
     implementation 'androidx.coordinatorlayout:coordinatorlayout:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.10'
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.6.10'
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.21'
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.6.21'
 }
 repositories {
     mavenCentral()

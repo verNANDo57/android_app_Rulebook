@@ -1,3 +1,7 @@
+/*
+ * Author: VerNANDo57 <silvenation@gmail.com>
+ */
+
 package com.verNANDo57.rulebook_educational.app;
 
 import android.content.Context;

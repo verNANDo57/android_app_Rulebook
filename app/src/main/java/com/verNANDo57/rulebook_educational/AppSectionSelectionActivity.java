@@ -1,6 +1,5 @@
 /*
  * Author: VerNANDo57 <silvenation@gmail.com>
- * date: 2022/01/24 6:01PM GMT+7
  */
 
 package com.verNANDo57.rulebook_educational;
@@ -28,7 +27,7 @@ public class AppSectionSelectionActivity extends CustomThemeEngineAppCompatActiv
 
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.app_choose_your_destiny);
+        setContentView(R.layout.app_section_selection);
 
         Toolbar toolbar = findViewById(R.id.toolbar_in_chooseyourdestiny_layout);
         setSupportActionBar(toolbar);

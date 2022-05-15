@@ -1,6 +1,5 @@
 /*
  * Author: VerNANDo57 <silvenation@gmail.com>
- * date: 2022/01/24 6:01PM GMT+7
  */
 
 package com.verNANDo57.rulebook_educational;
@@ -20,7 +19,6 @@ import com.verNANDo57.rulebook_educational.rules.AppAnalyzeMethods;
 import com.verNANDo57.rulebook_educational.rules.AppLexiconActivity;
 import com.verNANDo57.rulebook_educational.rules.AppRulesInSchemesAndTablesActivity;
 import com.verNANDo57.rulebook_educational.rules.mainrules.AppMainRulesActivity;
-import com.verNANDo57.rulebook_educational.search.AppSearchActivity;
 
 public class BottomNavAmongLessonsFragment extends BottomSheetDialogFragment {
 
@@ -65,10 +63,6 @@ public class BottomNavAmongLessonsFragment extends BottomSheetDialogFragment {
             } else if (id == R.id.bottomsheetdialog_amonglessons_bookmarks) {
                 if (!(className.equals(AppBookmarksActivity.class.getName()))) {
                     startActivity(new Intent(getActivity(), AppBookmarksActivity.class));
-                }
-            } else if (id == R.id.bottomsheetdialog_amonglessons_search) {
-                if (!(className.equals(AppSearchActivity.class.getName()))) {
-                    startActivity(new Intent(getActivity(), AppSearchActivity.class));
                 }
             } else if (id == R.id.bottomsheetdialog_amonglessons_about) {
                 if (!(className.equals(AppAboutApplicationActivity.class.getName()))) {

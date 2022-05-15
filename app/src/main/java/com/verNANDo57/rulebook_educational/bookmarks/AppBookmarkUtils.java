@@ -1,6 +1,5 @@
 /*
  * Author: VerNANDo57 <silvenation@gmail.com>
- * date: 2022/01/24 6:01PM GMT+7
  */
 
 package com.verNANDo57.rulebook_educational.bookmarks;
@@ -163,9 +162,16 @@ public class AppBookmarkUtils {
     }
 
     public static boolean checkIfBookmarkExist (Context context, String object_key) throws IOException {
-        BufferedReader reader = new BufferedReader(new FileReader(new File(context.getApplicationContext().getFilesDir(), JSON_FILE)));
-        String line;
         boolean output = false;
+        // Initialize input bookmark file
+        File inputFile = new File(context.getApplicationContext().getFilesDir(), JSON_FILE);
+        // If bookmark file doens't exist, then simply return false
+        if (!inputFile.isFile()) {
+            return false;
+        }
+        // Otherwise continue analyzing
+        BufferedReader reader = new BufferedReader(new FileReader(inputFile));
+        String line;
         while ((line = reader.readLine()) != null) {
             if (line.contains(object_key)) {
                 output = true;

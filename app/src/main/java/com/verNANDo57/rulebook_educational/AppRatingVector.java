@@ -306,7 +306,6 @@ public class AppRatingVector extends View {
     }
 
     private void startEyesAnimation(float... newPositions) {
-
         leftEyeAnimatorX.setIntValues(currEyeLX, (int) newPositions[0]);
         leftEyeAnimatorX.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
@@ -335,5 +334,4 @@ public class AppRatingVector extends View {
         animatorSet.playTogether(rightEyeAnimatorX, leftEyeAnimatorX, eyesAnimatorY);
         animatorSet.start();
     }
-
 }

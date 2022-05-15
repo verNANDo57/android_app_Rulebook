@@ -1,9 +1,5 @@
 /*
  * Author: VerNANDo57 <silvenation@gmail.com>
- * date: 2022/01/24 6:01PM GMT+7
- *
- * Modified by: VerNANDo57 <silvenation@gmail.com>
- * date: 2021/06/05
  */
 
 package com.verNANDo57.rulebook_educational.utils;
@@ -49,8 +45,10 @@ public class AppUtils {
     public static PackageInfo pInfo;
 
     public static String LOG_TAG = "RULEBOOK_APP";
-    public static String EXTRA_DATA_NAME = "rule_fragment";
+    public static String EXTRA_DATA_KEY = "rule_key";
     public static String EXTRA_DATA_POSITION = "rule_position";
+    public static String EXTRA_DATA_TITLE = "rule_title";
+    public static String EXTRA_DATA_SUMMARY = "rule_summary";
 
     //Thanks to this method, we can read a text file
     public static String convertStreamToString(java.io.InputStream is) {

@@ -1,6 +1,5 @@
 /*
  * Author: VerNANDo57 <silvenation@gmail.com>
- * date: 2022/01/24 6:01PM GMT+7
  */
 
 package com.verNANDo57.rulebook_educational;
@@ -27,7 +26,6 @@ import com.verNANDo57.rulebook_educational.bookmarks.AppBookmarksActivity;
 import com.verNANDo57.rulebook_educational.extradata.R;
 import com.verNANDo57.rulebook_educational.preferences.AppSettingsActivity;
 import com.verNANDo57.rulebook_educational.rules.AppDictionaries;
-import com.verNANDo57.rulebook_educational.search.AppSearchActivity;
 import com.verNANDo57.rulebook_educational.utils.AppUtils;
 
 import java.util.Arrays;
@@ -68,14 +66,6 @@ public class MainActivity extends CustomThemeEngineAppCompatActivity {
 			}
 		});
 
-		Button search_function = findViewById(R.id.search_function);
-		search_function.setOnClickListener(new View.OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				startActivity(new Intent(getApplicationContext(), AppSearchActivity.class));
-			}
-		});
-
 		Button settings_button = findViewById(R.id.settings_button);
 		settings_button.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -105,7 +95,7 @@ public class MainActivity extends CustomThemeEngineAppCompatActivity {
 	}
 
 	@Override
-	public void onBackPressed(){
+	public void onBackPressed() {
 		finishAffinity();
 	}
 

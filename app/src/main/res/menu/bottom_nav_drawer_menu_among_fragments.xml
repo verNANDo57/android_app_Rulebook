@@ -27,11 +27,6 @@
             android:title="@string/app_bookmarks" />
 
         <item
-            android:id="@+id/bottomsheetdialog_amonglessons_search"
-            android:icon="@drawable/ic_search_menu"
-            android:title="@string/search" />
-
-        <item
             android:id="@+id/bottomsheetdialog_amonglessons_about"
             android:icon="@drawable/ic_warning"
             android:title="@string/about_app" />

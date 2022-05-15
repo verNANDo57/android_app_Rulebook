@@ -1,6 +1,5 @@
 /*
  * Author: VerNANDo57 <silvenation@gmail.com>
- * date: 2022/01/24 6:01PM GMT+7
  */
 
 package com.verNANDo57.rulebook_educational;
@@ -33,9 +32,7 @@ import com.verNANDo57.rulebook_educational.extradata.R;
 import com.verNANDo57.rulebook_educational.preferences.AppSettingsActivity;
 import com.verNANDo57.rulebook_educational.utils.AppUtils;
 
-public class AppAboutApplicationActivity extends CustomThemeEngineAppCompatActivity
-{
-
+public class AppAboutApplicationActivity extends CustomThemeEngineAppCompatActivity {
 	@SuppressLint("SetTextI18n")
 	public void onCreate(Bundle savedInstanceState)
     {
@@ -68,7 +65,7 @@ public class AppAboutApplicationActivity extends CustomThemeEngineAppCompatActiv
 		about_scrollview.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener() {
 			@Override
 			public void onScrollChanged() {
-				//see https://gist.github.com/aqua30/e8623abaff190ee86727ee5ae8dac82a
+				// See https://gist.github.com/aqua30/e8623abaff190ee86727ee5ae8dac82a
 				int movement = about_scrollview.getScrollY();
 				if(movement >= 100){
 					if (bar_in_credits.getVisibility() == View.VISIBLE) {

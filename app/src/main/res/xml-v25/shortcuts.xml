@@ -45,23 +45,23 @@
         <intent
             android:action="android.intent.action.VIEW"
             android:targetPackage="com.verNANDo57.rulebook_educational"
-            android:targetClass="com.verNANDo57.rulebook_educational.rules.analyze_methods.AppAnalyzeMethods" />
+            android:targetClass="com.verNANDo57.rulebook_educational.rules.AppAnalyzeMethods" />
         <categories android:name="android.shortcut.conversation" />
     </shortcut>
 
     <shortcut
-        android:shortcutId="rulebookSearch"
+        android:shortcutId="rulebookDictionaries"
         android:enabled="true"
-        android:icon="@drawable/ic_launch_search"
-        android:roundIcon="@drawable/ic_launch_search_round"
-        android:label="@string/app_name_search"
-        android:shortcutShortLabel="@string/search"
-        android:shortcutLongLabel="@string/search"
+        android:icon="@drawable/ic_launch_dictionaries"
+        android:roundIcon="@drawable/ic_launch_dictionaries_round"
+        android:label="@string/app_name_dictionaries"
+        android:shortcutShortLabel="@string/dictionaries"
+        android:shortcutLongLabel="@string/dictionaries"
         android:shortcutDisabledMessage="@string/compose_disabled_message">
         <intent
             android:action="android.intent.action.VIEW"
             android:targetPackage="com.verNANDo57.rulebook_educational"
-            android:targetClass="com.verNANDo57.rulebook_educational.search.AppSearchActivity" />
+            android:targetClass="com.verNANDo57.rulebook_educational.rules.AppDictionaries" />
         <categories android:name="android.shortcut.conversation" />
     </shortcut>
 </shortcuts>

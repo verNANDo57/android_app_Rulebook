@@ -1,6 +1,5 @@
 /*
  * Author: VerNANDo57 <silvenation@gmail.com>
- * date: 2022/03/08 3:07PM GMT+7
  */
 
 package com.verNANDo57.rulebook_educational.bookmarks;

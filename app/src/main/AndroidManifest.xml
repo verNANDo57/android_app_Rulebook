@@ -18,8 +18,19 @@
 		android:fullBackupContent="true"
 		android:supportsRtl="true"
 		android:requestLegacyExternalStorage="true"
-		tools:targetApi="q"
-		android:configChanges="keyboard|keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout|navigation">
+		tools:targetApi="s"
+		android:configChanges="keyboard|keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout|navigation"
+		android:dataExtractionRules="@xml/data_extraction_rules">
+		<provider
+			android:name="androidx.core.content.FileProvider"
+			android:authorities="com.verNANDo57.rulebook_educational.fileprovider"
+			android:exported="false"
+			android:grantUriPermissions="true">
+			<meta-data
+				android:name="android.support.FILE_PROVIDER_PATHS"
+				android:resource="@xml/file_paths">
+			</meta-data>
+		</provider>
 		<activity
             android:name="com.verNANDo57.rulebook_educational.SplashScreenActivity"
 			android:configChanges="keyboard|keyboardHidden|orientation|screenSize|smallestScreenSize|screenLayout|navigation"

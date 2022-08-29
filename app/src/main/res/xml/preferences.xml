@@ -1,34 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.preference.PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android">
-	
-  <androidx.preference.PreferenceCategory
-	  android:title="@string/category_pref_interface">
 
-	  <androidx.preference.Preference
-		  android:key="darktheme_switch"
-		  android:layout_width="fill_parent"
-		  android:icon="@drawable/app_themeengine_icon"
-		  android:summary="@string/app_darkTheme_switch_summary"
-		  android:title="@string/app_darkTheme_switch">
-	  </androidx.preference.Preference>
+	<androidx.preference.PreferenceCategory
+		android:title="@string/category_pref_interface">
 
-	  <androidx.preference.SwitchPreferenceCompat
-		  android:key="statusbar_enable"
-		  android:layout_width="fill_parent"
-		  android:icon="@drawable/app_fullscreenmode_icon"
-		  android:summary="@string/app_enable_statusBar_summary"
-		  android:title="@string/app_enable_statusBar">
-	  </androidx.preference.SwitchPreferenceCompat>
+		<androidx.preference.Preference
+			android:key="darktheme_switch_pref"
+			android:icon="@drawable/app_themeengine_icon"
+			android:summary="@string/app_darkTheme_switch_summary"
+			android:title="@string/app_darkTheme_switch" />
 
-	  <androidx.preference.Preference
-		  android:key="app_reboot_from_prefs"
-		  android:layout_width="fill_parent"
-		  android:icon="@drawable/app_refresh_icon"
-		  android:summary="@string/app_prefs_warning_summary"
-		  android:selectable="false">
-	  </androidx.preference.Preference>
+	  	<androidx.preference.SwitchPreferenceCompat
+		  	android:key="statusbar_enable_pref"
+		  	android:icon="@drawable/app_fullscreenmode_icon"
+		  	android:summary="@string/app_enable_statusBar_summary"
+		  	android:title="@string/app_enable_statusBar" />
 
-  </androidx.preference.PreferenceCategory>
-  
+	  	<androidx.preference.Preference
+		  	android:key="notice_pref"
+		  	android:icon="@drawable/app_refresh_icon"
+		  	android:summary="@string/app_prefs_warning_summary"
+		  	android:selectable="false"/>
+
+  	</androidx.preference.PreferenceCategory>
+
+	<androidx.preference.PreferenceCategory
+		android:title="@string/category_pref_functions">
+
+		<androidx.preference.SwitchPreferenceCompat
+			android:key="use_sdcard_pref"
+			android:icon="@drawable/app_sdcard"
+			android:title="@string/app_use_sdcard_title"
+			android:summary="@string/app_use_sdcard_summary" />
+
+		<androidx.preference.Preference
+			android:key="delete_all_data"
+			android:icon="@drawable/app_delete_forever"
+			android:title="@string/app_remove_application_data_title"
+			android:summary="@string/app_remove_application_data_summary" />
+
+	</androidx.preference.PreferenceCategory>
 </androidx.preference.PreferenceScreen>

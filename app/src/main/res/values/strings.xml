@@ -13,7 +13,7 @@
     <string name="app_name_analyze_methods">Rulebook: Виды разборов</string>
     <string name="app_name_dictionaries">Rulebook: Словари</string>
 
-<!-- PLS do not touch strings below -->
+    <!-- PLS do not touch strings below -->
     <string name="app_dev_email" translatable="false">silvenation@gmail.com</string>
     <string name="app_dev_part1" translatable="false">Оценка пользователя--</string>
     <string name="app_dev_part2" translatable="false">/5.0 звёзд</string>
@@ -34,7 +34,7 @@
     <string name="review_device_serial" translatable="false">Серийный номер:</string>
     <string name="review_device_android_version" translatable="false">Версия Андроида:</string>
     <string name="review_device_screen_resolution" translatable="false">Разрешение экрана:</string>
-<!-- PLS do not touch strings above -->
+    <!-- PLS do not touch strings above -->
 
     <string name="app_status_value_null">пусто</string>
 
@@ -63,10 +63,18 @@
 
     <string name="app_enable_statusBar">Строка состояния</string>
     <string name="app_enable_statusBar_summary">Не скрывать строку состояния</string>
+    
+    <string name="app_use_sdcard_title">Использовать карту памяти</string>
+    <string name="app_use_sdcard_summary">Сохранять файлы на карте памяти</string>
+
+    <string name="app_remove_application_data_title">Стереть данные приложения</string>
+    <string name="app_remove_application_data_summary">Удалить все сохранённые файлы</string>
 
     <string name="app_prefs_warning_summary">После введённых изменений для корректного отображения интерфейса может потребоваться перезапуск приложения.</string>
 
     <string name="app_edittext_is_empty">Напишите что-нибудь</string>
+
+    <string name="app_search_nothing_found">Не удалось найти</string>
 
     <string name="rules">Правила</string>
     <string name="settings">Настройки</string>
@@ -116,9 +124,10 @@
     <string name="app_error_file_rename">Не удалось переименовать файл</string>
     <string name="app_error_file_delete">Не удалось удалить файл</string>
     <string name="app_reason_why_these_permissions_are_needed">Если вы не дадите приложению доступ к внутренней памяти устройства, то, к сожалению, будет невозможным что-либо сохранять. ¯\_(ツ)_/¯</string>
-
+    <string name="app_share">Поделиться</string>
+    <string name="app_share_image">Поделиться картинкой</string>
+    <string name="app_share_file">Поделиться файлом</string>
     <string name="compose_disabled_message">Ярлык недоступен по неизвестной причине</string>
-
     <string name="bottomSheetDialog_headline">МЕНЮ</string>
 
     <string name="main_rules">Основные</string>

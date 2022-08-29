@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="AppBarBottomSheetDialogStyle" parent="Theme.Design.Light.BottomSheetDialog">
+    <style name="AppBarBottomSheetDialogStyle" parent="Theme.Design.BottomSheetDialog">
         <item name="enforceTextAppearance">true</item>
         <item name="enforceMaterialTheme">false</item>
         <item name="itemIconSize">@dimen/app_bottom_navigation_icon_size</item>
+        <item name="iconTint">@color/colorAccent</item>
         <item name="bottomSheetStyle">@style/AppBarBottomSheetStyle</item>
     </style>
 </resources>

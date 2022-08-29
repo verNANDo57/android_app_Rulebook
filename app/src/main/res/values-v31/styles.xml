@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <style name="AppThemeRulebook" parent="Theme.MaterialComponents.DayNight.Bridge">
         <item name="android:windowAnimationStyle">@style/AppWindowAnimations</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:textColor">@color/app_text</item>
-        <item name="android:actionBarStyle">@style/DarkThemeActionBar</item>
-        <item name="actionBarStyle">@style/DarkThemeActionBar</item>
+        <item name="actionBarStyle">@style/LightThemeActionBar</item>
+        <item name="android:actionBarStyle">@style/LightThemeActionBar</item>
         <item name="bottomAppBarStyle">@style/BottomAppBar</item>
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="android:buttonStyle">@style/RulebookButtonDefault</item>
         <item name="android:editTextStyle">@style/EditText</item>
-        <item name="android:listViewStyle">@style/ThemeListView</item>
         <item name="buttonStyle">@style/RulebookButtonDefault</item>
         <item name="editTextStyle">@style/EditText</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="android:listViewStyle">@style/ThemeListView</item>
         <item name="bottomSheetDialogTheme">@style/AppBarBottomSheetDialogStyle</item>
         <item name="fontProviderSystemFontFamily">@font/app_rulebook_productsans_fontfamily</item>
+        <item name="android:fontProviderSystemFontFamily">@font/app_rulebook_productsans_fontfamily</item>
         <item name="android:fontFamily">@font/app_rulebook_productsans_fontfamily</item>
         <item name="fontFamily">@font/app_rulebook_productsans_fontfamily</item>
         <item name="snackbarStyle">@style/SnackBar</item>
@@ -26,9 +27,10 @@
         <item name="android:popupTheme">@style/AppTheme.PopupOverlay</item>
         <item name="android:windowBackground">@color/app_custom_background</item>
         <item name="popupTheme">@style/AppTheme.PopupOverlay</item>
+        <item name="android:windowLightStatusBar">true</item>
         <item name="backgroundColor">@color/app_custom_background</item>
         <item name="imageButtonStyle">@style/AppImageButtonStyle</item>
-        <item name="alertDialogTheme">@style/AppAlertDialogThemeDark</item>
+        <item name="alertDialogTheme">@style/AppAlertDialogThemeLight</item>
         <item name="tabStyle">@style/AppTabLayoutItemsStyle</item>
         <item name="radioButtonStyle">@style/AppRadioButtonStyle</item>
         <item name="android:radioButtonStyle">@style/AppRadioButtonStyle</item>
@@ -38,31 +40,5 @@
         <item name="navigationViewStyle">@style/NavigationViewStyle</item>
         <item name="android:textColorSecondary">@color/colorAccent</item>
         <item name="android:actionOverflowButtonStyle">@style/AppThemeRulebook.ActionButton.OverFlow</item>
-    </style>
-
-    <style name="DarkThemeActionBar" parent="Widget.AppCompat.ActionBar">
-        <item name="titleTextStyle">@style/ActionTitleTextStyle</item>
-        <item name="subtitleTextStyle">@style/ActionSummaryTextStyle</item>
-    </style>
-
-    <style name="AppAlertDialogThemeDark" parent="Theme.AppCompat.Dialog.Alert">
-        <item name="titleTextColor">@color/app_text</item>
-        <item name="android:textColor">@color/app_text</item>
-        <item name="android:textColorPrimary">@color/app_text</item>
-        <item name="textColorAlertDialogListItem">@color/app_text</item>
-        <item name="android:textColorAlertDialogListItem">@color/app_text</item>
-        <item name="android:titleTextColor" tools:targetApi="m">@color/app_text</item>
-        <item name="android:subtitleTextColor" tools:targetApi="m">@color/app_text</item>
-        <item name="subtitleTextColor" tools:targetApi="m">@color/app_text</item>
-        <item name="buttonTint">@color/app_text</item>
-        <item name="android:buttonTint">@color/app_text</item>
-        <item name="background">@color/app_custom_background</item>
-        <item name="android:background">@color/app_custom_background</item>
-        <item name="backgroundTint">@color/app_custom_background</item>
-        <item name="android:backgroundTint">@color/app_custom_background</item>
-        <item name="colorControlNormal">@color/colorPrimary</item>
-        <item name="colorControlActivated">@color/colorPrimary</item>
-        <item name="android:colorControlNormal">@color/colorPrimary</item>
-        <item name="android:colorControlActivated">@color/colorPrimary</item>
     </style>
 </resources>

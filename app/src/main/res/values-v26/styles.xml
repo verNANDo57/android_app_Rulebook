@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
-
+<resources>
     <style name="RulebookButtonHuge" parent="Widget.AppCompat.Button">
-        <item name="android:stateListAnimator" tools:targetApi="lollipop">@animator/btn_anim_zoom
-        </item>
+        <item name="android:stateListAnimator">@animator/btn_anim_zoom</item>
         <item name="android:background">@drawable/buttonshape_huge</item>
         <item name="android:textSize">@dimen/app_hugebutton_textsize</item>
         <item name="android:gravity">center</item>
@@ -15,5 +13,14 @@
         <item name="android:layout_marginEnd">@dimen/app_hugebutton_default_marginLeftAndRight</item>
         <item name="android:layout_marginLeft">@dimen/app_hugebutton_default_marginLeftAndRight</item>
         <item name="android:layout_marginStart">@dimen/app_hugebutton_default_marginLeftAndRight</item>
+    </style>
+
+    <style name="AppBarBottomSheetDialogStyle" parent="Theme.Design.BottomSheetDialog">
+        <item name="enforceTextAppearance">true</item>
+        <item name="enforceMaterialTheme">false</item>
+        <item name="iconTint">@color/colorAccent</item>
+        <item name="android:iconTint">@color/colorAccent</item>
+        <item name="itemIconSize">@dimen/app_bottom_navigation_icon_size</item>
+        <item name="bottomSheetStyle">@style/AppBarBottomSheetStyle</item>
     </style>
 </resources>

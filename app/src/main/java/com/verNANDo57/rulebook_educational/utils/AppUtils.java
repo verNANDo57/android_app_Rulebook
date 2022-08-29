@@ -8,10 +8,14 @@ import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
 import android.os.Environment;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.BackgroundColorSpan;
+import android.text.style.ForegroundColorSpan;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.TypedValue;
@@ -36,6 +40,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.RandomAccessFile;
 import java.nio.channels.FileChannel;
+import java.util.Objects;
 
 public class AppUtils {
 
@@ -50,19 +55,19 @@ public class AppUtils {
     public static String EXTRA_DATA_TITLE = "rule_title";
     public static String EXTRA_DATA_SUMMARY = "rule_summary";
 
-    //Thanks to this method, we can read a text file
+    // Thanks to this function, we can read a text file
     public static String convertStreamToString(java.io.InputStream is) {
         java.util.Scanner s = new java.util.Scanner(is).useDelimiter("\\A");
         return s.hasNext() ? s.next() : "";
     }
 
     /**
-     * use this method to highlight a text in TextView
+     * Use this function to highlight a text in TextView
      *
      * @param tv              TextView or Edittext or Button (or derived from TextView)
      * @param textToHighlight Text to highlight
      */
-    public static void setHighLightedText(TextView tv, String textToHighlight) {
+    public static void setHighLightedText(Context context, TextView tv, String textToHighlight) {
         String tvt = tv.getText().toString();
         int ofe = tvt.indexOf(textToHighlight);
         Spannable wordToSpan = new SpannableString(tv.getText());
@@ -71,14 +76,23 @@ public class AppUtils {
             if (ofe == -1)
                 break;
             else {
-                // set color here
-                wordToSpan.setSpan(new BackgroundColorSpan(0xFFFFFF00), ofe, ofe + textToHighlight.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                // Set background color
+                wordToSpan.setSpan(new BackgroundColorSpan(context.getResources().getColor(R.color.app_text)), ofe, ofe + textToHighlight.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                // Set foreground color
+                wordToSpan.setSpan(new ForegroundColorSpan(context.getResources().getColor(R.color.app_custom_background)), ofe, ofe + textToHighlight.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                // Apply changes
                 tv.setText(wordToSpan, TextView.BufferType.SPANNABLE);
             }
         }
     }
 
-    public static void resetHighLightedText(TextView tv, String textToResetColor) {
+    /**
+     * Use this function to reset text color in TextView
+     *
+     * @param tv               TextView or Edittext or Button (or derived from TextView)
+     * @param textToResetColor Text to reset
+     */
+    public static void resetHighLightedText(Context context, TextView tv, String textToResetColor) {
         String tvt = tv.getText().toString();
         int ofe = tvt.indexOf(textToResetColor);
         Spannable wordToSpan = new SpannableString(tv.getText());
@@ -87,8 +101,11 @@ public class AppUtils {
             if (ofe == -1)
                 break;
             else {
-                // set color here
+                // Reset background color
                 wordToSpan.setSpan(new BackgroundColorSpan(0), ofe, ofe + textToResetColor.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                // Reset foreground color
+                wordToSpan.setSpan(new ForegroundColorSpan(context.getResources().getColor(R.color.app_text)), ofe, ofe + textToResetColor.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                // Apply changes
                 tv.setText(wordToSpan, TextView.BufferType.SPANNABLE);
             }
         }
@@ -116,12 +133,12 @@ public class AppUtils {
         }
     }
 
-    public static void copyFileFromAssets(Context context, View rootView, String inputFileDir, String inputFile, String outputFileDir, String outputFile) {
+    public static void copyFileFromAssets(Context context, View rootView, String inputFileDir, String inputFile, String outputFileDir, String outputFile, boolean useSDCard) {
         try {
             // Create output dir if needed
-            new File(Environment.getExternalStorageDirectory().getAbsolutePath() + outputFileDir).mkdirs();
+            new File(getStorageAbsolutePath(context, useSDCard) + outputFileDir).mkdirs();
             // Initialize output file
-            File output = new File(Environment.getExternalStorageDirectory().getAbsolutePath() + outputFileDir + outputFile);
+            File output = new File(getStorageAbsolutePath(context, useSDCard) + outputFileDir + outputFile);
             if (!output.exists()) {
                 InputStream in;
                 OutputStream out;
@@ -134,9 +151,12 @@ public class AppUtils {
                     out.write(buffer, 0, read);
                 }
 
-                Snackbar.make(rootView, context.getString(R.string.app_saved) + ":" + outputFileDir + outputFile, Snackbar.LENGTH_LONG).show();
+                Snackbar.make(rootView, context.getString(R.string.app_saved) + ":" + output.getAbsolutePath(), Snackbar.LENGTH_LONG).show();
+
+                out.flush();
+                out.close();
             } else {
-                Snackbar.make(rootView, context.getString(R.string.app_saved_already) + ":" + outputFileDir + outputFile, Snackbar.LENGTH_LONG).show();
+                Snackbar.make(rootView, context.getString(R.string.app_saved_already) + ":" + output.getAbsolutePath(), Snackbar.LENGTH_LONG).show();
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -145,11 +165,53 @@ public class AppUtils {
         }
     }
 
-    public static int getIconWarning() {
-        return R.drawable.ic_warning;
+    /* Using this function we can get storage absolute path */
+    public static String getStorageAbsolutePath(Context context, boolean useSDCard) {
+        // Works on API 24+
+        File[] dirs = context.getExternalFilesDirs(null);
+        StringBuilder outputStorage;
+        int slashCount;
+
+        // Firstly, check if SDCard exist, to avoid issues
+        if (checkIfSDCardExists() && useSDCard) {
+            // Use SDCard if user wants to
+            outputStorage = new StringBuilder(dirs[1].getAbsolutePath());
+            slashCount = 2;
+        } else {
+            outputStorage = new StringBuilder(dirs[0].getAbsolutePath());
+            slashCount = 3;
+        }
+
+        // Process
+        int charsCounter = outputStorage.length();
+        int slashCounter = getCharCount(outputStorage, '/');
+
+        for (int i=1;slashCounter!=slashCount;i++) {
+            if(outputStorage.charAt(charsCounter - i) == '/') {
+                slashCounter = slashCounter - 1;
+            }
+            outputStorage.deleteCharAt(charsCounter-i);
+        }
+
+        return outputStorage.toString();
     }
 
-    /* Using these methods we can remove last line of any text file */
+    /* Using this function we can check, if SDCard is inserted */
+    public static boolean checkIfSDCardExists() {
+        return Environment.isExternalStorageRemovable() && Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED);
+    }
+
+    /* Using this function we can remove all files inside one folder */
+    public static void removeFolderRecursive(File dir) {
+        if (dir.exists() && dir.isDirectory()) {
+            for (File child : Objects.requireNonNull(dir.listFiles())) {
+                removeFolderRecursive(child);
+            }
+        }
+        dir.delete();
+    }
+
+    /* Using these functions we can remove last line of any text file */
     public static void removeLastLine(String name) throws IOException {
         RandomAccessFile f = new RandomAccessFile(name, "rw");
         long length = f.length() - 1;
@@ -180,17 +242,18 @@ public class AppUtils {
         f.close();
     }
 
-    /* This method uses BufferedReader to read line by line and increases the count. */
+    /* This function uses BufferedReader to read line by line and increases the count. */
     public static long countLineBufferedReader(File fileName) throws IOException {
         long lines = 0;
         BufferedReader reader = new BufferedReader(new FileReader(fileName));
         while (reader.readLine() != null) {
             lines++;
         }
+        reader.close();
         return lines;
     }
 
-    /* Using this method we can count occurrences of a char in a string */
+    /* Using these functions we can count occurrences of a char in a string */
     public static int getCharCount(String text, char someChar) {
         int count = 0;
 
@@ -202,8 +265,19 @@ public class AppUtils {
         return count;
     }
 
+    public static int getCharCount(StringBuilder stringBuilder, char someChar) {
+        int count = 0;
+
+        for (int i = 0; i < stringBuilder.length(); i++) {
+            if (stringBuilder.charAt(i) == someChar) {
+                count++;
+            }
+        }
+        return count;
+    }
+
     /**
-     * U can use this method to set animation to any view
+     * U can use this function to set animation to any view
      * firstly, u need to define your view, then animator_mode, then [Float] move value (optional)
      */
     public static int TRANSLATE_DIRECTION_RIGHT = 1;
@@ -280,7 +354,7 @@ public class AppUtils {
     }
 
     /**
-     *  This simple method have been created for fetching app's info (VerisionName or VersionCode).
+     *  This simple function have been created for fetching app's info (VerisionName or VersionCode).
      *  It returns String, so his return value can be used instead of any string which defined in strings.xml and etc.
      *
      *  For Example:
@@ -318,7 +392,7 @@ public class AppUtils {
     /**
      * @param context
      *
-     * Using this method we can find out which theme is being used.
+     * Using this function we can find out which theme is being used.
      * This method is needed because of DayNight engine.
      * Since user can use FOLLOW_SYSTEM or AUTO_BATTERY option, we can't just use AppCompatDelegate to find out which theme is being used.
      *
@@ -344,5 +418,27 @@ public class AppUtils {
         DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
         float screenWidthDp = displayMetrics.widthPixels / displayMetrics.density;
         return (int) (screenWidthDp / columnWidthDp + 0.5);
+    }
+
+    /**
+     * Using this function we can take full screenshot of view (using bitmap)
+     * @param context - Context
+     * @param height - height of view
+     * @param width - width of view
+     * @param view - view we want take a screenshot of
+     *
+     * @return the bmp file
+     */
+    public static Bitmap getBitmapFromView(Context context, View view, int height, int width) {
+        Bitmap bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(bitmap);
+        Drawable bgDrawable = view.getBackground();
+        if (bgDrawable != null) {
+            bgDrawable.draw(canvas);
+        } else {
+            canvas.drawColor(context.getResources().getColor(R.color.app_custom_background));
+        }
+        view.draw(canvas);
+        return bitmap;
     }
 }

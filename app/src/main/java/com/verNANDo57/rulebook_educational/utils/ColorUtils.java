@@ -215,7 +215,7 @@ public final class ColorUtils {
             hex = hex.substring(1);
         }
 
-        float a = Float.parseFloat(new DecimalFormat("#.##").format(Integer.parseInt(hex.substring(0, 2), 16) / 255.0f)); // Alpha (Transparency in percents) [First Two
+        float a = Float.parseFloat(new DecimalFormat("#.##").format(Integer.parseInt(hex.substring(0, 2), 16) / 255.0f)); // Alpha (Transparency in percents)
         float r = Float.parseFloat(new DecimalFormat("#.##").format(Integer.parseInt(hex.substring(2, 4), 16) / 255.0f)); // Red
         float g = Float.parseFloat(new DecimalFormat("#.##").format(Integer.parseInt(hex.substring(4, 6), 16) / 255.0f)); // Green
         float b = Float.parseFloat(new DecimalFormat("#.##").format(Integer.parseInt(hex.substring(6, 8), 16) / 255.0f)); // Blue

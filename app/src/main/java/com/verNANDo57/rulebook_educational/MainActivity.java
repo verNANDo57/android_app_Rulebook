@@ -127,7 +127,7 @@ public class MainActivity extends CustomThemeEngineAppCompatActivity {
 	 * android.permission.MANAGE_EXTERNAL_STORAGE
 	*/
 	public void checkPermission() {
-		//Check if android version is Android 11 or higher
+		// Check if android version is Android 11 or higher
 		if (Build.VERSION.SDK_INT >= 30) {
 			//Check if storage permission already granted
 			if (!Environment.isExternalStorageManager()) {
@@ -136,7 +136,7 @@ public class MainActivity extends CustomThemeEngineAppCompatActivity {
 				builder.setTitle(getString(R.string.app_warning));
 				builder.setMessage(getString(R.string.app_storageAccess_warning));
 				builder.setIcon(R.drawable.ic_warning);
-				builder.setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener(){
+				builder.setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
 						//GoToSettings Intent
@@ -154,7 +154,7 @@ public class MainActivity extends CustomThemeEngineAppCompatActivity {
 				alert.show();
 			}
 		//Otherwise...
-			//Check if android version is Android 10 or lower
+			// Check if android version is Android 10 or lower
 		} else if (Build.VERSION.SDK_INT >= 23) {
 			//Check if storage permission already granted
 			if (checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED) {

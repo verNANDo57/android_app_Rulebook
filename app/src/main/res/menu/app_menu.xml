@@ -4,7 +4,7 @@
     android:layout_gravity="start">
         <item
             android:id="@+id/preferences_screen"
-            android:icon="@drawable/ic_settings_black"
+            android:icon="@drawable/ic_settings_toolbar"
             android:title="@string/settings_actionbar"
             app:showAsAction="ifRoom">
         </item>

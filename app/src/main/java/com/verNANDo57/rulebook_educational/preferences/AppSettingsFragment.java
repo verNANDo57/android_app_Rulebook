@@ -7,38 +7,37 @@ package com.verNANDo57.rulebook_educational.preferences;
 import android.content.DialogInterface;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.content.res.AppCompatResources;
+import androidx.core.content.ContextCompat;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
-import androidx.preference.SwitchPreferenceCompat;
 
 import com.verNANDo57.rulebook_educational.extradata.R;
+import com.verNANDo57.rulebook_educational.rules.Constants;
+import com.verNANDo57.rulebook_educational.utils.AppUtils;
+
+import java.io.File;
 
 public class AppSettingsFragment extends PreferenceFragmentCompat
 {
-	RulebookApplicationSharedPreferences preferences;
+	private RulebookApplicationSharedPreferences preferences;
 
 	public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
 		preferences =  new RulebookApplicationSharedPreferences(requireContext());
 		setPreferencesFromResource(R.xml.preferences, rootKey);
 
-		//Interface
-		androidx.preference.Preference darktheme_switch = findPreference(PreferenceKeys.DARK_THEME_PREF);
-		assert darktheme_switch != null;
-		darktheme_switch.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+		// Interface
+		androidx.preference.Preference darktheme_switch_pref = findPreference(PreferenceKeys.DARK_THEME_PREF);
+		assert darktheme_switch_pref != null;
+		darktheme_switch_pref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
 			@Override
-			public boolean onPreferenceClick(Preference preference) {
+			public boolean onPreferenceClick(@NonNull Preference preference) {
 				// setup the alert builder
 				AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
 				builder.setTitle(getString(R.string.app_darkTheme_switch_summary));
-				// add a list
-				String[] options = {
-						getString(R.string.app_darkTheme_mode_no),
-						getString(R.string.app_darkTheme_mode_yes),
-						getString(R.string.app_darkTheme_mode_followSystem),
-						getString(R.string.app_darkTheme_mode_battery)};
 
 				int checkedItem = 0; // Dark mode: NO
 				if (preferences.loadRulebookDarkModeBooleanState() == AppCompatDelegate.MODE_NIGHT_YES) {
@@ -50,7 +49,7 @@ public class AppSettingsFragment extends PreferenceFragmentCompat
 				}
 
 				//Pass the array list in Alert dialog
-				builder.setSingleChoiceItems(options, checkedItem, new DialogInterface.OnClickListener() {
+				builder.setSingleChoiceItems(getResources().getStringArray(R.array.darkmode_modes), checkedItem, new DialogInterface.OnClickListener() {
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
 						switch (which) {
@@ -86,25 +85,65 @@ public class AppSettingsFragment extends PreferenceFragmentCompat
 				builder.setIcon(AppCompatResources.getDrawable(requireContext(), R.drawable.app_themeengine_icon));
 				builder.create();
 				builder.show();
-				return true;
+				return false;
 			}
 		});
 
-		androidx.preference.SwitchPreferenceCompat statusbar_enable = (SwitchPreferenceCompat) findPreference(PreferenceKeys.STATUSBAR_PREF);
-		assert statusbar_enable != null;
-		statusbar_enable.setChecked(preferences.loadRulebookStatusBarBooleanState());
-		statusbar_enable.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+		androidx.preference.SwitchPreferenceCompat statusbar_enable_pref = findPreference(PreferenceKeys.STATUSBAR_PREF);
+		assert statusbar_enable_pref != null;
+		statusbar_enable_pref.setChecked(preferences.loadRulebookStatusBarBooleanState());
+		statusbar_enable_pref.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
 			@Override
-			public boolean onPreferenceChange(Preference preference, Object newValue) {
-				if (newValue.toString().equals("true")){
-					preferences.setRulebookStatusBarBooleanState(true);
-				} else {
-					preferences.setRulebookStatusBarBooleanState(false);
-				}
-				return true;
+			public boolean onPreferenceChange(@NonNull Preference preference, Object newValue) {
+				preferences.setRulebookStatusBarBooleanState(newValue.toString().equals("true"));
+				return false;
 			}
 		});
 
-		androidx.preference.Preference noticePreference = findPreference(PreferenceKeys.NOTICE_PREF);
+		// Functionality
+		androidx.preference.SwitchPreferenceCompat use_sdcard_pref = findPreference(PreferenceKeys.USE_SDCARD_PREF);
+		assert use_sdcard_pref != null;
+		if (!AppUtils.checkIfSDCardExists()) {
+			use_sdcard_pref.setEnabled(false);
+			preferences.setRulebookUseSDCardBooleanState(false);
+		}
+		use_sdcard_pref.setChecked(preferences.loadRulebookUseSDCardBooleanState());
+		use_sdcard_pref.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+			@Override
+			public boolean onPreferenceChange(@NonNull Preference preference, Object newValue) {
+				preferences.setRulebookUseSDCardBooleanState(newValue.toString().equals("true"));
+				return false;
+			}
+		});
+
+		androidx.preference.Preference delete_all_data = findPreference(PreferenceKeys.DELETE_ALL_DATA);
+		assert delete_all_data != null;
+		delete_all_data.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+			@Override
+			public boolean onPreferenceClick(@NonNull Preference preference) {
+				androidx.appcompat.app.AlertDialog.Builder builder = new androidx.appcompat.app.AlertDialog.Builder(requireContext());
+				builder.setTitle(getString(R.string.app_warning));
+				builder.setIcon(ContextCompat.getDrawable(requireContext(), R.drawable.app_delete_forever));
+				builder.setMessage(getString(R.string.are_you_sure));
+				builder.setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						AppUtils.removeFolderRecursive(new File(AppUtils.getStorageAbsolutePath(requireContext(), false) + Constants.RULEBOOK_APP_DIRECTORY));
+						if (AppUtils.checkIfSDCardExists()) {
+							AppUtils.removeFolderRecursive(new File(AppUtils.getStorageAbsolutePath(requireContext(), true) + Constants.RULEBOOK_APP_DIRECTORY));
+						}
+					}
+				});
+				builder.setNegativeButton(getString(R.string.no), new DialogInterface.OnClickListener() {
+					@Override
+					public void onClick(DialogInterface dialog, int which) {
+						dialog.cancel();
+					}
+				});
+				androidx.appcompat.app.AlertDialog alert = builder.create();
+				alert.show();
+				return false;
+			}
+		});
 	}
 }

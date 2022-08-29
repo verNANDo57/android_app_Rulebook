@@ -29,5 +29,4 @@
             android:fontWeight="700"
             android:fontStyle="italic"
             android:font="@font/productsans_bolditalic"/>
-
 </font-family>

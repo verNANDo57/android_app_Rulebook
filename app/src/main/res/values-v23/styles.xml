@@ -1,5 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <style name="AppThemeRulebook" parent="Theme.MaterialComponents.DayNight.Bridge">
+        <item name="android:windowAnimationStyle">@style/AppWindowAnimations</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColor">@color/app_text</item>
+        <item name="actionBarStyle">@style/LightThemeActionBar</item>
+        <item name="android:actionBarStyle">@style/LightThemeActionBar</item>
+        <item name="bottomAppBarStyle">@style/BottomAppBar</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="android:buttonStyle">@style/RulebookButtonDefault</item>
+        <item name="android:editTextStyle">@style/EditText</item>
+        <item name="buttonStyle">@style/RulebookButtonDefault</item>
+        <item name="editTextStyle">@style/EditText</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:listViewStyle">@style/ThemeListView</item>
+        <item name="bottomSheetDialogTheme">@style/AppBarBottomSheetDialogStyle</item>
+        <item name="fontProviderSystemFontFamily">@font/app_rulebook_productsans_fontfamily</item>
+        <item name="android:fontFamily">@font/app_rulebook_productsans_fontfamily</item>
+        <item name="fontFamily">@font/app_rulebook_productsans_fontfamily</item>
+        <item name="snackbarStyle">@style/SnackBar</item>
+        <item name="snackbarButtonStyle">@style/SnackBarButton</item>
+        <item name="snackbarTextViewStyle">@style/SnackBarTextViewStyle</item>
+        <item name="android:popupTheme">@style/AppTheme.PopupOverlay</item>
+        <item name="android:windowBackground">@color/app_custom_background</item>
+        <item name="popupTheme">@style/AppTheme.PopupOverlay</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="backgroundColor">@color/app_custom_background</item>
+        <item name="imageButtonStyle">@style/AppImageButtonStyle</item>
+        <item name="alertDialogTheme">@style/AppAlertDialogThemeLight</item>
+        <item name="tabStyle">@style/AppTabLayoutItemsStyle</item>
+        <item name="radioButtonStyle">@style/AppRadioButtonStyle</item>
+        <item name="android:radioButtonStyle">@style/AppRadioButtonStyle</item>
+        <item name="toolbarStyle">@style/AppToolbarStyle</item>
+        <item name="android:toolbarStyle">@style/AppToolbarStyle</item>
+        <item name="android:webViewStyle">@style/AppWebViewStyle</item>
+        <item name="navigationViewStyle">@style/NavigationViewStyle</item>
+        <item name="android:textColorSecondary">@color/colorAccent</item>
+        <item name="android:actionOverflowButtonStyle">@style/AppThemeRulebook.ActionButton.OverFlow</item>
+    </style>
+
     <style name="AppToolbarStyle" parent="Widget.AppCompat.Toolbar">
         <item name="navigationIcon">@drawable/ic_view_list_toolbar</item>
         <item name="navigationIconTint">@color/app_toolbar_item_color</item>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="darkmode_modes">
+        <item>@string/app_darkTheme_mode_no</item>
+        <item>@string/app_darkTheme_mode_yes</item>
+        <item>@string/app_darkTheme_mode_followSystem</item>
+        <item>@string/app_darkTheme_mode_battery</item>
+    </string-array>
+
+    <string-array name="share_modes">
+        <item>@string/app_share_image</item>
+        <item>@string/app_share_file</item>
+    </string-array>
+</resources>

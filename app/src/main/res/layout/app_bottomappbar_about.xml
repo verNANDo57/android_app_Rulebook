@@ -26,6 +26,6 @@
         android:layout_height="wrap_content"
         app:layout_anchor="@id/bar_in_about"
         app:layout_insetEdge="none"
-        app:srcCompat="@drawable/ic_home_black" />
+        app:srcCompat="@drawable/ic_home" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

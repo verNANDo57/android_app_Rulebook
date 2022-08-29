@@ -18,8 +18,15 @@
     </item>
 
     <item
+        android:id="@+id/share"
+        android:icon="@drawable/ic_share"
+        android:title="@string/app_share"
+        app:showAsAction="ifRoom">
+    </item>
+
+    <item
         android:id="@+id/save_rule"
-        android:icon="@drawable/ic_save_icon"
+        android:icon="@drawable/ic_save_toolbar"
         android:title="@string/app_save"
         app:showAsAction="ifRoom">
     </item>

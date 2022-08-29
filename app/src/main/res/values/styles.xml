@@ -17,15 +17,15 @@
 		<item name="windowNoTitle">true</item>
 		<item name="android:listViewStyle">@style/ThemeListView</item>
 		<item name="bottomSheetDialogTheme">@style/AppBarBottomSheetDialogStyle</item>
-        <item name="android:fontFamily" tools:targetApi="jelly_bean">@font/app_rulebook_productsans_fontfamily</item>
+		<item name="fontProviderSystemFontFamily">@font/app_rulebook_productsans_fontfamily</item>
+        <item name="android:fontFamily">@font/app_rulebook_productsans_fontfamily</item>
 		<item name="fontFamily">@font/app_rulebook_productsans_fontfamily</item>
 		<item name="snackbarStyle">@style/SnackBar</item>
 		<item name="snackbarButtonStyle">@style/SnackBarButton</item>
 		<item name="snackbarTextViewStyle">@style/SnackBarTextViewStyle</item>
-		<item name="android:popupTheme" tools:targetApi="lollipop">@style/AppTheme.PopupOverlay</item>
+		<item name="android:popupTheme" >@style/AppTheme.PopupOverlay</item>
 		<item name="android:windowBackground">@color/app_custom_background</item>
 		<item name="popupTheme">@style/AppTheme.PopupOverlay</item>
-		<item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
 		<item name="backgroundColor">@color/app_custom_background</item>
 		<item name="imageButtonStyle">@style/AppImageButtonStyle</item>
 		<item name="alertDialogTheme">@style/AppAlertDialogThemeLight</item>
@@ -34,9 +34,10 @@
 		<item name="android:radioButtonStyle">@style/AppRadioButtonStyle</item>
 		<item name="toolbarStyle">@style/AppToolbarStyle</item>
 		<item name="android:toolbarStyle">@style/AppToolbarStyle</item>
-		<item name="android:webViewStyle">@style/AppWebViewStyleLightTheme</item>
+		<item name="android:webViewStyle">@style/AppWebViewStyle</item>
 		<item name="navigationViewStyle">@style/NavigationViewStyle</item>
 		<item name="android:textColorSecondary">@color/colorAccent</item>
+		<item name="android:actionOverflowButtonStyle">@style/AppThemeRulebook.ActionButton.OverFlow</item>
 	</style>
 
 	<style name="AppWindowAnimations" parent="@android:style/Animation.Activity">
@@ -46,7 +47,7 @@
 		<item name="android:activityCloseExitAnimation">@anim/app_slide_exit_to_right</item>
 	</style>
 
-	<style name="AppWebViewStyleLightTheme" parent="android:Widget.Material.WebView">
+	<style name="AppWebViewStyle" parent="android:Widget.Material.WebView">
 		<item name="android:background">@color/app_custom_background</item>
 		<item name="backgroundColor">@color/app_custom_background</item>
 	</style>
@@ -60,6 +61,11 @@
 		<item name="titleTextStyle">@style/ActionTitleTextStyle</item>
 		<item name="subtitleTextStyle">@style/ActionSummaryTextStyle</item>
 	</style>
+	
+	<style name="AppThemeRulebook.ActionButton.OverFlow" parent="Widget.AppCompat.ActionButton.Overflow">
+		<item name="android:src">@drawable/ic_actionmenu</item>
+		<!-- <item name="android:tint">@color/app_custom_background</item> -->
+	</style>
 
 	<style name="AppAlertDialogThemeLight" parent="Theme.AppCompat.Light.Dialog.Alert">
 		<item name="titleTextColor">@color/app_text</item>
@@ -71,11 +77,11 @@
 		<item name="android:subtitleTextColor" tools:targetApi="m">@color/app_text</item>
 		<item name="subtitleTextColor" tools:targetApi="m">@color/app_text</item>
 		<item name="buttonTint">@color/app_text</item>
-		<item name="android:buttonTint" tools:targetApi="lollipop">@color/app_text</item>
+		<item name="android:buttonTint">@color/app_text</item>
 		<item name="background">@color/app_custom_background</item>
 		<item name="android:background">@color/app_custom_background</item>
 		<item name="backgroundTint">@color/app_custom_background</item>
-		<item name="android:backgroundTint" tools:targetApi="lollipop">@color/app_custom_background</item>
+		<item name="android:backgroundTint">@color/app_custom_background</item>
 		<item name="colorControlNormal">@color/colorPrimary</item>
 		<item name="colorControlActivated">@color/colorPrimary</item>
 		<item name="android:colorControlNormal">@color/colorPrimary</item>
@@ -150,6 +156,7 @@
 	<style name="AppBarBottomSheetDialogStyle" parent="Theme.Design.BottomSheetDialog">
 		<item name="enforceTextAppearance">true</item>
 		<item name="enforceMaterialTheme">false</item>
+		<item name="iconTint">@color/colorAccent</item>
 		<item name="itemIconSize">@dimen/app_bottom_navigation_icon_size</item>
 		<item name="bottomSheetStyle">@style/AppBarBottomSheetStyle</item>
 	</style>
@@ -216,28 +223,28 @@
 	</style>
 
 	<style name="RulebookButtonTop" parent="Widget.AppCompat.Button">
-		<item name="android:stateListAnimator" tools:targetApi="lollipop">@animator/btn_anim_zoom</item>
+		<item name="android:stateListAnimator" >@animator/btn_anim_zoom</item>
 		<item name="android:background">@drawable/buttonshape_top_rightandleft</item>
 		<item name="android:textSize">@dimen/action_smallbutton_textsize</item>
 		<item name="android:textStyle">bold</item>
 	</style>
 
 	<style name="RulebookButtonBottom" parent="Widget.AppCompat.Button">
-		<item name="android:stateListAnimator" tools:targetApi="lollipop">@animator/btn_anim_zoom</item>
+		<item name="android:stateListAnimator" >@animator/btn_anim_zoom</item>
 		<item name="android:background">@drawable/buttonshape_bottom_rightandleft</item>
 		<item name="android:textSize">@dimen/action_smallbutton_textsize</item>
 		<item name="android:textStyle">bold</item>
 	</style>
 
 	<style name="RulebookButtonDefault" parent="Widget.AppCompat.Button">
-		<item name="android:stateListAnimator" tools:targetApi="lollipop">@animator/btn_anim_zoom</item>
+		<item name="android:stateListAnimator" >@animator/btn_anim_zoom</item>
 		<item name="android:background">@drawable/buttonshape</item>
 		<item name="android:textSize">@dimen/action_smallbutton_textsize</item>
 		<item name="android:textStyle">bold</item>
 	</style>
 
 	<style name="RulebookButtonHuge" parent="Widget.AppCompat.Button">
-		<item name="android:stateListAnimator" tools:targetApi="lollipop">@animator/btn_anim_zoom</item>
+		<item name="android:stateListAnimator">@animator/btn_anim_zoom</item>
 		<item name="android:background">@drawable/buttonshape_huge</item>
 		<item name="android:textSize">@dimen/app_hugebutton_textsize</item>
 		<item name="android:gravity">center</item>
@@ -255,7 +262,7 @@
 		<item name="colorControlActivated">@color/colorPrimary</item>
 	</style>
 
-	<style name="SnackBar" parent="Widget.Design.Snackbar">
+	<style name="SnackBar" parent="Widget.MaterialComponents.Snackbar">
 		<item name="android:minWidth">@dimen/app_design_snackbar_min_width</item>
 		<item name="android:maxWidth">@dimen/app_design_snackbar_max_width</item>
 		<item name="android:background">@drawable/shape_snackbar</item>
@@ -276,12 +283,6 @@
 		<item name="android:textStyle">bold</item>
 	</style>
 
-	<style name="cpv_ColorPickerViewStyle">
-		<item name="android:layout_width">match_parent</item>
-		<item name="android:layout_height">315dp</item>
-	</style>
-
-	<style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 	<style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light">
 		<item name="android:colorBackground">@color/app_custom_background</item>
 		<item name="android:textColor">@color/colorAccent</item>
@@ -308,7 +309,7 @@
      is, they finish themselves before being resumed. -->
 
 	<style name="AppImageButtonStyle" parent="Widget.AppCompat.ImageButton">
-		<item name="android:stateListAnimator" tools:targetApi="lollipop">@animator/btn_anim_zoom</item>
+		<item name="android:stateListAnimator" >@animator/btn_anim_zoom</item>
 		<item name="android:background">@android:color/transparent</item>
 		<item name="background">@android:color/transparent</item>
 	</style>

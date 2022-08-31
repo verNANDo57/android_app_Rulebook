@@ -26,5 +26,4 @@
 	<color name="app_snackbar_default_background_color">#FFF0E3DD</color>
 	<color name="app_snackbar_default_accent_color">#FF562C22</color>
 	<color name="app_snackbar_default_text_color">#FF562C22</color>
-
 </resources>

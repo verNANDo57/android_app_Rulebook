@@ -17,6 +17,7 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="bottomSheetDialogTheme">@style/AppBarBottomSheetDialogStyle</item>
+        <item name="bottomSheetStyle">@style/AppBarBottomSheetStyle</item>
         <item name="fontProviderSystemFontFamily">@font/app_rulebook_productsans_fontfamily</item>
         <item name="android:fontFamily">@font/app_rulebook_productsans_fontfamily</item>
         <item name="fontFamily">@font/app_rulebook_productsans_fontfamily</item>

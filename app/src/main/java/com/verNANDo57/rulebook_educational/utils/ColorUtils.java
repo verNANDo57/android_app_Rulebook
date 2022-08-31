@@ -11,6 +11,8 @@ import androidx.annotation.FloatRange;
 import androidx.annotation.NonNull;
 
 import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.Locale;
 
 public final class ColorUtils {
 
@@ -188,11 +190,14 @@ public final class ColorUtils {
      */
     public static float[] createColorMatrixFromHex(int colorFromResource) {
         String hex = Integer.toHexString(colorFromResource);
+        // Use this to avoid WrongFormat-related issues
+        // Caused by: java.lang.NumberFormatException: For input string: "0,94"
+        DecimalFormatSymbols symbols = new DecimalFormatSymbols(Locale.ENGLISH);
 
-        float a = Float.parseFloat(new DecimalFormat("#.##").format(Integer.parseInt(hex.substring(0, 2), 16) / 255.0f)); // Alpha (Transparency in percents) [First Two
-        float r = Float.parseFloat(new DecimalFormat("#.##").format(Integer.parseInt(hex.substring(2, 4), 16) / 255.0f)); // Red
-        float g = Float.parseFloat(new DecimalFormat("#.##").format(Integer.parseInt(hex.substring(4, 6), 16) / 255.0f)); // Green
-        float b = Float.parseFloat(new DecimalFormat("#.##").format(Integer.parseInt(hex.substring(6, 8), 16) / 255.0f)); // Blue
+        float a = Float.parseFloat(new DecimalFormat("#.##", symbols).format(Integer.parseInt(hex.substring(0, 2), 16) / 255.0f)); // Alpha (Transparency in percents) [First Two
+        float r = Float.parseFloat(new DecimalFormat("#.##", symbols).format(Integer.parseInt(hex.substring(2, 4), 16) / 255.0f)); // Red
+        float g = Float.parseFloat(new DecimalFormat("#.##", symbols).format(Integer.parseInt(hex.substring(4, 6), 16) / 255.0f)); // Green
+        float b = Float.parseFloat(new DecimalFormat("#.##", symbols).format(Integer.parseInt(hex.substring(6, 8), 16) / 255.0f)); // Blue
 
         // Now build a matrix using values from above
         return new float[]

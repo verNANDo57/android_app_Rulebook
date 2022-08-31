@@ -85,7 +85,7 @@ public class AppSettingsFragment extends PreferenceFragmentCompat
 				builder.setIcon(AppCompatResources.getDrawable(requireContext(), R.drawable.app_themeengine_icon));
 				builder.create();
 				builder.show();
-				return false;
+				return true;
 			}
 		});
 
@@ -96,14 +96,14 @@ public class AppSettingsFragment extends PreferenceFragmentCompat
 			@Override
 			public boolean onPreferenceChange(@NonNull Preference preference, Object newValue) {
 				preferences.setRulebookStatusBarBooleanState(newValue.toString().equals("true"));
-				return false;
+				return true;
 			}
 		});
 
 		// Functionality
 		androidx.preference.SwitchPreferenceCompat use_sdcard_pref = findPreference(PreferenceKeys.USE_SDCARD_PREF);
 		assert use_sdcard_pref != null;
-		if (!AppUtils.checkIfSDCardExists()) {
+		if (!AppUtils.checkIfSDCardExists(requireContext())) {
 			use_sdcard_pref.setEnabled(false);
 			preferences.setRulebookUseSDCardBooleanState(false);
 		}
@@ -112,7 +112,7 @@ public class AppSettingsFragment extends PreferenceFragmentCompat
 			@Override
 			public boolean onPreferenceChange(@NonNull Preference preference, Object newValue) {
 				preferences.setRulebookUseSDCardBooleanState(newValue.toString().equals("true"));
-				return false;
+				return true;
 			}
 		});
 
@@ -129,7 +129,7 @@ public class AppSettingsFragment extends PreferenceFragmentCompat
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
 						AppUtils.removeFolderRecursive(new File(AppUtils.getStorageAbsolutePath(requireContext(), false) + Constants.RULEBOOK_APP_DIRECTORY));
-						if (AppUtils.checkIfSDCardExists()) {
+						if (AppUtils.checkIfSDCardExists(requireContext())) {
 							AppUtils.removeFolderRecursive(new File(AppUtils.getStorageAbsolutePath(requireContext(), true) + Constants.RULEBOOK_APP_DIRECTORY));
 						}
 					}
@@ -142,7 +142,7 @@ public class AppSettingsFragment extends PreferenceFragmentCompat
 				});
 				androidx.appcompat.app.AlertDialog alert = builder.create();
 				alert.show();
-				return false;
+				return true;
 			}
 		});
 	}

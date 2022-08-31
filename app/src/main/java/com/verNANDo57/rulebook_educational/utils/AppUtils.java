@@ -11,7 +11,6 @@ import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
-import android.os.Environment;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.BackgroundColorSpan;
@@ -26,6 +25,7 @@ import android.view.animation.TranslateAnimation;
 import android.widget.TextView;
 
 import androidx.annotation.AnimRes;
+import androidx.core.content.ContextCompat;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.verNANDo57.rulebook_educational.extradata.R;
@@ -51,7 +51,6 @@ public class AppUtils {
 
     public static String LOG_TAG = "RULEBOOK_APP";
     public static String EXTRA_DATA_KEY = "rule_key";
-    public static String EXTRA_DATA_POSITION = "rule_position";
     public static String EXTRA_DATA_TITLE = "rule_title";
     public static String EXTRA_DATA_SUMMARY = "rule_summary";
 
@@ -173,7 +172,7 @@ public class AppUtils {
         int slashCount;
 
         // Firstly, check if SDCard exist, to avoid issues
-        if (checkIfSDCardExists() && useSDCard) {
+        if (checkIfSDCardExists(context) && useSDCard) {
             // Use SDCard if user wants to
             outputStorage = new StringBuilder(dirs[1].getAbsolutePath());
             slashCount = 2;
@@ -197,8 +196,17 @@ public class AppUtils {
     }
 
     /* Using this function we can check, if SDCard is inserted */
-    public static boolean checkIfSDCardExists() {
-        return Environment.isExternalStorageRemovable() && Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED);
+    public static boolean checkIfSDCardExists(Context context) {
+        //return Environment.isExternalStorageRemovable() && Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED);
+        if (ContextCompat.getExternalFilesDirs(context, null).length >= 2) {
+            File[] f = ContextCompat.getExternalFilesDirs(context, null);
+            for (int i = 0; i < f.length; i++) {
+                if(f[i]!=null && i ==1) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     /* Using this function we can remove all files inside one folder */

@@ -15,7 +15,7 @@
         android:id="@+id/toolbar_pdfview"
         android:layout_width="match_parent"
         android:layout_height="@dimen/app_toolbar_height"
-        app:title="@string/lexicon_rules"
+        app:title="@string/app_loading"
         android:layout_margin="@dimen/app_toolbar_margin"
         android:layout_gravity="bottom"/>
 

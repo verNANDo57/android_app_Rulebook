@@ -17,6 +17,7 @@
 		<item name="windowNoTitle">true</item>
 		<item name="android:listViewStyle">@style/ThemeListView</item>
 		<item name="bottomSheetDialogTheme">@style/AppBarBottomSheetDialogStyle</item>
+		<item name="bottomSheetStyle">@style/AppBarBottomSheetStyle</item>
 		<item name="fontProviderSystemFontFamily">@font/app_rulebook_productsans_fontfamily</item>
         <item name="android:fontFamily">@font/app_rulebook_productsans_fontfamily</item>
 		<item name="fontFamily">@font/app_rulebook_productsans_fontfamily</item>
@@ -223,21 +224,21 @@
 	</style>
 
 	<style name="RulebookButtonTop" parent="Widget.AppCompat.Button">
-		<item name="android:stateListAnimator" >@animator/btn_anim_zoom</item>
+		<item name="android:stateListAnimator">@animator/btn_anim_zoom</item>
 		<item name="android:background">@drawable/buttonshape_top_rightandleft</item>
 		<item name="android:textSize">@dimen/action_smallbutton_textsize</item>
 		<item name="android:textStyle">bold</item>
 	</style>
 
 	<style name="RulebookButtonBottom" parent="Widget.AppCompat.Button">
-		<item name="android:stateListAnimator" >@animator/btn_anim_zoom</item>
+		<item name="android:stateListAnimator">@animator/btn_anim_zoom</item>
 		<item name="android:background">@drawable/buttonshape_bottom_rightandleft</item>
 		<item name="android:textSize">@dimen/action_smallbutton_textsize</item>
 		<item name="android:textStyle">bold</item>
 	</style>
 
 	<style name="RulebookButtonDefault" parent="Widget.AppCompat.Button">
-		<item name="android:stateListAnimator" >@animator/btn_anim_zoom</item>
+		<item name="android:stateListAnimator">@animator/btn_anim_zoom</item>
 		<item name="android:background">@drawable/buttonshape</item>
 		<item name="android:textSize">@dimen/action_smallbutton_textsize</item>
 		<item name="android:textStyle">bold</item>
@@ -262,12 +263,14 @@
 		<item name="colorControlActivated">@color/colorPrimary</item>
 	</style>
 
-	<style name="SnackBar" parent="Widget.MaterialComponents.Snackbar">
+	<style name="SnackBar" parent="Widget.Design.Snackbar">
 		<item name="android:minWidth">@dimen/app_design_snackbar_min_width</item>
 		<item name="android:maxWidth">@dimen/app_design_snackbar_max_width</item>
 		<item name="android:background">@drawable/shape_snackbar</item>
-		<item name="android:paddingLeft">@dimen/app_design_snackbar_padding_horizontal</item>
-		<item name="android:paddingRight">@dimen/app_design_snackbar_padding_horizontal</item>
+		<item name="android:layout_marginLeft">@dimen/app_design_snackbar_margin_horizontal</item>
+		<item name="android:layout_marginRight">@dimen/app_design_snackbar_margin_horizontal</item>
+		<item name="android:layout_marginTop">@dimen/app_design_snackbar_margin_vertical</item>
+		<item name="android:layout_marginBottom">@dimen/app_design_snackbar_margin_vertical</item>
 		<item name="maxActionInlineWidth">@dimen/app_design_snackbar_action_inline_max_width</item>
 	</style>
 

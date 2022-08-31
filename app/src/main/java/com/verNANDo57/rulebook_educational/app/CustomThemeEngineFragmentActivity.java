@@ -13,6 +13,7 @@ import android.view.Menu;
 import android.view.View;
 import android.view.WindowManager;
 
+import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
 
@@ -51,7 +52,7 @@ public abstract class CustomThemeEngineFragmentActivity extends FragmentActivity
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu(@NonNull Menu menu) {
         return super.onCreateOptionsMenu(menu);
     }
 

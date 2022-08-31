@@ -34,6 +34,7 @@ public class AppLexiconActivity extends CustomThemeEngineAppCompatActivity {
 
         toolbar_pdfview = findViewById(R.id.toolbar_pdfview);
         setSupportActionBar(toolbar_pdfview);
+        toolbar_pdfview.setTitle(getResources().getString(R.string.lexicon_rules));
         toolbar_pdfview.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
